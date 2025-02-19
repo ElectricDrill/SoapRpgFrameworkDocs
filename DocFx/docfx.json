@@ -23,41 +23,42 @@
         }
     ],
     "build": {
-    "content": [
-      {
-        "files": [
-          "**/*.{md,yml}"
-        ],
-        "exclude": [
-          "_site/**"
-        ]
+      "content": [
+        {
+          "files": [
+            "**/*.{md,yml}"
+          ],
+          "exclude": [
+            "_site/**"
+          ]
+        },
+        {
+          "files": [
+            "api/toc.yml"
+          ]
+        }
+      ],
+      "resource": [
+        {
+          "files": [
+            "images/**"
+          ]
+        }
+      ],
+      "output": "../docs",
+      "template": [
+        "default",
+        "modern"
+      ],
+      "globalMetadata": {
+        "_appName": "SimpleRPGCoreAPI",
+        "_appTitle": "SimpleRPGCoreAPI",
+        "_appLogoPath": "images/simple-rpg-core-logo.png",
+        "_enableSearch": true,
+        "pdf": true
       },
-      {
-        "files": [
-          "api/toc.yml"
-        ]
-      }
-    ],
-    "resource": [
-      {
-        "files": [
-          "images/**"
-        ]
-      }
-    ],
-    "output": "../docs",
-    "template": [
-      "default",
-      "modern"
-    ],
-    "globalMetadata": {
-      "_appName": "SimpleRPGCoreAPI",
-      "_appTitle": "SimpleRPGCoreAPI",
-      "_enableSearch": true,
-      "pdf": true
-    },
-    "xref": [
-      "https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml"
-    ]
+      "xref": [
+        "https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml"
+      ]
   }
 }
