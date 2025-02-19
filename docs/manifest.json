@@ -787,6 +787,16 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "images/simple-rpg-core-logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/simple-rpg-core-logo.png"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
