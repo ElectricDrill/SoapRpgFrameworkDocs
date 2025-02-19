@@ -788,6 +788,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/favico.ico",
+      "output": {
+        "resource": {
+          "relative_path": "images/favico.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/simple-rpg-core-logo.png",
       "output": {
         "resource": {
