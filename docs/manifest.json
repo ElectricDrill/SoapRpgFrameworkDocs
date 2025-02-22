@@ -788,6 +788,306 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/SRPG/attribute-set-alt.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/attribute-set-alt.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/attribute-set.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/attribute-set.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/attribute.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/attribute.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/class.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/class.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/entity-attributes.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/entity-attributes.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/entity-class.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/entity-class.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/entity-core-2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/entity-core-2.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/entity-core.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/entity-core.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/entity-stats.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/entity-stats.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/event-gen.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/event-gen.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/growth-fn.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/growth-fn.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/int-var.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/int-var.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/long-var.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/long-var.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/scaling-formula.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/scaling-formula.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/stat-set.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/stat-set.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SRPG/stat.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SRPG/stat.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/attribute-set.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/attribute-set.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/attribute.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/attribute.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/class.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/class.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/entity-attributes.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/entity-attributes.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/entity-class.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/entity-class.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/entity-core.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/entity-core.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/entity-stats.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/entity-stats.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/event-gen.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/event-gen.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/growth-fo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/growth-fo.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/int-var.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/int-var.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/long-var.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/long-var.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/scaling-formula.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/scaling-formula.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/stat-set.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/stat-set.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/stat.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/stat.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/favico.ico",
       "output": {
         "resource": {

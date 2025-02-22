@@ -1,49 +1,49 @@
 {
-    "metadata": [
-        {
-            "src": [
-                {
-                    "src": "../../GeometricalInvaders",
-                    "files": [
-                        "ElectricDrill.SimpleRPGCore.Runtime.csproj"
-                    ],
-                    "exclude": [
-                        "Editor/**",
-                        "bin/**"
-                    ]
-                }
-            ],
-            "globalNamespaceId": "Global",
-            "filter": "filterConfig.yml",
-            "dest": "api",
-            "allowCompilationErrors": true,
-            "properties": {
-                "ProduceReferenceAssembly": "true"
-            }
-        }
-    ],
-    "build": {
-      "content": [
-        {
-          "files": [
-            "**/*.{md,yml}"
+  "metadata": [
+      {
+          "src": [
+              {
+                  "src": "../../GeometricalInvaders",
+                  "files": [
+                      "ElectricDrill.SimpleRPGCore.Runtime.csproj"
+                  ],
+                  "exclude": [
+                      "Editor/**",
+                      "bin/**"
+                  ]
+              }
           ],
-          "exclude": [
-            "_site/**"
-          ]
-        },
-        {
-          "files": [
-            "api/toc.yml"
-          ]
-        }
+          "globalNamespaceId": "Global",
+          "filter": "filterConfig.yml",
+          "dest": "api",
+          "allowCompilationErrors": true,
+          "properties": {
+              "ProduceReferenceAssembly": "true"
+          }
+      }
+  ],
+  "build": {
+      "content": [
+          {
+              "files": [
+                  "**/*.{md,yml}"
+              ],
+              "exclude": [
+                  "_site/**"
+              ]
+          },
+          {
+              "files": [
+                  "api/toc.yml"
+              ]
+          }
       ],
       "resource": [
-        {
-          "files": [
-            "images/**"
-          ]
-        }
+          {
+              "files": [
+                  "images/**"
+              ]
+          }
       ],
       "output": "../docs",
       "template": [
@@ -51,15 +51,15 @@
         "modern"
       ],
       "globalMetadata": {
-        "_appName": "Simple RPG Core",
-        "_appTitle": "Simple RPG Core",
-        "_appLogoPath": "images/simple-rpg-core-logo.png",
-        "_appFaviconPath": "images/favico.ico",
-        "_enableSearch": true,
-        "pdf": true
+          "_appName": "Simple RPG Core",
+          "_appTitle": "Simple RPG Core",
+          "_appLogoPath": "images/simple-rpg-core-logo.png",
+          "_appFaviconPath": "images/favico.ico",
+          "_enableSearch": true,
+          "pdf": true
       },
       "xref": [
-        "https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml"
+          "https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml"
       ]
   }
 }
