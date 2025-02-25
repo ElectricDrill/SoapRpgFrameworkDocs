@@ -77,7 +77,7 @@ Although we haven't mentioned `ScalingFormula` until now, we briefly introduce i
 
 The `ScalingFormula` allows us to insert the various `ScalingComponent`s into two collections: one that refers to the user of the value and one for the potential target. In the previous example, the `StatScalingComponent` referred to the user's collection (of the ability): the higher the `physical damage` of our character, the greater the damage inflicted. Nothing prevents us from adding any `ScalingComponent` based on certain values possessed by the target. For example, we can add a `StatScalingComponent` to the "target" collection that calculates `defense * 0.5` as an additional damage value. Therefore, the higher the defense of the target of our ability, the greater the damage inflicted on it by `Mace Slam`.
 
-### Attribute Scaling Component
+### Scaling Component
 As mentioned in [Scaling Formula](#scaling-formula), it can constitute a part of the `ScalingFormula` to define how the final value scales with one or more values that belong to the same categories. We have seen the `StatScalingComponent` in the example previously.  
 It is worth mentioning that the scaling of a `Stat` in function of the `Attribute`s, mentioned in the [Stat](#stat) paragraph, is defined through an `AttributeScalingComponent`.
 
