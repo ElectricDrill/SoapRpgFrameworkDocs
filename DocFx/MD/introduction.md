@@ -1,7 +1,8 @@
 # Introduction
 Whether you are creating a traditional RPG, a roguelike, an MMO, or even a game with unique mechanics, Simple RPG Core can adapt to your needs. By providing a robust framework for managing attributes, statistics, levels, classes, and more, it allows you to focus on the creative aspects of game development, simplifying the implementation of the more monotonous parts with a scalable and maintainable 100% inspector-driven experience.  
 
-The possibilities are endless, unleash your creativity.
+The final outcome should look like this:
+(TODO) add image
 
 ## Vocabulary of Simple RPG Core
 The package is developed around the concept of _entity_, so let's clarify what we mean by this term in the context of Simple RPG Core. In its most minimal version, an entity is a `GameObject` that has a set of statistics. Optionally, an entity can have attributes, can level up, and can have a class.
