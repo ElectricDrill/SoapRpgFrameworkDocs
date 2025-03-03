@@ -1,4 +1,4 @@
-# Workflows
+-# Workflows
 <!--
 ======UTILITIES
 - Game Events as SOs
@@ -66,7 +66,7 @@ If the checkbox named `Use constant value at level 1` is checked, the respective
 #### Growth equations
 The various values of the `GrowthFormula` are defined by a function where values, the y axis, are expressed in function of the levels, the x axis. Such funtion is defined as a system of equations. Each equation is a string that associates a math expression to a range of levels.
 The string can be defined by using the [Unity ExpressionEvaluator](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ExpressionEvaluator.html) syntax. On top of it, the following terms can be used:
-- `LVL`: the level
+- `LVL`: the level at each iteration
 - `PRV`: the previous value of the `GrowthFormula` (value evaluated at the previous level)
 - `SPRV`: the second previous value of the `GrowthFormula` (value evaluated 2 levels ago)
 - `SUM`: the sum of the values of the `GrowthFormula` from level 1 up to the previous level
