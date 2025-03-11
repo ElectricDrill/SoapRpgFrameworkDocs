@@ -118,6 +118,12 @@ Dall'inspector possiamo configurare una serie di valori. Analizziamoli uno alla 
 
 `Level`: definisce il livello dell'entita'. Cambiando il suo valore, possiamo assegnare un livello diverso all'entita' direttamente dall'inspector. Questo puo' essere utile per ai fini di testing.
 Noterete il check box `Use Constant`. Se lo spuntate, potrete passare una `IntVar` anziche' usare una costante.
-`Current Total Experience`: Rappresenta l'esperienza totale posseduta dell'entita'. Questo valore, qualora `Use constant` sia spuntato, e' readonly. 
+
+`Current Total Experience`: Rappresenta l'esperienza totale posseduta dell'entita'.
 > [!WARNING]  
-> Se avete invece passato una `LongRef`, il valore contenuto in tale variabile non dovrebbe venire modificato a mano.
+> Se avete passato una `LongRef` per la current total experience, il valore contenuto in tale variabile non dovrebbe venire modificato a mano.
+> Se `Use constant` e' invece spuntato, il valore e' readonly.  
+
+`Max Level`: Il livello massimo raggiungibile dall'entita'
+
+`Exprerience Formula`

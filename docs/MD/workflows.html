@@ -178,12 +178,15 @@ The string can be defined by using the <a href="https://docs.unity3d.com/6000.0/
 <em>Image - Entity Core Custom Editor</em></p>
 <p>Dall'inspector possiamo configurare una serie di valori. Analizziamoli uno alla volta.</p>
 <p><code>Level</code>: definisce il livello dell'entita'. Cambiando il suo valore, possiamo assegnare un livello diverso all'entita' direttamente dall'inspector. Questo puo' essere utile per ai fini di testing.
-Noterete il check box <code>Use Constant</code>. Se lo spuntate, potrete passare una <code>IntVar</code> anziche' usare una costante.
-<code>Current Total Experience</code>: Rappresenta l'esperienza totale posseduta dell'entita'. Questo valore, qualora <code>Use constant</code> sia spuntato, e' readonly.</p>
+Noterete il check box <code>Use Constant</code>. Se lo spuntate, potrete passare una <code>IntVar</code> anziche' usare una costante.</p>
+<p><code>Current Total Experience</code>: Rappresenta l'esperienza totale posseduta dell'entita'.</p>
 <div class="WARNING">
 <h5>Warning</h5>
-<p>Se avete invece passato una <code>LongRef</code>, il valore contenuto in tale variabile non dovrebbe venire modificato a mano.</p>
+<p>Se avete passato una <code>LongRef</code> per la current total experience, il valore contenuto in tale variabile non dovrebbe venire modificato a mano.
+Se <code>Use constant</code> e' invece spuntato, il valore e' readonly.</p>
 </div>
+<p><code>Max Level</code>: Il livello massimo raggiungibile dall'entita'</p>
+<p><code>Exprerience Formula</code></p>
 
 </article>
 
