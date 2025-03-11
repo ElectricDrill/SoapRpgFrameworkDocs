@@ -7,6 +7,13 @@ items:
   - uid: ElectricDrill.StatChangeInfo
     name: StatChangeInfo
     type: Struct
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+  name: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+  type: Namespace
+  items:
+  - uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2
+    name: Cache<KType, VType>
+    type: Class
 - uid: ElectricDrill.SimpleRpgCore
   name: ElectricDrill.SimpleRpgCore
   type: Namespace
