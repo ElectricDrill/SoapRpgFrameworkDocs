@@ -12,10 +12,30 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "MD/advanced-topics.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/advanced-topics.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "MD/getting-started.md",
       "output": {
         ".html": {
           "relative_path": "MD/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "MD/installation-instructions.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/installation-instructions.html"
         }
       },
       "version": ""
@@ -31,6 +51,36 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "MD/limitations.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/limitations.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "MD/package-contents.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/package-contents.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "MD/samples.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/samples.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "MD/toc.yml",
       "output": {
@@ -39,6 +89,36 @@
         },
         ".json": {
           "relative_path": "MD/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "MD/workflows.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/workflows.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.html"
         }
       },
       "version": ""
@@ -788,160 +868,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/SRPG/attribute-set-alt.png",
+      "source_relative_path": "images/SimpleRPG/attribute-scaling-component.png",
       "output": {
         "resource": {
-          "relative_path": "images/SRPG/attribute-set-alt.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/attribute-set.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/attribute-set.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/attribute.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/attribute.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/class.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/class.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/entity-attributes.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/entity-attributes.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/entity-class.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/entity-class.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/entity-core-2.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/entity-core-2.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/entity-core.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/entity-core.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/entity-stats.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/entity-stats.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/event-gen.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/event-gen.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/growth-fn.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/growth-fn.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/int-var.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/int-var.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/long-var.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/long-var.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/scaling-formula.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/scaling-formula.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/stat-set.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/stat-set.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "images/SRPG/stat.png",
-      "output": {
-        "resource": {
-          "relative_path": "images/SRPG/stat.png"
+          "relative_path": "images/SimpleRPG/attribute-scaling-component.png"
         }
       },
       "version": ""
@@ -1058,10 +988,20 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/SimpleRPG/scaling-formula.png",
+      "source_relative_path": "images/SimpleRPG/scaling-fo.png",
       "output": {
         "resource": {
-          "relative_path": "images/SimpleRPG/scaling-formula.png"
+          "relative_path": "images/SimpleRPG/scaling-fo.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/SimpleRPG/stat-scaling-component.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/SimpleRPG/stat-scaling-component.png"
         }
       },
       "version": ""
@@ -1102,6 +1042,16 @@
       "output": {
         "resource": {
           "relative_path": "images/simple-rpg-core-logo.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/entity-core-editor.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/entity-core-editor.png"
         }
       },
       "version": ""

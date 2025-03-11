@@ -18,7 +18,7 @@ items:
   - ElectricDrill.SimpleRpgCore.Stats.EntityStats.StatSet
   - ElectricDrill.SimpleRpgCore.Stats.EntityStats.UseClassBaseStats
   - ElectricDrill.SimpleRpgCore.Stats.EntityStats._entityClass
-  - ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiersStats
+  - ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiers
   - ElectricDrill.SimpleRpgCore.Stats.EntityStats._percentageModifiers
   langs:
   - csharp
@@ -128,33 +128,33 @@ items:
     return:
       type: ElectricDrill.SimpleRpgCore.IClassSource
     content.vb: Protected _entityClass As IClassSource
-- uid: ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiersStats
-  commentId: F:ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiersStats
-  id: _flatModifiersStats
+- uid: ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiers
+  commentId: F:ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiers
+  id: _flatModifiers
   parent: ElectricDrill.SimpleRpgCore.Stats.EntityStats
   langs:
   - csharp
   - vb
-  name: _flatModifiersStats
-  nameWithType: EntityStats._flatModifiersStats
-  fullName: ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiersStats
+  name: _flatModifiers
+  nameWithType: EntityStats._flatModifiers
+  fullName: ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiers
   type: Field
   source:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs
       branch: main
       repo: https://github.com/Cis8/SimpleRPGCore
-    id: _flatModifiersStats
+    id: _flatModifiers
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs
     startLine: 37
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Stats
   syntax:
-    content: protected StatSetInstance _flatModifiersStats
+    content: protected StatSetInstance _flatModifiers
     return:
       type: ElectricDrill.SimpleRpgCore.Stats.StatSetInstance
-    content.vb: Protected _flatModifiersStats As StatSetInstance
+    content.vb: Protected _flatModifiers As StatSetInstance
 - uid: ElectricDrill.SimpleRpgCore.Stats.EntityStats._percentageModifiers
   commentId: F:ElectricDrill.SimpleRpgCore.Stats.EntityStats._percentageModifiers
   id: _percentageModifiers

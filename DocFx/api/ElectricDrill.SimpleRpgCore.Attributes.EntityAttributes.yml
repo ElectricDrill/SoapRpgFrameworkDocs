@@ -5,9 +5,15 @@ items:
   id: EntityAttributes
   parent: ElectricDrill.SimpleRpgCore.Attributes
   children:
+  - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int64)
+  - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute,ElectricDrill.SimpleRpgCore.Utils.Percentage)
   - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
   - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributeSet
+  - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache
+  - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
   - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.Get(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
+  - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
+  - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
   langs:
   - csharp
   - vb
@@ -22,7 +28,7 @@ items:
       repo: https://github.com/Cis8/SimpleRPGCore
     id: EntityAttributes
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
@@ -47,6 +53,35 @@ items:
     arguments:
     - type: System.Type
       value: ElectricDrill.SimpleRpgCore.EntityCore
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache
+  commentId: P:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache
+  id: AttributesCache
+  parent: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes
+  langs:
+  - csharp
+  - vb
+  name: AttributesCache
+  nameWithType: EntityAttributes.AttributesCache
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache
+  type: Property
+  source:
+    remote:
+      path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
+      branch: main
+      repo: https://github.com/Cis8/SimpleRPGCore
+    id: AttributesCache
+    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
+    startLine: 35
+  assemblies:
+  - ElectricDrill.SimpleRPGCore.Runtime
+  namespace: ElectricDrill.SimpleRpgCore.Attributes
+  syntax:
+    content: public Cache<Attribute, long> AttributesCache { get; }
+    parameters: []
+    return:
+      type: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache{ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int64}
+    content.vb: Public ReadOnly Property AttributesCache As Cache(Of Attribute, Long)
+  overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache*
 - uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
   commentId: P:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
   id: AttrPointsTracker
@@ -65,7 +100,7 @@ items:
       repo: https://github.com/Cis8/SimpleRPGCore
     id: AttrPointsTracker
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
-    startLine: 33
+    startLine: 45
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
@@ -94,7 +129,7 @@ items:
       repo: https://github.com/Cis8/SimpleRPGCore
     id: AttributeSet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
-    startLine: 35
+    startLine: 47
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
@@ -105,6 +140,64 @@ items:
       type: ElectricDrill.SimpleRpgCore.Attributes.AttributeSet
     content.vb: Public ReadOnly Property AttributeSet As AttributeSet
   overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributeSet*
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
+  commentId: P:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
+  id: FlatModifiers
+  parent: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes
+  langs:
+  - csharp
+  - vb
+  name: FlatModifiers
+  nameWithType: EntityAttributes.FlatModifiers
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
+  type: Property
+  source:
+    remote:
+      path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
+      branch: main
+      repo: https://github.com/Cis8/SimpleRPGCore
+    id: FlatModifiers
+    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
+    startLine: 74
+  assemblies:
+  - ElectricDrill.SimpleRPGCore.Runtime
+  namespace: ElectricDrill.SimpleRpgCore.Attributes
+  syntax:
+    content: protected AttributeSetInstance FlatModifiers { get; }
+    parameters: []
+    return:
+      type: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetInstance
+    content.vb: Protected ReadOnly Property FlatModifiers As AttributeSetInstance
+  overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers*
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
+  commentId: P:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
+  id: PercentageModifiers
+  parent: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes
+  langs:
+  - csharp
+  - vb
+  name: PercentageModifiers
+  nameWithType: EntityAttributes.PercentageModifiers
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
+  type: Property
+  source:
+    remote:
+      path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
+      branch: main
+      repo: https://github.com/Cis8/SimpleRPGCore
+    id: PercentageModifiers
+    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
+    startLine: 81
+  assemblies:
+  - ElectricDrill.SimpleRPGCore.Runtime
+  namespace: ElectricDrill.SimpleRpgCore.Attributes
+  syntax:
+    content: protected AttributeSetInstance PercentageModifiers { get; }
+    parameters: []
+    return:
+      type: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetInstance
+    content.vb: Protected ReadOnly Property PercentageModifiers As AttributeSetInstance
+  overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers*
 - uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.Get(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
   commentId: M:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.Get(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
   id: Get(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
@@ -123,7 +216,7 @@ items:
       repo: https://github.com/Cis8/SimpleRPGCore
     id: Get
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
-    startLine: 65
+    startLine: 93
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
@@ -136,6 +229,102 @@ items:
       type: System.Int64
     content.vb: Public Function [Get](attribute As Attribute) As Long
   overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.Get*
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int64)
+  commentId: M:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int64)
+  id: AddFlatModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int64)
+  parent: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes
+  langs:
+  - csharp
+  - vb
+  name: AddFlatModifier(Attribute, long)
+  nameWithType: EntityAttributes.AddFlatModifier(Attribute, long)
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute, long)
+  type: Method
+  source:
+    remote:
+      path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
+      branch: main
+      repo: https://github.com/Cis8/SimpleRPGCore
+    id: AddFlatModifier
+    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
+    startLine: 120
+  assemblies:
+  - ElectricDrill.SimpleRPGCore.Runtime
+  namespace: ElectricDrill.SimpleRpgCore.Attributes
+  syntax:
+    content: public void AddFlatModifier(Attribute attribute, long value)
+    parameters:
+    - id: attribute
+      type: ElectricDrill.SimpleRpgCore.Attributes.Attribute
+    - id: value
+      type: System.Int64
+    content.vb: Public Sub AddFlatModifier(attribute As Attribute, value As Long)
+  overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier*
+  nameWithType.vb: EntityAttributes.AddFlatModifier(Attribute, Long)
+  fullName.vb: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute, Long)
+  name.vb: AddFlatModifier(Attribute, Long)
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute,ElectricDrill.SimpleRpgCore.Utils.Percentage)
+  commentId: M:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute,ElectricDrill.SimpleRpgCore.Utils.Percentage)
+  id: AddPercentageModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute,ElectricDrill.SimpleRpgCore.Utils.Percentage)
+  parent: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes
+  langs:
+  - csharp
+  - vb
+  name: AddPercentageModifier(Attribute, Percentage)
+  nameWithType: EntityAttributes.AddPercentageModifier(Attribute, Percentage)
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute, ElectricDrill.SimpleRpgCore.Utils.Percentage)
+  type: Method
+  source:
+    remote:
+      path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
+      branch: main
+      repo: https://github.com/Cis8/SimpleRPGCore
+    id: AddPercentageModifier
+    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
+    startLine: 125
+  assemblies:
+  - ElectricDrill.SimpleRPGCore.Runtime
+  namespace: ElectricDrill.SimpleRpgCore.Attributes
+  syntax:
+    content: public void AddPercentageModifier(Attribute attribute, Percentage value)
+    parameters:
+    - id: attribute
+      type: ElectricDrill.SimpleRpgCore.Attributes.Attribute
+    - id: value
+      type: ElectricDrill.SimpleRpgCore.Utils.Percentage
+    content.vb: Public Sub AddPercentageModifier(attribute As Attribute, value As Percentage)
+  overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier*
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
+  commentId: M:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
+  id: GetBase(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
+  parent: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes
+  langs:
+  - csharp
+  - vb
+  name: GetBase(Attribute)
+  nameWithType: EntityAttributes.GetBase(Attribute)
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
+  type: Method
+  source:
+    remote:
+      path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
+      branch: main
+      repo: https://github.com/Cis8/SimpleRPGCore
+    id: GetBase
+    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
+    startLine: 130
+  assemblies:
+  - ElectricDrill.SimpleRPGCore.Runtime
+  namespace: ElectricDrill.SimpleRpgCore.Attributes
+  syntax:
+    content: public long GetBase(Attribute attribute)
+    parameters:
+    - id: attribute
+      type: ElectricDrill.SimpleRpgCore.Attributes.Attribute
+    return:
+      type: System.Int64
+    content.vb: Public Function GetBase(attribute As Attribute) As Long
+  overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase*
 references:
 - uid: ElectricDrill.SimpleRpgCore.Attributes
   commentId: N:ElectricDrill.SimpleRpgCore.Attributes
@@ -218,6 +407,122 @@ references:
   name: UnityEngine
   nameWithType: UnityEngine
   fullName: UnityEngine
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache*
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache
+  href: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AttributesCache
+  name: AttributesCache
+  nameWithType: EntityAttributes.AttributesCache
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache{ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int64}
+  commentId: T:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache{ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int64}
+  parent: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+  definition: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2
+  href: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html
+  name: Cache<Attribute, long>
+  nameWithType: Cache<Attribute, long>
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<ElectricDrill.SimpleRpgCore.Attributes.Attribute, long>
+  nameWithType.vb: Cache(Of Attribute, Long)
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of ElectricDrill.SimpleRpgCore.Attributes.Attribute, Long)
+  name.vb: Cache(Of Attribute, Long)
+  spec.csharp:
+  - uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2
+    name: Cache
+    href: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html
+  - name: <
+  - uid: ElectricDrill.SimpleRpgCore.Attributes.Attribute
+    name: Attribute
+    href: ElectricDrill.SimpleRpgCore.Attributes.Attribute.html
+  - name: ','
+  - name: " "
+  - uid: System.Int64
+    name: long
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2
+    name: Cache
+    href: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ElectricDrill.SimpleRpgCore.Attributes.Attribute
+    name: Attribute
+    href: ElectricDrill.SimpleRpgCore.Attributes.Attribute.html
+  - name: ','
+  - name: " "
+  - uid: System.Int64
+    name: Long
+    isExternal: true
+  - name: )
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2
+  commentId: T:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2
+  href: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html
+  name: Cache<KType, VType>
+  nameWithType: Cache<KType, VType>
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>
+  nameWithType.vb: Cache(Of KType, VType)
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType)
+  name.vb: Cache(Of KType, VType)
+  spec.csharp:
+  - uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2
+    name: Cache
+    href: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html
+  - name: <
+  - name: KType
+  - name: ','
+  - name: " "
+  - name: VType
+  - name: '>'
+  spec.vb:
+  - uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2
+    name: Cache
+    href: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: KType
+  - name: ','
+  - name: " "
+  - name: VType
+  - name: )
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+  commentId: N:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+  href: ElectricDrill.html
+  name: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+  nameWithType: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+  spec.csharp:
+  - uid: ElectricDrill
+    name: ElectricDrill
+    href: ElectricDrill.html
+  - name: .
+  - uid: ElectricDrill.SimpleRPGCore
+    name: SimpleRPGCore
+    href: ElectricDrill.SimpleRPGCore.html
+  - name: .
+  - uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore
+    name: SimpleRpgCore
+    href: ElectricDrill.SimpleRPGCore.SimpleRpgCore.html
+  - name: .
+  - uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+    name: Utils
+    href: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.html
+  spec.vb:
+  - uid: ElectricDrill
+    name: ElectricDrill
+    href: ElectricDrill.html
+  - name: .
+  - uid: ElectricDrill.SimpleRPGCore
+    name: SimpleRPGCore
+    href: ElectricDrill.SimpleRPGCore.html
+  - name: .
+  - uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore
+    name: SimpleRpgCore
+    href: ElectricDrill.SimpleRPGCore.SimpleRpgCore.html
+  - name: .
+  - uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+    name: Utils
+    href: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.html
 - uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker*
   commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
   href: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AttrPointsTracker
@@ -244,6 +549,25 @@ references:
   name: AttributeSet
   nameWithType: AttributeSet
   fullName: ElectricDrill.SimpleRpgCore.Attributes.AttributeSet
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers*
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
+  href: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_FlatModifiers
+  name: FlatModifiers
+  nameWithType: EntityAttributes.FlatModifiers
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
+- uid: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetInstance
+  commentId: T:ElectricDrill.SimpleRpgCore.Attributes.AttributeSetInstance
+  parent: ElectricDrill.SimpleRpgCore.Attributes
+  href: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetInstance.html
+  name: AttributeSetInstance
+  nameWithType: AttributeSetInstance
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetInstance
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers*
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
+  href: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_PercentageModifiers
+  name: PercentageModifiers
+  nameWithType: EntityAttributes.PercentageModifiers
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
 - uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.Get*
   commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.Get
   href: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_Get_ElectricDrill_SimpleRpgCore_Attributes_Attribute_
@@ -267,3 +591,58 @@ references:
   nameWithType.vb: Long
   fullName.vb: Long
   name.vb: Long
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier*
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier
+  href: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AddFlatModifier_ElectricDrill_SimpleRpgCore_Attributes_Attribute_System_Int64_
+  name: AddFlatModifier
+  nameWithType: EntityAttributes.AddFlatModifier
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier*
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier
+  href: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AddPercentageModifier_ElectricDrill_SimpleRpgCore_Attributes_Attribute_ElectricDrill_SimpleRpgCore_Utils_Percentage_
+  name: AddPercentageModifier
+  nameWithType: EntityAttributes.AddPercentageModifier
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier
+- uid: ElectricDrill.SimpleRpgCore.Utils.Percentage
+  commentId: T:ElectricDrill.SimpleRpgCore.Utils.Percentage
+  parent: ElectricDrill.SimpleRpgCore.Utils
+  href: ElectricDrill.SimpleRpgCore.Utils.Percentage.html
+  name: Percentage
+  nameWithType: Percentage
+  fullName: ElectricDrill.SimpleRpgCore.Utils.Percentage
+- uid: ElectricDrill.SimpleRpgCore.Utils
+  commentId: N:ElectricDrill.SimpleRpgCore.Utils
+  href: ElectricDrill.html
+  name: ElectricDrill.SimpleRpgCore.Utils
+  nameWithType: ElectricDrill.SimpleRpgCore.Utils
+  fullName: ElectricDrill.SimpleRpgCore.Utils
+  spec.csharp:
+  - uid: ElectricDrill
+    name: ElectricDrill
+    href: ElectricDrill.html
+  - name: .
+  - uid: ElectricDrill.SimpleRpgCore
+    name: SimpleRpgCore
+    href: ElectricDrill.SimpleRpgCore.html
+  - name: .
+  - uid: ElectricDrill.SimpleRpgCore.Utils
+    name: Utils
+    href: ElectricDrill.SimpleRpgCore.Utils.html
+  spec.vb:
+  - uid: ElectricDrill
+    name: ElectricDrill
+    href: ElectricDrill.html
+  - name: .
+  - uid: ElectricDrill.SimpleRpgCore
+    name: SimpleRpgCore
+    href: ElectricDrill.SimpleRpgCore.html
+  - name: .
+  - uid: ElectricDrill.SimpleRpgCore.Utils
+    name: Utils
+    href: ElectricDrill.SimpleRpgCore.Utils.html
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase*
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase
+  href: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_GetBase_ElectricDrill_SimpleRpgCore_Attributes_Attribute_
+  name: GetBase
+  nameWithType: EntityAttributes.GetBase
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase

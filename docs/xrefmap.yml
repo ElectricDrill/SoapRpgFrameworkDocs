@@ -7,6 +7,143 @@ references:
   commentId: N:ElectricDrill
   fullName: ElectricDrill
   nameWithType: ElectricDrill
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+  name: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.html
+  commentId: N:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+  nameWithType: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2
+  name: Cache<KType, VType>
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html
+  commentId: T:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2
+  name.vb: Cache(Of KType, VType)
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType)
+  nameWithType: Cache<KType, VType>
+  nameWithType.vb: Cache(Of KType, VType)
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Get(`0)
+  name: Get(KType)
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html#ElectricDrill_SimpleRPGCore_SimpleRpgCore_Utils_Cache_2_Get__0_
+  commentId: M:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Get(`0)
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>.Get(KType)
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType).Get(KType)
+  nameWithType: Cache<KType, VType>.Get(KType)
+  nameWithType.vb: Cache(Of KType, VType).Get(KType)
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Get*
+  name: Get
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html#ElectricDrill_SimpleRPGCore_SimpleRpgCore_Utils_Cache_2_Get_
+  commentId: Overload:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Get
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>.Get
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType).Get
+  nameWithType: Cache<KType, VType>.Get
+  nameWithType.vb: Cache(Of KType, VType).Get
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Has(`0)
+  name: Has(KType)
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html#ElectricDrill_SimpleRPGCore_SimpleRpgCore_Utils_Cache_2_Has__0_
+  commentId: M:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Has(`0)
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>.Has(KType)
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType).Has(KType)
+  nameWithType: Cache<KType, VType>.Has(KType)
+  nameWithType.vb: Cache(Of KType, VType).Has(KType)
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Has*
+  name: Has
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html#ElectricDrill_SimpleRPGCore_SimpleRpgCore_Utils_Cache_2_Has_
+  commentId: Overload:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Has
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>.Has
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType).Has
+  nameWithType: Cache<KType, VType>.Has
+  nameWithType.vb: Cache(Of KType, VType).Has
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Invalidate(`0)
+  name: Invalidate(KType)
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html#ElectricDrill_SimpleRPGCore_SimpleRpgCore_Utils_Cache_2_Invalidate__0_
+  commentId: M:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Invalidate(`0)
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>.Invalidate(KType)
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType).Invalidate(KType)
+  nameWithType: Cache<KType, VType>.Invalidate(KType)
+  nameWithType.vb: Cache(Of KType, VType).Invalidate(KType)
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Invalidate*
+  name: Invalidate
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html#ElectricDrill_SimpleRPGCore_SimpleRpgCore_Utils_Cache_2_Invalidate_
+  commentId: Overload:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Invalidate
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>.Invalidate
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType).Invalidate
+  nameWithType: Cache<KType, VType>.Invalidate
+  nameWithType.vb: Cache(Of KType, VType).Invalidate
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.InvalidateAll
+  name: InvalidateAll()
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html#ElectricDrill_SimpleRPGCore_SimpleRpgCore_Utils_Cache_2_InvalidateAll
+  commentId: M:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.InvalidateAll
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>.InvalidateAll()
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType).InvalidateAll()
+  nameWithType: Cache<KType, VType>.InvalidateAll()
+  nameWithType.vb: Cache(Of KType, VType).InvalidateAll()
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.InvalidateAll*
+  name: InvalidateAll
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html#ElectricDrill_SimpleRPGCore_SimpleRpgCore_Utils_Cache_2_InvalidateAll_
+  commentId: Overload:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.InvalidateAll
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>.InvalidateAll
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType).InvalidateAll
+  nameWithType: Cache<KType, VType>.InvalidateAll
+  nameWithType.vb: Cache(Of KType, VType).InvalidateAll
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Item(`0)
+  name: this[KType]
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html#ElectricDrill_SimpleRPGCore_SimpleRpgCore_Utils_Cache_2_Item__0_
+  commentId: P:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Item(`0)
+  name.vb: this[](KType)
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>.this[KType]
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType).this[](KType)
+  nameWithType: Cache<KType, VType>.this[KType]
+  nameWithType.vb: Cache(Of KType, VType).this[](KType)
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Item*
+  name: this
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html#ElectricDrill_SimpleRPGCore_SimpleRpgCore_Utils_Cache_2_Item_
+  commentId: Overload:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Item
+  isSpec: "True"
+  name.vb: this[]
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>.this
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType).this[]
+  nameWithType: Cache<KType, VType>.this
+  nameWithType.vb: Cache(Of KType, VType).this[]
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Set(`0,`1)
+  name: Set(KType, VType)
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html#ElectricDrill_SimpleRPGCore_SimpleRpgCore_Utils_Cache_2_Set__0__1_
+  commentId: M:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Set(`0,`1)
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>.Set(KType, VType)
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType).Set(KType, VType)
+  nameWithType: Cache<KType, VType>.Set(KType, VType)
+  nameWithType.vb: Cache(Of KType, VType).Set(KType, VType)
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Set*
+  name: Set
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html#ElectricDrill_SimpleRPGCore_SimpleRpgCore_Utils_Cache_2_Set_
+  commentId: Overload:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.Set
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>.Set
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType).Set
+  nameWithType: Cache<KType, VType>.Set
+  nameWithType.vb: Cache(Of KType, VType).Set
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.TryGet(`0,`1@)
+  name: TryGet(KType, out VType)
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html#ElectricDrill_SimpleRPGCore_SimpleRpgCore_Utils_Cache_2_TryGet__0__1__
+  commentId: M:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.TryGet(`0,`1@)
+  name.vb: TryGet(KType, VType)
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>.TryGet(KType, out VType)
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType).TryGet(KType, VType)
+  nameWithType: Cache<KType, VType>.TryGet(KType, out VType)
+  nameWithType.vb: Cache(Of KType, VType).TryGet(KType, VType)
+- uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.TryGet*
+  name: TryGet
+  href: api/ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html#ElectricDrill_SimpleRPGCore_SimpleRpgCore_Utils_Cache_2_TryGet_
+  commentId: Overload:ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache`2.TryGet
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache<KType, VType>.TryGet
+  fullName.vb: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache(Of KType, VType).TryGet
+  nameWithType: Cache<KType, VType>.TryGet
+  nameWithType.vb: Cache(Of KType, VType).TryGet
 - uid: ElectricDrill.SimpleRpgCore
   name: ElectricDrill.SimpleRpgCore
   href: api/ElectricDrill.SimpleRpgCore.html
@@ -386,6 +523,35 @@ references:
   commentId: T:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes
   fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes
   nameWithType: EntityAttributes
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int64)
+  name: AddFlatModifier(Attribute, long)
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AddFlatModifier_ElectricDrill_SimpleRpgCore_Attributes_Attribute_System_Int64_
+  commentId: M:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int64)
+  name.vb: AddFlatModifier(Attribute, Long)
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute, long)
+  fullName.vb: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute, Long)
+  nameWithType: EntityAttributes.AddFlatModifier(Attribute, long)
+  nameWithType.vb: EntityAttributes.AddFlatModifier(Attribute, Long)
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier*
+  name: AddFlatModifier
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AddFlatModifier_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier
+  nameWithType: EntityAttributes.AddFlatModifier
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute,ElectricDrill.SimpleRpgCore.Utils.Percentage)
+  name: AddPercentageModifier(Attribute, Percentage)
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AddPercentageModifier_ElectricDrill_SimpleRpgCore_Attributes_Attribute_ElectricDrill_SimpleRpgCore_Utils_Percentage_
+  commentId: M:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute,ElectricDrill.SimpleRpgCore.Utils.Percentage)
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute, ElectricDrill.SimpleRpgCore.Utils.Percentage)
+  nameWithType: EntityAttributes.AddPercentageModifier(Attribute, Percentage)
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier*
+  name: AddPercentageModifier
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AddPercentageModifier_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier
+  nameWithType: EntityAttributes.AddPercentageModifier
 - uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
   name: AttrPointsTracker
   href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AttrPointsTracker
@@ -412,6 +578,32 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributeSet
   nameWithType: EntityAttributes.AttributeSet
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache
+  name: AttributesCache
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AttributesCache
+  commentId: P:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache
+  nameWithType: EntityAttributes.AttributesCache
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache*
+  name: AttributesCache
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AttributesCache_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache
+  nameWithType: EntityAttributes.AttributesCache
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
+  name: FlatModifiers
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_FlatModifiers
+  commentId: P:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
+  nameWithType: EntityAttributes.FlatModifiers
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers*
+  name: FlatModifiers
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_FlatModifiers_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
+  nameWithType: EntityAttributes.FlatModifiers
 - uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.Get(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
   name: Get(Attribute)
   href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_Get_ElectricDrill_SimpleRpgCore_Attributes_Attribute_
@@ -425,6 +617,32 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.Get
   nameWithType: EntityAttributes.Get
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
+  name: GetBase(Attribute)
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_GetBase_ElectricDrill_SimpleRpgCore_Attributes_Attribute_
+  commentId: M:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
+  nameWithType: EntityAttributes.GetBase(Attribute)
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase*
+  name: GetBase
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_GetBase_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase
+  nameWithType: EntityAttributes.GetBase
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
+  name: PercentageModifiers
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_PercentageModifiers
+  commentId: P:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
+  nameWithType: EntityAttributes.PercentageModifiers
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers*
+  name: PercentageModifiers
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_PercentageModifiers_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
+  nameWithType: EntityAttributes.PercentageModifiers
 - uid: ElectricDrill.SimpleRpgCore.Attributes.IAttributeContainer
   name: IAttributeContainer
   href: api/ElectricDrill.SimpleRpgCore.Attributes.IAttributeContainer.html
@@ -2436,12 +2654,12 @@ references:
   commentId: F:ElectricDrill.SimpleRpgCore.Stats.EntityStats._entityClass
   fullName: ElectricDrill.SimpleRpgCore.Stats.EntityStats._entityClass
   nameWithType: EntityStats._entityClass
-- uid: ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiersStats
-  name: _flatModifiersStats
-  href: api/ElectricDrill.SimpleRpgCore.Stats.EntityStats.html#ElectricDrill_SimpleRpgCore_Stats_EntityStats__flatModifiersStats
-  commentId: F:ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiersStats
-  fullName: ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiersStats
-  nameWithType: EntityStats._flatModifiersStats
+- uid: ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiers
+  name: _flatModifiers
+  href: api/ElectricDrill.SimpleRpgCore.Stats.EntityStats.html#ElectricDrill_SimpleRpgCore_Stats_EntityStats__flatModifiers
+  commentId: F:ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiers
+  fullName: ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiers
+  nameWithType: EntityStats._flatModifiers
 - uid: ElectricDrill.SimpleRpgCore.Stats.EntityStats._percentageModifiers
   name: _percentageModifiers
   href: api/ElectricDrill.SimpleRpgCore.Stats.EntityStats.html#ElectricDrill_SimpleRpgCore_Stats_EntityStats__percentageModifiers
