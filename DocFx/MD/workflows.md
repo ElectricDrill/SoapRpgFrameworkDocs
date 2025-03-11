@@ -73,11 +73,13 @@ The string can be defined by using the [Unity ExpressionEvaluator](https://docs.
 
 ## Make a `GameObject` an entity
 Per rendere un `GameObject` un'entita' dobbiamo aggiungere il `MonoBehaviour` `EntityCore` ad esso. Seleziona il tuo oggetto dalla gerarchia e clicca, nell'inspector, su "Add component". quindi cerca e seleziona `EntityCore`.
-
-(TODO)Add image of the entity core
+![Entity Core Custom Editor](../images/workflows/entity-core-editor.png)  
+*Image - Entity Core Custom Editor*
 
 Dall'inspector possiamo configurare una serie di valori. Analizziamoli uno alla volta.
 
 `Level`: definisce il livello dell'entita'. Cambiando il suo valore, possiamo assegnare un livello diverso all'entita' direttamente dall'inspector. Questo puo' essere utile per ai fini di testing.
 Noterete il check box `Use Constant`. Se lo spuntate, potrete passare una `IntVar` anziche' usare una costante.
-`Current Total Experience`: Rappresenta l'esperienza totale posseduta dell'entita'. Questo valore non puo' venire modificato
+`Current Total Experience`: Rappresenta l'esperienza totale posseduta dell'entita'. Questo valore, qualora `Use constant` sia spuntato, e' readonly. 
+> [!WARNING]  
+> Se avete invece passato una `LongRef`, il valore contenuto in tale variabile non dovrebbe venire modificato a mano.
