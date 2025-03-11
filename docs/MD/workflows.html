@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title> | Simple RPG Core </title>
+      <title>Workflows | Simple RPG Core </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content=" | Simple RPG Core ">
+      <meta name="title" content="Workflows | Simple RPG Core ">
       
       
       <link rel="icon" href="../images/favico.ico">
@@ -85,8 +85,8 @@
         </div>
 
         <article data-uid="">
+<h1 id="workflows">Workflows</h1>
 
-<p>-# Workflows</p>
 <!--
 ======UTILITIES
 - Game Events as SOs
@@ -120,28 +120,51 @@
 - AttributesScalingComponent
 -->
 <h2 id="some-utilities">Some utilities</h2>
-<p>Pressoche' ogni classe fornita da questo package utilizza degli eventi o delle variabili sotto forma di <code>ScriptableObject</code>. Pertanto introduciamo rapidamente questi concetti cosi' da aver chiaro di cosa stiamo parlando quando li ritroveremo nei prossimi paragrafi.</p>
+<p>Almost every class provided by this package uses events or variables in the form of <code>ScriptableObject</code>. Therefore, let's quickly introduce these concepts so that we are clear about what we are talking about when we encounter them in the following paragraphs.</p>
 <h3 id="game-events-as-scriptableobjects">Game events as <code>ScriptableObjects</code></h3>
-<p>L'architettura SOAP ci permette di implementare l'Observer pattern attraverso gli scriptable objects. Nel caso piu' semplice, ovvero con eventi senza context, possiamo definire diversi game event come istanze <code>GameEvent</code>: una classe che deriva da <code>ScriptableObjcet</code>. Ad esempio possiamo creare un'istanza chiamata <code>PlayerJumped</code> che rappresenta l’evento “Il giocatore ha effettuato un salto”. Questo evento si occuperà di notificare tutti i sistemi in ascolto quando esso si verifica.
-I sistemi si sottoscrivono a questo evento utilizzando il <code>MonoBehaviour</code> <code>GameEventListener</code>. Possiamo assegnare a questo componente un <code>GameEvent</code>, ed esso si occupera' di effettuare la sottoscrizione e di invocare una callback quando l'evento viene invocato. La callback e' un <a href="https://docs.unity3d.com/ScriptReference/Events.UnityEvent.html">UnityEvent</a>, pertanto potremo selezionare una callback da invocare in risposta al nostro evento direttamente dall'inspector.</p>
-<p>Il package supporta anche game event con fino a 4 parametri di contesto. Essi sono dei Generics, ma in Unity non è possibile stanziare classi che derivano da ScriptableObject se sono dei generici con parametri di tipo non specificati. Per usarli dobbiamo quindi dichiarare esplicitamente delle classi che derivano dai GameEvent generici e che fissano i parametri di tipo con dei tipi concreti. Per semplificare la definizione di nuovi tipi di evento, quindi con degli specifici tipi come parametri di contesto, il package mette a disposizione i <code>GameEventGenerator</code>. Questi generatori, che derivano da SO, permettono di generare le classi concrete dei <code>GameEvent</code>.
-Vedremo più in dettaglio questi generatori nella sezione (TODO)
-Alcuni game event sono gia' definiti e resi disponibili dal package (vedi la pagina <a href="samples.html">Samples</a>).</p>
+<p>The SOAP architecture allows us to implement the Observer pattern through scriptable objects. In the simplest case, with events without context, we can define various game events as <code>GameEvent</code> instances: a class that derives from <code>ScriptableObject</code>. For example, we can create an instance called <code>PlayerJumped</code> that represents the event &quot;The player has jumped&quot;. This event will notify all listening systems when it occurs.
+Systems subscribe to this event using the <code>MonoBehaviour</code> <code>GameEventListener</code>. We can assign a <code>GameEvent</code> to this component, and it will handle the subscription and invoke a callback when the event is triggered. The callback is a <a href="https://docs.unity3d.com/ScriptReference/Events.UnityEvent.html">UnityEvent</a>, so we can select a callback to invoke in response to our event directly from the inspector.</p>
+<p>For more details, see the <a href="#game-events">Game Events section</a>.</p>
 <h3 id="int-and-long-vars">Int and Long Vars</h3>
-<p>Un’altro comune utilizzo degli <code>ScriptableObject</code> nella SOAP architecture è per definire delle variabili. Il maggiore vantaggio di queste variabili sotto forma di SO è che possono venire facilmente condivise tra vari oggetti che magari decidano condividere lo stesso valore. Un comune esempio è il punteggio di gioco del giocatore. Potrebbe esserci il game manager che aggiunge o toglie punti a questa variabile, mentre l’HUD della UI lo utilizza per mostrare a video il suo valore. In questo modo riusciamo a mantenere game manager e UI completamente disaccoppiate, passando i valori condivisi (come le variabili) attraverso l'inspector.</p>
+<p>Another common use of <code>ScriptableObject</code> in the SOAP architecture is to define variables. The main advantage of these variables in the form of SO is that they can be easily shared between various objects that may decide to share the same value. A common example is the player's game score. There could be a game manager that adds or removes points from this variable, while the UI HUD uses it to display its value on the screen. This way, we can keep the game manager and UI completely decoupled, passing shared values (like variables) through the inspector.</p>
 <h3 id="int-and-long-refs">Int and Long Refs</h3>
-<p><code>IntRef</code> e <code>LongRef</code> permettono di scegliere se usare un valore nativo (<code>int</code> o <code>long</code>) o se usare un <code>IntVar</code>/<code>LongVar</code>. Come abbiamo detto nel paragrafo precedente, gli <code>IntVar</code> e <code>LongVar</code> hanno il vantaggio di essere condivisibili tra diverse componenti/oggetti di gioco, mentre i valori nativi sono piu' immediati da usare e richiedono meno setup (non serve istanziare un'istanza di un <code>IntVar</code>/<code>LongVar</code> e assegnarla nell'inspector).</p>
-<p>Grazie a un custom property drawer sara' possibile, dall'inspector, spuntare un checkbox nominato <code>Use constant</code> per utilizzare un valore nativo anziche' un -<code>Ref</code>, e viceversa.</p>
-<p><code>IntRef</code> e <code>LongRef</code> sono ampiamente utilizzati nei <code>MonoBheaviour</code> del pacakge.</p>
+<p><code>IntRef</code> and <code>LongRef</code> allow choosing whether to use a native value (<code>int</code> or <code>long</code>) or an <code>IntVar</code>/<code>LongVar</code>. As mentioned in the previous paragraph, <code>IntVar</code> and <code>LongVar</code> have the advantage of being shareable between different components/game objects, while native values are more immediate to use and require less setup (no need to instantiate an <code>IntVar</code>/<code>LongVar</code> and assign it in the inspector).</p>
+<h2 id="make-a-gameobject-an-entity">Make a <code>GameObject</code> an entity</h2>
+<p>To make a <code>GameObject</code> an entity, we need to add the <code>MonoBehaviour</code> <code>EntityCore</code> to it. Select your object from the hierarchy and click, in the inspector, on &quot;Add component&quot;. Then search for and select <code>EntityCore</code>.</p>
+<p>(TODO) Add image of the entity core</p>
+<p>From the inspector, we can configure a series of values. Let's analyze them one by one.</p>
+<p><code>Level</code>: defines the level of the entity. By changing its value, we can assign a different level to the entity directly from the inspector. This can be useful for testing purposes.
+You will notice the <code>Use Constant</code> checkbox. If checked, you can pass an <code>IntVar</code> instead of using a constant.
+<code>Current Total Experience</code>: Represents the total experience possessed by the entity. This value cannot be modified.</p>
 <h3 id="growth-formulas">Growth Formulas</h3>
-<p>Come gia' menzionate in <a href="introduction.html">Introduction</a>, le <code>GrowthFormula</code> permttono di definire come un certo valore varia al crescere dei livelli. Una <code>GrowthFormula</code> puo' venire istanziata attraverso il menu di contesto della gerarchia andando su <code>Simple RPG Core -&gt; Grwoth Formula</code>.<br>
-Il package mette a disposizione un custom property drawer per le <code>GrowthFormula</code>.</p>
+<p>As already mentioned in <a href="introduction.html">Introduction</a>, <code>GrowthFormula</code> allows defining how a certain value varies as levels increase. A <code>GrowthFormula</code> can be instantiated through the hierarchy context menu by going to <code>Simple RPG Core -&gt; Growth Formula</code>.
+The package provides a custom property drawer for <code>GrowthFormula</code>.</p>
+<p>For more details, see the <a href="#growth-formulas">Growth Formulas section</a>.</p>
+<h2 id="make-a-gameobject-an-entity-1">Make a <code>GameObject</code> an entity</h2>
+<p>To make a <code>GameObject</code> an entity, we need to add the <code>MonoBehaviour</code> <code>EntityCore</code> to it. Select your object from the hierarchy and click, in the inspector, on &quot;Add component&quot;. Then search for and select <code>EntityCore</code>.</p>
+<p>(TODO) Add image of the entity core</p>
+<p>From the inspector, we can configure a series of values. Let's analyze them one by one.</p>
+<p><code>Level</code>: defines the level of the entity. By changing its value, we can assign a different level to the entity directly from the inspector. This can be useful for testing purposes.
+You will notice the <code>Use Constant</code> checkbox. If checked, you can pass an <code>IntVar</code> instead of using a constant.<br>
+<code>Current Total Experience</code>: Represents the total experience possessed by the entity. Being this a <code>LongRef</code>, you can choose whether to use a const value (a native <code>long</code>), or a <code>LongVar</code> instead.</p>
+<h3 id="game-events">Game events</h3>
+<p>The package also supports game events with up to 4 context parameters. They are generics, but in Unity, it is not possible to instantiate classes that derive from ScriptableObject if they are generics with unspecified type parameters. To use them, we must explicitly declare classes that derive from the generic GameEvent and fix the type parameters with concrete types. To simplify the definition of new event types, with specific types as context parameters, the package provides <code>GameEventGenerator</code>. These generators, which derive from SO, allow generating the concrete classes of <code>GameEvent</code>.
+We will see these generators in more detail in the section (TODO).
+Some game events are already defined and made available by the package (see the <a href="samples.html">Samples</a> page).</p>
+<h3 id="int-and-long-vars-1">Int and Long Vars</h3>
+<h3 id="int-and-long-refs-1">Int and Long Refs</h3>
+<p><code>IntRef</code> and <code>LongRef</code> allow choosing whether to use a native value (<code>int</code> or <code>long</code>) or an <code>IntVar</code>/<code>LongVar</code>. As mentioned in the previous paragraph, <code>IntVar</code> and <code>LongVar</code> have the advantage of being shareable between different components/game objects, while native values are more immediate to use and require less setup (no need to instantiate an <code>IntVar</code>/<code>LongVar</code> and assign it in the inspector).</p>
+<p>Thanks to a custom property drawer, it will be possible, from the inspector, to check a checkbox named <code>Use constant</code> to use a native value instead of a <code>Ref</code>, and vice versa.</p>
+<p><code>IntRef</code> and <code>LongRef</code> are widely used in the package's <code>MonoBehaviour</code>.</p>
+<h3 id="growth-formulas-1">Growth Formulas</h3>
+<p>As already mentioned in <a href="introduction.html">Introduction</a>, <code>GrowthFormula</code> allows defining how a certain value varies as levels increase. A <code>GrowthFormula</code> can be instantiated through the hierarchy context menu by going to <code>Simple RPG Core -&gt; Growth Formula</code>.
+The package provides a custom property drawer for <code>GrowthFormula</code>.</p>
 <h4 id="max-level-for-the-values">Max level for the values</h4>
-<p>Nell'inspector di una <code>GrowthFormula</code> possiamo infatti passare un <code>IntVar</code> per definire fino a che livello far crescere i valori.</p>
+<p>In the inspector of a <code>GrowthFormula</code>, we can pass an <code>IntVar</code> to define up to which level to grow the values.</p>
 <h4 id="use-constant-at-level-one">Use constant at level one</h4>
 <p>If the checkbox named <code>Use constant value at level 1</code> is checked, the respective constant value will be used.</p>
 <h4 id="growth-equations">Growth equations</h4>
-<p>The various values of the <code>GrowthFormula</code> are defined by a function where values, the y axis, are expressed in function of the levels, the x axis. Such funtion is defined as a system of equations. Each equation is a string that associates a math expression to a range of levels.
+<p>The various values of the <code>GrowthFormula</code> are defined by a function where values, the y-axis, are expressed in function of the levels, the x-axis. Such function is defined as a system of equations. Each equation is a string that associates a math expression to a range of levels.
 The string can be defined by using the <a href="https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ExpressionEvaluator.html">Unity ExpressionEvaluator</a> syntax. On top of it, the following terms can be used:</p>
 <ul>
 <li><code>LVL</code>: the level at each iteration</li>
@@ -149,7 +172,7 @@ The string can be defined by using the <a href="https://docs.unity3d.com/6000.0/
 <li><code>SPRV</code>: the second previous value of the <code>GrowthFormula</code> (value evaluated 2 levels ago)</li>
 <li><code>SUM</code>: the sum of the values of the <code>GrowthFormula</code> from level 1 up to the previous level</li>
 </ul>
-<h2 id="make-a-gameobject-an-entity">Make a <code>GameObject</code> an entity</h2>
+<h2 id="make-a-gameobject-an-entity-2">Make a <code>GameObject</code> an entity</h2>
 <p>Per rendere un <code>GameObject</code> un'entita' dobbiamo aggiungere il <code>MonoBehaviour</code> <code>EntityCore</code> ad esso. Seleziona il tuo oggetto dalla gerarchia e clicca, nell'inspector, su &quot;Add component&quot;. quindi cerca e seleziona <code>EntityCore</code>.
 <img src="../images/workflows/entity-core-editor.png" alt="Entity Core Custom Editor"><br>
 <em>Image - Entity Core Custom Editor</em></p>
