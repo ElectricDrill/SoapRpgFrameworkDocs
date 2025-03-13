@@ -173,20 +173,24 @@ The string can be defined by using the <a href="https://docs.unity3d.com/6000.0/
 <li><code>SUM</code>: the sum of the values of the <code>GrowthFormula</code> from level 1 up to the previous level</li>
 </ul>
 <h2 id="make-a-gameobject-an-entity-2">Make a <code>GameObject</code> an entity</h2>
-<p>Per rendere un <code>GameObject</code> un'entita' dobbiamo aggiungere il <code>MonoBehaviour</code> <code>EntityCore</code> ad esso. Seleziona il tuo oggetto dalla gerarchia e clicca, nell'inspector, su &quot;Add component&quot;. quindi cerca e seleziona <code>EntityCore</code>.
+<p>To make a <code>GameObject</code> an entity, we need to add the <code>MonoBehaviour</code> <code>EntityCore</code> to it. Select your object from the hierarchy and click, in the inspector, on &quot;Add component&quot;. Then search for and select <code>EntityCore</code>.
 <img src="../images/workflows/entity-core-editor.png" alt="Entity Core Custom Editor"><br>
 <em>Image - Entity Core Custom Editor</em></p>
-<p>Dall'inspector possiamo configurare una serie di valori. Analizziamoli uno alla volta.</p>
-<p><code>Level</code>: definisce il livello dell'entita'. Cambiando il suo valore, possiamo assegnare un livello diverso all'entita' direttamente dall'inspector. Questo puo' essere utile per ai fini di testing.
-Noterete il check box <code>Use Constant</code>. Se lo spuntate, potrete passare una <code>IntVar</code> anziche' usare una costante.</p>
-<p><code>Current Total Experience</code>: Rappresenta l'esperienza totale posseduta dell'entita'.</p>
+<p>From the inspector, we can configure several values. Let's analyze them one by one.</p>
+<p><code>Level</code>: defines the entity's level. By changing its value, we can assign a different level to the entity directly from the inspector. This can be useful for testing purposes.
+You'll notice the <code>Use Constant</code> checkbox. If checked, you can pass an <code>IntVar</code> instead of using a constant.</p>
+<p><code>Current Total Experience</code>: Represents the total experience possessed by the entity.</p>
 <div class="WARNING">
 <h5>Warning</h5>
-<p>Se avete passato una <code>LongRef</code> per la current total experience, il valore contenuto in tale variabile non dovrebbe venire modificato a mano.
-Se <code>Use constant</code> e' invece spuntato, il valore e' readonly.</p>
+<p>If you've passed a <code>LongRef</code> for the current total experience, the value contained in this variable should not be modified manually.
+If <code>Use constant</code> is checked instead, the value is readonly.</p>
 </div>
-<p><code>Max Level</code>: Il livello massimo raggiungibile dall'entita'</p>
-<p><code>Exprerience Formula</code></p>
+<p><code>Max Level</code>: The maximum level the entity can reach</p>
+<p><code>Experience Formula</code>: <code>GrowthFormula</code> that describes how the total experience required to reach the next level grows at each level.</p>
+<p><code>On Level Up</code>: <code>IntGameEvent</code> that should be raised when the entity levels up.</p>
+<p><code>Spawned Entity Event</code>: <code>EntityCoreGameEvent</code> that should be raised when this entity's <code>Start()</code> method is executed.</p>
+<p>You may notice that a game event is already assigned to <code>Spawned Entity Event</code>. This is because an instance of that game event has been explicitly assigned directly in the inspector of the <code>EntityCore</code> script. This choice was made since in most cases the same event instance will always be used for entity spawning. This means you don't have to reassign this event every time you create a new entity in Unity. As we'll see later, this default assignment mechanism has been used for other components as well.</p>
+<h2 id="create-attributes">Create attributes</h2>
 
 </article>
 

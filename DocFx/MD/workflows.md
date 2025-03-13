@@ -110,20 +110,28 @@ The string can be defined by using the [Unity ExpressionEvaluator](https://docs.
 - `SUM`: the sum of the values of the `GrowthFormula` from level 1 up to the previous level
 
 ## Make a `GameObject` an entity
-Per rendere un `GameObject` un'entita' dobbiamo aggiungere il `MonoBehaviour` `EntityCore` ad esso. Seleziona il tuo oggetto dalla gerarchia e clicca, nell'inspector, su "Add component". quindi cerca e seleziona `EntityCore`.
+To make a `GameObject` an entity, we need to add the `MonoBehaviour` `EntityCore` to it. Select your object from the hierarchy and click, in the inspector, on "Add component". Then search for and select `EntityCore`.
 ![Entity Core Custom Editor](../images/workflows/entity-core-editor.png)  
 *Image - Entity Core Custom Editor*
 
-Dall'inspector possiamo configurare una serie di valori. Analizziamoli uno alla volta.
+From the inspector, we can configure several values. Let's analyze them one by one.
 
-`Level`: definisce il livello dell'entita'. Cambiando il suo valore, possiamo assegnare un livello diverso all'entita' direttamente dall'inspector. Questo puo' essere utile per ai fini di testing.
-Noterete il check box `Use Constant`. Se lo spuntate, potrete passare una `IntVar` anziche' usare una costante.
+`Level`: defines the entity's level. By changing its value, we can assign a different level to the entity directly from the inspector. This can be useful for testing purposes.
+You'll notice the `Use Constant` checkbox. If checked, you can pass an `IntVar` instead of using a constant.
 
-`Current Total Experience`: Rappresenta l'esperienza totale posseduta dell'entita'.
+`Current Total Experience`: Represents the total experience possessed by the entity.
 > [!WARNING]  
-> Se avete passato una `LongRef` per la current total experience, il valore contenuto in tale variabile non dovrebbe venire modificato a mano.
-> Se `Use constant` e' invece spuntato, il valore e' readonly.  
+> If you've passed a `LongRef` for the current total experience, the value contained in this variable should not be modified manually.
+> If `Use constant` is checked instead, the value is readonly.  
 
-`Max Level`: Il livello massimo raggiungibile dall'entita'
+`Max Level`: The maximum level the entity can reach
 
-`Exprerience Formula`
+`Experience Formula`: `GrowthFormula` that describes how the total experience required to reach the next level grows at each level.
+
+`On Level Up`: `IntGameEvent` that should be raised when the entity levels up.
+
+`Spawned Entity Event`: `EntityCoreGameEvent` that should be raised when this entity's `Start()` method is executed.
+
+You may notice that a game event is already assigned to `Spawned Entity Event`. This is because an instance of that game event has been explicitly assigned directly in the inspector of the `EntityCore` script. This choice was made since in most cases the same event instance will always be used for entity spawning. This means you don't have to reassign this event every time you create a new entity in Unity. As we'll see later, this default assignment mechanism has been used for other components as well.
+
+## Create attributes
