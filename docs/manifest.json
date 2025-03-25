@@ -1048,10 +1048,40 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/workflows/attribute-to-add-to-set-editor.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/attribute-to-add-to-set-editor.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/workflows/entity-core-editor.png",
       "output": {
         "resource": {
           "relative_path": "images/workflows/entity-core-editor.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/hero-attribute-set-editor.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/hero-attribute-set-editor.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/strength-attr-editor.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/strength-attr-editor.png"
         }
       },
       "version": ""

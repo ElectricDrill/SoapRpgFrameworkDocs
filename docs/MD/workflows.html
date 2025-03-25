@@ -190,7 +190,38 @@ If <code>Use constant</code> is checked instead, the value is readonly.</p>
 <p><code>On Level Up</code>: <code>IntGameEvent</code> that should be raised when the entity levels up.</p>
 <p><code>Spawned Entity Event</code>: <code>EntityCoreGameEvent</code> that should be raised when this entity's <code>Start()</code> method is executed.</p>
 <p>You may notice that a game event is already assigned to <code>Spawned Entity Event</code>. This is because an instance of that game event has been explicitly assigned directly in the inspector of the <code>EntityCore</code> script. This choice was made since in most cases the same event instance will always be used for entity spawning. This means you don't have to reassign this event every time you create a new entity in Unity. As we'll see later, this default assignment mechanism has been used for other components as well.</p>
+<h2 id="creating-simple-rpg-core-assets">Creating Simple RPG Core assets</h2>
+<p>All the instances of the various assets that derive from <code>ScriptableObject</code>s can be created in the following ways:</p>
+<ul>
+<li>Context menu: <code>Right click on the hierarchy &gt; Create &gt; Simple RPG Core</code></li>
+<li>Top bar: <code>Assets &gt; Create &gt; Simple RPG Core</code></li>
+<li>Hotkeys: By pressing the respective keyboard shortcut while a folder or an element of the hierarchy is currently selected</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For Mac users the <code>Ctrl</code> key corresponds to the <code>Cmd</code> key.</p>
+</div>
 <h2 id="create-attributes">Create attributes</h2>
+<p><em>Keyboard shortcut:</em> <code>A</code><br>
+<em>Relative path:</em> <code>Attribute</code></p>
+<p>Once created a new attribute you can name it as you wish and you'll be able tweak some settings in the inspector.
+For example lets create a <code>Strength</code> attribute. Create an <code>Attributes</code> folder in your hierarchy, then press <code>A</code> and name the newly created attribute <code>Strength</code>.<br>
+In the inspector it should look like:<br>
+<img src="../images/workflows/strength-attr-editor.png" alt="Strength Attribute"></p>
+<p>By checking <code>Has Max Value</code>, we will set a maximum value for the attribute. By default, there is no maximum value.</p>
+<p>By checking <code>Has Min Value</code>, we will set a minimum value for the attribute. By default, the minimum value is zero.</p>
+<p>Repeat the process for also the <code>Constitution</code>, <code>Intelligence</code>, and <code>Dexterity</code> attributes.</p>
+<h2 id="create-an-attribute-set">Create an attribute set</h2>
+<p><em>Keyboard shortcut:</em> <code>Alt + A</code><br>
+<em>Relative path:</em> <code>Attribute Set</code></p>
+<p>Now that we have some attributes let's create an <code>AttributeSet</code> named, for example, <code>Hero Attribute Set</code>. In the inspector it should look like this:<br>
+<img src="../images/workflows/hero-attribute-set-editor.png" alt="Hero Attribute Set"></p>
+<p>An attribute set without attributes isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the <code>Add</code> button. Notice that an entry with <code>None (Attribute)</code> appears:<br>
+<img src="../images/workflows/attribute-to-add-to-set-editor.png" alt="Hero Attribute Set with one empty entry"></p>
+<p>To assign an attribute to the entry, we can either drag&amp;drop from the hierarchy or click on the small circle button on the right of the newly appeared entry. This mechanism is the same used for public variables or, more generally, for fields annotated with <code>SerializeField</code>, so it will be familiar to you.<br>
+Let's add <code>Strength</code> using whichever method you prefer.
+Repeat the process of adding an attribute to the set for <code>Constitution</code>, <code>Intelligence</code>, and <code>Dexterity</code> as well.</p>
+<p>If you want to remove an attribute from the set, you can click on the small <code>-</code> button on the right of the attribute you want to remove.</p>
 
 </article>
 

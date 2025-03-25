@@ -134,4 +134,42 @@ You'll notice the `Use Constant` checkbox. If checked, you can pass an `IntVar` 
 
 You may notice that a game event is already assigned to `Spawned Entity Event`. This is because an instance of that game event has been explicitly assigned directly in the inspector of the `EntityCore` script. This choice was made since in most cases the same event instance will always be used for entity spawning. This means you don't have to reassign this event every time you create a new entity in Unity. As we'll see later, this default assignment mechanism has been used for other components as well.
 
+## Creating Simple RPG Core assets
+All the instances of the various assets that derive from `ScriptableObject`s can be created in the following ways:
+- Context menu: `Right click on the hierarchy > Create > Simple RPG Core`
+- Top bar: `Assets > Create > Simple RPG Core`
+- Hotkeys: By pressing the respective keyboard shortcut while a folder or an element of the hierarchy is currently selected
+
+> [!NOTE]  
+> For Mac users the `Ctrl` key corresponds to the `Cmd` key. 
+
 ## Create attributes
+*Keyboard shortcut:* `A`  
+*Relative path:* `Attribute`
+
+Once created a new attribute you can name it as you wish and you'll be able tweak some settings in the inspector.
+For example lets create a `Strength` attribute. Create an `Attributes` folder in your hierarchy, then press `A` and name the newly created attribute `Strength`.  
+In the inspector it should look like:  
+![Strength Attribute](../images/workflows/strength-attr-editor.png)
+
+By checking `Has Max Value`, we will set a maximum value for the attribute. By default, there is no maximum value.
+
+By checking `Has Min Value`, we will set a minimum value for the attribute. By default, the minimum value is zero.
+
+Repeat the process for also the `Constitution`, `Intelligence`, and `Dexterity` attributes.
+
+##  Create an attribute set
+*Keyboard shortcut:* `Alt + A`  
+*Relative path:* `Attribute Set`
+
+Now that we have some attributes let's create an `AttributeSet` named, for example, `Hero Attribute Set`. In the inspector it should look like this:  
+![Hero Attribute Set](../images/workflows/hero-attribute-set-editor.png)
+
+An attribute set without attributes isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the `Add` button. Notice that an entry with `None (Attribute)` appears:  
+![Hero Attribute Set with one empty entry](../images/workflows/attribute-to-add-to-set-editor.png)  
+
+To assign an attribute to the entry, we can either drag&drop from the hierarchy or click on the small circle button on the right of the newly appeared entry. This mechanism is the same used for public variables or, more generally, for fields annotated with `SerializeField`, so it will be familiar to you.  
+Let's add `Strength` using whichever method you prefer.
+Repeat the process of adding an attribute to the set for `Constitution`, `Intelligence`, and `Dexterity` as well.
+
+If you want to remove an attribute from the set, you can click on the small `-` button on the right of the attribute you want to remove.
