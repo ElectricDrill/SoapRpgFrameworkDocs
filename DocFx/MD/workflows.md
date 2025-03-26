@@ -173,3 +173,17 @@ Let's add `Strength` using whichever method you prefer.
 Repeat the process of adding an attribute to the set for `Constitution`, `Intelligence`, and `Dexterity` as well.
 
 If you want to remove an attribute from the set, you can click on the small `-` button on the right of the attribute you want to remove.
+
+## Add `EntityAttributes` to an entity
+The next step is to assign the attribute set we created to an entity. To do this, let's add the `EntityAttributes` component to our game object. The inspector will look like this:  
+![Entity Attributes](../images/workflows/entity-attributes-editor.png)
+
+An entity has base points for attributes, which can be either fixed or derived from a class, a configurable amount of attribute points that can be arbitrarily assigned, and these points are granted at each level-up, along with flat and percentage modifiers for the attributes.
+Except for the modifiers, which can only be assigned via code, all other values can be configured from the inspector.
+
+`Attr Points Per Level` defines how many arbitrarily spendable attribute points are provided at each level-up.
+
+`Attribute Points Tracker` allows monitoring and assigning spendable points. `Available Points` defines how many unspent points are still available.
+  
+Notice that there is a checkbox labeled `Use Class Base Attributes`. For now, let's leave it unchecked since we haven't added a class yet. However, in this case, we need to manually assign an attribute set. Therefore, let's set the `Attribute Set` field found under `Fixed Base Attributes` with the `Hero Attribute Set`. By doing this, we now have access to additional fields in the inspector:  
+![Entity Attributes with fixed base attributes AttributeSet](../images/workflows/entity-attributes-with-attr-set-editor.png)

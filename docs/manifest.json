@@ -1058,6 +1058,26 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/workflows/entity-attributes-editor.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/entity-attributes-editor.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/entity-attributes-with-attr-set-editor.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/entity-attributes-with-attr-set-editor.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/workflows/entity-core-editor.png",
       "output": {
         "resource": {
