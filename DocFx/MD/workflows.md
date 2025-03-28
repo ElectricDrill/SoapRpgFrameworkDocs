@@ -18,6 +18,7 @@
 
 ======STATS
 - Create some Stats
+    - Create AttributeScalingComponent for Stats
 - Create a StatSet
     - Assign Stats to a StatSet
 - Add EntityStats to an entity
@@ -194,4 +195,30 @@ We can assign values to the attributes of `Fixed Base Attributes` as we see fit.
 ## Create stats
 *Keyboard shortcut:* `S`  
 *Relative path:* `Stat`
+
+As with attributes, you can create stats as you wish and assign them the names you prefer.
+Let's create the `Physical Attack` stat together.
+Create a new `Stats` folder, select it and press `S`. Name it `Physical Attack`. In the inspector, it should look like this:
+![Physical Attack Stat](../images/workflows/phy-atck-stat-editor.png)
+
+As with attributes, you can assign both a maximum and a minimum value to a stat.
+
+Repeat the process for the `Magical Power`, `Physical Defense`, and `Critical Chance` stats.
+
+Unlike attributes, however, stats include `Attributes Scaling`.
+
+### Create an Attribute Scaling Component for Stats
+*Keyboard shortcut:* `Ctrl + Alt + A`  
+*Relative path:* `Scaling -> Attribute Scaling Component`
+
+Let's create a new `Attribute Scaling Component` to use with the strength stat we created earlier.
+Create a new folder named, for example, `Attribute Scalings for Stats`, and inside it, create an attribute scaling component called `Physical Attack Strength Scaling`.
+
+Assign the previously created `Hero Attribute Set` to the `Set` field. You will see the attributes of the set appear. Here, you can assign scaling values using `double`. For example, set the scaling of `Strength` to `1.0`. This component defines a 100% scaling on the value of `Strength`.
+
+![Physical Attack Strength Scaling](../images/workflows/physical-attack-strength-scaling.png)
+
+Now, assign this scaling component to the `Physical Attack` stat to ensure it scales with the `Strength` attribute.
+
+## Create a StatSet
 

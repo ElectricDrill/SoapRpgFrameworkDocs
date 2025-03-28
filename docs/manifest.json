@@ -1098,6 +1098,26 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/workflows/phy-atck-stat-editor.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/phy-atck-stat-editor.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/physical-attack-strength-scaling.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/physical-attack-strength-scaling.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/workflows/strength-attr-editor.png",
       "output": {
         "resource": {

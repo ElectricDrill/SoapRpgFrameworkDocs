@@ -106,6 +106,7 @@
 
 ======STATS
 - Create some Stats
+    - Create AttributeScalingComponent for Stats
 - Create a StatSet
     - Assign Stats to a StatSet
 - Add EntityStats to an entity
@@ -113,6 +114,7 @@
 ======CLASS
 - Create a class
 - Add EntityClass to an entity
+- Use class based entity attributes and stats
 
 ======SCALING FORMULA
 - ScalingFormulas
@@ -229,10 +231,29 @@ Repeat the process of adding an attribute to the set for <code>Constitution</cod
 Except for the modifiers, which can only be assigned via code, all other values can be configured from the inspector.</p>
 <p><code>Attr Points Per Level</code> defines how many arbitrarily spendable attribute points are provided at each level-up. They are assigned starting from level 2 on.</p>
 <p><code>Attribute Points Tracker</code> allows monitoring and assigning spendable points. <code>Available Points</code> defines how many unspent points are still available.<br>
-If you changed the level of the entity you'll see the available points change. As you spend them, the <code>Available Points</code> will change.</p>
+If you change the level of the entity you'll see that available points change accordingly. And as you spend them, <code>Available Points</code> will decrease.</p>
 <p>Moreover, there is a checkbox labeled <code>Use Class Base Attributes</code>. For now, let's leave it unchecked since we haven't added a class yet. However, in this case, we need to manually assign an attribute set. Therefore, let's set the <code>Attribute Set</code> field found under <code>Fixed Base Attributes</code> with the <code>Hero Attribute Set</code>. By doing this, we now have access to additional fields in the inspector:<br>
 <img src="../images/workflows/entity-attributes-with-attr-set-editor.png" alt="Entity Attributes with fixed base attributes AttributeSet"><br>
 We can assign values to the attributes of <code>Fixed Base Attributes</code> as we see fit.</p>
+<h2 id="create-stats">Create stats</h2>
+<p><em>Keyboard shortcut:</em> <code>S</code><br>
+<em>Relative path:</em> <code>Stat</code></p>
+<p>As with attributes, you can create stats as you wish and assign them the names you prefer.
+Let's create the <code>Physical Attack</code> stat together.
+Create a new <code>Stats</code> folder, select it and press <code>S</code>. Name it <code>Physical Attack</code>. In the inspector, it should look like this:
+<img src="../images/workflows/phy-atck-stat-editor.png" alt="Physical Attack Stat"></p>
+<p>As with attributes, you can assign both a maximum and a minimum value to a stat.</p>
+<p>Repeat the process for the <code>Magical Power</code>, <code>Physical Defense</code>, and <code>Critical Chance</code> stats.</p>
+<p>Unlike attributes, however, stats include <code>Attributes Scaling</code>.</p>
+<h3 id="create-an-attribute-scaling-component-for-stats">Create an Attribute Scaling Component for Stats</h3>
+<p><em>Keyboard shortcut:</em> <code>Ctrl + Alt + A</code><br>
+<em>Relative path:</em> <code>Scaling -&gt; Attribute Scaling Component</code></p>
+<p>Let's create a new <code>Attribute Scaling Component</code> to use with the strength stat we created earlier.
+Create a new folder named, for example, <code>Attribute Scalings for Stats</code>, and inside it, create an attribute scaling component called <code>Physical Attack Strength Scaling</code>.</p>
+<p>Assign the previously created <code>Hero Attribute Set</code> to the <code>Set</code> field. You will see the attributes of the set appear. Here, you can assign scaling values using <code>double</code>. For example, set the scaling of <code>Strength</code> to <code>1.0</code>. This component defines a 100% scaling on the value of <code>Strength</code>.</p>
+<p><img src="../images/workflows/physical-attack-strength-scaling.png" alt="Physical Attack Strength Scaling"></p>
+<p>Now, assign this scaling component to the <code>Physical Attack</code> stat to ensure it scales with the <code>Strength</code> attribute.</p>
+<h2 id="create-a-statset">Create a StatSet</h2>
 
 </article>
 
