@@ -184,7 +184,7 @@ Except for the modifiers, which can only be assigned via code, all other values 
 `Attr Points Per Level` defines how many arbitrarily spendable attribute points are provided at each level-up. They are assigned starting from level 2 on.
 
 `Attribute Points Tracker` allows monitoring and assigning spendable points. `Available Points` defines how many unspent points are still available.  
-If you changed the level of the entity you'll see the available points change. As you spend them, the `Available Points` will change.
+If you change the level of the entity you'll see that available points change accordingly. And as you spend them, `Available Points` will decrease.
   
 Moreover, there is a checkbox labeled `Use Class Base Attributes`. For now, let's leave it unchecked since we haven't added a class yet. However, in this case, we need to manually assign an attribute set. Therefore, let's set the `Attribute Set` field found under `Fixed Base Attributes` with the `Hero Attribute Set`. By doing this, we now have access to additional fields in the inspector:  
 ![Entity Attributes with fixed base attributes AttributeSet](../images/workflows/entity-attributes-with-attr-set-editor.png)  
