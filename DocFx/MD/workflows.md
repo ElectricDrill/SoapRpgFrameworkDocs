@@ -25,6 +25,7 @@
 ======CLASS
 - Create a class
 - Add EntityClass to an entity
+- Use class based entity attributes and stats
 
 ======SCALING FORMULA
 - ScalingFormulas
