@@ -1118,6 +1118,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/workflows/stat-set.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/stat-set.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/workflows/strength-attr-editor.png",
       "output": {
         "resource": {

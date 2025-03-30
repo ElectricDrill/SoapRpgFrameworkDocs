@@ -170,7 +170,7 @@ Now that we have some attributes let's create an `AttributeSet` named, for examp
 An attribute set without attributes isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the `Add` button. Notice that an entry with `None (Attribute)` appears:  
 ![Hero Attribute Set with one empty entry](../images/workflows/attribute-to-add-to-set-editor.png)  
 
-To assign an attribute to the entry, we can either drag&drop from the hierarchy or click on the small circle button on the right of the newly appeared entry. This mechanism is the same used for public variables or, more generally, for fields annotated with `SerializeField`, so it will be familiar to you.  
+To assign an attribute to the entry, we can either drag & drop from the hierarchy or click on the small circle button on the right of the newly appeared entry. This mechanism is the same used for public variables or, more generally, for fields annotated with `SerializeField`, so it will be familiar to you.  
 Let's add `Strength` using whichever method you prefer.
 Repeat the process of adding an attribute to the set for `Constitution`, `Intelligence`, and `Dexterity` as well.
 
@@ -220,5 +220,19 @@ Assign the previously created `Hero Attribute Set` to the `Set` field. You will 
 
 Now, assign this scaling component to the `Physical Attack` stat to ensure it scales with the `Strength` attribute.
 
-## Create a StatSet
+## Create a stat set
+*Keyboard shortcut:* `Alt + S`  
+*Relative path:* `Stat Set`
 
+Now that we have some stats, let's create a `StatSet` named, for example, `Hero Stat Set`.
+
+A stat set without stats isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the `Add` button. Notice that an entry with `None (Stat)` appears. To assign a stat to the entry, we can either drag & drop from the hierarchy or click on the small circle button on the right of the newly appeared entry. This mechanism is the same used for public variables or, more generally, for fields annotated with `SerializeField`, so it will be familiar to you.  
+Let's add `Physical Attack` using whichever method you prefer.  
+Repeat the process of adding a stat to the set for `Magical Power`, `Defense`, and `Critical Chance` as well. The stat set should look like:  
+![Hero Stat Set](../images/workflows/stat-set.png)
+
+If you want to remove a stat from the set, you can click on the small `-` button on the right of the stat you want to remove.
+
+## Add `EntityStats` to an Entity
+The next step is to assign the stat set we created to an entity. To do this, let's add the `EntityStats` component to our game object. The inspector will look like this:  
+// TODO ADD IMG HERE

@@ -220,7 +220,7 @@ In the inspector it should look like:<br>
 <img src="../images/workflows/hero-attribute-set-editor.png" alt="Hero Attribute Set"></p>
 <p>An attribute set without attributes isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the <code>Add</code> button. Notice that an entry with <code>None (Attribute)</code> appears:<br>
 <img src="../images/workflows/attribute-to-add-to-set-editor.png" alt="Hero Attribute Set with one empty entry"></p>
-<p>To assign an attribute to the entry, we can either drag&amp;drop from the hierarchy or click on the small circle button on the right of the newly appeared entry. This mechanism is the same used for public variables or, more generally, for fields annotated with <code>SerializeField</code>, so it will be familiar to you.<br>
+<p>To assign an attribute to the entry, we can either drag &amp; drop from the hierarchy or click on the small circle button on the right of the newly appeared entry. This mechanism is the same used for public variables or, more generally, for fields annotated with <code>SerializeField</code>, so it will be familiar to you.<br>
 Let's add <code>Strength</code> using whichever method you prefer.
 Repeat the process of adding an attribute to the set for <code>Constitution</code>, <code>Intelligence</code>, and <code>Dexterity</code> as well.</p>
 <p>If you want to remove an attribute from the set, you can click on the small <code>-</code> button on the right of the attribute you want to remove.</p>
@@ -253,7 +253,18 @@ Create a new folder named, for example, <code>Attribute Scalings for Stats</code
 <p>Assign the previously created <code>Hero Attribute Set</code> to the <code>Set</code> field. You will see the attributes of the set appear. Here, you can assign scaling values using <code>double</code>. For example, set the scaling of <code>Strength</code> to <code>1.0</code>. This component defines a 100% scaling on the value of <code>Strength</code>.</p>
 <p><img src="../images/workflows/physical-attack-strength-scaling.png" alt="Physical Attack Strength Scaling"></p>
 <p>Now, assign this scaling component to the <code>Physical Attack</code> stat to ensure it scales with the <code>Strength</code> attribute.</p>
-<h2 id="create-a-statset">Create a StatSet</h2>
+<h2 id="create-a-stat-set">Create a stat set</h2>
+<p><em>Keyboard shortcut:</em> <code>Alt + S</code><br>
+<em>Relative path:</em> <code>Stat Set</code></p>
+<p>Now that we have some stats, let's create a <code>StatSet</code> named, for example, <code>Hero Stat Set</code>.</p>
+<p>A stat set without stats isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the <code>Add</code> button. Notice that an entry with <code>None (Stat)</code> appears. To assign a stat to the entry, we can either drag &amp; drop from the hierarchy or click on the small circle button on the right of the newly appeared entry. This mechanism is the same used for public variables or, more generally, for fields annotated with <code>SerializeField</code>, so it will be familiar to you.<br>
+Let's add <code>Physical Attack</code> using whichever method you prefer.<br>
+Repeat the process of adding a stat to the set for <code>Magical Power</code>, <code>Defense</code>, and <code>Critical Chance</code> as well. The stat set should look like:<br>
+<img src="../images/workflows/stat-set.png" alt="Hero Stat Set"></p>
+<p>If you want to remove a stat from the set, you can click on the small <code>-</code> button on the right of the stat you want to remove.</p>
+<h2 id="add-entitystats-to-an-entity">Add <code>EntityStats</code> to an Entity</h2>
+<p>The next step is to assign the stat set we created to an entity. To do this, let's add the <code>EntityStats</code> component to our game object. The inspector will look like this:<br>
+// TODO ADD IMG HERE</p>
 
 </article>
 
