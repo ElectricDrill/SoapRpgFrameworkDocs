@@ -146,7 +146,7 @@ All the instances of the various assets that derive from `ScriptableObject`s can
 > For Mac users the `Ctrl` key corresponds to the `Cmd` key. 
 
 ## Create attributes
-*Keyboard shortcut:* `A`  
+*Keyboard shortcut:* `Ctrl + Alt + A`  
 *Relative path:* `Attribute`
 
 Once created a new attribute you can name it as you wish and you'll be able tweak some settings in the inspector.
@@ -160,8 +160,7 @@ By checking `Has Min Value`, we will set a minimum value for the attribute. By d
 
 Repeat the process for also the `Constitution`, `Intelligence`, and `Dexterity` attributes.
 
-##  Create an attribute set
-*Keyboard shortcut:* `Alt + A`  
+##  Create an attribute set 
 *Relative path:* `Attribute Set`
 
 Now that we have some attributes let's create an `AttributeSet` named, for example, `Hero Attribute Set`. In the inspector it should look like this:  
@@ -193,7 +192,7 @@ Moreover, there is a checkbox labeled `Use Class Base Attributes`. For now, let'
 We can assign values to the attributes of `Fixed Base Attributes` as we see fit.
 
 ## Create stats
-*Keyboard shortcut:* `S`  
+*Keyboard shortcut:* `Ctrl + Alt + S`  
 *Relative path:* `Stat`
 
 As with attributes, you can create stats as you wish and assign them the names you prefer.
@@ -207,8 +206,7 @@ Repeat the process for the `Magical Power`, `Physical Defense`, and `Critical Ch
 
 Unlike attributes, however, stats include `Attributes Scaling`.
 
-### Create an Attribute Scaling Component for Stats
-*Keyboard shortcut:* `Ctrl + Alt + A`  
+### Create an Attribute Scaling Component for Stats 
 *Relative path:* `Scaling -> Attribute Scaling Component`
 
 Let's create a new `Attribute Scaling Component` to use with the strength stat we created earlier.
@@ -220,8 +218,7 @@ Assign the previously created `Hero Attribute Set` to the `Set` field. You will 
 
 Now, assign this scaling component to the `Physical Attack` stat to ensure it scales with the `Strength` attribute.
 
-## Create a stat set
-*Keyboard shortcut:* `Alt + S`  
+## Create a stat set  
 *Relative path:* `Stat Set`
 
 Now that we have some stats, let's create a `StatSet` named, for example, `Hero Stat Set`.
