@@ -6,17 +6,20 @@ items:
   children:
   - ElectricDrill.SimpleRpgCore.BoundedValue
   - ElectricDrill.SimpleRpgCore.Class
+  - ElectricDrill.SimpleRpgCore.ClassMenuItems
   - ElectricDrill.SimpleRpgCore.EntityClass
   - ElectricDrill.SimpleRpgCore.EntityCore
   - ElectricDrill.SimpleRpgCore.EntityLevel
   - ElectricDrill.SimpleRpgCore.ExpSource
   - ElectricDrill.SimpleRpgCore.GrowthFormula
+  - ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems
   - ElectricDrill.SimpleRpgCore.IAttributes
   - ElectricDrill.SimpleRpgCore.IClassSource
+  - ElectricDrill.SimpleRpgCore.IEntityCore
   - ElectricDrill.SimpleRpgCore.IExpSource
   - ElectricDrill.SimpleRpgCore.ILevel
   - ElectricDrill.SimpleRpgCore.ILevelable
-  - ElectricDrill.SimpleRpgCore.IStatSet
+  - ElectricDrill.SimpleRpgCore.IStatSetSource
   langs:
   - csharp
   - vb
@@ -41,6 +44,12 @@ references:
   name: ILevel
   nameWithType: ILevel
   fullName: ElectricDrill.SimpleRpgCore.ILevel
+- uid: ElectricDrill.SimpleRpgCore.IEntityCore
+  commentId: T:ElectricDrill.SimpleRpgCore.IEntityCore
+  href: ElectricDrill.SimpleRpgCore.IEntityCore.html
+  name: IEntityCore
+  nameWithType: IEntityCore
+  fullName: ElectricDrill.SimpleRpgCore.IEntityCore
 - uid: ElectricDrill.SimpleRpgCore.Class
   commentId: T:ElectricDrill.SimpleRpgCore.Class
   parent: ElectricDrill.SimpleRpgCore
@@ -48,6 +57,12 @@ references:
   name: Class
   nameWithType: Class
   fullName: ElectricDrill.SimpleRpgCore.Class
+- uid: ElectricDrill.SimpleRpgCore.ClassMenuItems
+  commentId: T:ElectricDrill.SimpleRpgCore.ClassMenuItems
+  href: ElectricDrill.SimpleRpgCore.ClassMenuItems.html
+  name: ClassMenuItems
+  nameWithType: ClassMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.ClassMenuItems
 - uid: ElectricDrill.SimpleRpgCore.IAttributes
   commentId: T:ElectricDrill.SimpleRpgCore.IAttributes
   parent: ElectricDrill.SimpleRpgCore
@@ -62,13 +77,6 @@ references:
   name: EntityLevel
   nameWithType: EntityLevel
   fullName: ElectricDrill.SimpleRpgCore.EntityLevel
-- uid: ElectricDrill.SimpleRpgCore.IStatSet
-  commentId: T:ElectricDrill.SimpleRpgCore.IStatSet
-  parent: ElectricDrill.SimpleRpgCore
-  href: ElectricDrill.SimpleRpgCore.IStatSet.html
-  name: IStatSet
-  nameWithType: IStatSet
-  fullName: ElectricDrill.SimpleRpgCore.IStatSet
 - uid: ElectricDrill.SimpleRpgCore.ExpSource
   commentId: T:ElectricDrill.SimpleRpgCore.ExpSource
   href: ElectricDrill.SimpleRpgCore.ExpSource.html
@@ -89,6 +97,13 @@ references:
   name: EntityClass
   nameWithType: EntityClass
   fullName: ElectricDrill.SimpleRpgCore.EntityClass
+- uid: ElectricDrill.SimpleRpgCore.IStatSetSource
+  commentId: T:ElectricDrill.SimpleRpgCore.IStatSetSource
+  parent: ElectricDrill.SimpleRpgCore
+  href: ElectricDrill.SimpleRpgCore.IStatSetSource.html
+  name: IStatSetSource
+  nameWithType: IStatSetSource
+  fullName: ElectricDrill.SimpleRpgCore.IStatSetSource
 - uid: ElectricDrill.SimpleRpgCore.IClassSource
   commentId: T:ElectricDrill.SimpleRpgCore.IClassSource
   parent: ElectricDrill.SimpleRpgCore
@@ -110,6 +125,12 @@ references:
   name: GrowthFormula
   nameWithType: GrowthFormula
   fullName: ElectricDrill.SimpleRpgCore.GrowthFormula
+- uid: ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems
+  commentId: T:ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems
+  href: ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.html
+  name: GrowthFormulaMenuItems
+  nameWithType: GrowthFormulaMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems
 - uid: ElectricDrill.SimpleRpgCore.EntityCore
   commentId: T:ElectricDrill.SimpleRpgCore.EntityCore
   parent: ElectricDrill.SimpleRpgCore

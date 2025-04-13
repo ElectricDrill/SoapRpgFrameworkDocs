@@ -25,7 +25,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/EntityLevel.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: EntityLevel
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/EntityLevel.cs
     startLine: 11
@@ -64,7 +64,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/EntityLevel.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: OnLevelUp
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/EntityLevel.cs
     startLine: 37
@@ -72,11 +72,11 @@ items:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
   syntax:
-    content: public Action<int> OnLevelUp { get; set; }
+    content: public virtual Action<int> OnLevelUp { get; set; }
     parameters: []
     return:
       type: System.Action{System.Int32}
-    content.vb: Public Property OnLevelUp As Action(Of Integer)
+    content.vb: Public Overridable Property OnLevelUp As Action(Of Integer)
   overload: ElectricDrill.SimpleRpgCore.EntityLevel.OnLevelUp*
 - uid: ElectricDrill.SimpleRpgCore.EntityLevel.Level
   commentId: P:ElectricDrill.SimpleRpgCore.EntityLevel.Level
@@ -93,7 +93,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/EntityLevel.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Level
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/EntityLevel.cs
     startLine: 38
@@ -125,10 +125,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/EntityLevel.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: AddExp
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/EntityLevel.cs
-    startLine: 75
+    startLine: 77
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -160,10 +160,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/EntityLevel.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: SetTotalCurrentExp
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/EntityLevel.cs
-    startLine: 99
+    startLine: 101
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -195,10 +195,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/EntityLevel.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: CurrentTotalExperience
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/EntityLevel.cs
-    startLine: 114
+    startLine: 116
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -227,10 +227,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/EntityLevel.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: CurrentLevelTotalExperience
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/EntityLevel.cs
-    startLine: 115
+    startLine: 117
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -258,10 +258,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/EntityLevel.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: NextLevelTotalExperience
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/EntityLevel.cs
-    startLine: 119
+    startLine: 121
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -289,10 +289,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/EntityLevel.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: op_Implicit
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/EntityLevel.cs
-    startLine: 127
+    startLine: 129
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -323,10 +323,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/EntityLevel.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: ValidateExperience
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/EntityLevel.cs
-    startLine: 130
+    startLine: 132
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore

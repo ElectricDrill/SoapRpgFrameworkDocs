@@ -17,39 +17,22 @@ items:
   type: Class
   source:
     remote:
-      path: Runtime/SimpleRpgCore/Stats/StatSources/StatToStatModifier.cs
+      path: Runtime/SimpleRpgCore/Stats/StatToStatModifier.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: StatToStatModifier
-    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSources/StatToStatModifier.cs
-    startLine: 6
+    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatToStatModifier.cs
+    startLine: 7
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Stats
   syntax:
-    content: >-
-      [CreateAssetMenu(fileName = "New Stat to Stat Modifier", menuName = "Simple RPG Core/Stat to Stat Modifier")]
-
-      public class StatToStatModifier : ScriptableObject
-    content.vb: >-
-      <CreateAssetMenu(fileName:="New Stat to Stat Modifier", menuName:="Simple RPG Core/Stat to Stat Modifier")>
-
-      Public Class StatToStatModifier Inherits ScriptableObject
+    content: 'public class StatToStatModifier : ScriptableObject'
+    content.vb: Public Class StatToStatModifier Inherits ScriptableObject
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
-  attributes:
-  - type: UnityEngine.CreateAssetMenuAttribute
-    ctor: UnityEngine.CreateAssetMenuAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: fileName
-      type: System.String
-      value: New Stat to Stat Modifier
-    - name: menuName
-      type: System.String
-      value: Simple RPG Core/Stat to Stat Modifier
 - uid: ElectricDrill.SimpleRpgCore.Stats.StatToStatModifier.SourceStat
   commentId: P:ElectricDrill.SimpleRpgCore.Stats.StatToStatModifier.SourceStat
   id: SourceStat
@@ -63,11 +46,11 @@ items:
   type: Property
   source:
     remote:
-      path: Runtime/SimpleRpgCore/Stats/StatSources/StatToStatModifier.cs
+      path: Runtime/SimpleRpgCore/Stats/StatToStatModifier.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: SourceStat
-    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSources/StatToStatModifier.cs
+    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatToStatModifier.cs
     startLine: 13
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
@@ -92,11 +75,11 @@ items:
   type: Property
   source:
     remote:
-      path: Runtime/SimpleRpgCore/Stats/StatSources/StatToStatModifier.cs
+      path: Runtime/SimpleRpgCore/Stats/StatToStatModifier.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: TargetStat
-    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSources/StatToStatModifier.cs
+    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatToStatModifier.cs
     startLine: 14
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
@@ -121,11 +104,11 @@ items:
   type: Property
   source:
     remote:
-      path: Runtime/SimpleRpgCore/Stats/StatSources/StatToStatModifier.cs
+      path: Runtime/SimpleRpgCore/Stats/StatToStatModifier.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Percentage
-    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSources/StatToStatModifier.cs
+    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatToStatModifier.cs
     startLine: 15
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime

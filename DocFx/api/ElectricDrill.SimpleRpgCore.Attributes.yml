@@ -5,10 +5,12 @@ items:
   id: ElectricDrill.SimpleRpgCore.Attributes
   children:
   - ElectricDrill.SimpleRpgCore.Attributes.Attribute
+  - ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems
   - ElectricDrill.SimpleRpgCore.Attributes.AttributePointsTracker
   - ElectricDrill.SimpleRpgCore.Attributes.AttributeSet
   - ElectricDrill.SimpleRpgCore.Attributes.AttributeSetInstance
   - ElectricDrill.SimpleRpgCore.Attributes.AttributeSetInstanceExtensions
+  - ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems
   - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes
   - ElectricDrill.SimpleRpgCore.Attributes.IAttributeContainer
   langs:
@@ -55,6 +57,12 @@ references:
   name: Attribute
   nameWithType: Attribute
   fullName: ElectricDrill.SimpleRpgCore.Attributes.Attribute
+- uid: ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems
+  commentId: T:ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems
+  href: ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems.html
+  name: AttributeMenuItems
+  nameWithType: AttributeMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems
 - uid: ElectricDrill.SimpleRpgCore.Attributes.AttributeSet
   commentId: T:ElectricDrill.SimpleRpgCore.Attributes.AttributeSet
   parent: ElectricDrill.SimpleRpgCore.Attributes
@@ -62,9 +70,14 @@ references:
   name: AttributeSet
   nameWithType: AttributeSet
   fullName: ElectricDrill.SimpleRpgCore.Attributes.AttributeSet
+- uid: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems
+  commentId: T:ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems
+  href: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems.html
+  name: AttributeSetMenuItems
+  nameWithType: AttributeSetMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems
 - uid: ElectricDrill.SimpleRpgCore.Attributes.AttributePointsTracker
   commentId: T:ElectricDrill.SimpleRpgCore.Attributes.AttributePointsTracker
-  parent: ElectricDrill.SimpleRpgCore.Attributes
   href: ElectricDrill.SimpleRpgCore.Attributes.AttributePointsTracker.html
   name: AttributePointsTracker
   nameWithType: AttributePointsTracker

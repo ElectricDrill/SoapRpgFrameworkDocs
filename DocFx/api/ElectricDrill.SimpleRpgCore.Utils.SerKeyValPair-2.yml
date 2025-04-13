@@ -21,7 +21,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/SerKeyValPair.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: SerKeyValPair
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/SerKeyValPair.cs
     startLine: 6
@@ -62,7 +62,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/SerKeyValPair.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Key
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/SerKeyValPair.cs
     startLine: 9
@@ -91,7 +91,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/SerKeyValPair.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Value
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/SerKeyValPair.cs
     startLine: 10
@@ -120,7 +120,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/SerKeyValPair.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: .ctor
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/SerKeyValPair.cs
     startLine: 12
@@ -154,7 +154,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/SerKeyValPair.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: op_Implicit
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/SerKeyValPair.cs
     startLine: 17
@@ -188,7 +188,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/SerKeyValPair.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: op_Implicit
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/SerKeyValPair.cs
     startLine: 21

@@ -19,39 +19,22 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributeSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: AttributeSet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributeSet.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
   syntax:
-    content: >-
-      [CreateAssetMenu(fileName = "New Attribute Set", menuName = "Simple RPG Core/Attribute Set")]
-
-      public class AttributeSet : ScriptableObject, IAttributeContainer
-    content.vb: >-
-      <CreateAssetMenu(fileName:="New Attribute Set", menuName:="Simple RPG Core/Attribute Set")>
-
-      Public Class AttributeSet Inherits ScriptableObject Implements IAttributeContainer
+    content: 'public class AttributeSet : ScriptableObject, IAttributeContainer'
+    content.vb: Public Class AttributeSet Inherits ScriptableObject Implements IAttributeContainer
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   implements:
   - ElectricDrill.SimpleRpgCore.Attributes.IAttributeContainer
-  attributes:
-  - type: UnityEngine.CreateAssetMenuAttribute
-    ctor: UnityEngine.CreateAssetMenuAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: fileName
-      type: System.String
-      value: New Attribute Set
-    - name: menuName
-      type: System.String
-      value: Simple RPG Core/Attribute Set
 - uid: ElectricDrill.SimpleRpgCore.Attributes.AttributeSet.Attributes
   commentId: P:ElectricDrill.SimpleRpgCore.Attributes.AttributeSet.Attributes
   id: Attributes
@@ -67,7 +50,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributeSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Attributes
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributeSet.cs
     startLine: 14
@@ -96,7 +79,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributeSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Get
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributeSet.cs
     startLine: 16
@@ -127,7 +110,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributeSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Contains
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributeSet.cs
     startLine: 20

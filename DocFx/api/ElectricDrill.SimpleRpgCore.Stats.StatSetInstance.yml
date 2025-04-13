@@ -26,7 +26,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: StatSetInstance
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
     startLine: 8
@@ -55,7 +55,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: .ctor
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
     startLine: 14
@@ -87,7 +87,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Stats
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
     startLine: 20
@@ -116,7 +116,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: AddValue
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
     startLine: 29
@@ -157,7 +157,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Get
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
     startLine: 38
@@ -192,7 +192,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: this[]
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
     startLine: 43
@@ -226,7 +226,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Clone
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
     startLine: 48
@@ -254,7 +254,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Contains
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
     startLine: 56
@@ -288,7 +288,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetAsPercentage
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
     startLine: 60
@@ -319,7 +319,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetEnumerator
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
     startLine: 64
@@ -348,7 +348,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: op_Addition
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSetInstance.cs
     startLine: 82

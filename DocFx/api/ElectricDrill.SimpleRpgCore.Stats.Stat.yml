@@ -21,22 +21,16 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/Stat.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Stat
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/Stat.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Stats
   syntax:
-    content: >-
-      [CreateAssetMenu(fileName = "New Stat", menuName = "Simple RPG Core/Stat")]
-
-      public class Stat : BoundedValue
-    content.vb: >-
-      <CreateAssetMenu(fileName:="New Stat", menuName:="Simple RPG Core/Stat")>
-
-      Public Class Stat Inherits BoundedValue
+    content: 'public class Stat : BoundedValue'
+    content.vb: Public Class Stat Inherits BoundedValue
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -47,17 +41,6 @@ items:
   - ElectricDrill.SimpleRpgCore.BoundedValue.MaxValue
   - ElectricDrill.SimpleRpgCore.BoundedValue.HasMinValue
   - ElectricDrill.SimpleRpgCore.BoundedValue.MinValue
-  attributes:
-  - type: UnityEngine.CreateAssetMenuAttribute
-    ctor: UnityEngine.CreateAssetMenuAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: fileName
-      type: System.String
-      value: New Stat
-    - name: menuName
-      type: System.String
-      value: Simple RPG Core/Stat
 - uid: ElectricDrill.SimpleRpgCore.Stats.Stat.AttributesScaling
   commentId: P:ElectricDrill.SimpleRpgCore.Stats.Stat.AttributesScaling
   id: AttributesScaling
@@ -73,7 +56,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/Stat.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: AttributesScaling
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/Stat.cs
     startLine: 13
@@ -112,7 +95,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/Stat.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Equals
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/Stat.cs
     startLine: 22
@@ -148,7 +131,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/Stat.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetHashCode
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/Stat.cs
     startLine: 26
@@ -178,7 +161,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/Stat.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: op_Equality
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/Stat.cs
     startLine: 30
@@ -214,7 +197,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/Stat.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: op_Inequality
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/Stat.cs
     startLine: 40

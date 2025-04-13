@@ -24,7 +24,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: AttributePointsTracker
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
     startLine: 9
@@ -61,7 +61,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Available
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
     startLine: 15
@@ -90,7 +90,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: SpentAttributesKeys
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
     startLine: 20
@@ -119,10 +119,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: AddPoints
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
-    startLine: 31
+    startLine: 33
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
@@ -151,10 +151,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetSpentOn
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
-    startLine: 35
+    startLine: 37
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
@@ -182,10 +182,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: SpendOn
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
-    startLine: 39
+    startLine: 41
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
@@ -216,10 +216,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Refund
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
-    startLine: 49
+    startLine: 51
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
@@ -250,10 +250,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Refund
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
-    startLine: 59
+    startLine: 61
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
@@ -279,10 +279,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: RefundAll
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributePointsTracker.cs
-    startLine: 68
+    startLine: 70
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes

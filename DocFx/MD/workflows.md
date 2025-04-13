@@ -191,6 +191,37 @@ Moreover, there is a checkbox labeled `Use Class Base Attributes`. For now, let'
 ![Entity Attributes with fixed base attributes AttributeSet](../images/workflows/entity-attributes-with-attr-set-editor.png)  
 We can assign values to the attributes of `Fixed Base Attributes` as we see fit.
 
+### Adding Modifiers
+
+While base attributes are set in the inspector, modifiers can be added through code using these methods:
+
+```csharp
+// Add flat bonus
+entityAttributes.AddFlatModifier(attribute, value); // Adds fixed amount
+
+// Add percentage bonus
+entityAttributes.AddPercentageModifier(attribute, percentage);
+```
+
+The modifiers are applied in this order:
+1. Base value
+2. Spent attribute points
+3. Flat modifiers
+4. Percentage modifiers
+
+For example, with:
+- Base Strength: 10
+- 2 spent points
+- Flat modifier: +3
+- 40% Strength increase
+
+The final calculation would be:
+1. Base (10) + Spent (+2) = 12
+2. 12 + (Flat) + 3 = 15
+3. 15 + (15 * 0.4) = 21
+
+When adding modifiers through code, the attribute cache will automatically be invalidated to ensure the correct value is returned on the next access.
+
 ## Create stats
 *Keyboard shortcut:* `Ctrl + Alt + S`  
 *Relative path:* `Stat`
@@ -202,7 +233,7 @@ Create a new `Stats` folder, select it and press `S`. Name it `Physical Attack`.
 
 As with attributes, you can assign both a maximum and a minimum value to a stat.
 
-Repeat the process for the `Magical Power`, `Physical Defense`, and `Critical Chance` stats.
+Repeat the process for the `Magical Power`, `Defense`, and `Critical Chance` stats.
 
 Unlike attributes, however, stats include `Attributes Scaling`.
 
@@ -232,4 +263,49 @@ If you want to remove a stat from the set, you can click on the small `-` button
 
 ## Add `EntityStats` to an Entity
 The next step is to assign the stat set we created to an entity. To do this, let's add the `EntityStats` component to our game object. The inspector will look like this:  
-// TODO ADD IMG HERE
+![Entity Stats](../images/workflows/entity-stats.png)
+
+An entity has base stats that can be either fixed or derived from a class. Additionally, stats can be modified through flat modifiers, stat-to-stat modifiers, and percentage modifiers.
+
+`Use Class Base Stats` checkbox determines whether the base stats should come from the entity's class (if one is available) or from fixed values defined in the inspector. For now, let's leave it unchecked since we haven't added a class yet.
+
+With `Use Class Base Stats` unchecked, we need to manually assign a stat set. Set the `Stat Set` field under `Fixed Base Stats` with our `Hero Stat Set`. This will reveal additional fields in the inspector where we can set the base values for each stat:
+![Entity Stats](../images/workflows/entity-stats-fixed-base-stats.png)  
+
+`On Stat Changed` event gets raised whenever any stat value changes due to modifiers. You can use this to update UI elements or trigger other game logic.
+
+`Use Cache` enables caching of final stat values. This is useful for performance when you have many entities or complex stat calculations.
+
+### Adding Modifiers
+
+While base stats are set in the inspector, modifiers can be added through code using these methods:
+
+```csharp
+// Add flat bonus
+entityStats.AddFlatModifier(stat, value); // Adds fixed amount
+
+// Add stat-to-stat scaling
+entityStats.AddStatToStatModifer(targetStat, sourceStat, percentage); 
+
+// Add percentage bonus
+entityStats.AddPercentageModifier(stat, percentage);
+```
+
+The modifiers are applied in this order:
+1. Base value
+2. Flat modifiers
+3. Stat-to-stat modifiers  
+4. Percentage modifiers
+
+For example, with:
+- Base Physical Attack: 100
+- Flat modifier: +20
+- 50% of Strength (value 40) as Physical Attack
+- 25% Physical Attack increase
+
+The final calculation would be:
+1. Base (100) + Flat (+20) = 120
+2. 120 + (40 * 0.5) = 140
+3. 140 + (140 * 0.25) = 175
+
+When adding modifiers through code, the `OnStatChanged` event will automatically be raised if the final value changes.

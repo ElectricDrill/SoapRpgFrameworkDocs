@@ -21,7 +21,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/LongRef.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: LongRef
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/LongRef.cs
     startLine: 6
@@ -58,7 +58,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/LongRef.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: UseConstant
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/LongRef.cs
     startLine: 13
@@ -85,7 +85,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/LongRef.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: ConstantValue
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/LongRef.cs
     startLine: 14
@@ -112,7 +112,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/LongRef.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Variable
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/LongRef.cs
     startLine: 15
@@ -139,7 +139,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/LongRef.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Value
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/LongRef.cs
     startLine: 17
@@ -168,7 +168,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/LongRef.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: op_Implicit
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/LongRef.cs
     startLine: 29

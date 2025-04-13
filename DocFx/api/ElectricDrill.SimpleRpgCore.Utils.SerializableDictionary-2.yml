@@ -27,7 +27,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: SerializableDictionary
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
     startLine: 7
@@ -70,7 +70,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: OnBeforeSerialize
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
     startLine: 16
@@ -100,7 +100,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: OnAfterDeserialize
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
     startLine: 35
@@ -130,7 +130,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: TryGetValue
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
     startLine: 80
@@ -166,7 +166,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: this[]
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
     startLine: 84
@@ -200,7 +200,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Keys
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
     startLine: 94
@@ -231,7 +231,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Values
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
     startLine: 95
@@ -262,7 +262,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: op_Implicit
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
     startLine: 98
@@ -296,7 +296,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: op_Implicit
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
     startLine: 103
@@ -330,7 +330,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Clear
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
     startLine: 107
@@ -358,7 +358,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: ContainsKey
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
     startLine: 113
@@ -391,7 +391,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetEnumerator
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableDictionary.cs
     startLine: 117

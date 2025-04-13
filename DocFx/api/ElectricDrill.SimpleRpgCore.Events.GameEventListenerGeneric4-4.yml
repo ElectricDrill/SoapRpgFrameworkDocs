@@ -19,7 +19,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Events/GameEventListenerGeneric4.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GameEventListenerGeneric4
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Events/GameEventListenerGeneric4.cs
     startLine: 4
@@ -58,7 +58,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Events/GameEventListenerGeneric4.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: _event
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Events/GameEventListenerGeneric4.cs
     startLine: 6
@@ -97,7 +97,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Events/GameEventListenerGeneric4.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: _response
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Events/GameEventListenerGeneric4.cs
     startLine: 7
@@ -136,7 +136,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Events/GameEventListenerGeneric4.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: OnEventRaised
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Events/GameEventListenerGeneric4.cs
     startLine: 17

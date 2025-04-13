@@ -20,10 +20,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/BoundedValue.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: BoundedValue
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/BoundedValue.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -52,10 +52,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/BoundedValue.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: HasMaxValue
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/BoundedValue.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -64,7 +64,7 @@ items:
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public ReadOnly Property HasMaxValue As Boolean
+    content.vb: Public Property HasMaxValue As Boolean
   overload: ElectricDrill.SimpleRpgCore.BoundedValue.HasMaxValue*
 - uid: ElectricDrill.SimpleRpgCore.BoundedValue.MaxValue
   commentId: P:ElectricDrill.SimpleRpgCore.BoundedValue.MaxValue
@@ -81,10 +81,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/BoundedValue.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: MaxValue
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/BoundedValue.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -93,7 +93,7 @@ items:
     parameters: []
     return:
       type: System.Int64
-    content.vb: Public ReadOnly Property MaxValue As Long
+    content.vb: Public Property MaxValue As Long
   overload: ElectricDrill.SimpleRpgCore.BoundedValue.MaxValue*
 - uid: ElectricDrill.SimpleRpgCore.BoundedValue.HasMinValue
   commentId: P:ElectricDrill.SimpleRpgCore.BoundedValue.HasMinValue
@@ -110,10 +110,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/BoundedValue.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: HasMinValue
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/BoundedValue.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -122,7 +122,7 @@ items:
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public ReadOnly Property HasMinValue As Boolean
+    content.vb: Public Property HasMinValue As Boolean
   overload: ElectricDrill.SimpleRpgCore.BoundedValue.HasMinValue*
 - uid: ElectricDrill.SimpleRpgCore.BoundedValue.MinValue
   commentId: P:ElectricDrill.SimpleRpgCore.BoundedValue.MinValue
@@ -139,10 +139,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/BoundedValue.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: MinValue
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/BoundedValue.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -151,7 +151,7 @@ items:
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public ReadOnly Property MinValue As Integer
+    content.vb: Public Property MinValue As Integer
   overload: ElectricDrill.SimpleRpgCore.BoundedValue.MinValue*
 references:
 - uid: ElectricDrill.SimpleRpgCore

@@ -4,10 +4,13 @@ items:
   commentId: N:ElectricDrill.SimpleRpgCore.Scaling
   id: ElectricDrill.SimpleRpgCore.Scaling
   children:
+  - ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems
   - ElectricDrill.SimpleRpgCore.Scaling.AttributesScalingComponent
   - ElectricDrill.SimpleRpgCore.Scaling.ScalingComponent
   - ElectricDrill.SimpleRpgCore.Scaling.ScalingFormula
+  - ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems
   - ElectricDrill.SimpleRpgCore.Scaling.SoSetScalingComponentBase`2
+  - ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems
   - ElectricDrill.SimpleRpgCore.Scaling.StatsScalingComponent
   langs:
   - csharp
@@ -32,6 +35,12 @@ references:
   name: ScalingFormula
   nameWithType: ScalingFormula
   fullName: ElectricDrill.SimpleRpgCore.Scaling.ScalingFormula
+- uid: ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems
+  commentId: T:ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems
+  href: ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems.html
+  name: ScalingFormulaMenuItems
+  nameWithType: ScalingFormulaMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems
 - uid: ElectricDrill.SimpleRpgCore.Scaling.SoSetScalingComponentBase`2
   commentId: T:ElectricDrill.SimpleRpgCore.Scaling.SoSetScalingComponentBase`2
   href: ElectricDrill.SimpleRpgCore.Scaling.SoSetScalingComponentBase-2.html
@@ -69,6 +78,12 @@ references:
   name: StatsScalingComponent
   nameWithType: StatsScalingComponent
   fullName: ElectricDrill.SimpleRpgCore.Scaling.StatsScalingComponent
+- uid: ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems
+  commentId: T:ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems
+  href: ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems.html
+  name: StatScalingComponentMenuItems
+  nameWithType: StatScalingComponentMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems
 - uid: ElectricDrill.SimpleRpgCore.Scaling.AttributesScalingComponent
   commentId: T:ElectricDrill.SimpleRpgCore.Scaling.AttributesScalingComponent
   parent: ElectricDrill.SimpleRpgCore.Scaling
@@ -76,6 +91,12 @@ references:
   name: AttributesScalingComponent
   nameWithType: AttributesScalingComponent
   fullName: ElectricDrill.SimpleRpgCore.Scaling.AttributesScalingComponent
+- uid: ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems
+  commentId: T:ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems
+  href: ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems.html
+  name: AttributeScalingComponentMenuItems
+  nameWithType: AttributeScalingComponentMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems
 - uid: ElectricDrill.SimpleRpgCore.Scaling
   commentId: N:ElectricDrill.SimpleRpgCore.Scaling
   href: ElectricDrill.html

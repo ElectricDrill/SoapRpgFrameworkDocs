@@ -17,7 +17,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/IAttributes.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: IAttributes
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/IAttributes.cs
     startLine: 4
@@ -42,7 +42,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/IAttributes.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Attributes
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/IAttributes.cs
     startLine: 6

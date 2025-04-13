@@ -17,7 +17,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Events/IRaisable.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: IRaisable
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Events/IRaisable.cs
     startLine: 12
@@ -49,7 +49,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Events/IRaisable.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Raise
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Events/IRaisable.cs
     startLine: 14

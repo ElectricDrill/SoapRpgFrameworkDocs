@@ -162,6 +162,25 @@ references:
   commentId: T:ElectricDrill.SimpleRpgCore.Attributes.Attribute
   fullName: ElectricDrill.SimpleRpgCore.Attributes.Attribute
   nameWithType: Attribute
+- uid: ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems
+  name: AttributeMenuItems
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems.html
+  commentId: T:ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems
+  nameWithType: AttributeMenuItems
+- uid: ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems.CreateAttribute
+  name: CreateAttribute()
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems.html#ElectricDrill_SimpleRpgCore_Attributes_AttributeMenuItems_CreateAttribute
+  commentId: M:ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems.CreateAttribute
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems.CreateAttribute()
+  nameWithType: AttributeMenuItems.CreateAttribute()
+- uid: ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems.CreateAttribute*
+  name: CreateAttribute
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems.html#ElectricDrill_SimpleRpgCore_Attributes_AttributeMenuItems_CreateAttribute_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems.CreateAttribute
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems.CreateAttribute
+  nameWithType: AttributeMenuItems.CreateAttribute
 - uid: ElectricDrill.SimpleRpgCore.Attributes.AttributePointsTracker
   name: AttributePointsTracker
   href: api/ElectricDrill.SimpleRpgCore.Attributes.AttributePointsTracker.html
@@ -517,6 +536,25 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetInstanceExtensions.ToAttributeSetInstance
   nameWithType: AttributeSetInstanceExtensions.ToAttributeSetInstance
+- uid: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems
+  name: AttributeSetMenuItems
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems.html
+  commentId: T:ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems
+  nameWithType: AttributeSetMenuItems
+- uid: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems.CreateAttributeSet
+  name: CreateAttributeSet()
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems.html#ElectricDrill_SimpleRpgCore_Attributes_AttributeSetMenuItems_CreateAttributeSet
+  commentId: M:ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems.CreateAttributeSet
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems.CreateAttributeSet()
+  nameWithType: AttributeSetMenuItems.CreateAttributeSet()
+- uid: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems.CreateAttributeSet*
+  name: CreateAttributeSet
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems.html#ElectricDrill_SimpleRpgCore_Attributes_AttributeSetMenuItems_CreateAttributeSet_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems.CreateAttributeSet
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems.CreateAttributeSet
+  nameWithType: AttributeSetMenuItems.CreateAttributeSet
 - uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes
   name: EntityAttributes
   href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html
@@ -552,19 +590,6 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier
   nameWithType: EntityAttributes.AddPercentageModifier
-- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
-  name: AttrPointsTracker
-  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AttrPointsTracker
-  commentId: P:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
-  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
-  nameWithType: EntityAttributes.AttrPointsTracker
-- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker*
-  name: AttrPointsTracker
-  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AttrPointsTracker_
-  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
-  isSpec: "True"
-  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
-  nameWithType: EntityAttributes.AttrPointsTracker
 - uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributeSet
   name: AttributeSet
   href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AttributeSet
@@ -591,6 +616,19 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache
   nameWithType: EntityAttributes.AttributesCache
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.EntityClass
+  name: EntityClass
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_EntityClass
+  commentId: P:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.EntityClass
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.EntityClass
+  nameWithType: EntityAttributes.EntityClass
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.EntityClass*
+  name: EntityClass
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_EntityClass_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.EntityClass
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.EntityClass
+  nameWithType: EntityAttributes.EntityClass
 - uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
   name: FlatModifiers
   href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_FlatModifiers
@@ -643,6 +681,22 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
   nameWithType: EntityAttributes.PercentageModifiers
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn(ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int32)
+  name: SpendOn(Attribute, int)
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_SpendOn_ElectricDrill_SimpleRpgCore_Attributes_Attribute_System_Int32_
+  commentId: M:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn(ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int32)
+  name.vb: SpendOn(Attribute, Integer)
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn(ElectricDrill.SimpleRpgCore.Attributes.Attribute, int)
+  fullName.vb: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn(ElectricDrill.SimpleRpgCore.Attributes.Attribute, Integer)
+  nameWithType: EntityAttributes.SpendOn(Attribute, int)
+  nameWithType.vb: EntityAttributes.SpendOn(Attribute, Integer)
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn*
+  name: SpendOn
+  href: api/ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_SpendOn_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn
+  nameWithType: EntityAttributes.SpendOn
 - uid: ElectricDrill.SimpleRpgCore.Attributes.IAttributeContainer
   name: IAttributeContainer
   href: api/ElectricDrill.SimpleRpgCore.Attributes.IAttributeContainer.html
@@ -818,6 +872,25 @@ references:
   commentId: F:ElectricDrill.SimpleRpgCore.Class.attributeSet
   fullName: ElectricDrill.SimpleRpgCore.Class.attributeSet
   nameWithType: Class.attributeSet
+- uid: ElectricDrill.SimpleRpgCore.ClassMenuItems
+  name: ClassMenuItems
+  href: api/ElectricDrill.SimpleRpgCore.ClassMenuItems.html
+  commentId: T:ElectricDrill.SimpleRpgCore.ClassMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.ClassMenuItems
+  nameWithType: ClassMenuItems
+- uid: ElectricDrill.SimpleRpgCore.ClassMenuItems.CreateClass
+  name: CreateClass()
+  href: api/ElectricDrill.SimpleRpgCore.ClassMenuItems.html#ElectricDrill_SimpleRpgCore_ClassMenuItems_CreateClass
+  commentId: M:ElectricDrill.SimpleRpgCore.ClassMenuItems.CreateClass
+  fullName: ElectricDrill.SimpleRpgCore.ClassMenuItems.CreateClass()
+  nameWithType: ClassMenuItems.CreateClass()
+- uid: ElectricDrill.SimpleRpgCore.ClassMenuItems.CreateClass*
+  name: CreateClass
+  href: api/ElectricDrill.SimpleRpgCore.ClassMenuItems.html#ElectricDrill_SimpleRpgCore_ClassMenuItems_CreateClass_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.ClassMenuItems.CreateClass
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.ClassMenuItems.CreateClass
+  nameWithType: ClassMenuItems.CreateClass
 - uid: ElectricDrill.SimpleRpgCore.EntityClass
   name: EntityClass
   href: api/ElectricDrill.SimpleRpgCore.EntityClass.html
@@ -901,6 +974,19 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.EntityCore.Level
   nameWithType: EntityCore.Level
+- uid: ElectricDrill.SimpleRpgCore.EntityCore.Name
+  name: Name
+  href: api/ElectricDrill.SimpleRpgCore.EntityCore.html#ElectricDrill_SimpleRpgCore_EntityCore_Name
+  commentId: P:ElectricDrill.SimpleRpgCore.EntityCore.Name
+  fullName: ElectricDrill.SimpleRpgCore.EntityCore.Name
+  nameWithType: EntityCore.Name
+- uid: ElectricDrill.SimpleRpgCore.EntityCore.Name*
+  name: Name
+  href: api/ElectricDrill.SimpleRpgCore.EntityCore.html#ElectricDrill_SimpleRpgCore_EntityCore_Name_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.EntityCore.Name
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.EntityCore.Name
+  nameWithType: EntityCore.Name
 - uid: ElectricDrill.SimpleRpgCore.EntityCore.Start
   name: Start()
   href: api/ElectricDrill.SimpleRpgCore.EntityCore.html#ElectricDrill_SimpleRpgCore_EntityCore_Start
@@ -1961,6 +2047,25 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.GrowthFormula.GrowthFoValues
   nameWithType: GrowthFormula.GrowthFoValues
+- uid: ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems
+  name: GrowthFormulaMenuItems
+  href: api/ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.html
+  commentId: T:ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems
+  nameWithType: GrowthFormulaMenuItems
+- uid: ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.CreateGrowthFormula
+  name: CreateGrowthFormula()
+  href: api/ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.html#ElectricDrill_SimpleRpgCore_GrowthFormulaMenuItems_CreateGrowthFormula
+  commentId: M:ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.CreateGrowthFormula
+  fullName: ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.CreateGrowthFormula()
+  nameWithType: GrowthFormulaMenuItems.CreateGrowthFormula()
+- uid: ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.CreateGrowthFormula*
+  name: CreateGrowthFormula
+  href: api/ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.html#ElectricDrill_SimpleRpgCore_GrowthFormulaMenuItems_CreateGrowthFormula_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.CreateGrowthFormula
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.CreateGrowthFormula
+  nameWithType: GrowthFormulaMenuItems.CreateGrowthFormula
 - uid: ElectricDrill.SimpleRpgCore.IAttributes
   name: IAttributes
   href: api/ElectricDrill.SimpleRpgCore.IAttributes.html
@@ -1999,6 +2104,64 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.IClassSource.Class
   nameWithType: IClassSource.Class
+- uid: ElectricDrill.SimpleRpgCore.IEntityCore
+  name: IEntityCore
+  href: api/ElectricDrill.SimpleRpgCore.IEntityCore.html
+  commentId: T:ElectricDrill.SimpleRpgCore.IEntityCore
+  fullName: ElectricDrill.SimpleRpgCore.IEntityCore
+  nameWithType: IEntityCore
+- uid: ElectricDrill.SimpleRpgCore.IEntityCore.Attributes
+  name: Attributes
+  href: api/ElectricDrill.SimpleRpgCore.IEntityCore.html#ElectricDrill_SimpleRpgCore_IEntityCore_Attributes
+  commentId: P:ElectricDrill.SimpleRpgCore.IEntityCore.Attributes
+  fullName: ElectricDrill.SimpleRpgCore.IEntityCore.Attributes
+  nameWithType: IEntityCore.Attributes
+- uid: ElectricDrill.SimpleRpgCore.IEntityCore.Attributes*
+  name: Attributes
+  href: api/ElectricDrill.SimpleRpgCore.IEntityCore.html#ElectricDrill_SimpleRpgCore_IEntityCore_Attributes_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.IEntityCore.Attributes
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.IEntityCore.Attributes
+  nameWithType: IEntityCore.Attributes
+- uid: ElectricDrill.SimpleRpgCore.IEntityCore.Level
+  name: Level
+  href: api/ElectricDrill.SimpleRpgCore.IEntityCore.html#ElectricDrill_SimpleRpgCore_IEntityCore_Level
+  commentId: P:ElectricDrill.SimpleRpgCore.IEntityCore.Level
+  fullName: ElectricDrill.SimpleRpgCore.IEntityCore.Level
+  nameWithType: IEntityCore.Level
+- uid: ElectricDrill.SimpleRpgCore.IEntityCore.Level*
+  name: Level
+  href: api/ElectricDrill.SimpleRpgCore.IEntityCore.html#ElectricDrill_SimpleRpgCore_IEntityCore_Level_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.IEntityCore.Level
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.IEntityCore.Level
+  nameWithType: IEntityCore.Level
+- uid: ElectricDrill.SimpleRpgCore.IEntityCore.Name
+  name: Name
+  href: api/ElectricDrill.SimpleRpgCore.IEntityCore.html#ElectricDrill_SimpleRpgCore_IEntityCore_Name
+  commentId: P:ElectricDrill.SimpleRpgCore.IEntityCore.Name
+  fullName: ElectricDrill.SimpleRpgCore.IEntityCore.Name
+  nameWithType: IEntityCore.Name
+- uid: ElectricDrill.SimpleRpgCore.IEntityCore.Name*
+  name: Name
+  href: api/ElectricDrill.SimpleRpgCore.IEntityCore.html#ElectricDrill_SimpleRpgCore_IEntityCore_Name_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.IEntityCore.Name
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.IEntityCore.Name
+  nameWithType: IEntityCore.Name
+- uid: ElectricDrill.SimpleRpgCore.IEntityCore.Stats
+  name: Stats
+  href: api/ElectricDrill.SimpleRpgCore.IEntityCore.html#ElectricDrill_SimpleRpgCore_IEntityCore_Stats
+  commentId: P:ElectricDrill.SimpleRpgCore.IEntityCore.Stats
+  fullName: ElectricDrill.SimpleRpgCore.IEntityCore.Stats
+  nameWithType: IEntityCore.Stats
+- uid: ElectricDrill.SimpleRpgCore.IEntityCore.Stats*
+  name: Stats
+  href: api/ElectricDrill.SimpleRpgCore.IEntityCore.html#ElectricDrill_SimpleRpgCore_IEntityCore_Stats_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.IEntityCore.Stats
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.IEntityCore.Stats
+  nameWithType: IEntityCore.Stats
 - uid: ElectricDrill.SimpleRpgCore.IExpSource
   name: IExpSource
   href: api/ElectricDrill.SimpleRpgCore.IExpSource.html
@@ -2172,12 +2335,50 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.IStatSet.StatSet
   nameWithType: IStatSet.StatSet
+- uid: ElectricDrill.SimpleRpgCore.IStatSetSource
+  name: IStatSetSource
+  href: api/ElectricDrill.SimpleRpgCore.IStatSetSource.html
+  commentId: T:ElectricDrill.SimpleRpgCore.IStatSetSource
+  fullName: ElectricDrill.SimpleRpgCore.IStatSetSource
+  nameWithType: IStatSetSource
+- uid: ElectricDrill.SimpleRpgCore.IStatSetSource.StatSet
+  name: StatSet
+  href: api/ElectricDrill.SimpleRpgCore.IStatSetSource.html#ElectricDrill_SimpleRpgCore_IStatSetSource_StatSet
+  commentId: P:ElectricDrill.SimpleRpgCore.IStatSetSource.StatSet
+  fullName: ElectricDrill.SimpleRpgCore.IStatSetSource.StatSet
+  nameWithType: IStatSetSource.StatSet
+- uid: ElectricDrill.SimpleRpgCore.IStatSetSource.StatSet*
+  name: StatSet
+  href: api/ElectricDrill.SimpleRpgCore.IStatSetSource.html#ElectricDrill_SimpleRpgCore_IStatSetSource_StatSet_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.IStatSetSource.StatSet
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.IStatSetSource.StatSet
+  nameWithType: IStatSetSource.StatSet
 - uid: ElectricDrill.SimpleRpgCore.Scaling
   name: ElectricDrill.SimpleRpgCore.Scaling
   href: api/ElectricDrill.SimpleRpgCore.Scaling.html
   commentId: N:ElectricDrill.SimpleRpgCore.Scaling
   fullName: ElectricDrill.SimpleRpgCore.Scaling
   nameWithType: ElectricDrill.SimpleRpgCore.Scaling
+- uid: ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems
+  name: AttributeScalingComponentMenuItems
+  href: api/ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems.html
+  commentId: T:ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems
+  nameWithType: AttributeScalingComponentMenuItems
+- uid: ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems.CreateAttributeScalingComponent
+  name: CreateAttributeScalingComponent()
+  href: api/ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems.html#ElectricDrill_SimpleRpgCore_Scaling_AttributeScalingComponentMenuItems_CreateAttributeScalingComponent
+  commentId: M:ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems.CreateAttributeScalingComponent
+  fullName: ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems.CreateAttributeScalingComponent()
+  nameWithType: AttributeScalingComponentMenuItems.CreateAttributeScalingComponent()
+- uid: ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems.CreateAttributeScalingComponent*
+  name: CreateAttributeScalingComponent
+  href: api/ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems.html#ElectricDrill_SimpleRpgCore_Scaling_AttributeScalingComponentMenuItems_CreateAttributeScalingComponent_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems.CreateAttributeScalingComponent
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems.CreateAttributeScalingComponent
+  nameWithType: AttributeScalingComponentMenuItems.CreateAttributeScalingComponent
 - uid: ElectricDrill.SimpleRpgCore.Scaling.AttributesScalingComponent
   name: AttributesScalingComponent
   href: api/ElectricDrill.SimpleRpgCore.Scaling.AttributesScalingComponent.html
@@ -2324,6 +2525,25 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.Scaling.ScalingFormula.TmpTargetScalingComponents
   nameWithType: ScalingFormula.TmpTargetScalingComponents
+- uid: ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems
+  name: ScalingFormulaMenuItems
+  href: api/ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems.html
+  commentId: T:ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems
+  nameWithType: ScalingFormulaMenuItems
+- uid: ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems.CreateScalingFormula
+  name: CreateScalingFormula()
+  href: api/ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems.html#ElectricDrill_SimpleRpgCore_Scaling_ScalingFormulaMenuItems_CreateScalingFormula
+  commentId: M:ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems.CreateScalingFormula
+  fullName: ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems.CreateScalingFormula()
+  nameWithType: ScalingFormulaMenuItems.CreateScalingFormula()
+- uid: ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems.CreateScalingFormula*
+  name: CreateScalingFormula
+  href: api/ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems.html#ElectricDrill_SimpleRpgCore_Scaling_ScalingFormulaMenuItems_CreateScalingFormula_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems.CreateScalingFormula
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems.CreateScalingFormula
+  nameWithType: ScalingFormulaMenuItems.CreateScalingFormula
 - uid: ElectricDrill.SimpleRpgCore.Scaling.SoSetScalingComponentBase`2
   name: SoSetScalingComponentBase<SetType, KeyType>
   href: api/ElectricDrill.SimpleRpgCore.Scaling.SoSetScalingComponentBase-2.html
@@ -2426,6 +2646,25 @@ references:
   fullName.vb: ElectricDrill.SimpleRpgCore.Scaling.SoSetScalingComponentBase(Of SetType, KeyType)._set
   nameWithType: SoSetScalingComponentBase<SetType, KeyType>._set
   nameWithType.vb: SoSetScalingComponentBase(Of SetType, KeyType)._set
+- uid: ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems
+  name: StatScalingComponentMenuItems
+  href: api/ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems.html
+  commentId: T:ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems
+  nameWithType: StatScalingComponentMenuItems
+- uid: ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems.CreateStatScalingComponent
+  name: CreateStatScalingComponent()
+  href: api/ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems.html#ElectricDrill_SimpleRpgCore_Scaling_StatScalingComponentMenuItems_CreateStatScalingComponent
+  commentId: M:ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems.CreateStatScalingComponent
+  fullName: ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems.CreateStatScalingComponent()
+  nameWithType: StatScalingComponentMenuItems.CreateStatScalingComponent()
+- uid: ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems.CreateStatScalingComponent*
+  name: CreateStatScalingComponent
+  href: api/ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems.html#ElectricDrill_SimpleRpgCore_Scaling_StatScalingComponentMenuItems_CreateStatScalingComponent_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems.CreateStatScalingComponent
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems.CreateStatScalingComponent
+  nameWithType: StatScalingComponentMenuItems.CreateStatScalingComponent
 - uid: ElectricDrill.SimpleRpgCore.Scaling.StatsScalingComponent
   name: StatsScalingComponent
   href: api/ElectricDrill.SimpleRpgCore.Scaling.StatsScalingComponent.html
@@ -2635,6 +2874,19 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.Stats.EntityStats.StatSet
   nameWithType: EntityStats.StatSet
+- uid: ElectricDrill.SimpleRpgCore.Stats.EntityStats.StatsCache
+  name: StatsCache
+  href: api/ElectricDrill.SimpleRpgCore.Stats.EntityStats.html#ElectricDrill_SimpleRpgCore_Stats_EntityStats_StatsCache
+  commentId: P:ElectricDrill.SimpleRpgCore.Stats.EntityStats.StatsCache
+  fullName: ElectricDrill.SimpleRpgCore.Stats.EntityStats.StatsCache
+  nameWithType: EntityStats.StatsCache
+- uid: ElectricDrill.SimpleRpgCore.Stats.EntityStats.StatsCache*
+  name: StatsCache
+  href: api/ElectricDrill.SimpleRpgCore.Stats.EntityStats.html#ElectricDrill_SimpleRpgCore_Stats_EntityStats_StatsCache_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Stats.EntityStats.StatsCache
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Stats.EntityStats.StatsCache
+  nameWithType: EntityStats.StatsCache
 - uid: ElectricDrill.SimpleRpgCore.Stats.EntityStats.UseClassBaseStats
   name: UseClassBaseStats
   href: api/ElectricDrill.SimpleRpgCore.Stats.EntityStats.html#ElectricDrill_SimpleRpgCore_Stats_EntityStats_UseClassBaseStats
@@ -2771,6 +3023,25 @@ references:
   fullName.vb: ElectricDrill.SimpleRpgCore.Stats.Stat.<>
   nameWithType: Stat.operator !=
   nameWithType.vb: Stat.<>
+- uid: ElectricDrill.SimpleRpgCore.Stats.StatMenuItems
+  name: StatMenuItems
+  href: api/ElectricDrill.SimpleRpgCore.Stats.StatMenuItems.html
+  commentId: T:ElectricDrill.SimpleRpgCore.Stats.StatMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.Stats.StatMenuItems
+  nameWithType: StatMenuItems
+- uid: ElectricDrill.SimpleRpgCore.Stats.StatMenuItems.CreateStat
+  name: CreateStat()
+  href: api/ElectricDrill.SimpleRpgCore.Stats.StatMenuItems.html#ElectricDrill_SimpleRpgCore_Stats_StatMenuItems_CreateStat
+  commentId: M:ElectricDrill.SimpleRpgCore.Stats.StatMenuItems.CreateStat
+  fullName: ElectricDrill.SimpleRpgCore.Stats.StatMenuItems.CreateStat()
+  nameWithType: StatMenuItems.CreateStat()
+- uid: ElectricDrill.SimpleRpgCore.Stats.StatMenuItems.CreateStat*
+  name: CreateStat
+  href: api/ElectricDrill.SimpleRpgCore.Stats.StatMenuItems.html#ElectricDrill_SimpleRpgCore_Stats_StatMenuItems_CreateStat_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Stats.StatMenuItems.CreateStat
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Stats.StatMenuItems.CreateStat
+  nameWithType: StatMenuItems.CreateStat
 - uid: ElectricDrill.SimpleRpgCore.Stats.StatSet
   name: StatSet
   href: api/ElectricDrill.SimpleRpgCore.Stats.StatSet.html
@@ -2973,6 +3244,25 @@ references:
   fullName.vb: ElectricDrill.SimpleRpgCore.Stats.StatSetInstance.+
   nameWithType: StatSetInstance.operator +
   nameWithType.vb: StatSetInstance.+
+- uid: ElectricDrill.SimpleRpgCore.Stats.StatSetMenuItems
+  name: StatSetMenuItems
+  href: api/ElectricDrill.SimpleRpgCore.Stats.StatSetMenuItems.html
+  commentId: T:ElectricDrill.SimpleRpgCore.Stats.StatSetMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.Stats.StatSetMenuItems
+  nameWithType: StatSetMenuItems
+- uid: ElectricDrill.SimpleRpgCore.Stats.StatSetMenuItems.CreateStatSet
+  name: CreateStatSet()
+  href: api/ElectricDrill.SimpleRpgCore.Stats.StatSetMenuItems.html#ElectricDrill_SimpleRpgCore_Stats_StatSetMenuItems_CreateStatSet
+  commentId: M:ElectricDrill.SimpleRpgCore.Stats.StatSetMenuItems.CreateStatSet
+  fullName: ElectricDrill.SimpleRpgCore.Stats.StatSetMenuItems.CreateStatSet()
+  nameWithType: StatSetMenuItems.CreateStatSet()
+- uid: ElectricDrill.SimpleRpgCore.Stats.StatSetMenuItems.CreateStatSet*
+  name: CreateStatSet
+  href: api/ElectricDrill.SimpleRpgCore.Stats.StatSetMenuItems.html#ElectricDrill_SimpleRpgCore_Stats_StatSetMenuItems_CreateStatSet_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Stats.StatSetMenuItems.CreateStatSet
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Stats.StatSetMenuItems.CreateStatSet
+  nameWithType: StatSetMenuItems.CreateStatSet
 - uid: ElectricDrill.SimpleRpgCore.Stats.StatToStatModifier
   name: StatToStatModifier
   href: api/ElectricDrill.SimpleRpgCore.Stats.StatToStatModifier.html
@@ -3018,6 +3308,25 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.Stats.StatToStatModifier.TargetStat
   nameWithType: StatToStatModifier.TargetStat
+- uid: ElectricDrill.SimpleRpgCore.Stats.StatToStatModifierMenuItems
+  name: StatToStatModifierMenuItems
+  href: api/ElectricDrill.SimpleRpgCore.Stats.StatToStatModifierMenuItems.html
+  commentId: T:ElectricDrill.SimpleRpgCore.Stats.StatToStatModifierMenuItems
+  fullName: ElectricDrill.SimpleRpgCore.Stats.StatToStatModifierMenuItems
+  nameWithType: StatToStatModifierMenuItems
+- uid: ElectricDrill.SimpleRpgCore.Stats.StatToStatModifierMenuItems.CreateStatToStatModifier
+  name: CreateStatToStatModifier()
+  href: api/ElectricDrill.SimpleRpgCore.Stats.StatToStatModifierMenuItems.html#ElectricDrill_SimpleRpgCore_Stats_StatToStatModifierMenuItems_CreateStatToStatModifier
+  commentId: M:ElectricDrill.SimpleRpgCore.Stats.StatToStatModifierMenuItems.CreateStatToStatModifier
+  fullName: ElectricDrill.SimpleRpgCore.Stats.StatToStatModifierMenuItems.CreateStatToStatModifier()
+  nameWithType: StatToStatModifierMenuItems.CreateStatToStatModifier()
+- uid: ElectricDrill.SimpleRpgCore.Stats.StatToStatModifierMenuItems.CreateStatToStatModifier*
+  name: CreateStatToStatModifier
+  href: api/ElectricDrill.SimpleRpgCore.Stats.StatToStatModifierMenuItems.html#ElectricDrill_SimpleRpgCore_Stats_StatToStatModifierMenuItems_CreateStatToStatModifier_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Stats.StatToStatModifierMenuItems.CreateStatToStatModifier
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.Stats.StatToStatModifierMenuItems.CreateStatToStatModifier
+  nameWithType: StatToStatModifierMenuItems.CreateStatToStatModifier
 - uid: ElectricDrill.SimpleRpgCore.Utils
   name: ElectricDrill.SimpleRpgCore.Utils
   href: api/ElectricDrill.SimpleRpgCore.Utils.html

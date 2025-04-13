@@ -19,22 +19,16 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Scaling/ScalingComponents/AttributesScalingComponent.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: AttributesScalingComponent
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Scaling/ScalingComponents/AttributesScalingComponent.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Scaling
   syntax:
-    content: >-
-      [CreateAssetMenu(fileName = "New Attributes Scaling Component", menuName = "Simple RPG Core/Scaling/Attributes Component")]
-
-      public class AttributesScalingComponent : SoSetScalingComponentBase<AttributeSet, Attribute>
-    content.vb: >-
-      <CreateAssetMenu(fileName:="New Attributes Scaling Component", menuName:="Simple RPG Core/Scaling/Attributes Component")>
-
-      Public Class AttributesScalingComponent Inherits SoSetScalingComponentBase(Of AttributeSet, Attribute)
+    content: 'public class AttributesScalingComponent : SoSetScalingComponentBase<AttributeSet, Attribute>'
+    content.vb: Public Class AttributesScalingComponent Inherits SoSetScalingComponentBase(Of AttributeSet, Attribute)
   inheritance:
   - System.Object
   - UnityEngine.Object
@@ -49,17 +43,6 @@ items:
   - ElectricDrill.SimpleRpgCore.Scaling.SoSetScalingComponentBase{ElectricDrill.SimpleRpgCore.Attributes.AttributeSet,ElectricDrill.SimpleRpgCore.Attributes.Attribute}.OnValidate
   - ElectricDrill.SimpleRpgCore.Scaling.SoSetScalingComponentBase{ElectricDrill.SimpleRpgCore.Attributes.AttributeSet,ElectricDrill.SimpleRpgCore.Attributes.Attribute}.GetSetItems
   - ElectricDrill.SimpleRpgCore.Scaling.ScalingComponent.CalculateValue(ElectricDrill.SimpleRpgCore.EntityCore)
-  attributes:
-  - type: UnityEngine.CreateAssetMenuAttribute
-    ctor: UnityEngine.CreateAssetMenuAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: fileName
-      type: System.String
-      value: New Attributes Scaling Component
-    - name: menuName
-      type: System.String
-      value: Simple RPG Core/Scaling/Attributes Component
 - uid: ElectricDrill.SimpleRpgCore.Scaling.AttributesScalingComponent.GetEntitySet(ElectricDrill.SimpleRpgCore.EntityCore)
   commentId: M:ElectricDrill.SimpleRpgCore.Scaling.AttributesScalingComponent.GetEntitySet(ElectricDrill.SimpleRpgCore.EntityCore)
   id: GetEntitySet(ElectricDrill.SimpleRpgCore.EntityCore)
@@ -75,7 +58,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Scaling/ScalingComponents/AttributesScalingComponent.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetEntitySet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Scaling/ScalingComponents/AttributesScalingComponent.cs
     startLine: 10
@@ -108,7 +91,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Scaling/ScalingComponents/AttributesScalingComponent.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetEntityValue
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Scaling/ScalingComponents/AttributesScalingComponent.cs
     startLine: 12
@@ -143,7 +126,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Scaling/ScalingComponents/AttributesScalingComponent.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetSetItems
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Scaling/ScalingComponents/AttributesScalingComponent.cs
     startLine: 14

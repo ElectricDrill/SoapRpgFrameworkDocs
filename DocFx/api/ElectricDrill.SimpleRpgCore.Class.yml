@@ -24,39 +24,22 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Class.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Class
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
   syntax:
-    content: >-
-      [CreateAssetMenu(fileName = "New Class", menuName = "Simple RPG Core/Class")]
-
-      public class Class : ScriptableObject, IStatSet
-    content.vb: >-
-      <CreateAssetMenu(fileName:="New Class", menuName:="Simple RPG Core/Class")>
-
-      Public Class [Class] Inherits ScriptableObject Implements IStatSet
+    content: 'public class Class : ScriptableObject, IStatSetSource'
+    content.vb: Public Class [Class] Inherits ScriptableObject Implements IStatSetSource
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   implements:
-  - ElectricDrill.SimpleRpgCore.IStatSet
-  attributes:
-  - type: UnityEngine.CreateAssetMenuAttribute
-    ctor: UnityEngine.CreateAssetMenuAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: fileName
-      type: System.String
-      value: New Class
-    - name: menuName
-      type: System.String
-      value: Simple RPG Core/Class
+  - ElectricDrill.SimpleRpgCore.IStatSetSource
 - uid: ElectricDrill.SimpleRpgCore.Class._maxHpGrowthFormula
   commentId: F:ElectricDrill.SimpleRpgCore.Class._maxHpGrowthFormula
   id: _maxHpGrowthFormula
@@ -72,7 +55,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Class.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: _maxHpGrowthFormula
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
     startLine: 16
@@ -109,7 +92,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Class.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: attributeSet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
     startLine: 17
@@ -146,7 +129,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Class.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: _statSet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
     startLine: 18
@@ -183,7 +166,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Class.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: AttributeSet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
     startLine: 26
@@ -191,11 +174,11 @@ items:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
   syntax:
-    content: public AttributeSet AttributeSet { get; }
+    content: public virtual AttributeSet AttributeSet { get; }
     parameters: []
     return:
       type: ElectricDrill.SimpleRpgCore.Attributes.AttributeSet
-    content.vb: Public Property AttributeSet As AttributeSet
+    content.vb: Public Overridable Property AttributeSet As AttributeSet
   overload: ElectricDrill.SimpleRpgCore.Class.AttributeSet*
 - uid: ElectricDrill.SimpleRpgCore.Class.StatSet
   commentId: P:ElectricDrill.SimpleRpgCore.Class.StatSet
@@ -212,7 +195,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Class.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: StatSet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
     startLine: 27
@@ -228,7 +211,7 @@ items:
     content.vb: Public Overridable Property StatSet As StatSet
   overload: ElectricDrill.SimpleRpgCore.Class.StatSet*
   implements:
-  - ElectricDrill.SimpleRpgCore.IStatSet.StatSet
+  - ElectricDrill.SimpleRpgCore.IStatSetSource.StatSet
 - uid: ElectricDrill.SimpleRpgCore.Class.GetMaxHpAt(System.Int32)
   commentId: M:ElectricDrill.SimpleRpgCore.Class.GetMaxHpAt(System.Int32)
   id: GetMaxHpAt(System.Int32)
@@ -244,7 +227,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Class.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetMaxHpAt
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
     startLine: 29
@@ -278,7 +261,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Class.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetAttributeAt
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
     startLine: 34
@@ -286,7 +269,7 @@ items:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
   syntax:
-    content: public long GetAttributeAt(Attribute attribute, int level)
+    content: public virtual long GetAttributeAt(Attribute attribute, int level)
     parameters:
     - id: attribute
       type: ElectricDrill.SimpleRpgCore.Attributes.Attribute
@@ -294,7 +277,7 @@ items:
       type: System.Int32
     return:
       type: System.Int64
-    content.vb: Public Function GetAttributeAt(attribute As Attribute, level As Integer) As Long
+    content.vb: Public Overridable Function GetAttributeAt(attribute As Attribute, level As Integer) As Long
   overload: ElectricDrill.SimpleRpgCore.Class.GetAttributeAt*
   nameWithType.vb: Class.GetAttributeAt(Attribute, Integer)
   fullName.vb: ElectricDrill.SimpleRpgCore.Class.GetAttributeAt(ElectricDrill.SimpleRpgCore.Attributes.Attribute, Integer)
@@ -314,7 +297,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Class.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetStatAt
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
     startLine: 39
@@ -382,13 +365,13 @@ references:
   name: ScriptableObject
   nameWithType: ScriptableObject
   fullName: UnityEngine.ScriptableObject
-- uid: ElectricDrill.SimpleRpgCore.IStatSet
-  commentId: T:ElectricDrill.SimpleRpgCore.IStatSet
+- uid: ElectricDrill.SimpleRpgCore.IStatSetSource
+  commentId: T:ElectricDrill.SimpleRpgCore.IStatSetSource
   parent: ElectricDrill.SimpleRpgCore
-  href: ElectricDrill.SimpleRpgCore.IStatSet.html
-  name: IStatSet
-  nameWithType: IStatSet
-  fullName: ElectricDrill.SimpleRpgCore.IStatSet
+  href: ElectricDrill.SimpleRpgCore.IStatSetSource.html
+  name: IStatSetSource
+  nameWithType: IStatSetSource
+  fullName: ElectricDrill.SimpleRpgCore.IStatSetSource
 - uid: System
   commentId: N:System
   isExternal: true
@@ -495,13 +478,13 @@ references:
   name: StatSet
   nameWithType: Class.StatSet
   fullName: ElectricDrill.SimpleRpgCore.Class.StatSet
-- uid: ElectricDrill.SimpleRpgCore.IStatSet.StatSet
-  commentId: P:ElectricDrill.SimpleRpgCore.IStatSet.StatSet
-  parent: ElectricDrill.SimpleRpgCore.IStatSet
-  href: ElectricDrill.SimpleRpgCore.IStatSet.html#ElectricDrill_SimpleRpgCore_IStatSet_StatSet
+- uid: ElectricDrill.SimpleRpgCore.IStatSetSource.StatSet
+  commentId: P:ElectricDrill.SimpleRpgCore.IStatSetSource.StatSet
+  parent: ElectricDrill.SimpleRpgCore.IStatSetSource
+  href: ElectricDrill.SimpleRpgCore.IStatSetSource.html#ElectricDrill_SimpleRpgCore_IStatSetSource_StatSet
   name: StatSet
-  nameWithType: IStatSet.StatSet
-  fullName: ElectricDrill.SimpleRpgCore.IStatSet.StatSet
+  nameWithType: IStatSetSource.StatSet
+  fullName: ElectricDrill.SimpleRpgCore.IStatSetSource.StatSet
 - uid: ElectricDrill.SimpleRpgCore.Class.GetMaxHpAt*
   commentId: Overload:ElectricDrill.SimpleRpgCore.Class.GetMaxHpAt
   href: ElectricDrill.SimpleRpgCore.Class.html#ElectricDrill_SimpleRpgCore_Class_GetMaxHpAt_System_Int32_

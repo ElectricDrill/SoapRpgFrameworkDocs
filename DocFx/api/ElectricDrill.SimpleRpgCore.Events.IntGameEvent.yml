@@ -16,7 +16,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Events/GeneratedEvents/GeneralPurposeEventsGenerator/GameEvents/1/IntGameEvent.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: IntGameEvent
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Events/GeneratedEvents/GeneralPurposeEventsGenerator/GameEvents/1/IntGameEvent.cs
     startLine: 7

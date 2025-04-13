@@ -17,7 +17,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/InitializationUtils.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: InitializationUtils
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/InitializationUtils.cs
     startLine: 5
@@ -44,7 +44,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/InitializationUtils.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: RefreshInspectorReservedValues
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/InitializationUtils.cs
     startLine: 7

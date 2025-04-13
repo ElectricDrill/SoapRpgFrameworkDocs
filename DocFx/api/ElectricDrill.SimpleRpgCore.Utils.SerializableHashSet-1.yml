@@ -28,7 +28,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: SerializableHashSet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
     startLine: 10
@@ -70,7 +70,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: OnBeforeSerialize
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
     startLine: 20
@@ -100,7 +100,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: OnAfterDeserialize
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
     startLine: 41
@@ -130,7 +130,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetEnumerator
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
     startLine: 71
@@ -161,7 +161,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Count
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
     startLine: 79
@@ -192,7 +192,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Add
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
     startLine: 81
@@ -224,7 +224,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Clear
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
     startLine: 85
@@ -253,7 +253,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Contains
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
     startLine: 89
@@ -287,7 +287,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: CopyTo
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
     startLine: 93
@@ -322,7 +322,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Remove
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
     startLine: 97
@@ -356,7 +356,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: RemoveWhere
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
     startLine: 101
@@ -390,7 +390,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: IsReadOnly
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
     startLine: 106
@@ -422,7 +422,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetObjectData
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SerializableHashSet.cs
     startLine: 108

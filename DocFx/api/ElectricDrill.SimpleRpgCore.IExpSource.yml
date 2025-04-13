@@ -18,7 +18,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/IExpSource.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: IExpSource
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/IExpSource.cs
     startLine: 2
@@ -43,7 +43,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/IExpSource.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Harvested
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/IExpSource.cs
     startLine: 3
@@ -72,7 +72,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/IExpSource.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Exp
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/IExpSource.cs
     startLine: 5

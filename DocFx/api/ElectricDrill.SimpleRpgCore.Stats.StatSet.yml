@@ -19,39 +19,22 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: StatSet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSet.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Stats
   syntax:
-    content: >-
-      [CreateAssetMenu(fileName = "New StatSet", menuName = "Simple RPG Core/Stat Set")]
-
-      public class StatSet : ScriptableObject, IStatContainer
-    content.vb: >-
-      <CreateAssetMenu(fileName:="New StatSet", menuName:="Simple RPG Core/Stat Set")>
-
-      Public Class StatSet Inherits ScriptableObject Implements IStatContainer
+    content: 'public class StatSet : ScriptableObject, IStatContainer'
+    content.vb: Public Class StatSet Inherits ScriptableObject Implements IStatContainer
   inheritance:
   - System.Object
   - UnityEngine.Object
   - UnityEngine.ScriptableObject
   implements:
   - ElectricDrill.SimpleRpgCore.Stats.IStatContainer
-  attributes:
-  - type: UnityEngine.CreateAssetMenuAttribute
-    ctor: UnityEngine.CreateAssetMenuAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: fileName
-      type: System.String
-      value: New StatSet
-    - name: menuName
-      type: System.String
-      value: Simple RPG Core/Stat Set
 - uid: ElectricDrill.SimpleRpgCore.Stats.StatSet.Stats
   commentId: P:ElectricDrill.SimpleRpgCore.Stats.StatSet.Stats
   id: Stats
@@ -67,7 +50,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Stats
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSet.cs
     startLine: 13
@@ -96,7 +79,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Get
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSet.cs
     startLine: 15
@@ -127,7 +110,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/StatSet.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Contains
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/StatSet.cs
     startLine: 19

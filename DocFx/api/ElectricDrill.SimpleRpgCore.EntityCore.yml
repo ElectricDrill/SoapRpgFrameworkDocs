@@ -8,6 +8,7 @@ items:
   - ElectricDrill.SimpleRpgCore.EntityCore.Attributes
   - ElectricDrill.SimpleRpgCore.EntityCore.Awake
   - ElectricDrill.SimpleRpgCore.EntityCore.Level
+  - ElectricDrill.SimpleRpgCore.EntityCore.Name
   - ElectricDrill.SimpleRpgCore.EntityCore.Start
   - ElectricDrill.SimpleRpgCore.EntityCore.Stats
   - ElectricDrill.SimpleRpgCore.EntityCore.Update
@@ -22,10 +23,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/EntityCore.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: EntityCore
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/EntityCore.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -56,10 +57,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/EntityCore.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Level
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/EntityCore.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -88,10 +89,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/EntityCore.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Stats
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/EntityCore.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -117,10 +118,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/EntityCore.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Attributes
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/EntityCore.cs
-    startLine: 21
+    startLine: 22
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -134,6 +135,35 @@ items:
   overload: ElectricDrill.SimpleRpgCore.EntityCore.Attributes*
   implements:
   - ElectricDrill.SimpleRpgCore.IAttributes.Attributes
+- uid: ElectricDrill.SimpleRpgCore.EntityCore.Name
+  commentId: P:ElectricDrill.SimpleRpgCore.EntityCore.Name
+  id: Name
+  parent: ElectricDrill.SimpleRpgCore.EntityCore
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: EntityCore.Name
+  fullName: ElectricDrill.SimpleRpgCore.EntityCore.Name
+  type: Property
+  source:
+    remote:
+      path: Runtime/SimpleRpgCore/EntityCore.cs
+      branch: main
+      repo: https://github.com/Cis8/SoapRpgFramework
+    id: Name
+    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/EntityCore.cs
+    startLine: 24
+  assemblies:
+  - ElectricDrill.SimpleRPGCore.Runtime
+  namespace: ElectricDrill.SimpleRpgCore
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: ElectricDrill.SimpleRpgCore.EntityCore.Name*
 - uid: ElectricDrill.SimpleRpgCore.EntityCore.Awake
   commentId: M:ElectricDrill.SimpleRpgCore.EntityCore.Awake
   id: Awake
@@ -149,10 +179,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/EntityCore.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Awake
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/EntityCore.cs
-    startLine: 28
+    startLine: 31
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -175,10 +205,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/EntityCore.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Start
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/EntityCore.cs
-    startLine: 31
+    startLine: 34
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -201,10 +231,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/EntityCore.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Update
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/EntityCore.cs
-    startLine: 46
+    startLine: 49
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -413,6 +443,22 @@ references:
   - uid: ElectricDrill.SimpleRpgCore.Attributes
     name: Attributes
     href: ElectricDrill.SimpleRpgCore.Attributes.html
+- uid: ElectricDrill.SimpleRpgCore.EntityCore.Name*
+  commentId: Overload:ElectricDrill.SimpleRpgCore.EntityCore.Name
+  href: ElectricDrill.SimpleRpgCore.EntityCore.html#ElectricDrill_SimpleRpgCore_EntityCore_Name
+  name: Name
+  nameWithType: EntityCore.Name
+  fullName: ElectricDrill.SimpleRpgCore.EntityCore.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: ElectricDrill.SimpleRpgCore.EntityCore.Awake*
   commentId: Overload:ElectricDrill.SimpleRpgCore.EntityCore.Awake
   href: ElectricDrill.SimpleRpgCore.EntityCore.html#ElectricDrill_SimpleRpgCore_EntityCore_Awake

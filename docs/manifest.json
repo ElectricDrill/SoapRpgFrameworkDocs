@@ -135,6 +135,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.SimpleRpgCore.Attributes.AttributeMenuItems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.SimpleRpgCore.Attributes.AttributePointsTracker.yml",
       "output": {
         ".html": {
@@ -169,6 +179,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.SimpleRpgCore.Attributes.AttributeSetInstanceExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.SimpleRpgCore.Attributes.AttributeSetMenuItems.html"
         }
       },
       "version": ""
@@ -219,6 +239,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.SimpleRpgCore.Class.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.SimpleRpgCore.ClassMenuItems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.SimpleRpgCore.ClassMenuItems.html"
         }
       },
       "version": ""
@@ -535,6 +565,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.SimpleRpgCore.IAttributes.yml",
       "output": {
         ".html": {
@@ -549,6 +589,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.SimpleRpgCore.IClassSource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.SimpleRpgCore.IEntityCore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.SimpleRpgCore.IEntityCore.html"
         }
       },
       "version": ""
@@ -595,6 +645,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.SimpleRpgCore.IStatSetSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.SimpleRpgCore.IStatSetSource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.SimpleRpgCore.Scaling.AttributeScalingComponentMenuItems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.SimpleRpgCore.Scaling.AttributesScalingComponent.yml",
       "output": {
         ".html": {
@@ -625,10 +695,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.SimpleRpgCore.Scaling.ScalingFormulaMenuItems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.SimpleRpgCore.Scaling.SoSetScalingComponentBase-2.yml",
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.SimpleRpgCore.Scaling.SoSetScalingComponentBase-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.SimpleRpgCore.Scaling.StatScalingComponentMenuItems.html"
         }
       },
       "version": ""
@@ -685,6 +775,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.SimpleRpgCore.Stats.StatMenuItems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.SimpleRpgCore.Stats.StatMenuItems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.SimpleRpgCore.Stats.StatSet.yml",
       "output": {
         ".html": {
@@ -705,10 +805,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.SimpleRpgCore.Stats.StatSetMenuItems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.SimpleRpgCore.Stats.StatSetMenuItems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.SimpleRpgCore.Stats.StatToStatModifier.yml",
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.SimpleRpgCore.Stats.StatToStatModifier.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.SimpleRpgCore.Stats.StatToStatModifierMenuItems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.SimpleRpgCore.Stats.StatToStatModifierMenuItems.html"
         }
       },
       "version": ""
@@ -1082,6 +1202,26 @@
       "output": {
         "resource": {
           "relative_path": "images/workflows/entity-core-editor.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/entity-stats-fixed-base-stats.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/entity-stats-fixed-base-stats.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/entity-stats.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/entity-stats.png"
         }
       },
       "version": ""

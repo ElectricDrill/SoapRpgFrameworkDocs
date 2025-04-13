@@ -16,23 +16,19 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/Attribute.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Attribute
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/Attribute.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
   syntax:
     content: >-
-      [CreateAssetMenu(fileName = "New Attribute", menuName = "Simple RPG Core/Attribute")]
-
       [Serializable]
 
       public class Attribute : BoundedValue
     content.vb: >-
-      <CreateAssetMenu(fileName:="New Attribute", menuName:="Simple RPG Core/Attribute")>
-
       <Serializable>
 
       Public Class Attribute Inherits BoundedValue
@@ -47,16 +43,6 @@ items:
   - ElectricDrill.SimpleRpgCore.BoundedValue.HasMinValue
   - ElectricDrill.SimpleRpgCore.BoundedValue.MinValue
   attributes:
-  - type: UnityEngine.CreateAssetMenuAttribute
-    ctor: UnityEngine.CreateAssetMenuAttribute.#ctor
-    arguments: []
-    namedArguments:
-    - name: fileName
-      type: System.String
-      value: New Attribute
-    - name: menuName
-      type: System.String
-      value: Simple RPG Core/Attribute
   - type: System.SerializableAttribute
     ctor: System.SerializableAttribute.#ctor
     arguments: []

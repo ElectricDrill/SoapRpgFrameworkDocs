@@ -17,7 +17,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributeSetInstance.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: AttributeSetInstanceExtensions
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributeSetInstance.cs
     startLine: 78
@@ -45,7 +45,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/AttributeSetInstance.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: ToAttributeSetInstance
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/AttributeSetInstance.cs
     startLine: 79

@@ -17,7 +17,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/IStatContainer.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: IStatContainer
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/IStatContainer.cs
     startLine: 2
@@ -42,7 +42,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Stats/IStatContainer.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Contains
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Stats/IStatContainer.cs
     startLine: 4

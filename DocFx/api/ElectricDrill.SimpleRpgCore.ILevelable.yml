@@ -23,7 +23,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/ILevelable.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: ILevelable
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/ILevelable.cs
     startLine: 2
@@ -48,7 +48,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/ILevelable.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Level
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/ILevelable.cs
     startLine: 4
@@ -77,7 +77,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/ILevelable.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: AddExp
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/ILevelable.cs
     startLine: 5
@@ -109,7 +109,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/ILevelable.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: SetTotalCurrentExp
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/ILevelable.cs
     startLine: 6
@@ -141,7 +141,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/ILevelable.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: CurrentTotalExperience
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/ILevelable.cs
     startLine: 7
@@ -170,7 +170,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/ILevelable.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: CurrentLevelTotalExperience
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/ILevelable.cs
     startLine: 8
@@ -198,7 +198,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/ILevelable.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: NextLevelTotalExperience
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/ILevelable.cs
     startLine: 9
@@ -226,7 +226,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Experience/ILevelable.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: ValidateExperience
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Experience/ILevelable.cs
     startLine: 10

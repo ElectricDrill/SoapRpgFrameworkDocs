@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Cis8/SimpleRPGCore/new/main/apiSpec/new?filename=ElectricDrill_SimpleRpgCore_Stats_EntityStats.md&amp;value=---%0Auid%3A%20ElectricDrill.SimpleRpgCore.Stats.EntityStats%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Cis8/SoapRpgFramework/new/main/apiSpec/new?filename=ElectricDrill_SimpleRpgCore_Stats_EntityStats.md&amp;value=---%0Auid%3A%20ElectricDrill.SimpleRpgCore.Stats.EntityStats%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats" class="text-break">
-Class EntityStats  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L21"><i class="bi bi-code-slash"></i></a>
+Class EntityStats  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -106,7 +106,7 @@ When stats change because of a modifier of any kind, the assigned <a class="xref
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[RequireComponent(typeof(EntityCore))]
-public class EntityStats : MonoBehaviour, IStatSet</code></pre>
+public class EntityStats : MonoBehaviour, IStatSetSource</code></pre>
   </div>
 
 
@@ -127,7 +127,7 @@ public class EntityStats : MonoBehaviour, IStatSet</code></pre>
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="ElectricDrill.SimpleRpgCore.IStatSet.html">IStatSet</a></div>
+      <div><a class="xref" href="ElectricDrill.SimpleRpgCore.IStatSetSource.html">IStatSetSource</a></div>
     </dd>
   </dl>
 
@@ -145,7 +145,7 @@ public class EntityStats : MonoBehaviour, IStatSet</code></pre>
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats__entityClass" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats._entityClass">
   _entityClass
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -175,7 +175,7 @@ public class EntityStats : MonoBehaviour, IStatSet</code></pre>
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats__flatModifiers" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats._flatModifiers">
   _flatModifiers
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -205,7 +205,7 @@ public class EntityStats : MonoBehaviour, IStatSet</code></pre>
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats__percentageModifiers" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats._percentageModifiers">
   _percentageModifiers
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -240,7 +240,7 @@ public class EntityStats : MonoBehaviour, IStatSet</code></pre>
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_EntityClass" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.EntityClass">
   EntityClass
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L74"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The class source of the entity. In most cases, this is the <a class="xref" href="ElectricDrill.SimpleRpgCore.Stats.EntityStats.html#ElectricDrill_SimpleRpgCore_Stats_EntityStats_EntityClass">EntityClass</a> component attached to the entity.</p>
@@ -272,10 +272,10 @@ public class EntityStats : MonoBehaviour, IStatSet</code></pre>
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_EntityCore" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.EntityCore">
   EntityCore
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L58"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The conveniently cached <a class="xref" href="ElectricDrill.SimpleRpgCore.Stats.EntityStats.html#ElectricDrill_SimpleRpgCore_Stats_EntityStats_EntityCore">EntityCore</a> component of the entity.</p>
+  <div class="markdown level1 summary"><p>The entity core associated with this stats component.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -304,7 +304,7 @@ public class EntityStats : MonoBehaviour, IStatSet</code></pre>
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_OnStatChanged" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.OnStatChanged">
   OnStatChanged
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L82"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Event raised when a stat changes due to a modifier.</p>
@@ -336,7 +336,7 @@ public class EntityStats : MonoBehaviour, IStatSet</code></pre>
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_StatSet" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.StatSet">
   StatSet
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L116"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The stat set used to calculate the entity's stats.</p>
@@ -366,11 +366,42 @@ Otherwise, it returns the fixed base stats stat set.</p>
 
 
 
+  <a id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_StatsCache_" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.StatsCache*"></a>
+
+  <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_StatsCache" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.StatsCache">
+  StatsCache
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Cache&lt;Stat, long&gt; StatsCache { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache-2.html">Cache</a>&lt;<a class="xref" href="ElectricDrill.SimpleRpgCore.Stats.Stat.html">Stat</a>, <span class="xref">long</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_UseClassBaseStats_" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.UseClassBaseStats*"></a>
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_UseClassBaseStats" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.UseClassBaseStats">
   UseClassBaseStats
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Indicates whether to use base stats from the entity's class or the fixed base stats.</p>
@@ -406,7 +437,7 @@ Otherwise, it returns the fixed base stats stat set.</p>
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_AddFlatModifier_ElectricDrill_SimpleRpgCore_Stats_Stat_System_Int64_" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.AddFlatModifier(ElectricDrill.SimpleRpgCore.Stats.Stat,System.Int64)">
   AddFlatModifier(Stat, long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L202"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L222"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a flat modifier to a stat.</p>
@@ -442,7 +473,7 @@ Otherwise, it returns the fixed base stats stat set.</p>
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_AddPercentageModifier_ElectricDrill_SimpleRpgCore_Stats_Stat_ElectricDrill_SimpleRpgCore_Utils_Percentage_" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.AddPercentageModifier(ElectricDrill.SimpleRpgCore.Stats.Stat,ElectricDrill.SimpleRpgCore.Utils.Percentage)">
   AddPercentageModifier(Stat, Percentage)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L241"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L268"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a <a class="xref" href="ElectricDrill.SimpleRpgCore.Utils.Percentage.html">Percentage</a> modifier to a stat. Such modifiers consider the base value of the stat,
@@ -479,7 +510,7 @@ the flat modifiers, and the stat-to-stat modifiers.</p>
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_AddStatToStatModifer_ElectricDrill_SimpleRpgCore_Stats_Stat_ElectricDrill_SimpleRpgCore_Stats_Stat_ElectricDrill_SimpleRpgCore_Utils_Percentage_" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.AddStatToStatModifer(ElectricDrill.SimpleRpgCore.Stats.Stat,ElectricDrill.SimpleRpgCore.Stats.Stat,ElectricDrill.SimpleRpgCore.Utils.Percentage)">
   AddStatToStatModifer(Stat, Stat, Percentage)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L225"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L251"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a stat-to-stat modifier. Such modifiers add a percentage of the source stat to the target stat.
@@ -519,7 +550,7 @@ Such modifiers consider the base value and the flat modifiers of the source stat
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_Get_ElectricDrill_SimpleRpgCore_Stats_Stat_" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.Get(ElectricDrill.SimpleRpgCore.Stats.Stat)">
   Get(Stat)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L167"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L182"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The final value of a stat, considering all the modifiers.
@@ -565,7 +596,7 @@ Calculation is done in the following order:<br></p>
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_GetBase_ElectricDrill_SimpleRpgCore_Stats_Stat_" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.GetBase(ElectricDrill.SimpleRpgCore.Stats.Stat)">
   GetBase(Stat)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L131"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L146"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The base value is the value of the stat without any modifiers.
@@ -606,7 +637,7 @@ Otherwise, it returns the value from the fixed base stats.</p>
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_OnLevelUp_System_Int32_" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.OnLevelUp(System.Int32)">
   OnLevelUp(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L254"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L282"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Callback method called when the entity levels up.</p>
@@ -639,7 +670,7 @@ Otherwise, it returns the value from the fixed base stats.</p>
 
   <h3 id="ElectricDrill_SimpleRpgCore_Stats_EntityStats_SetFixed_ElectricDrill_SimpleRpgCore_Stats_Stat_System_Int64_" data-uid="ElectricDrill.SimpleRpgCore.Stats.EntityStats.SetFixed(ElectricDrill.SimpleRpgCore.Stats.Stat,System.Int64)">
   SetFixed(Stat, long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L105"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the value of a fixed base stat.</p>
@@ -675,7 +706,7 @@ Otherwise, it returns the value from the fixed base stats.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Cis8/SimpleRPGCore/blob/main/Runtime/SimpleRpgCore/Stats/StatSources/EntityStats.cs/#L21" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/SimpleRpgCore/Stats/EntityStats.cs/#L19" class="edit-link">Edit this page</a>
         </div>
 
 

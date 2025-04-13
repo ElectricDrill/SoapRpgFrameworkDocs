@@ -17,7 +17,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/IClassSource.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: IClassSource
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/IClassSource.cs
     startLine: 2
@@ -42,7 +42,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/IClassSource.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Class
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/IClassSource.cs
     startLine: 4

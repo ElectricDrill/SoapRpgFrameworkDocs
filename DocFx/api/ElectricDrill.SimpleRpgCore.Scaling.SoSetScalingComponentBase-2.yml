@@ -22,7 +22,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SoSetScalingComponentBase.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: SoSetScalingComponentBase
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SoSetScalingComponentBase.cs
     startLine: 10
@@ -61,7 +61,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SoSetScalingComponentBase.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: _set
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SoSetScalingComponentBase.cs
     startLine: 12
@@ -100,7 +100,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SoSetScalingComponentBase.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: CalculateValue
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SoSetScalingComponentBase.cs
     startLine: 16
@@ -135,7 +135,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SoSetScalingComponentBase.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetEntitySet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SoSetScalingComponentBase.cs
     startLine: 25
@@ -168,7 +168,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SoSetScalingComponentBase.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetEntityValue
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SoSetScalingComponentBase.cs
     startLine: 26
@@ -203,7 +203,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SoSetScalingComponentBase.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: OnValidate
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SoSetScalingComponentBase.cs
     startLine: 28
@@ -231,7 +231,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/SoSetScalingComponentBase.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetSetItems
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/SoSetScalingComponentBase.cs
     startLine: 48

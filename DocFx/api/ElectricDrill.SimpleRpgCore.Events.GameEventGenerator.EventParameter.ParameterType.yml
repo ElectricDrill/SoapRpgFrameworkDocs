@@ -18,7 +18,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/GameEventsGenerator.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: ParameterType
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/GameEventsGenerator.cs
     startLine: 23
@@ -43,7 +43,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/GameEventsGenerator.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Native
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/GameEventsGenerator.cs
     startLine: 23
@@ -69,7 +69,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Utils/GameEventsGenerator.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: MonoScript
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Utils/GameEventsGenerator.cs
     startLine: 23

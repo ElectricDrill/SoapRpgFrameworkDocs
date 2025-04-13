@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/SimpleRPGCoreDocs/blob/main/DocFx/MD/workflows.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/SoapRpgFrameworkDocs/blob/main/DocFx/MD/workflows.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -204,7 +204,7 @@ If <code>Use constant</code> is checked instead, the value is readonly.</p>
 <p>For Mac users the <code>Ctrl</code> key corresponds to the <code>Cmd</code> key.</p>
 </div>
 <h2 id="create-attributes">Create attributes</h2>
-<p><em>Keyboard shortcut:</em> <code>A</code><br>
+<p><em>Keyboard shortcut:</em> <code>Ctrl + Alt + A</code><br>
 <em>Relative path:</em> <code>Attribute</code></p>
 <p>Once created a new attribute you can name it as you wish and you'll be able tweak some settings in the inspector.
 For example lets create a <code>Strength</code> attribute. Create an <code>Attributes</code> folder in your hierarchy, then press <code>A</code> and name the newly created attribute <code>Strength</code>.<br>
@@ -214,8 +214,7 @@ In the inspector it should look like:<br>
 <p>By checking <code>Has Min Value</code>, we will set a minimum value for the attribute. By default, the minimum value is zero.</p>
 <p>Repeat the process for also the <code>Constitution</code>, <code>Intelligence</code>, and <code>Dexterity</code> attributes.</p>
 <h2 id="create-an-attribute-set">Create an attribute set</h2>
-<p><em>Keyboard shortcut:</em> <code>Alt + A</code><br>
-<em>Relative path:</em> <code>Attribute Set</code></p>
+<p><em>Relative path:</em> <code>Attribute Set</code></p>
 <p>Now that we have some attributes let's create an <code>AttributeSet</code> named, for example, <code>Hero Attribute Set</code>. In the inspector it should look like this:<br>
 <img src="../images/workflows/hero-attribute-set-editor.png" alt="Hero Attribute Set"></p>
 <p>An attribute set without attributes isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the <code>Add</code> button. Notice that an entry with <code>None (Attribute)</code> appears:<br>
@@ -235,27 +234,54 @@ If you change the level of the entity you'll see that available points change ac
 <p>Moreover, there is a checkbox labeled <code>Use Class Base Attributes</code>. For now, let's leave it unchecked since we haven't added a class yet. However, in this case, we need to manually assign an attribute set. Therefore, let's set the <code>Attribute Set</code> field found under <code>Fixed Base Attributes</code> with the <code>Hero Attribute Set</code>. By doing this, we now have access to additional fields in the inspector:<br>
 <img src="../images/workflows/entity-attributes-with-attr-set-editor.png" alt="Entity Attributes with fixed base attributes AttributeSet"><br>
 We can assign values to the attributes of <code>Fixed Base Attributes</code> as we see fit.</p>
+<h3 id="adding-modifiers">Adding Modifiers</h3>
+<p>While base attributes are set in the inspector, modifiers can be added through code using these methods:</p>
+<pre><code class="lang-csharp">// Add flat bonus
+entityAttributes.AddFlatModifier(attribute, value); // Adds fixed amount
+
+// Add percentage bonus
+entityAttributes.AddPercentageModifier(attribute, percentage);
+</code></pre>
+<p>The modifiers are applied in this order:</p>
+<ol>
+<li>Base value</li>
+<li>Spent attribute points</li>
+<li>Flat modifiers</li>
+<li>Percentage modifiers</li>
+</ol>
+<p>For example, with:</p>
+<ul>
+<li>Base Strength: 10</li>
+<li>2 spent points</li>
+<li>Flat modifier: +3</li>
+<li>40% Strength increase</li>
+</ul>
+<p>The final calculation would be:</p>
+<ol>
+<li>Base (10) + Spent (+2) = 12</li>
+<li>12 + (Flat) + 3 = 15</li>
+<li>15 + (15 * 0.4) = 21</li>
+</ol>
+<p>When adding modifiers through code, the attribute cache will automatically be invalidated to ensure the correct value is returned on the next access.</p>
 <h2 id="create-stats">Create stats</h2>
-<p><em>Keyboard shortcut:</em> <code>S</code><br>
+<p><em>Keyboard shortcut:</em> <code>Ctrl + Alt + S</code><br>
 <em>Relative path:</em> <code>Stat</code></p>
 <p>As with attributes, you can create stats as you wish and assign them the names you prefer.
 Let's create the <code>Physical Attack</code> stat together.
 Create a new <code>Stats</code> folder, select it and press <code>S</code>. Name it <code>Physical Attack</code>. In the inspector, it should look like this:
 <img src="../images/workflows/phy-atck-stat-editor.png" alt="Physical Attack Stat"></p>
 <p>As with attributes, you can assign both a maximum and a minimum value to a stat.</p>
-<p>Repeat the process for the <code>Magical Power</code>, <code>Physical Defense</code>, and <code>Critical Chance</code> stats.</p>
+<p>Repeat the process for the <code>Magical Power</code>, <code>Defense</code>, and <code>Critical Chance</code> stats.</p>
 <p>Unlike attributes, however, stats include <code>Attributes Scaling</code>.</p>
 <h3 id="create-an-attribute-scaling-component-for-stats">Create an Attribute Scaling Component for Stats</h3>
-<p><em>Keyboard shortcut:</em> <code>Ctrl + Alt + A</code><br>
-<em>Relative path:</em> <code>Scaling -&gt; Attribute Scaling Component</code></p>
+<p><em>Relative path:</em> <code>Scaling -&gt; Attribute Scaling Component</code></p>
 <p>Let's create a new <code>Attribute Scaling Component</code> to use with the strength stat we created earlier.
 Create a new folder named, for example, <code>Attribute Scalings for Stats</code>, and inside it, create an attribute scaling component called <code>Physical Attack Strength Scaling</code>.</p>
 <p>Assign the previously created <code>Hero Attribute Set</code> to the <code>Set</code> field. You will see the attributes of the set appear. Here, you can assign scaling values using <code>double</code>. For example, set the scaling of <code>Strength</code> to <code>1.0</code>. This component defines a 100% scaling on the value of <code>Strength</code>.</p>
 <p><img src="../images/workflows/physical-attack-strength-scaling.png" alt="Physical Attack Strength Scaling"></p>
 <p>Now, assign this scaling component to the <code>Physical Attack</code> stat to ensure it scales with the <code>Strength</code> attribute.</p>
 <h2 id="create-a-stat-set">Create a stat set</h2>
-<p><em>Keyboard shortcut:</em> <code>Alt + S</code><br>
-<em>Relative path:</em> <code>Stat Set</code></p>
+<p><em>Relative path:</em> <code>Stat Set</code></p>
 <p>Now that we have some stats, let's create a <code>StatSet</code> named, for example, <code>Hero Stat Set</code>.</p>
 <p>A stat set without stats isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the <code>Add</code> button. Notice that an entry with <code>None (Stat)</code> appears. To assign a stat to the entry, we can either drag &amp; drop from the hierarchy or click on the small circle button on the right of the newly appeared entry. This mechanism is the same used for public variables or, more generally, for fields annotated with <code>SerializeField</code>, so it will be familiar to you.<br>
 Let's add <code>Physical Attack</code> using whichever method you prefer.<br>
@@ -264,12 +290,50 @@ Repeat the process of adding a stat to the set for <code>Magical Power</code>, <
 <p>If you want to remove a stat from the set, you can click on the small <code>-</code> button on the right of the stat you want to remove.</p>
 <h2 id="add-entitystats-to-an-entity">Add <code>EntityStats</code> to an Entity</h2>
 <p>The next step is to assign the stat set we created to an entity. To do this, let's add the <code>EntityStats</code> component to our game object. The inspector will look like this:<br>
-// TODO ADD IMG HERE</p>
+<img src="../images/workflows/entity-stats.png" alt="Entity Stats"></p>
+<p>An entity has base stats that can be either fixed or derived from a class. Additionally, stats can be modified through flat modifiers, stat-to-stat modifiers, and percentage modifiers.</p>
+<p><code>Use Class Base Stats</code> checkbox determines whether the base stats should come from the entity's class (if one is available) or from fixed values defined in the inspector. For now, let's leave it unchecked since we haven't added a class yet.</p>
+<p>With <code>Use Class Base Stats</code> unchecked, we need to manually assign a stat set. Set the <code>Stat Set</code> field under <code>Fixed Base Stats</code> with our <code>Hero Stat Set</code>. This will reveal additional fields in the inspector where we can set the base values for each stat:
+<img src="../images/workflows/entity-stats-fixed-base-stats.png" alt="Entity Stats"></p>
+<p><code>On Stat Changed</code> event gets raised whenever any stat value changes due to modifiers. You can use this to update UI elements or trigger other game logic.</p>
+<p><code>Use Cache</code> enables caching of final stat values. This is useful for performance when you have many entities or complex stat calculations.</p>
+<h3 id="adding-modifiers-1">Adding Modifiers</h3>
+<p>While base stats are set in the inspector, modifiers can be added through code using these methods:</p>
+<pre><code class="lang-csharp">// Add flat bonus
+entityStats.AddFlatModifier(stat, value); // Adds fixed amount
+
+// Add stat-to-stat scaling
+entityStats.AddStatToStatModifer(targetStat, sourceStat, percentage); 
+
+// Add percentage bonus
+entityStats.AddPercentageModifier(stat, percentage);
+</code></pre>
+<p>The modifiers are applied in this order:</p>
+<ol>
+<li>Base value</li>
+<li>Flat modifiers</li>
+<li>Stat-to-stat modifiers</li>
+<li>Percentage modifiers</li>
+</ol>
+<p>For example, with:</p>
+<ul>
+<li>Base Physical Attack: 100</li>
+<li>Flat modifier: +20</li>
+<li>50% of Strength (value 40) as Physical Attack</li>
+<li>25% Physical Attack increase</li>
+</ul>
+<p>The final calculation would be:</p>
+<ol>
+<li>Base (100) + Flat (+20) = 120</li>
+<li>120 + (40 * 0.5) = 140</li>
+<li>140 + (140 * 0.25) = 175</li>
+</ol>
+<p>When adding modifiers through code, the <code>OnStatChanged</code> event will automatically be raised if the final value changes.</p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ElectricDrill/SimpleRPGCoreDocs/blob/main/DocFx/MD/workflows.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/ElectricDrill/SoapRpgFrameworkDocs/blob/main/DocFx/MD/workflows.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

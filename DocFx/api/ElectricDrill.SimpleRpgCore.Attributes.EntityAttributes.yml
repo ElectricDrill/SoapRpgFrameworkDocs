@@ -7,13 +7,14 @@ items:
   children:
   - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddFlatModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int64)
   - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AddPercentageModifier(ElectricDrill.SimpleRpgCore.Attributes.Attribute,ElectricDrill.SimpleRpgCore.Utils.Percentage)
-  - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
   - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributeSet
   - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache
+  - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.EntityClass
   - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
   - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.Get(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
   - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.GetBase(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
   - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
+  - ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn(ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int32)
   langs:
   - csharp
   - vb
@@ -25,7 +26,7 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: EntityAttributes
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
     startLine: 10
@@ -68,10 +69,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: AttributesCache
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
-    startLine: 35
+    startLine: 36
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
@@ -82,35 +83,69 @@ items:
       type: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.Cache{ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int64}
     content.vb: Public ReadOnly Property AttributesCache As Cache(Of Attribute, Long)
   overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributesCache*
-- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
-  commentId: P:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
-  id: AttrPointsTracker
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.EntityClass
+  commentId: P:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.EntityClass
+  id: EntityClass
   parent: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes
   langs:
   - csharp
   - vb
-  name: AttrPointsTracker
-  nameWithType: EntityAttributes.AttrPointsTracker
-  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
+  name: EntityClass
+  nameWithType: EntityAttributes.EntityClass
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.EntityClass
   type: Property
   source:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
-    id: AttrPointsTracker
+      repo: https://github.com/Cis8/SoapRpgFramework
+    id: EntityClass
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
-    startLine: 45
+    startLine: 38
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
   syntax:
-    content: public AttributePointsTracker AttrPointsTracker { get; }
+    content: public IClassSource EntityClass { get; }
     parameters: []
     return:
-      type: ElectricDrill.SimpleRpgCore.Attributes.AttributePointsTracker
-    content.vb: Public ReadOnly Property AttrPointsTracker As AttributePointsTracker
-  overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker*
+      type: ElectricDrill.SimpleRpgCore.IClassSource
+    content.vb: Public Property EntityClass As IClassSource
+  overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.EntityClass*
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn(ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int32)
+  commentId: M:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn(ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int32)
+  id: SpendOn(ElectricDrill.SimpleRpgCore.Attributes.Attribute,System.Int32)
+  parent: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes
+  langs:
+  - csharp
+  - vb
+  name: SpendOn(Attribute, int)
+  nameWithType: EntityAttributes.SpendOn(Attribute, int)
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn(ElectricDrill.SimpleRpgCore.Attributes.Attribute, int)
+  type: Method
+  source:
+    remote:
+      path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
+      branch: main
+      repo: https://github.com/Cis8/SoapRpgFramework
+    id: SpendOn
+    path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
+    startLine: 54
+  assemblies:
+  - ElectricDrill.SimpleRPGCore.Runtime
+  namespace: ElectricDrill.SimpleRpgCore.Attributes
+  syntax:
+    content: public void SpendOn(Attribute attribute, int amount)
+    parameters:
+    - id: attribute
+      type: ElectricDrill.SimpleRpgCore.Attributes.Attribute
+    - id: amount
+      type: System.Int32
+    content.vb: Public Sub SpendOn(attribute As Attribute, amount As Integer)
+  overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn*
+  nameWithType.vb: EntityAttributes.SpendOn(Attribute, Integer)
+  fullName.vb: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn(ElectricDrill.SimpleRpgCore.Attributes.Attribute, Integer)
+  name.vb: SpendOn(Attribute, Integer)
 - uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributeSet
   commentId: P:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributeSet
   id: AttributeSet
@@ -126,19 +161,19 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: AttributeSet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
-    startLine: 47
+    startLine: 59
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
   syntax:
-    content: public AttributeSet AttributeSet { get; }
+    content: public virtual AttributeSet AttributeSet { get; }
     parameters: []
     return:
       type: ElectricDrill.SimpleRpgCore.Attributes.AttributeSet
-    content.vb: Public ReadOnly Property AttributeSet As AttributeSet
+    content.vb: Public Overridable ReadOnly Property AttributeSet As AttributeSet
   overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributeSet*
 - uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
   commentId: P:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers
@@ -155,19 +190,19 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: FlatModifiers
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
-    startLine: 74
+    startLine: 87
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
   syntax:
-    content: protected AttributeSetInstance FlatModifiers { get; }
+    content: protected virtual AttributeSetInstance FlatModifiers { get; }
     parameters: []
     return:
       type: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetInstance
-    content.vb: Protected ReadOnly Property FlatModifiers As AttributeSetInstance
+    content.vb: Protected Overridable ReadOnly Property FlatModifiers As AttributeSetInstance
   overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.FlatModifiers*
 - uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
   commentId: P:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers
@@ -184,19 +219,19 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: PercentageModifiers
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
-    startLine: 81
+    startLine: 89
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
   syntax:
-    content: protected AttributeSetInstance PercentageModifiers { get; }
+    content: protected virtual AttributeSetInstance PercentageModifiers { get; }
     parameters: []
     return:
       type: ElectricDrill.SimpleRpgCore.Attributes.AttributeSetInstance
-    content.vb: Protected ReadOnly Property PercentageModifiers As AttributeSetInstance
+    content.vb: Protected Overridable ReadOnly Property PercentageModifiers As AttributeSetInstance
   overload: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.PercentageModifiers*
 - uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.Get(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
   commentId: M:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.Get(ElectricDrill.SimpleRpgCore.Attributes.Attribute)
@@ -213,10 +248,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: Get
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
-    startLine: 93
+    startLine: 95
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
@@ -244,10 +279,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: AddFlatModifier
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
-    startLine: 120
+    startLine: 121
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
@@ -278,10 +313,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: AddPercentageModifier
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
-    startLine: 125
+    startLine: 126
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
@@ -309,10 +344,10 @@ items:
     remote:
       path: Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
       branch: main
-      repo: https://github.com/Cis8/SimpleRPGCore
+      repo: https://github.com/Cis8/SoapRpgFramework
     id: GetBase
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Attributes/EntityAttributes.cs
-    startLine: 130
+    startLine: 131
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore.Attributes
@@ -523,19 +558,64 @@ references:
   - uid: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils
     name: Utils
     href: ElectricDrill.SimpleRPGCore.SimpleRpgCore.Utils.html
-- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker*
-  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
-  href: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AttrPointsTracker
-  name: AttrPointsTracker
-  nameWithType: EntityAttributes.AttrPointsTracker
-  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttrPointsTracker
-- uid: ElectricDrill.SimpleRpgCore.Attributes.AttributePointsTracker
-  commentId: T:ElectricDrill.SimpleRpgCore.Attributes.AttributePointsTracker
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.EntityClass*
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.EntityClass
+  href: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_EntityClass
+  name: EntityClass
+  nameWithType: EntityAttributes.EntityClass
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.EntityClass
+- uid: ElectricDrill.SimpleRpgCore.IClassSource
+  commentId: T:ElectricDrill.SimpleRpgCore.IClassSource
+  parent: ElectricDrill.SimpleRpgCore
+  href: ElectricDrill.SimpleRpgCore.IClassSource.html
+  name: IClassSource
+  nameWithType: IClassSource
+  fullName: ElectricDrill.SimpleRpgCore.IClassSource
+- uid: ElectricDrill.SimpleRpgCore
+  commentId: N:ElectricDrill.SimpleRpgCore
+  href: ElectricDrill.html
+  name: ElectricDrill.SimpleRpgCore
+  nameWithType: ElectricDrill.SimpleRpgCore
+  fullName: ElectricDrill.SimpleRpgCore
+  spec.csharp:
+  - uid: ElectricDrill
+    name: ElectricDrill
+    href: ElectricDrill.html
+  - name: .
+  - uid: ElectricDrill.SimpleRpgCore
+    name: SimpleRpgCore
+    href: ElectricDrill.SimpleRpgCore.html
+  spec.vb:
+  - uid: ElectricDrill
+    name: ElectricDrill
+    href: ElectricDrill.html
+  - name: .
+  - uid: ElectricDrill.SimpleRpgCore
+    name: SimpleRpgCore
+    href: ElectricDrill.SimpleRpgCore.html
+- uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn*
+  commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn
+  href: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_SpendOn_ElectricDrill_SimpleRpgCore_Attributes_Attribute_System_Int32_
+  name: SpendOn
+  nameWithType: EntityAttributes.SpendOn
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.SpendOn
+- uid: ElectricDrill.SimpleRpgCore.Attributes.Attribute
+  commentId: T:ElectricDrill.SimpleRpgCore.Attributes.Attribute
   parent: ElectricDrill.SimpleRpgCore.Attributes
-  href: ElectricDrill.SimpleRpgCore.Attributes.AttributePointsTracker.html
-  name: AttributePointsTracker
-  nameWithType: AttributePointsTracker
-  fullName: ElectricDrill.SimpleRpgCore.Attributes.AttributePointsTracker
+  href: ElectricDrill.SimpleRpgCore.Attributes.Attribute.html
+  name: Attribute
+  nameWithType: Attribute
+  fullName: ElectricDrill.SimpleRpgCore.Attributes.Attribute
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributeSet*
   commentId: Overload:ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.AttributeSet
   href: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.html#ElectricDrill_SimpleRpgCore_Attributes_EntityAttributes_AttributeSet
@@ -574,13 +654,6 @@ references:
   name: Get
   nameWithType: EntityAttributes.Get
   fullName: ElectricDrill.SimpleRpgCore.Attributes.EntityAttributes.Get
-- uid: ElectricDrill.SimpleRpgCore.Attributes.Attribute
-  commentId: T:ElectricDrill.SimpleRpgCore.Attributes.Attribute
-  parent: ElectricDrill.SimpleRpgCore.Attributes
-  href: ElectricDrill.SimpleRpgCore.Attributes.Attribute.html
-  name: Attribute
-  nameWithType: Attribute
-  fullName: ElectricDrill.SimpleRpgCore.Attributes.Attribute
 - uid: System.Int64
   commentId: T:System.Int64
   parent: System
