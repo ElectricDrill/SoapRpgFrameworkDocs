@@ -64,6 +64,7 @@ We will see these generators in more detail in the section (TODO).
 Some game events are already defined and made available by the package (see the [Samples](samples.md) page).
 
 ### Growth Formulas
+*Relative path:* `Growth Formula`
 As already mentioned in [Introduction](introduction.md), `GrowthFormula` allows defining how a certain value varies as levels increase. A `GrowthFormula` can be instantiated through the hierarchy context menu by going to `Simple RPG Core -> Growth Formula`.
 The package provides a custom property drawer for `GrowthFormula`.
 
@@ -81,8 +82,53 @@ The string can be defined by using the [Unity ExpressionEvaluator](https://docs.
 - `SPRV`: the second previous value of the `GrowthFormula` (value evaluated 2 levels ago)
 - `SUM`: the sum of the values of the `GrowthFormula` from level 1 up to the previous level
 
+#### Example of a `GrowthFormula`
+Let's see an example of how to define a `GrowthFormula` for defining the Physical Attack of a warrior class. First of all, let's create a new `GrowthFormula` instance and name it `Warrior Physical Attack GF`. In the inspector, it should look like this:
+![Warrior Physical Attack](../images/workflows/warrior-physical-attack-editor.png)
+The Max Level, a mandatory field, is set with an `IntVar` assigned by default. We can edit that variable to change the maximum level that will be computed for our growth formula.
+
+> [!WARNING]
+> When modifying the value of a variable referenced in growth formulas, such as Max Level, the growth formulas are not directly updated unless you select them in the inspector. To update all growth formulas simultaneously after changing the maximum level, a command is available in the menu: `Tools > SOAP RPG Framework > Validate All Growth Formulas`.  
+> Validation occurs automatically during script compilation, upon entering play mode, and when instantiating a prefab. This is achieved through the `OnValidate` callback, which ensures that formulas are updated accordingly.
+
+The `Use constant value at level 1` checkbox lets us decide whether to use a constant value at level 1 or not. If checked, the `Constant Value` field will be enabled, and we can set a value for it. In this case, we set it to 10.
+
+The `Add new growth expression` button lets us add a growth expression for a certain range of levels of our choice. If we press it, we will see the following:  
+![Add level growth formula](../images/workflows/add-level-growth-formula.png)
+
+The new section includes two fields: `From Level` and `Growth Expression`. 
+
+- **From Level**: Specifies the starting level at which the corresponding `Growth Expression` becomes effective.  
+- **Growth Expression**: Defines how the value evolves starting from the specified level.  
+
+If the `Growth Expression` overlaps with the `Constant At Lvl 1` option, a warning will appear. To resolve this, set the `From Level` field to `2` or higher, and the warning will disappear.
+
+We want to model the Physical Attack of a warrior as follows:
+- Level 1: 10
+- From level 2 to level 5: +2 per level
+- At level 11: flat +30 (like a bonus due to other game mechanics, such as an awakening)
+- From level 12 and onward: grows by 7% each level
+
+To achieve this, set the `Constant At Lvl 1` field to `10`. For the first growth expression, use `PRV + 2` as the formula. `PRV`, as we saw before, represents the value of the growth formula at the previous level (in this case, `10` at level 1).
+
+This formula ensures that the value grows by `2` times the level at each subsequent level.
+
+Next we want to press the `Add new growth expression` button to add the next growth expression for the levels. 
+For the second growth expression, set `From Level` to `11` and use the formula `PRV + 30`. This ensures that at level 11, a flat bonus of 30 is added to the previous value.  
+
+Finally, for the third growth expression, set `From Level` to `12` and use the formula `PRV * 1.07`. This ensures that from level 12 onward, the value increases by 7% each level.  
+
+After adding these growth expressions, the `GrowthFormula` for the `Warrior Physical Attack GF` should look like this:  
+![Warrior Physical Attack Growth Formula](../images/workflows/warrior-physical-attack-growth-formula.png)  
+
+With this setup, the `GrowthFormula` will correctly calculate the Physical Attack values for the warrior class based on the specified rules.
+
+#### Interactive Chart
+If you hold your mouse for a moment onto the chart, a label will show up, showing the exact value of the growth formula at the pointed level:  
+![Interactive Chart](../images/workflows/interactive-chart.gif)
+
 ## Make a `GameObject` an entity
-To make a `GameObject` an entity, we need to add the `MonoBehaviour` `EntityCore` to it. Select your object from the hierarchy and click, in the inspector, on "Add component". Then search for and select `EntityCore`.
+To make a `GameObject` an entity, we need to add the `MonoBehaviour` `EntityCore` to it. Select your object from the hierarchy and click, in the inspector, on "Add component". Then search for and select `EntityCore`.  
 ![Entity Core Custom Editor](../images/workflows/entity-core-editor.png)  
 
 From the inspector, we can configure several values. Let's analyze them one by one.

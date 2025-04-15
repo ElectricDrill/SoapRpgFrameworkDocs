@@ -1168,6 +1168,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/workflows/add-level-growth-formula.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/add-level-growth-formula.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/workflows/attribute-to-add-to-set-editor.png",
       "output": {
         "resource": {
@@ -1238,6 +1248,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/workflows/interactive-chart.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/interactive-chart.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/workflows/phy-atck-stat-editor.png",
       "output": {
         "resource": {
@@ -1272,6 +1292,26 @@
       "output": {
         "resource": {
           "relative_path": "images/workflows/strength-attr-editor.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/warrior-physical-attack-editor.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/warrior-physical-attack-editor.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/warrior-physical-attack-growth-formula.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/warrior-physical-attack-growth-formula.png"
         }
       },
       "version": ""

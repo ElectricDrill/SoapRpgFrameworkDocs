@@ -141,7 +141,8 @@ Systems subscribe to this event using the <code>MonoBehaviour</code> <code>GameE
 We will see these generators in more detail in the section (TODO).
 Some game events are already defined and made available by the package (see the <a href="samples.html">Samples</a> page).</p>
 <h3 id="growth-formulas">Growth Formulas</h3>
-<p>As already mentioned in <a href="introduction.html">Introduction</a>, <code>GrowthFormula</code> allows defining how a certain value varies as levels increase. A <code>GrowthFormula</code> can be instantiated through the hierarchy context menu by going to <code>Simple RPG Core -&gt; Growth Formula</code>.
+<p><em>Relative path:</em> <code>Growth Formula</code>
+As already mentioned in <a href="introduction.html">Introduction</a>, <code>GrowthFormula</code> allows defining how a certain value varies as levels increase. A <code>GrowthFormula</code> can be instantiated through the hierarchy context menu by going to <code>Simple RPG Core -&gt; Growth Formula</code>.
 The package provides a custom property drawer for <code>GrowthFormula</code>.</p>
 <h4 id="max-level-for-the-values">Max level for the values</h4>
 <p>In the inspector of a <code>GrowthFormula</code>, we can pass an <code>IntVar</code> to define up to which level to grow the values.</p>
@@ -156,8 +157,44 @@ The string can be defined by using the <a href="https://docs.unity3d.com/6000.0/
 <li><code>SPRV</code>: the second previous value of the <code>GrowthFormula</code> (value evaluated 2 levels ago)</li>
 <li><code>SUM</code>: the sum of the values of the <code>GrowthFormula</code> from level 1 up to the previous level</li>
 </ul>
+<h4 id="example-of-a-growthformula">Example of a <code>GrowthFormula</code></h4>
+<p>Let's see an example of how to define a <code>GrowthFormula</code> for defining the Physical Attack of a warrior class. First of all, let's create a new <code>GrowthFormula</code> instance and name it <code>Warrior Physical Attack GF</code>. In the inspector, it should look like this:
+<img src="../images/workflows/warrior-physical-attack-editor.png" alt="Warrior Physical Attack">
+The Max Level, a mandatory field, is set with an <code>IntVar</code> assigned by default. We can edit that variable to change the maximum level that will be computed for our growth formula.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>When modifying the value of a variable referenced in growth formulas, such as Max Level, the growth formulas are not directly updated unless you select them in the inspector. To update all growth formulas simultaneously after changing the maximum level, a command is available in the menu: <code>Tools &gt; SOAP RPG Framework &gt; Validate All Growth Formulas</code>.<br>
+Validation occurs automatically during script compilation, upon entering play mode, and when instantiating a prefab. This is achieved through the <code>OnValidate</code> callback, which ensures that formulas are updated accordingly.</p>
+</div>
+<p>The <code>Use constant value at level 1</code> checkbox lets us decide whether to use a constant value at level 1 or not. If checked, the <code>Constant Value</code> field will be enabled, and we can set a value for it. In this case, we set it to 10.</p>
+<p>The <code>Add new growth expression</code> button lets us add a growth expression for a certain range of levels of our choice. If we press it, we will see the following:<br>
+<img src="../images/workflows/add-level-growth-formula.png" alt="Add level growth formula"></p>
+<p>The new section includes two fields: <code>From Level</code> and <code>Growth Expression</code>.</p>
+<ul>
+<li><strong>From Level</strong>: Specifies the starting level at which the corresponding <code>Growth Expression</code> becomes effective.</li>
+<li><strong>Growth Expression</strong>: Defines how the value evolves starting from the specified level.</li>
+</ul>
+<p>If the <code>Growth Expression</code> overlaps with the <code>Constant At Lvl 1</code> option, a warning will appear. To resolve this, set the <code>From Level</code> field to <code>2</code> or higher, and the warning will disappear.</p>
+<p>We want to model the Physical Attack of a warrior as follows:</p>
+<ul>
+<li>Level 1: 10</li>
+<li>From level 2 to level 5: +2 per level</li>
+<li>At level 11: flat +30 (like a bonus due to other game mechanics, such as an awakening)</li>
+<li>From level 12 and onward: grows by 7% each level</li>
+</ul>
+<p>To achieve this, set the <code>Constant At Lvl 1</code> field to <code>10</code>. For the first growth expression, use <code>PRV + 2</code> as the formula. <code>PRV</code>, as we saw before, represents the value of the growth formula at the previous level (in this case, <code>10</code> at level 1).</p>
+<p>This formula ensures that the value grows by <code>2</code> times the level at each subsequent level.</p>
+<p>Next we want to press the <code>Add new growth expression</code> button to add the next growth expression for the levels.
+For the second growth expression, set <code>From Level</code> to <code>11</code> and use the formula <code>PRV + 30</code>. This ensures that at level 11, a flat bonus of 30 is added to the previous value.</p>
+<p>Finally, for the third growth expression, set <code>From Level</code> to <code>12</code> and use the formula <code>PRV * 1.07</code>. This ensures that from level 12 onward, the value increases by 7% each level.</p>
+<p>After adding these growth expressions, the <code>GrowthFormula</code> for the <code>Warrior Physical Attack GF</code> should look like this:<br>
+<img src="../images/workflows/warrior-physical-attack-growth-formula.png" alt="Warrior Physical Attack Growth Formula"></p>
+<p>With this setup, the <code>GrowthFormula</code> will correctly calculate the Physical Attack values for the warrior class based on the specified rules.</p>
+<h4 id="interactive-chart">Interactive Chart</h4>
+<p>If you hold your mouse for a moment onto the chart, a label will show up, showing the exact value of the growth formula at the pointed level:<br>
+<img src="../images/workflows/interactive-chart.gif" alt="Interactive Chart"></p>
 <h2 id="make-a-gameobject-an-entity">Make a <code>GameObject</code> an entity</h2>
-<p>To make a <code>GameObject</code> an entity, we need to add the <code>MonoBehaviour</code> <code>EntityCore</code> to it. Select your object from the hierarchy and click, in the inspector, on &quot;Add component&quot;. Then search for and select <code>EntityCore</code>.
+<p>To make a <code>GameObject</code> an entity, we need to add the <code>MonoBehaviour</code> <code>EntityCore</code> to it. Select your object from the hierarchy and click, in the inspector, on &quot;Add component&quot;. Then search for and select <code>EntityCore</code>.<br>
 <img src="../images/workflows/entity-core-editor.png" alt="Entity Core Custom Editor"></p>
 <p>From the inspector, we can configure several values. Let's analyze them one by one.</p>
 <p><code>Level</code>: defines the entity's level. By changing its value, we can assign a different level to the entity directly from the inspector. This can be useful for testing purposes.
