@@ -2047,6 +2047,22 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.GrowthFormula.GrowthFoValues
   nameWithType: GrowthFormula.GrowthFoValues
+- uid: ElectricDrill.SimpleRpgCore.GrowthFormula.ValidateLevel(System.Int32,System.String@)
+  name: ValidateLevel(int, out string)
+  href: api/ElectricDrill.SimpleRpgCore.GrowthFormula.html#ElectricDrill_SimpleRpgCore_GrowthFormula_ValidateLevel_System_Int32_System_String__
+  commentId: M:ElectricDrill.SimpleRpgCore.GrowthFormula.ValidateLevel(System.Int32,System.String@)
+  name.vb: ValidateLevel(Integer, String)
+  fullName: ElectricDrill.SimpleRpgCore.GrowthFormula.ValidateLevel(int, out string)
+  fullName.vb: ElectricDrill.SimpleRpgCore.GrowthFormula.ValidateLevel(Integer, String)
+  nameWithType: GrowthFormula.ValidateLevel(int, out string)
+  nameWithType.vb: GrowthFormula.ValidateLevel(Integer, String)
+- uid: ElectricDrill.SimpleRpgCore.GrowthFormula.ValidateLevel*
+  name: ValidateLevel
+  href: api/ElectricDrill.SimpleRpgCore.GrowthFormula.html#ElectricDrill_SimpleRpgCore_GrowthFormula_ValidateLevel_
+  commentId: Overload:ElectricDrill.SimpleRpgCore.GrowthFormula.ValidateLevel
+  isSpec: "True"
+  fullName: ElectricDrill.SimpleRpgCore.GrowthFormula.ValidateLevel
+  nameWithType: GrowthFormula.ValidateLevel
 - uid: ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems
   name: GrowthFormulaMenuItems
   href: api/ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.html

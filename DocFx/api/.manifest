@@ -180,6 +180,7 @@
   "ElectricDrill.SimpleRpgCore.GrowthFormula": "ElectricDrill.SimpleRpgCore.GrowthFormula.yml",
   "ElectricDrill.SimpleRpgCore.GrowthFormula.GetGrowthValue(System.Int32)": "ElectricDrill.SimpleRpgCore.GrowthFormula.yml",
   "ElectricDrill.SimpleRpgCore.GrowthFormula.GrowthFoValues": "ElectricDrill.SimpleRpgCore.GrowthFormula.yml",
+  "ElectricDrill.SimpleRpgCore.GrowthFormula.ValidateLevel(System.Int32,System.String@)": "ElectricDrill.SimpleRpgCore.GrowthFormula.yml",
   "ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems": "ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.yml",
   "ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.CreateGrowthFormula": "ElectricDrill.SimpleRpgCore.GrowthFormulaMenuItems.yml",
   "ElectricDrill.SimpleRpgCore.IAttributes": "ElectricDrill.SimpleRpgCore.IAttributes.yml",

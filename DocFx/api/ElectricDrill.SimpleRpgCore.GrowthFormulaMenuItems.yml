@@ -20,7 +20,7 @@ items:
       repo: https://github.com/Cis8/SoapRpgFramework
     id: GrowthFormulaMenuItems
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/GrowthFormula.cs
-    startLine: 130
+    startLine: 150
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -47,7 +47,7 @@ items:
       repo: https://github.com/Cis8/SoapRpgFramework
     id: CreateGrowthFormula
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/GrowthFormula.cs
-    startLine: 132
+    startLine: 152
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore

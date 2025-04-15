@@ -134,42 +134,21 @@ Systems subscribe to this event using the <code>MonoBehaviour</code> <code>GameE
 <p>Another common use of <code>ScriptableObject</code> in the SOAP architecture is to define variables. The main advantage of these variables in the form of SO is that they can be easily shared between various objects that may decide to share the same value. A common example is the player's game score. There could be a game manager that adds or removes points from this variable, while the UI HUD uses it to display its value on the screen. This way, we can keep the game manager and UI completely decoupled, passing shared values (like variables) through the inspector.</p>
 <h3 id="int-and-long-refs">Int and Long Refs</h3>
 <p><code>IntRef</code> and <code>LongRef</code> allow choosing whether to use a native value (<code>int</code> or <code>long</code>) or an <code>IntVar</code>/<code>LongVar</code>. As mentioned in the previous paragraph, <code>IntVar</code> and <code>LongVar</code> have the advantage of being shareable between different components/game objects, while native values are more immediate to use and require less setup (no need to instantiate an <code>IntVar</code>/<code>LongVar</code> and assign it in the inspector).</p>
-<h2 id="make-a-gameobject-an-entity">Make a <code>GameObject</code> an entity</h2>
-<p>To make a <code>GameObject</code> an entity, we need to add the <code>MonoBehaviour</code> <code>EntityCore</code> to it. Select your object from the hierarchy and click, in the inspector, on &quot;Add component&quot;. Then search for and select <code>EntityCore</code>.</p>
-<p>(TODO) Add image of the entity core</p>
-<p>From the inspector, we can configure a series of values. Let's analyze them one by one.</p>
-<p><code>Level</code>: defines the level of the entity. By changing its value, we can assign a different level to the entity directly from the inspector. This can be useful for testing purposes.
-You will notice the <code>Use Constant</code> checkbox. If checked, you can pass an <code>IntVar</code> instead of using a constant.
-<code>Current Total Experience</code>: Represents the total experience possessed by the entity. This value cannot be modified.</p>
-<h3 id="growth-formulas">Growth Formulas</h3>
-<p>As already mentioned in <a href="introduction.html">Introduction</a>, <code>GrowthFormula</code> allows defining how a certain value varies as levels increase. A <code>GrowthFormula</code> can be instantiated through the hierarchy context menu by going to <code>Simple RPG Core -&gt; Growth Formula</code>.
-The package provides a custom property drawer for <code>GrowthFormula</code>.</p>
-<p>For more details, see the <a href="#growth-formulas">Growth Formulas section</a>.</p>
-<h2 id="make-a-gameobject-an-entity-1">Make a <code>GameObject</code> an entity</h2>
-<p>To make a <code>GameObject</code> an entity, we need to add the <code>MonoBehaviour</code> <code>EntityCore</code> to it. Select your object from the hierarchy and click, in the inspector, on &quot;Add component&quot;. Then search for and select <code>EntityCore</code>.</p>
-<p>(TODO) Add image of the entity core</p>
-<p>From the inspector, we can configure a series of values. Let's analyze them one by one.</p>
-<p><code>Level</code>: defines the level of the entity. By changing its value, we can assign a different level to the entity directly from the inspector. This can be useful for testing purposes.
-You will notice the <code>Use Constant</code> checkbox. If checked, you can pass an <code>IntVar</code> instead of using a constant.<br>
-<code>Current Total Experience</code>: Represents the total experience possessed by the entity. Being this a <code>LongRef</code>, you can choose whether to use a const value (a native <code>long</code>), or a <code>LongVar</code> instead.</p>
+<p>Thanks to a custom property drawer, it will be possible, from the inspector, to check a checkbox named <code>Use constant</code> to use a native value instead of a <code>Ref</code>, and vice versa.</p>
+<p><code>IntRef</code> and <code>LongRef</code> are widely used in the package's <code>MonoBehaviour</code>.</p>
 <h3 id="game-events">Game events</h3>
 <p>The package also supports game events with up to 4 context parameters. They are generics, but in Unity, it is not possible to instantiate classes that derive from <code>ScriptableObject</code> if they are generics with unspecified type parameters. To use them, we must explicitly declare classes that derive from the generic GameEvent and fix the type parameters with concrete types. To simplify the definition of new event types, with specific types as context parameters, the package provides <code>GameEventGenerator</code>. These generators, which derive from SO, allow generating the concrete classes of <code>GameEvent</code>.
 We will see these generators in more detail in the section (TODO).
 Some game events are already defined and made available by the package (see the <a href="samples.html">Samples</a> page).</p>
-<h3 id="int-and-long-vars-1">Int and Long Vars</h3>
-<h3 id="int-and-long-refs-1">Int and Long Refs</h3>
-<p><code>IntRef</code> and <code>LongRef</code> allow choosing whether to use a native value (<code>int</code> or <code>long</code>) or an <code>IntVar</code>/<code>LongVar</code>. As mentioned in the previous paragraph, <code>IntVar</code> and <code>LongVar</code> have the advantage of being shareable between different components/game objects, while native values are more immediate to use and require less setup (no need to instantiate an <code>IntVar</code>/<code>LongVar</code> and assign it in the inspector).</p>
-<p>Thanks to a custom property drawer, it will be possible, from the inspector, to check a checkbox named <code>Use constant</code> to use a native value instead of a <code>Ref</code>, and vice versa.</p>
-<p><code>IntRef</code> and <code>LongRef</code> are widely used in the package's <code>MonoBehaviour</code>.</p>
-<h3 id="growth-formulas-1">Growth Formulas</h3>
+<h3 id="growth-formulas">Growth Formulas</h3>
 <p>As already mentioned in <a href="introduction.html">Introduction</a>, <code>GrowthFormula</code> allows defining how a certain value varies as levels increase. A <code>GrowthFormula</code> can be instantiated through the hierarchy context menu by going to <code>Simple RPG Core -&gt; Growth Formula</code>.
 The package provides a custom property drawer for <code>GrowthFormula</code>.</p>
 <h4 id="max-level-for-the-values">Max level for the values</h4>
 <p>In the inspector of a <code>GrowthFormula</code>, we can pass an <code>IntVar</code> to define up to which level to grow the values.</p>
 <h4 id="use-constant-at-level-one">Use constant at level one</h4>
 <p>If the checkbox named <code>Use constant value at level 1</code> is checked, the respective constant value will be used.</p>
-<h4 id="growth-equations">Growth equations</h4>
-<p>The various values of the <code>GrowthFormula</code> are defined by a function where values, the y-axis, are expressed in function of the levels, the x-axis. Such function is defined as a system of equations. Each equation is a string that associates a math expression to a range of levels.
+<h4 id="growth-expressions">Growth expressions</h4>
+<p>The various values of the <code>GrowthFormula</code> are defined by a function where values, the y-axis, are expressed as a function of the levels, the x-axis. Such a function is defined as a composite function. Each segment of the function is represented by a string that specifies a mathematical expression for a range of levels.
 The string can be defined by using the <a href="https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ExpressionEvaluator.html">Unity ExpressionEvaluator</a> syntax. On top of it, the following terms can be used:</p>
 <ul>
 <li><code>LVL</code>: the level at each iteration</li>
@@ -177,10 +156,9 @@ The string can be defined by using the <a href="https://docs.unity3d.com/6000.0/
 <li><code>SPRV</code>: the second previous value of the <code>GrowthFormula</code> (value evaluated 2 levels ago)</li>
 <li><code>SUM</code>: the sum of the values of the <code>GrowthFormula</code> from level 1 up to the previous level</li>
 </ul>
-<h2 id="make-a-gameobject-an-entity-2">Make a <code>GameObject</code> an entity</h2>
+<h2 id="make-a-gameobject-an-entity">Make a <code>GameObject</code> an entity</h2>
 <p>To make a <code>GameObject</code> an entity, we need to add the <code>MonoBehaviour</code> <code>EntityCore</code> to it. Select your object from the hierarchy and click, in the inspector, on &quot;Add component&quot;. Then search for and select <code>EntityCore</code>.
-<img src="../images/workflows/entity-core-editor.png" alt="Entity Core Custom Editor"><br>
-<em>Image - Entity Core Custom Editor</em></p>
+<img src="../images/workflows/entity-core-editor.png" alt="Entity Core Custom Editor"></p>
 <p>From the inspector, we can configure several values. Let's analyze them one by one.</p>
 <p><code>Level</code>: defines the entity's level. By changing its value, we can assign a different level to the entity directly from the inspector. This can be useful for testing purposes.
 You'll notice the <code>Use Constant</code> checkbox. If checked, you can pass an <code>IntVar</code> instead of using a constant.</p>
