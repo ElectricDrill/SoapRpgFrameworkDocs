@@ -88,7 +88,8 @@ The string can be defined by using the [Unity ExpressionEvaluator](https://docs.
 #### Example of a `GrowthFormula`
 Let's see an example of how to define a `GrowthFormula` for defining the Physical Attack of a warrior class. First of all, let's create a new `GrowthFormula` instance and name it `Warrior Physical Attack GF`. In the inspector, it should look like this:
 ![Warrior Physical Attack](../images/workflows/warrior-physical-attack-editor.png)
-The Max Level, a mandatory field, is set with an `IntVar` assigned by default. We can edit that variable to change the maximum level that will be computed for our growth formula.
+
+The `Max Level`, a mandatory field, is set with an `IntVar` assigned by default. We can edit that variable to change the maximum level that will be computed for our growth formula.
 
 > [!WARNING]
 > When modifying the value of a variable referenced in growth formulas, such as Max Level, the growth formulas are not directly updated unless you select them in the inspector. To update all growth formulas simultaneously after changing the maximum level, a command is available in the menu: `Tools > SOAP RPG Framework > Validate All Growth Formulas`.  
@@ -96,7 +97,8 @@ The Max Level, a mandatory field, is set with an `IntVar` assigned by default. W
 
 The `Use constant value at level 1` checkbox lets us decide whether to use a constant value at level 1 or not. If checked, the `Constant Value` field will be enabled, and we can set a value for it. In this case, we set it to 10.
 
-The `Add new growth expression` button lets us add a growth expression for a certain range of levels of our choice. If we press it, we will see the following:  
+The `Add new growth expression` button lets us add a growth expression for a certain range of levels of our choice. If we press it, we will see the following:
+
 ![Add level growth formula](../images/workflows/add-level-growth-formula.png)
 
 The new section includes two fields: `From Level` and `Growth Expression`. 
@@ -121,17 +123,20 @@ For the second growth expression, set `From Level` to `11` and use the formula `
 
 Finally, for the third growth expression, set `From Level` to `12` and use the formula `PRV * 1.07`. This ensures that from level 12 onward, the value increases by 7% each level.  
 
-After adding these growth expressions, the `GrowthFormula` for the `Warrior Physical Attack GF` should look like this:  
+After adding these growth expressions, the `GrowthFormula` for the `Warrior Physical Attack GF` should look like this:
+
 ![Warrior Physical Attack Growth Formula](../images/workflows/warrior-physical-attack-growth-formula.png)  
 
 With this setup, the `GrowthFormula` will correctly calculate the Physical Attack values for the warrior class based on the specified rules.
 
 #### Interactive Chart
-If you hold your mouse for a moment onto the chart, a label will show up, showing the exact value of the growth formula at the pointed level:  
+If you hold your mouse for a moment onto the chart, a label will show up, showing the exact value of the growth formula at the pointed level:
+
 ![Interactive Chart](../images/workflows/interactive-chart.gif)
 
 ## Make a `GameObject` an entity
-To make a `GameObject` an entity, we need to add the `MonoBehaviour` `EntityCore` to it. Select your object from the hierarchy and click, in the inspector, on "Add component". Then search for and select `EntityCore`.  
+To make a `GameObject` an entity, we need to add the `MonoBehaviour` `EntityCore` to it. Select your object from the hierarchy and click, in the inspector, on "Add component". Then search for and select `EntityCore`.
+
 ![Entity Core Custom Editor](../images/workflows/entity-core-editor.png)  
 
 From the inspector, we can configure several values. Let's analyze them one by one.
@@ -169,7 +174,8 @@ All the instances of the various assets that derive from `ScriptableObject`s can
 
 Once created a new attribute you can name it as you wish and you'll be able tweak some settings in the inspector.
 For example lets create a `Strength` attribute. Create an `Attributes` folder in your hierarchy, then press `A` and name the newly created attribute `Strength`.  
-In the inspector it should look like:  
+In the inspector it should look like:
+
 ![Strength Attribute](../images/workflows/strength-attr-editor.png)
 
 By checking `Has Max Value`, we will set a maximum value for the attribute. By default, there is no maximum value.
@@ -181,10 +187,12 @@ Repeat the process for also the `Constitution`, `Intelligence`, and `Dexterity` 
 ##  Create an attribute set 
 *Relative path:* `Attribute Set`
 
-Now that we have some attributes let's create an `AttributeSet` named, for example, `Hero Attribute Set`. In the inspector it should look like this:  
+Now that we have some attributes let's create an `AttributeSet` named, for example, `Hero Attribute Set`. In the inspector it should look like this:
+
 ![Hero Attribute Set](../images/workflows/hero-attribute-set-editor.png)
 
-An attribute set without attributes isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the `Add` button. Notice that an entry with `None (Attribute)` appears:  
+An attribute set without attributes isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the `Add` button. Notice that an entry with `None (Attribute)` appears:
+
 ![Hero Attribute Set with one empty entry](../images/workflows/attribute-to-add-to-set-editor.png)  
 
 To assign an attribute to the entry, we can either drag & drop from the hierarchy or click on the small circle button on the right of the newly appeared entry. This mechanism is the same used for public variables or, more generally, for fields annotated with `SerializeField`, so it will be familiar to you.  
@@ -194,7 +202,8 @@ Repeat the process of adding an attribute to the set for `Constitution`, `Intell
 If you want to remove an attribute from the set, you can click on the small `-` button on the right of the attribute you want to remove.
 
 ## Add `EntityAttributes` to an entity
-The next step is to assign the attribute set we created to an entity. To do this, let's add the `EntityAttributes` component to our game object. The inspector will look like this:  
+The next step is to assign the attribute set we created to an entity. To do this, let's add the `EntityAttributes` component to our game object. The inspector will look like this:
+
 ![Entity Attributes](../images/workflows/entity-attributes-editor.png)
 
 An entity has base points for attributes, which can be either fixed or derived from a class, a configurable amount of attribute points that can be arbitrarily assigned, and these points are granted at each level-up, along with flat and percentage modifiers for the attributes.
@@ -205,8 +214,10 @@ Except for the modifiers, which can only be assigned via code, all other values 
 `Attribute Points Tracker` allows monitoring and assigning spendable points. `Available Points` defines how many unspent points are still available.  
 If you change the level of the entity you'll see that available points change accordingly. And as you spend them, `Available Points` will decrease.
   
-Moreover, there is a checkbox labeled `Use Class Base Attributes`. For now, let's leave it unchecked since we haven't added a class yet. However, in this case, we need to manually assign an attribute set. Therefore, let's set the `Attribute Set` field found under `Fixed Base Attributes` with the `Hero Attribute Set`. By doing this, we now have access to additional fields in the inspector:  
-![Entity Attributes with fixed base attributes AttributeSet](../images/workflows/entity-attributes-with-attr-set-editor.png)  
+Moreover, there is a checkbox labeled `Use Class Base Attributes`. For now, let's leave it unchecked since we haven't added a class yet. However, in this case, we need to manually assign an attribute set. Therefore, let's set the `Attribute Set` field found under `Fixed Base Attributes` with the `Hero Attribute Set`. By doing this, we now have access to additional fields in the inspector:
+
+![Entity Attributes with fixed base attributes AttributeSet](../images/workflows/entity-attributes-with-attr-set-editor.png)
+
 We can assign values to the attributes of `Fixed Base Attributes` as we see fit.
 
 ### Adding Modifiers
@@ -247,6 +258,7 @@ When adding modifiers through code, the attribute cache will automatically be in
 As with attributes, you can create stats as you wish and assign them the names you prefer.
 Let's create the `Physical Attack` stat together.
 Create a new `Stats` folder, select it and press `S`. Name it `Physical Attack`. In the inspector, it should look like this:
+
 ![Physical Attack Stat](../images/workflows/phy-atck-stat-editor.png)
 
 As with attributes, you can assign both a maximum and a minimum value to a stat.
@@ -274,13 +286,15 @@ Now that we have some stats, let's create a `StatSet` named, for example, `Hero 
 
 A stat set without stats isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the `Add` button. Notice that an entry with `None (Stat)` appears. To assign a stat to the entry, we can either drag & drop from the hierarchy or click on the small circle button on the right of the newly appeared entry. This mechanism is the same used for public variables or, more generally, for fields annotated with `SerializeField`, so it will be familiar to you.  
 Let's add `Physical Attack` using whichever method you prefer.  
-Repeat the process of adding a stat to the set for `Magical Power`, `Defense`, and `Critical Chance` as well. The stat set should look like:  
+Repeat the process of adding a stat to the set for `Magical Power`, `Defense`, and `Critical Chance` as well. The stat set should look like:
+
 ![Hero Stat Set](../images/workflows/stat-set.png)
 
 If you want to remove a stat from the set, you can click on the small `-` button on the right of the stat you want to remove.
 
 ## Add `EntityStats` to an Entity
-The next step is to assign the stat set we created to an entity. To do this, let's add the `EntityStats` component to our game object. The inspector will look like this:  
+The next step is to assign the stat set we created to an entity. To do this, let's add the `EntityStats` component to our game object. The inspector will look like this:
+
 ![Entity Stats](../images/workflows/entity-stats.png)
 
 An entity has base stats that can be either fixed or derived from a class. Additionally, stats can be modified through flat modifiers, stat-to-stat modifiers, and percentage modifiers.
@@ -288,6 +302,7 @@ An entity has base stats that can be either fixed or derived from a class. Addit
 `Use Class Base Stats` checkbox determines whether the base stats should come from the entity's class (if one is available) or from fixed values defined in the inspector. For now, let's leave it unchecked since we haven't added a class yet.
 
 With `Use Class Base Stats` unchecked, we need to manually assign a stat set. Set the `Stat Set` field under `Fixed Base Stats` with our `Hero Stat Set`. This will reveal additional fields in the inspector where we can set the base values for each stat:
+
 ![Entity Stats](../images/workflows/entity-stats-fixed-base-stats.png)  
 
 `On Stat Changed` event gets raised whenever any stat value changes due to modifiers. You can use this to update UI elements or trigger other game logic.
@@ -342,6 +357,7 @@ As we fill these two fields, we'll see that the `Stat Growth Formulas` and `Attr
 Let's proceed to create all the growth formulas for the warrior's stats and attributes.
 Follow the steps outlined in the [Growth Formulas](#growth-formulas) section to create the growth formulas for the warrior's stats and attributes.  
 Once all growth formulas are assigned, the `Warrior` should look like this:
+
 ![Warrior Class](../images/workflows/warrior-class.png)
 
 `Max HP Growth Formula` allows specifying how the Max HP value grows as levels change. In our example, we'll leave it empty.
@@ -377,6 +393,7 @@ We already saw how to create an `Attribute Scaling Component` for stats. On top 
 For example, let's create a `Scaling Formula` called `Mighty Blow SF`. It should look like this in the inspector:
 
 ![Scaling Formula](../images/workflows/scaling-formula.png)
+
 `Base Value` determines the starting point for the scaling formula. It can either be a fixed constant value or a value that scales with levels (e.g., the level of the Mighty Blow skill). If the latter is chosen, a `Growth Formula` must be provided to define how the base value changes as levels increase.
 
 This scaling formula will be used to define the damage of a skill called `Mighty Blow`.

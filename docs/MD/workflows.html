@@ -161,16 +161,16 @@ The string can be defined by using the <a href="https://docs.unity3d.com/6000.0/
 </ul>
 <h4 id="example-of-a-growthformula">Example of a <code>GrowthFormula</code></h4>
 <p>Let's see an example of how to define a <code>GrowthFormula</code> for defining the Physical Attack of a warrior class. First of all, let's create a new <code>GrowthFormula</code> instance and name it <code>Warrior Physical Attack GF</code>. In the inspector, it should look like this:
-<img src="../images/workflows/warrior-physical-attack-editor.png" alt="Warrior Physical Attack">
-The Max Level, a mandatory field, is set with an <code>IntVar</code> assigned by default. We can edit that variable to change the maximum level that will be computed for our growth formula.</p>
+<img src="../images/workflows/warrior-physical-attack-editor.png" alt="Warrior Physical Attack"></p>
+<p>The <code>Max Level</code>, a mandatory field, is set with an <code>IntVar</code> assigned by default. We can edit that variable to change the maximum level that will be computed for our growth formula.</p>
 <div class="WARNING">
 <h5>Warning</h5>
 <p>When modifying the value of a variable referenced in growth formulas, such as Max Level, the growth formulas are not directly updated unless you select them in the inspector. To update all growth formulas simultaneously after changing the maximum level, a command is available in the menu: <code>Tools &gt; SOAP RPG Framework &gt; Validate All Growth Formulas</code>.<br>
 Validation occurs automatically during script compilation, upon entering play mode, and when instantiating a prefab. This is achieved through the <code>OnValidate</code> callback, which ensures that formulas are updated accordingly.</p>
 </div>
 <p>The <code>Use constant value at level 1</code> checkbox lets us decide whether to use a constant value at level 1 or not. If checked, the <code>Constant Value</code> field will be enabled, and we can set a value for it. In this case, we set it to 10.</p>
-<p>The <code>Add new growth expression</code> button lets us add a growth expression for a certain range of levels of our choice. If we press it, we will see the following:<br>
-<img src="../images/workflows/add-level-growth-formula.png" alt="Add level growth formula"></p>
+<p>The <code>Add new growth expression</code> button lets us add a growth expression for a certain range of levels of our choice. If we press it, we will see the following:</p>
+<p><img src="../images/workflows/add-level-growth-formula.png" alt="Add level growth formula"></p>
 <p>The new section includes two fields: <code>From Level</code> and <code>Growth Expression</code>.</p>
 <ul>
 <li><strong>From Level</strong>: Specifies the starting level at which the corresponding <code>Growth Expression</code> becomes effective.</li>
@@ -189,15 +189,15 @@ Validation occurs automatically during script compilation, upon entering play mo
 <p>Next we want to press the <code>Add new growth expression</code> button to add the next growth expression for the levels.
 For the second growth expression, set <code>From Level</code> to <code>11</code> and use the formula <code>PRV + 30</code>. This ensures that at level 11, a flat bonus of 30 is added to the previous value.</p>
 <p>Finally, for the third growth expression, set <code>From Level</code> to <code>12</code> and use the formula <code>PRV * 1.07</code>. This ensures that from level 12 onward, the value increases by 7% each level.</p>
-<p>After adding these growth expressions, the <code>GrowthFormula</code> for the <code>Warrior Physical Attack GF</code> should look like this:<br>
-<img src="../images/workflows/warrior-physical-attack-growth-formula.png" alt="Warrior Physical Attack Growth Formula"></p>
+<p>After adding these growth expressions, the <code>GrowthFormula</code> for the <code>Warrior Physical Attack GF</code> should look like this:</p>
+<p><img src="../images/workflows/warrior-physical-attack-growth-formula.png" alt="Warrior Physical Attack Growth Formula"></p>
 <p>With this setup, the <code>GrowthFormula</code> will correctly calculate the Physical Attack values for the warrior class based on the specified rules.</p>
 <h4 id="interactive-chart">Interactive Chart</h4>
-<p>If you hold your mouse for a moment onto the chart, a label will show up, showing the exact value of the growth formula at the pointed level:<br>
-<img src="../images/workflows/interactive-chart.gif" alt="Interactive Chart"></p>
+<p>If you hold your mouse for a moment onto the chart, a label will show up, showing the exact value of the growth formula at the pointed level:</p>
+<p><img src="../images/workflows/interactive-chart.gif" alt="Interactive Chart"></p>
 <h2 id="make-a-gameobject-an-entity">Make a <code>GameObject</code> an entity</h2>
-<p>To make a <code>GameObject</code> an entity, we need to add the <code>MonoBehaviour</code> <code>EntityCore</code> to it. Select your object from the hierarchy and click, in the inspector, on &quot;Add component&quot;. Then search for and select <code>EntityCore</code>.<br>
-<img src="../images/workflows/entity-core-editor.png" alt="Entity Core Custom Editor"></p>
+<p>To make a <code>GameObject</code> an entity, we need to add the <code>MonoBehaviour</code> <code>EntityCore</code> to it. Select your object from the hierarchy and click, in the inspector, on &quot;Add component&quot;. Then search for and select <code>EntityCore</code>.</p>
+<p><img src="../images/workflows/entity-core-editor.png" alt="Entity Core Custom Editor"></p>
 <p>From the inspector, we can configure several values. Let's analyze them one by one.</p>
 <p><code>Level</code>: defines the entity's level. By changing its value, we can assign a different level to the entity directly from the inspector. This can be useful for testing purposes.
 You'll notice the <code>Use Constant</code> checkbox. If checked, you can pass an <code>IntVar</code> instead of using a constant.</p>
@@ -228,32 +228,32 @@ If <code>Use constant</code> is checked instead, the value is readonly.</p>
 <em>Relative path:</em> <code>Attribute</code></p>
 <p>Once created a new attribute you can name it as you wish and you'll be able tweak some settings in the inspector.
 For example lets create a <code>Strength</code> attribute. Create an <code>Attributes</code> folder in your hierarchy, then press <code>A</code> and name the newly created attribute <code>Strength</code>.<br>
-In the inspector it should look like:<br>
-<img src="../images/workflows/strength-attr-editor.png" alt="Strength Attribute"></p>
+In the inspector it should look like:</p>
+<p><img src="../images/workflows/strength-attr-editor.png" alt="Strength Attribute"></p>
 <p>By checking <code>Has Max Value</code>, we will set a maximum value for the attribute. By default, there is no maximum value.</p>
 <p>By checking <code>Has Min Value</code>, we will set a minimum value for the attribute. By default, the minimum value is zero.</p>
 <p>Repeat the process for also the <code>Constitution</code>, <code>Intelligence</code>, and <code>Dexterity</code> attributes.</p>
 <h2 id="create-an-attribute-set">Create an attribute set</h2>
 <p><em>Relative path:</em> <code>Attribute Set</code></p>
-<p>Now that we have some attributes let's create an <code>AttributeSet</code> named, for example, <code>Hero Attribute Set</code>. In the inspector it should look like this:<br>
-<img src="../images/workflows/hero-attribute-set-editor.png" alt="Hero Attribute Set"></p>
-<p>An attribute set without attributes isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the <code>Add</code> button. Notice that an entry with <code>None (Attribute)</code> appears:<br>
-<img src="../images/workflows/attribute-to-add-to-set-editor.png" alt="Hero Attribute Set with one empty entry"></p>
+<p>Now that we have some attributes let's create an <code>AttributeSet</code> named, for example, <code>Hero Attribute Set</code>. In the inspector it should look like this:</p>
+<p><img src="../images/workflows/hero-attribute-set-editor.png" alt="Hero Attribute Set"></p>
+<p>An attribute set without attributes isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the <code>Add</code> button. Notice that an entry with <code>None (Attribute)</code> appears:</p>
+<p><img src="../images/workflows/attribute-to-add-to-set-editor.png" alt="Hero Attribute Set with one empty entry"></p>
 <p>To assign an attribute to the entry, we can either drag &amp; drop from the hierarchy or click on the small circle button on the right of the newly appeared entry. This mechanism is the same used for public variables or, more generally, for fields annotated with <code>SerializeField</code>, so it will be familiar to you.<br>
 Let's add <code>Strength</code> using whichever method you prefer.
 Repeat the process of adding an attribute to the set for <code>Constitution</code>, <code>Intelligence</code>, and <code>Dexterity</code> as well.</p>
 <p>If you want to remove an attribute from the set, you can click on the small <code>-</code> button on the right of the attribute you want to remove.</p>
 <h2 id="add-entityattributes-to-an-entity">Add <code>EntityAttributes</code> to an entity</h2>
-<p>The next step is to assign the attribute set we created to an entity. To do this, let's add the <code>EntityAttributes</code> component to our game object. The inspector will look like this:<br>
-<img src="../images/workflows/entity-attributes-editor.png" alt="Entity Attributes"></p>
+<p>The next step is to assign the attribute set we created to an entity. To do this, let's add the <code>EntityAttributes</code> component to our game object. The inspector will look like this:</p>
+<p><img src="../images/workflows/entity-attributes-editor.png" alt="Entity Attributes"></p>
 <p>An entity has base points for attributes, which can be either fixed or derived from a class, a configurable amount of attribute points that can be arbitrarily assigned, and these points are granted at each level-up, along with flat and percentage modifiers for the attributes.
 Except for the modifiers, which can only be assigned via code, all other values can be configured from the inspector.</p>
 <p><code>Attr Points Per Level</code> defines how many arbitrarily spendable attribute points are provided at each level-up. They are assigned starting from level 2 on.</p>
 <p><code>Attribute Points Tracker</code> allows monitoring and assigning spendable points. <code>Available Points</code> defines how many unspent points are still available.<br>
 If you change the level of the entity you'll see that available points change accordingly. And as you spend them, <code>Available Points</code> will decrease.</p>
-<p>Moreover, there is a checkbox labeled <code>Use Class Base Attributes</code>. For now, let's leave it unchecked since we haven't added a class yet. However, in this case, we need to manually assign an attribute set. Therefore, let's set the <code>Attribute Set</code> field found under <code>Fixed Base Attributes</code> with the <code>Hero Attribute Set</code>. By doing this, we now have access to additional fields in the inspector:<br>
-<img src="../images/workflows/entity-attributes-with-attr-set-editor.png" alt="Entity Attributes with fixed base attributes AttributeSet"><br>
-We can assign values to the attributes of <code>Fixed Base Attributes</code> as we see fit.</p>
+<p>Moreover, there is a checkbox labeled <code>Use Class Base Attributes</code>. For now, let's leave it unchecked since we haven't added a class yet. However, in this case, we need to manually assign an attribute set. Therefore, let's set the <code>Attribute Set</code> field found under <code>Fixed Base Attributes</code> with the <code>Hero Attribute Set</code>. By doing this, we now have access to additional fields in the inspector:</p>
+<p><img src="../images/workflows/entity-attributes-with-attr-set-editor.png" alt="Entity Attributes with fixed base attributes AttributeSet"></p>
+<p>We can assign values to the attributes of <code>Fixed Base Attributes</code> as we see fit.</p>
 <h3 id="adding-modifiers">Adding Modifiers</h3>
 <p>While base attributes are set in the inspector, modifiers can be added through code using these methods:</p>
 <pre><code class="lang-csharp">// Add flat bonus
@@ -288,8 +288,8 @@ entityAttributes.AddPercentageModifier(attribute, percentage);
 <em>Relative path:</em> <code>Stat</code></p>
 <p>As with attributes, you can create stats as you wish and assign them the names you prefer.
 Let's create the <code>Physical Attack</code> stat together.
-Create a new <code>Stats</code> folder, select it and press <code>S</code>. Name it <code>Physical Attack</code>. In the inspector, it should look like this:
-<img src="../images/workflows/phy-atck-stat-editor.png" alt="Physical Attack Stat"></p>
+Create a new <code>Stats</code> folder, select it and press <code>S</code>. Name it <code>Physical Attack</code>. In the inspector, it should look like this:</p>
+<p><img src="../images/workflows/phy-atck-stat-editor.png" alt="Physical Attack Stat"></p>
 <p>As with attributes, you can assign both a maximum and a minimum value to a stat.</p>
 <p>Repeat the process for the <code>Magical Power</code>, <code>Defense</code>, and <code>Critical Chance</code> stats.</p>
 <p>Unlike attributes, however, stats include <code>Attributes Scaling</code>.</p>
@@ -305,16 +305,16 @@ Create a new folder named, for example, <code>Attribute Scalings for Stats</code
 <p>Now that we have some stats, let's create a <code>StatSet</code> named, for example, <code>Hero Stat Set</code>.</p>
 <p>A stat set without stats isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the <code>Add</code> button. Notice that an entry with <code>None (Stat)</code> appears. To assign a stat to the entry, we can either drag &amp; drop from the hierarchy or click on the small circle button on the right of the newly appeared entry. This mechanism is the same used for public variables or, more generally, for fields annotated with <code>SerializeField</code>, so it will be familiar to you.<br>
 Let's add <code>Physical Attack</code> using whichever method you prefer.<br>
-Repeat the process of adding a stat to the set for <code>Magical Power</code>, <code>Defense</code>, and <code>Critical Chance</code> as well. The stat set should look like:<br>
-<img src="../images/workflows/stat-set.png" alt="Hero Stat Set"></p>
+Repeat the process of adding a stat to the set for <code>Magical Power</code>, <code>Defense</code>, and <code>Critical Chance</code> as well. The stat set should look like:</p>
+<p><img src="../images/workflows/stat-set.png" alt="Hero Stat Set"></p>
 <p>If you want to remove a stat from the set, you can click on the small <code>-</code> button on the right of the stat you want to remove.</p>
 <h2 id="add-entitystats-to-an-entity">Add <code>EntityStats</code> to an Entity</h2>
-<p>The next step is to assign the stat set we created to an entity. To do this, let's add the <code>EntityStats</code> component to our game object. The inspector will look like this:<br>
-<img src="../images/workflows/entity-stats.png" alt="Entity Stats"></p>
+<p>The next step is to assign the stat set we created to an entity. To do this, let's add the <code>EntityStats</code> component to our game object. The inspector will look like this:</p>
+<p><img src="../images/workflows/entity-stats.png" alt="Entity Stats"></p>
 <p>An entity has base stats that can be either fixed or derived from a class. Additionally, stats can be modified through flat modifiers, stat-to-stat modifiers, and percentage modifiers.</p>
 <p><code>Use Class Base Stats</code> checkbox determines whether the base stats should come from the entity's class (if one is available) or from fixed values defined in the inspector. For now, let's leave it unchecked since we haven't added a class yet.</p>
-<p>With <code>Use Class Base Stats</code> unchecked, we need to manually assign a stat set. Set the <code>Stat Set</code> field under <code>Fixed Base Stats</code> with our <code>Hero Stat Set</code>. This will reveal additional fields in the inspector where we can set the base values for each stat:
-<img src="../images/workflows/entity-stats-fixed-base-stats.png" alt="Entity Stats"></p>
+<p>With <code>Use Class Base Stats</code> unchecked, we need to manually assign a stat set. Set the <code>Stat Set</code> field under <code>Fixed Base Stats</code> with our <code>Hero Stat Set</code>. This will reveal additional fields in the inspector where we can set the base values for each stat:</p>
+<p><img src="../images/workflows/entity-stats-fixed-base-stats.png" alt="Entity Stats"></p>
 <p><code>On Stat Changed</code> event gets raised whenever any stat value changes due to modifiers. You can use this to update UI elements or trigger other game logic.</p>
 <p><code>Use Cache</code> enables caching of final stat values. This is useful for performance when you have many entities or complex stat calculations.</p>
 <h3 id="adding-modifiers-1">Adding Modifiers</h3>
@@ -358,8 +358,8 @@ entityStats.AddPercentageModifier(stat, percentage);
 As we fill these two fields, we'll see that the <code>Stat Growth Formulas</code> and <code>Attribute Growth Formulas</code> sections will automatically populate with the stats and attributes from the assigned <code>Stat Set</code> and <code>Attribute Set</code>.
 Let's proceed to create all the growth formulas for the warrior's stats and attributes.
 Follow the steps outlined in the <a href="#growth-formulas">Growth Formulas</a> section to create the growth formulas for the warrior's stats and attributes.<br>
-Once all growth formulas are assigned, the <code>Warrior</code> should look like this:
-<img src="../images/workflows/warrior-class.png" alt="Warrior Class"></p>
+Once all growth formulas are assigned, the <code>Warrior</code> should look like this:</p>
+<p><img src="../images/workflows/warrior-class.png" alt="Warrior Class"></p>
 <p><code>Max HP Growth Formula</code> allows specifying how the Max HP value grows as levels change. In our example, we'll leave it empty.
 The presence of this field for hit points might be surprising since this module of the framework isn't focused on health management. Indeed, damage and health are managed by the <em>Health&amp;Dmg | Soap RPG Framework</em> module, which will be released in the coming months.
 However, this field is positioned here since the scaling of base max hp still depends on the class.</p>
@@ -380,8 +380,8 @@ Similarly, the <code>Hero Stat Set</code> and <code>Hero Attribute Set</code> co
 <em>Relative path:</em> <code>Scaling -&gt; Scaling Formula</code></p>
 <p>We already saw how to create an <code>Attribute Scaling Component</code> for stats. On top of such usage, scaling components, and more in general scaling formulas, can be used for much more situations. For example, they can be used to define the damage of an ability, to define the bonus granted by a piece of equipment, or to define the damage of a weapon. In general, they can be used to define any kind of scaling that can be expressed as a function of one or more variables.</p>
 <p>For example, let's create a <code>Scaling Formula</code> called <code>Mighty Blow SF</code>. It should look like this in the inspector:</p>
-<p><img src="../images/workflows/scaling-formula.png" alt="Scaling Formula">
-<code>Base Value</code> determines the starting point for the scaling formula. It can either be a fixed constant value or a value that scales with levels (e.g., the level of the Mighty Blow skill). If the latter is chosen, a <code>Growth Formula</code> must be provided to define how the base value changes as levels increase.</p>
+<p><img src="../images/workflows/scaling-formula.png" alt="Scaling Formula"></p>
+<p><code>Base Value</code> determines the starting point for the scaling formula. It can either be a fixed constant value or a value that scales with levels (e.g., the level of the Mighty Blow skill). If the latter is chosen, a <code>Growth Formula</code> must be provided to define how the base value changes as levels increase.</p>
 <p>This scaling formula will be used to define the damage of a skill called <code>Mighty Blow</code>.
 The scaling formula will be defined as follows:</p>
 <ul>
