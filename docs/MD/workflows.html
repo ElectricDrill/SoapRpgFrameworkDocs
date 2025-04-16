@@ -364,7 +364,11 @@ Once all growth formulas are assigned, the <code>Warrior</code> should look like
 The presence of this field for hit points might be surprising since this module of the framework isn't focused on health management. Indeed, damage and health are managed by the <em>Health&amp;Dmg | Soap RPG Framework</em> module, which will be released in the coming months.
 However, this field is positioned here since the scaling of base max hp still depends on the class.</p>
 <h2 id="add-entityclass-to-an-entity">Add <code>EntityClass</code> to an entity</h2>
+<p>To assign a class to an entity, we need to add the <code>EntityClass</code> component to it. The inspector will look like this:</p>
 <p><img src="../images/workflows/entity-class.png" alt="Entity Class"></p>
+<p>All we have to do now is just assign the <code>Warrior</code> class we created earlier to the <code>Class</code> field.</p>
+<h3 id="switching-to-class-based-attributes-and-stats">Switching to class-based attributes and stats</h3>
+<p>We can now check the <code>Use Class Base Attributes</code> and <code>Use Class Base Stats</code> checkboxes. By doing this, the entity will use the base attributes and stats defined by the class. The <code>Fixed Base Attributes</code> and <code>Fixed Base Stats</code> fields will be disabled, and the values will be automatically retrieved from the class growth formulas.</p>
 
 </article>
 

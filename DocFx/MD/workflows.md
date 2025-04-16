@@ -349,6 +349,11 @@ The presence of this field for hit points might be surprising since this module 
 However, this field is positioned here since the scaling of base max hp still depends on the class.
 
 ## Add `EntityClass` to an entity
-
+To assign a class to an entity, we need to add the `EntityClass` component to it. The inspector will look like this:
 
 ![Entity Class](../images/workflows/entity-class.png) 
+
+All we have to do now is just assign the `Warrior` class we created earlier to the `Class` field.
+
+### Switching to class-based attributes and stats
+We can now check the `Use Class Base Attributes` and `Use Class Base Stats` checkboxes. By doing this, the entity will use the base attributes and stats defined by the class. The `Fixed Base Attributes` and `Fixed Base Stats` fields will be disabled, and the values will be automatically retrieved from the class growth formulas.
