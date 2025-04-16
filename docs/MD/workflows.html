@@ -121,6 +121,8 @@
 - StatsScalingComponent
 - AttributesScalingComponent
 -->
+<h2 id="creating-instances-of-the-objects">Creating instances of the objects</h2>
+<p>All the scriptable objects provided by the framework can be created through the Unity Editor by either right-clicking in the hierarchy and selecting <code>Create &gt; Soap RPG</code> or navigating to the <code>Assets</code> menu at the top of the window and choosing <code>Create &gt; Soap RPG</code>.</p>
 <h2 id="mandatory-and-re-play-fields">Mandatory and re-play fields</h2>
 <p>Fields marked with a red asterisk (<span style="color:red;">*</span>) are mandatory and must be filled out to ensure proper functionality of the framework.</p>
 <p>Fields marked with an orange <strong style="color:orange;">R</strong> are re-play fields. Any changes made to these fields during playtime will require a restart to ensure the changes take effect.</p>
@@ -355,7 +357,7 @@ entityStats.AddPercentageModifier(stat, percentage);
 <p>In our case, let's assign our <code>Hero Stat Set</code> to <code>Stat Set</code> and <code>Hero Attribute Set</code> to <code>Attribute Set</code>. This way, the <code>Warrior</code> will have access to all stats and attributes from the assigned <code>Stat Set</code> and <code>Attribute Set</code>.
 As we fill these two fields, we'll see that the <code>Stat Growth Formulas</code> and <code>Attribute Growth Formulas</code> sections will automatically populate with the stats and attributes from the assigned <code>Stat Set</code> and <code>Attribute Set</code>.
 Let's proceed to create all the growth formulas for the warrior's stats and attributes.
-Follow the steps outlined in the <a href="#growth-formulas">Growth Formulas</a> section to create the growth formulas for the warrior's stats and attributes.
+Follow the steps outlined in the <a href="#growth-formulas">Growth Formulas</a> section to create the growth formulas for the warrior's stats and attributes.<br>
 Once all growth formulas are assigned, the <code>Warrior</code> should look like this:
 <img src="../images/workflows/warrior-class.png" alt="Warrior Class"></p>
 <p><code>Max HP Growth Formula</code> allows specifying how the Max HP value grows as levels change. In our example, we'll leave it empty.

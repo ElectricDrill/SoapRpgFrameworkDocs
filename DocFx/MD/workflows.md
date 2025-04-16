@@ -34,6 +34,9 @@
 - AttributesScalingComponent
 -->
 
+## Creating instances of the objects
+All the scriptable objects provided by the framework can be created through the Unity Editor by either right-clicking in the hierarchy and selecting `Create > Soap RPG` or navigating to the `Assets` menu at the top of the window and choosing `Create > Soap RPG`.
+
 ## Mandatory and re-play fields
 Fields marked with a red asterisk (<span style="color:red;">*</span>) are mandatory and must be filled out to ensure proper functionality of the framework.
 
@@ -337,7 +340,7 @@ The only mandatory field is `Stat Set`. If we don't make use of attributes and M
 In our case, let's assign our `Hero Stat Set` to `Stat Set` and `Hero Attribute Set` to `Attribute Set`. This way, the `Warrior` will have access to all stats and attributes from the assigned `Stat Set` and `Attribute Set`.
 As we fill these two fields, we'll see that the `Stat Growth Formulas` and `Attribute Growth Formulas` sections will automatically populate with the stats and attributes from the assigned `Stat Set` and `Attribute Set`.
 Let's proceed to create all the growth formulas for the warrior's stats and attributes.
-Follow the steps outlined in the [Growth Formulas](#growth-formulas) section to create the growth formulas for the warrior's stats and attributes.
+Follow the steps outlined in the [Growth Formulas](#growth-formulas) section to create the growth formulas for the warrior's stats and attributes.  
 Once all growth formulas are assigned, the `Warrior` should look like this:
 ![Warrior Class](../images/workflows/warrior-class.png)
 
@@ -348,4 +351,4 @@ However, this field is positioned here since the scaling of base max hp still de
 ## Add `EntityClass` to an entity
 
 
-![Entity Class](../images/workflows/entity-class.png)
+![Entity Class](../images/workflows/entity-class.png) 
