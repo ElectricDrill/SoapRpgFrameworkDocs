@@ -357,3 +357,43 @@ All we have to do now is just assign the `Warrior` class we created earlier to t
 
 ### Switching to class-based attributes and stats
 We can now check the `Use Class Base Attributes` and `Use Class Base Stats` checkboxes. By doing this, the entity will use the base attributes and stats defined by the class. The `Fixed Base Attributes` and `Fixed Base Stats` fields will be disabled, and the values will be automatically retrieved from the class growth formulas.
+
+## Create Scaling Formulas
+*Keyboard shortcut:* `Alt + Shift + S`
+*Relative path:* `Scaling -> Scaling Formula`
+
+We already saw how to create an `Attribute Scaling Component` for stats. On top of such usage, scaling components, and more in general scaling formulas, can be used for much more situations. For example, they can be used to define the damage of an ability, to define the bonus granted by a piece of equipment, or to define the damage of a weapon. In general, they can be used to define any kind of scaling that can be expressed as a function of one or more variables.
+
+For example, let's create a `Scaling Formula` called `Mighty Blow SF`. It should look like this in the inspector:
+
+![Scaling Formula](../images/workflows/scaling-formula.png)
+`Base Value` determines the starting point for the scaling formula. It can either be a fixed constant value or a value that scales with levels (e.g., the level of the Mighty Blow skill). If the latter is chosen, a `Growth Formula` must be provided to define how the base value changes as levels increase.
+
+This scaling formula will be used to define the damage of a skill called `Mighty Blow`.
+The scaling formula will be defined as follows:
+- Base damage: 10 at lvl 1, 25 at level 2, 60 at lvl 3
+- Damage scaling: 1.5 * Physical Attack + 0.5 * Constitution
+
+Since we want a base value that varies as level grows, let's check the `Use a scaling base value` checkbox and create a `Growth Formula` named `Mighty Blow Base Dmg GF`. The `Mighty Blow Base Damage GF` should look like this:
+
+![Mighty Blow Base Damage GF](../images/workflows/mighty-blow-base-damage-gf.png)
+
+Notice that a new Skill Max Lvl has been created and assigned to `Max Level`. This is necessary as the skill max level is not related to the max level of our hero.
+
+We can now assign this growth formula to the `Base Value` field of the `Mighty Blow SF` scaling formula.
+
+Under `Entity Scalings` we have `Self Scaling Components` and `Target Scaling Components`. The former are used to define the scaling of the entity itself, while the latter are used to define the scaling of the target of the ability. In our case, we will only use `Self Scaling Components`, so we can leave `Target Scaling Components` empty.
+
+We can now proceed to create the scaling components for the `Physical Attack` stat and the `Constitution` attribute.
+
+Let's create a new `Stat Scaling Component` called `Mighty Blow Physical Attack Scaling`. Assign the `Hero Stat Set` to it and set the scaling of the `Physical Attack` stat to `1.5`. The scaling component should look like this:
+
+![Mighty Blow Physical Attack Scaling](../images/workflows/mighty-blow-physical-attack-scaling.png)  
+
+Next, we will create a similar `Attribute Scaling Component` for the `Constitution` attribute called `Mighty Blow Constitution Scaling`. Assign the `Hero Attribute Set` to it and set the scaling of the `Constitution` to `0.5`. The scaling component should look like this:
+
+![Mighty Blow Constitution Scaling](../images/workflows/mighty-blow-constitution-scaling.png)
+
+Finally, let's press on the `+` of `Self Scaling Components` and assign the two scaling components we just created. The `Mighty Blow SF` should look like this:
+
+![Mighty Blow SF with scaling components](../images/workflows/mighty-blow-sf-with-scaling-components.png)

@@ -1278,6 +1278,46 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/workflows/mighty-blow-base-damage-gf.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/mighty-blow-base-damage-gf.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/mighty-blow-constitution-scaling.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/mighty-blow-constitution-scaling.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/mighty-blow-physical-attack-scaling.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/mighty-blow-physical-attack-scaling.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/mighty-blow-sf-with-scaling-components.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/mighty-blow-sf-with-scaling-components.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/workflows/phy-atck-stat-editor.png",
       "output": {
         "resource": {
@@ -1292,6 +1332,16 @@
       "output": {
         "resource": {
           "relative_path": "images/workflows/physical-attack-strength-scaling.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/scaling-formula.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/scaling-formula.png"
         }
       },
       "version": ""
