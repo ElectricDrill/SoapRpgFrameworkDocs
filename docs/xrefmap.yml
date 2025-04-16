@@ -854,6 +854,12 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.SimpleRpgCore.Class.StatSet
   nameWithType: Class.StatSet
+- uid: ElectricDrill.SimpleRpgCore.Class._attributeSet
+  name: _attributeSet
+  href: api/ElectricDrill.SimpleRpgCore.Class.html#ElectricDrill_SimpleRpgCore_Class__attributeSet
+  commentId: F:ElectricDrill.SimpleRpgCore.Class._attributeSet
+  fullName: ElectricDrill.SimpleRpgCore.Class._attributeSet
+  nameWithType: Class._attributeSet
 - uid: ElectricDrill.SimpleRpgCore.Class._maxHpGrowthFormula
   name: _maxHpGrowthFormula
   href: api/ElectricDrill.SimpleRpgCore.Class.html#ElectricDrill_SimpleRpgCore_Class__maxHpGrowthFormula
@@ -866,12 +872,6 @@ references:
   commentId: F:ElectricDrill.SimpleRpgCore.Class._statSet
   fullName: ElectricDrill.SimpleRpgCore.Class._statSet
   nameWithType: Class._statSet
-- uid: ElectricDrill.SimpleRpgCore.Class.attributeSet
-  name: attributeSet
-  href: api/ElectricDrill.SimpleRpgCore.Class.html#ElectricDrill_SimpleRpgCore_Class_attributeSet
-  commentId: F:ElectricDrill.SimpleRpgCore.Class.attributeSet
-  fullName: ElectricDrill.SimpleRpgCore.Class.attributeSet
-  nameWithType: Class.attributeSet
 - uid: ElectricDrill.SimpleRpgCore.ClassMenuItems
   name: ClassMenuItems
   href: api/ElectricDrill.SimpleRpgCore.ClassMenuItems.html

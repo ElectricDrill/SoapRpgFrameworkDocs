@@ -324,3 +324,28 @@ The final calculation would be:
 3. 140 + (140 * 0.25) = 175
 
 When adding modifiers through code, the `OnStatChanged` event will automatically be raised if the final value changes.
+
+## Create a class
+*Relative path:* `Class`
+
+Let's create an instance of `Class` called `Warrior`. It should appear like this:
+
+![Class](../images/workflows/class.png)
+
+The only mandatory field is `Stat Set`. If we don't make use of attributes and Max HP, we can leave the `Attribute Set` and `Max HP Growth Formula` fields empty.
+
+In our case, let's assign our `Hero Stat Set` to `Stat Set` and `Hero Attribute Set` to `Attribute Set`. This way, the `Warrior` will have access to all stats and attributes from the assigned `Stat Set` and `Attribute Set`.
+As we fill these two fields, we'll see that the `Stat Growth Formulas` and `Attribute Growth Formulas` sections will automatically populate with the stats and attributes from the assigned `Stat Set` and `Attribute Set`.
+Let's proceed to create all the growth formulas for the warrior's stats and attributes.
+Follow the steps outlined in the [Growth Formulas](#growth-formulas) section to create the growth formulas for the warrior's stats and attributes.
+Once all growth formulas are assigned, the `Warrior` should look like this:
+![Warrior Class](../images/workflows/warrior-class.png)
+
+`Max HP Growth Formula` allows specifying how the Max HP value grows as levels change. In our example, we'll leave it empty.
+The presence of this field for hit points might be surprising since this module of the framework isn't focused on health management. Indeed, damage and health are managed by the *Health&Dmg | Soap RPG Framework* module, which will be released in the coming months.
+However, this field is positioned here since the scaling of base max hp still depends on the class.
+
+## Add `EntityClass` to an entity
+
+
+![Entity Class](../images/workflows/entity-class.png)

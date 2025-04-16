@@ -10,9 +10,9 @@ items:
   - ElectricDrill.SimpleRpgCore.Class.GetMaxHpAt(System.Int32)
   - ElectricDrill.SimpleRpgCore.Class.GetStatAt(ElectricDrill.SimpleRpgCore.Stats.Stat,System.Int32)
   - ElectricDrill.SimpleRpgCore.Class.StatSet
+  - ElectricDrill.SimpleRpgCore.Class._attributeSet
   - ElectricDrill.SimpleRpgCore.Class._maxHpGrowthFormula
   - ElectricDrill.SimpleRpgCore.Class._statSet
-  - ElectricDrill.SimpleRpgCore.Class.attributeSet
   langs:
   - csharp
   - vb
@@ -27,7 +27,7 @@ items:
       repo: https://github.com/Cis8/SoapRpgFramework
     id: Class
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -58,7 +58,7 @@ items:
       repo: https://github.com/Cis8/SoapRpgFramework
     id: _maxHpGrowthFormula
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -77,25 +77,25 @@ items:
   - type: UnityEngine.SerializeField
     ctor: UnityEngine.SerializeField.#ctor
     arguments: []
-- uid: ElectricDrill.SimpleRpgCore.Class.attributeSet
-  commentId: F:ElectricDrill.SimpleRpgCore.Class.attributeSet
-  id: attributeSet
+- uid: ElectricDrill.SimpleRpgCore.Class._attributeSet
+  commentId: F:ElectricDrill.SimpleRpgCore.Class._attributeSet
+  id: _attributeSet
   parent: ElectricDrill.SimpleRpgCore.Class
   langs:
   - csharp
   - vb
-  name: attributeSet
-  nameWithType: Class.attributeSet
-  fullName: ElectricDrill.SimpleRpgCore.Class.attributeSet
+  name: _attributeSet
+  nameWithType: Class._attributeSet
+  fullName: ElectricDrill.SimpleRpgCore.Class._attributeSet
   type: Field
   source:
     remote:
       path: Runtime/SimpleRpgCore/Class.cs
       branch: main
       repo: https://github.com/Cis8/SoapRpgFramework
-    id: attributeSet
+    id: _attributeSet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -103,13 +103,13 @@ items:
     content: >-
       [SerializeField]
 
-      protected AttributeSet attributeSet
+      protected AttributeSet _attributeSet
     return:
       type: ElectricDrill.SimpleRpgCore.Attributes.AttributeSet
     content.vb: >-
       <SerializeField>
 
-      Protected attributeSet As AttributeSet
+      Protected _attributeSet As AttributeSet
   attributes:
   - type: UnityEngine.SerializeField
     ctor: UnityEngine.SerializeField.#ctor
@@ -132,7 +132,7 @@ items:
       repo: https://github.com/Cis8/SoapRpgFramework
     id: _statSet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
-    startLine: 18
+    startLine: 19
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -169,7 +169,7 @@ items:
       repo: https://github.com/Cis8/SoapRpgFramework
     id: AttributeSet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
-    startLine: 26
+    startLine: 27
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -198,7 +198,7 @@ items:
       repo: https://github.com/Cis8/SoapRpgFramework
     id: StatSet
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
-    startLine: 27
+    startLine: 28
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -230,7 +230,7 @@ items:
       repo: https://github.com/Cis8/SoapRpgFramework
     id: GetMaxHpAt
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -264,7 +264,7 @@ items:
       repo: https://github.com/Cis8/SoapRpgFramework
     id: GetAttributeAt
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore
@@ -300,7 +300,7 @@ items:
       repo: https://github.com/Cis8/SoapRpgFramework
     id: GetStatAt
     path: ../../GeometricalInvaders/Packages/SimpleRPGCore/Runtime/SimpleRpgCore/Class.cs
-    startLine: 39
+    startLine: 40
   assemblies:
   - ElectricDrill.SimpleRPGCore.Runtime
   namespace: ElectricDrill.SimpleRpgCore

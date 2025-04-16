@@ -1188,6 +1188,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/workflows/class.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/class.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/workflows/entity-attributes-editor.png",
       "output": {
         "resource": {
@@ -1202,6 +1212,16 @@
       "output": {
         "resource": {
           "relative_path": "images/workflows/entity-attributes-with-attr-set-editor.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/entity-class.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/entity-class.png"
         }
       },
       "version": ""
@@ -1292,6 +1312,16 @@
       "output": {
         "resource": {
           "relative_path": "images/workflows/strength-attr-editor.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/warrior-class.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/warrior-class.png"
         }
       },
       "version": ""
