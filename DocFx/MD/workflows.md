@@ -356,6 +356,8 @@ This is how your hierarchy could look like:
 
 ![Hierarchy](../images/workflows/hierarchy.png)
 
+Obviously this is just a possible organization of the assets. Feel free to organize it as you prefer.
+
 ## Add `EntityClass` to an entity
 To assign a class to an entity, we need to add the `EntityClass` component to it. The inspector will look like this:
 
