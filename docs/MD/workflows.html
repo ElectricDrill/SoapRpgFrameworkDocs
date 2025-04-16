@@ -363,6 +363,11 @@ Once all growth formulas are assigned, the <code>Warrior</code> should look like
 <p><code>Max HP Growth Formula</code> allows specifying how the Max HP value grows as levels change. In our example, we'll leave it empty.
 The presence of this field for hit points might be surprising since this module of the framework isn't focused on health management. Indeed, damage and health are managed by the <em>Health&amp;Dmg | Soap RPG Framework</em> module, which will be released in the coming months.
 However, this field is positioned here since the scaling of base max hp still depends on the class.</p>
+<h3 id="keeping-the-hierarchy-clean">Keeping the hierarchy clean</h3>
+<p>By now you should have a lot of assets in your hierarchy. To keep it clean, you can create a folder named <code>Classes</code> and move the <code>Warrior</code> class inside it. You can do the same for the <code>Attributes</code> and <code>Stats</code> growth formulas inside the <code>Warrior</code> folder. This way, you can keep the hierarchy organized and easily find the assets.<br>
+Similarly, the <code>Hero Stat Set</code> and <code>Hero Attribute Set</code> could be placed in a <code>Hero</code> folder, that is common to all the classes. This way, you can have a single set of stats and attributes for all the classes that will be created in the future.</p>
+<p>This is how your hierarchy could look like:</p>
+<p><img src="../images/workflows/hierarchy.png" alt="Hierarchy"></p>
 <h2 id="add-entityclass-to-an-entity">Add <code>EntityClass</code> to an entity</h2>
 <p>To assign a class to an entity, we need to add the <code>EntityClass</code> component to it. The inspector will look like this:</p>
 <p><img src="../images/workflows/entity-class.png" alt="Entity Class"></p>

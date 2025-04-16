@@ -348,6 +348,14 @@ Once all growth formulas are assigned, the `Warrior` should look like this:
 The presence of this field for hit points might be surprising since this module of the framework isn't focused on health management. Indeed, damage and health are managed by the *Health&Dmg | Soap RPG Framework* module, which will be released in the coming months.
 However, this field is positioned here since the scaling of base max hp still depends on the class.
 
+### Keeping the hierarchy clean
+By now you should have a lot of assets in your hierarchy. To keep it clean, you can create a folder named `Classes` and move the `Warrior` class inside it. You can do the same for the `Attributes` and `Stats` growth formulas inside the `Warrior` folder. This way, you can keep the hierarchy organized and easily find the assets.  
+Similarly, the `Hero Stat Set` and `Hero Attribute Set` could be placed in a `Hero` folder, that is common to all the classes. This way, you can have a single set of stats and attributes for all the classes that will be created in the future.
+
+This is how your hierarchy could look like:
+
+![Hierarchy](../images/workflows/hierarchy.png)
+
 ## Add `EntityClass` to an entity
 To assign a class to an entity, we need to add the `EntityClass` component to it. The inspector will look like this:
 

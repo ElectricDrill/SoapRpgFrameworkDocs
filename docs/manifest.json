@@ -1268,6 +1268,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/workflows/hierarchy.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/hierarchy.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/workflows/interactive-chart.gif",
       "output": {
         "resource": {
