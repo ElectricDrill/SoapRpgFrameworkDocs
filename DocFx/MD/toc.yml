@@ -2,6 +2,8 @@
   href: introduction.md
 - name: Workflows
   href: workflows.md
+- name: Advanced Topics
+  href: advanced-topics.md
 - name: Limitations
   href: limitations.md
 - name: Requirements

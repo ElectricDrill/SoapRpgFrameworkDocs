@@ -141,7 +141,7 @@ public class EntityLevel : ILevelable</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Experience_EntityLevel_CurrentTotalExperience" data-uid="ElectricDrill.AstraRpgFramework.Experience.EntityLevel.CurrentTotalExperience">
   CurrentTotalExperience
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L165"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L161"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the current total experience of the entity.
@@ -212,7 +212,7 @@ Setting the level will trigger the OnLevelUp event.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Experience_EntityLevel_AddExp_System_Int64_" data-uid="ElectricDrill.AstraRpgFramework.Experience.EntityLevel.AddExp(System.Int64)">
   AddExp(long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L113"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds experience to the entity. The experience will be modified by any experience gain modifiers.
@@ -247,7 +247,7 @@ Can trigger multiple level ups if enough experience is added.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Experience_EntityLevel_CurrentLevelTotalExperience" data-uid="ElectricDrill.AstraRpgFramework.Experience.EntityLevel.CurrentLevelTotalExperience">
   CurrentLevelTotalExperience()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L172"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L168"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the total experience required to reach the current level.
@@ -281,7 +281,7 @@ For level 1, this returns 0. For higher levels, it uses the experience growth fo
 
   <h3 id="ElectricDrill_AstraRpgFramework_Experience_EntityLevel_NextLevelTotalExperience" data-uid="ElectricDrill.AstraRpgFramework.Experience.EntityLevel.NextLevelTotalExperience">
   NextLevelTotalExperience()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L177"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the total experience required to reach the next level.
@@ -315,7 +315,7 @@ If the entity is already at the maximum level, returns the experience for the cu
 
   <h3 id="ElectricDrill_AstraRpgFramework_Experience_EntityLevel_SetTotalCurrentExp_System_Int64_" data-uid="ElectricDrill.AstraRpgFramework.Experience.EntityLevel.SetTotalCurrentExp(System.Int64)">
   SetTotalCurrentExp(long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L142"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the total current experience and automatically updates the level to match.
@@ -349,7 +349,7 @@ The level will be calculated based on the experience growth formula.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Experience_EntityLevel_ValidateExperience" data-uid="ElectricDrill.AstraRpgFramework.Experience.EntityLevel.ValidateExperience">
   ValidateExperience()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L201"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L197"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Validates that the current total experience corresponds to the current level.
@@ -417,7 +417,7 @@ This method is useful for debugging and ensuring data consistency.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Experience_EntityLevel_op_Implicit_ElectricDrill_AstraRpgFramework_Experience_EntityLevel__System_Int32" data-uid="ElectricDrill.AstraRpgFramework.Experience.EntityLevel.op_Implicit(ElectricDrill.AstraRpgFramework.Experience.EntityLevel)~System.Int32">
   implicit operator int(EntityLevel)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L194"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L190"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Implicitly converts an EntityLevel to its integer level value.
@@ -456,9 +456,6 @@ Allows EntityLevel objects to be used directly as integers in calculations.</p>
 
 </article>
 
-        <div class="contribution d-print-none">
-          <a href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/EntityLevel.cs/#L15" class="edit-link">Edit this page</a>
-        </div>
 
 
       </div>

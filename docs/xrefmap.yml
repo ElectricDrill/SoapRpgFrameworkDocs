@@ -2071,6 +2071,12 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Experience.ILevelable.ValidateExperience
   nameWithType: ILevelable.ValidateExperience
+- uid: ElectricDrill.AstraRpgFramework.IValidatable
+  name: IValidatable
+  href: api/ElectricDrill.AstraRpgFramework.IValidatable.html
+  commentId: T:ElectricDrill.AstraRpgFramework.IValidatable
+  fullName: ElectricDrill.AstraRpgFramework.IValidatable
+  nameWithType: IValidatable
 - uid: ElectricDrill.AstraRpgFramework.Scaling
   name: ElectricDrill.AstraRpgFramework.Scaling
   href: api/ElectricDrill.AstraRpgFramework.Scaling.html
@@ -3183,6 +3189,19 @@ references:
   commentId: T:ElectricDrill.AstraRpgFramework.Utils.BoundedValue
   fullName: ElectricDrill.AstraRpgFramework.Utils.BoundedValue
   nameWithType: BoundedValue
+- uid: ElectricDrill.AstraRpgFramework.Utils.BoundedValue.DefaultValue
+  name: DefaultValue
+  href: api/ElectricDrill.AstraRpgFramework.Utils.BoundedValue.html#ElectricDrill_AstraRpgFramework_Utils_BoundedValue_DefaultValue
+  commentId: P:ElectricDrill.AstraRpgFramework.Utils.BoundedValue.DefaultValue
+  fullName: ElectricDrill.AstraRpgFramework.Utils.BoundedValue.DefaultValue
+  nameWithType: BoundedValue.DefaultValue
+- uid: ElectricDrill.AstraRpgFramework.Utils.BoundedValue.DefaultValue*
+  name: DefaultValue
+  href: api/ElectricDrill.AstraRpgFramework.Utils.BoundedValue.html#ElectricDrill_AstraRpgFramework_Utils_BoundedValue_DefaultValue_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.BoundedValue.DefaultValue
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Utils.BoundedValue.DefaultValue
+  nameWithType: BoundedValue.DefaultValue
 - uid: ElectricDrill.AstraRpgFramework.Utils.BoundedValue.HasMaxValue
   name: HasMaxValue
   href: api/ElectricDrill.AstraRpgFramework.Utils.BoundedValue.html#ElectricDrill_AstraRpgFramework_Utils_BoundedValue_HasMaxValue
@@ -4350,6 +4369,154 @@ references:
   fullName.vb: ElectricDrill.AstraRpgFramework.Utils.SerializableHashSet(Of T).RemoveWhere
   nameWithType: SerializableHashSet<T>.RemoveWhere
   nameWithType.vb: SerializableHashSet(Of T).RemoveWhere
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI
+  name: ElectricDrill.AstraRpgFramework.Utils.UI
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.html
+  commentId: N:ElectricDrill.AstraRpgFramework.Utils.UI
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI
+  nameWithType: ElectricDrill.AstraRpgFramework.Utils.UI
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplayNameProvider
+  name: DefaultAttributeCompactDisplayNameProvider
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplayNameProvider.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplayNameProvider
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplayNameProvider
+  nameWithType: DefaultAttributeCompactDisplayNameProvider
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplayNameProvider.GetDisplayName(ElectricDrill.AstraRpgFramework.Attributes.Attribute)
+  name: GetDisplayName(Attribute)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplayNameProvider.html#ElectricDrill_AstraRpgFramework_Utils_UI_DefaultAttributeCompactDisplayNameProvider_GetDisplayName_ElectricDrill_AstraRpgFramework_Attributes_Attribute_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplayNameProvider.GetDisplayName(ElectricDrill.AstraRpgFramework.Attributes.Attribute)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplayNameProvider.GetDisplayName(ElectricDrill.AstraRpgFramework.Attributes.Attribute)
+  nameWithType: DefaultAttributeCompactDisplayNameProvider.GetDisplayName(Attribute)
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplayNameProvider.GetDisplayName*
+  name: GetDisplayName
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplayNameProvider.html#ElectricDrill_AstraRpgFramework_Utils_UI_DefaultAttributeCompactDisplayNameProvider_GetDisplayName_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplayNameProvider.GetDisplayName
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplayNameProvider.GetDisplayName
+  nameWithType: DefaultAttributeCompactDisplayNameProvider.GetDisplayName
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider
+  name: DefaultAttributeCompactDisplaySONameProvider
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider
+  nameWithType: DefaultAttributeCompactDisplaySONameProvider
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider.GetDisplayName(ElectricDrill.AstraRpgFramework.Attributes.Attribute)
+  name: GetDisplayName(Attribute)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider.html#ElectricDrill_AstraRpgFramework_Utils_UI_DefaultAttributeCompactDisplaySONameProvider_GetDisplayName_ElectricDrill_AstraRpgFramework_Attributes_Attribute_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider.GetDisplayName(ElectricDrill.AstraRpgFramework.Attributes.Attribute)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider.GetDisplayName(ElectricDrill.AstraRpgFramework.Attributes.Attribute)
+  nameWithType: DefaultAttributeCompactDisplaySONameProvider.GetDisplayName(Attribute)
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider.GetDisplayName*
+  name: GetDisplayName
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider.html#ElectricDrill_AstraRpgFramework_Utils_UI_DefaultAttributeCompactDisplaySONameProvider_GetDisplayName_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider.GetDisplayName
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider.GetDisplayName
+  nameWithType: DefaultAttributeCompactDisplaySONameProvider.GetDisplayName
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider`1
+  name: DefaultDisplayNameProvider<T>
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider-1.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider`1
+  name.vb: DefaultDisplayNameProvider(Of T)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider<T>
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider(Of T)
+  nameWithType: DefaultDisplayNameProvider<T>
+  nameWithType.vb: DefaultDisplayNameProvider(Of T)
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider`1.GetDisplayName(`0)
+  name: GetDisplayName(T)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider-1.html#ElectricDrill_AstraRpgFramework_Utils_UI_DefaultDisplayNameProvider_1_GetDisplayName__0_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider`1.GetDisplayName(`0)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider<T>.GetDisplayName(T)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider(Of T).GetDisplayName(T)
+  nameWithType: DefaultDisplayNameProvider<T>.GetDisplayName(T)
+  nameWithType.vb: DefaultDisplayNameProvider(Of T).GetDisplayName(T)
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider`1.GetDisplayName*
+  name: GetDisplayName
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider-1.html#ElectricDrill_AstraRpgFramework_Utils_UI_DefaultDisplayNameProvider_1_GetDisplayName_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider`1.GetDisplayName
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider<T>.GetDisplayName
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplayNameProvider(Of T).GetDisplayName
+  nameWithType: DefaultDisplayNameProvider<T>.GetDisplayName
+  nameWithType.vb: DefaultDisplayNameProvider(Of T).GetDisplayName
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider`1
+  name: DefaultDisplaySONameProvider<T>
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider-1.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider`1
+  name.vb: DefaultDisplaySONameProvider(Of T)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider<T>
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider(Of T)
+  nameWithType: DefaultDisplaySONameProvider<T>
+  nameWithType.vb: DefaultDisplaySONameProvider(Of T)
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider`1.GetDisplayName(`0)
+  name: GetDisplayName(T)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider-1.html#ElectricDrill_AstraRpgFramework_Utils_UI_DefaultDisplaySONameProvider_1_GetDisplayName__0_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider`1.GetDisplayName(`0)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider<T>.GetDisplayName(T)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider(Of T).GetDisplayName(T)
+  nameWithType: DefaultDisplaySONameProvider<T>.GetDisplayName(T)
+  nameWithType.vb: DefaultDisplaySONameProvider(Of T).GetDisplayName(T)
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider`1.GetDisplayName*
+  name: GetDisplayName
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider-1.html#ElectricDrill_AstraRpgFramework_Utils_UI_DefaultDisplaySONameProvider_1_GetDisplayName_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider`1.GetDisplayName
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider<T>.GetDisplayName
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider(Of T).GetDisplayName
+  nameWithType: DefaultDisplaySONameProvider<T>.GetDisplayName
+  nameWithType.vb: DefaultDisplaySONameProvider(Of T).GetDisplayName
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider`1
+  name: IDisplayNameProvider<T>
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider-1.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider`1
+  name.vb: IDisplayNameProvider(Of T)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider<T>
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider(Of T)
+  nameWithType: IDisplayNameProvider<T>
+  nameWithType.vb: IDisplayNameProvider(Of T)
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider`1.GetDisplayName(`0)
+  name: GetDisplayName(T)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider-1.html#ElectricDrill_AstraRpgFramework_Utils_UI_IDisplayNameProvider_1_GetDisplayName__0_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider`1.GetDisplayName(`0)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider<T>.GetDisplayName(T)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider(Of T).GetDisplayName(T)
+  nameWithType: IDisplayNameProvider<T>.GetDisplayName(T)
+  nameWithType.vb: IDisplayNameProvider(Of T).GetDisplayName(T)
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider`1.GetDisplayName*
+  name: GetDisplayName
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider-1.html#ElectricDrill_AstraRpgFramework_Utils_UI_IDisplayNameProvider_1_GetDisplayName_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider`1.GetDisplayName
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider<T>.GetDisplayName
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider(Of T).GetDisplayName
+  nameWithType: IDisplayNameProvider<T>.GetDisplayName
+  nameWithType.vb: IDisplayNameProvider(Of T).GetDisplayName
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider`1
+  name: IDisplaySONameProvider<T>
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider-1.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider`1
+  name.vb: IDisplaySONameProvider(Of T)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider<T>
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider(Of T)
+  nameWithType: IDisplaySONameProvider<T>
+  nameWithType.vb: IDisplaySONameProvider(Of T)
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider`1.GetDisplayName(`0)
+  name: GetDisplayName(T)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider-1.html#ElectricDrill_AstraRpgFramework_Utils_UI_IDisplaySONameProvider_1_GetDisplayName__0_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider`1.GetDisplayName(`0)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider<T>.GetDisplayName(T)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider(Of T).GetDisplayName(T)
+  nameWithType: IDisplaySONameProvider<T>.GetDisplayName(T)
+  nameWithType.vb: IDisplaySONameProvider(Of T).GetDisplayName(T)
+- uid: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider`1.GetDisplayName*
+  name: GetDisplayName
+  href: api/ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider-1.html#ElectricDrill_AstraRpgFramework_Utils_UI_IDisplaySONameProvider_1_GetDisplayName_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider`1.GetDisplayName
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider<T>.GetDisplayName
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider(Of T).GetDisplayName
+  nameWithType: IDisplaySONameProvider<T>.GetDisplayName
+  nameWithType.vb: IDisplaySONameProvider(Of T).GetDisplayName
 - uid: ElectricDrill.SoapRpgFramework
   name: ElectricDrill.SoapRpgFramework
   href: api/ElectricDrill.SoapRpgFramework.html

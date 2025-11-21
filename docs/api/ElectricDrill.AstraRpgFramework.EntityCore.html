@@ -105,7 +105,7 @@ Provides easy access to the entity's level, stats, and attributes.</p>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[DisallowMultipleComponent]
-public class EntityCore : MonoBehaviour</code></pre>
+public class EntityCore : MonoBehaviour, IValidatable</code></pre>
   </div>
 
 
@@ -123,6 +123,12 @@ public class EntityCore : MonoBehaviour</code></pre>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.IValidatable.html">IValidatable</a></div>
+    </dd>
+  </dl>
 
 
 
@@ -348,9 +354,6 @@ public class EntityCore : MonoBehaviour</code></pre>
 
 </article>
 
-        <div class="contribution d-print-none">
-          <a href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/EntityCore.cs/#L16" class="edit-link">Edit this page</a>
-        </div>
 
 
       </div>

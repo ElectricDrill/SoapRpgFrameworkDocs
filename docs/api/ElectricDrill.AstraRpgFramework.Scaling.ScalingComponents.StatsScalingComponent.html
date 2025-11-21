@@ -197,7 +197,7 @@ Class StatsScalingComponent  <a class="header-action link-secondary" title="View
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSet.html">StatSet</a></dt>
-    <dd><p>The entity's StatSet.</p>
+    <dd><p>The entity's StatSet, or null if the entity has no EntityStats component.</p>
 </dd>
   </dl>
 
@@ -239,7 +239,7 @@ Class StatsScalingComponent  <a class="header-action link-secondary" title="View
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><span class="xref">long</span></dt>
-    <dd><p>The value of the stat.</p>
+    <dd><p>The value of the stat, or 0 if the entity has no EntityStats component.</p>
 </dd>
   </dl>
 
@@ -257,7 +257,7 @@ Class StatsScalingComponent  <a class="header-action link-secondary" title="View
 
   <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingComponents_StatsScalingComponent_GetSetItems" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponents.StatsScalingComponent.GetSetItems">
   GetSetItems()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/ScalingComponents/StatsScalingComponent.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/ScalingComponents/StatsScalingComponent.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the collection of stats from the associated StatSet.</p>
@@ -290,11 +290,12 @@ Class StatsScalingComponent  <a class="header-action link-secondary" title="View
 
   <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingComponents_StatsScalingComponent_ValidateEntitySet_ElectricDrill_AstraRpgFramework_EntityCore_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponents.StatsScalingComponent.ValidateEntitySet(ElectricDrill.AstraRpgFramework.EntityCore)">
   ValidateEntitySet(EntityCore)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/ScalingComponents/StatsScalingComponent.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/ScalingComponents/StatsScalingComponent.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Validates that the entity's StatSet is equal to or contains the scaling component's StatSet.
-This allows entities with StatSets that include the component's StatSet to be compatible.</p>
+This allows entities with StatSets that include the component's StatSet to be compatible.
+If the entity's StatSet is null, logs a warning and skips validation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -323,9 +324,6 @@ This allows entities with StatSets that include the component's StatSet to be co
 
 </article>
 
-        <div class="contribution d-print-none">
-          <a href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/ScalingComponents/StatsScalingComponent.cs/#L13" class="edit-link">Edit this page</a>
-        </div>
 
 
       </div>
