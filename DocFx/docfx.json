@@ -36,6 +36,12 @@
               "files": [
                   "api/toc.yml"
               ]
+          },
+          {
+            "files": [
+              "DocFx/MD/**.md",
+              "DocFx/MD/**.yml"
+            ]
           }
       ],
       "resource": [
@@ -56,10 +62,14 @@
           "_appLogoPath": "images/logo-astra.svg",
           "_appFaviconPath": "images/astra-rpg-ico.ico",
           "_enableSearch": true,
-          "pdf": true
+          "pdf": true,
+          "_disableContribution": true
       },
       "xref": [
           "https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml"
+      ],
+      "styles": [
+        "styles/custom.css"
       ]
   }
 }
