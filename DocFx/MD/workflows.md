@@ -230,6 +230,9 @@ By checking `Has Max Value`, we will set a maximum value for the attribute. By d
 
 By checking `Has Min Value`, we will set a minimum value for the attribute. By default, the minimum value is zero.
 
+`Default value` (*🏷️ Version 1.2.0+*) allows setting a default value for the attribute when it is first created.  
+The default value is returned when we attempt to get such attribute from an entity that uses an Attribute Set that does not contain it.
+
 Repeat the process for also the `Constitution`, `Intelligence`, and `Dexterity` attributes.
 
 ##  Create an attribute set 
@@ -435,6 +438,9 @@ Create a new `Stats` folder, select it and press `S`. Name it `Physical Attack`.
 As with attributes, you can assign both a maximum and a minimum value to a stat.
 
 Repeat the process for the `Magical Power`, `Defense`, and `Critical Chance` stats.
+
+`Default value` (*🏷️ Version 1.2.0+*) allows setting a default value for the statistic when it is first created. With stats, this can be useful for stats like `Critical Multiplier`, which often have a default value (e.g., 150%) that applies unless modified by other game mechanics.  
+The default value is returned when we attempt to get such statistic from an entity that uses a Stat Set that does not contain it.
 
 Unlike attributes, however, stats include `Attributes Scaling`.
 
