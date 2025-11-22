@@ -37,10 +37,12 @@
 ## Creating instances of the objects
 All the scriptable objects provided by the framework can be created through the Unity Editor by either right-clicking in the hierarchy and selecting `Create > Astra RPG` or navigating to the `Assets` menu at the top of the window and choosing `Create > Astra RPG`.
 
-## Mandatory and re-play fields
+## Mandatory, re-play, and read-only fields
 Fields marked with a red asterisk (<span style="color:red;">*</span>) are mandatory and must be filled out to ensure proper functionality of the framework.
 
 Fields marked with an orange <strong style="color:orange;">R</strong> are re-play fields. Any changes made to these fields during playtime will require a restart to ensure the changes take effect.
+
+Fields marked with a teal <strong style="color:teal;">RO</strong> are read-only fields. The framework manages these fields internally, and they cannot and should not be modified directly by the user.
 
 ## Some utilities
 Almost every class provided by this package uses events or variables in the form of `ScriptableObject`. Therefore, let's quickly introduce these concepts so that we are clear about what we are talking about when we encounter them in the following paragraphs.
