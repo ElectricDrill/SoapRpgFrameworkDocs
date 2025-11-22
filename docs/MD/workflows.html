@@ -264,8 +264,6 @@ In the inspector it should look like:</p>
 <p><img src="../images/workflows/strength-attr-editor.png" alt="Strength Attribute"></p>
 <p>By checking <code>Has Max Value</code>, we will set a maximum value for the attribute. By default, there is no maximum value.</p>
 <p>By checking <code>Has Min Value</code>, we will set a minimum value for the attribute. By default, the minimum value is zero.</p>
-<p><code>Default value</code> (<em>🏷️ Version 1.2.0+</em>) allows setting a default value for the attribute when it is first created.<br>
-The default value is returned when we attempt to get such attribute from an entity that uses an Attribute Set that does not contain it.</p>
 <p>Repeat the process for also the <code>Constitution</code>, <code>Intelligence</code>, and <code>Dexterity</code> attributes.</p>
 <h2 id="create-an-attribute-set">Create an attribute set</h2>
 <p><em>Relative path:</em> <code>Attribute Set</code></p>
@@ -433,8 +431,6 @@ Create a new <code>Stats</code> folder, select it and press <code>S</code>. Name
 <p><img src="../images/workflows/phy-atck-stat-editor.png" alt="Physical Attack Stat"></p>
 <p>As with attributes, you can assign both a maximum and a minimum value to a stat.</p>
 <p>Repeat the process for the <code>Magical Power</code>, <code>Defense</code>, and <code>Critical Chance</code> stats.</p>
-<p><code>Default value</code> (<em>🏷️ Version 1.2.0+</em>) allows setting a default value for the statistic when it is first created. With stats, this can be useful for stats like <code>Critical Multiplier</code>, which often have a default value (e.g., 150%) that applies unless modified by other game mechanics.<br>
-The default value is returned when we attempt to get such statistic from an entity that uses a Stat Set that does not contain it.</p>
 <p>Unlike attributes, however, stats include <code>Attributes Scaling</code>.</p>
 <h3 id="create-an-attribute-scaling-component-for-stats">Create an Attribute Scaling Component for Stats</h3>
 <p><em>Relative path:</em> <code>Scaling -&gt; Attribute Scaling Component</code></p>
