@@ -939,6 +939,18 @@ references:
   commentId: T:ElectricDrill.AstraRpgFramework.Events.EntityCoreGameEventListener
   fullName: ElectricDrill.AstraRpgFramework.Events.EntityCoreGameEventListener
   nameWithType: EntityCoreGameEventListener
+- uid: ElectricDrill.AstraRpgFramework.Events.EntityLeveledDownGameEvent
+  name: EntityLeveledDownGameEvent
+  href: api/ElectricDrill.AstraRpgFramework.Events.EntityLeveledDownGameEvent.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Events.EntityLeveledDownGameEvent
+  fullName: ElectricDrill.AstraRpgFramework.Events.EntityLeveledDownGameEvent
+  nameWithType: EntityLeveledDownGameEvent
+- uid: ElectricDrill.AstraRpgFramework.Events.EntityLeveledDownGameEventListener
+  name: EntityLeveledDownGameEventListener
+  href: api/ElectricDrill.AstraRpgFramework.Events.EntityLeveledDownGameEventListener.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Events.EntityLeveledDownGameEventListener
+  fullName: ElectricDrill.AstraRpgFramework.Events.EntityLeveledDownGameEventListener
+  nameWithType: EntityLeveledDownGameEventListener
 - uid: ElectricDrill.AstraRpgFramework.Events.EntityLeveledUpGameEvent
   name: EntityLeveledUpGameEvent
   href: api/ElectricDrill.AstraRpgFramework.Events.EntityLeveledUpGameEvent.html
@@ -1850,12 +1862,47 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.NextLevelTotalExperience
   nameWithType: EntityLevel.NextLevelTotalExperience
+- uid: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.OnLevelDown
+  name: OnLevelDown
+  href: api/ElectricDrill.AstraRpgFramework.Experience.EntityLevel.html#ElectricDrill_AstraRpgFramework_Experience_EntityLevel_OnLevelDown
+  commentId: E:ElectricDrill.AstraRpgFramework.Experience.EntityLevel.OnLevelDown
+  fullName: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.OnLevelDown
+  nameWithType: EntityLevel.OnLevelDown
 - uid: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.OnLevelUp
   name: OnLevelUp
   href: api/ElectricDrill.AstraRpgFramework.Experience.EntityLevel.html#ElectricDrill_AstraRpgFramework_Experience_EntityLevel_OnLevelUp
   commentId: E:ElectricDrill.AstraRpgFramework.Experience.EntityLevel.OnLevelUp
   fullName: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.OnLevelUp
   nameWithType: EntityLevel.OnLevelUp
+- uid: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.RemoveExp(System.Int64)
+  name: RemoveExp(long)
+  href: api/ElectricDrill.AstraRpgFramework.Experience.EntityLevel.html#ElectricDrill_AstraRpgFramework_Experience_EntityLevel_RemoveExp_System_Int64_
+  commentId: M:ElectricDrill.AstraRpgFramework.Experience.EntityLevel.RemoveExp(System.Int64)
+  name.vb: RemoveExp(Long)
+  fullName: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.RemoveExp(long)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.RemoveExp(Long)
+  nameWithType: EntityLevel.RemoveExp(long)
+  nameWithType.vb: EntityLevel.RemoveExp(Long)
+- uid: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.RemoveExp*
+  name: RemoveExp
+  href: api/ElectricDrill.AstraRpgFramework.Experience.EntityLevel.html#ElectricDrill_AstraRpgFramework_Experience_EntityLevel_RemoveExp_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Experience.EntityLevel.RemoveExp
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.RemoveExp
+  nameWithType: EntityLevel.RemoveExp
+- uid: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.ResetToLevelOne
+  name: ResetToLevelOne()
+  href: api/ElectricDrill.AstraRpgFramework.Experience.EntityLevel.html#ElectricDrill_AstraRpgFramework_Experience_EntityLevel_ResetToLevelOne
+  commentId: M:ElectricDrill.AstraRpgFramework.Experience.EntityLevel.ResetToLevelOne
+  fullName: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.ResetToLevelOne()
+  nameWithType: EntityLevel.ResetToLevelOne()
+- uid: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.ResetToLevelOne*
+  name: ResetToLevelOne
+  href: api/ElectricDrill.AstraRpgFramework.Experience.EntityLevel.html#ElectricDrill_AstraRpgFramework_Experience_EntityLevel_ResetToLevelOne_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Experience.EntityLevel.ResetToLevelOne
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.ResetToLevelOne
+  nameWithType: EntityLevel.ResetToLevelOne
 - uid: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.SetTotalCurrentExp(System.Int64)
   name: SetTotalCurrentExp(long)
   href: api/ElectricDrill.AstraRpgFramework.Experience.EntityLevel.html#ElectricDrill_AstraRpgFramework_Experience_EntityLevel_SetTotalCurrentExp_System_Int64_
@@ -2042,6 +2089,35 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Experience.ILevelable.NextLevelTotalExperience
   nameWithType: ILevelable.NextLevelTotalExperience
+- uid: ElectricDrill.AstraRpgFramework.Experience.ILevelable.RemoveExp(System.Int64)
+  name: RemoveExp(long)
+  href: api/ElectricDrill.AstraRpgFramework.Experience.ILevelable.html#ElectricDrill_AstraRpgFramework_Experience_ILevelable_RemoveExp_System_Int64_
+  commentId: M:ElectricDrill.AstraRpgFramework.Experience.ILevelable.RemoveExp(System.Int64)
+  name.vb: RemoveExp(Long)
+  fullName: ElectricDrill.AstraRpgFramework.Experience.ILevelable.RemoveExp(long)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Experience.ILevelable.RemoveExp(Long)
+  nameWithType: ILevelable.RemoveExp(long)
+  nameWithType.vb: ILevelable.RemoveExp(Long)
+- uid: ElectricDrill.AstraRpgFramework.Experience.ILevelable.RemoveExp*
+  name: RemoveExp
+  href: api/ElectricDrill.AstraRpgFramework.Experience.ILevelable.html#ElectricDrill_AstraRpgFramework_Experience_ILevelable_RemoveExp_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Experience.ILevelable.RemoveExp
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Experience.ILevelable.RemoveExp
+  nameWithType: ILevelable.RemoveExp
+- uid: ElectricDrill.AstraRpgFramework.Experience.ILevelable.ResetToLevelOne
+  name: ResetToLevelOne()
+  href: api/ElectricDrill.AstraRpgFramework.Experience.ILevelable.html#ElectricDrill_AstraRpgFramework_Experience_ILevelable_ResetToLevelOne
+  commentId: M:ElectricDrill.AstraRpgFramework.Experience.ILevelable.ResetToLevelOne
+  fullName: ElectricDrill.AstraRpgFramework.Experience.ILevelable.ResetToLevelOne()
+  nameWithType: ILevelable.ResetToLevelOne()
+- uid: ElectricDrill.AstraRpgFramework.Experience.ILevelable.ResetToLevelOne*
+  name: ResetToLevelOne
+  href: api/ElectricDrill.AstraRpgFramework.Experience.ILevelable.html#ElectricDrill_AstraRpgFramework_Experience_ILevelable_ResetToLevelOne_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Experience.ILevelable.ResetToLevelOne
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Experience.ILevelable.ResetToLevelOne
+  nameWithType: ILevelable.ResetToLevelOne
 - uid: ElectricDrill.AstraRpgFramework.Experience.ILevelable.SetTotalCurrentExp(System.Int64)
   name: SetTotalCurrentExp(long)
   href: api/ElectricDrill.AstraRpgFramework.Experience.ILevelable.html#ElectricDrill_AstraRpgFramework_Experience_ILevelable_SetTotalCurrentExp_System_Int64_
@@ -2631,6 +2707,22 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.GetBase
   nameWithType: EntityStats.GetBase
+- uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats.OnLevelDown(ElectricDrill.AstraRpgFramework.EntityCore,System.Int32)
+  name: OnLevelDown(EntityCore, int)
+  href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_OnLevelDown_ElectricDrill_AstraRpgFramework_EntityCore_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Stats.EntityStats.OnLevelDown(ElectricDrill.AstraRpgFramework.EntityCore,System.Int32)
+  name.vb: OnLevelDown(EntityCore, Integer)
+  fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.OnLevelDown(ElectricDrill.AstraRpgFramework.EntityCore, int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Stats.EntityStats.OnLevelDown(ElectricDrill.AstraRpgFramework.EntityCore, Integer)
+  nameWithType: EntityStats.OnLevelDown(EntityCore, int)
+  nameWithType.vb: EntityStats.OnLevelDown(EntityCore, Integer)
+- uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats.OnLevelDown*
+  name: OnLevelDown
+  href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_OnLevelDown_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Stats.EntityStats.OnLevelDown
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.OnLevelDown
+  nameWithType: EntityStats.OnLevelDown
 - uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats.OnLevelUp(ElectricDrill.AstraRpgFramework.EntityCore,System.Int32)
   name: OnLevelUp(EntityCore, int)
   href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_OnLevelUp_ElectricDrill_AstraRpgFramework_EntityCore_System_Int32_
@@ -3189,19 +3281,6 @@ references:
   commentId: T:ElectricDrill.AstraRpgFramework.Utils.BoundedValue
   fullName: ElectricDrill.AstraRpgFramework.Utils.BoundedValue
   nameWithType: BoundedValue
-- uid: ElectricDrill.AstraRpgFramework.Utils.BoundedValue.DefaultValue
-  name: DefaultValue
-  href: api/ElectricDrill.AstraRpgFramework.Utils.BoundedValue.html#ElectricDrill_AstraRpgFramework_Utils_BoundedValue_DefaultValue
-  commentId: P:ElectricDrill.AstraRpgFramework.Utils.BoundedValue.DefaultValue
-  fullName: ElectricDrill.AstraRpgFramework.Utils.BoundedValue.DefaultValue
-  nameWithType: BoundedValue.DefaultValue
-- uid: ElectricDrill.AstraRpgFramework.Utils.BoundedValue.DefaultValue*
-  name: DefaultValue
-  href: api/ElectricDrill.AstraRpgFramework.Utils.BoundedValue.html#ElectricDrill_AstraRpgFramework_Utils_BoundedValue_DefaultValue_
-  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.BoundedValue.DefaultValue
-  isSpec: "True"
-  fullName: ElectricDrill.AstraRpgFramework.Utils.BoundedValue.DefaultValue
-  nameWithType: BoundedValue.DefaultValue
 - uid: ElectricDrill.AstraRpgFramework.Utils.BoundedValue.HasMaxValue
   name: HasMaxValue
   href: api/ElectricDrill.AstraRpgFramework.Utils.BoundedValue.html#ElectricDrill_AstraRpgFramework_Utils_BoundedValue_HasMaxValue
@@ -3445,6 +3524,12 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Utils.GrowthFormulaMenuItems.CreateGrowthFormula
   nameWithType: GrowthFormulaMenuItems.CreateGrowthFormula
+- uid: ElectricDrill.AstraRpgFramework.Utils.IValidatable
+  name: IValidatable
+  href: api/ElectricDrill.AstraRpgFramework.Utils.IValidatable.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Utils.IValidatable
+  fullName: ElectricDrill.AstraRpgFramework.Utils.IValidatable
+  nameWithType: IValidatable
 - uid: ElectricDrill.AstraRpgFramework.Utils.IValueContainer`1
   name: IValueContainer<T>
   href: api/ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html
@@ -4369,6 +4454,53 @@ references:
   fullName.vb: ElectricDrill.AstraRpgFramework.Utils.SerializableHashSet(Of T).RemoveWhere
   nameWithType: SerializableHashSet<T>.RemoveWhere
   nameWithType.vb: SerializableHashSet(Of T).RemoveWhere
+- uid: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute
+  name: TypeSelectableAttribute
+  href: api/ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute
+  fullName: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute
+  nameWithType: TypeSelectableAttribute
+- uid: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.#ctor
+  name: TypeSelectableAttribute()
+  href: api/ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.html#ElectricDrill_AstraRpgFramework_Utils_TypeSelectableAttribute__ctor
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.#ctor
+  name.vb: New()
+  fullName: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.TypeSelectableAttribute()
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.New()
+  nameWithType: TypeSelectableAttribute.TypeSelectableAttribute()
+  nameWithType.vb: TypeSelectableAttribute.New()
+- uid: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.#ctor(System.Type)
+  name: TypeSelectableAttribute(Type)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.html#ElectricDrill_AstraRpgFramework_Utils_TypeSelectableAttribute__ctor_System_Type_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.#ctor(System.Type)
+  name.vb: New(Type)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.TypeSelectableAttribute(System.Type)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.New(System.Type)
+  nameWithType: TypeSelectableAttribute.TypeSelectableAttribute(Type)
+  nameWithType.vb: TypeSelectableAttribute.New(Type)
+- uid: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.#ctor*
+  name: TypeSelectableAttribute
+  href: api/ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.html#ElectricDrill_AstraRpgFramework_Utils_TypeSelectableAttribute__ctor_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.TypeSelectableAttribute
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.New
+  nameWithType: TypeSelectableAttribute.TypeSelectableAttribute
+  nameWithType.vb: TypeSelectableAttribute.New
+- uid: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.DefaultType
+  name: DefaultType
+  href: api/ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.html#ElectricDrill_AstraRpgFramework_Utils_TypeSelectableAttribute_DefaultType
+  commentId: P:ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.DefaultType
+  fullName: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.DefaultType
+  nameWithType: TypeSelectableAttribute.DefaultType
+- uid: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.DefaultType*
+  name: DefaultType
+  href: api/ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.html#ElectricDrill_AstraRpgFramework_Utils_TypeSelectableAttribute_DefaultType_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.DefaultType
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.DefaultType
+  nameWithType: TypeSelectableAttribute.DefaultType
 - uid: ElectricDrill.AstraRpgFramework.Utils.UI
   name: ElectricDrill.AstraRpgFramework.Utils.UI
   href: api/ElectricDrill.AstraRpgFramework.Utils.UI.html

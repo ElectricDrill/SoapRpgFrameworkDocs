@@ -126,7 +126,7 @@ Provides the core functionality for level progression and experience management.
 
   <h3 id="ElectricDrill_AstraRpgFramework_Experience_ILevelable_CurrentTotalExperience" data-uid="ElectricDrill.AstraRpgFramework.Experience.ILevelable.CurrentTotalExperience">
   CurrentTotalExperience
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/ILevelable.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/ILevelable.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the current total experience of the entity.
@@ -230,7 +230,7 @@ May cause the entity to level up if enough experience is gained.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Experience_ILevelable_CurrentLevelTotalExperience" data-uid="ElectricDrill.AstraRpgFramework.Experience.ILevelable.CurrentLevelTotalExperience">
   CurrentLevelTotalExperience()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/ILevelable.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/ILevelable.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the total experience required to reach the current level.</p>
@@ -263,7 +263,7 @@ May cause the entity to level up if enough experience is gained.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Experience_ILevelable_NextLevelTotalExperience" data-uid="ElectricDrill.AstraRpgFramework.Experience.ILevelable.NextLevelTotalExperience">
   NextLevelTotalExperience()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/ILevelable.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/ILevelable.cs/#L53"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the total experience required to reach the next level.</p>
@@ -292,11 +292,74 @@ May cause the entity to level up if enough experience is gained.</p>
 
 
 
+  <a id="ElectricDrill_AstraRpgFramework_Experience_ILevelable_RemoveExp_" data-uid="ElectricDrill.AstraRpgFramework.Experience.ILevelable.RemoveExp*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Experience_ILevelable_RemoveExp_System_Int64_" data-uid="ElectricDrill.AstraRpgFramework.Experience.ILevelable.RemoveExp(System.Int64)">
+  RemoveExp(long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/ILevelable.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes experience points from the entity without applying modifiers.
+May cause the entity to level down if enough experience is removed.
+Experience cannot go below 0 and level cannot go below 1.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RemoveExp(long amount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <span class="xref">long</span></dt>
+    <dd><p>The amount of experience to remove.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Experience_ILevelable_ResetToLevelOne_" data-uid="ElectricDrill.AstraRpgFramework.Experience.ILevelable.ResetToLevelOne*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Experience_ILevelable_ResetToLevelOne" data-uid="ElectricDrill.AstraRpgFramework.Experience.ILevelable.ResetToLevelOne">
+  ResetToLevelOne()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/ILevelable.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Resets the entity to level 1 with 0 experience.
+This will trigger OnLevelDown events for each level lost.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ResetToLevelOne()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="ElectricDrill_AstraRpgFramework_Experience_ILevelable_SetTotalCurrentExp_" data-uid="ElectricDrill.AstraRpgFramework.Experience.ILevelable.SetTotalCurrentExp*"></a>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Experience_ILevelable_SetTotalCurrentExp_System_Int64_" data-uid="ElectricDrill.AstraRpgFramework.Experience.ILevelable.SetTotalCurrentExp(System.Int64)">
   SetTotalCurrentExp(long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/ILevelable.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/ILevelable.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the total current experience and updates the level accordingly.
@@ -330,7 +393,7 @@ The level will be recalculated based on the new experience total.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Experience_ILevelable_ValidateExperience" data-uid="ElectricDrill.AstraRpgFramework.Experience.ILevelable.ValidateExperience">
   ValidateExperience()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/ILevelable.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Experience/ILevelable.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Validates that the current experience matches the current level.

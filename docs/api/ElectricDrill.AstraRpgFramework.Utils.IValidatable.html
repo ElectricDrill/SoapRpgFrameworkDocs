@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class EntityLeveledUpGameEventListener | Astra RPG Framework </title>
+      <title>Interface IValidatable | Astra RPG Framework </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class EntityLeveledUpGameEventListener | Astra RPG Framework ">
+      <meta name="title" content="Interface IValidatable | Astra RPG Framework ">
       
-      <meta name="description" content="Event to notify the increase of the level of an entity. Parameters are:  the entity that changed level the new level">
+      <meta name="description" content="Interface for objects that support validation events in the Unity Editor. This allows other components to subscribe and react when an object is validated (typically through OnValidate in the inspector).">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Cis8/SoapRpgFramework/new/main/apiSpec/new?filename=ElectricDrill_AstraRpgFramework_Events_EntityLeveledUpGameEventListener.md&amp;value=---%0Auid%3A%20ElectricDrill.AstraRpgFramework.Events.EntityLeveledUpGameEventListener%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Cis8/SoapRpgFramework/new/main/apiSpec/new?filename=ElectricDrill_AstraRpgFramework_Utils_IValidatable.md&amp;value=---%0Auid%3A%20ElectricDrill.AstraRpgFramework.Utils.IValidatable%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,63 +84,35 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="ElectricDrill.AstraRpgFramework.Events.EntityLeveledUpGameEventListener">
+        <article data-uid="ElectricDrill.AstraRpgFramework.Utils.IValidatable">
 
 
 
-  <h1 id="ElectricDrill_AstraRpgFramework_Events_EntityLeveledUpGameEventListener" data-uid="ElectricDrill.AstraRpgFramework.Events.EntityLeveledUpGameEventListener" class="text-break">
-Class EntityLeveledUpGameEventListener  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Events/GeneratedEvents/LevelAndExperienceEventsGenerator/GameEventListeners/2/EntityLeveledUpGameEventListener.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <h1 id="ElectricDrill_AstraRpgFramework_Utils_IValidatable" data-uid="ElectricDrill.AstraRpgFramework.Utils.IValidatable" class="text-break">
+Interface IValidatable  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Utils/IValidatable.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="ElectricDrill.html">ElectricDrill</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.html">AstraRpgFramework</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.Events.html">Events</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ElectricDrill.html">ElectricDrill</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.html">AstraRpgFramework</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.html">Utils</a></dd></dl>
   <dl><dt>Assembly</dt><dd>com.electricdrill.astra-rpg-framework.Runtime.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Event to notify the increase of the level of an entity.
-Parameters are:</p>
-<ul>
-<li>the entity that changed level</li>
-<li>the new level</li>
-</ul>
+  <div class="markdown summary"><p>Interface for objects that support validation events in the Unity Editor.
+This allows other components to subscribe and react when an object is validated
+(typically through OnValidate in the inspector).</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EntityLeveledUpGameEventListener : GameEventListenerGeneric2&lt;EntityCore, int&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IValidatable</code></pre>
   </div>
 
 
 
 
-  <dl class="typelist inheritance">
-    <dt>Inheritance</dt>
-    <dd>
-      <div><span class="xref">object</span></div>
-      <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.html">Object</a></div>
-      <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/Component.html">Component</a></div>
-      <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/Behaviour.html">Behaviour</a></div>
-      <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></div>
-      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Events.GameEventListenerGeneric2-2.html">GameEventListenerGeneric2</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a>, <span class="xref">int</span>&gt;</div>
-      <div><span class="xref">EntityLeveledUpGameEventListener</span></div>
-    </dd>
-  </dl>
 
 
 
-  <dl class="typelist inheritedMembers">
-    <dt>Inherited Members</dt>
-    <dd>
-    <div>
-      <a class="xref" href="ElectricDrill.AstraRpgFramework.Events.GameEventListenerGeneric2-2.html#ElectricDrill_AstraRpgFramework_Events_GameEventListenerGeneric2_2__event">GameEventListenerGeneric2&lt;EntityCore, int&gt;._event</a>
-    </div>
-    <div>
-      <a class="xref" href="ElectricDrill.AstraRpgFramework.Events.GameEventListenerGeneric2-2.html#ElectricDrill_AstraRpgFramework_Events_GameEventListenerGeneric2_2__response">GameEventListenerGeneric2&lt;EntityCore, int&gt;._response</a>
-    </div>
-    <div>
-      <a class="xref" href="ElectricDrill.AstraRpgFramework.Events.GameEventListenerGeneric2-2.html#ElectricDrill_AstraRpgFramework_Events_GameEventListenerGeneric2_2_OnEventRaised__0__1_">GameEventListenerGeneric2&lt;EntityCore, int&gt;.OnEventRaised(EntityCore, int)</a>
-    </div>
-  </dd></dl>
 
 
 
