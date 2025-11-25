@@ -170,7 +170,7 @@ To retrieve the values of a `GrowthFormula` from code, you can use the `GetGrowt
 int physicalAttackLevel5 = warriorPhysicalAttackGF.GetGrowthValue(5);
 ```
 
-## Make a `GameObject` an entity
+## Making a `GameObject` an entity
 To make a `GameObject` an entity, we need to add the `MonoBehaviour` `EntityCore` to it. Select your object from the hierarchy and click, in the inspector, on "Add component". Then search for and select `EntityCore`.
 
 ![Entity Core Custom Editor](../images/workflows/entity-core-editor.png)  
