@@ -106,10 +106,6 @@ Provides functionality to define optional min/max constraints and clamp values w
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.ExcludeFromDerivedTypePickerAttribute.html">ExcludeFromDerivedTypePickerAttribute</a></dt>
-      <dd></dd>
-    </dl>
-    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.html">GrowthFormula</a></dt>
       <dd><p>Represents a formula to calculate growth values for different levels, up to a maximum level.</p>
 </dd>
@@ -169,6 +165,12 @@ Provides all standard dictionary functionality while maintaining Unity serializa
 Provides all standard hash set functionality while maintaining Unity serialization compatibility.</p>
 </dd>
     </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.html">TypeSelectableAttribute</a></dt>
+      <dd><p>Custom attribute to mark fields for SerializeReference type selection.
+Apply this to [SerializeReference] fields to enable type selection dropdown.</p>
+</dd>
+    </dl>
     <h3 id="structs">
 Structs
 </h3>
@@ -181,6 +183,13 @@ Provides implicit conversion to and from the standard KeyValuePair.</p>
     <h3 id="interfaces">
 Interfaces
 </h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValidatable.html">IValidatable</a></dt>
+      <dd><p>Interface for objects that support validation events in the Unity Editor.
+This allows other components to subscribe and react when an object is validated
+(typically through OnValidate in the inspector).</p>
+</dd>
+    </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html">IValueContainer&lt;T&gt;</a></dt>
       <dd><p>Interface for objects that can contain and query values.
@@ -196,8 +205,6 @@ Provides a standardized way to check for value containment across different valu
 
 </article>
 
-        <div class="contribution d-print-none">
-        </div>
 
 
       </div>

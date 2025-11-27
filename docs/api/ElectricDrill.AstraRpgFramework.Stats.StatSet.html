@@ -103,7 +103,7 @@ Implements IStatContainer to provide stat containment functionality.</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StatSet : ScriptableObject, IValueContainer&lt;Stat&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class StatSet : ScriptableObject, IValueContainer&lt;Stat&gt;, IValidatable</code></pre>
   </div>
 
 
@@ -123,6 +123,7 @@ Implements IStatContainer to provide stat containment functionality.</p>
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html">IValueContainer</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a>&gt;</div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValidatable.html">IValidatable</a></div>
     </dd>
   </dl>
 
@@ -332,9 +333,6 @@ Also looks in included StatSets.</p>
 
 </article>
 
-        <div class="contribution d-print-none">
-          <a href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Stats/StatSet.cs/#L14" class="edit-link">Edit this page</a>
-        </div>
 
 
       </div>

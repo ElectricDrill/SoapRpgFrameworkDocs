@@ -306,7 +306,7 @@ protected SetType _set</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_GetEntitySet_ElectricDrill_AstraRpgFramework_EntityCore_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.GetEntitySet(ElectricDrill.AstraRpgFramework.EntityCore)">
   GetEntitySet(EntityCore)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L69"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the set associated with the specified entity.
@@ -346,7 +346,7 @@ This method must be implemented by derived classes to define how to retrieve the
 
   <h3 id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_GetEntityValue_ElectricDrill_AstraRpgFramework_EntityCore__1_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.GetEntityValue(ElectricDrill.AstraRpgFramework.EntityCore,`1)">
   GetEntityValue(EntityCore, KeyType)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the current value of a specific key for the given entity.
@@ -389,7 +389,7 @@ This method must be implemented by derived classes to define how to retrieve ent
 
   <h3 id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_GetSetItems" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.GetSetItems">
   GetSetItems()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L109"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets all items from the current set that can be used for scaling.
@@ -423,7 +423,7 @@ This method must be implemented by derived classes to define which items are ava
 
   <h3 id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_OnValidate" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.OnValidate">
   OnValidate()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L84"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Validates and refreshes the scaling attribute values based on the current set.
@@ -451,11 +451,12 @@ Called automatically when the component is validated in the editor.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_ValidateEntitySet_ElectricDrill_AstraRpgFramework_EntityCore_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.ValidateEntitySet(ElectricDrill.AstraRpgFramework.EntityCore)">
   ValidateEntitySet(EntityCore)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Validates that the entity's set is compatible with this scaling component's set.
-By default, requires exact equality. Derived classes can override for different validation logic.</p>
+By default, requires exact equality. Derived classes can override for different validation logic.
+If the entity's set is null, logs a warning and skips validation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -484,9 +485,6 @@ By default, requires exact equality. Derived classes can override for different 
 
 </article>
 
-        <div class="contribution d-print-none">
-          <a href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L16" class="edit-link">Edit this page</a>
-        </div>
 
 
       </div>

@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/main/DocFx/MD/workflows.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/1.2.0/DocFx/MD/workflows.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -123,9 +123,10 @@
 -->
 <h2 id="creating-instances-of-the-objects">Creating instances of the objects</h2>
 <p>All the scriptable objects provided by the framework can be created through the Unity Editor by either right-clicking in the hierarchy and selecting <code>Create &gt; Astra RPG</code> or navigating to the <code>Assets</code> menu at the top of the window and choosing <code>Create &gt; Astra RPG</code>.</p>
-<h2 id="mandatory-and-re-play-fields">Mandatory and re-play fields</h2>
+<h2 id="mandatory-re-play-and-read-only-fields">Mandatory, re-play, and read-only fields</h2>
 <p>Fields marked with a red asterisk (<span style="color:red;">*</span>) are mandatory and must be filled out to ensure proper functionality of the framework.</p>
 <p>Fields marked with an orange <strong style="color:orange;">R</strong> are re-play fields. Any changes made to these fields during playtime will require a restart to ensure the changes take effect.</p>
+<p>Fields marked with a teal <strong style="color:teal;">RO</strong> are read-only fields. The framework manages these fields internally, and they cannot and should not be modified directly by the user.</p>
 <h2 id="some-utilities">Some utilities</h2>
 <p>Almost every class provided by this package uses events or variables in the form of <code>ScriptableObject</code>. Therefore, let's quickly introduce these concepts so that we are clear about what we are talking about when we encounter them in the following paragraphs.</p>
 <h3 id="game-events-as-scriptableobjects">Game events as <code>ScriptableObjects</code></h3>
@@ -221,7 +222,7 @@ For the second growth expression, set <code>From Level</code> to <code>11</code>
 <pre><code class="lang-csharp">// warriorPhysicalAttackGF is a reference to the Warrior Physical Attack Growth Formula
 int physicalAttackLevel5 = warriorPhysicalAttackGF.GetGrowthValue(5);
 </code></pre>
-<h2 id="make-a-gameobject-an-entity">Make a <code>GameObject</code> an entity</h2>
+<h2 id="making-a-gameobject-an-entity">Making a <code>GameObject</code> an entity</h2>
 <p>To make a <code>GameObject</code> an entity, we need to add the <code>MonoBehaviour</code> <code>EntityCore</code> to it. Select your object from the hierarchy and click, in the inspector, on &quot;Add component&quot;. Then search for and select <code>EntityCore</code>.</p>
 <p><img src="../images/workflows/entity-core-editor.png" alt="Entity Core Custom Editor"></p>
 <p>From the inspector, we can configure several values. Let's analyze them one by one.</p>
@@ -236,13 +237,15 @@ If <code>Use constant</code> is checked instead, the value is readonly.</p>
 <p><code>Max Level</code>: The maximum level the entity can reach</p>
 <p><code>Experience Formula</code>: <code>GrowthFormula</code> that describes how the total experience required to reach the next level grows at each level.</p>
 <p><code>On Level Up</code>: <code>EntityLeveledUpGameEvent</code> that should be raised when the entity levels up.</p>
+<p><code>On Level Down</code>: (🏷️<em>v1.2.0+</em>) <code>EntityLeveledDownGameEvent</code> that should be raised when the entity levels down.</p>
 <p><code>Spawned Entity Event</code>: <code>EntityCoreGameEvent</code> that should be raised when this entity's <code>Start()</code> method is executed.</p>
 <p>You may notice that a game event is already assigned to <code>Spawned Entity Event</code>. This is because an instance of that game event has been explicitly assigned directly in the inspector of the <code>EntityCore</code> script. This choice was made since in most cases the same event instance will always be used for entity spawning. This means you don't have to reassign this event every time you create a new entity in Unity. As we'll see later, this default assignment mechanism has been used for other components as well.</p>
 <h3 id="entitylevel-code-apis">EntityLevel code APIs</h3>
 <p>It is honorable to mention some code APIs that can be used to interact with the <code>EntityLevel</code> component.</p>
 <p>EntityLevel exposes a <code>Action&lt;EntityCore, int&gt; OnLevelUp</code> property that can be used to subscribe to level-up events from code.</p>
 <p>If we want to grant experience to the entity, we can use the <code>AddExp(long amount)</code> method. This method will automatically raise the <code>OnLevelUp</code> event if the entity levels up.
-Alternatively, it is available also the <code>SetTotalCurrentExp(long totalCurrentExperience)</code> method, which allows setting the total current experience of the entity. This method will also raise the <code>OnLevelUp</code> event if the entity levels up.</p>
+Alternatively, it is available also the <code>SetTotalCurrentExp(long totalCurrentExperience)</code> method, which allows setting the total current experience of the entity. This method will also raise the <code>OnLevelUp</code> event if the entity levels up, and the <code>OnLevelDown</code> event if the entity levels down.</p>
+<p>(🏷️<em>v1.2.0+</em>) Similarly, the <code>RemoveExp(long amount)</code> method allows deducting experience from the entity. This method will raise the <code>OnLevelDown</code> event if the entity levels down. If you want to <em>respec</em> an entity, the <code>ResetToLevelOne()</code> method resets the entity's level and experience to level 1. This method will raise the <code>OnLevelDown</code> event if the entity levels down. Clearly, all spent attribute points will be reset as well.</p>
 <p>Finally, there are the <code>CurrentLevelTotalExperience()</code> and the <code>NextLevelTotalExperience()</code> methods. These methods return the total experience required to reach the current level and the next level, respectively. They are useful, for example, for checking how much experience is needed to level up.</p>
 <h2 id="creating-astra-rpg-framework-assets">Creating Astra RPG Framework assets</h2>
 <p>All the instances of the various assets that derive from <code>ScriptableObject</code>s can be created in the following ways:</p>
@@ -776,9 +779,6 @@ Same applies if you rename the generated game event type scripts. To rename them
 
 </article>
 
-        <div class="contribution d-print-none">
-          <a href="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/main/DocFx/MD/workflows.md/#L1" class="edit-link">Edit this page</a>
-        </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
 
