@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/1.2.0/DocFx/MD/workflows.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/main/DocFx/MD/workflows.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -179,6 +179,8 @@ The string can be defined by using the <a href="https://docs.unity3d.com/6000.0/
 <li><code>LVL</code>: the level at each iteration</li>
 <li><code>PRV</code>: the previous value of the <code>GrowthFormula</code> (value evaluated at the previous level)</li>
 <li><code>SPRV</code>: the second previous value of the <code>GrowthFormula</code> (value evaluated 2 levels ago)</li>
+<li><code>PRV[N]</code>: (🏷️<em>v1.3.0+</em>) the N-th previous value of the <code>GrowthFormula</code> (value evaluated N levels ago). N must be a valid number with respect to the level range being used. For example, N cannot be 5 if we are evaluating level an expression in the level range 3 --&gt; 10, as PRV[5] at level 3, 4, and 5 will be undefined.</li>
+<li><code>AT[N]</code>: (🏷️<em>v1.3.0+</em>) the value of the <code>GrowthFormula</code> at level N. N cannot be a value equal or grater than the current level being evaluated.</li>
 <li><code>SUM</code>: the sum of the values of the <code>GrowthFormula</code> from level 1 up to the previous level</li>
 </ul>
 <h4 id="example-of-a-growthformula">Example of a <code>GrowthFormula</code></h4>

@@ -20,6 +20,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 #### Runtime Features
 - Changed the internal `AttributePointsTracker` used by `EntityAttributes` to track spendable attribute points. `EntityPointsTracker` replaces the legacy tracker, and relies on a new `AttributePortfolio` to manage the allocation of attribute points to attributes. This new system is more readable, more robust, and more maintainable. The old system is left for backward compatibility. By updating the framework to this version, existing projects will automatically migrate to the new system.
 
+### Fixed
+#### Runtime Features
+- Fixed Round Robin Strategy for attribute points removal on level down or reset to level 1.
+
 ## [1.2.0] - 2025-11-25
 ### Added
 #### Runtime Features

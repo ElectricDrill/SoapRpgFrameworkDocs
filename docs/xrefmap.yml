@@ -542,6 +542,22 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RefundAllSpentPoints
   nameWithType: EntityAttributes.RefundAllSpentPoints
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RefundFrom(ElectricDrill.AstraRpgFramework.Attributes.Attribute,System.Int32)
+  name: RefundFrom(Attribute, int)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_RefundFrom_ElectricDrill_AstraRpgFramework_Attributes_Attribute_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RefundFrom(ElectricDrill.AstraRpgFramework.Attributes.Attribute,System.Int32)
+  name.vb: RefundFrom(Attribute, Integer)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RefundFrom(ElectricDrill.AstraRpgFramework.Attributes.Attribute, int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RefundFrom(ElectricDrill.AstraRpgFramework.Attributes.Attribute, Integer)
+  nameWithType: EntityAttributes.RefundFrom(Attribute, int)
+  nameWithType.vb: EntityAttributes.RefundFrom(Attribute, Integer)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RefundFrom*
+  name: RefundFrom
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_RefundFrom_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RefundFrom
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RefundFrom
+  nameWithType: EntityAttributes.RefundFrom
 - uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RefundPointsForAttribute(ElectricDrill.AstraRpgFramework.Attributes.Attribute)
   name: RefundPointsForAttribute(Attribute)
   href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_RefundPointsForAttribute_ElectricDrill_AstraRpgFramework_Attributes_Attribute_
@@ -3505,6 +3521,19 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.GrowthFoValues
   nameWithType: GrowthFormula.GrowthFoValues
+- uid: ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.ValidationErrors
+  name: ValidationErrors
+  href: api/ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.html#ElectricDrill_AstraRpgFramework_Utils_GrowthFormula_ValidationErrors
+  commentId: P:ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.ValidationErrors
+  fullName: ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.ValidationErrors
+  nameWithType: GrowthFormula.ValidationErrors
+- uid: ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.ValidationErrors*
+  name: ValidationErrors
+  href: api/ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.html#ElectricDrill_AstraRpgFramework_Utils_GrowthFormula_ValidationErrors_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.ValidationErrors
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.ValidationErrors
+  nameWithType: GrowthFormula.ValidationErrors
 - uid: ElectricDrill.AstraRpgFramework.Utils.GrowthFormulaMenuItems
   name: GrowthFormulaMenuItems
   href: api/ElectricDrill.AstraRpgFramework.Utils.GrowthFormulaMenuItems.html
@@ -3857,6 +3886,35 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.CompareTo
   nameWithType: Percentage.CompareTo
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.Equals(System.Object)
+  name: Equals(object)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_Equals_System_Object_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.Percentage.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.Equals(object)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.Equals(Object)
+  nameWithType: Percentage.Equals(object)
+  nameWithType.vb: Percentage.Equals(Object)
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.Equals*
+  name: Equals
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_Equals_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.Percentage.Equals
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.Equals
+  nameWithType: Percentage.Equals
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.GetHashCode
+  name: GetHashCode()
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_GetHashCode
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.Percentage.GetHashCode
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.GetHashCode()
+  nameWithType: Percentage.GetHashCode()
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.GetHashCode*
+  name: GetHashCode
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_GetHashCode_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.Percentage.GetHashCode
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.GetHashCode
+  nameWithType: Percentage.GetHashCode
 - uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.ToString
   name: ToString()
   href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_ToString
@@ -3889,6 +3947,34 @@ references:
   fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.+
   nameWithType: Percentage.operator +
   nameWithType.vb: Percentage.+
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Equality(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int32)
+  name: operator ==(Percentage, int)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_Equality_ElectricDrill_AstraRpgFramework_Utils_Percentage_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Equality(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int32)
+  name.vb: =(Percentage, Integer)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator ==(ElectricDrill.AstraRpgFramework.Utils.Percentage, int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.=(ElectricDrill.AstraRpgFramework.Utils.Percentage, Integer)
+  nameWithType: Percentage.operator ==(Percentage, int)
+  nameWithType.vb: Percentage.=(Percentage, Integer)
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Equality(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int64)
+  name: operator ==(Percentage, long)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_Equality_ElectricDrill_AstraRpgFramework_Utils_Percentage_System_Int64_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Equality(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int64)
+  name.vb: =(Percentage, Long)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator ==(ElectricDrill.AstraRpgFramework.Utils.Percentage, long)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.=(ElectricDrill.AstraRpgFramework.Utils.Percentage, Long)
+  nameWithType: Percentage.operator ==(Percentage, long)
+  nameWithType.vb: Percentage.=(Percentage, Long)
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Equality*
+  name: operator ==
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_Equality_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator ==
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.=
+  nameWithType: Percentage.operator ==
+  nameWithType.vb: Percentage.=
 - uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Explicit(ElectricDrill.AstraRpgFramework.Utils.Percentage)~System.Int64
   name: explicit operator long(Percentage)
   href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_Explicit_ElectricDrill_AstraRpgFramework_Utils_Percentage__System_Int64
@@ -3908,6 +3994,62 @@ references:
   fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.CType
   nameWithType: Percentage.explicit operator
   nameWithType.vb: Percentage.CType
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_GreaterThan(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int32)
+  name: operator >(Percentage, int)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_GreaterThan_ElectricDrill_AstraRpgFramework_Utils_Percentage_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_GreaterThan(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int32)
+  name.vb: '>(Percentage, Integer)'
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator >(ElectricDrill.AstraRpgFramework.Utils.Percentage, int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.>(ElectricDrill.AstraRpgFramework.Utils.Percentage, Integer)
+  nameWithType: Percentage.operator >(Percentage, int)
+  nameWithType.vb: Percentage.>(Percentage, Integer)
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_GreaterThan(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int64)
+  name: operator >(Percentage, long)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_GreaterThan_ElectricDrill_AstraRpgFramework_Utils_Percentage_System_Int64_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_GreaterThan(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int64)
+  name.vb: '>(Percentage, Long)'
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator >(ElectricDrill.AstraRpgFramework.Utils.Percentage, long)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.>(ElectricDrill.AstraRpgFramework.Utils.Percentage, Long)
+  nameWithType: Percentage.operator >(Percentage, long)
+  nameWithType.vb: Percentage.>(Percentage, Long)
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_GreaterThan*
+  name: operator >
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_GreaterThan_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_GreaterThan
+  isSpec: "True"
+  name.vb: '>'
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator >
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.>
+  nameWithType: Percentage.operator >
+  nameWithType.vb: Percentage.>
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_GreaterThanOrEqual(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int32)
+  name: operator >=(Percentage, int)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_GreaterThanOrEqual_ElectricDrill_AstraRpgFramework_Utils_Percentage_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_GreaterThanOrEqual(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int32)
+  name.vb: '>=(Percentage, Integer)'
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator >=(ElectricDrill.AstraRpgFramework.Utils.Percentage, int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.>=(ElectricDrill.AstraRpgFramework.Utils.Percentage, Integer)
+  nameWithType: Percentage.operator >=(Percentage, int)
+  nameWithType.vb: Percentage.>=(Percentage, Integer)
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_GreaterThanOrEqual(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int64)
+  name: operator >=(Percentage, long)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_GreaterThanOrEqual_ElectricDrill_AstraRpgFramework_Utils_Percentage_System_Int64_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_GreaterThanOrEqual(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int64)
+  name.vb: '>=(Percentage, Long)'
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator >=(ElectricDrill.AstraRpgFramework.Utils.Percentage, long)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.>=(ElectricDrill.AstraRpgFramework.Utils.Percentage, Long)
+  nameWithType: Percentage.operator >=(Percentage, long)
+  nameWithType.vb: Percentage.>=(Percentage, Long)
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_GreaterThanOrEqual*
+  name: operator >=
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_GreaterThanOrEqual_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_GreaterThanOrEqual
+  isSpec: "True"
+  name.vb: '>='
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator >=
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.>=
+  nameWithType: Percentage.operator >=
+  nameWithType.vb: Percentage.>=
 - uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Implicit(ElectricDrill.AstraRpgFramework.Utils.Percentage)~System.Double
   name: implicit operator double(Percentage)
   href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_Implicit_ElectricDrill_AstraRpgFramework_Utils_Percentage__System_Double
@@ -3936,6 +4078,90 @@ references:
   fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.CType
   nameWithType: Percentage.implicit operator
   nameWithType.vb: Percentage.CType
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Inequality(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int32)
+  name: operator !=(Percentage, int)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_Inequality_ElectricDrill_AstraRpgFramework_Utils_Percentage_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Inequality(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int32)
+  name.vb: <>(Percentage, Integer)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator !=(ElectricDrill.AstraRpgFramework.Utils.Percentage, int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.<>(ElectricDrill.AstraRpgFramework.Utils.Percentage, Integer)
+  nameWithType: Percentage.operator !=(Percentage, int)
+  nameWithType.vb: Percentage.<>(Percentage, Integer)
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Inequality(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int64)
+  name: operator !=(Percentage, long)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_Inequality_ElectricDrill_AstraRpgFramework_Utils_Percentage_System_Int64_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Inequality(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int64)
+  name.vb: <>(Percentage, Long)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator !=(ElectricDrill.AstraRpgFramework.Utils.Percentage, long)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.<>(ElectricDrill.AstraRpgFramework.Utils.Percentage, Long)
+  nameWithType: Percentage.operator !=(Percentage, long)
+  nameWithType.vb: Percentage.<>(Percentage, Long)
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Inequality*
+  name: operator !=
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_Inequality_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator !=
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.<>
+  nameWithType: Percentage.operator !=
+  nameWithType.vb: Percentage.<>
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_LessThan(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int32)
+  name: operator <(Percentage, int)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_LessThan_ElectricDrill_AstraRpgFramework_Utils_Percentage_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_LessThan(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int32)
+  name.vb: <(Percentage, Integer)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator <(ElectricDrill.AstraRpgFramework.Utils.Percentage, int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.<(ElectricDrill.AstraRpgFramework.Utils.Percentage, Integer)
+  nameWithType: Percentage.operator <(Percentage, int)
+  nameWithType.vb: Percentage.<(Percentage, Integer)
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_LessThan(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int64)
+  name: operator <(Percentage, long)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_LessThan_ElectricDrill_AstraRpgFramework_Utils_Percentage_System_Int64_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_LessThan(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int64)
+  name.vb: <(Percentage, Long)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator <(ElectricDrill.AstraRpgFramework.Utils.Percentage, long)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.<(ElectricDrill.AstraRpgFramework.Utils.Percentage, Long)
+  nameWithType: Percentage.operator <(Percentage, long)
+  nameWithType.vb: Percentage.<(Percentage, Long)
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_LessThan*
+  name: operator <
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_LessThan_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_LessThan
+  isSpec: "True"
+  name.vb: <
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator <
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.<
+  nameWithType: Percentage.operator <
+  nameWithType.vb: Percentage.<
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_LessThanOrEqual(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int32)
+  name: operator <=(Percentage, int)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_LessThanOrEqual_ElectricDrill_AstraRpgFramework_Utils_Percentage_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_LessThanOrEqual(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int32)
+  name.vb: <=(Percentage, Integer)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator <=(ElectricDrill.AstraRpgFramework.Utils.Percentage, int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.<=(ElectricDrill.AstraRpgFramework.Utils.Percentage, Integer)
+  nameWithType: Percentage.operator <=(Percentage, int)
+  nameWithType.vb: Percentage.<=(Percentage, Integer)
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_LessThanOrEqual(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int64)
+  name: operator <=(Percentage, long)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_LessThanOrEqual_ElectricDrill_AstraRpgFramework_Utils_Percentage_System_Int64_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_LessThanOrEqual(ElectricDrill.AstraRpgFramework.Utils.Percentage,System.Int64)
+  name.vb: <=(Percentage, Long)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator <=(ElectricDrill.AstraRpgFramework.Utils.Percentage, long)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.<=(ElectricDrill.AstraRpgFramework.Utils.Percentage, Long)
+  nameWithType: Percentage.operator <=(Percentage, long)
+  nameWithType.vb: Percentage.<=(Percentage, Long)
+- uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_LessThanOrEqual*
+  name: operator <=
+  href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_LessThanOrEqual_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.Percentage.op_LessThanOrEqual
+  isSpec: "True"
+  name.vb: <=
+  fullName: ElectricDrill.AstraRpgFramework.Utils.Percentage.operator <=
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.Percentage.<=
+  nameWithType: Percentage.operator <=
+  nameWithType.vb: Percentage.<=
 - uid: ElectricDrill.AstraRpgFramework.Utils.Percentage.op_Subtraction(ElectricDrill.AstraRpgFramework.Utils.Percentage,ElectricDrill.AstraRpgFramework.Utils.Percentage)
   name: operator -(Percentage, Percentage)
   href: api/ElectricDrill.AstraRpgFramework.Utils.Percentage.html#ElectricDrill_AstraRpgFramework_Utils_Percentage_op_Subtraction_ElectricDrill_AstraRpgFramework_Utils_Percentage_ElectricDrill_AstraRpgFramework_Utils_Percentage_
@@ -4649,6 +4875,36 @@ references:
   fullName.vb: ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider(Of T).GetDisplayName
   nameWithType: IDisplaySONameProvider<T>.GetDisplayName
   nameWithType.vb: IDisplaySONameProvider(Of T).GetDisplayName
+- uid: ElectricDrill.AstraRpgFramework.Utils.ValidationError
+  name: ValidationError
+  href: api/ElectricDrill.AstraRpgFramework.Utils.ValidationError.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Utils.ValidationError
+  fullName: ElectricDrill.AstraRpgFramework.Utils.ValidationError
+  nameWithType: ValidationError
+- uid: ElectricDrill.AstraRpgFramework.Utils.ValidationError.AffectedLevels
+  name: AffectedLevels
+  href: api/ElectricDrill.AstraRpgFramework.Utils.ValidationError.html#ElectricDrill_AstraRpgFramework_Utils_ValidationError_AffectedLevels
+  commentId: F:ElectricDrill.AstraRpgFramework.Utils.ValidationError.AffectedLevels
+  fullName: ElectricDrill.AstraRpgFramework.Utils.ValidationError.AffectedLevels
+  nameWithType: ValidationError.AffectedLevels
+- uid: ElectricDrill.AstraRpgFramework.Utils.ValidationError.DetailedMessage
+  name: DetailedMessage
+  href: api/ElectricDrill.AstraRpgFramework.Utils.ValidationError.html#ElectricDrill_AstraRpgFramework_Utils_ValidationError_DetailedMessage
+  commentId: F:ElectricDrill.AstraRpgFramework.Utils.ValidationError.DetailedMessage
+  fullName: ElectricDrill.AstraRpgFramework.Utils.ValidationError.DetailedMessage
+  nameWithType: ValidationError.DetailedMessage
+- uid: ElectricDrill.AstraRpgFramework.Utils.ValidationError.ErrorType
+  name: ErrorType
+  href: api/ElectricDrill.AstraRpgFramework.Utils.ValidationError.html#ElectricDrill_AstraRpgFramework_Utils_ValidationError_ErrorType
+  commentId: F:ElectricDrill.AstraRpgFramework.Utils.ValidationError.ErrorType
+  fullName: ElectricDrill.AstraRpgFramework.Utils.ValidationError.ErrorType
+  nameWithType: ValidationError.ErrorType
+- uid: ElectricDrill.AstraRpgFramework.Utils.ValidationError.FormulaExpression
+  name: FormulaExpression
+  href: api/ElectricDrill.AstraRpgFramework.Utils.ValidationError.html#ElectricDrill_AstraRpgFramework_Utils_ValidationError_FormulaExpression
+  commentId: F:ElectricDrill.AstraRpgFramework.Utils.ValidationError.FormulaExpression
+  fullName: ElectricDrill.AstraRpgFramework.Utils.ValidationError.FormulaExpression
+  nameWithType: ValidationError.FormulaExpression
 - uid: ElectricDrill.SoapRpgFramework
   name: ElectricDrill.SoapRpgFramework
   href: api/ElectricDrill.SoapRpgFramework.html

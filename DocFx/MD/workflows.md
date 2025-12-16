@@ -111,6 +111,8 @@ The string can be defined by using the [Unity ExpressionEvaluator](https://docs.
 - `LVL`: the level at each iteration
 - `PRV`: the previous value of the `GrowthFormula` (value evaluated at the previous level)
 - `SPRV`: the second previous value of the `GrowthFormula` (value evaluated 2 levels ago)
+- `PRV[N]`: (🏷️*v1.3.0+*) the N-th previous value of the `GrowthFormula` (value evaluated N levels ago). N must be a valid number with respect to the level range being used. For example, N cannot be 5 if we are evaluating level an expression in the level range 3 --> 10, as PRV[5] at level 3, 4, and 5 will be undefined.
+- `AT[N]`: (🏷️*v1.3.0+*) the value of the `GrowthFormula` at level N. N cannot be a value equal or grater than the current level being evaluated.
 - `SUM`: the sum of the values of the `GrowthFormula` from level 1 up to the previous level
 
 #### Example of a `GrowthFormula`
