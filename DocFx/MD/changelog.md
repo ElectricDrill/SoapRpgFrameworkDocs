@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.3.0] - 2025-12-16
+### Added
+#### Runtime Features
+- Added `PRV[N]` and `AT[N]` keywords for growth formulas' expressions. 
+  - `PRV[N]`: Represents the n-previous Growth Formula value. For example, `PRV[3]` at level 8 would return the Growth Formula value at level 5.
+  - `AT[N]`: Represents the Growth Formula value at a specific level N. For example, `AT[10]` would return the Growth Formula value at level 10.
+- `BoundedValue.Clamp` now supports also clamping of double values. For now is used internally by the framework and is reserved for future use is Astra RPG Health.
+
+#### Editor Features
+- Added support for `enum` formatting in `InspectorTypography`.
+- Added utility to provide compact representation of large numbers in the editor (e.g., 1.5K, 4M). Reserved for future use in Astra RPG Health.
+
+### Changed
+#### Runtime Features
+- Changed the internal `AttributePointsTracker` used by `EntityAttributes` to track spendable attribute points. `EntityPointsTracker` replaces the legacy tracker, and relies on a new `AttributePortfolio` to manage the allocation of attribute points to attributes. This new system is more readable, more robust, and more maintainable. The old system is left for backward compatibility. By updating the framework to this version, existing projects will automatically migrate to the new system.
+
 ## [1.2.0] - 2025-11-25
 ### Added
 #### Runtime Features
