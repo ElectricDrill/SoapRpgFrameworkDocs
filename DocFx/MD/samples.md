@@ -1,5 +1,12 @@
 # Samples
 
+## Importing the Samples
+After having imported the package in your project, to import the samples into your project, head first to the package manager window. For latest versions of Unity, you can find it under `Window -> Package Management -> Package Manager`, otherwise, it should be under `Window -> Package Manager`.
+
+From the package manager window, select the `In This Project` tab from the menu on the left, then select `AstraRPGFramework` from the list of packages. You'll notice that there are four tabs on the right side of the window: `Details`, `Version History`, `Dependencies`, and `Samples`. Select the `Samples` tab, then click on the `Import` button to import the desired samples in the project.
+
+The import will copy the samples of the package into your project's `Assets` folder, under `Assets/AstraRPGFramework`.
+
 The samples folder contains 2 sub-folders:
 - **utils**: contains some utility objects that can be used in your game.
 - **examples**: contains resources that are used in the sample scene to showcase the package's features
