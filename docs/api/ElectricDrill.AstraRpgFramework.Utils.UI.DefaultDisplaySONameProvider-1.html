@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Utils_UI_DefaultDisplaySONameProvider_1" data-uid="ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider`1" class="text-break">
-Class DefaultDisplaySONameProvider&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Utils/UI/DefaultDisplaySONameProvider.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Class DefaultDisplaySONameProvider&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Utils/UI/DefaultDisplaySONameProvider.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -102,7 +102,8 @@ Class DefaultDisplaySONameProvider&lt;T&gt;  <a class="header-action link-second
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DefaultDisplaySONameProvider&lt;T&gt; : IDisplaySONameProvider&lt;T&gt; where T : ScriptableObject</code></pre>
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class DefaultDisplaySONameProvider&lt;T&gt; : IDisplaySONameProvider&lt;T&gt; where T : ScriptableObject</code></pre>
   </div>
 
 
@@ -144,7 +145,7 @@ Class DefaultDisplaySONameProvider&lt;T&gt;  <a class="header-action link-second
 
   <h3 id="ElectricDrill_AstraRpgFramework_Utils_UI_DefaultDisplaySONameProvider_1_GetDisplayName__0_" data-uid="ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider`1.GetDisplayName(`0)">
   GetDisplayName(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Utils/UI/DefaultDisplaySONameProvider.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Utils/UI/DefaultDisplaySONameProvider.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the display name using the asset's name, or &quot;None&quot; if null.</p>
