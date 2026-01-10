@@ -89,6 +89,11 @@
 
 <p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>.</p>
+<h2 id="131---2026-01-10">[1.3.1] - 2026-01-10</h2>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Fixed an editor-scripts related issue that was causing build problems.</li>
+</ul>
 <h2 id="130---2025-12-16">[1.3.0] - 2025-12-16</h2>
 <h3 id="added">Added</h3>
 <h4 id="runtime-features">Runtime Features</h4>
@@ -111,7 +116,7 @@
 <ul>
 <li>Changed the internal <code>AttributePointsTracker</code> used by <code>EntityAttributes</code> to track spendable attribute points. <code>EntityPointsTracker</code> replaces the legacy tracker, and relies on a new <code>AttributePortfolio</code> to manage the allocation of attribute points to attributes. This new system is more readable, more robust, and more maintainable. The old system is left for backward compatibility. By updating the framework to this version, existing projects will automatically migrate to the new system.</li>
 </ul>
-<h3 id="fixed">Fixed</h3>
+<h3 id="fixed-1">Fixed</h3>
 <h4 id="runtime-features-2">Runtime Features</h4>
 <ul>
 <li>Fixed Round Robin Strategy for attribute points removal on level down or reset to level 1.</li>
@@ -172,7 +177,7 @@ Entities that are missing these events will raise an error during their <code>St
 <ul>
 <li>Deprecated <code>DerivedTypePicker</code> in favor of the new <code>TypeSelectionMenu</code> system. Use the new system for better type selection in the editor. <code>DerivedTypePicker</code> will be removed in future releases.</li>
 </ul>
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 <ul>
 <li>Added missing invalidation of the cached values for the statistics in <code>EntityStats.OnEnable()</code> method.</li>
 <li>Fixed <code>SetTotalCurrentExp</code> that was not raising level up and level down events when appropriate.</li>
