@@ -5,6 +5,7 @@
 - Int and Long Vars
 - Int and Long Refs
 - Growth Formulas
+- Game Actions
 
 ======ENTITY
 - Make a GameObject an entity
@@ -171,6 +172,15 @@ To retrieve the values of a `GrowthFormula` from code, you can use the `GetGrowt
 // warriorPhysicalAttackGF is a reference to the Warrior Physical Attack Growth Formula
 int physicalAttackLevel5 = warriorPhysicalAttackGF.GetGrowthValue(5);
 ```
+
+### Game Actions (🏷️*v1.4.0+*)
+Una `GameAction` e' uno `ScriptableObject` che rappresenta codice riutilizzabile che puo' essere eseguita da vari componenti o sistemi all'interno del gioco. Si tratta di logica incapsulata che puo' essere assegnata con facilità a diversi oggetti di gioco attraverso l'Inspector, promuovendo il riutilizzo del codice e la separazione delle responsabilità.
+
+Le `GameAction` supportano un parametro di contesto generico. Le implementazioni concrete fornite out-of-the-box utilizzano `Component` come tipo di contesto, ma e' possibile creare nuove azioni con tipi di contesto personalizzati derivando dalla classe generica `GameAction<TContext>`.
+
+Il framework fornisce una serie di `Game Actions` predefinite molto generiche:
+- **Toggle GameObject Active State Action**: Attiva o disattiva lo stato attivo del `GameObject` associato al `Component` passato come contesto.
+
 
 ## Making a `GameObject` an entity
 To make a `GameObject` an entity, we need to add the `MonoBehaviour` `EntityCore` to it. Select your object from the hierarchy and click, in the inspector, on "Add component". Then search for and select `EntityCore`.
