@@ -174,12 +174,36 @@ int physicalAttackLevel5 = warriorPhysicalAttackGF.GetGrowthValue(5);
 ```
 
 ### Game Actions (🏷️*v1.4.0+*)
-Una `GameAction` e' uno `ScriptableObject` che rappresenta codice riutilizzabile che puo' essere eseguita da vari componenti o sistemi all'interno del gioco. Si tratta di logica incapsulata che puo' essere assegnata con facilità a diversi oggetti di gioco attraverso l'Inspector, promuovendo il riutilizzo del codice e la separazione delle responsabilità.
+A `GameAction` is a `ScriptableObject` that encapsulates reusable logic which can be executed by different components or systems in the game. Game actions make it easy to assign behavior to GameObjects via the Inspector, promoting code reuse and separation of concerns.
 
-Le `GameAction` supportano un parametro di contesto generico. Le implementazioni concrete fornite out-of-the-box utilizzano `Component` come tipo di contesto, ma e' possibile creare nuove azioni con tipi di contesto personalizzati derivando dalla classe generica `GameAction<TContext>`.
+`GameAction`s accept a generic context parameter. Out-of-the-box implementations use `Component` as the context type, but you can create custom actions with specific context types by deriving from `GameAction<TContext>`.
 
-Il framework fornisce una serie di `Game Actions` predefinite molto generiche:
-- **Toggle GameObject Active State Action**: Attiva o disattiva lo stato attivo del `GameObject` associato al `Component` passato come contesto.
+The framework includes several built-in, generic `GameAction` implementations:
+- **Toggle GameObject Active Game Action**: Toggles the active state of the `GameObject` associated with the `Component` passed as context.
+- **Toggle Renderers Game Action**: Enables or disables all renderers on the `GameObject` of the provided `Component` and its children.
+- **Toggle Colliders Game Action**: Enables or disables all colliders on the `GameObject` of the provided `Component` and its children.
+- **Destroy GameObject Game Action**: Destroys the `GameObject` associated with the `Component` passed as context.
+- **Composite Game Action**: Executes a sequence of `GameAction`s in order, passing the same context to each.
+- **Delayed Game Action**: Executes a `GameAction` after a specified delay (in seconds).
+- **No-op Game Action**: Does nothing. Useful as a placeholder, for testing workflows, or to satisfy required fields that must reference a `GameAction` (for example, default on-death and on-resurrection actions in Astra RPG Health).
+
+`GameAction`s may target infrastructure/flow control or actual gameplay mechanics. The examples above are mostly infrastructure-oriented. Examples of gameplay-oriented `GameAction`s include:
+- **Grant Experience Game Action**: Grants a specified amount of experience to an entity implementing `IEntityLevel`.
+- **Drop Loot Game Action**: Spawns collectible loot.
+- **Teleport To Base Game Action**: Teleports a character back to a base location.
+
+> [!NOTE]
+> `GameAction`s are a recent addition to the framework. At the time of writing, only a small set of generic actions is provided; more will be added in future releases. In the meantime, users are encouraged to implement custom `GameAction`s to meet their specific needs and to share useful patterns with the developer and the community.
+
+#### Game Actions — under the hood
+`GameAction`s are implemented on top of Unity's [Awaitable](https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Awaitable.html). This allows actions to run asynchronously without blocking the main game thread. Executing a `GameAction` returns an `Awaitable` that can be awaited to determine when the action completes.
+
+Awaitables are a modern alternative to coroutines. They are more efficient because they use an internal pooling system to minimize allocation overhead, which improves performance in scenarios with many asynchronous actions.
+
+> [!WARNING]
+> Awaitables have an important limitation: you must not await the same `Awaitable` instance more than once. Due to pooling, awaiting the same instance multiple times can cause undefined behavior, exceptions, or difficult-to-debug deadlocks. To avoid this, do not reuse the `Awaitable` returned by a `GameAction`'s `Execute` method across multiple awaits.
+
+For more information on Awaitables, see Unity's documentation: [Awaitable Documentation](https://docs.unity3d.com/6000.3/Documentation/Manual/async-await-support.html).
 
 
 ## Making a `GameObject` an entity
