@@ -196,6 +196,10 @@ The framework includes several built-in, generic `GameAction` implementations:
 > `GameAction`s are a recent addition to the framework. At the time of writing, only a small set of generic actions is provided; more will be added in future releases. In the meantime, users are encouraged to implement custom `GameAction`s to meet their specific needs and to share useful patterns with the developer and the community.
 
 #### Game Actions — under the hood
+
+Is a common use case to have `GameAction`s that perform asynchronous operations, such as playing an animation, or waiting for a fixed delay. To support this use case, all `GameAction`s in the framework are designed to be asynchronous.  
+Obviously, not all actions need to be asynchronous; any synchronous action can be implemented as well.
+
 `GameAction`s are implemented on top of Unity's [Awaitable](https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Awaitable.html). This allows actions to run asynchronously without blocking the main game thread. Executing a `GameAction` returns an `Awaitable` that can be awaited to determine when the action completes.
 
 Awaitables are a modern alternative to coroutines. They are more efficient because they use an internal pooling system to minimize allocation overhead, which improves performance in scenarios with many asynchronous actions.
