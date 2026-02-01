@@ -47,8 +47,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 #### Samples
 - Updated the input system in the Sample Scene so that no manual action from the user is required when importing the project in Unity v6.2+.
 - Renamed `SampleScene` to `Astra RPG Framework Sample Scene`.
-- 
 - Updated `CommonApiCheatSheet` to reflect new EntityLevelUp and EntityLevelDown game events (see Deprecated section).
+
+### Fixed
+#### Samples
+- Fixed the input handling in the Sample Scene for Unity 6.2+
 
 ### Deprecated
 - Mark `EntityLeveledDown` and `EntityLeveledUp` events as obsolete, suggesting new alternatives. Use the new `EntityLevelUpGameEvent` and `EntityLevelDownGameEvent`, and the respective listeners, instead. **Notice that the new events don't have the `ed` suffix after `EntityLevel`**. See the [Migration Guide](./migration-guide.md#migrating-to-v140) for detailed migration steps.
