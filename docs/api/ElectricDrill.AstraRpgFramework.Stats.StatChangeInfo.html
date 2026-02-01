@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Cis8/SoapRpgFramework/new/main/apiSpec/new?filename=ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo.md&amp;value=---%0Auid%3A%20ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Cis8/AstraRpgFramework/new/main/apiSpec/new?filename=ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo.md&amp;value=---%0Auid%3A%20ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo" class="text-break">
-Struct StatChangeInfo  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Struct StatChangeInfo  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -103,13 +103,19 @@ Used for tracking and responding to stat modifications.</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct StatChangeInfo</code></pre>
+    <pre><code class="lang-csharp hljs">public struct StatChangeInfo : IHasValueChange&lt;long&gt;</code></pre>
   </div>
 
 
 
 
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange</a>&lt;<span class="xref">long</span>&gt;</div>
+    </dd>
+  </dl>
 
 
 
@@ -126,7 +132,7 @@ Used for tracking and responding to stat modifications.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo__ctor_ElectricDrill_AstraRpgFramework_Stats_EntityStats_ElectricDrill_AstraRpgFramework_Stats_Stat_System_Int64_System_Int64_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.#ctor(ElectricDrill.AstraRpgFramework.Stats.EntityStats,ElectricDrill.AstraRpgFramework.Stats.Stat,System.Int64,System.Int64)">
   StatChangeInfo(EntityStats, Stat, long, long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the StatChangeInfo structure.</p>
@@ -134,7 +140,7 @@ Used for tracking and responding to stat modifications.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public StatChangeInfo(EntityStats entity, Stat stat, long oldValue, long newValue)</code></pre>
+    <pre><code class="lang-csharp hljs">public StatChangeInfo(EntityStats entity, Stat stat, long previousValue, long newValue)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -145,7 +151,7 @@ Used for tracking and responding to stat modifications.</p>
     <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a></dt>
     <dd><p>The stat that was changed.</p>
 </dd>
-    <dt><code>oldValue</code> <span class="xref">long</span></dt>
+    <dt><code>previousValue</code> <span class="xref">long</span></dt>
     <dd><p>The previous value of the stat.</p>
 </dd>
     <dt><code>newValue</code> <span class="xref">long</span></dt>
@@ -171,7 +177,7 @@ Used for tracking and responding to stat modifications.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_EntityStats" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.EntityStats">
   EntityStats
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The EntityStats component that owns the changed stat.</p>
@@ -200,71 +206,9 @@ Used for tracking and responding to stat modifications.</p>
 
 
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_NewValue" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.NewValue">
-  NewValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L26"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>The value of the stat after the change.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long NewValue</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">long</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_OldValue" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.OldValue">
-  OldValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L21"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>The value of the stat before the change.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long OldValue</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">long</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_Stat" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.Stat">
   Stat
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/SoapRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The stat that was changed.</p>
@@ -284,6 +228,106 @@ Used for tracking and responding to stat modifications.</p>
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_AbsAmount_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.AbsAmount*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_AbsAmount" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.AbsAmount">
+  AbsAmount
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The absolute amount of change between PreviousValue and NewValue.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long AbsAmount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">long</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_NewValue_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.NewValue*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_NewValue" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.NewValue">
+  NewValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The value of the stat after the change.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly long NewValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">long</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_PreviousValue_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.PreviousValue*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_PreviousValue" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.PreviousValue">
+  PreviousValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The value of the stat before the change.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly long PreviousValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">long</span></dt>
+    <dd></dd>
+  </dl>
 
 
 

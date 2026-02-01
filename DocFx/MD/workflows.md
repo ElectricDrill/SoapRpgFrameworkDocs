@@ -173,8 +173,9 @@ To retrieve the values of a `GrowthFormula` from code, you can use the `GetGrowt
 int physicalAttackLevel5 = warriorPhysicalAttackGF.GetGrowthValue(5);
 ```
 
-### Game Actions (🏷️*v1.4.0+*)
-A `GameAction` is a `ScriptableObject` that encapsulates reusable logic which can be executed by different components or systems in the game. Game actions make it easy to assign behavior to GameObjects via the Inspector, promoting code reuse and separation of concerns.
+### Game Actions
+*Relative path:* `Game Actions`  
+A `GameAction` (🏷️*v1.4.0+*) is a `ScriptableObject` that encapsulates reusable logic which can be executed by different components or systems in the game. Game actions make it easy to assign behavior to GameObjects via the Inspector, promoting code reuse and separation of concerns.
 
 `GameAction`s accept a generic context parameter. Out-of-the-box implementations use `Component` as the context type, but you can create custom actions with specific context types by deriving from `GameAction<TContext>`.
 
@@ -186,11 +187,42 @@ The framework includes several built-in, generic `GameAction` implementations:
 - **Composite Game Action**: Executes a sequence of `GameAction`s in order, passing the same context to each.
 - **Delayed Game Action**: Executes a `GameAction` after a specified delay (in seconds).
 - **No-op Game Action**: Does nothing. Useful as a placeholder, for testing workflows, or to satisfy required fields that must reference a `GameAction` (for example, default on-death and on-resurrection actions in Astra RPG Health).
+- **Increase Counter Game Action**: Increases the value of a `LongRef` by a specified amount. Negative values can be used to decrease the counter. Useful for tracking statistics like enemies defeated, entities spawned, interactions performed, etc.
 
-`GameAction`s may target infrastructure/flow control or actual gameplay mechanics. The examples above are mostly infrastructure-oriented. Examples of gameplay-oriented `GameAction`s include:
+`GameAction`s may target infrastructure/flow control or actual gameplay mechanics. Most of the examples above are mostly infrastructure-oriented. Examples of gameplay-oriented `GameAction`s include:
 - **Grant Experience Game Action**: Grants a specified amount of experience to an entity implementing `IEntityLevel`.
 - **Drop Loot Game Action**: Spawns collectible loot.
 - **Teleport To Base Game Action**: Teleports a character back to a base location.
+
+For invoking `GameAction`s call the `ExecuteAsync` method, passing the required context parameter. For example, let's say we have a reference to a `DelayedGameAction<Component>` called `delayedAction` that invokes another game action after some time, and we want to execute it on a `GameObject` with a `MonoBehaviour` called `MyComponent`. We can do it like this:
+```csharp
+// myComponent is a reference to an instance of MyComponent
+Awaitable delayedActionAwaitable = delayedAction.ExecuteAsync(myComponent, destroyCancellationToken); // Async execution initiated
+DoWorkHere(); // Perform other work while the action is executing
+// Await the completion of the action
+await delayedActionAwaitable;
+Debug.Log("Delayed action completed."); // Will be printed only after the game action completes
+```
+
+Notice the `destroyCancellationToken` parameter. This is an optional `CancellationToken` that can be used to cancel the execution of the action if the GameObject owning the invoker component is destroyed before the action completes. If not provided, the action will run to completion regardless of the owning component's lifecycle.
+
+If your game action should complete independently of the invoker component's lifecycle, consider using the [RunFireAndForget](xref:ElectricDrill.AstraRpgFramework.GameActions.GameAction`1.RunFireAndForget(`0,UnityEngine.MonoBehaviour)) method instead. This method uses the `GameActionRunner` `MonoBehaviour` (adding it to the specified GameObject if missing) to execute the action. For example:
+
+```csharp
+// Assume 'context' is the required context parameter for onDeathGameAction
+// 'persistentGameObject' is a reference to a GameObject that will own the GameActionRunner and execute the action
+onDeathGameAction.RunFireAndForget(context, persistentGameObject);
+```
+
+With this approach, even if the invoker component is destroyed (e.g., because the entity died), the action will still run to completion on the `persistentGameObject`. This is useful for actions such as playing particle effects or sounds that should persist even after the original entity is destroyed.
+
+For more details, refer to the API documentation for game actions:
+- [GameAction base constructs](xref:ElectricDrill.AstraRpgFramework.GameActions)
+- [Concrete implementations of GameAction with open generic types](xref:ElectricDrill.AstraRpgFramework.GameActions.Actions)
+- [Concrete implementations of GameAction with Component context types (for instantiating ScriptableObject instances)](xref:ElectricDrill.AstraRpgFramework.GameActions.Actions.Component)
+
+If you wish to create custom `GameAction`s, review the implementation of existing actions to understand best practices.
+
 
 > [!NOTE]
 > `GameAction`s are a recent addition to the framework. At the time of writing, only a small set of generic actions is provided; more will be added in future releases. In the meantime, users are encouraged to implement custom `GameAction`s to meet their specific needs and to share useful patterns with the developer and the community.
@@ -205,10 +237,19 @@ Obviously, not all actions need to be asynchronous; any synchronous action can b
 Awaitables are a modern alternative to coroutines. They are more efficient because they use an internal pooling system to minimize allocation overhead, which improves performance in scenarios with many asynchronous actions.
 
 > [!WARNING]
-> Awaitables have an important limitation: you must not await the same `Awaitable` instance more than once. Due to pooling, awaiting the same instance multiple times can cause undefined behavior, exceptions, or difficult-to-debug deadlocks. To avoid this, do not reuse the `Awaitable` returned by a `GameAction`'s `Execute` method across multiple awaits.
+> Awaitables have an important limitation: you must not await the same `Awaitable` instance more than once. Due to pooling, awaiting the same instance multiple times can cause undefined behavior, exceptions, or difficult-to-debug deadlocks. To avoid this, do not reuse the `Awaitable` returned by a `GameAction`'s `ExecuteAsync` method across multiple awaits.
 
 For more information on Awaitables, see Unity's documentation: [Awaitable Documentation](https://docs.unity3d.com/6000.3/Documentation/Manual/async-await-support.html).
 
+#### Game Actions with Unity Events/Game Events Listeners
+Unity Events accept Awaitables, so a GameAction can be invoked directly from a UnityEvent response. Because GameEventListeners use UnityEvents for their responses, you can wire a GameAction to a GameEventListener provided the action's context type matches the event's context.
+
+> [!NOTE]
+> UnityEvents do not support asynchronous return values. Invoking a GameAction from a UnityEvent will execute the action fire-and-forget — the event invoker will not await its completion.
+>
+>If you need to run follow-up logic after the action finishes, prefer one of these patterns:
+> - Use a Composite Game Action that first executes the desired GameAction and then runs the follow-up action as the next step.
+> - Use a custom MonoBehaviour that executes the GameAction and handles the continuation (awaiting the action and performing follow-up). Attach that MonoBehaviour via the UnityEvent or subscribe to the GameEvent in code.
 
 ## Making a `GameObject` an entity
 To make a `GameObject` an entity, we need to add the `MonoBehaviour` `EntityCore` to it. Select your object from the hierarchy and click, in the inspector, on "Add component". Then search for and select `EntityCore`.

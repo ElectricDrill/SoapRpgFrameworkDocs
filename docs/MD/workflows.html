@@ -93,6 +93,7 @@
 - Int and Long Vars
 - Int and Long Refs
 - Growth Formulas
+- Game Actions
 
 ======ENTITY
 - Make a GameObject an entity
@@ -224,6 +225,74 @@ For the second growth expression, set <code>From Level</code> to <code>11</code>
 <pre><code class="lang-csharp">// warriorPhysicalAttackGF is a reference to the Warrior Physical Attack Growth Formula
 int physicalAttackLevel5 = warriorPhysicalAttackGF.GetGrowthValue(5);
 </code></pre>
+<h3 id="game-actions">Game Actions</h3>
+<p><em>Relative path:</em> <code>Game Actions</code><br>
+A <code>GameAction</code> (🏷️<em>v1.4.0+</em>) is a <code>ScriptableObject</code> that encapsulates reusable logic which can be executed by different components or systems in the game. Game actions make it easy to assign behavior to GameObjects via the Inspector, promoting code reuse and separation of concerns.</p>
+<p><code>GameAction</code>s accept a generic context parameter. Out-of-the-box implementations use <code>Component</code> as the context type, but you can create custom actions with specific context types by deriving from <code>GameAction&lt;TContext&gt;</code>.</p>
+<p>The framework includes several built-in, generic <code>GameAction</code> implementations:</p>
+<ul>
+<li><strong>Toggle GameObject Active Game Action</strong>: Toggles the active state of the <code>GameObject</code> associated with the <code>Component</code> passed as context.</li>
+<li><strong>Toggle Renderers Game Action</strong>: Enables or disables all renderers on the <code>GameObject</code> of the provided <code>Component</code> and its children.</li>
+<li><strong>Toggle Colliders Game Action</strong>: Enables or disables all colliders on the <code>GameObject</code> of the provided <code>Component</code> and its children.</li>
+<li><strong>Destroy GameObject Game Action</strong>: Destroys the <code>GameObject</code> associated with the <code>Component</code> passed as context.</li>
+<li><strong>Composite Game Action</strong>: Executes a sequence of <code>GameAction</code>s in order, passing the same context to each.</li>
+<li><strong>Delayed Game Action</strong>: Executes a <code>GameAction</code> after a specified delay (in seconds).</li>
+<li><strong>No-op Game Action</strong>: Does nothing. Useful as a placeholder, for testing workflows, or to satisfy required fields that must reference a <code>GameAction</code> (for example, default on-death and on-resurrection actions in Astra RPG Health).</li>
+<li><strong>Increase Counter Game Action</strong>: Increases the value of a <code>LongRef</code> by a specified amount. Negative values can be used to decrease the counter. Useful for tracking statistics like enemies defeated, entities spawned, interactions performed, etc.</li>
+</ul>
+<p><code>GameAction</code>s may target infrastructure/flow control or actual gameplay mechanics. Most of the examples above are mostly infrastructure-oriented. Examples of gameplay-oriented <code>GameAction</code>s include:</p>
+<ul>
+<li><strong>Grant Experience Game Action</strong>: Grants a specified amount of experience to an entity implementing <code>IEntityLevel</code>.</li>
+<li><strong>Drop Loot Game Action</strong>: Spawns collectible loot.</li>
+<li><strong>Teleport To Base Game Action</strong>: Teleports a character back to a base location.</li>
+</ul>
+<p>For invoking <code>GameAction</code>s call the <code>ExecuteAsync</code> method, passing the required context parameter. For example, let's say we have a reference to a <code>DelayedGameAction&lt;Component&gt;</code> called <code>delayedAction</code> that invokes another game action after some time, and we want to execute it on a <code>GameObject</code> with a <code>MonoBehaviour</code> called <code>MyComponent</code>. We can do it like this:</p>
+<pre><code class="lang-csharp">// myComponent is a reference to an instance of MyComponent
+Awaitable delayedActionAwaitable = delayedAction.ExecuteAsync(myComponent, destroyCancellationToken); // Async execution initiated
+DoWorkHere(); // Perform other work while the action is executing
+// Await the completion of the action
+await delayedActionAwaitable;
+Debug.Log(&quot;Delayed action completed.&quot;); // Will be printed only after the game action completes
+</code></pre>
+<p>Notice the <code>destroyCancellationToken</code> parameter. This is an optional <code>CancellationToken</code> that can be used to cancel the execution of the action if the GameObject owning the invoker component is destroyed before the action completes. If not provided, the action will run to completion regardless of the owning component's lifecycle.</p>
+<p>If your game action should complete independently of the invoker component's lifecycle, consider using the <a class="xref" href="../api/ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_RunFireAndForget__0_UnityEngine_MonoBehaviour_">RunFireAndForget</a> method instead. This method uses the <code>GameActionRunner</code> <code>MonoBehaviour</code> (adding it to the specified GameObject if missing) to execute the action. For example:</p>
+<pre><code class="lang-csharp">// Assume 'context' is the required context parameter for onDeathGameAction
+// 'persistentGameObject' is a reference to a GameObject that will own the GameActionRunner and execute the action
+onDeathGameAction.RunFireAndForget(context, persistentGameObject);
+</code></pre>
+<p>With this approach, even if the invoker component is destroyed (e.g., because the entity died), the action will still run to completion on the <code>persistentGameObject</code>. This is useful for actions such as playing particle effects or sounds that should persist even after the original entity is destroyed.</p>
+<p>For more details, refer to the API documentation for game actions:</p>
+<ul>
+<li><a class="xref" href="../api/ElectricDrill.AstraRpgFramework.GameActions.html">GameAction base constructs</a></li>
+<li><a class="xref" href="../api/ElectricDrill.AstraRpgFramework.GameActions.Actions.html">Concrete implementations of GameAction with open generic types</a></li>
+<li><a class="xref" href="../api/ElectricDrill.AstraRpgFramework.GameActions.Actions.Component.html">Concrete implementations of GameAction with Component context types (for instantiating ScriptableObject instances)</a></li>
+</ul>
+<p>If you wish to create custom <code>GameAction</code>s, review the implementation of existing actions to understand best practices.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><code>GameAction</code>s are a recent addition to the framework. At the time of writing, only a small set of generic actions is provided; more will be added in future releases. In the meantime, users are encouraged to implement custom <code>GameAction</code>s to meet their specific needs and to share useful patterns with the developer and the community.</p>
+</div>
+<h4 id="game-actions--under-the-hood">Game Actions — under the hood</h4>
+<p>Is a common use case to have <code>GameAction</code>s that perform asynchronous operations, such as playing an animation, or waiting for a fixed delay. To support this use case, all <code>GameAction</code>s in the framework are designed to be asynchronous.<br>
+Obviously, not all actions need to be asynchronous; any synchronous action can be implemented as well.</p>
+<p><code>GameAction</code>s are implemented on top of Unity's <a href="https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Awaitable.html">Awaitable</a>. This allows actions to run asynchronously without blocking the main game thread. Executing a <code>GameAction</code> returns an <code>Awaitable</code> that can be awaited to determine when the action completes.</p>
+<p>Awaitables are a modern alternative to coroutines. They are more efficient because they use an internal pooling system to minimize allocation overhead, which improves performance in scenarios with many asynchronous actions.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Awaitables have an important limitation: you must not await the same <code>Awaitable</code> instance more than once. Due to pooling, awaiting the same instance multiple times can cause undefined behavior, exceptions, or difficult-to-debug deadlocks. To avoid this, do not reuse the <code>Awaitable</code> returned by a <code>GameAction</code>'s <code>ExecuteAsync</code> method across multiple awaits.</p>
+</div>
+<p>For more information on Awaitables, see Unity's documentation: <a href="https://docs.unity3d.com/6000.3/Documentation/Manual/async-await-support.html">Awaitable Documentation</a>.</p>
+<h4 id="game-actions-with-unity-eventsgame-events-listeners">Game Actions with Unity Events/Game Events Listeners</h4>
+<p>Unity Events accept Awaitables, so a GameAction can be invoked directly from a UnityEvent response. Because GameEventListeners use UnityEvents for their responses, you can wire a GameAction to a GameEventListener provided the action's context type matches the event's context.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>UnityEvents do not support asynchronous return values. Invoking a GameAction from a UnityEvent will execute the action fire-and-forget — the event invoker will not await its completion.</p>
+<p>If you need to run follow-up logic after the action finishes, prefer one of these patterns:</p>
+<ul>
+<li>Use a Composite Game Action that first executes the desired GameAction and then runs the follow-up action as the next step.</li>
+<li>Use a custom MonoBehaviour that executes the GameAction and handles the continuation (awaiting the action and performing follow-up). Attach that MonoBehaviour via the UnityEvent or subscribe to the GameEvent in code.</li>
+</ul>
+</div>
 <h2 id="making-a-gameobject-an-entity">Making a <code>GameObject</code> an entity</h2>
 <p>To make a <code>GameObject</code> an entity, we need to add the <code>MonoBehaviour</code> <code>EntityCore</code> to it. Select your object from the hierarchy and click, in the inspector, on &quot;Add component&quot;. Then search for and select <code>EntityCore</code>.</p>
 <p><img src="../images/workflows/entity-core-editor.png" alt="Entity Core Custom Editor"></p>

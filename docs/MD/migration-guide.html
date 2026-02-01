@@ -87,7 +87,41 @@
         <article data-uid="">
 <h1 id="migration-guide">Migration Guide</h1>
 
-<h2 id="migrating-from-v100-to-v110">Migrating from v1.0.0 to v1.1.0</h2>
+<h2 id="migrating-to-v140">Migrating to v1.4.0</h2>
+<p>v1.4.0 introduces the new GameAction system and moves Game Events to a single-context parameter (Parameter Object pattern). This change improves extensibility and simplifies integration with GameAction because both systems now use a single context and are compatible with UnityEvent.</p>
+<h3 id="key-benefits">Key benefits</h3>
+<ul>
+<li>Easier, non-breaking extension of event data via a single context object and polymorphism.</li>
+<li>Seamless interoperability with GameAction and UnityEvent-based listeners.</li>
+</ul>
+<h3 id="breaking-change">Breaking change</h3>
+<ul>
+<li>The legacy <code>EntityLeveledUpGameEvent</code>, <code>EntityLeveledDownGameEvent</code> and their dedicated listeners are deprecated.</li>
+<li><code>EntityStats</code> and <code>EntityAttributes</code> now subscribe the new EntityCore's single-parameter events internally.</li>
+</ul>
+<h3 id="migration-steps---breaking-changes">Migration steps - breaking changes</h3>
+<ol>
+<li><strong>Back up your project before making changes.</strong></li>
+<li>Either create the new <code>EntityLevelUpGameEvent</code> and <code>EntityLevelDownGameEvent</code> instances from the context menu (<code>Create &gt; Astra RPG Framework &gt; Game Events &gt; Generated &gt; Entity Level Up</code> and <code>Entity Level Down</code>), or import the new event instances from the updated v1.4.0 <code>Utils</code> samples (<code>Utils &gt; EventInstances &gt; 1param &gt; Entity Level Up Game Event</code> and <code>Entity Level Down Game Event</code>). If you re-import samples, prefer removing duplicate assets from the newly imported samples. Keep only the new events instances.</li>
+<li>For each entity (prefab or scene object) open the <code>EntityCore</code> inspector and assign to the new <code>On Level Up</code> and <code>On Level Down</code> event fields to the new single-parameter event instances just created. The fields for the new events are marked as required (red asterisk), while the deprecated events fields are optional and marked with <code>(Legacy/Deprecated)</code>. The inspector, before assigning the new events, should look like this:<br>
+<img src="../images/migration-guide/entitycore-new-events.png" alt="EntityCore inspector with new event fields"></li>
+</ol>
+<h3 id="migration-steps---changing-deprecated-events">Migration steps - changing deprecated events</h3>
+<p>Manual and obsolete <code>EntityLeveledUpGameEvent</code>, <code>EntityLeveledDownGameEvent</code> (and the respective listeners) you used across your project are still supported, <strong>but will not be any more in future versions of the framework</strong>; At the moment, <code>EntityLevel</code> will raise both the deprecated event as well as the new event when the level changes. However, migrate your project to the new events when it is convenient for you to use the new single-parameter events and listeners and align with the new standard.</p>
+<p>To update them, I suggest to search your project and scenes for usages of the deprecated <code>EntityLeveledUpGameEvent</code> and <code>EntityLeveledDownGameEvent</code>. To do this, I would suggest you to use the Unity Editor search functionality:</p>
+<ol>
+<li>Right-click on the scriptable object instance of the deprecated event you want to search for (e.g., <code>Entity Leveled Up Game Event</code>).</li>
+<li>Select <code>Find References In Project</code>. A window like this will open:<br>
+<img src="../images/migration-guide/find-references-project.png" alt="Find References In Project window"></li>
+<li>Inspect the found references to identify where you used the deprecated event and update them to use the new <code>EntityLevelUpGameEvent</code> or <code>EntityLevelDownGameEvent</code> and/or the respective listeners instead. You'll catch also the GameEvent listeners as they reference the event instance.</li>
+<li>Right-click again on the scriptable object instance of the deprecated event and select <code>Find References In Scene</code> to find any usage in the currently opened scene. You will see the hierarchy window changed, but no meaningful references will be shown. However, you can click on the top-right button to open a window similar to the previous one, showing all references in the scene:<br>
+<img src="../images/migration-guide/find-references-scene.png" alt="Find References In Scene window"><br>
+<img src="../images/migration-guide/references-in-scene.png" alt="References in Scene"></li>
+<li>Inspect the found references in the scene and update them to use the new <code>EntityLevelUpGameEvent</code> or <code>EntityLevelDownGameEvent</code> and/or the respective listeners instead.</li>
+<li>Repeat steps 4-5 for each scene in your project.</li>
+<li>Repeat steps 1-6 for the other deprecated event.</li>
+</ol>
+<h2 id="migrating-to-v110">Migrating to v1.1.0</h2>
 <p>The rebranding of SOAP RPG Framework to Astra RPG Framework involves several changes that need to be addressed when updating existing projects. This guide outlines the necessary steps to ensure a smooth transition.</p>
 <h3 id="1-backup-your-project">1. Backup Your Project</h3>
 <p>Before making any changes, it's crucial to back up your project. Whether you are using version control or simply creating a copy of your project folder, having a backup will allow you to revert to the previous state if anything goes wrong during the migration process.</p>

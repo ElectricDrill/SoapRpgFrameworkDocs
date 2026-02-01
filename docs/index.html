@@ -138,6 +138,9 @@ Join to <strong>receive notifications</strong> about new extension releases and 
 <h4 id="-game-event-generators">🏭⚡ Game Event Generators</h4>
 <p>Game Event Generators are powerful tools for generating C# source code for custom game events. Use the custom inspector to create new event types with up to 4 context parameters—these can be native C# types or your own classes.</p>
 <p>Game Event Generators are also ScriptableObjects. Instantiate multiple generators to organize different sets of events for your project. Each generator can manage its own context-specific events.</p>
+<h4 id="-game-actions">⚛️ Game Actions</h4>
+<p>Game Actions, deriving from ScriptableObject, allow to incapsulate game logic in reusable assets to share across multiple game objects and scenes.</p>
+<p>They are implemented on top of Awaitables to support asynchronous operations and chaining of game logic. They can be even used with UnityEvents, meaning that you can drag&amp;drop them in compatible GameEventListeners and invoke their logic upon event raising.</p>
 <hr>
 <h3 id="-where-to-buy">🛒 Where to Buy</h3>
 <p>Unity Asset Store: <a href="https://assetstore.unity.com/packages/tools/game-toolkits/astra-rpg-framework-334926">Astra RPG</a></p>

@@ -101,6 +101,11 @@ Game Event Generators are powerful tools for generating C# source code for custo
 
 Game Event Generators are also ScriptableObjects. Instantiate multiple generators to organize different sets of events for your project. Each generator can manage its own context-specific events.
 
+#### ⚛️ Game Actions
+Game Actions, deriving from ScriptableObject, allow to incapsulate game logic in reusable assets to share across multiple game objects and scenes.
+
+They are implemented on top of Awaitables to support asynchronous operations and chaining of game logic. They can be even used with UnityEvents, meaning that you can drag&drop them in compatible GameEventListeners and invoke their logic upon event raising.
+
 ---
 
 ### 🛒 Where to Buy

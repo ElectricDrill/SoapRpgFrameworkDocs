@@ -4,6 +4,59 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.4.0] - 2026-02-01
+
+> [!WARNING]
+> This update involves breaking changes. Refer to the [Migrating to v1.4.0](./migration-guide.md#migrating-to-v140) section of the migration guide for detailed steps to update your project.
+
+### Added
+#### Runtime Features
+- Added `GameAction` to encapsulate game logic as `ScriptableObject`s. Has a generic context type parameter to specify the type of object the action operates on.
+- Added `IExecutable` interface. Implemented by `GameAction`.
+- Added the following implementations of `GameAction`:
+  - `ToggleRenderersGameAction`: Toggles the enabled state of all `Renderer` components on a GameObject and its children.
+  - `ToggleHarvestedExpSourceGameAction`: Toggles the harvested state of an `ExpResource` component.
+  - `ToggleCollidersGameAction`: Toggles the enabled state of all `Collider` components on a GameObject and its children.
+  - `ToggleActiveGameObjectGameAction`: Toggles the active state of a GameObject.
+  - `IncreaseCounterGameAction`: Increases a LongVar by a specified amount. Amount can also be negative to decrease the counter.
+  - `DoNothingGameAction`: A no-op action that does nothing when executed. Reserved mostly for Astra RPG Health for neutral responses to certain events.
+  - `DestroyGameAction`: Destroys the target GameObject.
+  - `DelayedGameAction`: Executes another GameAction after a specified delay.
+  - `CompositeGameAction`: Executes a list of GameActions in sequence.
+- Added the Create Menu entries for all the above GameActions, with `EntityEngine.Component` as context type parameter.
+- Added `GameActionRunner` MonoBehaviour. Used to execute GameActions in a fire-and-forget manner on a specific owner `GameObject`. Useful, for example, if the action is expected to complete and the GameObject owning the GameAction may be destroyed at any moment, or if you want to centralize the execution of GameActions on a specific GameObject (such as a manager).
+- Added `IHasSource` interface to establish a contract for objects that have a source EntityCore. Used by Game Event contexts that have a source entity doing something. Currently reserved for future use in Astra RPG Health.
+- Added `IHasTarget` interface to establish a contract for objects that have a target EntityCore. Used by Game Event contexts that have a target entity receiving something. Currently used by the `EntityLevelChangedContext` for the new Entity Level Up and Entity Level Down Game Events (see changes for details).
+- `IHasValueChange<out T>` interface to establish a contract for objects that represent a change in value of type T. Used by Game Event contexts that represent a change in value:
+  - `EntityLevelChangedContext` (int value change)
+  - `AttributeChangeInfo` (long value change)
+  - `StatChangeInfo` (long value change)
+  - `IHasVictim` interface to establish a contract for objects that have a victim EntityCore. Reseved for future use in Astra RPG Health.
+- Added custom icon for `ExpSource` MonoBehaviour.
+
+#### Editor Features
+- Added a `BrokenEventFinder` utility to help identify broken responses in Unity Events (and therefore in Game Events). Can be accessed from the menu: `Tools/Astra RPG Framework/Find Broken UnityEvents`.
+
+#### Samples
+- Added custom font for the Sample Scene.
+
+### Changed
+#### Runtime Features
+- Simplified `ExpSource` implementation. Now `Harvested` property is no longer set to true upon getting `Exp` property. Now the external code is responsible for setting the `Harvested` property to true when appropriate. This change allows for more flexible usage of the `ExpSource` component, as it can now be used in scenarios where the experience points are not immediately harvested upon retrieval. This change was made to better accommodate future features in Astra RPG Health.
+
+#### Samples
+- Updated the input system in the Sample Scene so that no manual action from the user is required when importing the project in Unity v6.2+.
+- Renamed `SampleScene` to `Astra RPG Framework Sample Scene`.
+- 
+- Updated `CommonApiCheatSheet` to reflect new EntityLevelUp and EntityLevelDown game events (see Deprecated section).
+
+### Deprecated
+- Mark `EntityLeveledDown` and `EntityLeveledUp` events as obsolete, suggesting new alternatives. Use the new `EntityLevelUpGameEvent` and `EntityLevelDownGameEvent`, and the respective listeners, instead. **Notice that the new events don't have the `ed` suffix after `EntityLevel`**. See the [Migration Guide](./migration-guide.md#migrating-to-v140) for detailed migration steps.
+
+### Removed
+- Removed previously deprecated `_includedStatSets` field in `StatSet`
+
+
 ## [1.3.1] - 2026-01-10
 ### Fixed
 - Fixed an editor-scripts related issue that was causing build problems.
