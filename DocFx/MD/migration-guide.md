@@ -9,8 +9,7 @@ v1.4.0 introduces the new GameAction system and moves Game Events to a single-co
 - Seamless interoperability with GameAction and UnityEvent-based listeners.
 
 ### Breaking change
-- The legacy `EntityLeveledUpGameEvent`, `EntityLeveledDownGameEvent` and their dedicated listeners are deprecated.
-- `EntityStats` and `EntityAttributes` now subscribe the new EntityCore's single-parameter events internally.
+With the deprecation of the legacy `EntityLeveledUpGameEvent`, `EntityLeveledDownGameEvent` and their dedicated listeners, `EntityStats` and `EntityAttributes` now subscribe the new EntityCore's single-parameter events internally. All your `EntityCore` instances must be updated to use the new `EntityLevelUpGameEvent` and `EntityLevelDownGameEvent` instances. (Notice that the name of the deprecated events contained "Level**ed**" while the new events contain "Level".)
 
 ### Migration steps - breaking changes
 1. **Back up your project before making changes.**
