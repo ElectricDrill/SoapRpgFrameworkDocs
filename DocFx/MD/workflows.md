@@ -780,7 +780,7 @@ int maxHpAtLevel5 = warriorClass.GetMaxHpAt(level);
 ```
 
 ## Create Scaling Formulas
-*Keyboard shortcut:* `Alt + Shift + S`
+*Keyboard shortcut:* `Alt + Shift + S`  
 *Relative path:* `Scaling -> Scaling Formula`
 
 We already saw how to create an `Attribute Scaling Component` for stats. On top of such usage, scaling components, and more in general scaling formulas, can be used for much more situations. For example, they can be used to define the damage of an ability, to define the bonus granted by a piece of equipment, or to define the damage of a weapon. In general, they can be used to define any kind of scaling that can be expressed as a function of one or more variables.
