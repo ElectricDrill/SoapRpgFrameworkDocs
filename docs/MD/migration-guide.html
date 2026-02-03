@@ -95,10 +95,7 @@
 <li>Seamless interoperability with GameAction and UnityEvent-based listeners.</li>
 </ul>
 <h3 id="breaking-change">Breaking change</h3>
-<ul>
-<li>The legacy <code>EntityLeveledUpGameEvent</code>, <code>EntityLeveledDownGameEvent</code> and their dedicated listeners are deprecated.</li>
-<li><code>EntityStats</code> and <code>EntityAttributes</code> now subscribe the new EntityCore's single-parameter events internally.</li>
-</ul>
+<p>With the deprecation of the legacy <code>EntityLeveledUpGameEvent</code>, <code>EntityLeveledDownGameEvent</code> and their dedicated listeners, <code>EntityStats</code> and <code>EntityAttributes</code> now subscribe the new EntityCore's single-parameter events internally. All your <code>EntityCore</code> instances must be updated to use the new <code>EntityLevelUpGameEvent</code> and <code>EntityLevelDownGameEvent</code> instances. (Notice that the name of the deprecated events contained &quot;Level<strong>ed</strong>&quot; while the new events contain &quot;Level&quot;.)</p>
 <h3 id="migration-steps---breaking-changes">Migration steps - breaking changes</h3>
 <ol>
 <li><strong>Back up your project before making changes.</strong></li>
