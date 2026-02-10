@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.4.2] - 2026-02-11
+### Changed
+#### Samples
+- The sample scene is now using custom materials and a custom shader graph to support multiple render pipelines.
+
 ## [1.4.1] - 2026-02-09
 ### Fixed
 - Fixed an issue with the display of Included Stat Sets
