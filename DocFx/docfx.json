@@ -3,7 +3,7 @@
       {
           "src": [
               {
-                  "src": "../../AstraRpgPublishing_6_3_2D",
+                  "src": "../../AstraPublishing_6_3_8_2D",
                   "files": [
                       "com.electricdrill.astra-rpg-framework.Runtime.csproj"
                   ],

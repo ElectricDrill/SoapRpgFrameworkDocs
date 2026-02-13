@@ -4,14 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [1.4.2] - 2026-02-11
+## [1.4.2] - 2026-02-16
 ### Changed
 #### Samples
 - The sample scene is now using custom materials and a custom shader graph to support multiple render pipelines.
 
+### Fixed
+- Fixed a "Stat cannot be read" error being thrown upon project opening/scene loading.
+
 ## [1.4.1] - 2026-02-09
 ### Fixed
-- Fixed an issue with the display of Included Stat Sets
+- Fixed an issue with the display of Included Stat Sets.
 
 ## [1.4.0] - 2026-02-04
 
