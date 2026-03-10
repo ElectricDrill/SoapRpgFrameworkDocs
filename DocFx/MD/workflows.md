@@ -290,6 +290,47 @@ Alternatively, it is available also the `SetTotalCurrentExp(long totalCurrentExp
 
 Finally, there are the `CurrentLevelTotalExperience()` and the `NextLevelTotalExperience()` methods. These methods return the total experience required to reach the current level and the next level, respectively. They are useful, for example, for checking how much experience is needed to level up.
 
+## Exp Source
+The `ExpSource` `MonoBehaviour` component marks a `GameObject` as a source of experience points. When such an entity dies, collection systems (such as those provided by Astra RPG Health) can harvest its experience and award it to eligible recipients.
+
+To add an `ExpSource` to an entity, select the entity's `GameObject` in the hierarchy and use "Add Component" from the inspector. Search for and select `ExpSource`.
+
+In the inspector, you can configure the amount of experience this entity provides:
+
+![Exp Source Inspector](../images/workflows/exp-source-inspector.png)
+
+**Exp**: The base amount of experience points this entity grants when collected. This value can be modified by collection strategies of Astra RPG Health.
+
+### The Harvested Flag
+
+Each `ExpSource` exposes a `Harvested` property. When `Harvested` is `true`, the source is considered already collected and collection strategies will skip it, preventing experience from being granted more than once per entity.
+
+By default, `Harvested` is `false`. Collection strategies that check this flag — such as `DirectKillExpStrategySO` in Astra RPG Health — set it to `true` once the experience has been awarded, ensuring each source can only be harvested a single time.
+
+> [!NOTE]
+> Not all collection strategies enforce the `Harvested` flag, and neither all collections strategies respect it. Refer to the documentation of the specific strategy you are using to understand its behavior.
+
+### Resetting the Harvested Flag
+
+You may encounter scenarios where an entity should become harvestable again — for example, when a defeated enemy is respawned or resurrected. For these cases, the framework provides the `ToggleHarvestedExpSourceComponentGameAction`.
+
+*Relative path:* `Game Actions -> Context: Component -> Toggle Harvested Exp Source`
+
+This action reads a `Harvested` boolean field configured in the inspector and applies it to the `IExpSource` found on the context component's `GameObject`. Set `Harvested` to `false` to make the source collectable again, or to `true` to mark it as already harvested and prevent further collection.
+
+### Custom Exp Sources
+
+If you need finer control over how experience is provided — for example, if the amount should scale with the entity's level, or the source should conditionally refuse collection — you can implement the `IExpSource` interface directly on a `MonoBehaviour`:
+
+```csharp
+public interface IExpSource {
+    bool Harvested { get; set; }
+    long Exp { get; }
+}
+```
+
+Any `MonoBehaviour` implementing `IExpSource` is fully compatible with collection strategies that target this interface, including those provided by Astra RPG Health.
+
 ## Creating Astra RPG Framework assets
 All the instances of the various assets that derive from `ScriptableObject`s can be created in the following ways:
 - Context menu: `Right click on the hierarchy > Create > Astra RPG Framework`
