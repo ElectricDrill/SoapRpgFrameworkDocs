@@ -863,15 +863,34 @@ Finally, let's press on the `+` of `Self Scaling Components` and assign the two 
 
 ### Using scaling formulas in code
 
-First of all, `ScalingFormula`s expose two code-only properties: `List<ScalingComponent> TmpSelfScalingComponents` and `List<ScalingComponent> TmpTargetScalingComponents`. These properties can be used to add scaling components to the scaling formula at runtime. This is useful when you want to dynamically change the scaling components based on certain conditions or game states, without changing the original serialized scaling formula asset.
-For example, the character could get a temporary buff that makes the, let's say, `Mighty Blow` skill scale also with the `Intelligence` attribute. In this case, we can add a `Attribute Scaling Component` for the `Intelligence` attribute to the `TmpSelfScalingComponents` list of the `Mighty Blow SF` scaling formula.
+Because `ScalingFormula` is a shared `ScriptableObject` asset, multiple entities can reference the same instance. To support per-entity runtime modifications without affecting other entities, use `ScalingFormulaInstance` — a lightweight wrapper you create once per entity at initialisation:
 
-If the buff wears off, we can remove the scaling component from the `TmpSelfScalingComponents` list.
+```csharp
+var instance = new ScalingFormulaInstance(mightyBlowSF);
+```
 
-There is also a method for resetting all the temporary scaling components: `ResetTmpScalings()`.
-This method can be useful, for example, when the player completes a room and advances to the next stage or area of the game, and you want to clear all temporary buffs the character received during that stage.
+`ScalingFormulaInstance` exposes two lists: `TmpSelfScalingComponents` and `TmpTargetScalingComponents`. These let you add scaling components at runtime without touching the original asset.
+For example, the character could get a temporary buff that makes the `Mighty Blow` skill scale also with the `Intelligence` attribute. In this case, we can add an `AttributeScalingComponent` for `Intelligence` to the instance's `TmpSelfScalingComponents`:
 
-Moreover, there are four more methods that are worth mentioning:
+```csharp
+instance.TmpSelfScalingComponents.Add(intelligenceScalingComponent);
+```
+
+If the buff wears off, remove the component:
+
+```csharp
+instance.TmpSelfScalingComponents.Remove(intelligenceScalingComponent);
+```
+
+There is also `ResetTmpScalings()` to clear all temporary components at once, useful for example when the player completes a room and all temporary buffs should be cleared:
+
+```csharp
+instance.ResetTmpScalings();
+```
+
+Both `ScalingFormula` and `ScalingFormulaInstance` implement the `IScalingFormula` interface, so you can use either interchangeably wherever only value calculation is needed.
+
+The four `CalculateValue` methods are available on both:
 - `long CalculateValue(EntityCore self)`: Calculates the value of the scaling formula by summing the value returned by each self scaling component (calculated on the entity itself values), there must not be any target scaling components.
 - `long CalculateValue(EntityCore self, int level)`: If the scaling formula has a base value that varies with levels, this method calculates the value of the scaling formula for the entity itself, and adds the base value at a specific level. Again, there must not be any target scaling components.
 - `long CalculateValue(EntityCore self, EntityCore target)`: Calculates the value of the scaling formula by summing the value returned by each self scaling component (calculated on the entity itself values) and each target scaling component (calculated on the target entity values).
