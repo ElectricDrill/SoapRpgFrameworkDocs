@@ -2108,6 +2108,19 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.Level
   nameWithType: EntityLevel.Level
+- uid: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.MaxLevel
+  name: MaxLevel
+  href: api/ElectricDrill.AstraRpgFramework.Experience.EntityLevel.html#ElectricDrill_AstraRpgFramework_Experience_EntityLevel_MaxLevel
+  commentId: P:ElectricDrill.AstraRpgFramework.Experience.EntityLevel.MaxLevel
+  fullName: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.MaxLevel
+  nameWithType: EntityLevel.MaxLevel
+- uid: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.MaxLevel*
+  name: MaxLevel
+  href: api/ElectricDrill.AstraRpgFramework.Experience.EntityLevel.html#ElectricDrill_AstraRpgFramework_Experience_EntityLevel_MaxLevel_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Experience.EntityLevel.MaxLevel
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.MaxLevel
+  nameWithType: EntityLevel.MaxLevel
 - uid: ElectricDrill.AstraRpgFramework.Experience.EntityLevel.NextLevelTotalExperience
   name: NextLevelTotalExperience()
   href: api/ElectricDrill.AstraRpgFramework.Experience.EntityLevel.html#ElectricDrill_AstraRpgFramework_Experience_EntityLevel_NextLevelTotalExperience
@@ -3016,6 +3029,49 @@ references:
   commentId: N:ElectricDrill.AstraRpgFramework.Scaling
   fullName: ElectricDrill.AstraRpgFramework.Scaling
   nameWithType: ElectricDrill.AstraRpgFramework.Scaling
+- uid: ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula
+  name: IScalingFormula
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula
+  nameWithType: IScalingFormula
+- uid: ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore)
+  name: CalculateValue(EntityCore)
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_IScalingFormula_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_
+  commentId: M:ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore)
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore)
+  nameWithType: IScalingFormula.CalculateValue(EntityCore)
+- uid: ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore)
+  name: CalculateValue(EntityCore, EntityCore)
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_IScalingFormula_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_ElectricDrill_AstraRpgFramework_EntityCore_
+  commentId: M:ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore)
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore, ElectricDrill.AstraRpgFramework.EntityCore)
+  nameWithType: IScalingFormula.CalculateValue(EntityCore, EntityCore)
+- uid: ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore,System.Int32)
+  name: CalculateValue(EntityCore, EntityCore, int)
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_IScalingFormula_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_ElectricDrill_AstraRpgFramework_EntityCore_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore,System.Int32)
+  name.vb: CalculateValue(EntityCore, EntityCore, Integer)
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore, ElectricDrill.AstraRpgFramework.EntityCore, int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore, ElectricDrill.AstraRpgFramework.EntityCore, Integer)
+  nameWithType: IScalingFormula.CalculateValue(EntityCore, EntityCore, int)
+  nameWithType.vb: IScalingFormula.CalculateValue(EntityCore, EntityCore, Integer)
+- uid: ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,System.Int32)
+  name: CalculateValue(EntityCore, int)
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_IScalingFormula_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,System.Int32)
+  name.vb: CalculateValue(EntityCore, Integer)
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore, int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore, Integer)
+  nameWithType: IScalingFormula.CalculateValue(EntityCore, int)
+  nameWithType.vb: IScalingFormula.CalculateValue(EntityCore, Integer)
+- uid: ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue*
+  name: CalculateValue
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_IScalingFormula_CalculateValue_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.CalculateValue
+  nameWithType: IScalingFormula.CalculateValue
 - uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingComponent
   name: ScalingComponent
   href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingComponent.html
@@ -3247,6 +3303,32 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.GetBaseValue
   nameWithType: ScalingFormula.GetBaseValue
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.HasSelfComponents
+  name: HasSelfComponents
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_HasSelfComponents
+  commentId: P:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.HasSelfComponents
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.HasSelfComponents
+  nameWithType: ScalingFormula.HasSelfComponents
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.HasSelfComponents*
+  name: HasSelfComponents
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_HasSelfComponents_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.HasSelfComponents
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.HasSelfComponents
+  nameWithType: ScalingFormula.HasSelfComponents
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.HasTargetComponents
+  name: HasTargetComponents
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_HasTargetComponents
+  commentId: P:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.HasTargetComponents
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.HasTargetComponents
+  nameWithType: ScalingFormula.HasTargetComponents
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.HasTargetComponents*
+  name: HasTargetComponents
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_HasTargetComponents_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.HasTargetComponents
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.HasTargetComponents
+  nameWithType: ScalingFormula.HasTargetComponents
 - uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.ResetTmpScalings
   name: ResetTmpScalings()
   href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_ResetTmpScalings
@@ -3260,6 +3342,32 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.ResetTmpScalings
   nameWithType: ScalingFormula.ResetTmpScalings
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.SelfScalingComponents
+  name: SelfScalingComponents
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_SelfScalingComponents
+  commentId: P:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.SelfScalingComponents
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.SelfScalingComponents
+  nameWithType: ScalingFormula.SelfScalingComponents
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.SelfScalingComponents*
+  name: SelfScalingComponents
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_SelfScalingComponents_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.SelfScalingComponents
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.SelfScalingComponents
+  nameWithType: ScalingFormula.SelfScalingComponents
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.TargetScalingComponents
+  name: TargetScalingComponents
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_TargetScalingComponents
+  commentId: P:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.TargetScalingComponents
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.TargetScalingComponents
+  nameWithType: ScalingFormula.TargetScalingComponents
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.TargetScalingComponents*
+  name: TargetScalingComponents
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_TargetScalingComponents_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.TargetScalingComponents
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.TargetScalingComponents
+  nameWithType: ScalingFormula.TargetScalingComponents
 - uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.TmpSelfScalingComponents
   name: TmpSelfScalingComponents
   href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_TmpSelfScalingComponents
@@ -3286,6 +3394,120 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.TmpTargetScalingComponents
   nameWithType: ScalingFormula.TmpTargetScalingComponents
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.UseScalingBaseValue
+  name: UseScalingBaseValue
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_UseScalingBaseValue
+  commentId: P:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.UseScalingBaseValue
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.UseScalingBaseValue
+  nameWithType: ScalingFormula.UseScalingBaseValue
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.UseScalingBaseValue*
+  name: UseScalingBaseValue
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_UseScalingBaseValue_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.UseScalingBaseValue
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.UseScalingBaseValue
+  nameWithType: ScalingFormula.UseScalingBaseValue
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance
+  name: ScalingFormulaInstance
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance
+  nameWithType: ScalingFormulaInstance
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.#ctor(ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula)
+  name: ScalingFormulaInstance(ScalingFormula)
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance__ctor_ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_
+  commentId: M:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.#ctor(ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula)
+  name.vb: New(ScalingFormula)
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.ScalingFormulaInstance(ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.New(ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula)
+  nameWithType: ScalingFormulaInstance.ScalingFormulaInstance(ScalingFormula)
+  nameWithType.vb: ScalingFormulaInstance.New(ScalingFormula)
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.#ctor*
+  name: ScalingFormulaInstance
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance__ctor_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.ScalingFormulaInstance
+  fullName.vb: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.New
+  nameWithType: ScalingFormulaInstance.ScalingFormulaInstance
+  nameWithType.vb: ScalingFormulaInstance.New
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore)
+  name: CalculateValue(EntityCore)
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_
+  commentId: M:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore)
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore)
+  nameWithType: ScalingFormulaInstance.CalculateValue(EntityCore)
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore)
+  name: CalculateValue(EntityCore, EntityCore)
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_ElectricDrill_AstraRpgFramework_EntityCore_
+  commentId: M:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore)
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore, ElectricDrill.AstraRpgFramework.EntityCore)
+  nameWithType: ScalingFormulaInstance.CalculateValue(EntityCore, EntityCore)
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore,System.Int32)
+  name: CalculateValue(EntityCore, EntityCore, int)
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_ElectricDrill_AstraRpgFramework_EntityCore_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore,System.Int32)
+  name.vb: CalculateValue(EntityCore, EntityCore, Integer)
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore, ElectricDrill.AstraRpgFramework.EntityCore, int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore, ElectricDrill.AstraRpgFramework.EntityCore, Integer)
+  nameWithType: ScalingFormulaInstance.CalculateValue(EntityCore, EntityCore, int)
+  nameWithType.vb: ScalingFormulaInstance.CalculateValue(EntityCore, EntityCore, Integer)
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,System.Int32)
+  name: CalculateValue(EntityCore, int)
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,System.Int32)
+  name.vb: CalculateValue(EntityCore, Integer)
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore, int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore, Integer)
+  nameWithType: ScalingFormulaInstance.CalculateValue(EntityCore, int)
+  nameWithType.vb: ScalingFormulaInstance.CalculateValue(EntityCore, Integer)
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue*
+  name: CalculateValue
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_CalculateValue_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue
+  nameWithType: ScalingFormulaInstance.CalculateValue
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.ResetTmpScalings
+  name: ResetTmpScalings()
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_ResetTmpScalings
+  commentId: M:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.ResetTmpScalings
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.ResetTmpScalings()
+  nameWithType: ScalingFormulaInstance.ResetTmpScalings()
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.ResetTmpScalings*
+  name: ResetTmpScalings
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_ResetTmpScalings_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.ResetTmpScalings
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.ResetTmpScalings
+  nameWithType: ScalingFormulaInstance.ResetTmpScalings
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpSelfScalingComponents
+  name: TmpSelfScalingComponents
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_TmpSelfScalingComponents
+  commentId: P:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpSelfScalingComponents
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpSelfScalingComponents
+  nameWithType: ScalingFormulaInstance.TmpSelfScalingComponents
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpSelfScalingComponents*
+  name: TmpSelfScalingComponents
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_TmpSelfScalingComponents_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpSelfScalingComponents
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpSelfScalingComponents
+  nameWithType: ScalingFormulaInstance.TmpSelfScalingComponents
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpTargetScalingComponents
+  name: TmpTargetScalingComponents
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_TmpTargetScalingComponents
+  commentId: P:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpTargetScalingComponents
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpTargetScalingComponents
+  nameWithType: ScalingFormulaInstance.TmpTargetScalingComponents
+- uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpTargetScalingComponents*
+  name: TmpTargetScalingComponents
+  href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_TmpTargetScalingComponents_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpTargetScalingComponents
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpTargetScalingComponents
+  nameWithType: ScalingFormulaInstance.TmpTargetScalingComponents
 - uid: ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaMenuItems
   name: ScalingFormulaMenuItems
   href: api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaMenuItems.html

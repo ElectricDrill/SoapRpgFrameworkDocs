@@ -4,6 +4,48 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.5.0] - 2026-03-23
+### Added
+#### Runtime Features
+- Added `IScalingFormula` interface exposing the 4 main methods for scaling formulas. `ScalingFormula` and `ScalingFormulaInstance` now implement this interface.
+- Added `ScalingFormulaInstance`. This class shall be used in place of `ScalingFormula` when you need to have a scaling formula that may use temporary scaling components. Temporary scaling components on the SO `ScalingFormula` have been deprecated an will be removed (see below). This ensures that the temporary scaling components do not modify the original `ScriptableObject` instance of the scaling formula, which could cause unintended side effects across different entities using the same scaling formula.
+- Added several public read-only properties to `ScalingFormula`:
+  - `UseScalingBaseValue`
+  - `HasSelfComponents`
+  - `HasTargetComponents`
+  - `SelfScalingComponents`
+  - `TargetScalingComponents`
+- Added a public `MaxLevel` get property to `EntityLevel`
+- All game event listeners log now an error if play mode is entered while no game event SO instance is assigned to them
+
+#### Editor Features
+- Added `Percentage` custom property drawer
+
+### Changed
+#### Editor Features
+- Improved the `GrowthFormula`'s custom inspector in several ways:
+  - Repositioned remove buttons (Now just a "-" sign) to the top right of each growth expression (previously at the bottom)
+  - When the `Use Constant Value At Level 1` is checked/unchecked, the first growth expression starting level is automatically set to 2 or 1 respectively, without the need for user input.
+  - When adding the first growth expression, if the `Use Constant Value At Level 1` is checked, the starting level of the growth expression is automatically set to 2. If it's unchecked, it's set to 1.
+  - When adding a growth expression, the starting level of the new expression is automatically set to one level higher than the previous last expression. The user can of course change it after, but this provides a more intuitive default behavior.
+  - When a certain growth expression level is changed, the validation is not performed right away any more, but only after the user finishes editing the field (presses Enter or changes focus). This prevents weird behavior of the inspector while editing the growth expressions, such as automatic changes of the level of other expressions while editing a certain expression's level, which could be confusing.
+  - Expressions can now be reordered with up and down buttons.
+  - The growth expressions now have dedicated colored headers.
+  - The table of the level to value mappings has been redesigned and now clearly shows the various growth expression ranges by using the same colors as the growth expressions.
+  - The graph has been redesigned and now light vertical lines are shown to better identify the ranges.
+  - The on-hover popup shown over the graph has been redesigned. It now also shows the growth expression and its range to which the hovered level belongs.
+
+#### Samples
+- Reviewed the style of the sample scene
+
+### Deprecated
+#### Runtime Features
+- Deprecated `TmpSelfScalingComponents` and `TmpTargetScalingComponents` in `ScalingFormula`
+
+### Removed
+#### Runtime Features
+- `ToggleHarvestedExpSourceGameAction` no longer prints a warning when no `ExpSource` component is attached to the entity on which is being executed
+
 ## [1.4.2] - 2026-02-13
 ### Changed
 #### Samples

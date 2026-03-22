@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ScalingFormulaInstance | Astra RPG Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ScalingFormulaInstance | Astra RPG Framework ">
+      
+      <meta name="description" content="A per-entity runtime wrapper around a shared  asset.  Because  is a ScriptableObject, it is shared across all entities that reference it. Mutating temporary scaling components directly on the asset would therefore affect every entity that uses it.  solves this by keeping its own temporary component lists while delegating all computation to the underlying asset.  Each entity that needs per-entity runtime modifications (e.g. a buff that adds an extra scaling term) should create its own  from the shared  asset.">
+      <link rel="icon" href="../images/astra-rpg-ico.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Cis8/AstraRpgFramework/new/main/apiSpec/new?filename=ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance.md&amp;value=---%0Auid%3A%20ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra RPG Framework">
+            Astra RPG Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance">
+
+
+
+  <h1 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance" class="text-break">
+Class ScalingFormulaInstance  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingFormulaInstance.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ElectricDrill.html">ElectricDrill</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.html">AstraRpgFramework</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.html">Scaling</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>com.electricdrill.astra-rpg-framework.Runtime.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A per-entity runtime wrapper around a shared <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a> asset.</p>
+<p>
+Because <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a> is a <code>ScriptableObject</code>, it is shared across all entities that
+reference it. Mutating temporary scaling components directly on the asset would therefore affect every entity
+that uses it. <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html">ScalingFormulaInstance</a> solves this by keeping its own temporary component lists
+while delegating all computation to the underlying asset.
+</p><p>
+Each entity that needs per-entity runtime modifications (e.g. a buff that adds an extra scaling term) should
+create its own <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html">ScalingFormulaInstance</a> from the shared <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a> asset.
+</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ScalingFormulaInstance : IScalingFormula</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><span class="xref">object</span></div>
+      <div><span class="xref">ScalingFormulaInstance</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.html">IScalingFormula</a></div>
+    </dd>
+  </dl>
+
+
+
+
+
+  <h2 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_examples">Examples</h2>
+  <pre><code class="lang-csharp">// At ability / buff initialisation:
+var instance = new ScalingFormulaInstance(myScalingFormulaAsset);
+
+// When a buff is applied to this specific entity:
+instance.TmpSelfScalingComponents.Add(armorScalingComponent);
+
+// When the buff expires:
+instance.TmpSelfScalingComponents.Remove(armorScalingComponent);
+// – or reset all temporaries at once:
+instance.ResetTmpScalings();</code></pre>
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance__ctor_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.#ctor*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance__ctor_ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.#ctor(ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula)">
+  ScalingFormulaInstance(ScalingFormula)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingFormulaInstance.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ScalingFormulaInstance(ScalingFormula formula)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>formula</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a></dt>
+    <dd><p>The shared <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a> asset this instance wraps.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_TmpSelfScalingComponents_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpSelfScalingComponents*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_TmpSelfScalingComponents" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpSelfScalingComponents">
+  TmpSelfScalingComponents
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingFormulaInstance.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Per-entity temporary scaling components applied to the &quot;self&quot; entity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;ScalingComponent&gt; TmpSelfScalingComponents { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponent.html">ScalingComponent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_TmpTargetScalingComponents_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpTargetScalingComponents*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_TmpTargetScalingComponents" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.TmpTargetScalingComponents">
+  TmpTargetScalingComponents
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingFormulaInstance.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Per-entity temporary scaling components applied to the &quot;target&quot; entity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;ScalingComponent&gt; TmpTargetScalingComponents { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponent.html">ScalingComponent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_CalculateValue_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore)">
+  CalculateValue(EntityCore)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingFormulaInstance.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Calculates the final value using only the &quot;self&quot; entity.
+Assumes the formula has no target-scaling components and uses a fixed base value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long CalculateValue(EntityCore self)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>self</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">long</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_CalculateValue_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_ElectricDrill_AstraRpgFramework_EntityCore_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore)">
+  CalculateValue(EntityCore, EntityCore)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingFormulaInstance.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Calculates the final value using both &quot;self&quot; and &quot;target&quot; entities.
+Assumes the formula uses a fixed base value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long CalculateValue(EntityCore self, EntityCore target)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>self</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dd></dd>
+    <dt><code>target</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">long</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_CalculateValue_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_ElectricDrill_AstraRpgFramework_EntityCore_System_Int32_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,ElectricDrill.AstraRpgFramework.EntityCore,System.Int32)">
+  CalculateValue(EntityCore, EntityCore, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingFormulaInstance.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Calculates the final value using both &quot;self&quot; and &quot;target&quot; entities and a specific level for the base value.
+Assumes the formula uses a growth-based base value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long CalculateValue(EntityCore self, EntityCore target, int level)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>self</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dd></dd>
+    <dt><code>target</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dd></dd>
+    <dt><code>level</code> <span class="xref">int</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">long</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_CalculateValue_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_System_Int32_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore,System.Int32)">
+  CalculateValue(EntityCore, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingFormulaInstance.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Calculates the final value using only the &quot;self&quot; entity and a specific level for the base value.
+Assumes the formula has no target-scaling components and uses a growth-based base value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long CalculateValue(EntityCore self, int level)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>self</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dd></dd>
+    <dt><code>level</code> <span class="xref">int</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">long</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_ResetTmpScalings_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.ResetTmpScalings*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance_ResetTmpScalings" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.ResetTmpScalings">
+  ResetTmpScalings()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingFormulaInstance.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Clears all per-entity temporary scaling components for both &quot;self&quot; and &quot;target&quot;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ResetTmpScalings()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

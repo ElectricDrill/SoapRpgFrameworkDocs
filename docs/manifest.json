@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Users/emaci/Documents/SimpleRPGCoreDocs/DocFx",
+  "source_base_path": "C:/Users/emaci/Documents/AstraRpgFrameworkDocs/DocFx",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -1105,6 +1105,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingComponent.yml",
       "output": {
         ".html": {
@@ -1169,6 +1179,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html"
         }
       },
       "version": ""
@@ -3122,6 +3142,26 @@
       "output": {
         "resource": {
           "relative_path": "images/workflows/entity-stats.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/exp-source-inspector.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/exp-source-inspector.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/gf-chart.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/gf-chart.gif"
         }
       },
       "version": ""

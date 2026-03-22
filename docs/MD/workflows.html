@@ -198,7 +198,7 @@ Validation occurs automatically during script compilation, upon entering play mo
 <p><img src="../images/workflows/add-level-growth-formula.png" alt="Add level growth formula"></p>
 <p>The new section includes two fields: <code>From Level</code> and <code>Growth Expression</code>.</p>
 <ul>
-<li><strong>From Level</strong>: Specifies the starting level at which the corresponding <code>Growth Expression</code> becomes effective.</li>
+<li><strong>From Level</strong>: Specifies the starting level at which the corresponding <code>Growth Expression</code> becomes effective. It is pre-filled with the next level after the last defined growth expression, but it can be edited to any level. If no other growth expression is defined, it will be pre-filled with level 2 if <code>Use constant value at level 1</code> is checked, or level 1 if it is not checked.</li>
 <li><strong>Growth Expression</strong>: Defines how the value evolves starting from the specified level.</li>
 </ul>
 <p>If the <code>Growth Expression</code> overlaps with the <code>Constant At Lvl 1</code> option, a warning will appear. To resolve this, set the <code>From Level</code> field to <code>2</code> or higher, and the warning will disappear.</p>
@@ -318,6 +318,31 @@ If <code>Use constant</code> is checked instead, the value is readonly.</p>
 Alternatively, it is available also the <code>SetTotalCurrentExp(long totalCurrentExperience)</code> method, which allows setting the total current experience of the entity. This method will also raise the <code>OnLevelUp</code> event if the entity levels up, and the <code>OnLevelDown</code> event if the entity levels down.</p>
 <p>(🏷️<em>v1.2.0+</em>) Similarly, the <code>RemoveExp(long amount)</code> method allows deducting experience from the entity. This method will raise the <code>OnLevelDown</code> event if the entity levels down. If you want to <em>respec</em> an entity, the <code>ResetToLevelOne()</code> method resets the entity's level and experience to level 1. This method will raise the <code>OnLevelDown</code> event if the entity levels down. Clearly, all spent attribute points will be reset as well.</p>
 <p>Finally, there are the <code>CurrentLevelTotalExperience()</code> and the <code>NextLevelTotalExperience()</code> methods. These methods return the total experience required to reach the current level and the next level, respectively. They are useful, for example, for checking how much experience is needed to level up.</p>
+<h2 id="exp-source">Exp Source</h2>
+<p>The <code>ExpSource</code> <code>MonoBehaviour</code> component marks a <code>GameObject</code> as a source of experience points. When such an entity dies, collection systems (such as those provided by Astra RPG Health) can harvest its experience and award it to eligible recipients.</p>
+<p>To add an <code>ExpSource</code> to an entity, select the entity's <code>GameObject</code> in the hierarchy and use &quot;Add Component&quot; from the inspector. Search for and select <code>ExpSource</code>.</p>
+<p>In the inspector, you can configure the amount of experience this entity provides:</p>
+<p><img src="../images/workflows/exp-source-inspector.png" alt="Exp Source Inspector"></p>
+<p><strong>Exp</strong>: The base amount of experience points this entity grants when collected. This value can be modified by collection strategies of Astra RPG Health.</p>
+<h3 id="the-harvested-flag">The Harvested Flag</h3>
+<p>Each <code>ExpSource</code> exposes a <code>Harvested</code> property. When <code>Harvested</code> is <code>true</code>, the source is considered already collected and collection strategies will skip it, preventing experience from being granted more than once per entity.</p>
+<p>By default, <code>Harvested</code> is <code>false</code>. Collection strategies that check this flag — such as <code>DirectKillExpStrategySO</code> in Astra RPG Health — set it to <code>true</code> once the experience has been awarded, ensuring each source can only be harvested a single time.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Not all collection strategies enforce the <code>Harvested</code> flag, and neither all collections strategies respect it. Refer to the documentation of the specific strategy you are using to understand its behavior.</p>
+</div>
+<h3 id="resetting-the-harvested-flag">Resetting the Harvested Flag</h3>
+<p>You may encounter scenarios where an entity should become harvestable again — for example, when a defeated enemy is respawned or resurrected. For these cases, the framework provides the <code>ToggleHarvestedExpSourceComponentGameAction</code>.</p>
+<p><em>Relative path:</em> <code>Game Actions -&gt; Context: Component -&gt; Toggle Harvested Exp Source</code></p>
+<p>This action reads a <code>Harvested</code> boolean field configured in the inspector and applies it to the <code>IExpSource</code> found on the context component's <code>GameObject</code>. Set <code>Harvested</code> to <code>false</code> to make the source collectable again, or to <code>true</code> to mark it as already harvested and prevent further collection.</p>
+<h3 id="custom-exp-sources">Custom Exp Sources</h3>
+<p>If you need finer control over how experience is provided — for example, if the amount should scale with the entity's level, or the source should conditionally refuse collection — you can implement the <code>IExpSource</code> interface directly on a <code>MonoBehaviour</code>:</p>
+<pre><code class="lang-csharp">public interface IExpSource {
+    bool Harvested { get; set; }
+    long Exp { get; }
+}
+</code></pre>
+<p>Any <code>MonoBehaviour</code> implementing <code>IExpSource</code> is fully compatible with collection strategies that target this interface, including those provided by Astra RPG Health.</p>
 <h2 id="creating-astra-rpg-framework-assets">Creating Astra RPG Framework assets</h2>
 <p>All the instances of the various assets that derive from <code>ScriptableObject</code>s can be created in the following ways:</p>
 <ul>
@@ -744,12 +769,21 @@ The scaling formula will be defined as follows:</p>
 <p>Finally, let's press on the <code>+</code> of <code>Self Scaling Components</code> and assign the two scaling components we just created. The <code>Mighty Blow SF</code> should look like this:</p>
 <p><img src="../images/workflows/mighty-blow-sf-with-scaling-components.png" alt="Mighty Blow SF with scaling components"></p>
 <h3 id="using-scaling-formulas-in-code">Using scaling formulas in code</h3>
-<p>First of all, <code>ScalingFormula</code>s expose two code-only properties: <code>List&lt;ScalingComponent&gt; TmpSelfScalingComponents</code> and <code>List&lt;ScalingComponent&gt; TmpTargetScalingComponents</code>. These properties can be used to add scaling components to the scaling formula at runtime. This is useful when you want to dynamically change the scaling components based on certain conditions or game states, without changing the original serialized scaling formula asset.
-For example, the character could get a temporary buff that makes the, let's say, <code>Mighty Blow</code> skill scale also with the <code>Intelligence</code> attribute. In this case, we can add a <code>Attribute Scaling Component</code> for the <code>Intelligence</code> attribute to the <code>TmpSelfScalingComponents</code> list of the <code>Mighty Blow SF</code> scaling formula.</p>
-<p>If the buff wears off, we can remove the scaling component from the <code>TmpSelfScalingComponents</code> list.</p>
-<p>There is also a method for resetting all the temporary scaling components: <code>ResetTmpScalings()</code>.
-This method can be useful, for example, when the player completes a room and advances to the next stage or area of the game, and you want to clear all temporary buffs the character received during that stage.</p>
-<p>Moreover, there are four more methods that are worth mentioning:</p>
+<p>Because <code>ScalingFormula</code> is a shared <code>ScriptableObject</code> asset, multiple entities can reference the same instance. To support per-entity runtime modifications without affecting other entities, use <code>ScalingFormulaInstance</code> — a lightweight wrapper you create once per entity at initialisation:</p>
+<pre><code class="lang-csharp">var instance = new ScalingFormulaInstance(mightyBlowSF);
+</code></pre>
+<p><code>ScalingFormulaInstance</code> exposes two lists: <code>TmpSelfScalingComponents</code> and <code>TmpTargetScalingComponents</code>. These let you add scaling components at runtime without touching the original asset.
+For example, the character could get a temporary buff that makes the <code>Mighty Blow</code> skill scale also with the <code>Intelligence</code> attribute. In this case, we can add an <code>AttributeScalingComponent</code> for <code>Intelligence</code> to the instance's <code>TmpSelfScalingComponents</code>:</p>
+<pre><code class="lang-csharp">instance.TmpSelfScalingComponents.Add(intelligenceScalingComponent);
+</code></pre>
+<p>If the buff wears off, remove the component:</p>
+<pre><code class="lang-csharp">instance.TmpSelfScalingComponents.Remove(intelligenceScalingComponent);
+</code></pre>
+<p>There is also <code>ResetTmpScalings()</code> to clear all temporary components at once, useful for example when the player completes a room and all temporary buffs should be cleared:</p>
+<pre><code class="lang-csharp">instance.ResetTmpScalings();
+</code></pre>
+<p>Both <code>ScalingFormula</code> and <code>ScalingFormulaInstance</code> implement the <code>IScalingFormula</code> interface, so you can use either interchangeably wherever only value calculation is needed.</p>
+<p>The four <code>CalculateValue</code> methods are available on both:</p>
 <ul>
 <li><code>long CalculateValue(EntityCore self)</code>: Calculates the value of the scaling formula by summing the value returned by each self scaling component (calculated on the entity itself values), there must not be any target scaling components.</li>
 <li><code>long CalculateValue(EntityCore self, int level)</code>: If the scaling formula has a base value that varies with levels, this method calculates the value of the scaling formula for the entity itself, and adds the base value at a specific level. Again, there must not be any target scaling components.</li>

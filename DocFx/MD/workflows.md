@@ -134,7 +134,7 @@ The `Add new growth expression` button lets us add a growth expression for a cer
 
 The new section includes two fields: `From Level` and `Growth Expression`. 
 
-- **From Level**: Specifies the starting level at which the corresponding `Growth Expression` becomes effective.  
+- **From Level**: Specifies the starting level at which the corresponding `Growth Expression` becomes effective. It is pre-filled with the next level after the last defined growth expression, but it can be edited to any level. If no other growth expression is defined, it will be pre-filled with level 2 if `Use constant value at level 1` is checked, or level 1 if it is not checked.
 - **Growth Expression**: Defines how the value evolves starting from the specified level.  
 
 If the `Growth Expression` overlaps with the `Constant At Lvl 1` option, a warning will appear. To resolve this, set the `From Level` field to `2` or higher, and the warning will disappear.

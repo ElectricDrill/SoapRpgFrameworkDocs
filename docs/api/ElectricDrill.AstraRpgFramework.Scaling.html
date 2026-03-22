@@ -112,8 +112,34 @@ The final damage will be the sum of the value returned by the two scaling compon
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html">ScalingFormulaInstance</a></dt>
+      <dd><p>A per-entity runtime wrapper around a shared <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a> asset.</p>
+<p>
+Because <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a> is a <code>ScriptableObject</code>, it is shared across all entities that
+reference it. Mutating temporary scaling components directly on the asset would therefore affect every entity
+that uses it. <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html">ScalingFormulaInstance</a> solves this by keeping its own temporary component lists
+while delegating all computation to the underlying asset.
+</p><p>
+Each entity that needs per-entity runtime modifications (e.g. a buff that adds an extra scaling term) should
+create its own <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html">ScalingFormulaInstance</a> from the shared <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a> asset.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase-2.html">SoSetScalingComponentBase&lt;SetType, KeyType&gt;</a></dt>
       <dd><p>Abstract base class for scaling components that work with ScriptableObject-based sets.</p>
+</dd>
+    </dl>
+    <h3 id="interfaces">
+Interfaces
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.html">IScalingFormula</a></dt>
+      <dd><p>Defines the contract for evaluating a scaling formula against one or two entities.</p>
+<p>
+Implementations include:
+<ul><li><a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a> – a shared <code>ScriptableObject</code> asset with no per-entity state.</li><li><a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html">ScalingFormulaInstance</a> – a per-entity runtime wrapper that supports temporary scaling
+components without affecting other entities that reference the same <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a>.</li></ul>
 </dd>
     </dl>
 
