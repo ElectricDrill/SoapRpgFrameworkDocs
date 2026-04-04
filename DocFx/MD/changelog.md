@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+
+## [1.5.1] - 2026-04-04
+### Changed
+#### Editor Features
+- Reordered the EntityAttributes fields in the custom inspector to prevent the bug mentioned below
+### Fixed
+#### Editor Features
+- Fixed a bug in the EntityAttributes custom inspector that was not allowing to set either the fixed base Attribute Set nor the "Use Class Attributes From Class"
+
+
 ## [1.5.0] - 2026-03-23
 ### Added
 #### Runtime Features
