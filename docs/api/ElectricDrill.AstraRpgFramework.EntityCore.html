@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_EntityCore" data-uid="ElectricDrill.AstraRpgFramework.EntityCore" class="text-break">
-Class EntityCore  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L17"><i class="bi bi-code-slash"></i></a>
+Class EntityCore  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -105,7 +105,7 @@ Provides easy access to the entity's level, stats, and attributes.</p>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[DisallowMultipleComponent]
-public class EntityCore : MonoBehaviour, IValidatable</code></pre>
+public class EntityCore : MonoBehaviour, IEditorValidatable, IInvalidatable, IStatReader, IValueContainer&lt;Stat&gt;, IAttributeReader, IValueContainer&lt;Attribute&gt;</code></pre>
   </div>
 
 
@@ -126,7 +126,12 @@ public class EntityCore : MonoBehaviour, IValidatable</code></pre>
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValidatable.html">IValidatable</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IEditorValidatable.html">IEditorValidatable</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IInvalidatable.html">IInvalidatable</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.IStatReader.html">IStatReader</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html">IValueContainer</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a>&gt;</div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.html">IAttributeReader</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html">IValueContainer</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.Attribute.html">Attribute</a>&gt;</div>
     </dd>
   </dl>
 
@@ -145,7 +150,7 @@ public class EntityCore : MonoBehaviour, IValidatable</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_Attributes" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Attributes">
   Attributes
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html">EntityAttributes</a> component which manages the entity's attributes.</p>
@@ -177,7 +182,7 @@ public class EntityCore : MonoBehaviour, IValidatable</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_Level" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Level">
   Level
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the <a class="xref" href="ElectricDrill.AstraRpgFramework.Experience.EntityLevel.html">EntityLevel</a> class which manages the entity's level and experience.</p>
@@ -209,7 +214,7 @@ public class EntityCore : MonoBehaviour, IValidatable</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_Name" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the name of the entity's GameObject.</p>
@@ -241,7 +246,7 @@ public class EntityCore : MonoBehaviour, IValidatable</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_Stats" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Stats">
   Stats
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.EntityStats.html">EntityStats</a> component which manages the entity's stats.</p>
@@ -277,7 +282,7 @@ public class EntityCore : MonoBehaviour, IValidatable</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_Awake" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Awake">
   Awake()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L83"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -299,11 +304,38 @@ public class EntityCore : MonoBehaviour, IValidatable</code></pre>
 
 
 
+  <a id="ElectricDrill_AstraRpgFramework_EntityCore_Invalidate_" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Invalidate*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_Invalidate" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Invalidate">
+  Invalidate()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Marks this object as invalid and raises <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IInvalidatable.html#ElectricDrill_AstraRpgFramework_Contexts_IInvalidatable_OnInvalidated">OnInvalidated</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Invalidate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="ElectricDrill_AstraRpgFramework_EntityCore_Start_" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Start*"></a>
 
   <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_Start" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Start">
   Start()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L86"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -329,7 +361,7 @@ public class EntityCore : MonoBehaviour, IValidatable</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_Update" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Update">
   Update()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L105"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -344,6 +376,41 @@ public class EntityCore : MonoBehaviour, IValidatable</code></pre>
 
 
 
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_OnInvalidated" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.OnInvalidated">
+  OnInvalidated
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised when this object is invalidated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action OnInvalidated</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Action</span></dt>
+    <dd></dd>
+  </dl>
 
 
 

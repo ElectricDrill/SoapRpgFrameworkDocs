@@ -108,7 +108,7 @@ The final damage will be the sum of the value returned by the two scaling compon
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ScalingFormula : ScriptableObject, IScalingFormula</code></pre>
+    <pre><code class="lang-csharp hljs">public class ScalingFormula : ScriptableObject, IScalingFormula, IEntityValueCalculator</code></pre>
   </div>
 
 
@@ -128,6 +128,7 @@ The final damage will be the sum of the value returned by the two scaling compon
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.IScalingFormula.html">IScalingFormula</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.IEntityValueCalculator.html">IEntityValueCalculator</a></div>
     </dd>
   </dl>
 
@@ -382,6 +383,78 @@ isolated per entity.</p>
 
   <h2 class="section" id="methods">Methods
 </h2>
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_CalculateSelfScalingComponents_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.CalculateSelfScalingComponents*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_CalculateSelfScalingComponents_ElectricDrill_AstraRpgFramework_EntityCore_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.CalculateSelfScalingComponents(ElectricDrill.AstraRpgFramework.EntityCore)">
+  CalculateSelfScalingComponents(EntityCore)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingFormula.cs/#L184"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long CalculateSelfScalingComponents(EntityCore self)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>self</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">long</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_CalculateTargetScalingComponents_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.CalculateTargetScalingComponents*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_CalculateTargetScalingComponents_ElectricDrill_AstraRpgFramework_EntityCore_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.CalculateTargetScalingComponents(ElectricDrill.AstraRpgFramework.EntityCore)">
+  CalculateTargetScalingComponents(EntityCore)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingFormula.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long CalculateTargetScalingComponents(EntityCore target)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">long</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
 
 
   <a id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_CalculateValue_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.CalculateValue*"></a>

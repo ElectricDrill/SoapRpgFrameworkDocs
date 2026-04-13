@@ -102,7 +102,7 @@ Class AttributesScalingComponent  <a class="header-action link-secondary" title=
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AttributesScalingComponent : SoSetScalingComponentBase&lt;AttributeSet, Attribute&gt;, IValueProvider&lt;Attribute, double&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class AttributesScalingComponent : SoSetScalingComponentBase&lt;AttributeSet, Attribute&gt;, IEntityValueCalculator, IValueProvider&lt;Attribute, double&gt;</code></pre>
   </div>
 
 
@@ -123,6 +123,7 @@ Class AttributesScalingComponent  <a class="header-action link-secondary" title=
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.IEntityValueCalculator.html">IEntityValueCalculator</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueProvider-2.html">IValueProvider</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.Attribute.html">Attribute</a>, <span class="xref">double</span>&gt;</div>
     </dd>
   </dl>

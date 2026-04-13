@@ -102,7 +102,7 @@ Class StatsScalingComponent  <a class="header-action link-secondary" title="View
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StatsScalingComponent : SoSetScalingComponentBase&lt;StatSet, Stat&gt;, IValueProvider&lt;Stat, double&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class StatsScalingComponent : SoSetScalingComponentBase&lt;StatSet, Stat&gt;, IEntityValueCalculator, IValueProvider&lt;Stat, double&gt;</code></pre>
   </div>
 
 
@@ -123,6 +123,7 @@ Class StatsScalingComponent  <a class="header-action link-secondary" title="View
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.IEntityValueCalculator.html">IEntityValueCalculator</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueProvider-2.html">IValueProvider</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a>, <span class="xref">double</span>&gt;</div>
     </dd>
   </dl>

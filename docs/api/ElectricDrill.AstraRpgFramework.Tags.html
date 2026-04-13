@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Namespace ElectricDrill.AstraRpgFramework.Attributes | Astra RPG Framework </title>
+      <title>Namespace ElectricDrill.AstraRpgFramework.Tags | Astra RPG Framework </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Namespace ElectricDrill.AstraRpgFramework.Attributes | Astra RPG Framework ">
+      <meta name="title" content="Namespace ElectricDrill.AstraRpgFramework.Tags | Astra RPG Framework ">
       
       
       <link rel="icon" href="../images/astra-rpg-ico.ico">
@@ -84,9 +84,9 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="ElectricDrill.AstraRpgFramework.Attributes">
+        <article data-uid="ElectricDrill.AstraRpgFramework.Tags">
 
-  <h1 id="ElectricDrill_AstraRpgFramework_Attributes" data-uid="ElectricDrill.AstraRpgFramework.Attributes" class="text-break">Namespace ElectricDrill.AstraRpgFramework.Attributes</h1>
+  <h1 id="ElectricDrill_AstraRpgFramework_Tags" data-uid="ElectricDrill.AstraRpgFramework.Tags" class="text-break">Namespace ElectricDrill.AstraRpgFramework.Tags</h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
@@ -95,59 +95,34 @@
 Classes
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.Attribute.html">Attribute</a></dt>
-      <dd><p>Represents a character attribute that extends BoundedValue functionality.
-An attribute is a measurable characteristic such as strength, dexterity, luck, and so on.
-Can have a min and a max value.</p>
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTag.html">GameTag</a></dt>
+      <dd><p>Lightweight typed tag identifier. Use as a ScriptableObject reference to tag game entities,
+modifiers, abilities, or any other game data.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSet.html">AttributeSet</a></dt>
-      <dd><p>A ScriptableObject that defines a collection of attributes for use in character systems.
-Attribute sets are usually used to group attributes that can be shared across different characters or classes.
-For example, any character of any class could have the same attribute set, including attributes like
-strength, dexterity, constitution, intelligence, and luck.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSetInstance.html">AttributeSetInstance</a></dt>
-      <dd><p>Represents a runtime instance of an AttributeSet with actual values for each attribute.
-Provides methods to manipulate and access attribute values during gameplay.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSetInstanceExtensions.html">AttributeSetInstanceExtensions</a></dt>
-      <dd><p>Extension methods for converting SerializableDictionary to AttributeSetInstance.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html">EntityAttributes</a></dt>
-      <dd><p>Manages the attributes of an entity.
-This component calculates attribute values by combining base values, flat modifiers, percentage modifiers, and spent attribute points.
-It requires an <span class="xref">ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.EntityCore</span> component on the same GameObject.</p>
-</dd>
-    </dl>
-    <h3 id="structs">
-Structs
-</h3>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.html">AttributeChangeInfo</a></dt>
-      <dd><p>Immutable structure that contains information about an attribute value change.
-Used to track and communicate attribute modifications across the system.</p>
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTagSet.html">GameTagSet</a></dt>
+      <dd><p>Embeddable, serializable collection of <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTag.html">GameTag</a>s.
+Usable as a <code>[SerializeField]</code> in any ScriptableObject, MonoBehaviour, or plain class.</p>
 </dd>
     </dl>
     <h3 id="interfaces">
 Interfaces
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.html">IAttributeReader</a></dt>
-      <dd><p>Read-only interface for querying attribute values from an entity.
-Use <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.html#ElectricDrill_AstraRpgFramework_Attributes_IAttributeReader_TryGet_ElectricDrill_AstraRpgFramework_Attributes_Attribute_System_Int64__">TryGet(Attribute, out long)</a> as the safe access path; <code>Get</code> requires <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html#ElectricDrill_AstraRpgFramework_Utils_IValueContainer_1_Contains__0_">Contains(T)</a> to be checked first.</p>
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.IActiveModifierTagProvider.html">IActiveModifierTagProvider</a></dt>
+      <dd><p>Framework-side contract for querying active modifier tags on an entity.</p>
+<p>
+Implemented by <code>EntityModifiers</code> (Modifiers package). Placing the interface in Framework
+allows <code>TagPresentCondition</code> (also in Modifiers) to reach it via
+<code>GetComponent&lt;IActiveModifierTagProvider&gt;()</code> without creating a circular dependency
+(Framework → Modifiers).
+</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IHasAttributeSet.html">IHasAttributeSet</a></dt>
-      <dd><p>Interface for objects that expose an AttributeSet definition.</p>
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a></dt>
+      <dd><p>Marks a type as having an associated set of <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTag.html">GameTag</a>s.</p>
 </dd>
     </dl>
 

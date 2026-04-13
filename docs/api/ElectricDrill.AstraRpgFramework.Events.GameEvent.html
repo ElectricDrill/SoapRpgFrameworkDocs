@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class GameEvent | Astra RPG Framework ">
       
-      <meta name="description" content="A ScriptableObject-based event system that allows decoupled communication between game systems. GameEvents can be raised to notify all registered listeners without requiring direct references.">
+      <meta name="description" content="A ScriptableObject-based event system that allows decoupled communication between game systems. GameEvents can be raised to notify all registered listeners without requiring direct references. Supports both MonoBehaviour-based listeners and code-based  listeners.">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Events_GameEvent" data-uid="ElectricDrill.AstraRpgFramework.Events.GameEvent" class="text-break">
-Class GameEvent  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/GameEvent.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Class GameEvent  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/GameEvent.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,7 +98,8 @@ Class GameEvent  <a class="header-action link-secondary" title="View source" hre
   </div>
 
   <div class="markdown summary"><p>A ScriptableObject-based event system that allows decoupled communication between game systems.
-GameEvents can be raised to notify all registered listeners without requiring direct references.</p>
+GameEvents can be raised to notify all registered listeners without requiring direct references.
+Supports both MonoBehaviour-based listeners and code-based <span class="xref">System.Action</span> listeners.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -136,7 +137,7 @@ public class GameEvent : ScriptableObject</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Events_GameEvent_Raise" data-uid="ElectricDrill.AstraRpgFramework.Events.GameEvent.Raise">
   Raise()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/GameEvent.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/GameEvent.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Raises the event, notifying all registered listeners.
@@ -164,7 +165,7 @@ Listeners are processed in reverse order to handle potential modifications durin
 
   <h3 id="ElectricDrill_AstraRpgFramework_Events_GameEvent_RegisterListener_ElectricDrill_AstraRpgFramework_Events_GameEventListener_" data-uid="ElectricDrill.AstraRpgFramework.Events.GameEvent.RegisterListener(ElectricDrill.AstraRpgFramework.Events.GameEventListener)">
   RegisterListener(GameEventListener)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/GameEvent.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/GameEvent.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Registers a listener to be notified when this event is raised.
@@ -198,7 +199,7 @@ Duplicate listeners are automatically prevented.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Events_GameEvent_UnregisterListener_ElectricDrill_AstraRpgFramework_Events_GameEventListener_" data-uid="ElectricDrill.AstraRpgFramework.Events.GameEvent.UnregisterListener(ElectricDrill.AstraRpgFramework.Events.GameEventListener)">
   UnregisterListener(GameEventListener)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/GameEvent.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/GameEvent.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Unregisters a listener so it will no longer be notified when this event is raised.</p>
@@ -220,6 +221,42 @@ Duplicate listeners are automatically prevented.</p>
 
 
 
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Events_GameEvent_OnEventRaised" data-uid="ElectricDrill.AstraRpgFramework.Events.GameEvent.OnEventRaised">
+  OnEventRaised
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/GameEvent.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Event that can be subscribed to from code using standard C# event syntax.
+Automatically handles registration and unregistration of Action listeners.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual event Action OnEventRaised</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Action</span></dt>
+    <dd></dd>
+  </dl>
 
 
 

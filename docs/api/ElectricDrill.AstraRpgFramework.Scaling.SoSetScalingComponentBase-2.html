@@ -102,7 +102,7 @@ Class SoSetScalingComponentBase&lt;SetType, KeyType&gt;  <a class="header-action
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class SoSetScalingComponentBase&lt;SetType, KeyType&gt; : ScalingComponent, IValueProvider&lt;KeyType, double&gt; where SetType : ScriptableObject</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class SoSetScalingComponentBase&lt;SetType, KeyType&gt; : ScalingComponent, IEntityValueCalculator, IValueProvider&lt;KeyType, double&gt; where SetType : ScriptableObject</code></pre>
   </div>
 
 
@@ -131,6 +131,7 @@ Class SoSetScalingComponentBase&lt;SetType, KeyType&gt;  <a class="header-action
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.IEntityValueCalculator.html">IEntityValueCalculator</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueProvider-2.html">IValueProvider</a>&lt;KeyType, <span class="xref">double</span>&gt;</div>
     </dd>
   </dl>

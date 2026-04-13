@@ -107,7 +107,7 @@ When stats change because of a modifier of any kind, the assigned <a class="xref
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[DisallowMultipleComponent]
 [RequireComponent(typeof(EntityCore))]
-public class EntityStats : MonoBehaviour, IHasStatSet, IValueProvider&lt;Stat, long&gt;</code></pre>
+public class EntityStats : MonoBehaviour, IHasStatSet, IValueProvider&lt;Stat, long&gt;, IStatReader, IValueContainer&lt;Stat&gt;</code></pre>
   </div>
 
 
@@ -130,6 +130,8 @@ public class EntityStats : MonoBehaviour, IHasStatSet, IValueProvider&lt;Stat, l
     <dd>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.IHasStatSet.html">IHasStatSet</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueProvider-2.html">IValueProvider</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a>, <span class="xref">long</span>&gt;</div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.IStatReader.html">IStatReader</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html">IValueContainer</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a>&gt;</div>
     </dd>
   </dl>
 
@@ -242,7 +244,7 @@ public class EntityStats : MonoBehaviour, IHasStatSet, IValueProvider&lt;Stat, l
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_EntityClass" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.EntityClass">
   EntityClass
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The class source of the entity. In most cases, this is the <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_EntityClass">EntityClass</a> component attached to the entity.</p>
@@ -274,7 +276,7 @@ public class EntityStats : MonoBehaviour, IHasStatSet, IValueProvider&lt;Stat, l
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_EntityCore" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.EntityCore">
   EntityCore
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L74"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The entity core associated with this stats component.</p>
@@ -306,7 +308,7 @@ public class EntityStats : MonoBehaviour, IHasStatSet, IValueProvider&lt;Stat, l
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_OnStatChanged" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.OnStatChanged">
   OnStatChanged
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L98"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Event raised when a stat changes due to a modifier.</p>
@@ -338,7 +340,7 @@ public class EntityStats : MonoBehaviour, IHasStatSet, IValueProvider&lt;Stat, l
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_StatSet" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.StatSet">
   StatSet
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L141"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The stat set used to calculate the entity's stats.</p>
@@ -410,7 +412,7 @@ If false, the base stats are taken from the fixed base stats defined in this com
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_AddFlatModifier_ElectricDrill_AstraRpgFramework_Stats_Stat_System_Int64_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.AddFlatModifier(ElectricDrill.AstraRpgFramework.Stats.Stat,System.Int64)">
   AddFlatModifier(Stat, long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L243"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L267"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a flat modifier to a stat.</p>
@@ -446,7 +448,7 @@ If false, the base stats are taken from the fixed base stats defined in this com
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_AddPercentageModifier_ElectricDrill_AstraRpgFramework_Stats_Stat_ElectricDrill_AstraRpgFramework_Utils_Percentage_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.AddPercentageModifier(ElectricDrill.AstraRpgFramework.Stats.Stat,ElectricDrill.AstraRpgFramework.Utils.Percentage)">
   AddPercentageModifier(Stat, Percentage)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L289"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L313"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.Percentage.html">Percentage</a> modifier to a stat. Such modifiers consider the base value of the stat,
@@ -479,11 +481,11 @@ the flat modifiers, and the stat-to-stat modifiers.</p>
 
 
 
-  <a id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_AddStatToStatModifer_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.AddStatToStatModifer*"></a>
+  <a id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_AddStatToStatModifier_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.AddStatToStatModifier*"></a>
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_AddStatToStatModifer_ElectricDrill_AstraRpgFramework_Stats_Stat_ElectricDrill_AstraRpgFramework_Stats_Stat_ElectricDrill_AstraRpgFramework_Utils_Percentage_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.AddStatToStatModifer(ElectricDrill.AstraRpgFramework.Stats.Stat,ElectricDrill.AstraRpgFramework.Stats.Stat,ElectricDrill.AstraRpgFramework.Utils.Percentage)">
-  AddStatToStatModifer(Stat, Stat, Percentage)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L272"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_AddStatToStatModifier_ElectricDrill_AstraRpgFramework_Stats_Stat_ElectricDrill_AstraRpgFramework_Stats_Stat_ElectricDrill_AstraRpgFramework_Utils_Percentage_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.AddStatToStatModifier(ElectricDrill.AstraRpgFramework.Stats.Stat,ElectricDrill.AstraRpgFramework.Stats.Stat,ElectricDrill.AstraRpgFramework.Utils.Percentage)">
+  AddStatToStatModifier(Stat, Stat, Percentage)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L296"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a stat-to-stat modifier. Such modifiers add a percentage of the source stat to the target stat.
@@ -492,7 +494,7 @@ Such modifiers consider the base value and the flat modifiers of the source stat
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddStatToStatModifer(Stat target, Stat source, Percentage percentage)</code></pre>
+    <pre><code class="lang-csharp hljs">public void AddStatToStatModifier(Stat target, Stat source, Percentage percentage)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -519,11 +521,48 @@ Such modifiers consider the base value and the flat modifiers of the source stat
 
 
 
+  <a id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_Contains_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.Contains*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_Contains_ElectricDrill_AstraRpgFramework_Stats_Stat_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.Contains(ElectricDrill.AstraRpgFramework.Stats.Stat)">
+  Contains(Stat)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether <code class="paramref">stat</code> is tracked by this component's stat set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Contains(Stat stat)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_Get_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.Get*"></a>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_Get_ElectricDrill_AstraRpgFramework_Stats_Stat_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.Get(ElectricDrill.AstraRpgFramework.Stats.Stat)">
   Get(Stat)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L199"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L223"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The final value of a stat, considering all the modifiers.
@@ -569,7 +608,7 @@ Calculation is done in the following order:<br></p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_GetBase_ElectricDrill_AstraRpgFramework_Stats_Stat_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.GetBase(ElectricDrill.AstraRpgFramework.Stats.Stat)">
   GetBase(Stat)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L163"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L171"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The base value is the value of the stat without any modifiers.
@@ -610,7 +649,7 @@ Otherwise, it returns the value from the fixed base stats.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_OnLevelDown_ElectricDrill_AstraRpgFramework_Events_Contexts_EntityLevelChangedContext_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.OnLevelDown(ElectricDrill.AstraRpgFramework.Events.Contexts.EntityLevelChangedContext)">
   OnLevelDown(EntityLevelChangedContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L313"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L337"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Callback method called when the entity levels down.</p>
@@ -643,7 +682,7 @@ Otherwise, it returns the value from the fixed base stats.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_OnLevelUp_ElectricDrill_AstraRpgFramework_Events_Contexts_EntityLevelChangedContext_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.OnLevelUp(ElectricDrill.AstraRpgFramework.Events.Contexts.EntityLevelChangedContext)">
   OnLevelUp(EntityLevelChangedContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L303"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L327"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Callback method called when the entity levels up.</p>
@@ -676,7 +715,7 @@ Otherwise, it returns the value from the fixed base stats.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_SetFixed_ElectricDrill_AstraRpgFramework_Stats_Stat_System_Int64_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixed(ElectricDrill.AstraRpgFramework.Stats.Stat,System.Int64)">
   SetFixed(Stat, long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L122"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets the value of a fixed base stat.
@@ -702,6 +741,86 @@ This is only applicable when <a class="xref" href="ElectricDrill.AstraRpgFramewo
 
 
 
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_TryGet_" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.TryGet*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_TryGet_ElectricDrill_AstraRpgFramework_Stats_Stat_System_Int64__" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.TryGet(ElectricDrill.AstraRpgFramework.Stats.Stat,System.Int64@)">
+  TryGet(Stat, out long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L206"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to get the final value of a stat. Returns true if the stat is contained in the stat set; otherwise, false.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGet(Stat stat, out long value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a></dt>
+    <dd><p>The stat to get.</p>
+</dd>
+    <dt><code>value</code> <span class="xref">long</span></dt>
+    <dd><p>When this method returns, contains the final value of the stat if the stat is contained in the stat set; otherwise, 0.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd><p>true if the stat is contained in the stat set; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_EntityStats_OnStatChangedCallback" data-uid="ElectricDrill.AstraRpgFramework.Stats.EntityStats.OnStatChangedCallback">
+  OnStatChangedCallback
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/EntityStats.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Entity-local C# event raised whenever a stat value changes on this component.
+Fired alongside <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_OnStatChanged">OnStatChanged</a> (SO-based) for each stat change.
+Use this for direct code subscriptions where a ScriptableObject event reference is inconvenient
+(Currently reserved for future use with <code>EntityModifiers</code> stat-driven max stacks trimming).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;StatChangeInfo&gt; OnStatChangedCallback</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Action</span>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.html">StatChangeInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
 
 
 

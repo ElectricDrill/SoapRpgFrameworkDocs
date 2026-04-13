@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Namespace ElectricDrill.AstraRpgFramework.Contexts | Astra RPG Framework </title>
+      <title>Interface IInvalidatable | Astra RPG Framework </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Namespace ElectricDrill.AstraRpgFramework.Contexts | Astra RPG Framework ">
+      <meta name="title" content="Interface IInvalidatable | Astra RPG Framework ">
       
-      
+      <meta name="description" content="Interface for objects that act as the origin of downstream state and can notify dependents when they are no longer valid — due to entity death, object pooling, aura deactivation, etc.  is raised when the object becomes invalid. Subscribers should clean up any state that depends on this object (e.g. modifier instances applied by this source).  can be called explicitly by any system that governs the object&#39;s lifetime (e.g. EntityHealth calls it on entity death; an object pool calls it before returning an instance to the pool).  is also raised automatically from OnDestroy on EntityCore as a safety net for GameObject destruction.">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/Cis8/AstraRpgFramework/new/main/apiSpec/new?filename=ElectricDrill_AstraRpgFramework_Contexts_IInvalidatable.md&amp;value=---%0Auid%3A%20ElectricDrill.AstraRpgFramework.Contexts.IInvalidatable%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,71 +84,20 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="ElectricDrill.AstraRpgFramework.Contexts">
+        <article data-uid="ElectricDrill.AstraRpgFramework.Contexts.IInvalidatable">
 
-  <h1 id="ElectricDrill_AstraRpgFramework_Contexts" data-uid="ElectricDrill.AstraRpgFramework.Contexts" class="text-break">Namespace ElectricDrill.AstraRpgFramework.Contexts</h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
 
-    <h3 id="interfaces">
-Interfaces
-</h3>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator.html">IEffectInstigator</a></dt>
-      <dd><p>Marker interface for anything that can be the specific cause of a game effect:
-an ability definition, a modifier definition or instance, a passive skill, a game system, etc.</p>
-<p>
-Unlike <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator.html">IEffectInstigator</a> — which identifies the <em>entity</em> responsible for an effect —
-<a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator.html">IEffectInstigator</a> identifies the specific <em>thing</em> that produced it.
-</p><p>
-Consumers use pattern matching (<code>instigator is MyType t</code>) to identify and react to specific
-instigator types. This design places no constraints on what an instigator must expose, and allows
-any future type to participate without changes to this interface.
-</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasInstigator.html">IHasInstigator</a></dt>
-      <dd><p>Contract for contexts that carry a reference to the specific cause of the effect.</p>
-<p>
-This complements <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator.html">IEffectInstigator</a> (which identifies the responsible <em>entity</em>)
-by identifying the specific <em>thing</em> — such as an ability, modifier, passive skill, or
-game system — that produced the effect.
-</p><p><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasInstigator.html#ElectricDrill_AstraRpgFramework_Contexts_IHasInstigator_Instigator">Instigator</a> is nullable: not every effect has a meaningful specific cause beyond
-its source entity and category (<a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IEffectInstigator.html">IEffectInstigator</a> + DamageSourceSO / HealSourceSO).
-</p><p>
-Typical usage:
-<pre><code class="lang-csharp">// Prevent infinite loops: ignore effects caused by this modifier itself
-if (ctx.Instigator == this.Definition) return;
-<p>// React only to effects from a specific source type
-if (ctx.Instigator is AbilityDefinitionSO ability &amp;&amp; ability.IsUltimate)
-ApplyStrengthBuff(ctx.Target);</p></code></pre>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasPerformer.html">IHasPerformer</a></dt>
-      <dd><p>Contract for objects that expose the entity that performed an action
-(e.g. the damage dealer, the healer, the entity that triggered an effect).
-May be <code>null</code> when the effect has no entity origin (system-initiated,
-environmental, or engine-driven).</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasTarget.html">IHasTarget</a></dt>
-      <dd></dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange&lt;T&gt;</a></dt>
-      <dd></dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasVictim.html">IHasVictim</a></dt>
-      <dd></dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IInvalidatable.html">IInvalidatable</a></dt>
-      <dd><p>Interface for objects that act as the origin of downstream state and can notify dependents
+
+  <h1 id="ElectricDrill_AstraRpgFramework_Contexts_IInvalidatable" data-uid="ElectricDrill.AstraRpgFramework.Contexts.IInvalidatable" class="text-break">
+Interface IInvalidatable  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Contexts/IInvalidatable.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ElectricDrill.html">ElectricDrill</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.html">AstraRpgFramework</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.html">Contexts</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>com.electricdrill.astra-rpg-framework.Runtime.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Interface for objects that act as the origin of downstream state and can notify dependents
 when they are no longer valid — due to entity death, object pooling, aura deactivation, etc.</p>
 <p><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IInvalidatable.html#ElectricDrill_AstraRpgFramework_Contexts_IInvalidatable_OnInvalidated">OnInvalidated</a> is raised when the object becomes invalid. Subscribers should
 clean up any state that depends on this object (e.g. modifier instances applied by this source).
@@ -157,8 +106,90 @@ lifetime (e.g. <code>EntityHealth</code> calls it on entity death; an object poo
 returning an instance to the pool). <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IInvalidatable.html#ElectricDrill_AstraRpgFramework_Contexts_IInvalidatable_OnInvalidated">OnInvalidated</a> is also raised automatically
 from <code>OnDestroy</code> on <code>EntityCore</code> as a safety net for GameObject destruction.
 </p>
-</dd>
-    </dl>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IInvalidatable</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Contexts_IInvalidatable_Invalidate_" data-uid="ElectricDrill.AstraRpgFramework.Contexts.IInvalidatable.Invalidate*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Contexts_IInvalidatable_Invalidate" data-uid="ElectricDrill.AstraRpgFramework.Contexts.IInvalidatable.Invalidate">
+  Invalidate()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Contexts/IInvalidatable.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Marks this object as invalid and raises <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IInvalidatable.html#ElectricDrill_AstraRpgFramework_Contexts_IInvalidatable_OnInvalidated">OnInvalidated</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Invalidate()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Contexts_IInvalidatable_OnInvalidated" data-uid="ElectricDrill.AstraRpgFramework.Contexts.IInvalidatable.OnInvalidated">
+  OnInvalidated
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Contexts/IInvalidatable.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised when this object is invalidated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event Action OnInvalidated</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Action</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
 
 
 </article>

@@ -177,27 +177,33 @@ int physicalAttackLevel5 = warriorPhysicalAttackGF.GetGrowthValue(5);
 *Relative path:* `Game Actions`  
 A `GameAction` (🏷️*v1.4.0+*) is a `ScriptableObject` that encapsulates reusable logic which can be executed by different components or systems in the game. Game actions make it easy to assign behavior to GameObjects via the Inspector, promoting code reuse and separation of concerns.
 
-`GameAction`s accept a generic context parameter. Out-of-the-box implementations use `Component` as the context type, but you can create custom actions with specific context types by deriving from `GameAction<TContext>`.
+`GameAction`s accept a generic context parameter via `GameAction<TContext>`. The recommended context type for built-in actions is `IHasEntity`: because most `GameEventListener` payloads in the framework implement this interface, `IHasEntity`-based actions connect directly to any `GameEventListener` response without needing to extract a `Component` reference first. `Component`-based variants remain available for cases where a raw `Component` context is passed, but the `IHasEntity` variants should be the first choice when wiring actions to events.
 
-The framework includes several built-in, generic `GameAction` implementations:
-- **Toggle GameObject Active Game Action**: Toggles the active state of the `GameObject` associated with the `Component` passed as context.
-- **Toggle Renderers Game Action**: Enables or disables all renderers on the `GameObject` of the provided `Component` and its children.
-- **Toggle Colliders Game Action**: Enables or disables all colliders on the `GameObject` of the provided `Component` and its children.
-- **Destroy GameObject Game Action**: Destroys the `GameObject` associated with the `Component` passed as context.
-- **Composite Game Action**: Executes a sequence of `GameAction`s in order, passing the same context to each.
-- **Delayed Game Action**: Executes a `GameAction` after a specified delay (in seconds).
-- **No-op Game Action**: Does nothing. Useful as a placeholder, for testing workflows, or to satisfy required fields that must reference a `GameAction` (for example, default on-death and on-resurrection actions in Astra RPG Health).
-- **Increase Counter Game Action**: Increases the value of a `LongRef` by a specified amount. Negative values can be used to decrease the counter. Useful for tracking statistics like enemies defeated, entities spawned, interactions performed, etc.
+The `IHasEntity`-based variants are listed under `Astra RPG Framework/Game Actions/Context: Entity/` in the asset creation menu.
 
-`GameAction`s may target infrastructure/flow control or actual gameplay mechanics. Most of the examples above are mostly infrastructure-oriented. Examples of gameplay-oriented `GameAction`s include:
+The framework includes several built-in `GameAction` implementations for `IHasEntity` contexts:
+- **Toggle Entity Active GO** (`Context: Entity/Toggle Entity Active GO`): Sets the active state of the entity's `GameObject` to a configured value.
+- **Toggle Entity Renderers** (`Context: Entity/Toggle Entity Renderers`): Enables or disables all renderers on the entity's `GameObject` and its children.
+- **Toggle Entity Colliders** (`Context: Entity/Toggle Entity Colliders`): Enables or disables all colliders on the entity's `GameObject` and its children.
+- **Destroy Entity Game Object** (`Context: Entity/Destroy Entity Game Object`): Destroys the `GameObject` of the entity exposed by the context.
+- **Composite** (`Context: Entity/Composite`): Executes a sequence of `GameAction<IHasEntity>` actions in order, passing the same context to each.
+- **Delayed** (`Context: Entity/Delayed`): Executes a `GameAction<IHasEntity>` after a specified delay (in seconds).
+- **Conditional** (`Context: Entity/Conditional`): Executes a `GameAction<IHasEntity>` only when a configured condition evaluates to true against the entity.
+- **Do Nothing** (`Context: Entity/Do Nothing`): Does nothing. Useful as a placeholder, for testing workflows, or to satisfy required fields that must reference a `GameAction` (for example, default on-death and on-resurrection actions in Astra RPG Health).
+- **Increase Counter** (`Context: Entity/Increase Counter`): Increases the value of a `LongRef` by a specified amount. Negative values decrease the counter. Useful for tracking statistics like enemies defeated, entities spawned, or interactions performed.
+- **→ Component Projection** (`Context: Entity/Projections/→ Component Projection`): Bridges an `IHasEntity` context to an inner `GameAction<Component>`, by passing `context.Entity` as the component. Use this to reuse existing `Component`-based actions on entity event listeners. Note that rich payload data (damage amounts, level deltas, etc.) is discarded — use this only for structural actions that only need to know _which_ entity was involved.
+
+Equivalent `Component`-based variants exist for all of the above (found under `Context: Component/`). Use them when a raw `Component` is the only context available and no `IHasEntity` payload is in scope.
+
+`GameAction`s may target infrastructure/flow control or actual gameplay mechanics. Most of the examples above are infrastructure-oriented. Examples of gameplay-oriented `GameAction`s include:
 - **Grant Experience Game Action**: Grants a specified amount of experience to an entity implementing `IEntityLevel`.
 - **Drop Loot Game Action**: Spawns collectible loot.
 - **Teleport To Base Game Action**: Teleports a character back to a base location.
 
-For invoking `GameAction`s call the `ExecuteAsync` method, passing the required context parameter. For example, let's say we have a reference to a `DelayedGameAction<Component>` called `delayedAction` that invokes another game action after some time, and we want to execute it on a `GameObject` with a `MonoBehaviour` called `MyComponent`. We can do it like this:
+For invoking `GameAction`s call the `ExecuteAsync` method, passing the required context parameter. For example, let's say we have a reference to a `DelayedEntityContextGameAction` called `delayedAction` that invokes another action after some time, and `entityContext` is an `IHasEntity` payload:
 ```csharp
-// myComponent is a reference to an instance of MyComponent
-Awaitable delayedActionAwaitable = delayedAction.ExecuteAsync(myComponent, destroyCancellationToken); // Async execution initiated
+// entityContext is an IHasEntity payload (e.g. from a GameEventListener response)
+Awaitable delayedActionAwaitable = delayedAction.ExecuteAsync(entityContext, destroyCancellationToken); // Async execution initiated
 DoWorkHere(); // Perform other work while the action is executing
 // Await the completion of the action
 await delayedActionAwaitable;
@@ -219,7 +225,8 @@ With this approach, even if the invoker component is destroyed (e.g., because th
 For more details, refer to the API documentation for game actions:
 - [GameAction base constructs](xref:ElectricDrill.AstraRpgFramework.GameActions)
 - [Concrete implementations of GameAction with open generic types](xref:ElectricDrill.AstraRpgFramework.GameActions.Actions)
-- [Concrete implementations of GameAction with Component context types (for instantiating ScriptableObject instances)](xref:ElectricDrill.AstraRpgFramework.GameActions.Actions.Component)
+- [Concrete implementations of GameAction with IHasEntity context (primary instantiable ScriptableObjects)](xref:ElectricDrill.AstraRpgFramework.GameActions.Actions.WithIHasEntity)
+- [Concrete implementations of GameAction with Component context (legacy/specialized use)](xref:ElectricDrill.AstraRpgFramework.GameActions.Actions.Component)
 
 If you wish to create custom `GameAction`s, review the implementation of existing actions to understand best practices.
 
@@ -312,11 +319,16 @@ By default, `Harvested` is `false`. Collection strategies that check this flag �
 
 ### Resetting the Harvested Flag
 
-You may encounter scenarios where an entity should become harvestable again — for example, when a defeated enemy is respawned or resurrected. For these cases, the framework provides the `ToggleHarvestedExpSourceComponentGameAction`.
+You may encounter scenarios where an entity should become harvestable again — for example, when a defeated enemy is respawned or resurrected. For these cases, the framework provides the `ToggleHarvestedExpSourceEntityGameAction`.
 
-*Relative path:* `Game Actions -> Context: Component -> Toggle Harvested Exp Source`
+*Relative path:* `Astra RPG Framework/Game Actions/Context: Entity/Toggle Harvested Exp Source`
 
-This action reads a `Harvested` boolean field configured in the inspector and applies it to the `IExpSource` found on the context component's `GameObject`. Set `Harvested` to `false` to make the source collectable again, or to `true` to mark it as already harvested and prevent further collection.
+This action reads a `Harvested` boolean field configured in the inspector and applies it to the `IExpSource` found on the entity's `GameObject` (`context.Entity`). Set `Harvested` to `false` to make the source collectable again, or to `true` to mark it as already harvested and prevent further collection.
+
+Because the context type is `IHasEntity`, this action can be wired directly to any `GameEventListener` whose payload exposes an entity — for example, an `EntityResurrectedGameEventListener` — without any additional bridging.
+
+> [!NOTE]
+> A `Component`-based variant (`ToggleHarvestedExpSourceComponentGameAction`, relative path `Context: Component/Toggle Harvested Exp Source`) is also available for cases where only a raw `Component` context is in scope.
 
 ### Custom Exp Sources
 
