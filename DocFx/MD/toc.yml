@@ -4,6 +4,8 @@
   href: workflows.md
 - name: Game Tags
   href: game-tags.md
+- name: Conditions
+  href: conditions.md
 - name: Advanced Topics
   href: advanced-topics.md
 - name: Limitations
