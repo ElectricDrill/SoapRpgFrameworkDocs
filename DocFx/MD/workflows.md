@@ -179,6 +179,8 @@ A `GameAction` (🏷️*v1.4.0+*) is a `ScriptableObject` that encapsulates reus
 
 `GameAction`s accept a generic context parameter via `GameAction<TContext>`. The recommended context type for built-in actions is `IHasEntity`: because most `GameEventListener` payloads in the framework implement this interface, `IHasEntity`-based actions connect directly to any `GameEventListener` response without needing to extract a `Component` reference first. `Component`-based variants remain available for cases where a raw `Component` context is passed, but the `IHasEntity` variants should be the first choice when wiring actions to events.
 
+At authoring time, polymorphic action references are usually exposed through the non-generic `GameActionBase`, which exists so Inspector fields can accept actions with different concrete context types. At runtime, the action still executes through its concrete `GameAction<TContext>` implementation, so context compatibility continues to matter.
+
 The `IHasEntity`-based variants are listed under `Astra RPG Framework/Game Actions/Context: Entity/` in the asset creation menu.
 
 The framework includes several built-in `GameAction` implementations for `IHasEntity` contexts:
@@ -194,6 +196,8 @@ The framework includes several built-in `GameAction` implementations for `IHasEn
 - **→ Component Projection** (`Context: Entity/Projections/→ Component Projection`): Bridges an `IHasEntity` context to an inner `GameAction<Component>`, by passing `context.Entity` as the component. Use this to reuse existing `Component`-based actions on entity event listeners. Note that rich payload data (damage amounts, level deltas, etc.) is discarded — use this only for structural actions that only need to know _which_ entity was involved.
 
 Equivalent `Component`-based variants exist for all of the above (found under `Context: Component/`). Use them when a raw `Component` is the only context available and no `IHasEntity` payload is in scope.
+
+`GameAction` assets are also taggable, so larger projects can organize action libraries with the same pill-based workflow used by other Astra assets. This becomes especially useful once you start pairing actions with tag-based filtering rules. For the complete authoring flow, see [Game Tags](game-tags.md) and [Conditions](conditions.md).
 
 `GameAction`s may target infrastructure/flow control or actual gameplay mechanics. Most of the examples above are infrastructure-oriented. Examples of gameplay-oriented `GameAction`s include:
 - **Grant Experience Game Action**: Grants a specified amount of experience to an entity implementing `IEntityLevel`.
@@ -221,6 +225,8 @@ onDeathGameAction.RunFireAndForget(context, persistentGameObject);
 ```
 
 With this approach, even if the invoker component is destroyed (e.g., because the entity died), the action will still run to completion on the `persistentGameObject`. This is useful for actions such as playing particle effects or sounds that should persist even after the original entity is destroyed.
+
+When a `GameAction` is invoked from a `GameEventListener`, prefer the listener's owner-aware action list over binding `ExecuteAsync` directly through the UnityEvent when your logic depends on `Holder`-aware conditions or owner propagation. The owner-aware path dispatches the selected `GameActionBase` assets with the listener as runtime owner, and wrapper actions such as composite, delayed, conditional, and projection actions preserve that owner as they forward execution. For the full condition model, see [Conditions](conditions.md).
 
 For more details, refer to the API documentation for game actions:
 - [GameAction base constructs](xref:ElectricDrill.AstraRpgFramework.GameActions)
@@ -251,6 +257,8 @@ For more information on Awaitables, see Unity's documentation: [Awaitable Docume
 #### Game Actions with Unity Events/Game Events Listeners
 Unity Events accept Awaitables, so a GameAction can be invoked directly from a UnityEvent response. Because GameEventListeners use UnityEvents for their responses, you can wire a GameAction to a GameEventListener provided the action's context type matches the event's context.
 
+`GameEventListener`s also expose an owner-aware action list that accepts `GameActionBase` references. This is usually the better inspector workflow for event-driven actions because it preserves the listener component as runtime owner, which allows nested actions and `Holder`-based conditions to resolve consistently.
+
 > [!NOTE]
 > UnityEvents do not support asynchronous return values. Invoking a GameAction from a UnityEvent will execute the action fire-and-forget — the event invoker will not await its completion.
 >
@@ -277,13 +285,7 @@ You'll notice the `Use Constant` checkbox. If checked, you can pass an `IntVar` 
 
 `Experience Formula`: `GrowthFormula` that describes how the total experience required to reach the next level grows at each level.
 
-`On Level Up`: `EntityLeveledUpGameEvent` that should be raised when the entity levels up.
-
-`On Level Down`: (🏷️*v1.2.0+*) `EntityLeveledDownGameEvent` that should be raised when the entity levels down.
-
-`Spawned Entity Event`: `EntityCoreGameEvent` that should be raised when this entity's `Start()` method is executed.
-
-You may notice that a game event is already assigned to `Spawned Entity Event`. This is because an instance of that game event has been explicitly assigned directly in the inspector of the `EntityCore` script. This choice was made since in most cases the same event instance will always be used for entity spawning. This means you don't have to reassign this event every time you create a new entity in Unity. As we'll see later, this default assignment mechanism has been used for other components as well.
+Built-in framework events such as `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed` are dispatched through the active Astra RPG Framework configuration. Use `Edit -> Project Settings -> Astra RPG Framework` to choose which configuration asset is active, then open that configuration asset and assign the shared event assets inside it. If no active Project Settings configuration is assigned, the runtime falls back to a `Resources/Astra Rpg Framework Config` asset.
 
 ### EntityLevel code APIs
 It is honorable to mention some code APIs that can be used to interact with the `EntityLevel` component.
@@ -527,21 +529,19 @@ Unlike stats, attributes have a simpler modifier system:
 This simplicity makes attributes more predictable and easier for players to understand, while stats can have more complex interactions. Keeping them simple helps maintain clarity in gameplay
 
 ### Retrieving Attribute Values from code
-Due to the relevance of retrieving attribute values from code, the methods to do so are worth mentioning here.
-
-To retrieve the final value of an attribute, you can use the `Get` method:
+Concrete components such as `EntityAttributes` expose convenience methods like `Get` and `GetBase`, but for reusable or defensive code the preferred read-only contract is `IAttributeReader`.
 
 ```csharp
-// strengthAttribute is a reference to the Strength Attribute
-int strength = entityAttributes.Get(strengthAttribute);
+IAttributeReader attributeReader = entity;
+
+if (attributeReader.TryGet(strengthAttribute, out long currentStrength) &&
+    attributeReader.TryGetBase(strengthAttribute, out long baseStrength))
+{
+    Debug.Log($"STR = {currentStrength} (base {baseStrength})");
+}
 ```
 
-To retrieve the base value of an attribute, you can use the `GetBase` method:
-
-```csharp
-// strengthAttribute is a reference to the Strength Attribute
-int baseStrength = entityAttributes.GetBase(strengthAttribute);
-```
+`EntityCore` implements `IAttributeReader`, so many gameplay systems can read values through the entity itself without depending directly on `EntityAttributes`. See [Advanced topics](advanced-topics.md#reader-apis-and-safe-value-access) for the broader reader and rounding APIs.
 
 ### Spending attribute points
 
@@ -757,21 +757,19 @@ Let's see a complete example with all three modifier types:
 > In the future, the Astra RPG Modifiers extension for this framework will be released, which will include such abstractions thought to integrate seamlessly with the existing systems. Check the status of the extension for more details at https://electricdrill.github.io/
 
 ### Retrieving Stat Values from code
-Due to the relevance of retrieving stat values from code, the methods to do so are worth mentioning here.
-
-To retrieve the final value of a stat, you can use the `Get` method:
+Concrete components such as `EntityStats` expose convenience methods like `Get` and `GetBase`, but for reusable or defensive code the preferred read-only contract is `IStatReader`.
 
 ```csharp
-// phyAtkStat is a reference to the Physical Attack Stat
-int physicalAttack = entityStats.Get(phyAtkStat);
+IStatReader statReader = entity;
+
+if (statReader.TryGet(phyAtkStat, out long physicalAttack) &&
+    statReader.TryGetBase(phyAtkStat, out long basePhysicalAttack))
+{
+    Debug.Log($"Physical Attack = {physicalAttack} (base {basePhysicalAttack})");
+}
 ```
 
-To retrieve the base value of a stat, you can use the `GetBase` method:
-
-```csharp
-// phyAtkStat is a reference to the Physical Attack Stat
-int basePhysicalAttack = entityStats.GetBase(phyAtkStat);
-```
+`EntityCore` implements `IStatReader`, so systems that already work with the entity can query stats without reaching into a specific `EntityStats` component. See [Advanced topics](advanced-topics.md#reader-apis-and-safe-value-access) for more on readers, `TryGetBase`, and related APIs.
 
 ## Create a class
 *Relative path:* `Class`
@@ -958,6 +956,14 @@ Now add the `IntGameEventListener` component to the listener game object and, in
 
 This is a powerful mechanism that decouples the event producers from the event consumers, allowing for a more modular and maintainable codebase. And most of the setup is inspector-based. You just need to define the raising and the listening methods from code.
 
+### Global framework events and reactive filtering
+
+The framework dispatches its built-in core events through the active Astra RPG Framework configuration. `EntityCore`, `EntityLevel`, `EntityStats`, and `EntityAttributes` send their shared `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed` notifications through the configuration asset selected in `Edit -> Project Settings -> Astra RPG Framework`. The Project Settings entry selects the active configuration asset; the shared event references themselves are assigned inside that configuration asset. If no Project Settings config is assigned, the runtime falls back to a `Resources/Astra Rpg Framework Config` asset.
+
+This shared-event model is convenient, but it also means listeners and reactive triggers usually subscribe to common event sources rather than to holder-specific event instances. In other words, the holder attached to a reactive subscription is used for ownership and cleanup, not as an automatic payload filter. When a global stat or attribute event is raised, every subscriber on that event source can receive the payload.
+
+In practice, pair shared event sources with payload-aware filtering. The most inspector-friendly option is usually a `ConditionalGameAction<TContext>` that checks the entity, tags, or value-change details you care about before running its inner action. See [Conditions](conditions.md) for the full condition model and [Game Tags](game-tags.md) for the tag-based workflow.
+
 ### Game Event Generators
 *Relative path:* `Events -> Game Event Generator`
 
@@ -973,7 +979,7 @@ Let's create a custom game event generator to manage all the events related to t
 
 ![Entity Leveling Events](../images/workflows/entity-leveling-events.png)
 
-With `Menu Base Path` we can change the path of the context menu where the generated events will be available for creation. By default, it is set to `Astra RPG Core -> Events -> Generated`, but we can change it to `Astra RPG Core -> Events/Generated/Experience` for the sake of organization.
+With `Menu Base Path` we can change the path of the context menu where the generated events will be available for creation. By default, it is set to `Astra RPG Framework/Events/Generated`, but we can change it to `Astra RPG Framework/Events/Generated/Experience` for the sake of organization.
 
 With `Base Save Location` we can change the path where the source code files for the generated events will be saved. By default it is set to `Assets`, but for this example let's set it to `Assets/Events`.
 
@@ -996,7 +1002,7 @@ We can now navigate to `Assets/Events/GeneratedEvents/EntityLevelingEvents` to f
 
 Inside both folders, you'll find a subfolder named `3`. The Game Event Generators organize the generated events in subfolders based on the number of parameters they have. In this case, we have a game event with three parameters, so it is placed in the `3` subfolder.
 
-However, more interesting is the fact that if we now use the context menu and navigate to `Astra RPG Core -> Events -> Generated -> Experience`, we can find the `EntityGrantedExp` event.  
+However, more interesting is the fact that if we now use the context menu and navigate to `Astra RPG Framework/Events/Generated/Experience`, we can find the `EntityGrantedExp` event.
 From here, you can follow the same steps as for the pre-defined game events to create a listener for this event, and to wire it up to the appropriate game logic.
 
 If you need to create more experience related events, you can repeat the process of adding new events to the `EntityLevelingEvents` game event generator.

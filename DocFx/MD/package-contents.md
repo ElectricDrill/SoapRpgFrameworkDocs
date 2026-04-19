@@ -1,25 +1,27 @@
 # Package Contents
 
-<!--
-- Samples folder.
-- Events generators outside of the samples folder.
--->
+The package ships more than the sample scene. Besides examples, it includes the runtime and editor subsystems that Astra RPG Framework uses internally and exposes for your own project workflows.
 
-The relevant content for you consists of the package samples and the "utility events" contained in the package folder (located in `/Packages`).
+For a guided tour of the sample content, see [Samples](samples.md).
 
-For more information about the samples, see the [Samples](samples.md) documentation.
+## Main package subsystems
 
-The "utility events" (Game Event Generators, source code of the generated events, and instances of the Game Events) have been intentionally placed outside the samples folder because they are used directly in the package's source code. Therefore, it would not be correct to place them in the samples folder, as omitting them during package import would cause the source code to not function correctly.
+| Subsystem | What it contains | Learn more |
+| --- | --- | --- |
+| Entities, stats, attributes, classes, scaling | The core progression model, including `EntityCore`, value containers, class data, growth formulas, and scaling assets. | [Workflows](workflows.md) |
+| Game Events | Predefined event types, listeners, and the generator-based workflow for creating additional typed events. | [Workflows](workflows.md#game-events) |
+| Global framework configuration | The shared config used to dispatch built-in framework events such as spawned, level up/down, stat changed, and attribute changed. | [Workflows](workflows.md#global-framework-events-and-reactive-filtering) |
+| Game Actions | Reusable asynchronous actions, projections, wrappers, and owner-aware event-driven execution flows. | [Workflows](workflows.md#game-actions), [Advanced topics](advanced-topics.md#owner-aware-gameaction-execution) |
+| Game Tags | Tag assets, tag sets, and inspector header pills used to organize Astra assets and drive tag-based logic. | [Game Tags](game-tags.md) |
+| Conditions and reactive filtering | Polymorphic condition trees, conditional actions, and the trigger/filtering model used by reactive systems. | [Conditions](conditions.md) |
 
-The Game Event Generators are located in the `Packages/AstraRPGFramework/Runtime/Events/EventGeneratorInstances` folder. Here you will find:
-- `GeneralPurposeEventGenerator`: defines two game events: `EntityCoreGameEvent` and `IntGameEvent`.
-- `AttributesEventGenerator`: defines `AttributeChangedGameEvent`
-- `StatEventsGenerator`: defines `StatChangedGameEvent`
+## Editor tooling included in the package
 
-> [!WARNING]
-> Do not modify these Game Event Generators, as they are an integral part of the package's source code.  
->If you want to add new events, create new Game Event Generators in your Assets and use those to define your custom events.
+The package also contains editor-side tooling under `Editor/` that powers several authoring workflows documented elsewhere in this site:
 
-The source code for the events defined within the aforementioned Game Event Generators is located in the `Packages/AstraRPGFramework/Runtime/Events/GeneratedEvents` folder. The organization follows the rules mentioned in the [Adding new events](workflows.md#adding-new-events) documentation.
+- the Project Settings page for the global Astra RPG Framework configuration
+- inspector support for `SerializeReference`-based authoring flows
+- the injected header pills used by taggable assets and components
+- helpers used by condition and game-action inspectors
 
-The instances of the generated Game Events are provided with the samples of the package instead. Such objects are also used by the Sample Scene (always available in the samples folder). If you want to instantiate new Game Events of type `EntityCoreGameEvent`, `IntGameEvent`, `AttributeChangedGameEvent`, or `StatChangedGameEvent`, feel free to do so.
+These editor tools are part of the package experience and are one of the reasons the framework can expose rich inspector-driven workflows without requiring custom tooling in your own project.
