@@ -94,9 +94,17 @@ Game events are ScriptableObjects that allow you to implement the Observer patte
 
 ### <img src="../images/AstraRPG/event-gen.png" alt="game event generator" width="30" class="icon-background"/> Game Event Generators
 Game Event Generators are ScriptableObjects that let you define custom game events with up to four context parameters. They automate the creation of event and listener classes, making it easy to extend your event system for complex gameplay scenarios. You can specify parameter types and documentation, and generate code and assets directly from the inspector.
-
+ 
 ### <img src="../images/AstraRPG/game-action.png" alt="game event listener" width="30" class="icon-background"/> Game Actions
 Game Actions are ScriptableObjects that encapsulate reusable pieces of logic that can be executed in response to game events or other triggers. They promote modularity and code reuse by allowing you to define specific actions (like teleport player to base, enable a GO, resurrect an entity, etc.) that can be easily invoked from various parts of your game without duplicating code. They are asynchronous and can be also used as responses to Game Events.
+
+### <img src="../images/AstraRPG/game-tag.png" alt="game tag" width="30" class="icon-background"/> Game Tags
+<!-- IMAGE MISSING: game-tag.png — intro icon for the Game Tags section -->
+`GameTag`s are lightweight identifiers that let you classify Astra assets and components for gameplay logic and editor organization. They appear as colored pills in tag-aware inspectors, making it easy to scan related assets at a glance and to build tag-based queries or conditions. For the full authoring workflow, see [Game Tags](game-tags.md).
+
+### <img src="../images/AstraRPG/condition.png" alt="condition" width="30" class="icon-background"/> Conditions
+<!-- IMAGE MISSING: condition.png — intro icon for the Conditions section -->
+`Condition`s are reusable predicates evaluated against runtime context such as the current holder, performer, or event payload. They are authored directly in the Inspector through polymorphic condition fields and can be used to gate game actions and other reactive behaviors without writing bespoke code for every rule. For the complete model and editor workflow, see [Conditions](conditions.md).
 
 ## How is Astra RPG Framework implemented?
 The package is developed around a Scriptable Objects architecture inspired by the [GDC talk of Ryan Hipple](https://www.youtube.com/watch?v=raQ3iHhE_Kk&ab_channel=Unity). In a nutshell, the main benefits provided by this architecture are:
