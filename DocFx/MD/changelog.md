@@ -5,6 +5,49 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## [2.0.0] - 2026-04-19
+
+> [!WARNING]
+> This update includes breaking changes and behavior changes that can affect existing projects. Refer to the [Migrating to v2.0.0](./migration-guide.md#migrating-to-v200) section of the migration guide before updating.
+
+### Added
+#### Runtime Features
+- Added the `Conditions` system, including composite conditions, entity/tag/value-change/stat/attribute/random leaf conditions, and `ConditionalGameAction`.
+- Added the `Game Tags` system with `GameTag`, `GameTagSet`, `ITaggable`, and tag-based conditions.
+- Added framework-level configuration assets for built-in shared events through `AstraRpgFrameworkConfigSO`, `AstraRpgFrameworkGlobalSettingsSO`, and `AstraRpgFrameworkConfigProvider`.
+- Added reactive trigger infrastructure with `IReactiveTrigger`, typed `GameEventTrigger<TContext>` implementations, and `EventSource` support for shared subscription coalescing.
+- Added `IHasEntity` as the common bridge contract for entity-aware payloads and game actions, plus projection actions for entity-context workflows.
+- Added owner-aware execution paths for `GameAction`s and introduced `GameActionBase` to support inspector-facing polymorphic action references.
+- Added `IStatReader` and `IAttributeReader`, then extended the API with `TryGetBase`.
+- Added `RoundingMode` and its helper extensions for explicit integer conversion from double-based calculations.
+
+#### Editor Features
+- Added dedicated authoring helpers for conditions, including quick setup utilities, managed-reference body drawers for condition fields, and condition tooltips.
+- Added the Game Tag header-pill workflow, including popup search, multi-select add/remove, double-click quick add, intersection handling, overflow display, drag reordering, click-to-ping, and visual customization support.
+- Added custom managed-reference drawers for condition-related attribute and stat fields.
+
+### Changed
+#### Runtime Features
+- The `EntityStats` method name `AddStatToStatModifer(...)` was corrected to `AddStatToStatModifier(...)`.
+- Built-in `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed` events are dispatched through the active Astra RPG Framework configuration asset.
+- `GameAction` workflows now lean on `IHasEntity` as the primary context for event-driven authoring, with owner propagation preserved across wrapper and projection actions.
+- `EntityCore` now implements both `IStatReader` and `IAttributeReader`, making the entity itself a convenient read facade for gameplay code.
+- Corrected the `EntityStats.AddStatToStatModifer(...)` typo to `AddStatToStatModifier(...)`.
+- Stat and attribute changed notifications now cover broader effective changes, including dependent recalculations and bulk level transitions. See [Addressed Limitations](./limitations.md#addressed-limitations) for details.
+- `EntityLevel` now exposes more robust global-event integration and extra per-entity event registration helpers.
+
+#### Editor Features
+- Improved the fixed-base attribute handling in `EntityAttributesEditor` and `EntityStatsEditor` for Play Mode usage.
+
+### Removed
+#### Runtime Features
+
+### Fixed
+#### Runtime Features
+- Fixed level-down handling so fixed-base attribute snapshots are preserved correctly while raising change events.
+- Fixed `EntityAttributes` so inactive components return `null` with `EntityAttributes.AttributeSet` instead of behaving as if fully active.
+- Fixed a null-reference path in `GameEventListener` validation when the UnityEvent response is missing.
+
 ## [1.5.1] - 2026-04-04
 ### Changed
 #### Editor Features

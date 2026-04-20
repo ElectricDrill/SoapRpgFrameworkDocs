@@ -1,5 +1,72 @@
 # Migration Guide
 
+## Migrating to v2.0.0
+
+v2.0.0 introduces new major subsystems such as Conditions, Game Tags, reactive triggers, and global framework configuration. Most of these additions are additive, but this release also includes a few breaking API changes and some behavior changes that existing projects should review carefully.
+
+### 1. Back up your project
+
+Before updating, make sure your project is backed up or committed to version control. This release changes both runtime APIs and event wiring expectations, so it is worth having a safe rollback point.
+
+### 2. Update the package from the Package Manager
+
+Open Unity and navigate to `Window -> Package Management -> Package Manager` (`Window -> Package Manager` for older versions of the editor). Locate Astra RPG Framework in the "In This Project" list and update it to `2.0.0` (or the latest available). Let Unity finish recompiling before starting the migration work below.
+
+### Required migration steps
+
+#### Update the framework configuration and shared event assets
+
+The framework now dispatches its core global events — entity spawned, level up, level down, stat changed, and attribute changed — through a central `AstraRpgFrameworkConfigSO` asset. Three of those events (spawned, level up, level down) are **required**; without them the corresponding broadcasts are never fired.
+
+> [!IMPORTANT]
+> **Do not use the sample events for your production project.**  
+> If you already have `EntityCoreGameEvent`, `EntityLevelUpGameEvent`, `EntityLevelDownGameEvent`, `StatChangedGameEvent`, and `AttributeChangedGameEvent` assets in your project that your systems already subscribe to, you must wire those into the config — not the generic instances that come with the samples. Reusing your existing event assets ensures that all existing listeners and gameplay logic continue to work without any changes.
+
+**Steps:**
+
+1. **Create your own `AstraRpgFrameworkConfigSO`** — right-click in the Project window and choose **Create → Astra RPG Framework → Config**, then save it somewhere in your project (e.g., `Assets/Config/`).  
+   For a full description of each field and the loading strategy, see [Package Configuration](workflows/package-configuration.md).
+
+2. **Open the newly created asset** and assign your existing event assets to the five fields:
+   - *Global Entity Spawned Event* <span style="color:red;">*</span> — the `EntityCoreGameEvent` your systems already listen to
+   - *Global Entity Level Up Event* <span style="color:red;">*</span> — the `EntityLevelUpGameEvent` your systems already listen to
+   - *Global Entity Level Down Event* <span style="color:red;">*</span> — the `EntityLevelDownGameEvent` your systems already listen to
+   - *Global Stat Changed Event* — the `StatChangedGameEvent` your systems already listen to (optional but recommended)
+   - *Global Attribute Changed Event* — the `AttributeChangedGameEvent` your systems already listen to (optional but recommended)
+
+3. **Register the config in Project Settings** — open `Edit → Project Settings → Astra RPG Framework` and assign your new config asset as the **Active Config Profile**.
+
+> [!CAUTION]
+> If you skip step 3 and leave Project Settings empty, the framework will attempt the convention-based fallback (a `Resources` asset named `Astra Rpg Framework Config`). If neither is found, global events are never dispatched and any system that relies on them will silently fail at runtime. Always verify the Project Settings page shows **"✓ Using Explicit Configuration"** before entering Play Mode.
+
+#### Rename the fixed typo in `EntityStats`
+
+The `EntityStats` method name `AddStatToStatModifer(...)` was corrected to `AddStatToStatModifier(...)`.
+
+1. Search your codebase for `AddStatToStatModifer`.
+2. Replace each occurrence with `AddStatToStatModifier`.
+3. Recompile and confirm no stale references remain.
+
+### Behavior changes to review
+
+These changes may not produce compile errors, but they can change how existing gameplay logic behaves after the upgrade.
+
+#### Stat and attribute changed events now cover more cases
+
+Stat and attribute changed notifications are now raised for broader effective changes, not only for the most direct mutation paths. This includes dependent recalculations and bulk transitions such as some level-up/level-down flows.
+
+Review any listeners, UI refresh logic, analytics counters, or reactive systems that assume those events only fire for direct edits. If needed, add filtering logic based on the payload contents before executing gameplay responses.
+
+#### Disabled `EntityAttributes` components now resolve their current set differently
+
+`EntityAttributes.GetCurrentAttributeSetAndHandleChanges()` now returns `null` when the component is inactive or disabled.
+
+If you have custom code that queries attribute sets while the component is disabled, add a null check or defer that query until the component is enabled again.
+
+### Recommended cleanup and adoption
+
+These steps are not strictly required to get your project compiling again, but they help align your code and content with the current package direction.
+
 ## Migrating to v1.4.0
 
 v1.4.0 introduces the new GameAction system and moves Game Events to a single-context parameter (Parameter Object pattern). This change improves extensibility and simplifies integration with GameAction because both systems now use a single context and are compatible with UnityEvent.

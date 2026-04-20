@@ -7,8 +7,8 @@
 - only one event for stats changed, attributes changed, entity spawned can be assigned to entities
 -->
 
-- `OnStatChangedEvent` is risen only when modifiers are applied, not on level-ups/base stat changes
-- `OnAttributeChangedEvent` is risen only when modifiers are applied and spendable points are assigned, not on level-ups/base attribute changes
+## Current Limitations
+
 - Currently, multi-classing is not supported. Each entity can only have one class at a time
 - Stat modifiers are applied in the following order:
   1. Flat modifiers
@@ -18,7 +18,13 @@
 - Attribute modifiers do not have a attribute-to-attribute modifier system. This was a design choice to keep the system simpler.
 - Attribute modifiers are applied in the following order:
   1. Flat modifiers
-  3. Percentage modifiers
+  2. Percentage modifiers
 - Only one event for stats changed, attributes changed, and entity spawned can be assigned to entities. However, multiple event listeners can be assigned for the same event type, allowing for multiple responses
 - Custom game event generators support up to four context parameters. To work around this limitation, users can combine multiple pieces of data into a single user-defined class—a technique known as "parameter packing." This approach is extensible through inheritance and helps maintain a simple, user-friendly API by avoiding telescoping parameters.
 
+## Addressed Limitations
+
+|**Since Version**|**Original Limitation**|**Notes**|
+|---|---|---|
+|🏷️*v2.0.0+*|~~`OnStatChangedEvent` is risen only when modifiers are applied, not on level-ups/base stat changes~~|Stat-changed events now fire consistently during class progression formulas, level-ups, level-downs, and when dependent attributes change, following internal refactoring of `EntityStats` and `EntityAttributes`.|
+|🏷️*v2.0.0+*|~~`OnAttributeChangedEvent` is risen only when modifiers are applied and spendable points are assigned, not on level-ups/base attribute changes~~|Attribute-changed events now fire consistently during class progression formulas, level-ups, and level-downs, following internal refactoring of `EntityAttributes`.|
