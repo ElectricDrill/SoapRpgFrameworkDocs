@@ -102,7 +102,7 @@ Class CompositeComponentGameAction  <a class="header-action link-secondary" titl
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CreateAssetMenu(fileName = &quot;New Composite Component Action&quot;, menuName = &quot;Astra RPG Framework/Game Actions/Context: Component/Composite&quot;, order = 10)]
-public class CompositeComponentGameAction : CompositeGameAction&lt;Component&gt;, IExecutable&lt;Component&gt;</code></pre>
+public class CompositeComponentGameAction : CompositeGameAction&lt;Component&gt;, IExecutable&lt;Component&gt;, ITaggable</code></pre>
   </div>
 
 
@@ -114,6 +114,7 @@ public class CompositeComponentGameAction : CompositeGameAction&lt;Component&gt;
       <div><span class="xref">object</span></div>
       <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.html">Object</a></div>
       <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameActionBase.html">GameActionBase</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html">GameAction</a>&lt;<a class="xref" href="https://docs.unity3d.com/ScriptReference/Component.html">Component</a>&gt;</div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.CompositeGameAction-1.html">CompositeGameAction</a>&lt;<a class="xref" href="https://docs.unity3d.com/ScriptReference/Component.html">Component</a>&gt;</div>
       <div><span class="xref">CompositeComponentGameAction</span></div>
@@ -124,6 +125,7 @@ public class CompositeComponentGameAction : CompositeGameAction&lt;Component&gt;
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.IExecutable-1.html">IExecutable</a>&lt;<a class="xref" href="https://docs.unity3d.com/ScriptReference/Component.html">Component</a>&gt;</div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a></div>
     </dd>
   </dl>
 
@@ -133,6 +135,12 @@ public class CompositeComponentGameAction : CompositeGameAction&lt;Component&gt;
     <dd>
     <div>
       <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.CompositeGameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_Actions_CompositeGameAction_1_ExecuteAsync__0_System_Threading_CancellationToken_">CompositeGameAction&lt;Component&gt;.ExecuteAsync(Component, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.CompositeGameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_Actions_CompositeGameAction_1_ExecuteWithOwnerAsync__0_UnityEngine_MonoBehaviour_System_Threading_CancellationToken_">CompositeGameAction&lt;Component&gt;.ExecuteWithOwnerAsync(Component, MonoBehaviour, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_Tags">GameAction&lt;Component&gt;.Tags</a>
     </div>
     <div>
       <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_DisplayName">GameAction&lt;Component&gt;.DisplayName</a>

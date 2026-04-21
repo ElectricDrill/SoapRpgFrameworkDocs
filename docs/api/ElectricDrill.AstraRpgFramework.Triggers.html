@@ -95,14 +95,67 @@
 Classes
 </h3>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.AttributeChangedGameEventTrigger.html">AttributeChangedGameEventTrigger</a></dt>
+      <dd><p><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.GameEventTrigger-1.html">GameEventTrigger&lt;TContext&gt;</a> that fires when an attribute value changes.
+Payload: <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.html">AttributeChangeInfo</a> — carries the attribute, previous value, and new value.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.EntityCoreGameEventTrigger.html">EntityCoreGameEventTrigger</a></dt>
+      <dd><p><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.GameEventTrigger-1.html">GameEventTrigger&lt;TContext&gt;</a> that fires when an <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a> event
+is raised. Payload is the <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a> passed to the event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.EntityLevelDownGameEventTrigger.html">EntityLevelDownGameEventTrigger</a></dt>
+      <dd><p><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.GameEventTrigger-1.html">GameEventTrigger&lt;TContext&gt;</a> that fires when an entity levels down.
+Payload: <a class="xref" href="ElectricDrill.AstraRpgFramework.Events.Contexts.EntityLevelChangedContext.html">EntityLevelChangedContext</a> — carries the entity, previous level, and new level.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.EntityLevelUpGameEventTrigger.html">EntityLevelUpGameEventTrigger</a></dt>
+      <dd><p><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.GameEventTrigger-1.html">GameEventTrigger&lt;TContext&gt;</a> that fires when an entity levels up.
+Payload: <a class="xref" href="ElectricDrill.AstraRpgFramework.Events.Contexts.EntityLevelChangedContext.html">EntityLevelChangedContext</a> — carries the entity, previous level, and new level.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.GameEventTrigger-1.html">GameEventTrigger&lt;TContext&gt;</a></dt>
+      <dd><p>Abstract base for <a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.IReactiveTrigger.html">IReactiveTrigger</a> implementations that wrap a typed
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Events.GameEventGeneric1-1.html">GameEventGeneric1&lt;T&gt;</a> SO.</p>
+<p>
+Concrete subclasses must be non-generic and carry a <code>[SerializeField]</code> reference to
+the specific event SO, exposed via <a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.GameEventTrigger-1.html#ElectricDrill_AstraRpgFramework_Triggers_GameEventTrigger_1_Event">Event</a>. This separation is required because
+Unity cannot serialize open-generic types with <code>[SerializeReference]</code>.
+</p><p>
+When the event fires each registered <code>Action&lt;object&gt;</code> callback is invoked with
+the <code class="typeparamref">TContext</code> payload boxed as <code>object</code>. Filtering on
+payload content (e.g. "only if the dying entity is my holder") is the responsibility of
+the callback or an associated <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.Condition.html">Condition</a>.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.IntGameEventTrigger.html">IntGameEventTrigger</a></dt>
+      <dd><p><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.GameEventTrigger-1.html">GameEventTrigger&lt;TContext&gt;</a> that fires when an <a class="xref" href="ElectricDrill.AstraRpgFramework.Events.IntGameEvent.html">IntGameEvent</a>
+is raised. Payload is the <code>int</code> value boxed as <code>object</code>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.ParameterlessGameEventTrigger.html">ParameterlessGameEventTrigger</a></dt>
       <dd><p><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.IReactiveTrigger.html">IReactiveTrigger</a> that wraps a parameterless <a class="xref" href="ElectricDrill.AstraRpgFramework.Events.GameEvent.html">GameEvent</a> SO.
-When the event fires, the callback is invoked with <code>null</code> as the payload.</p>
+When the event fires, every registered callback for every holder is invoked with <code>null</code>
+as the payload.</p>
 <p>
 This class is <code>[Serializable]</code> so it can be embedded as a field in any ScriptableObject
-or MonoBehaviour. The adapter dictionaries are runtime-only and are initialized lazily
+or MonoBehaviour. The subscription dictionary is runtime-only and is initialized lazily
 (safe after Unity deserialization).
 </p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.StatChangedGameEventTrigger.html">StatChangedGameEventTrigger</a></dt>
+      <dd><p><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.GameEventTrigger-1.html">GameEventTrigger&lt;TContext&gt;</a> that fires when a stat value changes.
+Payload: <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.html">StatChangeInfo</a> — carries the stat, previous value, and new value.</p>
 </dd>
     </dl>
     <h3 id="interfaces">
@@ -110,10 +163,14 @@ Interfaces
 </h3>
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.IReactiveTrigger.html">IReactiveTrigger</a></dt>
-      <dd><p>Entity-aware reactive event delivery contract.
-Implementations wrap a game event source and deliver it to per-entity subscribers via a
-typed <code>Action&lt;object&gt;</code> callback. Subscriptions are keyed by entity so each
-<a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a> receives only its own notifications.</p>
+      <dd><p>Holder-aware reactive event delivery contract.
+Implementations wrap a game event source and invoke registered callbacks when the event fires.
+Subscriptions are registered on behalf of a <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a> holder; the holder is
+passed to <a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.IReactiveTrigger.html#ElectricDrill_AstraRpgFramework_Triggers_IReactiveTrigger_Subscribe_ElectricDrill_AstraRpgFramework_EntityCore_System_Action_System_Object__">Subscribe(EntityCore, Action&lt;object&gt;)</a> so that the caller can identify which modifier instance or
+system registered the callback, but it does NOT imply that only events concerning that holder
+are delivered. On a shared global event SO, all subscribed holders are notified — event
+filtering by entity identity is the responsibility of the callback or an associated
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.Condition.html">Condition</a>.</p>
 </dd>
     </dl>
 

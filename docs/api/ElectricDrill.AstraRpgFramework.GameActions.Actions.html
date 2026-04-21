@@ -102,8 +102,20 @@ Will gracefully terminate if the context is destroyed or cancellation is request
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.ConditionalGameAction-1.html">ConditionalGameAction&lt;TContext&gt;</a></dt>
+      <dd><p>Wraps another <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html">GameAction&lt;TContext&gt;</a> with an optional <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.Condition.html">Condition</a> guard.
+If the condition evaluates to false, the inner action is skipped.
+A null condition is treated as always-true.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.DelayedGameAction-1.html">DelayedGameAction&lt;TContext&gt;</a></dt>
       <dd><p>Waits for a specified duration before executing another action.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.DestroyEntityGameObjectGameAction-1.html">DestroyEntityGameObjectGameAction&lt;TContext&gt;</a></dt>
+      <dd><p>Base action to destroy the Entity's GameObject.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -128,6 +140,23 @@ Will gracefully terminate if the context is destroyed or cancellation is request
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.ToggleCollidersGameAction-1.html">ToggleCollidersGameAction&lt;TContext&gt;</a></dt>
       <dd><p>Base action to enable/disable all Colliders on a Component's GameObject.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.ToggleEntityActiveGameObjectGameAction-1.html">ToggleEntityActiveGameObjectGameAction&lt;TContext&gt;</a></dt>
+      <dd><p>Base action to set the active state of the Entity's GameObject.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.ToggleEntityCollidersGameAction-1.html">ToggleEntityCollidersGameAction&lt;TContext&gt;</a></dt>
+      <dd><p>Base action to enable/disable all <a class="xref" href="https://docs.unity3d.com/ScriptReference/Collider.html">Collider</a> and <a class="xref" href="https://docs.unity3d.com/ScriptReference/Collider2D.html">Collider2D</a> components
+found on the Entity's GameObject and its children.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.ToggleEntityRenderersGameAction-1.html">ToggleEntityRenderersGameAction&lt;TContext&gt;</a></dt>
+      <dd><p>Base action to enable/disable all <a class="xref" href="https://docs.unity3d.com/ScriptReference/Renderer.html">Renderer</a> components found on the Entity's
+GameObject and its children.</p>
 </dd>
     </dl>
     <dl class="jumplist">

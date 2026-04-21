@@ -177,7 +177,7 @@ All stats from the StatSet are initialized with a value of 0.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_Item_ElectricDrill_AstraRpgFramework_Stats_Stat_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.Item(ElectricDrill.AstraRpgFramework.Stats.Stat)">
   this[Stat]
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets the value of the specified stat using indexer syntax.</p>
@@ -257,7 +257,7 @@ Use negative values to subtract from the stat.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_Clone" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.Clone">
   Clone()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a deep copy of this StatSetInstance.</p>
@@ -290,7 +290,7 @@ Use negative values to subtract from the stat.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_Contains_ElectricDrill_AstraRpgFramework_Stats_Stat_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.Contains(ElectricDrill.AstraRpgFramework.Stats.Stat)">
   Contains(Stat)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L84"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Determines whether this instance contains the specified stat.</p>
@@ -368,7 +368,7 @@ Use negative values to subtract from the stat.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_GetAsPercentage_ElectricDrill_AstraRpgFramework_Stats_Stat_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.GetAsPercentage(ElectricDrill.AstraRpgFramework.Stats.Stat)">
   GetAsPercentage(Stat)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L93"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the value of the specified stat as a Percentage.</p>
@@ -407,21 +407,66 @@ Use negative values to subtract from the stat.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_GetEnumerator" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.GetEnumerator">
   GetEnumerator()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L102"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Struct-typed enumerator so <code>foreach</code> resolves to the underlying dictionary's
+struct enumerator without boxing. The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> implementations below
+are preserved for LINQ/interface consumers and remain boxing for those paths.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerator&lt;KeyValuePair&lt;Stat, long&gt;&gt; GetEnumerator()</code></pre>
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;Stat, long&gt;.Enumerator GetEnumerator()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">IEnumerator</span>&lt;<span class="xref">KeyValuePair</span>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a>, <span class="xref">long</span>&gt;&gt;</dt>
+    <dt><span class="xref">Dictionary</span>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a>, <span class="xref">long</span>&gt;.<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Enumerator</a></dt>
     <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_TryGet_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.TryGet*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_TryGet_ElectricDrill_AstraRpgFramework_Stats_Stat_System_Int64__" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.TryGet(ElectricDrill.AstraRpgFramework.Stats.Stat,System.Int64@)">
+  TryGet(Stat, out long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to get the current value of the specified stat.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGet(Stat stat, out long value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a></dt>
+    <dd><p>The stat to query.</p>
+</dd>
+    <dt><code>value</code> <span class="xref">long</span></dt>
+    <dd><p>The stat value if present; otherwise, 0.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd><p>True if the stat exists in this instance; otherwise, false.</p>
+</dd>
   </dl>
 
 
@@ -442,7 +487,7 @@ Use negative values to subtract from the stat.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_op_Addition_ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.op_Addition(ElectricDrill.AstraRpgFramework.Stats.StatSetInstance,ElectricDrill.AstraRpgFramework.Stats.StatSetInstance)">
   operator +(StatSetInstance, StatSetInstance)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L122"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds the values of corresponding stats from two StatSetInstances.

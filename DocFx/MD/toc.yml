@@ -1,10 +1,10 @@
 - name: Introduction
   href: introduction.md
-- name: Workflows
+- name: Workflows | Main Concepts
   href: workflows.md
-- name: Game Tags
+- name: Workflows | Game Tags
   href: game-tags.md
-- name: Conditions
+- name: Workflows | Conditions
   href: conditions.md
 - name: Advanced Topics
   href: advanced-topics.md

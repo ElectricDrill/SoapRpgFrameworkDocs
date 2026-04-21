@@ -316,23 +316,24 @@ public class SerializableDictionary&lt;TKey, TValue&gt;</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Utils_SerializableDictionary_2_GetEnumerator" data-uid="ElectricDrill.AstraRpgFramework.Utils.SerializableDictionary`2.GetEnumerator">
   GetEnumerator()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/SerializableDictionary.cs/#L172"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/SerializableDictionary.cs/#L173"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the dictionary.</p>
+  <div class="markdown level1 summary"><p>Struct-typed enumerator so <code>foreach</code> resolves to the underlying dictionary's
+struct enumerator without boxing. Interface-implemented overloads below preserve
+compatibility with LINQ and generic collection consumers.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; GetEnumerator()</code></pre>
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;TKey, TValue&gt;.Enumerator GetEnumerator()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">IEnumerator</span>&lt;<span class="xref">KeyValuePair</span>&lt;TKey, TValue&gt;&gt;</dt>
-    <dd><p>An enumerator for the dictionary</p>
-</dd>
+    <dt><span class="xref">Dictionary</span>&lt;TKey, TValue&gt;.<span class="xref">Enumerator</span></dt>
+    <dd></dd>
   </dl>
 
 

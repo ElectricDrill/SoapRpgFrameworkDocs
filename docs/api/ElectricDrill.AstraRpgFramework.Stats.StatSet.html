@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Stats_StatSet" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSet" class="text-break">
-Class StatSet  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSet.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Class StatSet  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSet.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -103,7 +103,7 @@ Implements IStatContainer to provide stat containment functionality.</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StatSet : ScriptableObject, IValueContainer&lt;Stat&gt;, IEditorValidatable</code></pre>
+    <pre><code class="lang-csharp hljs">public class StatSet : ScriptableObject, IValueContainer&lt;Stat&gt;, IEditorValidatable, ITaggable</code></pre>
   </div>
 
 
@@ -124,6 +124,7 @@ Implements IStatContainer to provide stat containment functionality.</p>
     <dd>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html">IValueContainer</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a>&gt;</div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IEditorValidatable.html">IEditorValidatable</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a></div>
     </dd>
   </dl>
 
@@ -142,11 +143,12 @@ Implements IStatContainer to provide stat containment functionality.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSet_Stats" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSet.Stats">
   Stats
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSet.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSet.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a read-only list of all stats in this set, including stats from included StatSets.
-Duplicates are automatically removed.</p>
+Direct stats appear first (in user-defined display order), followed by stats contributed
+by each included set (also in their display order). Duplicates are automatically removed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -171,6 +173,38 @@ Duplicates are automatically removed.</p>
 
 
 
+  <a id="ElectricDrill_AstraRpgFramework_Stats_StatSet_Tags_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSet.Tags*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSet_Tags" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSet.Tags">
+  Tags
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSet.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tags associated with this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameTagSet Tags { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTagSet.html">GameTagSet</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -179,7 +213,7 @@ Duplicates are automatically removed.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSet_Contains_ElectricDrill_AstraRpgFramework_Stats_Stat_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSet.Contains(ElectricDrill.AstraRpgFramework.Stats.Stat)">
   Contains(Stat)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSet.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSet.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Determines whether this stat set contains the specified stat.
@@ -219,7 +253,7 @@ Also checks in included StatSets.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSet_Contains_ElectricDrill_AstraRpgFramework_Stats_StatSet_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSet.Contains(ElectricDrill.AstraRpgFramework.Stats.StatSet)">
   Contains(StatSet)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSet.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSet.cs/#L84"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Determines whether this stat set contains another stat set. Either directly or indirectly.</p>
@@ -258,7 +292,7 @@ Also checks in included StatSets.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSet_Get_ElectricDrill_AstraRpgFramework_Stats_Stat_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSet.Get(ElectricDrill.AstraRpgFramework.Stats.Stat)">
   Get(Stat)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSet.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSet.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the stat from this set that matches the specified stat.

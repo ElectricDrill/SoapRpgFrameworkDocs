@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Utils_IntVar" data-uid="ElectricDrill.AstraRpgFramework.Utils.IntVar" class="text-break">
-Class IntVar  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/IntVar.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Class IntVar  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/IntVar.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -104,7 +104,7 @@ Can be used to share an integer value between different GameObjects and scenes.<
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CreateAssetMenu(fileName = &quot;Int Var&quot;, menuName = &quot;Astra RPG Framework/Utils/Int Var&quot;)]
-public class IntVar : ScriptableObject</code></pre>
+public class IntVar : ScriptableObject, ITaggable</code></pre>
   </div>
 
 
@@ -120,6 +120,12 @@ public class IntVar : ScriptableObject</code></pre>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a></div>
+    </dd>
+  </dl>
 
 
 
@@ -132,11 +138,43 @@ public class IntVar : ScriptableObject</code></pre>
 </h2>
 
 
+  <a id="ElectricDrill_AstraRpgFramework_Utils_IntVar_Tags_" data-uid="ElectricDrill.AstraRpgFramework.Utils.IntVar.Tags*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Utils_IntVar_Tags" data-uid="ElectricDrill.AstraRpgFramework.Utils.IntVar.Tags">
+  Tags
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/IntVar.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tags associated with this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameTagSet Tags { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTagSet.html">GameTagSet</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ElectricDrill_AstraRpgFramework_Utils_IntVar_Value_" data-uid="ElectricDrill.AstraRpgFramework.Utils.IntVar.Value*"></a>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Utils_IntVar_Value" data-uid="ElectricDrill.AstraRpgFramework.Utils.IntVar.Value">
   Value
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/IntVar.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/IntVar.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The integer value.</p>
@@ -172,7 +210,7 @@ public class IntVar : ScriptableObject</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Utils_IntVar_op_Implicit_ElectricDrill_AstraRpgFramework_Utils_IntVar__System_Int32" data-uid="ElectricDrill.AstraRpgFramework.Utils.IntVar.op_Implicit(ElectricDrill.AstraRpgFramework.Utils.IntVar)~System.Int32">
   implicit operator int(IntVar)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/IntVar.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/IntVar.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Allows implicit conversion from an IntVar to an int.</p>

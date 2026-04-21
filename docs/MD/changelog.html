@@ -89,20 +89,73 @@
 
 <p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>.</p>
-<h2 id="151---2026-04-04">[1.5.1] - 2026-04-04</h2>
-<h3 id="changed">Changed</h3>
+<h2 id="200---2026-04-19">[2.0.0] - 2026-04-19</h2>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>This update includes breaking changes and behavior changes that can affect existing projects. Refer to the <a href="migration-guide.html#migrating-to-v200">Migrating to v2.0.0</a> section of the migration guide before updating.</p>
+</div>
+<h3 id="added">Added</h3>
+<h4 id="runtime-features">Runtime Features</h4>
+<ul>
+<li>Added the <code>Conditions</code> system, including composite conditions, entity/tag/value-change/stat/attribute/random leaf conditions, and <code>ConditionalGameAction</code>.</li>
+<li>Added the <code>Game Tags</code> system with <code>GameTag</code>, <code>GameTagSet</code>, <code>ITaggable</code>, and tag-based conditions.</li>
+<li>Added framework-level configuration assets for built-in shared events through <code>AstraRpgFrameworkConfigSO</code>, <code>AstraRpgFrameworkGlobalSettingsSO</code>, and <code>AstraRpgFrameworkConfigProvider</code>.</li>
+<li>Added reactive trigger infrastructure with <code>IReactiveTrigger</code>, typed <code>GameEventTrigger&lt;TContext&gt;</code> implementations, and <code>EventSource</code> support for shared subscription coalescing.</li>
+<li>Added <code>IHasEntity</code> as the common bridge contract for entity-aware payloads and game actions, plus projection actions for entity-context workflows.</li>
+<li>Added owner-aware execution paths for <code>GameAction</code>s and introduced <code>GameActionBase</code> to support inspector-facing polymorphic action references.</li>
+<li>Added <code>IStatReader</code> and <code>IAttributeReader</code>, then extended the API with <code>TryGetBase</code>.</li>
+<li>Added <code>RoundingMode</code> and its helper extensions for explicit integer conversion from double-based calculations.</li>
+</ul>
 <h4 id="editor-features">Editor Features</h4>
+<ul>
+<li>Added dedicated authoring helpers for conditions, including quick setup utilities, managed-reference body drawers for condition fields, and condition tooltips.</li>
+<li>Added the Game Tag header-pill workflow, including popup search, multi-select add/remove, double-click quick add, intersection handling, overflow display, drag reordering, click-to-ping, and visual customization support.</li>
+<li>Added custom managed-reference drawers for condition-related attribute and stat fields.</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<h4 id="runtime-features-1">Runtime Features</h4>
+<ul>
+<li>Built-in <code>Spawned</code>, <code>Level Up</code>, <code>Level Down</code>, <code>Stat Changed</code>, and <code>Attribute Changed</code> events are dispatched through the active Astra RPG Framework configuration asset.</li>
+<li><code>GameAction</code> workflows now lean on <code>IHasEntity</code> as the primary context for event-driven authoring, with owner propagation preserved across wrapper and projection actions.</li>
+<li><code>EntityCore</code> now implements both <code>IStatReader</code> and <code>IAttributeReader</code>, making the entity itself a convenient read facade for gameplay code.</li>
+<li>Corrected the <code>EntityStats.AddStatToStatModifer(...)</code> typo to <code>AddStatToStatModifier(...)</code>.</li>
+<li>Stat and attribute changed notifications now cover broader effective changes, including dependent recalculations and bulk level transitions. See <a href="limitations.html#addressed-limitations">Addressed Limitations</a> for details.</li>
+<li><code>EntityLevel</code> now exposes more robust global-event integration and extra per-entity event registration helpers.</li>
+</ul>
+<h4 id="editor-features-1">Editor Features</h4>
+<ul>
+<li>Improved the fixed-base attribute handling in <code>EntityAttributesEditor</code> and <code>EntityStatsEditor</code> for Play Mode usage.</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<h4 id="runtime-features-2">Runtime Features</h4>
+<ul>
+<li>Removed the deprecated legacy <code>EntityLeveledUpGameEvent</code> and <code>EntityLeveledDownGameEvent</code> types together with the remaining deprecated legacy hooks in <code>EntityLevel</code>. These had already been deprecated in <code>v1.4.0</code>; if your project still uses them, complete the migration described in <a href="migration-guide.html#migrating-to-v140">Migrating to v1.4.0</a> before upgrading.</li>
+<li>Removed the deprecated <code>AttributePointsTracker</code> compatibility layer from <code>EntityAttributes</code>. The transition to <code>EntityPointsTracker</code> and <code>AttributePortfolio</code> started in <code>v1.3.0</code>.</li>
+</ul>
+<h4 id="editor-features-2">Editor Features</h4>
+<ul>
+<li>Removed the deprecated <code>DerivedTypePicker</code> editor utility. The replacement path to <code>TypeSelectionMenu</code> was introduced in <code>v1.2.0</code>.</li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<h4 id="runtime-features-3">Runtime Features</h4>
+<ul>
+<li>Fixed level-down handling so fixed-base attribute snapshots are preserved correctly while raising change events.</li>
+<li>Fixed a null-reference path in <code>GameEventListener</code> validation when the UnityEvent response is missing.</li>
+</ul>
+<h2 id="151---2026-04-04">[1.5.1] - 2026-04-04</h2>
+<h3 id="changed-1">Changed</h3>
+<h4 id="editor-features-3">Editor Features</h4>
 <ul>
 <li>Reordered the EntityAttributes fields in the custom inspector to prevent the bug mentioned below</li>
 </ul>
-<h3 id="fixed">Fixed</h3>
-<h4 id="editor-features-1">Editor Features</h4>
+<h3 id="fixed-1">Fixed</h3>
+<h4 id="editor-features-4">Editor Features</h4>
 <ul>
 <li>Fixed a bug in the EntityAttributes custom inspector that was not allowing to set either the fixed base Attribute Set nor the &quot;Use Class Attributes From Class&quot;</li>
 </ul>
 <h2 id="150---2026-03-23">[1.5.0] - 2026-03-23</h2>
-<h3 id="added">Added</h3>
-<h4 id="runtime-features">Runtime Features</h4>
+<h3 id="added-1">Added</h3>
+<h4 id="runtime-features-4">Runtime Features</h4>
 <ul>
 <li>Added <code>IScalingFormula</code> interface exposing the 4 main methods for scaling formulas. <code>ScalingFormula</code> and <code>ScalingFormulaInstance</code> now implement this interface.</li>
 <li>Added <code>ScalingFormulaInstance</code>. This class shall be used in place of <code>ScalingFormula</code> when you need to have a scaling formula that may use temporary scaling components. Temporary scaling components on the SO <code>ScalingFormula</code> have been deprecated an will be removed (see below). This ensures that the temporary scaling components do not modify the original <code>ScriptableObject</code> instance of the scaling formula, which could cause unintended side effects across different entities using the same scaling formula.</li>
@@ -118,12 +171,12 @@
 <li>Added a public <code>MaxLevel</code> get property to <code>EntityLevel</code></li>
 <li>All game event listeners log now an error if play mode is entered while no game event SO instance is assigned to them</li>
 </ul>
-<h4 id="editor-features-2">Editor Features</h4>
+<h4 id="editor-features-5">Editor Features</h4>
 <ul>
 <li>Added <code>Percentage</code> custom property drawer</li>
 </ul>
-<h3 id="changed-1">Changed</h3>
-<h4 id="editor-features-3">Editor Features</h4>
+<h3 id="changed-2">Changed</h3>
+<h4 id="editor-features-6">Editor Features</h4>
 <ul>
 <li>Improved the <code>GrowthFormula</code>'s custom inspector in several ways:
 <ul>
@@ -145,27 +198,27 @@
 <li>Reviewed the style of the sample scene</li>
 </ul>
 <h3 id="deprecated">Deprecated</h3>
-<h4 id="runtime-features-1">Runtime Features</h4>
+<h4 id="runtime-features-5">Runtime Features</h4>
 <ul>
 <li>Deprecated <code>TmpSelfScalingComponents</code> and <code>TmpTargetScalingComponents</code> in <code>ScalingFormula</code></li>
 </ul>
-<h3 id="removed">Removed</h3>
-<h4 id="runtime-features-2">Runtime Features</h4>
+<h3 id="removed-1">Removed</h3>
+<h4 id="runtime-features-6">Runtime Features</h4>
 <ul>
 <li><code>ToggleHarvestedExpSourceGameAction</code> no longer prints a warning when no <code>ExpSource</code> component is attached to the entity on which is being executed</li>
 </ul>
 <h2 id="142---2026-02-13">[1.4.2] - 2026-02-13</h2>
-<h3 id="changed-2">Changed</h3>
+<h3 id="changed-3">Changed</h3>
 <h4 id="samples-1">Samples</h4>
 <ul>
 <li>The sample scene is now using custom materials and a custom shader graph to support multiple render pipelines.</li>
 </ul>
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 <ul>
 <li>Fixed a &quot;Stat cannot be read&quot; error being thrown upon project opening/scene loading.</li>
 </ul>
 <h2 id="141---2026-02-09">[1.4.1] - 2026-02-09</h2>
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 <ul>
 <li>Fixed an issue with the display of Included Stat Sets.</li>
 </ul>
@@ -174,8 +227,8 @@
 <h5>Warning</h5>
 <p>This update involves breaking changes. Refer to the <a href="migration-guide.html#migrating-to-v140">Migrating to v1.4.0</a> section of the migration guide for detailed steps to update your project.</p>
 </div>
-<h3 id="added-1">Added</h3>
-<h4 id="runtime-features-3">Runtime Features</h4>
+<h3 id="added-2">Added</h3>
+<h4 id="runtime-features-7">Runtime Features</h4>
 <ul>
 <li>Added <code>GameAction</code> to encapsulate game logic as <code>ScriptableObject</code>s. Has a generic context type parameter to specify the type of object the action operates on.</li>
 <li>Added <code>IExecutable</code> interface. Implemented by <code>GameAction</code>.</li>
@@ -206,7 +259,7 @@
 </li>
 <li>Added custom icon for <code>ExpSource</code> MonoBehaviour.</li>
 </ul>
-<h4 id="editor-features-4">Editor Features</h4>
+<h4 id="editor-features-7">Editor Features</h4>
 <ul>
 <li>Added a <code>BrokenEventFinder</code> utility to help identify broken responses in Unity Events (and therefore in Game Events). Can be accessed from the menu: <code>Tools/Astra RPG Framework/Find Broken UnityEvents</code>.</li>
 </ul>
@@ -214,8 +267,8 @@
 <ul>
 <li>Added custom font for the Sample Scene.</li>
 </ul>
-<h3 id="changed-3">Changed</h3>
-<h4 id="runtime-features-4">Runtime Features</h4>
+<h3 id="changed-4">Changed</h3>
+<h4 id="runtime-features-8">Runtime Features</h4>
 <ul>
 <li>Simplified <code>ExpSource</code> implementation. Now <code>Harvested</code> property is no longer set to true upon getting <code>Exp</code> property. Now the external code is responsible for setting the <code>Harvested</code> property to true when appropriate. This change allows for more flexible usage of the <code>ExpSource</code> component, as it can now be used in scenarios where the experience points are not immediately harvested upon retrieval. This change was made to better accommodate future features in Astra RPG Health.</li>
 </ul>
@@ -225,7 +278,7 @@
 <li>Renamed <code>SampleScene</code> to <code>Astra RPG Framework Sample Scene</code>.</li>
 <li>Updated <code>CommonApiCheatSheet</code> to reflect new EntityLevelUp and EntityLevelDown game events (see Deprecated section).</li>
 </ul>
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 <h4 id="samples-4">Samples</h4>
 <ul>
 <li>Fixed the input handling in the Sample Scene for Unity 6.2+</li>
@@ -234,18 +287,18 @@
 <ul>
 <li>Mark <code>EntityLeveledDown</code> and <code>EntityLeveledUp</code> events as obsolete, suggesting new alternatives. Use the new <code>EntityLevelUpGameEvent</code> and <code>EntityLevelDownGameEvent</code>, and the respective listeners, instead. <strong>Notice that the new events don't have the <code>ed</code> suffix after <code>EntityLevel</code></strong>. See the <a href="migration-guide.html#migrating-to-v140">Migration Guide</a> for detailed migration steps.</li>
 </ul>
-<h3 id="removed-1">Removed</h3>
+<h3 id="removed-2">Removed</h3>
 <ul>
 <li>Removed previously deprecated <code>_includedStatSets</code> field in <code>StatSet</code></li>
 </ul>
 <h2 id="131---2026-01-10">[1.3.1] - 2026-01-10</h2>
-<h3 id="fixed-4">Fixed</h3>
+<h3 id="fixed-5">Fixed</h3>
 <ul>
 <li>Fixed an editor-scripts related issue that was causing build problems.</li>
 </ul>
 <h2 id="130---2025-12-16">[1.3.0] - 2025-12-16</h2>
-<h3 id="added-2">Added</h3>
-<h4 id="runtime-features-5">Runtime Features</h4>
+<h3 id="added-3">Added</h3>
+<h4 id="runtime-features-9">Runtime Features</h4>
 <ul>
 <li>Added <code>PRV[N]</code> and <code>AT[N]</code> keywords for growth formulas' expressions.
 <ul>
@@ -255,24 +308,24 @@
 </li>
 <li><code>BoundedValue.Clamp</code> now supports also clamping of double values. For now is used internally by the framework and is reserved for future use is Astra RPG Health.</li>
 </ul>
-<h4 id="editor-features-5">Editor Features</h4>
+<h4 id="editor-features-8">Editor Features</h4>
 <ul>
 <li>Added support for <code>enum</code> formatting in <code>InspectorTypography</code>.</li>
 <li>Added utility to provide compact representation of large numbers in the editor (e.g., 1.5K, 4M). Reserved for future use in Astra RPG Health.</li>
 </ul>
-<h3 id="changed-4">Changed</h3>
-<h4 id="runtime-features-6">Runtime Features</h4>
+<h3 id="changed-5">Changed</h3>
+<h4 id="runtime-features-10">Runtime Features</h4>
 <ul>
 <li>Changed the internal <code>AttributePointsTracker</code> used by <code>EntityAttributes</code> to track spendable attribute points. <code>EntityPointsTracker</code> replaces the legacy tracker, and relies on a new <code>AttributePortfolio</code> to manage the allocation of attribute points to attributes. This new system is more readable, more robust, and more maintainable. The old system is left for backward compatibility. By updating the framework to this version, existing projects will automatically migrate to the new system.</li>
 </ul>
-<h3 id="fixed-5">Fixed</h3>
-<h4 id="runtime-features-7">Runtime Features</h4>
+<h3 id="fixed-6">Fixed</h3>
+<h4 id="runtime-features-11">Runtime Features</h4>
 <ul>
 <li>Fixed Round Robin Strategy for attribute points removal on level down or reset to level 1.</li>
 </ul>
 <h2 id="120---2025-11-25">[1.2.0] - 2025-11-25</h2>
-<h3 id="added-3">Added</h3>
-<h4 id="runtime-features-8">Runtime Features</h4>
+<h3 id="added-4">Added</h3>
+<h4 id="runtime-features-12">Runtime Features</h4>
 <ul>
 <li>Added <code>OnLevelDownEvent</code> Game Event. This event is triggered whenever an entity levels down, allowing you to respond to level down events in your game.</li>
 <li>Added XP deduction feature. Now you can deduct XP from an entity using the <code>EntityCore.Level.RemoveExp(long amount)</code> method. This will also handle level downs if the deducted XP causes the entity to drop below the current level's XP threshold. Triggers the <code>OnLevelDownEvent</code> once for each level the entity drops.</li>
@@ -286,7 +339,7 @@ You can implement your own display name providers by implementing the <code>IDis
 </ul>
 </li>
 </ul>
-<h4 id="editor-features-6">Editor Features</h4>
+<h4 id="editor-features-9">Editor Features</h4>
 <ul>
 <li>Added <em>Read Only</em> (<code>RO</code>) property in InspectorTypography. Marks a field in the inspector as read only, in the sense that the component automatically manages it, and the user should not manually edit any associate LongVar/IntVar associated values. Currently reserved for future use.</li>
 <li>Added <code>IValidatable</code> interface. Used by the framework to propagate validation events to depending objects. Used to ensure that when a MonoBehaviour/ScriptableObject is validated in the inspector, all depending objects are also validated to ensure data consistency.</li>
@@ -303,7 +356,7 @@ Automatically instantiates and assigns default instances where fields are null, 
 <ul>
 <li>Added <code>ExpUtils</code> MonoBehaviour. Adds utility methods that can be invoked from the Unity Editor (in play mode) to add or remove XP from an entity for testing purposes.</li>
 </ul>
-<h3 id="changed-5">Changed</h3>
+<h3 id="changed-6">Changed</h3>
 <h4 id="runtime">Runtime</h4>
 <ul>
 <li><code>SoSetScalingComponentBase</code> now logs a warning if no entity set is assigned during the lookup of values to use for scaling calculations.</li>
@@ -326,25 +379,25 @@ Entities that are missing these events will raise an error during their <code>St
 <ul>
 <li>Deprecated <code>DerivedTypePicker</code> in favor of the new <code>TypeSelectionMenu</code> system. Use the new system for better type selection in the editor. <code>DerivedTypePicker</code> will be removed in future releases.</li>
 </ul>
-<h3 id="fixed-6">Fixed</h3>
+<h3 id="fixed-7">Fixed</h3>
 <ul>
 <li>Added missing invalidation of the cached values for the statistics in <code>EntityStats.OnEnable()</code> method.</li>
 <li>Fixed <code>SetTotalCurrentExp</code> that was not raising level up and level down events when appropriate.</li>
 <li>Fixed the assignment of total available attribute points. Previously, this was handled only in OnValidate, which caused issues in builds (where editor-only code is stripped). Initialization is now also performed in <code>EntityCore.Start()</code>. Additionally, total available attribute points are now updated within <code>AddPoints()</code>, ensuring they are correctly recalculated whenever points are added—not only during <code>Init()</code>.</li>
 </ul>
 <h2 id="112---2025-11-12">[1.1.2] - 2025-11-12</h2>
-<h3 id="changed-6">Changed</h3>
+<h3 id="changed-7">Changed</h3>
 <ul>
 <li>Updated the &quot;Example scene and instances&quot; samples. Now by default the Hero prefab uses a IntVar for the attribute spendable points per level. This makes more consistent the amount of spendable attribute points acquired by each character on level up</li>
 <li>Updated offline docs with Installation Guide section</li>
 </ul>
 <h2 id="111---2025-11-06">[1.1.1] - 2025-11-06</h2>
-<h3 id="changed-7">Changed</h3>
+<h3 id="changed-8">Changed</h3>
 <ul>
 <li>Updated the links in <code>package.json</code> to match the new docs URL</li>
 </ul>
 <h2 id="110---2025-11-06">[1.1.0] - 2025-11-06</h2>
-<h3 id="changed-8">Changed</h3>
+<h3 id="changed-9">Changed</h3>
 <h4 id="updated-branding-from-soap-rpg-framework-to-astra-rpg-framework">Updated branding from &quot;SOAP RPG Framework&quot; to &quot;Astra RPG Framework&quot;</h4>
 <p>IMPORTANT: Refer to the <a href="migration-guide.html">migration guide</a> for updating existing projects that used the previous version.</p>
 <ul>
@@ -358,7 +411,7 @@ Entities that are missing these events will raise an error during their <code>St
 <li><code>_includedStatSets</code> field in <code>StatSet</code> will become an internal property in future releases.</li>
 </ul>
 <h2 id="100---2025-10-30">[1.0.0] - 2025-10-30</h2>
-<h3 id="added-4">Added</h3>
+<h3 id="added-5">Added</h3>
 <ul>
 <li>Initial release of SOAP RPG Framework.</li>
 <li>ScriptableObject-based toolkit for core RPG mechanics.</li>

@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Attributes_Attribute" data-uid="ElectricDrill.AstraRpgFramework.Attributes.Attribute" class="text-break">
-Class Attribute  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/Attribute.cs/#L11"><i class="bi bi-code-slash"></i></a>
+Class Attribute  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/Attribute.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -105,7 +105,7 @@ Can have a min and a max value.</p>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class Attribute : BoundedValue</code></pre>
+public class Attribute : BoundedValue, ITaggable</code></pre>
   </div>
 
 
@@ -122,6 +122,12 @@ public class Attribute : BoundedValue</code></pre>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -140,6 +146,42 @@ public class Attribute : BoundedValue</code></pre>
       <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.BoundedValue.html#ElectricDrill_AstraRpgFramework_Utils_BoundedValue_MinValue">BoundedValue.MinValue</a>
     </div>
   </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Attributes_Attribute_Tags_" data-uid="ElectricDrill.AstraRpgFramework.Attributes.Attribute.Tags*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Attributes_Attribute_Tags" data-uid="ElectricDrill.AstraRpgFramework.Attributes.Attribute.Tags">
+  Tags
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/Attribute.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tags associated with this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameTagSet Tags { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTagSet.html">GameTagSet</a></dt>
+    <dd></dd>
+  </dl>
+
+
 
 
 

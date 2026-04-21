@@ -102,7 +102,7 @@ Class DestroyGameObjectComponentGameAction  <a class="header-action link-seconda
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CreateAssetMenu(fileName = &quot;New Destroy GO Component Action&quot;, menuName = &quot;Astra RPG Framework/Game Actions/Context: Component/Destroy Game Object&quot;, order = 10)]
-public class DestroyGameObjectComponentGameAction : DestroyGameObjectGameAction&lt;Component&gt;, IExecutable&lt;Component&gt;</code></pre>
+public class DestroyGameObjectComponentGameAction : DestroyGameObjectGameAction&lt;Component&gt;, IExecutable&lt;Component&gt;, ITaggable</code></pre>
   </div>
 
 
@@ -114,6 +114,7 @@ public class DestroyGameObjectComponentGameAction : DestroyGameObjectGameAction&
       <div><span class="xref">object</span></div>
       <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.html">Object</a></div>
       <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameActionBase.html">GameActionBase</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html">GameAction</a>&lt;<a class="xref" href="https://docs.unity3d.com/ScriptReference/Component.html">Component</a>&gt;</div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.DestroyGameObjectGameAction-1.html">DestroyGameObjectGameAction</a>&lt;<a class="xref" href="https://docs.unity3d.com/ScriptReference/Component.html">Component</a>&gt;</div>
       <div><span class="xref">DestroyGameObjectComponentGameAction</span></div>
@@ -124,6 +125,7 @@ public class DestroyGameObjectComponentGameAction : DestroyGameObjectGameAction&
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.IExecutable-1.html">IExecutable</a>&lt;<a class="xref" href="https://docs.unity3d.com/ScriptReference/Component.html">Component</a>&gt;</div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a></div>
     </dd>
   </dl>
 
@@ -135,7 +137,13 @@ public class DestroyGameObjectComponentGameAction : DestroyGameObjectGameAction&
       <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.DestroyGameObjectGameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_Actions_DestroyGameObjectGameAction_1_ExecuteAsync__0_System_Threading_CancellationToken_">DestroyGameObjectGameAction&lt;Component&gt;.ExecuteAsync(Component, CancellationToken)</a>
     </div>
     <div>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_Tags">GameAction&lt;Component&gt;.Tags</a>
+    </div>
+    <div>
       <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_DisplayName">GameAction&lt;Component&gt;.DisplayName</a>
+    </div>
+    <div>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_ExecuteWithOwnerAsync__0_UnityEngine_MonoBehaviour_System_Threading_CancellationToken_">GameAction&lt;Component&gt;.ExecuteWithOwnerAsync(Component, MonoBehaviour, CancellationToken)</a>
     </div>
     <div>
       <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_ExecuteAsyncForUnityEvent__0_">GameAction&lt;Component&gt;.ExecuteAsyncForUnityEvent(Component)</a>

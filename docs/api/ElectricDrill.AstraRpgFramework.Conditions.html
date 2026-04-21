@@ -139,6 +139,42 @@ An empty condition list always evaluates to <code>true</code>.
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.AttributeThresholdCondition.html">AttributeThresholdCondition</a></dt>
+      <dd><p>Condition that checks an attribute on the resolved target entity against a threshold.</p>
+<p>
+When <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ThresholdMode.html#ElectricDrill_AstraRpgFramework_Conditions_ThresholdMode_Absolute">Absolute</a>, the attribute's final value is compared directly
+against the configured absolute threshold.<br>
+When <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ThresholdMode.html#ElectricDrill_AstraRpgFramework_Conditions_ThresholdMode_Percentage">Percentage</a>, the attribute's position within its defined range
+[<code>MinValue</code>, <code>MaxValue</code>] is expressed as a percentage (0–100) and compared against
+the configured percentage threshold. Requires the attribute to have <code>HasMaxValue = true</code>;
+returns <code>false</code> otherwise. When <code>HasMinValue = false</code>, 0 is used as the implicit
+minimum. Returns <code>false</code> if the effective range (<code>MaxValue − MinValue</code>) is zero.
+</p><p>
+Negative <code>MinValue</code> is fully supported: an attribute with MinValue = −100 and MaxValue = 100
+at value 0 evaluates to 50 %.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ChangedAttributeCondition.html">ChangedAttributeCondition</a></dt>
+      <dd><p>Condition that checks whether the payload of an attribute change event refers to a specific attribute.</p>
+<p>
+Returns <code>false</code> when <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html#ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_EventPayload">EventPayload</a> is not an
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.html">AttributeChangeInfo</a>, when the configured attribute is null, or when the payload
+attribute is null.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ChangedStatCondition.html">ChangedStatCondition</a></dt>
+      <dd><p>Condition that checks whether the payload of a stat change event refers to a specific stat.</p>
+<p>
+Returns <code>false</code> when <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html#ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_EventPayload">EventPayload</a> is not a
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.html">StatChangeInfo</a>, when the configured stat is null, or when the payload stat is null.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.Condition.html">Condition</a></dt>
       <dd><p>Abstract base class for all conditions in the Astra RPG condition system.
 Conditions are pure predicates evaluated against an <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html">EvaluationContext</a>.
@@ -146,6 +182,45 @@ Subclass and implement <a class="xref" href="ElectricDrill.AstraRpgFramework.Con
 <p>
 Concrete subclasses must be decorated with <code>[Serializable]</code> to participate in
 Unity's <code>[SerializeReference]</code> polymorphic serialization.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EntityHasTagCondition.html">EntityHasTagCondition</a></dt>
+      <dd><p>Condition that checks whether the resolved target entity has the required tags.</p>
+<p>
+The entity is resolved from the configured <span class="xref">ElectricDrill.AstraRpgFramework.Conditions.EntityHasTagCondition._target</span> slot in the
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html">EvaluationContext</a>. Returns <code>false</code> if the target is <code>null</code> or does not
+implement <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a>.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EntityLevelCondition.html">EntityLevelCondition</a></dt>
+      <dd><p>Condition that checks the resolved target entity's current level against a fixed threshold.</p>
+<p>
+The entity is resolved from the configured <span class="xref">ElectricDrill.AstraRpgFramework.Conditions.EntityLevelCondition._target</span> slot in the
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html">EvaluationContext</a>. Returns <code>false</code> if the target cannot be resolved.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EntityLevelThresholdTransitionCondition.html">EntityLevelThresholdTransitionCondition</a></dt>
+      <dd><p>Condition that checks whether an entity level comparison against a fixed threshold
+becomes satisfied or ceases to be satisfied across a level change payload.</p>
+<p>
+Returns <code>false</code> when the payload does not implement <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange&lt;T&gt;</a>
+for <span class="xref">int</span>.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EntityReferenceCondition.html">EntityReferenceCondition</a></dt>
+      <dd><p>Condition that compares two entity slots resolved from the current <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html">EvaluationContext</a>.</p>
+<p><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EntityReferenceComparisonMode.html#ElectricDrill_AstraRpgFramework_Conditions_EntityReferenceComparisonMode_SameEntity">SameEntity</a> and
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EntityReferenceComparisonMode.html#ElectricDrill_AstraRpgFramework_Conditions_EntityReferenceComparisonMode_DifferentEntity">DifferentEntity</a> use reference identity over resolved
+<a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a> instances and do not treat two missing entities as equal. Use the explicit
+null-check modes when absence is the desired predicate.
 </p>
 </dd>
     </dl>
@@ -171,18 +246,49 @@ when the holder is <code>null</code> or lacks the component.
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.HasTagCondition.html">HasTagCondition</a></dt>
-      <dd><p>Condition that checks whether the target entity has the required tags.</p>
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.HolderLevelCondition.html">HolderLevelCondition</a></dt>
+      <dd><p>Condition that checks the holder entity's current level against a fixed threshold.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.IntValueChangeDirectionCondition.html">IntValueChangeDirectionCondition</a></dt>
+      <dd><p>Condition that checks the direction of an <span class="xref">int</span> value change projected from
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html#ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_EventPayload">EventPayload</a>.</p>
 <p>
-The entity is resolved via <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a> obtained from a <code>GetComponent</code> call on the
-<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ConditionTarget.html">ConditionTarget</a> entity. Returns <code>false</code> if the target is <code>null</code> or does not
-implement <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a>.
+Returns <code>false</code> when the payload does not implement <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange&lt;T&gt;</a>
+for <span class="xref">int</span>.
 </p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.HolderLevelCondition.html">HolderLevelCondition</a></dt>
-      <dd><p>Condition that checks the holder entity's current level against a fixed threshold.</p>
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.IntValueChangeModuloCondition.html">IntValueChangeModuloCondition</a></dt>
+      <dd><p>Condition that checks an <span class="xref">int</span> value projected from
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html#ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_EventPayload">EventPayload</a> against a modulo rule.</p>
+<p>
+Returns <code>false</code> when the payload does not implement <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange&lt;T&gt;</a> for
+<span class="xref">int</span>, or when <span class="xref">ElectricDrill.AstraRpgFramework.Conditions.IntValueChangeModuloCondition._divisor</span> is not positive. Both the projected value and the
+expected remainder are normalized into the range [0, divisor - 1] before comparison.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.IntValueChangeThresholdCondition.html">IntValueChangeThresholdCondition</a></dt>
+      <dd><p>Condition that compares an <span class="xref">int</span> value projected from
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html#ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_EventPayload">EventPayload</a> against a fixed threshold.</p>
+<p>
+Returns <code>false</code> when the payload does not implement <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange&lt;T&gt;</a> for
+<span class="xref">int</span>, or when the requested projection cannot be represented safely.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.IntValueChangeThresholdTransitionCondition.html">IntValueChangeThresholdTransitionCondition</a></dt>
+      <dd><p>Condition that checks whether an <span class="xref">int</span> comparison against a fixed threshold
+becomes satisfied or ceases to be satisfied across a value change payload.</p>
+<p>
+Returns <code>false</code> when the payload does not implement <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange&lt;T&gt;</a>
+for <span class="xref">int</span>.
+</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -190,6 +296,47 @@ implement <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.h
       <dd><p>Condition that evaluates to <code>true</code> when <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html#ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_Performer">Performer</a> is the same
 entity as <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html#ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_Holder">Holder</a> (i.e., the effect was self-applied).
 Returns <code>false</code> when <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html#ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_Performer">Performer</a> is <code>null</code>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.LongValueChangeDirectionCondition.html">LongValueChangeDirectionCondition</a></dt>
+      <dd><p>Condition that checks the direction of a <span class="xref">long</span> value change projected from
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html#ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_EventPayload">EventPayload</a>.</p>
+<p>
+Returns <code>false</code> when the payload does not implement <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange&lt;T&gt;</a>
+for <span class="xref">long</span>.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.LongValueChangeModuloCondition.html">LongValueChangeModuloCondition</a></dt>
+      <dd><p>Condition that checks a <span class="xref">long</span> value projected from
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html#ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_EventPayload">EventPayload</a> against a modulo rule.</p>
+<p>
+Returns <code>false</code> when the payload does not implement <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange&lt;T&gt;</a> for
+<span class="xref">long</span>, or when <span class="xref">ElectricDrill.AstraRpgFramework.Conditions.LongValueChangeModuloCondition._divisor</span> is not positive. Both the projected value and the
+expected remainder are normalized into the range [0, divisor - 1] before comparison.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.LongValueChangeThresholdCondition.html">LongValueChangeThresholdCondition</a></dt>
+      <dd><p>Condition that compares a <span class="xref">long</span> value projected from
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html#ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_EventPayload">EventPayload</a> against a fixed threshold.</p>
+<p>
+Returns <code>false</code> when the payload does not implement <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange&lt;T&gt;</a> for
+<span class="xref">long</span>, or when the requested projection cannot be represented safely.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.LongValueChangeThresholdTransitionCondition.html">LongValueChangeThresholdTransitionCondition</a></dt>
+      <dd><p>Condition that checks whether a <span class="xref">long</span> comparison against a fixed threshold
+becomes satisfied or ceases to be satisfied across a value change payload.</p>
+<p>
+Returns <code>false</code> when the payload does not implement <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange&lt;T&gt;</a>
+for <span class="xref">long</span>.
+</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -215,7 +362,7 @@ Values ≤ 0 always return <code>false</code>; values ≥ 100 always return <cod
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.StatThresholdCondition.html">StatThresholdCondition</a></dt>
-      <dd><p>Condition that checks a stat on the holder entity against a threshold.</p>
+      <dd><p>Condition that checks a stat on the resolved target entity against a threshold.</p>
 <p>
 When <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ThresholdMode.html#ElectricDrill_AstraRpgFramework_Conditions_ThresholdMode_Absolute">Absolute</a>, the stat's final value is compared directly against
 <span class="xref">ElectricDrill.AstraRpgFramework.Conditions.StatThresholdCondition._thresholdAbsolute</span>.<br>
@@ -254,7 +401,14 @@ Enums
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ConditionTarget.html">ConditionTarget</a></dt>
-      <dd><p>Specifies which entity in an <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html">EvaluationContext</a> a condition should target.</p>
+      <dd><p>Specifies which entity slot in an <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html">EvaluationContext</a> a condition should target.
+Payload-derived slots resolve through contracts exposed by <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html#ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_EventPayload">EventPayload</a>
+and evaluate as <code>null</code> when the payload cannot supply the requested role.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EntityReferenceComparisonMode.html">EntityReferenceComparisonMode</a></dt>
+      <dd><p>Defines how two resolved entity slots should be compared.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -266,6 +420,22 @@ Enums
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ThresholdMode.html">ThresholdMode</a></dt>
       <dd><p>Specifies whether a stat threshold is expressed as a raw absolute value or as a percentage
 of the stat's maximum value (0–100).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ThresholdSatisfactionTransition.html">ThresholdSatisfactionTransition</a></dt>
+      <dd><p>Describes how a threshold comparison should transition across a value change.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ValueChangeComponent.html">ValueChangeComponent</a></dt>
+      <dd><p>Selects which numeric projection of an
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange&lt;T&gt;</a> payload a condition should read.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ValueChangeDirection.html">ValueChangeDirection</a></dt>
+      <dd><p>Describes the direction of a numeric change between a previous and a new value.</p>
 </dd>
     </dl>
 

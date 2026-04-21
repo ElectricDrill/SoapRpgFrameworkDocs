@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Conditions_NotCondition" data-uid="ElectricDrill.AstraRpgFramework.Conditions.NotCondition" class="text-break">
-Class NotCondition  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/Composites/NotCondition.cs/#L11"><i class="bi bi-code-slash"></i></a>
+Class NotCondition  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/Composites/NotCondition.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -105,6 +105,7 @@ When <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.NotConditi
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
+[TypeSelectableMenu(&quot;Composites&quot;)]
 public class NotCondition : Condition</code></pre>
   </div>
 
@@ -135,7 +136,7 @@ public class NotCondition : Condition</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Conditions_NotCondition_Inner" data-uid="ElectricDrill.AstraRpgFramework.Conditions.NotCondition.Inner">
   Inner
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/Composites/NotCondition.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/Composites/NotCondition.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -143,6 +144,8 @@ public class NotCondition : Condition</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SerializeReference]
+[TypeSelectable]
+[Tooltip(&quot;Condition whose result will be inverted.&quot;)]
 public Condition Inner</code></pre>
   </div>
 
@@ -171,7 +174,7 @@ public Condition Inner</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Conditions_NotCondition_Evaluate_ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_" data-uid="ElectricDrill.AstraRpgFramework.Conditions.NotCondition.Evaluate(ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext)">
   Evaluate(EvaluationContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/Composites/NotCondition.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/Composites/NotCondition.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Evaluates this condition against the provided context.</p>

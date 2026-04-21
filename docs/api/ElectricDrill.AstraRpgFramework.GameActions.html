@@ -95,6 +95,14 @@
 Classes
 </h3>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameActionBase.html">GameActionBase</a></dt>
+      <dd><p>Non-generic base class for all <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html">GameAction&lt;TContext&gt;</a> assets.
+Exists to allow Inspector fields typed to <code>GameActionBase</code> to accept any
+<a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html">GameAction&lt;TContext&gt;</a> regardless of its context type parameter —
+working around C# generic invariance.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameActionRunner.html">GameActionRunner</a></dt>
       <dd><p>MonoBehaviour that manages fire-and-forget execution of GameActions with automatic lifecycle management.
 Tracks running actions and cancels them when the GameObject is destroyed.

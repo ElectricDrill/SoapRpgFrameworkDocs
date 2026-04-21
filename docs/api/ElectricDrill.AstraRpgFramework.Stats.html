@@ -130,9 +130,17 @@ Used to create relationships between different stats in the RPG system.</p>
 Structs
 </h3>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.EntityStats.BulkUpdateScope.html">EntityStats.BulkUpdateScope</a></dt>
+      <dd><p>Disposable bracket returned by <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_BeginBulk">BeginBulk()</a>. Dispose flushes deferred events
+when the outermost bracket closes. Declared as a ref struct so it cannot be boxed or
+captured across async boundaries — each bracket must be confined to a single stack frame.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.html">StatChangeInfo</a></dt>
-      <dd><p>Contains information about a stat change event, including the entity, stat, and old/new values.
-Used for tracking and responding to stat modifications.</p>
+      <dd><p>Immutable structure that contains information about a stat change event, including the owning entity,
+stat, and old/new values. Used for tracking and responding to stat modifications and for payload-aware
+condition evaluation.</p>
 </dd>
     </dl>
     <h3 id="interfaces">

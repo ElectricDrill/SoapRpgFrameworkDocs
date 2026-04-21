@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Enum ConditionTarget | Astra RPG Framework ">
       
-      <meta name="description" content="Specifies which entity in an  a condition should target.">
+      <meta name="description" content="Specifies which entity slot in an  a condition should target. Payload-derived slots resolve through contracts exposed by  and evaluate as null when the payload cannot supply the requested role.">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -90,7 +90,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Conditions_ConditionTarget" data-uid="ElectricDrill.AstraRpgFramework.Conditions.ConditionTarget" class="text-break">
-Enum ConditionTarget  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/ConditionTarget.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Enum ConditionTarget  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/ConditionTarget.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,7 +98,9 @@ Enum ConditionTarget  <a class="header-action link-secondary" title="View source
   <dl><dt>Assembly</dt><dd>com.electricdrill.astra-rpg-framework.Runtime.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Specifies which entity in an <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html">EvaluationContext</a> a condition should target.</p>
+  <div class="markdown summary"><p>Specifies which entity slot in an <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html">EvaluationContext</a> a condition should target.
+Payload-derived slots resolve through contracts exposed by <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html#ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_EventPayload">EventPayload</a>
+and evaluate as <code>null</code> when the payload cannot supply the requested role.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -118,9 +120,28 @@ Enum ConditionTarget  <a class="header-action link-secondary" title="View source
 </h2>
   <dl class="parameters">
     <dt id="ElectricDrill_AstraRpgFramework_Conditions_ConditionTarget_Holder"><code>Holder = 0</code></dt>
-    <dd></dd>
+    <dd><p>The entity that owns the effect, modifier, or action currently being evaluated.</p>
+</dd>
+    <dt id="ElectricDrill_AstraRpgFramework_Conditions_ConditionTarget_PayloadEntity"><code>PayloadEntity = 2</code></dt>
+    <dd><p>The payload's primary entity, resolved from
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasEntity.html">IHasEntity</a> when available,
+or from the <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a> on a payload <a class="xref" href="https://docs.unity3d.com/ScriptReference/Component.html">Component</a>.</p>
+</dd>
+    <dt id="ElectricDrill_AstraRpgFramework_Conditions_ConditionTarget_PayloadPerformer"><code>PayloadPerformer = 3</code></dt>
+    <dd><p>The payload's performer entity, resolved from
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasPerformer.html">IHasPerformer</a>.</p>
+</dd>
+    <dt id="ElectricDrill_AstraRpgFramework_Conditions_ConditionTarget_PayloadTarget"><code>PayloadTarget = 4</code></dt>
+    <dd><p>The payload's target entity, resolved from
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasTarget.html">IHasTarget</a>.</p>
+</dd>
+    <dt id="ElectricDrill_AstraRpgFramework_Conditions_ConditionTarget_PayloadVictim"><code>PayloadVictim = 5</code></dt>
+    <dd><p>The payload's victim entity, resolved from
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasVictim.html">IHasVictim</a>.</p>
+</dd>
     <dt id="ElectricDrill_AstraRpgFramework_Conditions_ConditionTarget_Performer"><code>Performer = 1</code></dt>
-    <dd></dd>
+    <dd><p>The entity that applied or cast the effect, modifier, or action currently being evaluated.</p>
+</dd>
   </dl>
 
 

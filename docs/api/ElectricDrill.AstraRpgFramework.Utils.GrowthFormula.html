@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Utils_GrowthFormula" data-uid="ElectricDrill.AstraRpgFramework.Utils.GrowthFormula" class="text-break">
-Class GrowthFormula  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/GrowthFormula.cs/#L24"><i class="bi bi-code-slash"></i></a>
+Class GrowthFormula  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/GrowthFormula.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -102,7 +102,7 @@ Class GrowthFormula  <a class="header-action link-secondary" title="View source"
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class GrowthFormula : ScriptableObject</code></pre>
+    <pre><code class="lang-csharp hljs">public class GrowthFormula : ScriptableObject, ITaggable</code></pre>
   </div>
 
 
@@ -118,6 +118,12 @@ Class GrowthFormula  <a class="header-action link-secondary" title="View source"
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a></div>
+    </dd>
+  </dl>
 
 
 
@@ -134,7 +140,7 @@ Class GrowthFormula  <a class="header-action link-secondary" title="View source"
 
   <h3 id="ElectricDrill_AstraRpgFramework_Utils_GrowthFormula_GrowthFoValues" data-uid="ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.GrowthFoValues">
   GrowthFoValues
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/GrowthFormula.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/GrowthFormula.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the pre-calculated growth formula values for each level.
@@ -164,11 +170,43 @@ The array is indexed from 0 to maxLevel - 1, where index 0 corresponds to level 
 
 
 
+  <a id="ElectricDrill_AstraRpgFramework_Utils_GrowthFormula_Tags_" data-uid="ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.Tags*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Utils_GrowthFormula_Tags" data-uid="ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.Tags">
+  Tags
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/GrowthFormula.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tags associated with this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameTagSet Tags { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTagSet.html">GameTagSet</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ElectricDrill_AstraRpgFramework_Utils_GrowthFormula_ValidationErrors_" data-uid="ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.ValidationErrors*"></a>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Utils_GrowthFormula_ValidationErrors" data-uid="ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.ValidationErrors">
   ValidationErrors
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/GrowthFormula.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/GrowthFormula.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the validation errors that occurred during the last formula evaluation.</p>
@@ -204,7 +242,7 @@ The array is indexed from 0 to maxLevel - 1, where index 0 corresponds to level 
 
   <h3 id="ElectricDrill_AstraRpgFramework_Utils_GrowthFormula_GetGrowthValue_System_Int32_" data-uid="ElectricDrill.AstraRpgFramework.Utils.GrowthFormula.GetGrowthValue(System.Int32)">
   GetGrowthValue(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/GrowthFormula.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/GrowthFormula.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the growth value for a specific level. Levels start from 1.</p>

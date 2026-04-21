@@ -109,6 +109,20 @@ any future type to participate without changes to this interface.
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasEntity.html">IHasEntity</a></dt>
+      <dd><p>Contract for objects that can provide a reference to their primary <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a>.</p>
+<p>
+Implemented by two categories:
+<ul><li>Entity components (e.g. <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a>, <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.EntityStats.html">EntityStats</a>)
+    where <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasEntity.html#ElectricDrill_AstraRpgFramework_Contexts_IHasEntity_Entity">Entity</a> returns the component's own owning entity.</li><li>Event context payloads (e.g. context classes) where <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasEntity.html#ElectricDrill_AstraRpgFramework_Contexts_IHasEntity_Entity">Entity</a> returns
+    the primary subject of the event.</li></ul><p>
+This interface enables <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html">GameAction&lt;TContext&gt;</a> families
+typed on <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasEntity.html">IHasEntity</a> to accept both entity components and any domain context
+that carries an entity reference, bridging the two worlds without requiring inheritance.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasInstigator.html">IHasInstigator</a></dt>
       <dd><p>Contract for contexts that carry a reference to the specific cause of the effect.</p>
 <p>

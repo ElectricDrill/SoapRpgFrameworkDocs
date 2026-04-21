@@ -133,7 +133,15 @@ Structs
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.html">AttributeChangeInfo</a></dt>
       <dd><p>Immutable structure that contains information about an attribute value change.
-Used to track and communicate attribute modifications across the system.</p>
+Used to track and communicate attribute modifications across the system and for payload-aware
+condition evaluation.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.BulkUpdateScope.html">EntityAttributes.BulkUpdateScope</a></dt>
+      <dd><p>Disposable bracket returned by <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_BeginBulk">BeginBulk()</a>. Dispose flushes deferred events
+when the outermost bracket closes. Declared as a ref struct so it cannot be boxed or
+captured across async boundaries — each bracket must be confined to a single stack frame.</p>
 </dd>
     </dl>
     <h3 id="interfaces">

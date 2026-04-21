@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Struct StatChangeInfo | Astra RPG Framework ">
       
-      <meta name="description" content="Contains information about a stat change event, including the entity, stat, and old/new values. Used for tracking and responding to stat modifications.">
+      <meta name="description" content="Immutable structure that contains information about a stat change event, including the owning entity, stat, and old/new values. Used for tracking and responding to stat modifications and for payload-aware condition evaluation.">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo" class="text-break">
-Struct StatChangeInfo  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Struct StatChangeInfo  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,13 +97,14 @@ Struct StatChangeInfo  <a class="header-action link-secondary" title="View sourc
   <dl><dt>Assembly</dt><dd>com.electricdrill.astra-rpg-framework.Runtime.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Contains information about a stat change event, including the entity, stat, and old/new values.
-Used for tracking and responding to stat modifications.</p>
+  <div class="markdown summary"><p>Immutable structure that contains information about a stat change event, including the owning entity,
+stat, and old/new values. Used for tracking and responding to stat modifications and for payload-aware
+condition evaluation.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct StatChangeInfo : IHasValueChange&lt;long&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly struct StatChangeInfo : IHasValueChange&lt;long&gt;, IHasEntity, IHasTarget</code></pre>
   </div>
 
 
@@ -114,6 +115,8 @@ Used for tracking and responding to stat modifications.</p>
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange</a>&lt;<span class="xref">long</span>&gt;</div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasEntity.html">IHasEntity</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasTarget.html">IHasTarget</a></div>
     </dd>
   </dl>
 
@@ -132,7 +135,7 @@ Used for tracking and responding to stat modifications.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo__ctor_ElectricDrill_AstraRpgFramework_Stats_EntityStats_ElectricDrill_AstraRpgFramework_Stats_Stat_System_Int64_System_Int64_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.#ctor(ElectricDrill.AstraRpgFramework.Stats.EntityStats,ElectricDrill.AstraRpgFramework.Stats.Stat,System.Int64,System.Int64)">
   StatChangeInfo(EntityStats, Stat, long, long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the StatChangeInfo structure.</p>
@@ -170,72 +173,6 @@ Used for tracking and responding to stat modifications.</p>
 
 
 
-  <h2 class="section" id="fields">Fields
-</h2>
-
-
-
-  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_EntityStats" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.EntityStats">
-  EntityStats
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L13"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>The EntityStats component that owns the changed stat.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EntityStats EntityStats</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.EntityStats.html">EntityStats</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_Stat" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.Stat">
-  Stat
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L18"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>The stat that was changed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Stat Stat</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
   <h2 class="section" id="properties">Properties
 </h2>
 
@@ -244,7 +181,7 @@ Used for tracking and responding to stat modifications.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_AbsAmount" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.AbsAmount">
   AbsAmount
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The absolute amount of change between PreviousValue and NewValue.</p>
@@ -272,11 +209,77 @@ Used for tracking and responding to stat modifications.</p>
 
 
 
+  <a id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_Entity_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.Entity*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_Entity" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.Entity">
+  Entity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The primary <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a> associated with this object.
+For entity components this is the owning entity; for context payloads this is
+the primary affected subject (e.g. the event target).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityCore Entity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_EntityStats_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.EntityStats*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_EntityStats" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.EntityStats">
+  EntityStats
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the EntityStats component that owns the changed stat.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityStats EntityStats { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.EntityStats.html">EntityStats</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_NewValue_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.NewValue*"></a>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_NewValue" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.NewValue">
   NewValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The value of the stat after the change.</p>
@@ -284,7 +287,7 @@ Used for tracking and responding to stat modifications.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly long NewValue { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public long NewValue { get; }</code></pre>
   </div>
 
 
@@ -308,7 +311,7 @@ Used for tracking and responding to stat modifications.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_PreviousValue" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.PreviousValue">
   PreviousValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The value of the stat before the change.</p>
@@ -316,7 +319,7 @@ Used for tracking and responding to stat modifications.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly long PreviousValue { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public long PreviousValue { get; }</code></pre>
   </div>
 
 
@@ -326,6 +329,69 @@ Used for tracking and responding to stat modifications.</p>
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><span class="xref">long</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_Stat_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.Stat*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_Stat" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.Stat">
+  Stat
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the stat that was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stat Stat { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_Target_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.Target*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatChangeInfo_Target" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatChangeInfo.Target">
+  Target
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatChangeInfo.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityCore Target { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
     <dd></dd>
   </dl>
 

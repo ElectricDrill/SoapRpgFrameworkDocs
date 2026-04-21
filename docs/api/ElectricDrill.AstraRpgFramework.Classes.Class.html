@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Classes_Class" data-uid="ElectricDrill.AstraRpgFramework.Classes.Class" class="text-break">
-Class Class  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L20"><i class="bi bi-code-slash"></i></a>
+Class Class  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -103,7 +103,7 @@ It can be used to define how attributes and stats grow over levels.</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Class : ScriptableObject, IHasStatSet, IHasAttributeSet, IEditorValidatable</code></pre>
+    <pre><code class="lang-csharp hljs">public class Class : ScriptableObject, IHasStatSet, IHasAttributeSet, IEditorValidatable, ITaggable</code></pre>
   </div>
 
 
@@ -125,6 +125,7 @@ It can be used to define how attributes and stats grow over levels.</p>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.IHasStatSet.html">IHasStatSet</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IHasAttributeSet.html">IHasAttributeSet</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IEditorValidatable.html">IEditorValidatable</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a></div>
     </dd>
   </dl>
 
@@ -142,7 +143,7 @@ It can be used to define how attributes and stats grow over levels.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Classes_Class__attributeSet" data-uid="ElectricDrill.AstraRpgFramework.Classes.Class._attributeSet">
   _attributeSet
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The set of attributes associated with this class.</p>
@@ -174,7 +175,7 @@ protected AttributeSet _attributeSet</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Classes_Class__maxHpGrowthFormula" data-uid="ElectricDrill.AstraRpgFramework.Classes.Class._maxHpGrowthFormula">
   _maxHpGrowthFormula
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The growth formula for the maximum HP.
@@ -207,7 +208,7 @@ protected GrowthFormula _maxHpGrowthFormula</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Classes_Class__statSet" data-uid="ElectricDrill.AstraRpgFramework.Classes.Class._statSet">
   _statSet
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The set of stats associated with this class.</p>
@@ -244,7 +245,7 @@ protected StatSet _statSet</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Classes_Class_AttributeSet" data-uid="ElectricDrill.AstraRpgFramework.Classes.Class.AttributeSet">
   AttributeSet
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the AttributeSet for this class.</p>
@@ -276,7 +277,7 @@ protected StatSet _statSet</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Classes_Class_StatSet" data-uid="ElectricDrill.AstraRpgFramework.Classes.Class.StatSet">
   StatSet
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the StatSet for this class.</p>
@@ -304,6 +305,38 @@ protected StatSet _statSet</code></pre>
 
 
 
+  <a id="ElectricDrill_AstraRpgFramework_Classes_Class_Tags_" data-uid="ElectricDrill.AstraRpgFramework.Classes.Class.Tags*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Classes_Class_Tags" data-uid="ElectricDrill.AstraRpgFramework.Classes.Class.Tags">
+  Tags
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tags associated with this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameTagSet Tags { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTagSet.html">GameTagSet</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -312,7 +345,7 @@ protected StatSet _statSet</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Classes_Class_GetAttributeAt_ElectricDrill_AstraRpgFramework_Attributes_Attribute_System_Int32_" data-uid="ElectricDrill.AstraRpgFramework.Classes.Class.GetAttributeAt(ElectricDrill.AstraRpgFramework.Attributes.Attribute,System.Int32)">
   GetAttributeAt(Attribute, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Calculates the value of a specific attribute at a given level.</p>
@@ -354,7 +387,7 @@ protected StatSet _statSet</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Classes_Class_GetMaxHpAt_System_Int32_" data-uid="ElectricDrill.AstraRpgFramework.Classes.Class.GetMaxHpAt(System.Int32)">
   GetMaxHpAt(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L67"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Calculates the maximum HP for a given level.</p>
@@ -393,7 +426,7 @@ protected StatSet _statSet</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Classes_Class_GetStatAt_ElectricDrill_AstraRpgFramework_Stats_Stat_System_Int32_" data-uid="ElectricDrill.AstraRpgFramework.Classes.Class.GetStatAt(ElectricDrill.AstraRpgFramework.Stats.Stat,System.Int32)">
   GetStatAt(Stat, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Classes/Class.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Calculates the value of a specific stat at a given level.</p>

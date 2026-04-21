@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingComponent" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponent" class="text-break">
-Class ScalingComponent  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingComponent.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Class ScalingComponent  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingComponent.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -103,7 +103,7 @@ A scaling component calculates a value based on an entity's properties.</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class ScalingComponent : ScriptableObject, IEntityValueCalculator</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class ScalingComponent : ScriptableObject, ITaggable</code></pre>
   </div>
 
 
@@ -122,7 +122,7 @@ A scaling component calculates a value based on an entity's properties.</p>
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.IEntityValueCalculator.html">IEntityValueCalculator</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a></div>
     </dd>
   </dl>
 
@@ -139,6 +139,42 @@ A scaling component calculates a value based on an entity's properties.</p>
 
 
 
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Scaling_ScalingComponent_Tags_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponent.Tags*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingComponent_Tags" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponent.Tags">
+  Tags
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingComponent.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tags associated with this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameTagSet Tags { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTagSet.html">GameTagSet</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -147,7 +183,7 @@ A scaling component calculates a value based on an entity's properties.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingComponent_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponent.CalculateValue(ElectricDrill.AstraRpgFramework.EntityCore)">
   CalculateValue(EntityCore)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingComponent.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingComponent.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Calculates the value of this component based on the provided entity.</p>

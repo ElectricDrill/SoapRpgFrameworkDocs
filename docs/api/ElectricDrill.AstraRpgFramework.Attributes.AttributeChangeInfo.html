@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Struct AttributeChangeInfo | Astra RPG Framework ">
       
-      <meta name="description" content="Immutable structure that contains information about an attribute value change. Used to track and communicate attribute modifications across the system.">
+      <meta name="description" content="Immutable structure that contains information about an attribute value change. Used to track and communicate attribute modifications across the system and for payload-aware condition evaluation.">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Attributes_AttributeChangeInfo" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo" class="text-break">
-Struct AttributeChangeInfo  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Struct AttributeChangeInfo  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,12 +98,13 @@ Struct AttributeChangeInfo  <a class="header-action link-secondary" title="View 
   </div>
 
   <div class="markdown summary"><p>Immutable structure that contains information about an attribute value change.
-Used to track and communicate attribute modifications across the system.</p>
+Used to track and communicate attribute modifications across the system and for payload-aware
+condition evaluation.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly struct AttributeChangeInfo : IHasValueChange&lt;long&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly struct AttributeChangeInfo : IHasValueChange&lt;long&gt;, IHasEntity, IHasTarget</code></pre>
   </div>
 
 
@@ -114,6 +115,8 @@ Used to track and communicate attribute modifications across the system.</p>
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange</a>&lt;<span class="xref">long</span>&gt;</div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasEntity.html">IHasEntity</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasTarget.html">IHasTarget</a></div>
     </dd>
   </dl>
 
@@ -132,7 +135,7 @@ Used to track and communicate attribute modifications across the system.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Attributes_AttributeChangeInfo__ctor_ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_ElectricDrill_AstraRpgFramework_Attributes_Attribute_System_Int64_System_Int64_" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.#ctor(ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes,ElectricDrill.AstraRpgFramework.Attributes.Attribute,System.Int64,System.Int64)">
   AttributeChangeInfo(EntityAttributes, Attribute, long, long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the AttributeChangeInfo structure.</p>
@@ -178,7 +181,7 @@ Used to track and communicate attribute modifications across the system.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Attributes_AttributeChangeInfo_AbsAmount" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.AbsAmount">
   AbsAmount
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The absolute amount of change between PreviousValue and NewValue.</p>
@@ -210,7 +213,7 @@ Used to track and communicate attribute modifications across the system.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Attributes_AttributeChangeInfo_Attribute" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.Attribute">
   Attribute
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the attribute that was changed.</p>
@@ -238,11 +241,45 @@ Used to track and communicate attribute modifications across the system.</p>
 
 
 
+  <a id="ElectricDrill_AstraRpgFramework_Attributes_AttributeChangeInfo_Entity_" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.Entity*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Attributes_AttributeChangeInfo_Entity" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.Entity">
+  Entity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The primary <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a> associated with this object.
+For entity components this is the owning entity; for context payloads this is
+the primary affected subject (e.g. the event target).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityCore Entity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ElectricDrill_AstraRpgFramework_Attributes_AttributeChangeInfo_EntityAttributes_" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.EntityAttributes*"></a>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Attributes_AttributeChangeInfo_EntityAttributes" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.EntityAttributes">
   EntityAttributes
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the EntityAttributes instance that owns the changed attribute.</p>
@@ -274,7 +311,7 @@ Used to track and communicate attribute modifications across the system.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Attributes_AttributeChangeInfo_NewValue" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.NewValue">
   NewValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the new value of the attribute after the change.</p>
@@ -306,7 +343,7 @@ Used to track and communicate attribute modifications across the system.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Attributes_AttributeChangeInfo_PreviousValue" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.PreviousValue">
   PreviousValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the previous value of the attribute before the change.</p>
@@ -324,6 +361,37 @@ Used to track and communicate attribute modifications across the system.</p>
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><span class="xref">long</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Attributes_AttributeChangeInfo_Target_" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.Target*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Attributes_AttributeChangeInfo_Target" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeChangeInfo.Target">
+  Target
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeChangeInfo.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityCore Target { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
     <dd></dd>
   </dl>
 

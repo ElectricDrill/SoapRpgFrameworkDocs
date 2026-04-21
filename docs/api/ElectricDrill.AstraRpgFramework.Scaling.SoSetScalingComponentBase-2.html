@@ -102,7 +102,7 @@ Class SoSetScalingComponentBase&lt;SetType, KeyType&gt;  <a class="header-action
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class SoSetScalingComponentBase&lt;SetType, KeyType&gt; : ScalingComponent, IEntityValueCalculator, IValueProvider&lt;KeyType, double&gt; where SetType : ScriptableObject</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class SoSetScalingComponentBase&lt;SetType, KeyType&gt; : ScalingComponent, ITaggable, IValueProvider&lt;KeyType, double&gt; where SetType : ScriptableObject</code></pre>
   </div>
 
 
@@ -131,7 +131,7 @@ Class SoSetScalingComponentBase&lt;SetType, KeyType&gt;  <a class="header-action
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.IEntityValueCalculator.html">IEntityValueCalculator</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueProvider-2.html">IValueProvider</a>&lt;KeyType, <span class="xref">double</span>&gt;</div>
     </dd>
   </dl>
@@ -144,6 +144,13 @@ Class SoSetScalingComponentBase&lt;SetType, KeyType&gt;  <a class="header-action
     </dd>
   </dl>
 
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponent.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingComponent_Tags">ScalingComponent.Tags</a>
+    </div>
+  </dd></dl>
 
 
 
@@ -264,11 +271,55 @@ protected SetType _set</code></pre>
 
 
 
+  <a id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_CalculateValueAt_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.CalculateValueAt*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_CalculateValueAt_ElectricDrill_AstraRpgFramework_EntityCore_System_Int32_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.CalculateValueAt(ElectricDrill.AstraRpgFramework.EntityCore,System.Int32)">
+  CalculateValueAt(EntityCore, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Calculates the final scaled value as it would be computed at the specified entity level.
+Allows consumers to snapshot scaled values at a level other than the entity's current one,
+which is useful for propagating per-level change events without mutating cached state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual long CalculateValueAt(EntityCore entity, int level)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dd><p>The entity to calculate the scaled value for</p>
+</dd>
+    <dt><code>level</code> <span class="xref">int</span></dt>
+    <dd><p>The level at which to evaluate the scaling</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">long</span></dt>
+    <dd><p>The calculated scaled value as a long integer</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_Get_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.Get*"></a>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_Get__1_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.Get(`1)">
   Get(KeyType)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the value associated with the specified key.</p>
@@ -307,7 +358,7 @@ protected SetType _set</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_GetEntitySet_ElectricDrill_AstraRpgFramework_EntityCore_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.GetEntitySet(ElectricDrill.AstraRpgFramework.EntityCore)">
   GetEntitySet(EntityCore)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the set associated with the specified entity.
@@ -347,7 +398,7 @@ This method must be implemented by derived classes to define how to retrieve the
 
   <h3 id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_GetEntityValue_ElectricDrill_AstraRpgFramework_EntityCore__1_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.GetEntityValue(ElectricDrill.AstraRpgFramework.EntityCore,`1)">
   GetEntityValue(EntityCore, KeyType)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L99"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the current value of a specific key for the given entity.
@@ -386,11 +437,58 @@ This method must be implemented by derived classes to define how to retrieve ent
 
 
 
+  <a id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_GetEntityValueAt_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.GetEntityValueAt*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_GetEntityValueAt_ElectricDrill_AstraRpgFramework_EntityCore__1_System_Int32_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.GetEntityValueAt(ElectricDrill.AstraRpgFramework.EntityCore,`1,System.Int32)">
+  GetEntityValueAt(EntityCore, KeyType, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the value of a specific key at the given level. Defaults to the current value.
+Derived classes can override to return a value computed against a specific level, which is
+useful when producing per-level snapshots without touching runtime caches.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual long GetEntityValueAt(EntityCore entity, KeyType key, int level)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dd><p>The entity to get the value from</p>
+</dd>
+    <dt><code>key</code> <span class="xref">KeyType</span></dt>
+    <dd><p>The specific key to get the value for</p>
+</dd>
+    <dt><code>level</code> <span class="xref">int</span></dt>
+    <dd><p>The level at which to evaluate the value</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">long</span></dt>
+    <dd><p>The value of the specified key for the entity at the given level</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_GetSetItems_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.GetSetItems*"></a>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_GetSetItems" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.GetSetItems">
   GetSetItems()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L150"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets all items from the current set that can be used for scaling.
@@ -424,7 +522,7 @@ This method must be implemented by derived classes to define which items are ava
 
   <h3 id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_OnValidate" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.OnValidate">
   OnValidate()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L123"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Validates and refreshes the scaling attribute values based on the current set.
@@ -452,7 +550,7 @@ Called automatically when the component is validated in the editor.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_ValidateEntitySet_ElectricDrill_AstraRpgFramework_EntityCore_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.ValidateEntitySet(ElectricDrill.AstraRpgFramework.EntityCore)">
   ValidateEntitySet(EntityCore)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Validates that the entity's set is compatible with this scaling component's set.
@@ -476,6 +574,43 @@ If the entity's set is null, logs a warning and skips validation.</p>
 
 
 
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_OnValidated" data-uid="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase`2.OnValidated">
+  OnValidated
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/SoSetScalingComponentBase.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Event invoked when this scaling component is validated in the editor (or when runtime
+mutations call <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase-2.html#ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_OnValidate">OnValidate()</a>). Consumers subscribe to rebuild caches or
+dependent indices without scanning every scaling SO on every access.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action OnValidated</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Action</span></dt>
+    <dd></dd>
+  </dl>
 
 
 

@@ -107,10 +107,9 @@ The add popup supports several quality-of-life features:
 - Multi-selection followed by **Add**
 - Double-click on a tag to add it immediately
 
-![Inspector header showing interactive GameTag pills and add button](../images/game-tags/game-tag-header-pills.png)
-<!-- IMAGE MISSING: game-tag-header-pills.png — screenshot of a single selected ITaggable object showing the header pill bar with visible tags, hover remove button, and trailing plus button -->
+![Inspector header showing interactive GameTag pills and add button](../images/workflows/game-tags/game-tag-header-pills.png)
 
-![GameTag add popup with search and multi-selection](../images/game-tags/game-tag-add-popup.png)
+![GameTag add popup with search and multi-selection](../images/workflows/game-tags/game-tag-add-popup.png)
 <!-- IMAGE MISSING: game-tag-add-popup.png — screenshot of the GameTag add popup showing the search field, All/None buttons, selectable pills, and Add/Cancel footer -->
 
 > [!TIP]

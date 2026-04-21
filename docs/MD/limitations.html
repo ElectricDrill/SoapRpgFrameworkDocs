@@ -93,9 +93,8 @@
 - no support for multi-class per entity
 - only one event for stats changed, attributes changed, entity spawned can be assigned to entities
 -->
+<h2 id="current-limitations">Current Limitations</h2>
 <ul>
-<li><code>OnStatChangedEvent</code> is risen only when modifiers are applied, not on level-ups/base stat changes</li>
-<li><code>OnAttributeChangedEvent</code> is risen only when modifiers are applied and spendable points are assigned, not on level-ups/base attribute changes</li>
 <li>Currently, multi-classing is not supported. Each entity can only have one class at a time</li>
 <li>Stat modifiers are applied in the following order:
 <ol>
@@ -115,6 +114,28 @@
 <li>Only one event for stats changed, attributes changed, and entity spawned can be assigned to entities. However, multiple event listeners can be assigned for the same event type, allowing for multiple responses</li>
 <li>Custom game event generators support up to four context parameters. To work around this limitation, users can combine multiple pieces of data into a single user-defined class—a technique known as &quot;parameter packing.&quot; This approach is extensible through inheritance and helps maintain a simple, user-friendly API by avoiding telescoping parameters.</li>
 </ul>
+<h2 id="addressed-limitations">Addressed Limitations</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Since Version</strong></th>
+<th><strong>Original Limitation</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🏷️<em>v2.0.0+</em></td>
+<td><del><code>OnStatChangedEvent</code> is risen only when modifiers are applied, not on level-ups/base stat changes</del></td>
+<td>Stat-changed events now fire consistently during class progression formulas, level-ups, level-downs, and when dependent attributes change, following internal refactoring of <code>EntityStats</code> and <code>EntityAttributes</code>.</td>
+</tr>
+<tr>
+<td>🏷️<em>v2.0.0+</em></td>
+<td><del><code>OnAttributeChangedEvent</code> is risen only when modifiers are applied and spendable points are assigned, not on level-ups/base attribute changes</del></td>
+<td>Attribute-changed events now fire consistently during class progression formulas, level-ups, and level-downs, following internal refactoring of <code>EntityAttributes</code>.</td>
+</tr>
+</tbody>
+</table>
 
 </article>
 

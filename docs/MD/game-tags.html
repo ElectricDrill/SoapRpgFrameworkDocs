@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Game Tags | Astra RPG Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Game Tags | Astra RPG Framework ">
+      
+      
+      <link rel="icon" href="../images/astra-rpg-ico.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/main/DocFx/MD/game-tags.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra RPG Framework">
+            Astra RPG Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="game-tags">Game Tags</h1>
+
+<p><em>🏷️ Version 2.0.0+</em></p>
+<p><code>GameTag</code>s let you classify entities, assets, and reusable framework objects with lightweight <code>ScriptableObject</code> identifiers. Each tag can also carry visual metadata, so tagged objects are immediately recognizable in the Inspector through colored pill-style labels.</p>
+<h2 id="what-a-gametag-contains">What a <code>GameTag</code> contains</h2>
+<p>A <code>GameTag</code> asset stores:</p>
+<ul>
+<li>A primary color</li>
+<li>An optional icon (typically an emoji or short symbol)</li>
+<li>An optional two-color gradient</li>
+<li>A gradient direction</li>
+</ul>
+<p>Assigned tags are stored through <code>GameTagSet</code>, which is the serializable container used by taggable objects. Built-in framework types that expose tags directly through <code>ITaggable</code> include:</p>
+<ul>
+<li><code>EntityCore</code></li>
+<li><code>Stat</code> and <code>StatSet</code></li>
+<li><code>Attribute</code> and <code>AttributeSet</code></li>
+<li><code>Class</code></li>
+<li><code>GrowthFormula</code></li>
+<li><code>ScalingComponent</code> and <code>ScalingFormula</code></li>
+<li><code>IntVar</code> and <code>LongVar</code></li>
+<li><code>GameAction&lt;TContext&gt;</code> assets</li>
+</ul>
+<p>This makes tags useful both for gameplay meaning and for editor organization.</p>
+<h2 id="querying-tags-from-code">Querying tags from code</h2>
+<p>At runtime, the most direct way to work with tags is through objects that implement <code>ITaggable</code>. The <code>Tags</code> property exposes a <code>GameTagSet</code>, which provides the three core queries:</p>
+<ul>
+<li><code>Contains</code></li>
+<li><code>ContainsAny</code></li>
+<li><code>ContainsAll</code></li>
+</ul>
+<p>For a single tag:</p>
+<pre><code class="lang-csharp">if (entityCore.Tags.Contains(bossTag))
+{
+    Debug.Log(&quot;This entity is tagged as a boss.&quot;);
+}
+</code></pre>
+<p>To check whether an object contains at least one tag from another set:</p>
+<pre><code class="lang-csharp">if (entityCore.Tags.ContainsAny(hostileOrUndeadTags))
+{
+    Debug.Log(&quot;This entity matches at least one tag in the query set.&quot;);
+}
+</code></pre>
+<p>To check whether an object contains every tag from another set:</p>
+<pre><code class="lang-csharp">if (entityCore.Tags.ContainsAll(requiredLootTags))
+{
+    Debug.Log(&quot;This object satisfies the full tag requirement.&quot;);
+}
+</code></pre>
+<p>These helpers make <code>GameTagSet</code> useful both for gameplay checks and for higher-level filtering logic.</p>
+<h2 id="creating-a-gametag">Creating a <code>GameTag</code></h2>
+<p><em>Relative path:</em> <code>Game Tag</code></p>
+<p>The custom inspector exposes a <strong>Visual</strong> section where you can configure the tag's appearance:</p>
+<ul>
+<li><strong>Color</strong> for the main pill color</li>
+<li><strong>Icon</strong> for an optional emoji or short symbol</li>
+<li><strong>Emojis...</strong> to open the emoji picker</li>
+<li><strong>Use Gradient</strong> to switch from a flat fill to a two-color gradient</li>
+<li><strong>End Color</strong> and <strong>Direction</strong> when gradient mode is enabled</li>
+</ul>
+<p>The inspector also shows a live preview of the resulting pill.</p>
+<p><img src="../images/game-tags/game-tag-inspector.png" alt="GameTag inspector with color, icon, gradient, and preview fields"></p>
+<!-- IMAGE MISSING: game-tag-inspector.png — screenshot of the GameTag inspector showing the Color, Icon, Emojis..., Use Gradient, End Color, Direction, and Preview areas -->
+<h2 id="where-tags-appear">Where tags appear</h2>
+<p>When the inspected target implements <code>ITaggable</code>, the framework automatically injects a tag bar directly below the default inspector header. No per-type setup is required for supported objects.</p>
+<p>This injected header bar is the intended authoring workflow for tag editing. In tag-aware custom inspectors, the underlying serialized data may be hidden on purpose so interaction stays guided through the pill-based header UI instead of a lower-level field editor.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If an object does not implement <code>ITaggable</code> but still contains one or more <code>GameTagSet</code> fields, the header pills are shown in display-only mode. In that case, the header still helps you scan tags quickly, but the interactive editing workflow remains on the serialized field itself.</p>
+</div>
+<h2 id="editing-tags-from-the-inspector-header">Editing tags from the inspector header</h2>
+<h3 id="single-object-editing">Single-object editing</h3>
+<p>When a single taggable object is selected, the header pills are fully interactive:</p>
+<ul>
+<li>Click a visible pill to ping the <code>GameTag</code> asset in the Project window</li>
+<li>Hover a pill to reveal the <code>-</code> remove affordance</li>
+<li>Click the <code>+</code> pill to open the tag selection popup</li>
+<li>Drag pills to reorder them</li>
+</ul>
+<p>The add popup supports several quality-of-life features:</p>
+<ul>
+<li>Search by tag name</li>
+<li><code>All</code> and <code>None</code> quick selection controls</li>
+<li>Multi-selection followed by <strong>Add</strong></li>
+<li>Double-click on a tag to add it immediately</li>
+</ul>
+<p><img src="../images/game-tags/game-tag-header-pills.png" alt="Inspector header showing interactive GameTag pills and add button"></p>
+<!-- IMAGE MISSING: game-tag-header-pills.png — screenshot of a single selected ITaggable object showing the header pill bar with visible tags, hover remove button, and trailing plus button -->
+<p><img src="../images/game-tags/game-tag-add-popup.png" alt="GameTag add popup with search and multi-selection"></p>
+<!-- IMAGE MISSING: game-tag-add-popup.png — screenshot of the GameTag add popup showing the search field, All/None buttons, selectable pills, and Add/Cancel footer -->
+<div class="TIP">
+<h5>Tip</h5>
+<p>Double-click is the fastest way to add a single tag. If you want to add several tags in one pass, select them in the popup first and then confirm with <strong>Add</strong>.</p>
+</div>
+<h3 id="multi-object-editing">Multi-object editing</h3>
+<p>When multiple compatible <code>ITaggable</code> objects are selected, the header still supports batch editing, but the displayed pills follow shared-state rules:</p>
+<ul>
+<li>Visible pills represent the intersection of tags present on <strong>all</strong> selected objects</li>
+<li>A grey <code>+N</code> overflow pill indicates tags that exist on only some of the selected objects</li>
+<li>The <code>+</code> pill adds the chosen tags to all selected objects in one batch operation</li>
+<li>Tags already present on every selected object are excluded from the add popup</li>
+<li>Tags present on only some selected objects remain selectable, so you can complete the assignment across the whole selection</li>
+<li>Removing a visible shared tag opens a confirmation popup listing the affected objects before the batch removal is applied</li>
+</ul>
+<p>In multi-object mode, reordering and click-to-ping are intentionally not the primary workflow, because a heterogeneous selection does not have a single stable tag order.</p>
+<p><img src="../images/game-tags/game-tag-multi-object-editing.png" alt="Multi-object editing with shared tags and overflow indicator"></p>
+<!-- IMAGE MISSING: game-tag-multi-object-editing.png — screenshot of a multi-object selection showing shared tags, the grey overflow +N pill, and the bulk editing behavior in the header -->
+<h2 id="pill-appearance-preferences">Pill appearance preferences</h2>
+<p>The visual pill rendering also has per-user editor preferences under:</p>
+<p><code>Edit &gt; Preferences &gt; Astra RPG Framework &gt; Game Tag Pills</code></p>
+<p>These preferences let each developer customize how tag pills are presented locally in the Unity Editor. Available options include:</p>
+<ul>
+<li><strong>Gloss Highlight</strong> for a glossier pill style</li>
+<li><strong>Drop Shadow</strong> for extra separation from the inspector background</li>
+<li><strong>Icon-Only Mode</strong> for compact visualization when the tag has an icon</li>
+<li><strong>Expand on Hover</strong> to reveal the full label while hovering compact pills</li>
+<li><strong>Animate Expand</strong> to make the compact expansion smoother</li>
+<li><strong>Animation Speed</strong> to control how fast the hover expansion animates</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>These preferences only affect how pills are rendered in the local Unity Editor. They do not modify the <code>GameTag</code> asset data itself.
+<strong>Icon-Only Mode</strong> only affects tags that actually have an icon configured, and <strong>Expand on Hover</strong> / <strong>Animate Expand</strong> apply only when icon-only mode is enabled.</p>
+</div>
+<h2 id="practical-uses">Practical uses</h2>
+<p><code>GameTag</code>s work well for:</p>
+<ul>
+<li>Grouping class-related assets (for example, Warrior-related formulas, abilities, and supporting assets)</li>
+<li>Marking gameplay categories such as factions, rarity, or behavior flags</li>
+<li>Organizing reusable assets like <code>GameAction</code>s, formulas, and value assets</li>
+<li>Making important editor objects easier to scan visually</li>
+<li>Supporting tag-aware runtime logic in systems that evaluate tag presence</li>
+</ul>
+<p>Using tags consistently also helps keep larger projects navigable over time. Future updates may introduce custom windows and other tooling that use <code>GameTag</code>s to scan Astra assets more easily across a project — for example, to surface assets related to a Warrior class setup or to inspect collections of mob scaling formulas. Even before those tools arrive, using tags to create order in your project is already a strong long-term investment.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

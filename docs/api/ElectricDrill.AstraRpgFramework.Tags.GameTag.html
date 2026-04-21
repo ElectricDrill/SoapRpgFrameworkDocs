@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class GameTag | Astra RPG Framework ">
       
-      <meta name="description" content="Lightweight typed tag identifier. Use as a ScriptableObject reference to tag game entities, modifiers, abilities, or any other game data.">
+      <meta name="description" content="Lightweight typed tag identifier. Use as a ScriptableObject reference to tag game entities, modifiers, abilities, or any other game data.  Assign a  and an optional  (emoji or short text) to give this tag a distinct visual appearance in the Unity Inspector. Optionally enable  to fill the pill with a two-color gradient.">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Tags_GameTag" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTag" class="text-break">
-Class GameTag  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Tags/GameTag.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Class GameTag  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Tags/GameTag.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -99,6 +99,11 @@ Class GameTag  <a class="header-action link-secondary" title="View source" href=
 
   <div class="markdown summary"><p>Lightweight typed tag identifier. Use as a ScriptableObject reference to tag game entities,
 modifiers, abilities, or any other game data.</p>
+<p>
+Assign a <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTag.html#ElectricDrill_AstraRpgFramework_Tags_GameTag_TagColor">TagColor</a> and an optional <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTag.html#ElectricDrill_AstraRpgFramework_Tags_GameTag_Icon">Icon</a> (emoji or short text)
+to give this tag a distinct visual appearance in the Unity Inspector.
+Optionally enable <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTag.html#ElectricDrill_AstraRpgFramework_Tags_GameTag_UseGradient">UseGradient</a> to fill the pill with a two-color gradient.
+</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -120,6 +125,170 @@ public class GameTag : ScriptableObject</code></pre>
     </dd>
   </dl>
 
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Tags_GameTag_GradientDirection_" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTag.GradientDirection*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Tags_GameTag_GradientDirection" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTag.GradientDirection">
+  GradientDirection
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Tags/GameTag.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Direction of the gradient sweep (used only when <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTag.html#ElectricDrill_AstraRpgFramework_Tags_GameTag_UseGradient">UseGradient</a> is <code>true</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GradientDirection GradientDirection { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GradientDirection.html">GradientDirection</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Tags_GameTag_GradientEndColor_" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTag.GradientEndColor*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Tags_GameTag_GradientEndColor" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTag.GradientEndColor">
+  GradientEndColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Tags/GameTag.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The end color of the gradient (used only when <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTag.html#ElectricDrill_AstraRpgFramework_Tags_GameTag_UseGradient">UseGradient</a> is <code>true</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color GradientEndColor { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/ScriptReference/Color.html">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Tags_GameTag_Icon_" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTag.Icon*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Tags_GameTag_Icon" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTag.Icon">
+  Icon
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Tags/GameTag.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Optional emoji or short text displayed alongside the tag name (e.g. &quot;🔥&quot;, &quot;⚔️&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Icon { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Tags_GameTag_TagColor_" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTag.TagColor*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Tags_GameTag_TagColor" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTag.TagColor">
+  TagColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Tags/GameTag.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The primary (start) color used when rendering this tag as a pill in the Inspector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color TagColor { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/ScriptReference/Color.html">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Tags_GameTag_UseGradient_" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTag.UseGradient*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Tags_GameTag_UseGradient" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTag.UseGradient">
+  UseGradient
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Tags/GameTag.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>When <code>true</code> the pill is filled with a two-color gradient instead of a flat color.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UseGradient { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd></dd>
+  </dl>
 
 
 

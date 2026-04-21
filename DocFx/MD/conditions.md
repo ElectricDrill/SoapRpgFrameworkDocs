@@ -205,8 +205,7 @@ Because conditions are managed-reference values, the typical workflow is:
 4. Configure its fields, such as target entity slot, comparison mode, threshold, or required tag set
 5. Wrap the root in composites if the rule needs multiple checks
 
-![Condition type picker with grouped families such as Composites and Leaf categories](../images/conditions/conditions-type-picker.png)
-<!-- IMAGE MISSING: conditions-type-picker.png — screenshot of a Condition field showing the grouped type picker with Composites, Leaf/Constant, Leaf/Attr. & Stat, Leaf/Entity, Leaf/Tag, Leaf/ValueChange, and Leaf/Random -->
+![Condition type picker with grouped families such as Composites and Leaf categories](../images/workflows/conditions/conditions-type-picker.png)
 
 > [!NOTE]
 > Conditions are authored inline, so their serialized data lives inside the object that owns the field. You do not create a standalone `Condition` asset first and reference it later.
@@ -227,8 +226,7 @@ The custom inspector for conditional actions also exposes a **Quick setup** row 
 - Wrap the current root in `NotCondition`
 - Unwrap the current root when the current shape supports it
 
-![Conditional GameAction inspector showing Action, Condition, and Quick setup controls](../images/conditions/conditional-game-action-inspector.png)
-<!-- IMAGE MISSING: conditional-game-action-inspector.png — screenshot of a Conditional Entity Context Game Action inspector showing the Action field, the Condition field, and the Quick setup button -->
+![Conditional GameAction inspector showing Action, Condition, and Quick setup controls](../images/workflows/conditions/conditional-game-action-inspector.png)
 
 For the broader `GameAction` workflow, see [Game Actions](workflows.md#game-actions).
 

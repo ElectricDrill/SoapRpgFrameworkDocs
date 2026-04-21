@@ -102,7 +102,7 @@ Class StatsScalingComponent  <a class="header-action link-secondary" title="View
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StatsScalingComponent : SoSetScalingComponentBase&lt;StatSet, Stat&gt;, IEntityValueCalculator, IValueProvider&lt;Stat, double&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class StatsScalingComponent : SoSetScalingComponentBase&lt;StatSet, Stat&gt;, ITaggable, IValueProvider&lt;Stat, double&gt;</code></pre>
   </div>
 
 
@@ -123,7 +123,7 @@ Class StatsScalingComponent  <a class="header-action link-secondary" title="View
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.IEntityValueCalculator.html">IEntityValueCalculator</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueProvider-2.html">IValueProvider</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a>, <span class="xref">double</span>&gt;</div>
     </dd>
   </dl>
@@ -142,6 +142,9 @@ Class StatsScalingComponent  <a class="header-action link-secondary" title="View
       <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase-2.html#ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_">SoSetScalingComponentBase&lt;StatSet, Stat&gt;.CalculateValue(EntityCore)</a>
     </div>
     <div>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase-2.html#ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_CalculateValueAt_ElectricDrill_AstraRpgFramework_EntityCore_System_Int32_">SoSetScalingComponentBase&lt;StatSet, Stat&gt;.CalculateValueAt(EntityCore, int)</a>
+    </div>
+    <div>
       <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase-2.html#ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_Get__1_">SoSetScalingComponentBase&lt;StatSet, Stat&gt;.Get(Stat)</a>
     </div>
     <div>
@@ -154,10 +157,19 @@ Class StatsScalingComponent  <a class="header-action link-secondary" title="View
       <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase-2.html#ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_GetEntityValue_ElectricDrill_AstraRpgFramework_EntityCore__1_">SoSetScalingComponentBase&lt;StatSet, Stat&gt;.GetEntityValue(EntityCore, Stat)</a>
     </div>
     <div>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase-2.html#ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_GetEntityValueAt_ElectricDrill_AstraRpgFramework_EntityCore__1_System_Int32_">SoSetScalingComponentBase&lt;StatSet, Stat&gt;.GetEntityValueAt(EntityCore, Stat, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase-2.html#ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_OnValidated">SoSetScalingComponentBase&lt;StatSet, Stat&gt;.OnValidated</a>
+    </div>
+    <div>
       <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase-2.html#ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_OnValidate">SoSetScalingComponentBase&lt;StatSet, Stat&gt;.OnValidate()</a>
     </div>
     <div>
       <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.SoSetScalingComponentBase-2.html#ElectricDrill_AstraRpgFramework_Scaling_SoSetScalingComponentBase_2_GetSetItems">SoSetScalingComponentBase&lt;StatSet, Stat&gt;.GetSetItems()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponent.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingComponent_Tags">ScalingComponent.Tags</a>
     </div>
     <div>
       <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponent.html#ElectricDrill_AstraRpgFramework_Scaling_ScalingComponent_CalculateValue_ElectricDrill_AstraRpgFramework_EntityCore_">ScalingComponent.CalculateValue(EntityCore)</a>

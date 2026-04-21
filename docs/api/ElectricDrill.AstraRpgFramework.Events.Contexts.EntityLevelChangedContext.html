@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class EntityLevelChangedContext | Astra RPG Framework ">
       
-      
+      <meta name="description" content="Payload describing an entity level change event. Exposes the leveled entity both as a generic payload entity and as the payload target.">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Events_Contexts_EntityLevelChangedContext" data-uid="ElectricDrill.AstraRpgFramework.Events.Contexts.EntityLevelChangedContext" class="text-break">
-Class EntityLevelChangedContext  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/Contexts/EntityLevelChangedContext.cs/#L5"><i class="bi bi-code-slash"></i></a>
+Class EntityLevelChangedContext  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/Contexts/EntityLevelChangedContext.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,11 +97,13 @@ Class EntityLevelChangedContext  <a class="header-action link-secondary" title="
   <dl><dt>Assembly</dt><dd>com.electricdrill.astra-rpg-framework.Runtime.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Payload describing an entity level change event.
+Exposes the leveled entity both as a generic payload entity and as the payload target.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EntityLevelChangedContext : IHasTarget, IHasValueChange&lt;int&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class EntityLevelChangedContext : IHasTarget, IHasEntity, IHasValueChange&lt;int&gt;</code></pre>
   </div>
 
 
@@ -119,6 +121,7 @@ Class EntityLevelChangedContext  <a class="header-action link-secondary" title="
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasTarget.html">IHasTarget</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasEntity.html">IHasEntity</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasValueChange-1.html">IHasValueChange</a>&lt;<span class="xref">int</span>&gt;</div>
     </dd>
   </dl>
@@ -138,10 +141,11 @@ Class EntityLevelChangedContext  <a class="header-action link-secondary" title="
 
   <h3 id="ElectricDrill_AstraRpgFramework_Events_Contexts_EntityLevelChangedContext__ctor_ElectricDrill_AstraRpgFramework_EntityCore_System_Int32_System_Int32_" data-uid="ElectricDrill.AstraRpgFramework.Events.Contexts.EntityLevelChangedContext.#ctor(ElectricDrill.AstraRpgFramework.EntityCore,System.Int32,System.Int32)">
   EntityLevelChangedContext(EntityCore, int, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/Contexts/EntityLevelChangedContext.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/Contexts/EntityLevelChangedContext.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of <a class="xref" href="ElectricDrill.AstraRpgFramework.Events.Contexts.EntityLevelChangedContext.html">EntityLevelChangedContext</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -151,11 +155,14 @@ Class EntityLevelChangedContext  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>target</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
-    <dd></dd>
+    <dd><p>The entity whose level changed.</p>
+</dd>
     <dt><code>previousValue</code> <span class="xref">int</span></dt>
-    <dd></dd>
+    <dd><p>The level before the change.</p>
+</dd>
     <dt><code>newValue</code> <span class="xref">int</span></dt>
-    <dd></dd>
+    <dd><p>The level after the change.</p>
+</dd>
   </dl>
 
 
@@ -177,7 +184,7 @@ Class EntityLevelChangedContext  <a class="header-action link-secondary" title="
 
   <h3 id="ElectricDrill_AstraRpgFramework_Events_Contexts_EntityLevelChangedContext_AbsAmount" data-uid="ElectricDrill.AstraRpgFramework.Events.Contexts.EntityLevelChangedContext.AbsAmount">
   AbsAmount
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/Contexts/EntityLevelChangedContext.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/Contexts/EntityLevelChangedContext.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The absolute amount of change between PreviousValue and NewValue.</p>
@@ -205,14 +212,49 @@ Class EntityLevelChangedContext  <a class="header-action link-secondary" title="
 
 
 
+  <a id="ElectricDrill_AstraRpgFramework_Events_Contexts_EntityLevelChangedContext_Entity_" data-uid="ElectricDrill.AstraRpgFramework.Events.Contexts.EntityLevelChangedContext.Entity*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Events_Contexts_EntityLevelChangedContext_Entity" data-uid="ElectricDrill.AstraRpgFramework.Events.Contexts.EntityLevelChangedContext.Entity">
+  Entity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/Contexts/EntityLevelChangedContext.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The primary <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a> associated with this object.
+For entity components this is the owning entity; for context payloads this is
+the primary affected subject (e.g. the event target).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityCore Entity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ElectricDrill_AstraRpgFramework_Events_Contexts_EntityLevelChangedContext_NewValue_" data-uid="ElectricDrill.AstraRpgFramework.Events.Contexts.EntityLevelChangedContext.NewValue*"></a>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Events_Contexts_EntityLevelChangedContext_NewValue" data-uid="ElectricDrill.AstraRpgFramework.Events.Contexts.EntityLevelChangedContext.NewValue">
   NewValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/Contexts/EntityLevelChangedContext.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/Contexts/EntityLevelChangedContext.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The level value after the change happened.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -240,10 +282,11 @@ Class EntityLevelChangedContext  <a class="header-action link-secondary" title="
 
   <h3 id="ElectricDrill_AstraRpgFramework_Events_Contexts_EntityLevelChangedContext_PreviousValue" data-uid="ElectricDrill.AstraRpgFramework.Events.Contexts.EntityLevelChangedContext.PreviousValue">
   PreviousValue
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/Contexts/EntityLevelChangedContext.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/Contexts/EntityLevelChangedContext.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The level value before the change happened.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -271,7 +314,7 @@ Class EntityLevelChangedContext  <a class="header-action link-secondary" title="
 
   <h3 id="ElectricDrill_AstraRpgFramework_Events_Contexts_EntityLevelChangedContext_Target" data-uid="ElectricDrill.AstraRpgFramework.Events.Contexts.EntityLevelChangedContext.Target">
   Target
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/Contexts/EntityLevelChangedContext.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/Contexts/EntityLevelChangedContext.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>

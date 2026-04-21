@@ -143,28 +143,8 @@ Payload: <a class="xref" href="ElectricDrill.AstraRpgFramework.Events.Contexts.E
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Events.EntityLeveledDownGameEvent.html">EntityLeveledDownGameEvent</a></dt>
-      <dd><p>Event to notify the decrease of the level of an entity.
-Parameters are:</p>
-<ul>
-<li>the entity that changed level</li>
-<li>the new level</li>
-</ul>
-</dd>
-    </dl>
-    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Events.EntityLeveledDownGameEventListener.html">EntityLeveledDownGameEventListener</a></dt>
       <dd><p>Event to notify the decrease of the level of an entity.
-Parameters are:</p>
-<ul>
-<li>the entity that changed level</li>
-<li>the new level</li>
-</ul>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Events.EntityLeveledUpGameEvent.html">EntityLeveledUpGameEvent</a></dt>
-      <dd><p>Event to notify the increase of the level of an entity.
 Parameters are:</p>
 <ul>
 <li>the entity that changed level</li>
@@ -183,10 +163,30 @@ Parameters are:</p>
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Events.EventChannel-3.html">EventChannel&lt;TConfig, TEvent, TContext&gt;</a></dt>
+      <dd><p>Generic base class for event channels that dispatch to a global event (retrieved from a
+configuration object) and to per-entity extra events. Subclasses bind the config type and
+the config-provider delegate for their specific system.</p>
+<p>
+The <code>_extras</code> list is serializable: when a consumer field is marked
+<code>[SerializeField]</code>, Unity persists the extra-event references so they can be
+assigned statically in the Inspector. The <span class="xref">System.Func&lt;T, TResult&gt;</span> delegates are
+<b>not</b> serializable and must be re-initialised after deserialisation via
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Events.EventChannel-3.html#ElectricDrill_AstraRpgFramework_Events_EventChannel_3_Initialize_System_Func__0__1__System_Func__0__">Initialize(Func&lt;TConfig, TEvent&gt;, Func&lt;TConfig&gt;)</a>.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Events.GameEvent.html">GameEvent</a></dt>
       <dd><p>A ScriptableObject-based event system that allows decoupled communication between game systems.
 GameEvents can be raised to notify all registered listeners without requiring direct references.
 Supports both MonoBehaviour-based listeners and code-based <span class="xref">System.Action</span> listeners.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Events.GameEventBase-2.html">GameEventBase&lt;TListener, TCodeListener&gt;</a></dt>
+      <dd><p>Shared event dispatch base for parameterless and generic game events.
+It centralizes listener storage, snapshotting, registration-order delivery, and reentrancy handling.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -270,6 +270,11 @@ Contains information about the stat that changed, including its previous and new
     <h3 id="interfaces">
 Interfaces
 </h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Events.GameEventBase-2.IDispatchInvoker.html">GameEventBase&lt;TListener, TCodeListener&gt;.IDispatchInvoker</a></dt>
+      <dd><p>Invokes the concrete listener signatures for the current raise without introducing per-raise heap allocations.</p>
+</dd>
+    </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Events.IRaisable-1.html">IRaisable&lt;T&gt;</a></dt>
       <dd><p>Interface for objects that can be raised with one parameter of type T.

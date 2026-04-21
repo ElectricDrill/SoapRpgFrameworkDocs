@@ -104,7 +104,7 @@ Will gracefully terminate if the context is destroyed or cancellation is request
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class CompositeGameAction&lt;TContext&gt; : GameAction&lt;TContext&gt;, IExecutable&lt;TContext&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class CompositeGameAction&lt;TContext&gt; : GameAction&lt;TContext&gt;, IExecutable&lt;TContext&gt;, ITaggable</code></pre>
   </div>
 
 
@@ -121,6 +121,7 @@ Will gracefully terminate if the context is destroyed or cancellation is request
       <div><span class="xref">object</span></div>
       <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.html">Object</a></div>
       <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameActionBase.html">GameActionBase</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html">GameAction</a>&lt;TContext&gt;</div>
       <div><span class="xref">CompositeGameAction&lt;TContext&gt;</span></div>
     </dd>
@@ -130,6 +131,7 @@ Will gracefully terminate if the context is destroyed or cancellation is request
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.IExecutable-1.html">IExecutable</a>&lt;TContext&gt;</div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a></div>
     </dd>
   </dl>
 
@@ -137,12 +139,16 @@ Will gracefully terminate if the context is destroyed or cancellation is request
     <dt>Derived</dt>
     <dd>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.Component.CompositeComponentGameAction.html">CompositeComponentGameAction</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.WithIHasEntity.CompositeEntityContextGameAction.html">CompositeEntityContextGameAction</a></div>
     </dd>
   </dl>
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_Tags">GameAction&lt;TContext&gt;.Tags</a>
+    </div>
     <div>
       <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_DisplayName">GameAction&lt;TContext&gt;.DisplayName</a>
     </div>
@@ -190,6 +196,59 @@ Override this method to implement your action logic.</p>
     <dt><code>cancellationToken</code> <span class="xref">CancellationToken</span></dt>
     <dd><p>Token to cancel the operation. MonoBehaviour owners can use their &quot;destroyCancellationToken&quot;
 to automatically cancel when destroyed.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/ScriptReference/Awaitable.html">Awaitable</a></dt>
+    <dd><p>An Awaitable that completes when the action finishes.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_GameActions_Actions_CompositeGameAction_1_ExecuteWithOwnerAsync_" data-uid="ElectricDrill.AstraRpgFramework.GameActions.Actions.CompositeGameAction`1.ExecuteWithOwnerAsync*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_GameActions_Actions_CompositeGameAction_1_ExecuteWithOwnerAsync__0_UnityEngine_MonoBehaviour_System_Threading_CancellationToken_" data-uid="ElectricDrill.AstraRpgFramework.GameActions.Actions.CompositeGameAction`1.ExecuteWithOwnerAsync(`0,UnityEngine.MonoBehaviour,System.Threading.CancellationToken)">
+  ExecuteWithOwnerAsync(TContext, MonoBehaviour, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/GameActions/Actions/CompositeGameAction.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Owner-aware execution path. The <code class="paramref">runtimeOwner</code> identifies the
+MonoBehaviour (typically a listener or runner) whose entity is the logical owner of this
+action invocation. Wrapper actions must override this to forward the owner to children.</p>
+<p>
+The default implementation ignores the owner and delegates to
+<a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_ExecuteAsync__0_System_Threading_CancellationToken_">ExecuteAsync(TContext, CancellationToken)</a>, so leaf actions that do not
+need owner information require no changes.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Awaitable ExecuteWithOwnerAsync(TContext context, MonoBehaviour runtimeOwner, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <span class="xref">TContext</span></dt>
+    <dd><p>The context object containing information needed for execution.</p>
+</dd>
+    <dt><code>runtimeOwner</code> <a class="xref" href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html">MonoBehaviour</a></dt>
+    <dd><p>The MonoBehaviour that owns this action invocation at runtime.
+Used by conditional actions to populate <code>EvaluationContext.Holder</code>.</p>
+</dd>
+    <dt><code>cancellationToken</code> <span class="xref">CancellationToken</span></dt>
+    <dd><p>Token to cancel the operation.</p>
 </dd>
   </dl>
 

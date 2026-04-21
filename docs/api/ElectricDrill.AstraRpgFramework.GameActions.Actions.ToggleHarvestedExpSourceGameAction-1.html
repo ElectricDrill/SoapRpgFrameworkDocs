@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_GameActions_Actions_ToggleHarvestedExpSourceGameAction_1" data-uid="ElectricDrill.AstraRpgFramework.GameActions.Actions.ToggleHarvestedExpSourceGameAction`1" class="text-break">
-Class ToggleHarvestedExpSourceGameAction&lt;TContext&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/GameActions/Actions/ToggleHarvestedExpSourceGameAction.cs/#L13"><i class="bi bi-code-slash"></i></a>
+Class ToggleHarvestedExpSourceGameAction&lt;TContext&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/GameActions/Actions/ToggleHarvestedExpSourceGameAction.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -104,7 +104,7 @@ the experience source can be collected.</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class ToggleHarvestedExpSourceGameAction&lt;TContext&gt; : GameAction&lt;TContext&gt;, IExecutable&lt;TContext&gt; where TContext : Component</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class ToggleHarvestedExpSourceGameAction&lt;TContext&gt; : GameAction&lt;TContext&gt;, IExecutable&lt;TContext&gt;, ITaggable where TContext : IHasEntity</code></pre>
   </div>
 
 
@@ -112,7 +112,7 @@ the experience source can be collected.</p>
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TContext</code></dt>
-    <dd><p>The context type that must be a Component with ExpSource.</p>
+    <dd><p>The context type that must refer an Entity with an ExpSource component attached to it or to any of its children.</p>
 </dd>
   </dl>
 
@@ -122,6 +122,7 @@ the experience source can be collected.</p>
       <div><span class="xref">object</span></div>
       <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.html">Object</a></div>
       <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameActionBase.html">GameActionBase</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html">GameAction</a>&lt;TContext&gt;</div>
       <div><span class="xref">ToggleHarvestedExpSourceGameAction&lt;TContext&gt;</span></div>
     </dd>
@@ -131,13 +132,14 @@ the experience source can be collected.</p>
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.IExecutable-1.html">IExecutable</a>&lt;TContext&gt;</div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a></div>
     </dd>
   </dl>
 
   <dl class="typelist derived">
     <dt>Derived</dt>
     <dd>
-      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.Component.ToggleHarvestedExpSourceComponentGameAction.html">ToggleHarvestedExpSourceComponentGameAction</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.Actions.WithIHasEntity.ToggleHarvestedExpSourceEntityGameAction.html">ToggleHarvestedExpSourceEntityGameAction</a></div>
     </dd>
   </dl>
 
@@ -145,7 +147,13 @@ the experience source can be collected.</p>
     <dt>Inherited Members</dt>
     <dd>
     <div>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_Tags">GameAction&lt;TContext&gt;.Tags</a>
+    </div>
+    <div>
       <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_DisplayName">GameAction&lt;TContext&gt;.DisplayName</a>
+    </div>
+    <div>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_ExecuteWithOwnerAsync__0_UnityEngine_MonoBehaviour_System_Threading_CancellationToken_">GameAction&lt;TContext&gt;.ExecuteWithOwnerAsync(TContext, MonoBehaviour, CancellationToken)</a>
     </div>
     <div>
       <a class="xref" href="ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_ExecuteAsyncForUnityEvent__0_">GameAction&lt;TContext&gt;.ExecuteAsyncForUnityEvent(TContext)</a>
@@ -171,7 +179,7 @@ the experience source can be collected.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_GameActions_Actions_ToggleHarvestedExpSourceGameAction_1_ExecuteAsync__0_System_Threading_CancellationToken_" data-uid="ElectricDrill.AstraRpgFramework.GameActions.Actions.ToggleHarvestedExpSourceGameAction`1.ExecuteAsync(`0,System.Threading.CancellationToken)">
   ExecuteAsync(TContext, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/GameActions/Actions/ToggleHarvestedExpSourceGameAction.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/GameActions/Actions/ToggleHarvestedExpSourceGameAction.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Executes the toggle harvest logic asynchronously.

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Package Configuration | Astra RPG Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Package Configuration | Astra RPG Framework ">
+      
+      
+      <link rel="icon" href="../../images/astra-rpg-ico.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/main/DocFx/MD/workflows/package-configuration.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo-astra.svg" alt="Astra RPG Framework">
+            Astra RPG Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="package-configuration">Package Configuration</h1>
+
+<p>The base Astra RPG Framework is designed for <strong>zero setup out of the box</strong>: importing the <strong>Utils</strong> sample is all you need to get a fully working configuration. The sample provides a pre-built <code>AstraRpgFrameworkConfigSO</code> asset placed in a <code>Resources</code> subfolder (named <code>Astra Rpg Framework Config</code>), with the three required global events already wired up to the event instances also found in the sample. The editor bootstrapper auto-detects this asset and assigns it to the Global Settings the moment Unity loads — no manual steps required.</p>
+<p>The configuration asset holds <strong>Global Events</strong> — the <code>GameEvent</code> ScriptableObjects that broadcast entity, level, stat, and attribute information to the entire game. Three of these events are required for the framework to function correctly; the remaining two are optional.</p>
+<h2 id="zero-setup-via-samples">Zero Setup via Samples</h2>
+<p>The quickest way to configure the framework is to import the <strong>Utils</strong> sample from the Package Manager:</p>
+<ol>
+<li>Open <strong>Window → Package Manager</strong></li>
+<li>Select <strong>Astra RPG Framework</strong> in your project packages</li>
+<li>Expand <strong>Samples</strong> and click <strong>Import</strong> next to <strong>Utils</strong></li>
+</ol>
+<p>After import, your project will contain:</p>
+<ul>
+<li><strong><code>Assets/Samples/Astra RPG Framework/&lt;version&gt;/Utils/Resources/Astra Rpg Framework Config.asset</code></strong> — the ready-to-use configuration with all required events already assigned</li>
+<li><strong><code>Assets/Samples/Astra RPG Framework/&lt;version&gt;/Utils/EventInstances/</code></strong> — the individual event <code>ScriptableObject</code> assets referenced by the configuration</li>
+</ul>
+<p>The editor bootstrapper detects the config automatically and assigns it to the Global Settings. No Project Settings step is needed.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The sample events are generic, shared instances intended for getting started quickly. If your game already has its own event architecture — or if you need to subscribe to entity spawned, level-up, or level-down events from your own systems — you should create a <strong>custom configuration</strong> and assign your own events to it (see <a href="#creating-configuration-assets">Creating Configuration Assets</a> and <a href="#project-settings">Project Settings</a>).</p>
+</div>
+<hr>
+<h2 id="configuration-overview">Configuration Overview</h2>
+<p>The framework uses a <strong>two-tier configuration architecture</strong>:</p>
+<ol>
+<li><strong>Global Settings</strong> (<code>AstraRpgFrameworkGlobalSettings</code>) — A lightweight pointer stored in <code>Resources</code> that references your active configuration</li>
+<li><strong>Framework Configuration</strong> (<code>AstraRpgFrameworkConfigSO</code>) — The actual configuration containing all global event references</li>
+</ol>
+<p>This separation allows you to:</p>
+<ul>
+<li>Switch between different configuration profiles easily (e.g., for testing)</li>
+<li>Keep configuration data separate from the loading mechanism</li>
+<li>Support convention-based fallbacks for quick prototyping</li>
+</ul>
+<hr>
+<h2 id="global-settings">Global Settings</h2>
+<h3 id="automatic-setup">Automatic Setup</h3>
+<p>The package automatically creates the Global Settings asset on first import or when the editor loads. You don't need to do anything manually.</p>
+<p><strong>What happens automatically:</strong></p>
+<ol>
+<li>The <code>AstraRpgFrameworkGlobalSettings.asset</code> is created in <code>Assets/Resources/</code></li>
+<li>If a default configuration exists (e.g., from imported samples), it is automatically assigned</li>
+<li>The system is immediately ready to use</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Default location: <code>Assets/Resources/AstraRpgFrameworkGlobalSettings.asset</code></p>
+</div>
+<h3 id="project-settings">Project Settings</h3>
+<p>You can manage the package configuration through Unity's Project Settings window:</p>
+<ol>
+<li>Open <strong>Edit → Project Settings</strong></li>
+<li>Navigate to <strong>Astra RPG Framework</strong></li>
+<li>Assign your desired <strong>Active Config Profile</strong></li>
+</ol>
+<p><strong>Status Indicators:</strong></p>
+<ul>
+<li>✅ <strong>&quot;Using Explicit Configuration&quot;</strong> — A configuration is explicitly assigned</li>
+<li>⚠️ <strong>&quot;No explicit profile assigned. System is using the Fallback...&quot;</strong> — No explicit configuration; using convention-based fallback</li>
+<li>🛑 <strong>&quot;No Configuration found!&quot;</strong> — No configuration available; global events will not be dispatched</li>
+</ul>
+<p><strong>Quick Actions:</strong></p>
+<ul>
+<li><strong>Create New Config Asset</strong> — Opens a save dialog to create a new configuration</li>
+</ul>
+<h3 id="manual-configuration-alternative-to-project-settings">Manual Configuration (alternative to Project Settings)</h3>
+<p>You can also manage the configuration by directly editing the <code>AstraRpgFrameworkGlobalSettings</code> asset in the <code>Assets/Resources</code> folder. This lets you assign a specific <code>AstraRpgFrameworkConfigSO</code> without using the Project Settings window.</p>
+<h3 id="convention-over-configuration">Convention Over Configuration</h3>
+<p>The package follows a <strong>convention-over-configuration</strong> philosophy to reduce setup friction.</p>
+<h4 id="fallback-resolution">Fallback Resolution</h4>
+<p>If no explicit configuration is assigned in Project Settings, the system automatically searches for a configuration named:</p>
+<blockquote>
+<p><strong><code>Astra Rpg Framework Config</code></strong></p>
+</blockquote>
+<p>located in any <strong><code>Resources</code></strong> folder in your project.</p>
+<h4 id="search-order">Search Order</h4>
+<p>The configuration provider uses a <strong>three-step loading strategy</strong>:</p>
+<ol>
+<li><p><strong>Explicit Configuration</strong> (Project Settings)</p>
+<ul>
+<li>Loads <code>AstraRpgFrameworkGlobalSettings</code> from <code>Resources/AstraRpgFrameworkGlobalSettings</code></li>
+<li>If it has an <code>ActiveConfig</code> assigned, use it</li>
+</ul>
+</li>
+<li><p><strong>Convention-Based Fallback</strong></p>
+<ul>
+<li>Searches for <code>Astra Rpg Framework Config</code> in any <code>Resources</code> folder</li>
+<li>Logs a message indicating fallback usage</li>
+</ul>
+</li>
+<li><p><strong>Error State</strong></p>
+<ul>
+<li>If neither is found, logs an error with instructions</li>
+<li>Global events will not be dispatched until a configuration is provided</li>
+</ul>
+</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For production projects, always use <strong>explicit configuration</strong> via Project Settings for clarity and control.</p>
+</div>
+<hr>
+<h2 id="configuration-loading-strategy">Configuration Loading Strategy</h2>
+<p>The configuration is loaded lazily on first access and cached for performance:</p>
+<pre><code class="lang-csharp">// Automatically loads configuration on first access
+var config = AstraRpgFrameworkConfigProvider.Instance;
+
+// Pre-load during initialization to avoid runtime overhead
+AstraRpgFrameworkConfigProvider.WarmUp();
+
+// Force reload (useful for testing or after domain reload)
+AstraRpgFrameworkConfigProvider.Reset();
+</code></pre>
+<p><strong>When is the configuration loaded?</strong></p>
+<ul>
+<li>Automatically before the first scene loads (via <code>RuntimeInitializeOnLoadMethod</code>)</li>
+<li>Lazily when first accessed via <code>AstraRpgFrameworkConfigProvider.Instance</code></li>
+<li>Explicitly when calling <code>WarmUp()</code></li>
+</ul>
+<hr>
+<h2 id="creating-configuration-assets">Creating Configuration Assets</h2>
+<h3 id="via-project-settings">Via Project Settings</h3>
+<ol>
+<li>Open <strong>Edit → Project Settings → Astra RPG Framework</strong></li>
+<li>Unassign any existing configuration, if any</li>
+<li>Click <strong>Create New Config Asset</strong></li>
+<li>Choose a save location</li>
+<li>The new configuration is automatically assigned</li>
+</ol>
+<h3 id="via-asset-menu">Via Asset Menu</h3>
+<ol>
+<li>Right-click in the <strong>Project Window</strong></li>
+<li>Select <strong>Create → Astra RPG Framework → Config</strong></li>
+<li>Name your configuration</li>
+<li>Assign it in Project Settings or in the Global Settings asset</li>
+</ol>
+<hr>
+<h2 id="configuration-reference">Configuration Reference</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In the <code>AstraRpgFrameworkConfigSO</code> asset, you can hover over each field to see a tooltip with a brief description.</p>
+</div>
+<p>The <code>AstraRpgFrameworkConfigSO</code> asset contains the global event references used by the core entity components.</p>
+<p>The red asterisks (<span style="color:red;">*</span>) indicate fields that are required for the system to function properly. Make sure to assign them before entering Play Mode to avoid missing event dispatches.</p>
+<h3 id="global-events">Global Events</h3>
+<p>Global Events are <code>GameEvent</code> ScriptableObjects that broadcast framework-level information to the <strong>entire game</strong>. They are assigned once in the configuration asset and shared by all entities, ensuring a single authoritative source for framework-level communication.</p>
+<p>Each global event is broadcast through the <strong><code>FrameworkEventChannel</code></strong> system. This means that alongside the global event configured here, individual entity components can also hold per-entity extra events that are raised together with the global one when the channel fires.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Three events are <strong>required</strong> — if they are missing, the corresponding entity lifecycle events are never dispatched, which breaks systems that depend on entity spawn, level-up, or level-down notifications. Assign them before entering Play Mode.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If your game already has systems built around your own entity spawned, level-up, or level-down events, <strong>do not reuse the sample events</strong>. Create your own <code>AstraRpgFrameworkConfigSO</code>, assign your events to it, and register it in <strong>Project Settings → Astra RPG Framework</strong>. That way your existing subscriptions continue to work seamlessly.</p>
+</div>
+<h4 id="global-entity-spawned-event-">Global Entity Spawned Event <span style="color:red;">*</span></h4>
+<p><strong>Type:</strong> <code>EntityCoreGameEvent</code><br>
+<strong>Required:</strong> Yes<br>
+<strong>Raised by:</strong> <code>EntityCore</code><br>
+<strong>Description:</strong> Raised once, at the end of the entity's <code>Start()</code> lifecycle, after the level, stats, and attribute components have all initialized. Carries a direct reference to the <code>EntityCore</code> that just spawned.</p>
+<p>Subscribe to this event to track entity registration in global systems (e.g., registering an entity with an AI manager or a health-bar tracker).</p>
+<p><strong>Per-entity extra events API:</strong></p>
+<pre><code class="lang-csharp">entityCore.AddExtraSpawnedEvent(myEntitySpecificEvent);
+entityCore.RemoveExtraSpawnedEvent(myEntitySpecificEvent);
+</code></pre>
+<hr>
+<h4 id="global-entity-level-up-event-">Global Entity Level Up Event <span style="color:red;">*</span></h4>
+<p><strong>Type:</strong> <code>EntityLevelUpGameEvent</code><br>
+<strong>Required:</strong> Yes<br>
+<strong>Raised by:</strong> <code>EntityLevel</code><br>
+<strong>Description:</strong> Raised when any entity's level increases. Carries an <code>EntityLevelChangedContext</code> payload.</p>
+<p><strong>Payload — <code>EntityLevelChangedContext</code>:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Target</code></td>
+<td><code>EntityCore</code></td>
+<td>The entity whose level changed</td>
+</tr>
+<tr>
+<td><code>PreviousValue</code></td>
+<td><code>int</code></td>
+<td>The level before the increase</td>
+</tr>
+<tr>
+<td><code>NewValue</code></td>
+<td><code>int</code></td>
+<td>The level after the increase</td>
+</tr>
+<tr>
+<td><code>AbsAmount</code></td>
+<td><code>int</code></td>
+<td>The absolute number of levels gained</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Per-entity extra events API:</strong></p>
+<pre><code class="lang-csharp">entityCore.Level.AddExtraLevelUpEvent(myLevelUpEvent);
+entityCore.Level.RemoveExtraLevelUpEvent(myLevelUpEvent);
+</code></pre>
+<hr>
+<h4 id="global-entity-level-down-event-">Global Entity Level Down Event <span style="color:red;">*</span></h4>
+<p><strong>Type:</strong> <code>EntityLevelDownGameEvent</code><br>
+<strong>Required:</strong> Yes<br>
+<strong>Raised by:</strong> <code>EntityLevel</code><br>
+<strong>Description:</strong> Raised when any entity's level decreases. Carries an <code>EntityLevelChangedContext</code> payload with the same fields as the level-up event.</p>
+<p><strong>Per-entity extra events API:</strong></p>
+<pre><code class="lang-csharp">entityCore.Level.AddExtraLevelDownEvent(myLevelDownEvent);
+entityCore.Level.RemoveExtraLevelDownEvent(myLevelDownEvent);
+</code></pre>
+<hr>
+<h4 id="global-stat-changed-event">Global Stat Changed Event</h4>
+<p><strong>Type:</strong> <code>StatChangedGameEvent</code><br>
+<strong>Required:</strong> No<br>
+<strong>Raised by:</strong> <code>EntityStats</code><br>
+<strong>Description:</strong> Raised whenever any stat's computed value changes on any entity — whether due to a flat modifier, a percentage modifier, a stat-to-stat dependency, or an attribute-driven scaling update. Carries a <code>StatChangeInfo</code> payload.</p>
+<p><strong>Payload — <code>StatChangeInfo</code>:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EntityStats</code></td>
+<td><code>EntityStats</code></td>
+<td>The component that owns the changed stat</td>
+</tr>
+<tr>
+<td><code>Stat</code></td>
+<td><code>Stat</code></td>
+<td>The stat asset that changed</td>
+</tr>
+<tr>
+<td><code>Target</code> / <code>Entity</code></td>
+<td><code>EntityCore</code></td>
+<td>The owning entity</td>
+</tr>
+<tr>
+<td><code>PreviousValue</code></td>
+<td><code>long</code></td>
+<td>The stat's computed value before the change</td>
+</tr>
+<tr>
+<td><code>NewValue</code></td>
+<td><code>long</code></td>
+<td>The stat's computed value after the change</td>
+</tr>
+<tr>
+<td><code>AbsAmount</code></td>
+<td><code>long</code></td>
+<td>The absolute magnitude of the change</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example use cases:</strong></p>
+<ul>
+<li>Updating a HUD bar when a character's Attack stat changes</li>
+<li>Triggering ability unlock logic when a threshold stat is reached</li>
+<li>Logging stat changes for analytics</li>
+</ul>
+<hr>
+<h4 id="global-attribute-changed-event">Global Attribute Changed Event</h4>
+<p><strong>Type:</strong> <code>AttributeChangedGameEvent</code><br>
+<strong>Required:</strong> No<br>
+<strong>Raised by:</strong> <code>EntityAttributes</code><br>
+<strong>Description:</strong> Raised whenever any attribute value changes on any entity. Carries an <code>AttributeChangeInfo</code> payload.</p>
+<p><strong>Payload — <code>AttributeChangeInfo</code>:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EntityAttributes</code></td>
+<td><code>EntityAttributes</code></td>
+<td>The component that owns the changed attribute</td>
+</tr>
+<tr>
+<td><code>Attribute</code></td>
+<td><code>Attribute</code></td>
+<td>The attribute asset that changed</td>
+</tr>
+<tr>
+<td><code>Target</code> / <code>Entity</code></td>
+<td><code>EntityCore</code></td>
+<td>The owning entity</td>
+</tr>
+<tr>
+<td><code>PreviousValue</code></td>
+<td><code>long</code></td>
+<td>The attribute's value before the change</td>
+</tr>
+<tr>
+<td><code>NewValue</code></td>
+<td><code>long</code></td>
+<td>The attribute's value after the change</td>
+</tr>
+<tr>
+<td><code>AbsAmount</code></td>
+<td><code>long</code></td>
+<td>The absolute magnitude of the change</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Changing an attribute may also trigger the <strong>Global Stat Changed Event</strong> for any stats whose scaling formula depends on that attribute. Both events are dispatched independently.</p>
+</div>
+<hr>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="no-configuration-found-error">&quot;No configuration found&quot; error</h3>
+<p><strong>Cause:</strong> No configuration is assigned and no fallback exists.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Check <strong>Project Settings → Astra RPG Framework</strong></li>
+<li>Assign a configuration or create a new one</li>
+<li>Alternatively, create a config named <code>Astra Rpg Framework Config</code> in a <code>Resources</code> folder</li>
+</ol>
+<h3 id="using-fallback-log-message">&quot;Using Fallback&quot; log message</h3>
+<p><strong>Cause:</strong> No explicit configuration assigned in Project Settings.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Open <strong>Project Settings → Astra RPG Framework</strong></li>
+<li>Assign the fallback configuration explicitly</li>
+<li>This message is informational only and won't break functionality</li>
+</ol>
+<h3 id="configuration-not-updating-in-play-mode">Configuration not updating in Play Mode</h3>
+<p><strong>Cause:</strong> Configuration is cached on first access.</p>
+<p><strong>Solution:</strong></p>
+<pre><code class="lang-csharp">// Force reload
+AstraRpgFrameworkConfigProvider.Reset();
+</code></pre>
+<h3 id="missing-resources-folder">Missing Resources folder</h3>
+<p><strong>Cause:</strong> The <code>Assets/Resources/</code> folder doesn't exist.</p>
+<p><strong>Solution:</strong> The package creates it automatically. If it's missing, create it manually:</p>
+<ol>
+<li>Right-click <code>Assets</code></li>
+<li>Create → Folder → Name it <code>Resources</code></li>
+<li>Restart Unity to trigger the editor bootstrapper</li>
+</ol>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

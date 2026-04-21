@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IReactiveTrigger | Astra RPG Framework ">
       
-      <meta name="description" content="Entity-aware reactive event delivery contract. Implementations wrap a game event source and deliver it to per-entity subscribers via a typed Action&amp;lt;object&amp;gt; callback. Subscriptions are keyed by entity so each  receives only its own notifications.">
+      <meta name="description" content="Holder-aware reactive event delivery contract. Implementations wrap a game event source and invoke registered callbacks when the event fires. Subscriptions are registered on behalf of a  holder; the holder is passed to  so that the caller can identify which modifier instance or system registered the callback, but it does NOT imply that only events concerning that holder are delivered. On a shared global event SO, all subscribed holders are notified — event filtering by entity identity is the responsibility of the callback or an associated .">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Triggers_IReactiveTrigger" data-uid="ElectricDrill.AstraRpgFramework.Triggers.IReactiveTrigger" class="text-break">
-Interface IReactiveTrigger  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Triggers/IReactiveTrigger.cs/#L11"><i class="bi bi-code-slash"></i></a>
+Interface IReactiveTrigger  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Triggers/IReactiveTrigger.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,10 +97,14 @@ Interface IReactiveTrigger  <a class="header-action link-secondary" title="View 
   <dl><dt>Assembly</dt><dd>com.electricdrill.astra-rpg-framework.Runtime.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Entity-aware reactive event delivery contract.
-Implementations wrap a game event source and deliver it to per-entity subscribers via a
-typed <code>Action&lt;object&gt;</code> callback. Subscriptions are keyed by entity so each
-<a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a> receives only its own notifications.</p>
+  <div class="markdown summary"><p>Holder-aware reactive event delivery contract.
+Implementations wrap a game event source and invoke registered callbacks when the event fires.
+Subscriptions are registered on behalf of a <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a> holder; the holder is
+passed to <a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.IReactiveTrigger.html#ElectricDrill_AstraRpgFramework_Triggers_IReactiveTrigger_Subscribe_ElectricDrill_AstraRpgFramework_EntityCore_System_Action_System_Object__">Subscribe(EntityCore, Action&lt;object&gt;)</a> so that the caller can identify which modifier instance or
+system registered the callback, but it does NOT imply that only events concerning that holder
+are delivered. On a shared global event SO, all subscribed holders are notified — event
+filtering by entity identity is the responsibility of the callback or an associated
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.Condition.html">Condition</a>.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -120,6 +124,45 @@ typed <code>Action&lt;object&gt;</code> callback. Subscriptions are keyed by ent
 
 
 
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Triggers_IReactiveTrigger_EventSource_" data-uid="ElectricDrill.AstraRpgFramework.Triggers.IReactiveTrigger.EventSource*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Triggers_IReactiveTrigger_EventSource" data-uid="ElectricDrill.AstraRpgFramework.Triggers.IReactiveTrigger.EventSource">
+  EventSource
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Triggers/IReactiveTrigger.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the underlying shared event object this trigger wraps, or <code>null</code>.
+Triggers returning the same non-null reference are coalesced into a single
+subscription per modifier instance so that effects always process before
+duration bookkeeping within the same event raise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object EventSource { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">object</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -128,25 +171,29 @@ typed <code>Action&lt;object&gt;</code> callback. Subscriptions are keyed by ent
 
   <h3 id="ElectricDrill_AstraRpgFramework_Triggers_IReactiveTrigger_Subscribe_ElectricDrill_AstraRpgFramework_EntityCore_System_Action_System_Object__" data-uid="ElectricDrill.AstraRpgFramework.Triggers.IReactiveTrigger.Subscribe(ElectricDrill.AstraRpgFramework.EntityCore,System.Action{System.Object})">
   Subscribe(EntityCore, Action&lt;object&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Triggers/IReactiveTrigger.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Triggers/IReactiveTrigger.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Registers <code class="paramref">callback</code> to be invoked when the trigger fires for <code class="paramref">entity</code>.
-Calling this more than once for the same entity is a no-op.</p>
+  <div class="markdown level1 summary"><p>Registers <code class="paramref">callback</code> to be invoked when the trigger fires.
+Multiple distinct callbacks may be registered for the same <code class="paramref">holder</code>.
+Registering the exact same <code class="paramref">callback</code> reference for the same
+<code class="paramref">holder</code> a second time is a no-op (idempotent).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Subscribe(EntityCore entity, Action&lt;object&gt; callback)</code></pre>
+    <pre><code class="lang-csharp hljs">void Subscribe(EntityCore holder, Action&lt;object&gt; callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>entity</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
-    <dd><p>The entity whose context governs when the callback fires.</p>
+    <dt><code>holder</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dd><p>The entity on whose behalf the subscription is registered. Used as a key to allow
+grouped removal, but does not filter which events are delivered.</p>
 </dd>
     <dt><code>callback</code> <span class="xref">Action</span>&lt;<span class="xref">object</span>&gt;</dt>
-    <dd><p>Invoked with the event payload (may be <code>null</code> for parameterless triggers).</p>
+    <dd><p>Invoked with the event payload boxed as <code>object</code> (may be <code>null</code> for
+parameterless triggers). The caller is responsible for casting to the expected type.</p>
 </dd>
   </dl>
 
@@ -165,21 +212,21 @@ Calling this more than once for the same entity is a no-op.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Triggers_IReactiveTrigger_Unsubscribe_ElectricDrill_AstraRpgFramework_EntityCore_System_Action_System_Object__" data-uid="ElectricDrill.AstraRpgFramework.Triggers.IReactiveTrigger.Unsubscribe(ElectricDrill.AstraRpgFramework.EntityCore,System.Action{System.Object})">
   Unsubscribe(EntityCore, Action&lt;object&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Triggers/IReactiveTrigger.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Triggers/IReactiveTrigger.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Removes the subscription registered for <code class="paramref">entity</code>.
-Safe to call even if no subscription exists.</p>
+  <div class="markdown level1 summary"><p>Removes the subscription for the specific <code class="paramref">holder</code>/<code class="paramref">callback</code>
+pair. Safe to call even if the pair was never registered or has already been removed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Unsubscribe(EntityCore entity, Action&lt;object&gt; callback)</code></pre>
+    <pre><code class="lang-csharp hljs">void Unsubscribe(EntityCore holder, Action&lt;object&gt; callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>entity</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
+    <dt><code>holder</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a></dt>
     <dd></dd>
     <dt><code>callback</code> <span class="xref">Action</span>&lt;<span class="xref">object</span>&gt;</dt>
     <dd></dd>

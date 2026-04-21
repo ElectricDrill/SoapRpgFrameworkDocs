@@ -149,6 +149,11 @@ divided by 100.<br></p>
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.RoundingModeExtensions.html">RoundingModeExtensions</a></dt>
+      <dd><p>Extension methods for <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.RoundingMode.html">RoundingMode</a>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.SerializableDictionary-2.html">SerializableDictionary&lt;TKey, TValue&gt;</a></dt>
       <dd><p>A serializable dictionary implementation that can be displayed and edited in the Unity Inspector.
 Provides all standard dictionary functionality while maintaining Unity serialization compatibility.</p>
@@ -164,6 +169,32 @@ Provides all standard hash set functionality while maintaining Unity serializati
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.html">TypeSelectableAttribute</a></dt>
       <dd><p>Custom attribute to mark fields for SerializeReference type selection.
 Apply this to [SerializeReference] fields to enable type selection dropdown.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.TypeSelectableMenuAttribute.html">TypeSelectableMenuAttribute</a></dt>
+      <dd><p>Declares the menu path used by the type selection dropdown when picking a concrete
+implementation for a <code>[SerializeReference]</code> field marked with <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.TypeSelectableAttribute.html">TypeSelectableAttribute</a>.</p>
+<p>
+Path segments are separated by <code>/</code> and produce nested sub-menus (Unity's
+<a class="xref" href="https://docs.unity3d.com/ScriptReference/GenericMenu.html">GenericMenu</a> behavior). The concrete type's display name is
+automatically appended as the final segment. When the assembly declaring the type is
+annotated with <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.TypeSelectableMenuPrefixAttribute.html">TypeSelectableMenuPrefixAttribute</a>, that prefix is prepended.
+</p><p>
+Types without this attribute remain at the menu root (flat behavior).
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.TypeSelectableMenuPrefixAttribute.html">TypeSelectableMenuPrefixAttribute</a></dt>
+      <dd><p>Assembly-level attribute that prepends a prefix to the menu path of every type in the
+declaring assembly when shown in the type selection dropdown. Lets sibling/external
+packages be grouped under a single label without annotating each concrete class.</p>
+<p>
+Apply via <code>[assembly: TypeSelectableMenuPrefix("Modifiers")]</code> in any file of the target
+assembly. The prefix is combined with any per-type <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.TypeSelectableMenuAttribute.html">TypeSelectableMenuAttribute</a>
+path and the display name, e.g. <code>"Modifiers/Conditions/Tag/TagPresent"</code>.
+</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -199,6 +230,14 @@ Provides a standardized way to check for value containment across different valu
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueProvider-2.html">IValueProvider&lt;KeyType, ReturnType&gt;</a></dt>
       <dd><p>Provides a method to retrieve a value based on a key.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.RoundingMode.html">RoundingMode</a></dt>
+      <dd><p>Specifies how a <code>double</code> value is rounded to the nearest integer.</p>
 </dd>
     </dl>
 

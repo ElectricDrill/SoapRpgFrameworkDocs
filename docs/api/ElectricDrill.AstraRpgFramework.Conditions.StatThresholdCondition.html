@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class StatThresholdCondition | Astra RPG Framework ">
       
-      <meta name="description" content="Condition that checks a stat on the holder entity against a threshold.  When , the stat&#39;s final value is compared directly against . When , the stat&#39;s position within its defined range [MinValue, MaxValue] is expressed as a percentage (0–100) and compared against . Requires the stat to have HasMaxValue = true; returns false otherwise. When HasMinValue = false, 0 is used as the implicit minimum. Returns false if the effective range (MaxValue − MinValue) is zero to avoid division by zero.  Negative MinValue is fully supported: a stat with MinValue = −100 and MaxValue = 100 at value 0 evaluates to 50 %.">
+      <meta name="description" content="Condition that checks a stat on the resolved target entity against a threshold.  When , the stat&#39;s final value is compared directly against . When , the stat&#39;s position within its defined range [MinValue, MaxValue] is expressed as a percentage (0–100) and compared against . Requires the stat to have HasMaxValue = true; returns false otherwise. When HasMinValue = false, 0 is used as the implicit minimum. Returns false if the effective range (MaxValue − MinValue) is zero to avoid division by zero.  Negative MinValue is fully supported: a stat with MinValue = −100 and MaxValue = 100 at value 0 evaluates to 50 %.">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -97,7 +97,7 @@ Class StatThresholdCondition  <a class="header-action link-secondary" title="Vie
   <dl><dt>Assembly</dt><dd>com.electricdrill.astra-rpg-framework.Runtime.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Condition that checks a stat on the holder entity against a threshold.</p>
+  <div class="markdown summary"><p>Condition that checks a stat on the resolved target entity against a threshold.</p>
 <p>
 When <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ThresholdMode.html#ElectricDrill_AstraRpgFramework_Conditions_ThresholdMode_Absolute">Absolute</a>, the stat's final value is compared directly against
 <span class="xref">ElectricDrill.AstraRpgFramework.Conditions.StatThresholdCondition._thresholdAbsolute</span>.<br>
@@ -116,6 +116,7 @@ at value 0 evaluates to 50 %.
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
+[TypeSelectableMenu(&quot;Leaf/Attr. &amp; Stat&quot;)]
 public class StatThresholdCondition : Condition</code></pre>
   </div>
 
@@ -147,7 +148,7 @@ public class StatThresholdCondition : Condition</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Conditions_StatThresholdCondition_Evaluate_ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_" data-uid="ElectricDrill.AstraRpgFramework.Conditions.StatThresholdCondition.Evaluate(ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext)">
   Evaluate(EvaluationContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/Leaf/StatThresholdCondition.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/Leaf/StatThresholdCondition.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Evaluates this condition against the provided context.</p>
