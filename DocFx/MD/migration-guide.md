@@ -4,6 +4,12 @@
 
 v2.0.0 introduces new major subsystems such as Conditions, Game Tags, reactive triggers, and global framework configuration. Most of these additions are additive, but this release also includes a few breaking API changes and some behavior changes that existing projects should review carefully.
 
+> [!CAUTION]
+> Before upgrading to `v2.0.0`, you must already have completed the migrations for older deprecated features that are permanently removed in this release:
+> - **Legacy `EntityLeveledUpGameEvent` / `EntityLeveledDownGameEvent` and their listeners** — see the `v1.4.0` section of [Changelog](changelog.md) and [Migrating to v1.4.0](#migrating-to-v140).
+> - **`AttributePointsTracker`** — see the `v1.3.0` section of [Changelog](changelog.md), where `EntityPointsTracker` replaced the legacy tracker. If your project comes from a pre-`v1.3.0` setup, open and save the affected prefabs, scenes, and assets on a `v1.3.x+` version before moving to `v2.0.0`.
+> - **`DerivedTypePicker`** — see the `v1.2.0` section of [Changelog](changelog.md), where it was deprecated in favor of `TypeSelectionMenu`.
+
 ### 1. Back up your project
 
 Before updating, make sure your project is backed up or committed to version control. This release changes both runtime APIs and event wiring expectations, so it is worth having a safe rollback point.
@@ -86,7 +92,11 @@ With the deprecation of the legacy `EntityLeveledUpGameEvent`, `EntityLeveledDow
 
 
 ### Migration steps - changing deprecated events
-Manual and obsolete `EntityLeveledUpGameEvent`, `EntityLeveledDownGameEvent` (and the respective listeners) you used across your project are still supported, **but will not be any more in future versions of the framework**; At the moment, `EntityLevel` will raise both the deprecated event as well as the new event when the level changes. However, migrate your project to the new events when it is convenient for you to use the new single-parameter events and listeners and align with the new standard.
+
+> [!CAUTION]
+> `EntityLeveledUpGameEvent`, `EntityLeveledDownGameEvent`, and their remaining legacy hooks were removed in `v2.0.0`. If you are upgrading directly to `v2.0.0`, complete the migration below before installing that version.
+
+These legacy events and listeners were kept for backward compatibility after `v1.4.0`, but they are no longer available in `v2.0.0`. Projects that still reference them must be migrated to `EntityLevelUpGameEvent`, `EntityLevelDownGameEvent`, and the corresponding modern listeners before the `v2.0.0` update.
 
 To update them, I suggest to search your project and scenes for usages of the deprecated `EntityLeveledUpGameEvent` and `EntityLeveledDownGameEvent`. To do this, I would suggest you to use the Unity Editor search functionality:
 1. Right-click on the scriptable object instance of the deprecated event you want to search for (e.g., `Entity Leveled Up Game Event`).

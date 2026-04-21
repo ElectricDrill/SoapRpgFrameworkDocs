@@ -28,7 +28,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 #### Runtime Features
-- The `EntityStats` method name `AddStatToStatModifer(...)` was corrected to `AddStatToStatModifier(...)`.
 - Built-in `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed` events are dispatched through the active Astra RPG Framework configuration asset.
 - `GameAction` workflows now lean on `IHasEntity` as the primary context for event-driven authoring, with owner propagation preserved across wrapper and projection actions.
 - `EntityCore` now implements both `IStatReader` and `IAttributeReader`, making the entity itself a convenient read facade for gameplay code.
@@ -41,11 +40,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Removed
 #### Runtime Features
+- Removed the deprecated legacy `EntityLeveledUpGameEvent` and `EntityLeveledDownGameEvent` types together with the remaining deprecated legacy hooks in `EntityLevel`. These had already been deprecated in `v1.4.0`; if your project still uses them, complete the migration described in [Migrating to v1.4.0](./migration-guide.md#migrating-to-v140) before upgrading.
+- Removed the deprecated `AttributePointsTracker` compatibility layer from `EntityAttributes`. The transition to `EntityPointsTracker` and `AttributePortfolio` started in `v1.3.0`.
 
+#### Editor Features
+- Removed the deprecated `DerivedTypePicker` editor utility. The replacement path to `TypeSelectionMenu` was introduced in `v1.2.0`.
 ### Fixed
 #### Runtime Features
 - Fixed level-down handling so fixed-base attribute snapshots are preserved correctly while raising change events.
-- Fixed `EntityAttributes` so inactive components return `null` with `EntityAttributes.AttributeSet` instead of behaving as if fully active.
 - Fixed a null-reference path in `GameEventListener` validation when the UnityEvent response is missing.
 
 ## [1.5.1] - 2026-04-04
