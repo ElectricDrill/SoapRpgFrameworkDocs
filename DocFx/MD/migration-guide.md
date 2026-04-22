@@ -18,6 +18,43 @@ Before updating, make sure your project is backed up or committed to version con
 
 Open Unity and navigate to `Window -> Package Management -> Package Manager` (`Window -> Package Manager` for older versions of the editor). Locate Astra RPG Framework in the "In This Project" list and update it to `2.0.0` (or the latest available). Let Unity finish recompiling before starting the migration work below.
 
+### ScriptableObject type renames (SO suffix)
+
+v2.0.0 adds an `SO` suffix to all core ScriptableObject types to make their `ScriptableObject` nature explicit at a glance. The following types were renamed:
+
+| Old name | New name |
+|---|---|
+| `Stat` | `StatSO` |
+| `Attribute` | `AttributeSO` |
+| `Class` | `ClassSO` |
+| `StatSet` | `StatSetSO` |
+| `AttributeSet` | `AttributeSetSO` |
+| `GrowthFormula` | `GrowthFormulaSO` |
+| `ScalingFormula` | `ScalingFormulaSO` |
+| `ScalingComponent` | `ScalingComponentSO` |
+| `AttributesScalingComponent` | `AttributesScalingComponentSO` |
+| `StatsScalingComponent` | `StatsScalingComponentSO` |
+| `IntVar` | `IntVarSO` |
+| `LongVar` | `LongVarSO` |
+| `GameTag` | `GameTagSO` |
+| `BoundedValue` | `BoundedValueSO` |
+
+All renamed types carry `[MovedFrom(autoUpdateAPI = true)]`. Unity's API Updater rewrites C# script references automatically the first time the project recompiles after the upgrade.
+
+> [!NOTE]
+> If any symbol still appears broken after reimporting, update the reference manually to match the new name in the table above.
+
+#### Do you use `[SerializeReference]` with any of these types as generic arguments?
+
+Unity's `[MovedFrom]` patches direct (non-generic) `[SerializeReference]` managed references automatically. However, due to [Unity bug UUM-44729](https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types), it cannot rewrite renamed types that appear as **generic arguments** inside a serialized type string.
+
+If any of the following apply to your project, you need to run the migration tool and follow the additional steps in [Managed Reference Migration](managed-reference-migration.md):
+
+- You have a `[SerializeReference]` field whose concrete serialized type holds one of the renamed framework types as a generic argument (for example, a custom closed-generic provider like `SomeProvider<Stat>`)
+- You implemented `IDisplaySONameProvider<T>`, which has been replaced by the non-generic `IDisplaySONameProvider` (see [Migrating `IDisplaySONameProvider<T>`](managed-reference-migration.md#1-migrating-idisplaysonamet-custom-implementations))
+
+If neither applies, no further action is needed for this section.
+
 ### Required migration steps
 
 #### Update the framework configuration and shared event assets

@@ -11,9 +11,9 @@ In fact, ScriptableObjects names are convenient and quick to use during developm
 
 The framework includes the `IDisplaySONameProvider` interface, which can be implemented by UI components to display readable names for attributes, statistics, and classes:  
 ```csharp
-public interface IDisplaySONameProvider<in T> where T : ScriptableObject
+public interface IDisplaySONameProvider
 {
-    string GetDisplayName(T asset);
+    string GetDisplayName(ScriptableObject asset);
 }
 ```
 
@@ -25,11 +25,15 @@ The attributes are a particular as in many RPGs they can either be presented wit
 
 To use a custom display name provider, you can instantiate your implementation in your own scripts, or rely on the `TypeSelectable` attribute provided by the framework to select the implementation from the Unity inspector. For example:  
 ```csharp
-[SerializeReference, TypeSelectable(typeof(DefaultDisplaySONameProvider<Attribute>))]
-private IDisplaySONameProvider<Attribute> _attributeDisplayNameProvider;
+[SerializeReference, TypeSelectable(typeof(DefaultDisplaySONameProvider))]
+private IDisplaySONameProvider _attributeDisplayNameProvider;
 ```
 `TypeSelectable` is an experimental feature of the framework that allows you to select a concrete implementation of an interface from the Unity inspector.  
 The parameter passed to `TypeSelectable` is the default implementation that will be selected when the inspector is first displayed. You can then choose a different implementation from a dropdown list in the inspector.
+
+> [!NOTE]
+> Starting with v2.0.0, the editor emits a startup warning (`TypeSelectableClosedGenericValidator`) when a `[SerializeReference, TypeSelectable]` field targets a closed generic type. This is a guardrail against [Unity bug UUM-44729](https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types), where renaming any type inside a generic argument silently drops the serialized value. If you see this warning, refactor the field type to the non-generic `IDisplaySONameProvider`.
+
 If you take a look at the demo scene, if you select the `AttributesContainer` GameObject inside `WarriorCanvas -> HeroPanel` in the hierarchy, you will see a `Attribute Display So Name Provider` field in the inspector under the `Values Reader` component. This field uses the `TypeSelectable` attribute to allow you to choose between the default and compact display name providers for attributes.  
 ![Attribute Display So Name Provider](../images/advanced-topics/attribute-display-so-name-provider.png)
 

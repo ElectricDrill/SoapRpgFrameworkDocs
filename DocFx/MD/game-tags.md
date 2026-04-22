@@ -2,11 +2,11 @@
 
 *🏷️ Version 2.0.0+*
 
-`GameTag`s let you classify entities, assets, and reusable framework objects with lightweight `ScriptableObject` identifiers. Each tag can also carry visual metadata, so tagged objects are immediately recognizable in the Inspector through colored pill-style labels.
+`GameTagSO` assets let you classify entities, assets, and reusable framework objects with lightweight `ScriptableObject` identifiers. Each tag can also carry visual metadata, so tagged objects are immediately recognizable in the Inspector through colored pill-style labels.
 
-## What a `GameTag` contains
+## What a `GameTagSO` contains
 
-A `GameTag` asset stores:
+A `GameTagSO` asset stores:
 
 - A primary color
 - An optional icon (typically an emoji or short symbol)
@@ -16,12 +16,12 @@ A `GameTag` asset stores:
 Assigned tags are stored through `GameTagSet`, which is the serializable container used by taggable objects. Built-in framework types that expose tags directly through `ITaggable` include:
 
 - `EntityCore`
-- `Stat` and `StatSet`
-- `Attribute` and `AttributeSet`
-- `Class`
-- `GrowthFormula`
-- `ScalingComponent` and `ScalingFormula`
-- `IntVar` and `LongVar`
+- `StatSO` and `StatSetSO`
+- `AttributeSO` and `AttributeSetSO`
+- `ClassSO`
+- `GrowthFormulaSO`
+- `ScalingComponentSO` and `ScalingFormulaSO`
+- `IntVarSO` and `LongVarSO`
 - `GameAction<TContext>` assets
 
 This makes tags useful both for gameplay meaning and for editor organization.

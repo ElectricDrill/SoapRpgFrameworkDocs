@@ -26,6 +26,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added the Game Tag header-pill workflow, including popup search, multi-select add/remove, double-click quick add, intersection handling, overflow display, drag reordering, click-to-ping, and visual customization support.
 - Added custom managed-reference drawers for condition-related attribute and stat fields.
 - Added multi-object editing support to the `EntityCore`, `EntityStats`, `EntityAttributes`, `EntityClass`, `Class`, `Scaling Formula`, `Attribute Scaling Component`, and `Stat Scaling Component` inspectors, including bulk editing for shared values across multiple selected objects.
+- Added the `Migrate Managed References (SO Rename)` tool (`Tools → Astra RPG Framework → v2.0.0 Migration -> Migrate Managed References (SO Rename)`) to rewrite `[SerializeReference]` managed-reference type strings that `[MovedFrom]` alone cannot patch after the ScriptableObject type renames. The tool supports a dry-run mode, per-session reporting to `Library/AstraMigrationReport_<timestamp>.txt`, and optional scanning of closed scenes.
+- Added `TypeSelectableClosedGenericValidator`, an editor startup check that emits a warning when a `[SerializeReference, TypeSelectable]` field targets a closed generic type — a pattern that breaks silently when any type inside the generic argument is renamed (Unity bug [UUM-44729](https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types)).
 
 ### Changed
 #### Runtime Features
@@ -35,6 +37,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Corrected the `EntityStats.AddStatToStatModifer(...)` typo to `AddStatToStatModifier(...)`.
 - Stat and attribute changed notifications now cover broader effective changes, including dependent recalculations and bulk level transitions. See [Addressed Limitations](./limitations.md#addressed-limitations) for details.
 - `EntityLevel` now exposes more robust global-event integration and extra per-entity event registration helpers.
+- All core ScriptableObject types have been renamed with an `SO` suffix to better reflect their `ScriptableObject` nature. The full rename table and migration instructions are in the [Migration Guide](./migration-guide.md#scriptableobject-type-renames-so-suffix).
+
+  | Old name | New name |
+  |---|---|
+  | `Stat` | `StatSO` |
+  | `Attribute` | `AttributeSO` |
+  | `Class` | `ClassSO` |
+  | `StatSet` | `StatSetSO` |
+  | `AttributeSet` | `AttributeSetSO` |
+  | `GrowthFormula` | `GrowthFormulaSO` |
+  | `ScalingFormula` | `ScalingFormulaSO` |
+  | `ScalingComponent` | `ScalingComponentSO` |
+  | `AttributesScalingComponent` | `AttributesScalingComponentSO` |
+  | `StatsScalingComponent` | `StatsScalingComponentSO` |
+  | `IntVar` | `IntVarSO` |
+  | `LongVar` | `LongVarSO` |
+  | `GameTag` | `GameTagSO` |
+  | `BoundedValue` | `BoundedValueSO` |
+
+  All renamed types carry `[MovedFrom(autoUpdateAPI = true)]`; Unity's API Updater handles C# script references automatically on reimport.
+- `IDisplaySONameProvider<T>` was replaced by the non-generic `IDisplaySONameProvider` (parameter type changed from `T` to `ScriptableObject`). The change was necessary to work around [Unity bug UUM-44729](https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types), where `[MovedFrom]` does not propagate into generic arguments of serialized type strings. Custom implementations must now cast the `ScriptableObject` parameter internally. See [Migrating `IDisplaySONameProvider<T>`](./managed-reference-migration.md#1-migrating-idisplaysonamet-custom-implementations).
 
 #### Editor Features
 - Improved the fixed-base attribute handling in `EntityAttributesEditor` and `EntityStatsEditor` for Play Mode usage.

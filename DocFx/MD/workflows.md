@@ -691,10 +691,10 @@ These modifiers are applied right after the flat modifiers.
 **Code example:**
 ```csharp
 // 25% of armor is added to physical attack
-entityStats.AddStatToStatModifer(physicalAttackStat, armorAttribute, 25);
+entityStats.AddStatToStatModifier(physicalAttackStat, armorAttribute, 25);
 
 // Negative modifier: -10% of armor is subtracted from physical attack
-entityStats.AddStatToStatModifer(physicalAttackStat, armorAttribute, -10);
+entityStats.AddStatToStatModifier(physicalAttackStat, armorAttribute, -10);
 ```
 
 **Calculation example:**
