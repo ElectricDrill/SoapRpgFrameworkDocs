@@ -210,6 +210,68 @@ Because conditions are managed-reference values, the typical workflow is:
 > [!NOTE]
 > Conditions are authored inline, so their serialized data lives inside the object that owns the field. You do not create a standalone `Condition` asset first and reference it later.
 
+## Extending the system with custom conditions and triggers
+
+The payload filter shown by reactive inspectors is metadata-driven. If you add your own `Condition` subclasses or your own `IReactiveTrigger` implementations, treat that metadata as part of the public contract of the type.
+
+### Custom `Condition` types
+
+If a custom condition reads `EvaluationContext.EventPayload`, annotate it with one or more `ConditionPayloadAttribute`s:
+
+```csharp
+using System;
+using ElectricDrill.AstraRpgFramework.Conditions;
+using ElectricDrill.AstraRpgFramework.Contexts;
+
+[Serializable]
+[ConditionPayload(typeof(IHasEntity))]
+[ConditionPayload(typeof(IHasPerformer))]
+public sealed class PayloadActorMatchesHolderCondition : Condition
+{
+    public override bool Evaluate(EvaluationContext ctx)
+    {
+        if (!ctx.TryGetPayload<IHasEntity>(out var payload))
+            return false;
+
+        return payload.Entity == ctx.Holder;
+    }
+}
+```
+
+Use these rules:
+
+- Add one attribute per accepted payload contract. Multiple attributes are an **OR** list.
+- Prefer the narrowest interface or base type that the condition actually needs, such as `IHasEntity` or `IHasValueChange<long>`, instead of overfitting to one concrete payload class.
+- Omit the attribute entirely only for payload-agnostic conditions. A condition with no `ConditionPayloadAttribute` is treated as compatible with any trigger.
+- If a condition requires payload data and you forget the attribute, the condition may still appear in filtered pickers because the editor has no metadata proving otherwise.
+
+### Custom `IReactiveTrigger` types
+
+Custom triggers must expose the payload contract through `IReactiveTrigger.PayloadType`:
+
+```csharp
+using System;
+using ElectricDrill.AstraRpgFramework.Triggers;
+
+[Serializable]
+public sealed class CustomStatusTrigger : IReactiveTrigger
+{
+    public Type PayloadType => typeof(CustomStatusEvent);
+
+    // Subscribe / Unsubscribe / EventSource omitted.
+}
+```
+
+Best practices:
+
+- Return `typeof(void)` for parameterless triggers.
+- Return the type that subscribers can safely assume at runtime. If the trigger is conceptually based on an interface contract, expose that interface instead of an arbitrary concrete implementation.
+- Do not use `typeof(object)` unless the payload is genuinely unconstrained, because it disables meaningful filtering.
+
+When both sides provide accurate metadata, the framework can filter incompatible condition types in the Inspector and warn about already-authored invalid trees before play mode.
+
+For custom editor wiring that connects a trigger field to a condition field and enables this filtering automatically, see [Payload-aware condition fields in custom editors](advanced-topics.md#payload-aware-condition-fields-in-custom-editors).
+
 ## Conditional game actions
 
 The most direct built-in use of the system is `ConditionalGameAction<TContext>`, which wraps another `GameAction<TContext>` with an optional guard condition.

@@ -100,3 +100,86 @@ Use `RoundingMode` when authoring custom calculators or other extension points t
 This matters most for event-driven workflows. `GameEventListener`s can dispatch owner-aware actions using the listener component as runtime owner, and wrapper actions such as `Composite`, `Delayed`, `Conditional`, and projection actions preserve that owner while forwarding execution. This allows conditions that depend on `Holder` resolution to behave consistently across nested action chains.
 
 For the practical inspector workflow, see [Workflows](workflows.md#game-actions). For the condition-side resolution model, see [Conditions](conditions.md).
+
+## Payload-aware condition fields in custom editors
+*🏷️ Version 2.0.0+*
+
+If you expose both a `[SerializeReference]` `IReactiveTrigger` field and a `[SerializeReference]` `Condition` field in a custom inspector, use `ConditionFieldWithQuickSetup` to bind them. When `filterByTriggerPayload` is enabled, the helper reads `triggerProperty.managedReferenceValue as IReactiveTrigger`, takes its `PayloadType`, and filters the condition picker to compatible types only.
+
+This is the intended editor-side wiring point:
+
+```csharp
+using ElectricDrill.AstraRpgFramework.Editor.Conditions;
+using UnityEditor;
+using UnityEngine;
+
+[CustomEditor(typeof(MyReactiveComponent))]
+public sealed class MyReactiveComponentEditor : UnityEditor.Editor
+{
+    public override void OnInspectorGUI()
+    {
+        serializedObject.Update();
+
+        var triggerProperty = serializedObject.FindProperty("_trigger");
+        var conditionProperty = serializedObject.FindProperty("_condition");
+
+        EditorGUILayout.PropertyField(triggerProperty, true);
+        ConditionFieldWithQuickSetup.DrawLayout(
+            conditionProperty,
+            new GUIContent("Condition"),
+            triggerProperty,
+            filterByTriggerPayload: true);
+
+        serializedObject.ApplyModifiedProperties();
+    }
+}
+```
+
+If you are inside a `PropertyDrawer` or any rect-based workflow, use the explicit height + draw pair:
+
+```csharp
+public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+{
+    var triggerProperty = property.FindPropertyRelative("_trigger");
+    var conditionProperty = property.FindPropertyRelative("_condition");
+
+    return EditorGUI.GetPropertyHeight(triggerProperty, true)
+         + EditorGUIUtility.standardVerticalSpacing
+         + ConditionFieldWithQuickSetup.GetHeight(
+             conditionProperty,
+             triggerProperty: triggerProperty,
+             filterByTriggerPayload: true);
+}
+```
+
+```csharp
+public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+{
+    var triggerProperty = property.FindPropertyRelative("_trigger");
+    var conditionProperty = property.FindPropertyRelative("_condition");
+
+    float y = position.y;
+    float triggerHeight = EditorGUI.GetPropertyHeight(triggerProperty, true);
+    var triggerRect = new Rect(position.x, y, position.width, triggerHeight);
+    EditorGUI.PropertyField(triggerRect, triggerProperty, true);
+
+    y += triggerHeight + EditorGUIUtility.standardVerticalSpacing;
+    ConditionFieldWithQuickSetup.Draw(
+        ref y,
+        position.x,
+        position.width,
+        conditionProperty,
+        new GUIContent("Condition"),
+        triggerProperty,
+        filterByTriggerPayload: true);
+}
+```
+
+Operational notes:
+
+- `triggerProperty` must point to a managed-reference value implementing `IReactiveTrigger`. If it is `null` or unconfigured, the helper falls back to the normal unfiltered condition picker.
+- Filtering works on nested composite conditions too. Child condition pickers inherit the same payload filter automatically.
+- Existing incompatible condition trees are not hidden silently: the field shows an inline warning so the author can fix the tree.
+- If you want the condition UI without the quick-setup button, pass `actionGroups: ConditionQuickActionUtility.ActionGroups.None` while keeping `filterByTriggerPayload: true`.
+
+This helper is the public entry point for payload-aware condition authoring in custom editors. It keeps your own editor code thin while reusing the same compatibility rules as the built-in inspectors.
