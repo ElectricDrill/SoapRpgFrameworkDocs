@@ -36,7 +36,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `EntityCore` now implements both `IStatReader` and `IAttributeReader`, making the entity itself a convenient read facade for gameplay code.
 - Corrected the `EntityStats.AddStatToStatModifer(...)` typo to `AddStatToStatModifier(...)`.
 - Stat and attribute changed notifications now cover broader effective changes, including dependent recalculations and bulk level transitions. See [Addressed Limitations](./limitations.md#addressed-limitations) for details.
-- `EntityLevel` now exposes more robust global-event integration and extra per-entity event registration helpers.
+- `EntityCore`, `EntityLevel`, `EntityStats`, and `EntityAttributes` implement `IEventRegistrar`, providing generic `Subscribe<TEvent>` and `Unsubscribe<TEvent>` methods for per-entity extra event registration.
 - All core ScriptableObject types have been renamed with an `SO` suffix to better reflect their `ScriptableObject` nature. The full rename table and migration instructions are in the [Migration Guide](./migration-guide.md#scriptableobject-type-renames-so-suffix).
 
   | Old name | New name |

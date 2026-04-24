@@ -159,7 +159,7 @@ The red asterisks (<span style="color:red;">*</span>) indicate fields that are r
 
 Global Events are `GameEvent` ScriptableObjects that broadcast framework-level information to the **entire game**. They are assigned once in the configuration asset and shared by all entities, ensuring a single authoritative source for framework-level communication.
 
-Each global event is broadcast through the **`FrameworkEventChannel`** system. This means that alongside the global event configured here, individual entity components can also hold per-entity extra events that are raised together with the global one when the channel fires.
+Each global event is broadcast through the **`FrameworkEventChannel`** system. This means that alongside the global event configured here, individual entity components can also hold per-entity extra events that are raised together with the global one when the channel fires. All entity components that expose event channels implement `IEventRegistrar`, which provides `Subscribe<TEvent>` and `Unsubscribe<TEvent>` for per-entity extra event registration.
 
 > [!WARNING]
 > Three events are **required** — if they are missing, the corresponding entity lifecycle events are never dispatched, which breaks systems that depend on entity spawn, level-up, or level-down notifications. Assign them before entering Play Mode.
@@ -177,8 +177,8 @@ Subscribe to this event to track entity registration in global systems (e.g., re
 
 **Per-entity extra events API:**
 ```csharp
-entityCore.AddExtraSpawnedEvent(myEntitySpecificEvent);
-entityCore.RemoveExtraSpawnedEvent(myEntitySpecificEvent);
+entityCore.Subscribe<EntityCoreGameEvent>(myEntitySpecificEvent);
+entityCore.Unsubscribe<EntityCoreGameEvent>(myEntitySpecificEvent);
 ```
 
 ---
@@ -200,8 +200,8 @@ entityCore.RemoveExtraSpawnedEvent(myEntitySpecificEvent);
 
 **Per-entity extra events API:**
 ```csharp
-entityCore.Level.AddExtraLevelUpEvent(myLevelUpEvent);
-entityCore.Level.RemoveExtraLevelUpEvent(myLevelUpEvent);
+entityCore.Level.Subscribe<EntityLevelUpGameEvent>(myLevelUpEvent);
+entityCore.Level.Unsubscribe<EntityLevelUpGameEvent>(myLevelUpEvent);
 ```
 
 ---
@@ -214,8 +214,8 @@ entityCore.Level.RemoveExtraLevelUpEvent(myLevelUpEvent);
 
 **Per-entity extra events API:**
 ```csharp
-entityCore.Level.AddExtraLevelDownEvent(myLevelDownEvent);
-entityCore.Level.RemoveExtraLevelDownEvent(myLevelDownEvent);
+entityCore.Level.Subscribe<EntityLevelDownGameEvent>(myLevelDownEvent);
+entityCore.Level.Unsubscribe<EntityLevelDownGameEvent>(myLevelDownEvent);
 ```
 
 ---
@@ -242,6 +242,12 @@ entityCore.Level.RemoveExtraLevelDownEvent(myLevelDownEvent);
 - Triggering ability unlock logic when a threshold stat is reached
 - Logging stat changes for analytics
 
+**Per-entity extra events API:**
+```csharp
+entityStats.Subscribe<StatChangedGameEvent>(myStatChangedEvent);
+entityStats.Unsubscribe<StatChangedGameEvent>(myStatChangedEvent);
+```
+
 ---
 
 #### Global Attribute Changed Event
@@ -260,6 +266,12 @@ entityCore.Level.RemoveExtraLevelDownEvent(myLevelDownEvent);
 | `PreviousValue` | `long` | The attribute's value before the change |
 | `NewValue` | `long` | The attribute's value after the change |
 | `AbsAmount` | `long` | The absolute magnitude of the change |
+
+**Per-entity extra events API:**
+```csharp
+entityAttributes.Subscribe<AttributeChangedGameEvent>(myAttributeChangedEvent);
+entityAttributes.Unsubscribe<AttributeChangedGameEvent>(myAttributeChangedEvent);
+```
 
 > [!NOTE]
 > Changing an attribute may also trigger the **Global Stat Changed Event** for any stats whose scaling formula depends on that attribute. Both events are dispatched independently.
