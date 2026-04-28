@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
-## [2.0.0] - 2026-04-19
+## [2.0.0] - Unreleased
 
 > [!WARNING]
 > This update includes breaking changes and behavior changes that can affect existing projects. Refer to the [Migrating to v2.0.0](./migration-guide.md#migrating-to-v200) section of the migration guide before updating.
@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 #### Runtime Features
 - Added the `Conditions` system, including composite conditions, entity/tag/value-change/stat/attribute/random leaf conditions, and `ConditionalGameAction`.
+- Added `ConditionEvaluationAvailability` and `ConditionTargetAvailability` so condition compatibility checks can describe both the payload contract and the entity target slots available in a given evaluation context.
 - Added the `Game Tags` system with `GameTag`, `GameTagSet`, `ITaggable`, and tag-based conditions.
 - Added framework-level configuration assets for built-in shared events through `AstraRpgFrameworkConfigSO`, `AstraRpgFrameworkGlobalSettingsSO`, and `AstraRpgFrameworkConfigProvider`.
 - Added reactive trigger infrastructure with `IReactiveTrigger`, typed `GameEventTrigger<TContext>` implementations, and `EventSource` support for shared subscription coalescing.
@@ -23,6 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 #### Editor Features
 - Added dedicated authoring helpers for conditions, including quick setup utilities, managed-reference body drawers for condition fields, and condition tooltips.
+- Added deeper condition authoring support through `ConditionEditorContext` and `ConditionTargetDrawer`, so payload-aware editors can also filter invalid `ConditionTarget` values instead of only filtering condition types.
 - Added the Game Tag header-pill workflow, including popup search, multi-select add/remove, double-click quick add, intersection handling, overflow display, drag reordering, click-to-ping, and visual customization support.
 - Added custom managed-reference drawers for condition-related attribute and stat fields.
 - Added multi-object editing support to the `EntityCore`, `EntityStats`, `EntityAttributes`, `EntityClass`, `Class`, `Scaling Formula`, `Attribute Scaling Component`, and `Stat Scaling Component` inspectors, including bulk editing for shared values across multiple selected objects.
@@ -34,6 +36,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Built-in `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed` events are dispatched through the active Astra RPG Framework configuration asset.
 - `GameAction` workflows now lean on `IHasEntity` as the primary context for event-driven authoring, with owner propagation preserved across wrapper and projection actions.
 - `EntityCore` now implements both `IStatReader` and `IAttributeReader`, making the entity itself a convenient read facade for gameplay code.
+- `ConditionCompatibility` now performs deeper validation of condition trees, including recursive checks on authored `ConditionTarget` selections inside composite conditions.
 - Corrected the `EntityStats.AddStatToStatModifer(...)` typo to `AddStatToStatModifier(...)`.
 - Stat and attribute changed notifications now cover broader effective changes, including dependent recalculations and bulk level transitions. See [Addressed Limitations](./limitations.md#addressed-limitations) for details.
 - `EntityCore`, `EntityLevel`, `EntityStats`, and `EntityAttributes` implement `IEventRegistrar`, providing generic `Subscribe<TEvent>` and `Unsubscribe<TEvent>` methods for per-entity extra event registration.
@@ -61,6 +64,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 #### Editor Features
 - Improved the fixed-base attribute handling in `EntityAttributesEditor` and `EntityStatsEditor` for Play Mode usage.
+- `ConditionFieldWithQuickSetup` and `PayloadFilteredConditionPicker` now work from a full `ConditionEvaluationAvailability`, whether it is inferred from `IReactiveTrigger.PayloadType` or passed explicitly by a custom editor.
+- Payload-aware condition authoring now keeps nested composite conditions under the same availability filter and shows inline errors when a condition type or `ConditionTarget` is incompatible with the current context.
 
 ### Removed
 #### Runtime Features
@@ -319,4 +324,3 @@ IMPORTANT: Refer to the [migration guide](./migration-guide.md) for updating exi
 - Dynamic application of modifiers to stats and attributes:
   - Flat & Percentage Modifiers for attributes.
   - Flat, Percentage, & Stat-to-Stat Modifiers for statistics.
-

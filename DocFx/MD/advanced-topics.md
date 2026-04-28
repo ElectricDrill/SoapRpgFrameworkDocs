@@ -104,9 +104,18 @@ For the practical inspector workflow, see [Workflows](workflows.md#game-actions)
 ## Payload-aware condition fields in custom editors
 *🏷️ Version 2.0.0+*
 
-If you expose both a `[SerializeReference]` `IReactiveTrigger` field and a `[SerializeReference]` `Condition` field in a custom inspector, use `ConditionFieldWithQuickSetup` to bind them. When `filterByTriggerPayload` is enabled, the helper reads `triggerProperty.managedReferenceValue as IReactiveTrigger`, takes its `PayloadType`, and filters the condition picker to compatible types only.
+`ConditionFieldWithQuickSetup` is the intended public entry point when a custom inspector pairs a `[SerializeReference]` `IReactiveTrigger` field with a `[SerializeReference]` `Condition` field.
 
-This is the intended editor-side wiring point:
+With `filterByTriggerPayload: true`, the helper reads `IReactiveTrigger.PayloadType`, builds a `ConditionEvaluationAvailability`, and reuses the same compatibility rules as the built-in inspectors. In practice, this means:
+
+- condition type pickers only show conditions whose `ConditionPayloadAttribute` metadata is compatible with the current payload
+- `ConditionTarget` dropdowns only show entity slots that are actually available in the current evaluation context
+- already-authored incompatible trees stay visible and emit inline errors instead of failing silently
+
+> [!NOTE]
+> For the metadata contract expected from custom `Condition` and `IReactiveTrigger` types, see [Extending the system with custom conditions and triggers](conditions.md#extending-the-system-with-custom-conditions-and-triggers).
+
+This is the standard inspector-side wiring:
 
 ```csharp
 using ElectricDrill.AstraRpgFramework.Editor.Conditions;
@@ -134,6 +143,8 @@ public sealed class MyReactiveComponentEditor : UnityEditor.Editor
     }
 }
 ```
+
+If the configured trigger is parameterless (`PayloadType == typeof(void)`), the picker keeps only payload-agnostic conditions, and `ConditionTarget` is reduced to the always-available slots (`Holder` and `Performer`).
 
 If you are inside a `PropertyDrawer` or any rect-based workflow, use the explicit height + draw pair:
 
@@ -175,11 +186,27 @@ public override void OnGUI(Rect position, SerializedProperty property, GUIConten
 }
 ```
 
+If your editor already knows the evaluation context and does not expose a trigger field, pass the availability explicitly instead of deriving it from `IReactiveTrigger`:
+
+```csharp
+using ElectricDrill.AstraRpgFramework.Conditions;
+using ElectricDrill.AstraRpgFramework.Editor.Conditions;
+using UnityEngine;
+
+ConditionFieldWithQuickSetup.DrawLayout(
+    conditionProperty,
+    new GUIContent("Condition"),
+    actionGroups: ConditionQuickActionUtility.ActionGroups.None,
+    availability: ConditionEvaluationAvailability.WithoutPayload());
+```
+
 Operational notes:
 
-- `triggerProperty` must point to a managed-reference value implementing `IReactiveTrigger`. If it is `null` or unconfigured, the helper falls back to the normal unfiltered condition picker.
-- Filtering works on nested composite conditions too. Child condition pickers inherit the same payload filter automatically.
+- `triggerProperty` must point to a managed-reference value implementing `IReactiveTrigger`. If it is `null` or unconfigured, the helper falls back to the normal unfiltered condition picker unless you pass `availability:` explicitly.
+- `ConditionEvaluationAvailability.ForPayload(...)` unlocks payload-derived `ConditionTarget` options from the payload contract itself: `IHasEntity` (or a payload `Component`) enables `PayloadEntity`, `IHasTarget` enables `PayloadTarget`, `IHasPerformer` enables `PayloadPerformer`, and `IHasVictim` enables `PayloadVictim`.
+- Use `ConditionEvaluationAvailability.WithoutPayload()` for timer/tick style contexts with no event payload. Use `ConditionEvaluationAvailability.ForPayload(typeof(TPayload))` when the payload type is fixed but not exposed through a serialized trigger field.
+- Filtering works on nested composite conditions too. Child condition pickers and child `ConditionTarget` fields inherit the same availability automatically.
 - Existing incompatible condition trees are not hidden silently: the field shows an inline warning so the author can fix the tree.
-- If you want the condition UI without the quick-setup button, pass `actionGroups: ConditionQuickActionUtility.ActionGroups.None` while keeping `filterByTriggerPayload: true`.
+- If you want the condition UI without the quick-setup button, pass `actionGroups: ConditionQuickActionUtility.ActionGroups.None` while keeping either `filterByTriggerPayload: true` or an explicit `availability:`.
 
-This helper is the public entry point for payload-aware condition authoring in custom editors. It keeps your own editor code thin while reusing the same compatibility rules as the built-in inspectors.
+This keeps custom editor code thin while still giving authors immediate feedback when a condition depends on a payload contract or target slot that the current context cannot provide.

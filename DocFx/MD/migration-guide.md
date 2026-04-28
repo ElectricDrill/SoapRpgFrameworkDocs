@@ -71,16 +71,19 @@ The framework now dispatches its core global events — entity spawned, level up
    For a full description of each field and the loading strategy, see [Package Configuration](workflows/package-configuration.md).
 
 2. **Open the newly created asset** and assign your existing event assets to the five fields:
-   - *Global Entity Spawned Event* <span style="color:red;">*</span> — the `EntityCoreGameEvent` your systems already listen to
-   - *Global Entity Level Up Event* <span style="color:red;">*</span> — the `EntityLevelUpGameEvent` your systems already listen to
-   - *Global Entity Level Down Event* <span style="color:red;">*</span> — the `EntityLevelDownGameEvent` your systems already listen to
+   - <span style="color:red;">*</span> *Global Entity Spawned Event* — the `EntityCoreGameEvent` your systems already listen to
+   - <span style="color:red;">*</span> *Global Entity Level Up Event* — the `EntityLevelUpGameEvent` your systems already listen to
+   - <span style="color:red;">*</span> *Global Entity Level Down Event* — the `EntityLevelDownGameEvent` your systems already listen to
    - *Global Stat Changed Event* — the `StatChangedGameEvent` your systems already listen to (optional but recommended)
    - *Global Attribute Changed Event* — the `AttributeChangedGameEvent` your systems already listen to (optional but recommended)
+
+   _<span style="color:red;">*</span> denotes a mandatory field_
 
 3. **Register the config in Project Settings** — open `Edit → Project Settings → Astra RPG Framework` and assign your new config asset as the **Active Config Profile**.
 
 > [!CAUTION]
-> If you skip step 3 and leave Project Settings empty, the framework will attempt the convention-based fallback (a `Resources` asset named `Astra Rpg Framework Config`). If neither is found, global events are never dispatched and any system that relies on them will silently fail at runtime. Always verify the Project Settings page shows **"✓ Using Explicit Configuration"** before entering Play Mode.
+> If you skip step 3 and leave Project Settings empty, the framework will attempt the convention-based fallback (a `Resources` asset named `Astra Rpg Framework Config`). If neither is found, global events are never dispatched and any system that relies on them will silently fail at runtime. You'll get a console error if no config is found.
+> However, it is strongly recommended to verify that the Project Settings page shows **"✓ Using Explicit Configuration"**, with **your own** config asset assigned.
 
 #### Rename the fixed typo in `EntityStats`
 
@@ -99,16 +102,6 @@ These changes may not produce compile errors, but they can change how existing g
 Stat and attribute changed notifications are now raised for broader effective changes, not only for the most direct mutation paths. This includes dependent recalculations and bulk transitions such as some level-up/level-down flows.
 
 Review any listeners, UI refresh logic, analytics counters, or reactive systems that assume those events only fire for direct edits. If needed, add filtering logic based on the payload contents before executing gameplay responses.
-
-#### Disabled `EntityAttributes` components now resolve their current set differently
-
-`EntityAttributes.GetCurrentAttributeSetAndHandleChanges()` now returns `null` when the component is inactive or disabled.
-
-If you have custom code that queries attribute sets while the component is disabled, add a null check or defer that query until the component is enabled again.
-
-### Recommended cleanup and adoption
-
-These steps are not strictly required to get your project compiling again, but they help align your code and content with the current package direction.
 
 ## Migrating to v1.4.0
 
