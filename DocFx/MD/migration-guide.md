@@ -16,7 +16,7 @@ Before updating, make sure your project is backed up or committed to version con
 
 ### 2. Update the package from the Package Manager
 
-Open Unity and navigate to `Window -> Package Management -> Package Manager` (`Window -> Package Manager` for older versions of the editor). Locate Astra RPG Framework in the "In This Project" list and update it to `2.0.0` (or the latest available). Let Unity finish recompiling before starting the migration work below.
+Open Unity and navigate to `Window -> Package Management -> Package Manager` (`Window -> Package Manager` for older versions of the editor). Locate Astra Framework in the "In This Project" list and update it to `2.0.0` (or the latest available). Let Unity finish recompiling before starting the migration work below.
 
 ### ScriptableObject type renames (SO suffix)
 
@@ -59,7 +59,7 @@ If neither applies, no further action is needed for this section.
 
 #### Update the framework configuration and shared event assets
 
-The framework now dispatches its core global events — entity spawned, level up, level down, stat changed, and attribute changed — through a central `AstraRpgFrameworkConfigSO` asset. Three of those events (spawned, level up, level down) are **required**; without them the corresponding broadcasts are never fired.
+The framework now dispatches its core global events — entity spawned, level up, level down, stat changed, and attribute changed — through a central `AstraFrameworkConfigSO` asset. Three of those events (spawned, level up, level down) are **required**; without them the corresponding broadcasts are never fired.
 
 > [!IMPORTANT]
 > **Do not use the sample events for your production project.**  
@@ -67,7 +67,7 @@ The framework now dispatches its core global events — entity spawned, level up
 
 **Steps:**
 
-1. **Create your own `AstraRpgFrameworkConfigSO`** — right-click in the Project window and choose **Create → Astra RPG Framework → Config**, then save it somewhere in your project (e.g., `Assets/Config/`).  
+1. **Create your own `AstraFrameworkConfigSO`** — right-click in the Project window and choose **Create → Astra RPG Framework → Config**, then save it somewhere in your project (e.g., `Assets/Config/`).  
    For a full description of each field and the loading strategy, see [Package Configuration](workflows/package-configuration.md).
 
 2. **Open the newly created asset** and assign your existing event assets to the five fields:
@@ -79,10 +79,10 @@ The framework now dispatches its core global events — entity spawned, level up
 
    _<span style="color:red;">*</span> denotes a mandatory field_
 
-3. **Register the config in Project Settings** — open `Edit → Project Settings → Astra RPG Framework` and assign your new config asset as the **Active Config Profile**.
+3. **Register the config in Project Settings** — open `Edit → Project Settings → Astra Framework` and assign your new config asset as the **Active Config Profile**.
 
 > [!CAUTION]
-> If you skip step 3 and leave Project Settings empty, the framework will attempt the convention-based fallback (a `Resources` asset named `Astra Rpg Framework Config`). If neither is found, global events are never dispatched and any system that relies on them will silently fail at runtime. You'll get a console error if no config is found.
+> If you skip step 3 and leave Project Settings empty, the framework will attempt the convention-based fallback (a `Resources` asset named `Astra Framework Config`). If neither is found, global events are never dispatched and any system that relies on them will silently fail at runtime. You'll get a console error if no config is found.
 > However, it is strongly recommended to verify that the Project Settings page shows **"✓ Using Explicit Configuration"**, with **your own** config asset assigned.
 
 #### Rename the fixed typo in `EntityStats`
