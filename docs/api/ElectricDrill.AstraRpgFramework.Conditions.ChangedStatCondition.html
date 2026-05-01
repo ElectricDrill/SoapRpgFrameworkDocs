@@ -108,6 +108,7 @@ Returns <code>false</code> when <a class="xref" href="ElectricDrill.AstraRpgFram
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
 [TypeSelectableMenu(&quot;Leaf/Attr. &amp; Stat&quot;)]
+[ConditionPayload(typeof(StatChangeInfo))]
 public class ChangedStatCondition : Condition</code></pre>
   </div>
 
@@ -139,7 +140,7 @@ public class ChangedStatCondition : Condition</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Conditions_ChangedStatCondition_Evaluate_ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_" data-uid="ElectricDrill.AstraRpgFramework.Conditions.ChangedStatCondition.Evaluate(ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext)">
   Evaluate(EvaluationContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/Leaf/ChangedStatCondition.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/Leaf/ChangedStatCondition.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Evaluates this condition against the provided context.</p>

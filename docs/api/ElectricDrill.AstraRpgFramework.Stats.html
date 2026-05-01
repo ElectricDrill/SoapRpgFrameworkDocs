@@ -103,21 +103,21 @@ When stats change because of a modifier of any kind, the assigned <a class="xref
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a></dt>
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSO.html">StatSO</a></dt>
       <dd><p>Represents a stat in the RPG system that extends BoundedValue with attribute scaling capabilities.
 Stats can be scaled based on entity attributes and provide equality comparison based on name.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSet.html">StatSet</a></dt>
-      <dd><p>A ScriptableObject that defines a collection of stats that can be used by entities.
-Implements IStatContainer to provide stat containment functionality.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.html">StatSetInstance</a></dt>
       <dd><p>Represents an instance of a StatSet with actual values for each stat.
 Implements IEnumerable and IStatContainer to provide collection functionality.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSetSO.html">StatSetSO</a></dt>
+      <dd><p>A ScriptableObject that defines a collection of stats that can be used by entities.
+Implements IStatContainer to provide stat containment functionality.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -155,7 +155,7 @@ Defines the contract for accessing a StatSet that contains stat definitions.</p>
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.IStatReader.html">IStatReader</a></dt>
       <dd><p>Read-only interface for querying stat values from an entity.
-Use <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.IStatReader.html#ElectricDrill_AstraRpgFramework_Stats_IStatReader_TryGet_ElectricDrill_AstraRpgFramework_Stats_Stat_System_Int64__">TryGet(Stat, out long)</a> as the safe access path; <code>Get</code> requires <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html#ElectricDrill_AstraRpgFramework_Utils_IValueContainer_1_Contains__0_">Contains(T)</a> to be checked first.</p>
+Use <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.IStatReader.html#ElectricDrill_AstraRpgFramework_Stats_IStatReader_TryGet_ElectricDrill_AstraRpgFramework_Stats_StatSO_System_Int64__">TryGet(StatSO, out long)</a> as the safe access path; <code>Get</code> requires <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html#ElectricDrill_AstraRpgFramework_Utils_IValueContainer_1_Contains__0_">Contains(T)</a> to be checked first.</p>
 </dd>
     </dl>
 

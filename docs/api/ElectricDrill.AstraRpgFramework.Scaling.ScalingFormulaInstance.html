@@ -97,15 +97,15 @@ Class ScalingFormulaInstance  <a class="header-action link-secondary" title="Vie
   <dl><dt>Assembly</dt><dd>com.electricdrill.astra-rpg-framework.Runtime.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>A per-entity runtime wrapper around a shared <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a> asset.</p>
+  <div class="markdown summary"><p>A per-entity runtime wrapper around a shared <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaSO.html">ScalingFormulaSO</a> asset.</p>
 <p>
-Because <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a> is a <code>ScriptableObject</code>, it is shared across all entities that
+Because <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaSO.html">ScalingFormulaSO</a> is a <code>ScriptableObject</code>, it is shared across all entities that
 reference it. Mutating temporary scaling components directly on the asset would therefore affect every entity
 that uses it. <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html">ScalingFormulaInstance</a> solves this by keeping its own temporary component lists
 while delegating all computation to the underlying asset.
 </p><p>
 Each entity that needs per-entity runtime modifications (e.g. a buff that adds an extra scaling term) should
-create its own <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html">ScalingFormulaInstance</a> from the shared <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a> asset.
+create its own <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.html">ScalingFormulaInstance</a> from the shared <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaSO.html">ScalingFormulaSO</a> asset.
 </p>
 </div>
   <div class="markdown conceptual"></div>
@@ -157,8 +157,8 @@ instance.ResetTmpScalings();</code></pre>
 
   <a id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance__ctor_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.#ctor*"></a>
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance__ctor_ElectricDrill_AstraRpgFramework_Scaling_ScalingFormula_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.#ctor(ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula)">
-  ScalingFormulaInstance(ScalingFormula)
+  <h3 id="ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaInstance__ctor_ElectricDrill_AstraRpgFramework_Scaling_ScalingFormulaSO_" data-uid="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaInstance.#ctor(ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaSO)">
+  ScalingFormulaInstance(ScalingFormulaSO)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Scaling/ScalingFormulaInstance.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -166,13 +166,13 @@ instance.ResetTmpScalings();</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ScalingFormulaInstance(ScalingFormula formula)</code></pre>
+    <pre><code class="lang-csharp hljs">public ScalingFormulaInstance(ScalingFormulaSO formula)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>formula</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a></dt>
-    <dd><p>The shared <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormula.html">ScalingFormula</a> asset this instance wraps.</p>
+    <dt><code>formula</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaSO.html">ScalingFormulaSO</a></dt>
+    <dd><p>The shared <a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaSO.html">ScalingFormulaSO</a> asset this instance wraps.</p>
 </dd>
   </dl>
 
@@ -203,7 +203,7 @@ instance.ResetTmpScalings();</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;ScalingComponent&gt; TmpSelfScalingComponents { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;ScalingComponentSO&gt; TmpSelfScalingComponents { get; }</code></pre>
   </div>
 
 
@@ -212,7 +212,7 @@ instance.ResetTmpScalings();</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">List</span>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponent.html">ScalingComponent</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponentSO.html">ScalingComponentSO</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -235,7 +235,7 @@ instance.ResetTmpScalings();</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;ScalingComponent&gt; TmpTargetScalingComponents { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;ScalingComponentSO&gt; TmpTargetScalingComponents { get; }</code></pre>
   </div>
 
 
@@ -244,7 +244,7 @@ instance.ResetTmpScalings();</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">List</span>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponent.html">ScalingComponent</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Scaling.ScalingComponentSO.html">ScalingComponentSO</a>&gt;</dt>
     <dd></dd>
   </dl>
 

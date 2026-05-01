@@ -109,6 +109,7 @@ for <span class="xref">int</span>.
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
 [TypeSelectableMenu(&quot;Leaf/ValueChange&quot;)]
+[ConditionPayload(typeof(IHasValueChange&lt;int&gt;))]
 public class IntValueChangeDirectionCondition : Condition</code></pre>
   </div>
 
@@ -140,7 +141,7 @@ public class IntValueChangeDirectionCondition : Condition</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Conditions_IntValueChangeDirectionCondition_Evaluate_ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_" data-uid="ElectricDrill.AstraRpgFramework.Conditions.IntValueChangeDirectionCondition.Evaluate(ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext)">
   Evaluate(EvaluationContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/Leaf/IntValueChangeDirectionCondition.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/Leaf/IntValueChangeDirectionCondition.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Evaluates this condition against the provided context.</p>

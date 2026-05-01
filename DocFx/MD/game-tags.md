@@ -100,6 +100,8 @@ When a single taggable object is selected, the header pills are fully interactiv
 - Click the `+` pill to open the tag selection popup
 - Drag pills to reorder them
 
+![Inspector header showing interactive GameTag pills and add button](../images/workflows/game-tags/game-tag-header-pills.png)
+
 The add popup supports several quality-of-life features:
 
 - Search by tag name
@@ -107,10 +109,7 @@ The add popup supports several quality-of-life features:
 - Multi-selection followed by **Add**
 - Double-click on a tag to add it immediately
 
-![Inspector header showing interactive GameTag pills and add button](../images/workflows/game-tags/game-tag-header-pills.png)
-
 ![GameTag add popup with search and multi-selection](../images/workflows/game-tags/game-tag-add-popup.png)
-<!-- IMAGE MISSING: game-tag-add-popup.png — screenshot of the GameTag add popup showing the search field, All/None buttons, selectable pills, and Add/Cancel footer -->
 
 > [!TIP]
 > Double-click is the fastest way to add a single tag. If you want to add several tags in one pass, select them in the popup first and then confirm with **Add**.

@@ -198,7 +198,7 @@ the callback or an associated <a class="xref" href="ElectricDrill.AstraRpgFramew
 
   <h3 id="ElectricDrill_AstraRpgFramework_Triggers_GameEventTrigger_1_EventSource" data-uid="ElectricDrill.AstraRpgFramework.Triggers.GameEventTrigger`1.EventSource">
   EventSource
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Triggers/GameEventTrigger.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Triggers/GameEventTrigger.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the underlying shared event object this trigger wraps, or <code>null</code>.
@@ -229,6 +229,45 @@ duration bookkeeping within the same event raise.</p>
 
 
 
+  <a id="ElectricDrill_AstraRpgFramework_Triggers_GameEventTrigger_1_PayloadType_" data-uid="ElectricDrill.AstraRpgFramework.Triggers.GameEventTrigger`1.PayloadType*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Triggers_GameEventTrigger_1_PayloadType" data-uid="ElectricDrill.AstraRpgFramework.Triggers.GameEventTrigger`1.PayloadType">
+  PayloadType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Triggers/GameEventTrigger.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The <span class="xref">System.Type</span> of the payload delivered by this trigger when it fires.</p>
+<p><code>typeof(void)</code> for parameterless triggers (no payload); a concrete or interface
+type for triggers that carry typed event data. Used by
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ConditionCompatibility.html">ConditionCompatibility</a> to
+verify that a paired
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.Condition.html">Condition</a> can consume the
+payload at design time.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type PayloadType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Type</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -237,7 +276,7 @@ duration bookkeeping within the same event raise.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Triggers_GameEventTrigger_1_Subscribe_ElectricDrill_AstraRpgFramework_EntityCore_System_Action_System_Object__" data-uid="ElectricDrill.AstraRpgFramework.Triggers.GameEventTrigger`1.Subscribe(ElectricDrill.AstraRpgFramework.EntityCore,System.Action{System.Object})">
   Subscribe(EntityCore, Action&lt;object&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Triggers/GameEventTrigger.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Triggers/GameEventTrigger.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Registers <code class="paramref">callback</code> to be invoked when the trigger fires.
@@ -278,7 +317,7 @@ parameterless triggers). The caller is responsible for casting to the expected t
 
   <h3 id="ElectricDrill_AstraRpgFramework_Triggers_GameEventTrigger_1_Unsubscribe_ElectricDrill_AstraRpgFramework_EntityCore_System_Action_System_Object__" data-uid="ElectricDrill.AstraRpgFramework.Triggers.GameEventTrigger`1.Unsubscribe(ElectricDrill.AstraRpgFramework.EntityCore,System.Action{System.Object})">
   Unsubscribe(EntityCore, Action&lt;object&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Triggers/GameEventTrigger.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Triggers/GameEventTrigger.cs/#L66"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Removes the subscription for the specific <code class="paramref">holder</code>/<code class="paramref">callback</code>

@@ -103,7 +103,7 @@ Implements IEnumerable and IStatContainer to provide collection functionality.</
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StatSetInstance : IValueContainer&lt;Stat&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class StatSetInstance : IValueContainer&lt;StatSO&gt;</code></pre>
   </div>
 
 
@@ -120,7 +120,7 @@ Implements IEnumerable and IStatContainer to provide collection functionality.</
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html">IValueContainer</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a>&gt;</div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html">IValueContainer</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSO.html">StatSO</a>&gt;</div>
     </dd>
   </dl>
 
@@ -137,8 +137,8 @@ Implements IEnumerable and IStatContainer to provide collection functionality.</
 
   <a id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance__ctor_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.#ctor*"></a>
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance__ctor_ElectricDrill_AstraRpgFramework_Stats_StatSet_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.#ctor(ElectricDrill.AstraRpgFramework.Stats.StatSet)">
-  StatSetInstance(StatSet)
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance__ctor_ElectricDrill_AstraRpgFramework_Stats_StatSetSO_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.#ctor(ElectricDrill.AstraRpgFramework.Stats.StatSetSO)">
+  StatSetInstance(StatSetSO)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -148,12 +148,12 @@ All stats from the StatSet are initialized with a value of 0.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public StatSetInstance(StatSet statSet)</code></pre>
+    <pre><code class="lang-csharp hljs">public StatSetInstance(StatSetSO statSet)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>statSet</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSet.html">StatSet</a></dt>
+    <dt><code>statSet</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSetSO.html">StatSetSO</a></dt>
     <dd><p>The StatSet to base this instance on.</p>
 </dd>
   </dl>
@@ -175,8 +175,8 @@ All stats from the StatSet are initialized with a value of 0.</p>
 
   <a id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_Item_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.Item*"></a>
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_Item_ElectricDrill_AstraRpgFramework_Stats_Stat_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.Item(ElectricDrill.AstraRpgFramework.Stats.Stat)">
-  this[Stat]
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_Item_ElectricDrill_AstraRpgFramework_Stats_StatSO_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.Item(ElectricDrill.AstraRpgFramework.Stats.StatSO)">
+  this[StatSO]
   <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -185,12 +185,12 @@ All stats from the StatSet are initialized with a value of 0.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long this[Stat stat] { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public long this[StatSO stat] { get; set; }</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a></dt>
+    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSO.html">StatSO</a></dt>
     <dd><p>The stat to get or set.</p>
 </dd>
   </dl>
@@ -218,8 +218,8 @@ All stats from the StatSet are initialized with a value of 0.</p>
 
   <a id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_AddValue_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.AddValue*"></a>
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_AddValue_ElectricDrill_AstraRpgFramework_Stats_Stat_System_Int64_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.AddValue(ElectricDrill.AstraRpgFramework.Stats.Stat,System.Int64)">
-  AddValue(Stat, long)
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_AddValue_ElectricDrill_AstraRpgFramework_Stats_StatSO_System_Int64_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.AddValue(ElectricDrill.AstraRpgFramework.Stats.StatSO,System.Int64)">
+  AddValue(StatSO, long)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -229,12 +229,12 @@ Use negative values to subtract from the stat.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddValue(Stat stat, long value)</code></pre>
+    <pre><code class="lang-csharp hljs">public void AddValue(StatSO stat, long value)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a></dt>
+    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSO.html">StatSO</a></dt>
     <dd><p>The stat to modify.</p>
 </dd>
     <dt><code>value</code> <span class="xref">long</span></dt>
@@ -288,8 +288,8 @@ Use negative values to subtract from the stat.</p>
 
   <a id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_Contains_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.Contains*"></a>
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_Contains_ElectricDrill_AstraRpgFramework_Stats_Stat_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.Contains(ElectricDrill.AstraRpgFramework.Stats.Stat)">
-  Contains(Stat)
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_Contains_ElectricDrill_AstraRpgFramework_Stats_StatSO_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.Contains(ElectricDrill.AstraRpgFramework.Stats.StatSO)">
+  Contains(StatSO)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L84"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -298,12 +298,12 @@ Use negative values to subtract from the stat.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Contains(Stat stat)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Contains(StatSO stat)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a></dt>
+    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSO.html">StatSO</a></dt>
     <dd><p>The stat to check for.</p>
 </dd>
   </dl>
@@ -327,8 +327,8 @@ Use negative values to subtract from the stat.</p>
 
   <a id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_Get_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.Get*"></a>
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_Get_ElectricDrill_AstraRpgFramework_Stats_Stat_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.Get(ElectricDrill.AstraRpgFramework.Stats.Stat)">
-  Get(Stat)
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_Get_ElectricDrill_AstraRpgFramework_Stats_StatSO_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.Get(ElectricDrill.AstraRpgFramework.Stats.StatSO)">
+  Get(StatSO)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -337,12 +337,12 @@ Use negative values to subtract from the stat.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long Get(Stat stat)</code></pre>
+    <pre><code class="lang-csharp hljs">public long Get(StatSO stat)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a></dt>
+    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSO.html">StatSO</a></dt>
     <dd><p>The stat to retrieve.</p>
 </dd>
   </dl>
@@ -366,8 +366,8 @@ Use negative values to subtract from the stat.</p>
 
   <a id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_GetAsPercentage_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.GetAsPercentage*"></a>
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_GetAsPercentage_ElectricDrill_AstraRpgFramework_Stats_Stat_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.GetAsPercentage(ElectricDrill.AstraRpgFramework.Stats.Stat)">
-  GetAsPercentage(Stat)
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_GetAsPercentage_ElectricDrill_AstraRpgFramework_Stats_StatSO_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.GetAsPercentage(ElectricDrill.AstraRpgFramework.Stats.StatSO)">
+  GetAsPercentage(StatSO)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L93"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -376,12 +376,12 @@ Use negative values to subtract from the stat.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Percentage GetAsPercentage(Stat stat)</code></pre>
+    <pre><code class="lang-csharp hljs">public Percentage GetAsPercentage(StatSO stat)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a></dt>
+    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSO.html">StatSO</a></dt>
     <dd><p>The stat to get as a percentage.</p>
 </dd>
   </dl>
@@ -417,13 +417,13 @@ are preserved for LINQ/interface consumers and remain boxing for those paths.</p
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Dictionary&lt;Stat, long&gt;.Enumerator GetEnumerator()</code></pre>
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;StatSO, long&gt;.Enumerator GetEnumerator()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">Dictionary</span>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a>, <span class="xref">long</span>&gt;.<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Enumerator</a></dt>
+    <dt><span class="xref">Dictionary</span>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSO.html">StatSO</a>, <span class="xref">long</span>&gt;.<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSO.html">Enumerator</a></dt>
     <dd></dd>
   </dl>
 
@@ -439,8 +439,8 @@ are preserved for LINQ/interface consumers and remain boxing for those paths.</p
 
   <a id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_TryGet_" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.TryGet*"></a>
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_TryGet_ElectricDrill_AstraRpgFramework_Stats_Stat_System_Int64__" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.TryGet(ElectricDrill.AstraRpgFramework.Stats.Stat,System.Int64@)">
-  TryGet(Stat, out long)
+  <h3 id="ElectricDrill_AstraRpgFramework_Stats_StatSetInstance_TryGet_ElectricDrill_AstraRpgFramework_Stats_StatSO_System_Int64__" data-uid="ElectricDrill.AstraRpgFramework.Stats.StatSetInstance.TryGet(ElectricDrill.AstraRpgFramework.Stats.StatSO,System.Int64@)">
+  TryGet(StatSO, out long)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Stats/StatSetInstance.cs/#L53"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -449,12 +449,12 @@ are preserved for LINQ/interface consumers and remain boxing for those paths.</p
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool TryGet(Stat stat, out long value)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool TryGet(StatSO stat, out long value)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a></dt>
+    <dt><code>stat</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSO.html">StatSO</a></dt>
     <dd><p>The stat to query.</p>
 </dd>
     <dt><code>value</code> <span class="xref">long</span></dt>

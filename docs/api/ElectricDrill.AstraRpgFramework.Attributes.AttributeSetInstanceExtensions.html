@@ -130,8 +130,8 @@ Class AttributeSetInstanceExtensions  <a class="header-action link-secondary" ti
 
   <a id="ElectricDrill_AstraRpgFramework_Attributes_AttributeSetInstanceExtensions_ToAttributeSetInstance_" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeSetInstanceExtensions.ToAttributeSetInstance*"></a>
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Attributes_AttributeSetInstanceExtensions_ToAttributeSetInstance_ElectricDrill_AstraRpgFramework_Utils_SerializableDictionary_ElectricDrill_AstraRpgFramework_Attributes_Attribute_System_Int64__ElectricDrill_AstraRpgFramework_Attributes_AttributeSet_" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeSetInstanceExtensions.ToAttributeSetInstance(ElectricDrill.AstraRpgFramework.Utils.SerializableDictionary{ElectricDrill.AstraRpgFramework.Attributes.Attribute,System.Int64},ElectricDrill.AstraRpgFramework.Attributes.AttributeSet)">
-  ToAttributeSetInstance(SerializableDictionary&lt;Attribute, long&gt;, AttributeSet)
+  <h3 id="ElectricDrill_AstraRpgFramework_Attributes_AttributeSetInstanceExtensions_ToAttributeSetInstance_ElectricDrill_AstraRpgFramework_Utils_SerializableDictionary_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int64__ElectricDrill_AstraRpgFramework_Attributes_AttributeSetSO_" data-uid="ElectricDrill.AstraRpgFramework.Attributes.AttributeSetInstanceExtensions.ToAttributeSetInstance(ElectricDrill.AstraRpgFramework.Utils.SerializableDictionary{ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int64},ElectricDrill.AstraRpgFramework.Attributes.AttributeSetSO)">
+  ToAttributeSetInstance(SerializableDictionary&lt;AttributeSO, long&gt;, AttributeSetSO)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/AttributeSetInstance.cs/#L167"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -141,15 +141,15 @@ Validates that all attributes from the AttributeSet are present in the dictionar
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static AttributeSetInstance ToAttributeSetInstance(this SerializableDictionary&lt;Attribute, long&gt; dictionary, AttributeSet attributeSet)</code></pre>
+    <pre><code class="lang-csharp hljs">public static AttributeSetInstance ToAttributeSetInstance(this SerializableDictionary&lt;AttributeSO, long&gt; dictionary, AttributeSetSO attributeSet)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dictionary</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.SerializableDictionary-2.html">SerializableDictionary</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.Attribute.html">Attribute</a>, <span class="xref">long</span>&gt;</dt>
+    <dt><code>dictionary</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.SerializableDictionary-2.html">SerializableDictionary</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSO.html">AttributeSO</a>, <span class="xref">long</span>&gt;</dt>
     <dd><p>The dictionary to convert</p>
 </dd>
-    <dt><code>attributeSet</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSet.html">AttributeSet</a></dt>
+    <dt><code>attributeSet</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSetSO.html">AttributeSetSO</a></dt>
     <dd><p>The AttributeSet to validate against</p>
 </dd>
   </dl>

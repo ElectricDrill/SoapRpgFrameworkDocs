@@ -273,6 +273,8 @@ To make a `GameObject` an entity, we need to add the `MonoBehaviour` `EntityCore
 
 From the inspector, we can configure several values. Let's analyze them one by one.
 
+(🏷️*v2.0.0+*) `EntityCore` also supports multi-object editing for shared inspector values across multiple selected entities.
+
 `Level`: defines the entity's level. By changing its value, we can assign a different level to the entity directly from the inspector. This can be useful for testing purposes.
 You'll notice the `Use Constant` checkbox. If checked, you can pass an `IntVar` instead of using a constant.
 
@@ -394,6 +396,8 @@ The next step is to assign the attribute set we created to an entity. To do this
 
 An entity has base points for attributes, which can be either fixed or derived from a class, a configurable amount of attribute points that can be arbitrarily assigned, and these points are granted at each level-up, along with flat and percentage modifiers for the attributes.
 Except for the modifiers, which can only be assigned via code, all other values can be configured from the inspector.
+
+(🏷️*v2.0.0+*) `EntityAttributes` supports multi-object editing; shared fields can be edited in bulk, and attribute-specific rows are shown only for attributes common to the current selection.
 
 `Attr Points Per Level` defines how many arbitrarily spendable attribute points are provided at each level-up. They are assigned starting from level 2 on.
 
@@ -580,6 +584,8 @@ Unlike attributes, however, stats include `Attributes Scaling`.
 Let's create a new `Attribute Scaling Component` to use with the strength stat we created earlier.
 Create a new folder named, for example, `Attribute Scalings for Stats`, and inside it, create an attribute scaling component called `Physical Attack Strength Scaling`.
 
+(🏷️*v2.0.0+*) `Attribute Scaling Component` supports multi-object editing; shared set assignment and common attribute rows can be edited in bulk.
+
 Assign the previously created `Hero Attribute Set` to the `Set` field. You will see the attributes of the set appear. Here, you can assign scaling values using `double`. For example, set the scaling of `Strength` to `1.0`. This component defines a 100% scaling on the value of `Strength`.
 
 ![Physical Attack Strength Scaling](../images/workflows/physical-attack-strength-scaling.png)
@@ -624,6 +630,8 @@ The next step is to assign the stat set we created to an entity. To do this, let
 ![Entity Stats](../images/workflows/entity-stats.png)
 
 An entity has base stats that can be either fixed or derived from a class. Additionally, stats can be modified through flat modifiers, stat-to-stat modifiers, and percentage modifiers.
+
+(🏷️*v2.0.0+*) `EntityStats` supports multi-object editing; shared fields can be edited in bulk, and fixed-base rows are shown only for stats common to the current selection.
 
 `Use Class Base Stats` checkbox determines whether the base stats should come from the entity's class (if one is available) or from fixed values defined in the inspector. For now, let's leave it unchecked since we haven't added a class yet.
 
@@ -782,6 +790,14 @@ The only mandatory field is `Stat Set`. If we don't make use of attributes and M
 
 In our case, let's assign our `Hero Stat Set` to `Stat Set` and `Hero Attribute Set` to `Attribute Set`. This way, the `Warrior` will have access to all stats and attributes from the assigned `Stat Set` and `Attribute Set`.
 As we fill these two fields, we'll see that the `Stat Growth Formulas` and `Attribute Growth Formulas` sections will automatically populate with the stats and attributes from the assigned `Stat Set` and `Attribute Set`.
+
+(🏷️*v2.0.0+*) You can also select multiple `Class` assets and edit them together. Shared `Stat Set`, `Attribute Set`, and `Max HP Growth Formula` values can be assigned in bulk, while the growth-formula sections only show the stats and attributes that are common to every selected class. If a shared entry currently references different formulas across the selection, Unity shows the field as a mixed value until you assign a common formula.
+
+> [!NOTE]
+> `Auto-Create Missing Growth Formulas` is available only when editing a single `Class` asset.
+>
+> When multi-editing, assign a common `Stat Set` and/or `Attribute Set` first if you want to batch-edit growth formula references across several classes.
+
 Let's proceed to create all the growth formulas for the warrior's stats and attributes.
 Follow the steps outlined in the [Growth Formulas](#growth-formulas) section to create the growth formulas for the warrior's stats and attributes.  
 Once all growth formulas are assigned, the `Warrior` should look like this:
@@ -808,6 +824,8 @@ To assign a class to an entity, we need to add the `EntityClass` component to it
 ![Entity Class](../images/workflows/entity-class.png) 
 
 All we have to do now is just assign the `Warrior` class we created earlier to the `Class` field.
+
+(🏷️*v2.0.0+*) `EntityClass` also supports multi-object editing, so you can assign the same `Class` asset to multiple selected entities at once.
 
 ### Switching to class-based attributes and stats
 We can now check the `Use Class Base Attributes` and `Use Class Base Stats` checkboxes. By doing this, the entity will use the base attributes and stats defined by the class. The `Fixed Base Attributes` and `Fixed Base Stats` fields will be disabled, and the values will be automatically retrieved from the class growth formulas.
@@ -839,6 +857,8 @@ We already saw how to create an `Attribute Scaling Component` for stats. On top 
 For example, let's create a `Scaling Formula` called `Mighty Blow SF`. It should look like this in the inspector:
 
 ![Scaling Formula](../images/workflows/scaling-formula.png)
+
+(🏷️*v2.0.0+*) `Scaling Formula`, `Attribute Scaling Component`, and `Stat Scaling Component` support multi-object editing for shared values across the current selection.
 
 `Base Value` determines the starting point for the scaling formula. It can either be a fixed constant value or a value that scales with levels (e.g., the level of the Mighty Blow skill). If the latter is chosen, a `Growth Formula` must be provided to define how the base value changes as levels increase.
 

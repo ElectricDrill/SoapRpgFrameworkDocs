@@ -285,7 +285,7 @@ Must be called from the consumer's <code>Awake()</code> or equivalent init metho
 
   <h3 id="ElectricDrill_AstraRpgFramework_Events_EventChannel_3_Raise__2_" data-uid="ElectricDrill.AstraRpgFramework.Events.EventChannel`3.Raise(`2)">
   Raise(TContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/EventChannel.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/EventChannel.cs/#L77"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Dispatches the context to the global event (if a config is available) and to
@@ -295,7 +295,41 @@ Uses a reverse index loop so that listeners may safely remove extras during disp
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Raise(TContext ctx)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Raise(TContext ctx)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ctx</code> <span class="xref">TContext</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Events_EventChannel_3_RaiseExtras_" data-uid="ElectricDrill.AstraRpgFramework.Events.EventChannel`3.RaiseExtras*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Events_EventChannel_3_RaiseExtras__2_" data-uid="ElectricDrill.AstraRpgFramework.Events.EventChannel`3.RaiseExtras(`2)">
+  RaiseExtras(TContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Events/EventChannel.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Dispatches <code class="paramref">ctx</code> to all registered extra events.
+Uses a reverse index loop so that listeners may safely remove extras during dispatch.
+Exposed to subclasses so they can reuse the extras loop while overriding global dispatch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void RaiseExtras(TContext ctx)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
