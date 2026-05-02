@@ -51,15 +51,17 @@ Unity's `[MovedFrom]` patches direct (non-generic) `[SerializeReference]` manage
 If any of the following apply to your project, you need to run the migration tool and follow the additional steps in [Managed Reference Migration](managed-reference-migration.md):
 
 - You have a `[SerializeReference]` field whose concrete serialized type holds one of the renamed framework types as a generic argument (for example, a custom closed-generic provider like `SomeProvider<Stat>`)
-- You implemented `IDisplaySONameProvider<T>`, which has been replaced by the non-generic `IDisplaySONameProvider` (see [Migrating `IDisplaySONameProvider<T>`](managed-reference-migration.md#1-migrating-idisplaysonamet-custom-implementations))
+- You implemented `IDisplaySONameProvider<T>`, which has been replaced by the non-generic `IDisplaySONameProvider` (see [Migrating `IDisplaySONameProvider<T>`](managed-reference-migration.md#1-migrating-idisplaysonameprovidert-custom-implementations))
 
 If neither applies, no further action is needed for this section.
 
 ### Required migration steps
 
-#### Update the framework configuration and shared event assets
+#### Update the framework configuration, shared event assets, and experience modifier stat
 
 The framework now dispatches its core global events — entity spawned, level up, level down, stat changed, and attribute changed — through a central `AstraFrameworkConfigSO` asset. Three of those events (spawned, level up, level down) are **required**; without them the corresponding broadcasts are never fired.
+
+The same configuration asset now also owns the optional **Experience Gain Modifier Stat** binding. If your project previously assigned an experience gain modifier stat per entity, move that `StatSO` reference into the framework configuration.
 
 > [!IMPORTANT]
 > **Do not use the sample events for your production project.**  
@@ -67,6 +69,7 @@ The framework now dispatches its core global events — entity spawned, level up
 
 **Steps:**
 
+1. **Create your own `AstraFrameworkConfigSO`** — right-click in the Project window and choose **Create → Astra RPG Framework → Config**, then save it somewhere in your project (e.g., `Assets/Config/`).  
 1. **Create your own `AstraFrameworkConfigSO`** — right-click in the Project window and choose **Create → Astra RPG Framework → Config**, then save it somewhere in your project (e.g., `Assets/Config/`).  
    For a full description of each field and the loading strategy, see [Package Configuration](workflows/package-configuration.md).
 
@@ -76,14 +79,14 @@ The framework now dispatches its core global events — entity spawned, level up
    - <span style="color:red;">*</span> *Global Entity Level Down Event* — the `EntityLevelDownGameEvent` your systems already listen to
    - *Global Stat Changed Event* — the `StatChangedGameEvent` your systems already listen to (optional but recommended)
    - *Global Attribute Changed Event* — the `AttributeChangedGameEvent` your systems already listen to (optional but recommended)
+   - *Experience Gain Modifier Stat* — the `StatSO` you previously assigned per entity, if your project uses experience gain modifiers
 
-   _<span style="color:red;">*</span> denotes a mandatory field_
+3. **Move the experience modifier stat from entities to the config** — if your project already used the old per-entity field, assign that same `StatSO` to **Experience Gain Modifier Stat** in the active config. You no longer need to assign it on each entity. Each entity will still use its own runtime value for that stat from `EntityStats`.
 
-3. **Register the config in Project Settings** — open `Edit → Project Settings → Astra Framework` and assign your new config asset as the **Active Config Profile**.
+4. **Register the config in Project Settings** — open `Edit → Project Settings → Astra Framework` and assign your new config asset as the **Active Config Profile**.
 
 > [!CAUTION]
-> If you skip step 3 and leave Project Settings empty, the framework will attempt the convention-based fallback (a `Resources` asset named `Astra Framework Config`). If neither is found, global events are never dispatched and any system that relies on them will silently fail at runtime. You'll get a console error if no config is found.
-> However, it is strongly recommended to verify that the Project Settings page shows **"✓ Using Explicit Configuration"**, with **your own** config asset assigned.
+> If you skip step 4 and leave Project Settings empty, the framework will attempt the convention-based fallback (a `Resources` asset named `Astra Framework Config`). If neither is found, global events are never dispatched and any system that relies on them will silently fail at runtime. Always verify the Project Settings page shows **"✓ Using Explicit Configuration"** before entering Play Mode.
 
 #### Rename the fixed typo in `EntityStats`
 

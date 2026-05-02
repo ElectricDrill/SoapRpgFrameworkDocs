@@ -287,7 +287,9 @@ You'll notice the `Use Constant` checkbox. If checked, you can pass an `IntVar` 
 
 `Experience Formula`: `GrowthFormula` that describes how the total experience required to reach the next level grows at each level.
 
-Built-in framework events such as `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed` are dispatched through the active Astra RPG Framework configuration. Use `Edit -> Project Settings -> Astra RPG Framework` to choose which configuration asset is active, then open that configuration asset and assign the shared event assets inside it. If no active Project Settings configuration is assigned, the runtime falls back to a `Resources/Astra Rpg Framework Config` asset.
+(🏷️*v2.0.0+*) `Experience Gain Modifier Stat` is no longer configured per entity in the `EntityLevel` inspector. If your project uses experience gain modifiers, open the active `AstraFrameworkConfigSO` from `Edit -> Project Settings -> Astra Framework` and assign the shared `StatSO` to **Experience Gain Modifier Stat**. Each entity will then use its own value for that stat from `EntityStats` when `AddExp(...)` applies modifiers.
+
+Built-in framework events such as `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed`, together with the shared experience gain modifier stat binding, are resolved through the active Astra Framework configuration. Use `Edit -> Project Settings -> Astra Framework` to choose which configuration asset is active, then open that configuration asset and assign the shared fields inside it. If no active Project Settings configuration is assigned, the runtime falls back to a `Resources/Astra Framework Config` asset.
 
 ### EntityLevel code APIs
 It is honorable to mention some code APIs that can be used to interact with the `EntityLevel` component.
@@ -978,7 +980,7 @@ This is a powerful mechanism that decouples the event producers from the event c
 
 ### Global framework events and reactive filtering
 
-The framework dispatches its built-in core events through the active Astra RPG Framework configuration. `EntityCore`, `EntityLevel`, `EntityStats`, and `EntityAttributes` send their shared `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed` notifications through the configuration asset selected in `Edit -> Project Settings -> Astra RPG Framework`. The Project Settings entry selects the active configuration asset; the shared event references themselves are assigned inside that configuration asset. If no Project Settings config is assigned, the runtime falls back to a `Resources/Astra Rpg Framework Config` asset.
+The framework dispatches its built-in core events through the active Astra Framework configuration. `EntityCore`, `EntityLevel`, `EntityStats`, and `EntityAttributes` send their shared `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed` notifications through the configuration asset selected in `Edit -> Project Settings -> Astra Framework`. The Project Settings entry selects the active configuration asset; the shared event references and the optional **Experience Gain Modifier Stat** binding are assigned inside that configuration asset. If no Project Settings config is assigned, the runtime falls back to a `Resources/Astra Framework Config` asset.
 
 This shared-event model is convenient, but it also means listeners and reactive triggers usually subscribe to common event sources rather than to holder-specific event instances. In other words, the holder attached to a reactive subscription is used for ownership and cleanup, not as an automatic payload filter. When a global stat or attribute event is raised, every subscriber on that event source can receive the payload.
 

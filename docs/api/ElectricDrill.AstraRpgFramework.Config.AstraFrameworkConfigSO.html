@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class AstraFrameworkConfigSO | Astra RPG Framework ">
       
-      <meta name="description" content="ScriptableObject that stores the global configuration for the Astra Framework. Holds references to the global game events used by core entity components.">
+      <meta name="description" content="ScriptableObject that stores the global configuration for the Astra Framework. Holds references to the global game events and shared stat bindings used by core entity components.">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Config_AstraFrameworkConfigSO" data-uid="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO" class="text-break">
-Class AstraFrameworkConfigSO  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Config/AstraFrameworkConfigSO.cs/#L10"><i class="bi bi-code-slash"></i></a>
+Class AstraFrameworkConfigSO  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Config/AstraFrameworkConfigSO.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,7 +98,7 @@ Class AstraFrameworkConfigSO  <a class="header-action link-secondary" title="Vie
   </div>
 
   <div class="markdown summary"><p>ScriptableObject that stores the global configuration for the Astra Framework.
-Holds references to the global game events used by core entity components.</p>
+Holds references to the global game events and shared stat bindings used by core entity components.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -138,11 +138,43 @@ public class AstraFrameworkConfigSO : ScriptableObject, IAstraFrameworkConfig</c
 </h2>
 
 
+  <a id="ElectricDrill_AstraRpgFramework_Config_AstraFrameworkConfigSO_ExperienceGainedModifierStat_" data-uid="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.ExperienceGainedModifierStat*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Config_AstraFrameworkConfigSO_ExperienceGainedModifierStat" data-uid="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.ExperienceGainedModifierStat">
+  ExperienceGainedModifierStat
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Config/AstraFrameworkConfigSO.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Optional stat used as the shared experience gain modifier source for all entities.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StatSO ExperienceGainedModifierStat { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSO.html">StatSO</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ElectricDrill_AstraRpgFramework_Config_AstraFrameworkConfigSO_GlobalAttributeChangedEvent_" data-uid="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.GlobalAttributeChangedEvent*"></a>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Config_AstraFrameworkConfigSO_GlobalAttributeChangedEvent" data-uid="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.GlobalAttributeChangedEvent">
   GlobalAttributeChangedEvent
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Config/AstraFrameworkConfigSO.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Config/AstraFrameworkConfigSO.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Global event raised when an attribute value changes.</p>
@@ -174,7 +206,7 @@ public class AstraFrameworkConfigSO : ScriptableObject, IAstraFrameworkConfig</c
 
   <h3 id="ElectricDrill_AstraRpgFramework_Config_AstraFrameworkConfigSO_GlobalEntityLevelDownEvent" data-uid="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.GlobalEntityLevelDownEvent">
   GlobalEntityLevelDownEvent
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Config/AstraFrameworkConfigSO.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Config/AstraFrameworkConfigSO.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Global event raised when an entity levels down.</p>
@@ -206,7 +238,7 @@ public class AstraFrameworkConfigSO : ScriptableObject, IAstraFrameworkConfig</c
 
   <h3 id="ElectricDrill_AstraRpgFramework_Config_AstraFrameworkConfigSO_GlobalEntityLevelUpEvent" data-uid="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.GlobalEntityLevelUpEvent">
   GlobalEntityLevelUpEvent
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Config/AstraFrameworkConfigSO.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Config/AstraFrameworkConfigSO.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Global event raised when an entity levels up.</p>
@@ -238,7 +270,7 @@ public class AstraFrameworkConfigSO : ScriptableObject, IAstraFrameworkConfig</c
 
   <h3 id="ElectricDrill_AstraRpgFramework_Config_AstraFrameworkConfigSO_GlobalEntitySpawnedEvent" data-uid="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.GlobalEntitySpawnedEvent">
   GlobalEntitySpawnedEvent
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Config/AstraFrameworkConfigSO.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Config/AstraFrameworkConfigSO.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Global event raised when an entity is spawned.</p>
@@ -270,7 +302,7 @@ public class AstraFrameworkConfigSO : ScriptableObject, IAstraFrameworkConfig</c
 
   <h3 id="ElectricDrill_AstraRpgFramework_Config_AstraFrameworkConfigSO_GlobalStatChangedEvent" data-uid="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.GlobalStatChangedEvent">
   GlobalStatChangedEvent
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Config/AstraFrameworkConfigSO.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Config/AstraFrameworkConfigSO.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Global event raised when a stat value changes.</p>

@@ -76,9 +76,7 @@ The custom inspector exposes a **Visual** section where you can configure the ta
 
 The inspector also shows a live preview of the resulting pill.
 
-
-![GameTag inspector with color, icon, gradient, and preview fields](../images/game-tags/game-tag-inspector.png)
-<!-- IMAGE MISSING: game-tag-inspector.png — screenshot of the GameTag inspector showing the Color, Icon, Emojis..., Use Gradient, End Color, Direction, and Preview areas -->
+![GameTag inspector with color, icon, gradient, and preview fields](../images/workflows/game-tags/game-tag-inspector.png)
 
 ## Where tags appear
 
@@ -127,8 +125,7 @@ When multiple compatible `ITaggable` objects are selected, the header still supp
 
 In multi-object mode, reordering and click-to-ping are intentionally not the primary workflow, because a heterogeneous selection does not have a single stable tag order.
 
-![Multi-object editing with shared tags and overflow indicator](../images/game-tags/game-tag-multi-object-editing.png)
-<!-- IMAGE MISSING: game-tag-multi-object-editing.png — screenshot of a multi-object selection showing shared tags, the grey overflow +N pill, and the bulk editing behavior in the header -->
+![Multi-object editing with shared tags and overflow indicator](../images/workflows/game-tags/game-tag-multi-object-editing.png)
 
 ## Pill appearance preferences
 

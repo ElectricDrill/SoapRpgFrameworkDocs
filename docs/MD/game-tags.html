@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/main/DocFx/MD/game-tags.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.0.0/DocFx/MD/game-tags.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -88,9 +88,9 @@
 <h1 id="game-tags">Game Tags</h1>
 
 <p><em>🏷️ Version 2.0.0+</em></p>
-<p><code>GameTag</code>s let you classify entities, assets, and reusable framework objects with lightweight <code>ScriptableObject</code> identifiers. Each tag can also carry visual metadata, so tagged objects are immediately recognizable in the Inspector through colored pill-style labels.</p>
-<h2 id="what-a-gametag-contains">What a <code>GameTag</code> contains</h2>
-<p>A <code>GameTag</code> asset stores:</p>
+<p><code>GameTagSO</code> assets let you classify entities, assets, and reusable framework objects with lightweight <code>ScriptableObject</code> identifiers. Each tag can also carry visual metadata, so tagged objects are immediately recognizable in the Inspector through colored pill-style labels.</p>
+<h2 id="what-a-gametagso-contains">What a <code>GameTagSO</code> contains</h2>
+<p>A <code>GameTagSO</code> asset stores:</p>
 <ul>
 <li>A primary color</li>
 <li>An optional icon (typically an emoji or short symbol)</li>
@@ -100,12 +100,12 @@
 <p>Assigned tags are stored through <code>GameTagSet</code>, which is the serializable container used by taggable objects. Built-in framework types that expose tags directly through <code>ITaggable</code> include:</p>
 <ul>
 <li><code>EntityCore</code></li>
-<li><code>Stat</code> and <code>StatSet</code></li>
-<li><code>Attribute</code> and <code>AttributeSet</code></li>
-<li><code>Class</code></li>
-<li><code>GrowthFormula</code></li>
-<li><code>ScalingComponent</code> and <code>ScalingFormula</code></li>
-<li><code>IntVar</code> and <code>LongVar</code></li>
+<li><code>StatSO</code> and <code>StatSetSO</code></li>
+<li><code>AttributeSO</code> and <code>AttributeSetSO</code></li>
+<li><code>ClassSO</code></li>
+<li><code>GrowthFormulaSO</code></li>
+<li><code>ScalingComponentSO</code> and <code>ScalingFormulaSO</code></li>
+<li><code>IntVarSO</code> and <code>LongVarSO</code></li>
 <li><code>GameAction&lt;TContext&gt;</code> assets</li>
 </ul>
 <p>This makes tags useful both for gameplay meaning and for editor organization.</p>
@@ -146,8 +146,7 @@
 <li><strong>End Color</strong> and <strong>Direction</strong> when gradient mode is enabled</li>
 </ul>
 <p>The inspector also shows a live preview of the resulting pill.</p>
-<p><img src="../images/game-tags/game-tag-inspector.png" alt="GameTag inspector with color, icon, gradient, and preview fields"></p>
-<!-- IMAGE MISSING: game-tag-inspector.png — screenshot of the GameTag inspector showing the Color, Icon, Emojis..., Use Gradient, End Color, Direction, and Preview areas -->
+<p><img src="../images/workflows/game-tags/game-tag-inspector.png" alt="GameTag inspector with color, icon, gradient, and preview fields"></p>
 <h2 id="where-tags-appear">Where tags appear</h2>
 <p>When the inspected target implements <code>ITaggable</code>, the framework automatically injects a tag bar directly below the default inspector header. No per-type setup is required for supported objects.</p>
 <p>This injected header bar is the intended authoring workflow for tag editing. In tag-aware custom inspectors, the underlying serialized data may be hidden on purpose so interaction stays guided through the pill-based header UI instead of a lower-level field editor.</p>
@@ -188,8 +187,7 @@
 <li>Removing a visible shared tag opens a confirmation popup listing the affected objects before the batch removal is applied</li>
 </ul>
 <p>In multi-object mode, reordering and click-to-ping are intentionally not the primary workflow, because a heterogeneous selection does not have a single stable tag order.</p>
-<p><img src="../images/game-tags/game-tag-multi-object-editing.png" alt="Multi-object editing with shared tags and overflow indicator"></p>
-<!-- IMAGE MISSING: game-tag-multi-object-editing.png — screenshot of a multi-object selection showing shared tags, the grey overflow +N pill, and the bulk editing behavior in the header -->
+<p><img src="../images/workflows/game-tags/game-tag-multi-object-editing.png" alt="Multi-object editing with shared tags and overflow indicator"></p>
 <h2 id="pill-appearance-preferences">Pill appearance preferences</h2>
 <p>The visual pill rendering also has per-user editor preferences under:</p>
 <p><code>Edit &gt; Preferences &gt; Astra RPG Framework &gt; Game Tag Pills</code></p>

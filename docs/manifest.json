@@ -82,6 +82,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "MD/managed-reference-migration.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/managed-reference-migration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "MD/migration-guide.md",
       "output": {
         ".html": {
@@ -4158,6 +4168,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/AstraRPG/game-tag.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/AstraRPG/game-tag.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/AstraRPG/growth-fo.png",
       "output": {
         "resource": {
@@ -4502,6 +4522,26 @@
       "output": {
         "resource": {
           "relative_path": "images/workflows/game-tags/game-tag-header-pills.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/game-tags/game-tag-inspector.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/game-tags/game-tag-inspector.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/game-tags/game-tag-multi-object-editing.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/game-tags/game-tag-multi-object-editing.png"
         }
       },
       "version": ""

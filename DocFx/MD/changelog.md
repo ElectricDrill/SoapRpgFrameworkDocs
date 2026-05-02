@@ -15,7 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added the `Conditions` system, including composite conditions, entity/tag/value-change/stat/attribute/random leaf conditions, and `ConditionalGameAction`.
 - Added `ConditionEvaluationAvailability` and `ConditionTargetAvailability` so condition compatibility checks can describe both the payload contract and the entity target slots available in a given evaluation context.
 - Added the `Game Tags` system with `GameTag`, `GameTagSet`, `ITaggable`, and tag-based conditions.
-- Added framework-level configuration assets for built-in shared events through `AstraRpgFrameworkConfigSO`, `AstraRpgFrameworkGlobalSettingsSO`, and `AstraRpgFrameworkConfigProvider`.
+- Added framework-level configuration assets for built-in shared events through `AstraFrameworkConfigSO`, `AstraFrameworkGlobalSettingsSO`, and `AstraFrameworkConfigProvider`.
 - Added reactive trigger infrastructure with `IReactiveTrigger`, typed `GameEventTrigger<TContext>` implementations, and `EventSource` support for shared subscription coalescing.
 - Added `IHasEntity` as the common bridge contract for entity-aware payloads and game actions, plus projection actions for entity-context workflows.
 - Added owner-aware execution paths for `GameAction`s and introduced `GameActionBase` to support inspector-facing polymorphic action references.
@@ -34,6 +34,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 #### Runtime Features
 - Built-in `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed` events are dispatched through the active Astra RPG Framework configuration asset.
+- The optional experience gain modifier stat binding is now assigned once in `AstraFrameworkConfigSO` through **Experience Gain Modifier Stat** instead of being configured per entity.
 - `GameAction` workflows now lean on `IHasEntity` as the primary context for event-driven authoring, with owner propagation preserved across wrapper and projection actions.
 - `EntityCore` now implements both `IStatReader` and `IAttributeReader`, making the entity itself a convenient read facade for gameplay code.
 - `ConditionCompatibility` now performs deeper validation of condition trees, including recursive checks on authored `ConditionTarget` selections inside composite conditions.
@@ -60,7 +61,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   | `BoundedValue` | `BoundedValueSO` |
 
   All renamed types carry `[MovedFrom(autoUpdateAPI = true)]`; Unity's API Updater handles C# script references automatically on reimport.
-- `IDisplaySONameProvider<T>` was replaced by the non-generic `IDisplaySONameProvider` (parameter type changed from `T` to `ScriptableObject`). The change was necessary to work around [Unity bug UUM-44729](https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types), where `[MovedFrom]` does not propagate into generic arguments of serialized type strings. Custom implementations must now cast the `ScriptableObject` parameter internally. See [Migrating `IDisplaySONameProvider<T>`](./managed-reference-migration.md#1-migrating-idisplaysonamet-custom-implementations).
+- `IDisplaySONameProvider<T>` was replaced by the non-generic `IDisplaySONameProvider` (parameter type changed from `T` to `ScriptableObject`). The change was necessary to work around [Unity bug UUM-44729](https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types), where `[MovedFrom]` does not propagate into generic arguments of serialized type strings. Custom implementations must now cast the `ScriptableObject` parameter internally. See [Migrating `IDisplaySONameProvider<T>`](./managed-reference-migration.md#1-migrating-idisplaysonameprovidert-custom-implementations).
 
 #### Editor Features
 - Improved the fixed-base attribute handling in `EntityAttributesEditor` and `EntityStatsEditor` for Play Mode usage.

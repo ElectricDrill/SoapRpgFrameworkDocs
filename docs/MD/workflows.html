@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/main/DocFx/MD/workflows.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.0.0/DocFx/MD/workflows.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -317,7 +317,8 @@ If <code>Use constant</code> is checked instead, the value is readonly.</p>
 </div>
 <p><code>Max Level</code>: The maximum level the entity can reach</p>
 <p><code>Experience Formula</code>: <code>GrowthFormula</code> that describes how the total experience required to reach the next level grows at each level.</p>
-<p>Built-in framework events such as <code>Spawned</code>, <code>Level Up</code>, <code>Level Down</code>, <code>Stat Changed</code>, and <code>Attribute Changed</code> are dispatched through the active Astra RPG Framework configuration. Use <code>Edit -&gt; Project Settings -&gt; Astra RPG Framework</code> to choose which configuration asset is active, then open that configuration asset and assign the shared event assets inside it. If no active Project Settings configuration is assigned, the runtime falls back to a <code>Resources/Astra Rpg Framework Config</code> asset.</p>
+<p>(🏷️<em>v2.0.0+</em>) <code>Experience Gain Modifier Stat</code> is no longer configured per entity in the <code>EntityLevel</code> inspector. If your project uses experience gain modifiers, open the active <code>AstraFrameworkConfigSO</code> from <code>Edit -&gt; Project Settings -&gt; Astra Framework</code> and assign the shared <code>StatSO</code> to <strong>Experience Gain Modifier Stat</strong>. Each entity will then use its own value for that stat from <code>EntityStats</code> when <code>AddExp(...)</code> applies modifiers.</p>
+<p>Built-in framework events such as <code>Spawned</code>, <code>Level Up</code>, <code>Level Down</code>, <code>Stat Changed</code>, and <code>Attribute Changed</code>, together with the shared experience gain modifier stat binding, are resolved through the active Astra Framework configuration. Use <code>Edit -&gt; Project Settings -&gt; Astra Framework</code> to choose which configuration asset is active, then open that configuration asset and assign the shared fields inside it. If no active Project Settings configuration is assigned, the runtime falls back to a <code>Resources/Astra Framework Config</code> asset.</p>
 <h3 id="entitylevel-code-apis">EntityLevel code APIs</h3>
 <p>It is honorable to mention some code APIs that can be used to interact with the <code>EntityLevel</code> component.</p>
 <p>EntityLevel exposes a <code>Action&lt;EntityCore, int&gt; OnLevelUp</code> property that can be used to subscribe to level-up events from code.</p>
@@ -633,10 +634,10 @@ entityStats.AddFlatModifier(defenseStat, -5);
 </div>
 <p><strong>Code example:</strong></p>
 <pre><code class="lang-csharp">// 25% of armor is added to physical attack
-entityStats.AddStatToStatModifer(physicalAttackStat, armorAttribute, 25);
+entityStats.AddStatToStatModifier(physicalAttackStat, armorAttribute, 25);
 
 // Negative modifier: -10% of armor is subtracted from physical attack
-entityStats.AddStatToStatModifer(physicalAttackStat, armorAttribute, -10);
+entityStats.AddStatToStatModifier(physicalAttackStat, armorAttribute, -10);
 </code></pre>
 <p><strong>Calculation example:</strong></p>
 <ul>
@@ -861,7 +862,7 @@ The method to raise the event is <code>Raise(int value)</code>, which will raise
 <p><img src="../images/workflows/player-died-listener.png" alt="Player Died Listener"></p>
 <p>This is a powerful mechanism that decouples the event producers from the event consumers, allowing for a more modular and maintainable codebase. And most of the setup is inspector-based. You just need to define the raising and the listening methods from code.</p>
 <h3 id="global-framework-events-and-reactive-filtering">Global framework events and reactive filtering</h3>
-<p>The framework dispatches its built-in core events through the active Astra RPG Framework configuration. <code>EntityCore</code>, <code>EntityLevel</code>, <code>EntityStats</code>, and <code>EntityAttributes</code> send their shared <code>Spawned</code>, <code>Level Up</code>, <code>Level Down</code>, <code>Stat Changed</code>, and <code>Attribute Changed</code> notifications through the configuration asset selected in <code>Edit -&gt; Project Settings -&gt; Astra RPG Framework</code>. The Project Settings entry selects the active configuration asset; the shared event references themselves are assigned inside that configuration asset. If no Project Settings config is assigned, the runtime falls back to a <code>Resources/Astra Rpg Framework Config</code> asset.</p>
+<p>The framework dispatches its built-in core events through the active Astra Framework configuration. <code>EntityCore</code>, <code>EntityLevel</code>, <code>EntityStats</code>, and <code>EntityAttributes</code> send their shared <code>Spawned</code>, <code>Level Up</code>, <code>Level Down</code>, <code>Stat Changed</code>, and <code>Attribute Changed</code> notifications through the configuration asset selected in <code>Edit -&gt; Project Settings -&gt; Astra Framework</code>. The Project Settings entry selects the active configuration asset; the shared event references and the optional <strong>Experience Gain Modifier Stat</strong> binding are assigned inside that configuration asset. If no Project Settings config is assigned, the runtime falls back to a <code>Resources/Astra Framework Config</code> asset.</p>
 <p>This shared-event model is convenient, but it also means listeners and reactive triggers usually subscribe to common event sources rather than to holder-specific event instances. In other words, the holder attached to a reactive subscription is used for ownership and cleanup, not as an automatic payload filter. When a global stat or attribute event is raised, every subscriber on that event source can receive the payload.</p>
 <p>In practice, pair shared event sources with payload-aware filtering. The most inspector-friendly option is usually a <code>ConditionalGameAction&lt;TContext&gt;</code> that checks the entity, tags, or value-change details you care about before running its inner action. See <a href="conditions.html">Conditions</a> for the full condition model and <a href="game-tags.html">Game Tags</a> for the tag-based workflow.</p>
 <h3 id="game-event-generators">Game Event Generators</h3>

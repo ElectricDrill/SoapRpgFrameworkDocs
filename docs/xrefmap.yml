@@ -2651,6 +2651,19 @@ references:
   commentId: T:ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO
   fullName: ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO
   nameWithType: AstraFrameworkConfigSO
+- uid: ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.ExperienceGainedModifierStat
+  name: ExperienceGainedModifierStat
+  href: api/ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.html#ElectricDrill_AstraRpgFramework_Config_AstraFrameworkConfigSO_ExperienceGainedModifierStat
+  commentId: P:ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.ExperienceGainedModifierStat
+  fullName: ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.ExperienceGainedModifierStat
+  nameWithType: AstraFrameworkConfigSO.ExperienceGainedModifierStat
+- uid: ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.ExperienceGainedModifierStat*
+  name: ExperienceGainedModifierStat
+  href: api/ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.html#ElectricDrill_AstraRpgFramework_Config_AstraFrameworkConfigSO_ExperienceGainedModifierStat_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.ExperienceGainedModifierStat
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.ExperienceGainedModifierStat
+  nameWithType: AstraFrameworkConfigSO.ExperienceGainedModifierStat
 - uid: ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.GlobalAttributeChangedEvent
   name: GlobalAttributeChangedEvent
   href: api/ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.html#ElectricDrill_AstraRpgFramework_Config_AstraFrameworkConfigSO_GlobalAttributeChangedEvent
@@ -2912,6 +2925,19 @@ references:
   commentId: T:ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig
   fullName: ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig
   nameWithType: IAstraFrameworkConfig
+- uid: ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig.ExperienceGainedModifierStat
+  name: ExperienceGainedModifierStat
+  href: api/ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig.html#ElectricDrill_AstraRpgFramework_Config_IAstraFrameworkConfig_ExperienceGainedModifierStat
+  commentId: P:ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig.ExperienceGainedModifierStat
+  fullName: ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig.ExperienceGainedModifierStat
+  nameWithType: IAstraFrameworkConfig.ExperienceGainedModifierStat
+- uid: ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig.ExperienceGainedModifierStat*
+  name: ExperienceGainedModifierStat
+  href: api/ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig.html#ElectricDrill_AstraRpgFramework_Config_IAstraFrameworkConfig_ExperienceGainedModifierStat_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig.ExperienceGainedModifierStat
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig.ExperienceGainedModifierStat
+  nameWithType: IAstraFrameworkConfig.ExperienceGainedModifierStat
 - uid: ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig.GlobalAttributeChangedEvent
   name: GlobalAttributeChangedEvent
   href: api/ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig.html#ElectricDrill_AstraRpgFramework_Config_IAstraFrameworkConfig_GlobalAttributeChangedEvent

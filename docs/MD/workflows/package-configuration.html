@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/main/DocFx/MD/workflows/package-configuration.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.0.0/DocFx/MD/workflows/package-configuration.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -87,8 +87,8 @@
         <article data-uid="">
 <h1 id="package-configuration">Package Configuration</h1>
 
-<p>The base Astra RPG Framework is designed for <strong>zero setup out of the box</strong>: importing the <strong>Utils</strong> sample is all you need to get a fully working configuration. The sample provides a pre-built <code>AstraRpgFrameworkConfigSO</code> asset placed in a <code>Resources</code> subfolder (named <code>Astra Rpg Framework Config</code>), with the three required global events already wired up to the event instances also found in the sample. The editor bootstrapper auto-detects this asset and assigns it to the Global Settings the moment Unity loads — no manual steps required.</p>
-<p>The configuration asset holds <strong>Global Events</strong> — the <code>GameEvent</code> ScriptableObjects that broadcast entity, level, stat, and attribute information to the entire game. Three of these events are required for the framework to function correctly; the remaining two are optional.</p>
+<p>The base Astra RPG Framework is designed for <strong>zero setup out of the box</strong>: importing the <strong>Utils</strong> sample is all you need to get a fully working configuration. The sample provides a pre-built <code>AstraFrameworkConfigSO</code> asset placed in a <code>Resources</code> subfolder (named <code>Astra Framework Config</code>), with the three required global events already wired up to the event instances also found in the sample. The editor bootstrapper auto-detects this asset and assigns it to the Global Settings the moment Unity loads — no manual steps required.</p>
+<p>The configuration asset holds <strong>Global Events</strong> — the <code>GameEvent</code> ScriptableObjects that broadcast entity, level, stat, and attribute information to the entire game — plus an optional shared stat binding for experience gain modifiers. Three of these events are required for the framework to function correctly; the remaining event fields and the stat binding are optional.</p>
 <h2 id="zero-setup-via-samples">Zero Setup via Samples</h2>
 <p>The quickest way to configure the framework is to import the <strong>Utils</strong> sample from the Package Manager:</p>
 <ol>
@@ -98,7 +98,7 @@
 </ol>
 <p>After import, your project will contain:</p>
 <ul>
-<li><strong><code>Assets/Samples/Astra RPG Framework/&lt;version&gt;/Utils/Resources/Astra Rpg Framework Config.asset</code></strong> — the ready-to-use configuration with all required events already assigned</li>
+<li><strong><code>Assets/Samples/Astra RPG Framework/&lt;version&gt;/Utils/Resources/Astra Framework Config.asset</code></strong> — the ready-to-use configuration with all required events already assigned</li>
 <li><strong><code>Assets/Samples/Astra RPG Framework/&lt;version&gt;/Utils/EventInstances/</code></strong> — the individual event <code>ScriptableObject</code> assets referenced by the configuration</li>
 </ul>
 <p>The editor bootstrapper detects the config automatically and assigns it to the Global Settings. No Project Settings step is needed.</p>
@@ -110,8 +110,8 @@
 <h2 id="configuration-overview">Configuration Overview</h2>
 <p>The framework uses a <strong>two-tier configuration architecture</strong>:</p>
 <ol>
-<li><strong>Global Settings</strong> (<code>AstraRpgFrameworkGlobalSettings</code>) — A lightweight pointer stored in <code>Resources</code> that references your active configuration</li>
-<li><strong>Framework Configuration</strong> (<code>AstraRpgFrameworkConfigSO</code>) — The actual configuration containing all global event references</li>
+<li><strong>Global Settings</strong> (<code>AstraFrameworkGlobalSettingsSO</code>) — A lightweight pointer stored in <code>Resources</code> that references your active configuration</li>
+<li><strong>Framework Configuration</strong> (<code>AstraFrameworkConfigSO</code>) — The actual configuration containing all global event references and shared stat bindings</li>
 </ol>
 <p>This separation allows you to:</p>
 <ul>
@@ -125,19 +125,19 @@
 <p>The package automatically creates the Global Settings asset on first import or when the editor loads. You don't need to do anything manually.</p>
 <p><strong>What happens automatically:</strong></p>
 <ol>
-<li>The <code>AstraRpgFrameworkGlobalSettings.asset</code> is created in <code>Assets/Resources/</code></li>
+<li>The <code>AstraFrameworkGlobalSettings.asset</code> is created in <code>Assets/Resources/</code></li>
 <li>If a default configuration exists (e.g., from imported samples), it is automatically assigned</li>
 <li>The system is immediately ready to use</li>
 </ol>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Default location: <code>Assets/Resources/AstraRpgFrameworkGlobalSettings.asset</code></p>
+<p>Default location: <code>Assets/Resources/AstraFrameworkGlobalSettings.asset</code></p>
 </div>
 <h3 id="project-settings">Project Settings</h3>
 <p>You can manage the package configuration through Unity's Project Settings window:</p>
 <ol>
 <li>Open <strong>Edit → Project Settings</strong></li>
-<li>Navigate to <strong>Astra RPG Framework</strong></li>
+<li>Navigate to <strong>Astra Framework</strong></li>
 <li>Assign your desired <strong>Active Config Profile</strong></li>
 </ol>
 <p><strong>Status Indicators:</strong></p>
@@ -151,13 +151,13 @@
 <li><strong>Create New Config Asset</strong> — Opens a save dialog to create a new configuration</li>
 </ul>
 <h3 id="manual-configuration-alternative-to-project-settings">Manual Configuration (alternative to Project Settings)</h3>
-<p>You can also manage the configuration by directly editing the <code>AstraRpgFrameworkGlobalSettings</code> asset in the <code>Assets/Resources</code> folder. This lets you assign a specific <code>AstraRpgFrameworkConfigSO</code> without using the Project Settings window.</p>
+<p>You can also manage the configuration by directly editing the <code>AstraFrameworkGlobalSettingsSO</code> asset in the <code>Assets/Resources</code> folder. This lets you assign a specific <code>AstraFrameworkConfigSO</code> without using the Project Settings window.</p>
 <h3 id="convention-over-configuration">Convention Over Configuration</h3>
 <p>The package follows a <strong>convention-over-configuration</strong> philosophy to reduce setup friction.</p>
 <h4 id="fallback-resolution">Fallback Resolution</h4>
 <p>If no explicit configuration is assigned in Project Settings, the system automatically searches for a configuration named:</p>
 <blockquote>
-<p><strong><code>Astra Rpg Framework Config</code></strong></p>
+<p><strong><code>Astra Framework Config</code></strong></p>
 </blockquote>
 <p>located in any <strong><code>Resources</code></strong> folder in your project.</p>
 <h4 id="search-order">Search Order</h4>
@@ -165,13 +165,13 @@
 <ol>
 <li><p><strong>Explicit Configuration</strong> (Project Settings)</p>
 <ul>
-<li>Loads <code>AstraRpgFrameworkGlobalSettings</code> from <code>Resources/AstraRpgFrameworkGlobalSettings</code></li>
+<li>Loads <code>AstraFrameworkGlobalSettingsSO</code> from <code>Resources/AstraFrameworkGlobalSettings</code></li>
 <li>If it has an <code>ActiveConfig</code> assigned, use it</li>
 </ul>
 </li>
 <li><p><strong>Convention-Based Fallback</strong></p>
 <ul>
-<li>Searches for <code>Astra Rpg Framework Config</code> in any <code>Resources</code> folder</li>
+<li>Searches for <code>Astra Framework Config</code> in any <code>Resources</code> folder</li>
 <li>Logs a message indicating fallback usage</li>
 </ul>
 </li>
@@ -190,25 +190,25 @@
 <h2 id="configuration-loading-strategy">Configuration Loading Strategy</h2>
 <p>The configuration is loaded lazily on first access and cached for performance:</p>
 <pre><code class="lang-csharp">// Automatically loads configuration on first access
-var config = AstraRpgFrameworkConfigProvider.Instance;
+var config = AstraFrameworkConfigProvider.Instance;
 
 // Pre-load during initialization to avoid runtime overhead
-AstraRpgFrameworkConfigProvider.WarmUp();
+AstraFrameworkConfigProvider.WarmUp();
 
 // Force reload (useful for testing or after domain reload)
-AstraRpgFrameworkConfigProvider.Reset();
+AstraFrameworkConfigProvider.Reset();
 </code></pre>
 <p><strong>When is the configuration loaded?</strong></p>
 <ul>
 <li>Automatically before the first scene loads (via <code>RuntimeInitializeOnLoadMethod</code>)</li>
-<li>Lazily when first accessed via <code>AstraRpgFrameworkConfigProvider.Instance</code></li>
+<li>Lazily when first accessed via <code>AstraFrameworkConfigProvider.Instance</code></li>
 <li>Explicitly when calling <code>WarmUp()</code></li>
 </ul>
 <hr>
 <h2 id="creating-configuration-assets">Creating Configuration Assets</h2>
 <h3 id="via-project-settings">Via Project Settings</h3>
 <ol>
-<li>Open <strong>Edit → Project Settings → Astra RPG Framework</strong></li>
+<li>Open <strong>Edit → Project Settings → Astra Framework</strong></li>
 <li>Unassign any existing configuration, if any</li>
 <li>Click <strong>Create New Config Asset</strong></li>
 <li>Choose a save location</li>
@@ -225,20 +225,20 @@ AstraRpgFrameworkConfigProvider.Reset();
 <h2 id="configuration-reference">Configuration Reference</h2>
 <div class="NOTE">
 <h5>Note</h5>
-<p>In the <code>AstraRpgFrameworkConfigSO</code> asset, you can hover over each field to see a tooltip with a brief description.</p>
+<p>In the <code>AstraFrameworkConfigSO</code> asset, you can hover over each field to see a tooltip with a brief description.</p>
 </div>
-<p>The <code>AstraRpgFrameworkConfigSO</code> asset contains the global event references used by the core entity components.</p>
+<p>The <code>AstraFrameworkConfigSO</code> asset contains the global event references and shared stat bindings used by the core entity components.</p>
 <p>The red asterisks (<span style="color:red;">*</span>) indicate fields that are required for the system to function properly. Make sure to assign them before entering Play Mode to avoid missing event dispatches.</p>
 <h3 id="global-events">Global Events</h3>
 <p>Global Events are <code>GameEvent</code> ScriptableObjects that broadcast framework-level information to the <strong>entire game</strong>. They are assigned once in the configuration asset and shared by all entities, ensuring a single authoritative source for framework-level communication.</p>
-<p>Each global event is broadcast through the <strong><code>FrameworkEventChannel</code></strong> system. This means that alongside the global event configured here, individual entity components can also hold per-entity extra events that are raised together with the global one when the channel fires.</p>
+<p>Each global event is broadcast through the <strong><code>FrameworkEventChannel</code></strong> system. This means that alongside the global event configured here, individual entity components can also hold per-entity extra events that are raised together with the global one when the channel fires. All entity components that expose event channels implement <code>IEventRegistrar</code>, which provides <code>Subscribe&lt;TEvent&gt;</code> and <code>Unsubscribe&lt;TEvent&gt;</code> for per-entity extra event registration.</p>
 <div class="WARNING">
 <h5>Warning</h5>
 <p>Three events are <strong>required</strong> — if they are missing, the corresponding entity lifecycle events are never dispatched, which breaks systems that depend on entity spawn, level-up, or level-down notifications. Assign them before entering Play Mode.</p>
 </div>
 <div class="IMPORTANT">
 <h5>Important</h5>
-<p>If your game already has systems built around your own entity spawned, level-up, or level-down events, <strong>do not reuse the sample events</strong>. Create your own <code>AstraRpgFrameworkConfigSO</code>, assign your events to it, and register it in <strong>Project Settings → Astra RPG Framework</strong>. That way your existing subscriptions continue to work seamlessly.</p>
+<p>If your game already has systems built around your own entity spawned, level-up, or level-down events, <strong>do not reuse the sample events</strong>. Create your own <code>AstraFrameworkConfigSO</code>, assign your events to it, and register it in <strong>Project Settings → Astra Framework</strong>. That way your existing subscriptions continue to work seamlessly.</p>
 </div>
 <h4 id="global-entity-spawned-event-">Global Entity Spawned Event <span style="color:red;">*</span></h4>
 <p><strong>Type:</strong> <code>EntityCoreGameEvent</code><br>
@@ -247,8 +247,8 @@ AstraRpgFrameworkConfigProvider.Reset();
 <strong>Description:</strong> Raised once, at the end of the entity's <code>Start()</code> lifecycle, after the level, stats, and attribute components have all initialized. Carries a direct reference to the <code>EntityCore</code> that just spawned.</p>
 <p>Subscribe to this event to track entity registration in global systems (e.g., registering an entity with an AI manager or a health-bar tracker).</p>
 <p><strong>Per-entity extra events API:</strong></p>
-<pre><code class="lang-csharp">entityCore.AddExtraSpawnedEvent(myEntitySpecificEvent);
-entityCore.RemoveExtraSpawnedEvent(myEntitySpecificEvent);
+<pre><code class="lang-csharp">entityCore.Subscribe&lt;EntityCoreGameEvent&gt;(myEntitySpecificEvent);
+entityCore.Unsubscribe&lt;EntityCoreGameEvent&gt;(myEntitySpecificEvent);
 </code></pre>
 <hr>
 <h4 id="global-entity-level-up-event-">Global Entity Level Up Event <span style="color:red;">*</span></h4>
@@ -289,8 +289,8 @@ entityCore.RemoveExtraSpawnedEvent(myEntitySpecificEvent);
 </tbody>
 </table>
 <p><strong>Per-entity extra events API:</strong></p>
-<pre><code class="lang-csharp">entityCore.Level.AddExtraLevelUpEvent(myLevelUpEvent);
-entityCore.Level.RemoveExtraLevelUpEvent(myLevelUpEvent);
+<pre><code class="lang-csharp">entityCore.Level.Subscribe&lt;EntityLevelUpGameEvent&gt;(myLevelUpEvent);
+entityCore.Level.Unsubscribe&lt;EntityLevelUpGameEvent&gt;(myLevelUpEvent);
 </code></pre>
 <hr>
 <h4 id="global-entity-level-down-event-">Global Entity Level Down Event <span style="color:red;">*</span></h4>
@@ -299,9 +299,20 @@ entityCore.Level.RemoveExtraLevelUpEvent(myLevelUpEvent);
 <strong>Raised by:</strong> <code>EntityLevel</code><br>
 <strong>Description:</strong> Raised when any entity's level decreases. Carries an <code>EntityLevelChangedContext</code> payload with the same fields as the level-up event.</p>
 <p><strong>Per-entity extra events API:</strong></p>
-<pre><code class="lang-csharp">entityCore.Level.AddExtraLevelDownEvent(myLevelDownEvent);
-entityCore.Level.RemoveExtraLevelDownEvent(myLevelDownEvent);
+<pre><code class="lang-csharp">entityCore.Level.Subscribe&lt;EntityLevelDownGameEvent&gt;(myLevelDownEvent);
+entityCore.Level.Unsubscribe&lt;EntityLevelDownGameEvent&gt;(myLevelDownEvent);
 </code></pre>
+<hr>
+<h4 id="experience-gain-modifier-stat">Experience Gain Modifier Stat</h4>
+<p><strong>Type:</strong> <code>StatSO</code><br>
+<strong>Required:</strong> No<br>
+<strong>Read by:</strong> <code>EntityCore</code> / <code>EntityLevel</code><br>
+<strong>Description:</strong> Optional shared <code>StatSO</code> binding used when <code>EntityLevel</code> applies experience gain modifiers. Assign the stat asset once in the active configuration, and each entity will read its own value for that stat from <code>EntityStats</code> when calling <code>AddExp(...)</code>.</p>
+<p>If this field is empty, or if a given entity does not expose that stat in <code>EntityStats</code>, the entity gains experience without an additional modifier.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>This replaces the older per-entity setup. You now choose the stat asset once in <code>AstraFrameworkConfigSO</code> instead of assigning the same stat on every entity.</p>
+</div>
 <hr>
 <h4 id="global-stat-changed-event">Global Stat Changed Event</h4>
 <p><strong>Type:</strong> <code>StatChangedGameEvent</code><br>
@@ -356,6 +367,10 @@ entityCore.Level.RemoveExtraLevelDownEvent(myLevelDownEvent);
 <li>Triggering ability unlock logic when a threshold stat is reached</li>
 <li>Logging stat changes for analytics</li>
 </ul>
+<p><strong>Per-entity extra events API:</strong></p>
+<pre><code class="lang-csharp">entityStats.Subscribe&lt;StatChangedGameEvent&gt;(myStatChangedEvent);
+entityStats.Unsubscribe&lt;StatChangedGameEvent&gt;(myStatChangedEvent);
+</code></pre>
 <hr>
 <h4 id="global-attribute-changed-event">Global Attribute Changed Event</h4>
 <p><strong>Type:</strong> <code>AttributeChangedGameEvent</code><br>
@@ -404,6 +419,10 @@ entityCore.Level.RemoveExtraLevelDownEvent(myLevelDownEvent);
 </tr>
 </tbody>
 </table>
+<p><strong>Per-entity extra events API:</strong></p>
+<pre><code class="lang-csharp">entityAttributes.Subscribe&lt;AttributeChangedGameEvent&gt;(myAttributeChangedEvent);
+entityAttributes.Unsubscribe&lt;AttributeChangedGameEvent&gt;(myAttributeChangedEvent);
+</code></pre>
 <div class="NOTE">
 <h5>Note</h5>
 <p>Changing an attribute may also trigger the <strong>Global Stat Changed Event</strong> for any stats whose scaling formula depends on that attribute. Both events are dispatched independently.</p>
@@ -414,15 +433,15 @@ entityCore.Level.RemoveExtraLevelDownEvent(myLevelDownEvent);
 <p><strong>Cause:</strong> No configuration is assigned and no fallback exists.</p>
 <p><strong>Solution:</strong></p>
 <ol>
-<li>Check <strong>Project Settings → Astra RPG Framework</strong></li>
+<li>Check <strong>Project Settings → Astra Framework</strong></li>
 <li>Assign a configuration or create a new one</li>
-<li>Alternatively, create a config named <code>Astra Rpg Framework Config</code> in a <code>Resources</code> folder</li>
+<li>Alternatively, create a config named <code>Astra Framework Config</code> in a <code>Resources</code> folder</li>
 </ol>
 <h3 id="using-fallback-log-message">&quot;Using Fallback&quot; log message</h3>
 <p><strong>Cause:</strong> No explicit configuration assigned in Project Settings.</p>
 <p><strong>Solution:</strong></p>
 <ol>
-<li>Open <strong>Project Settings → Astra RPG Framework</strong></li>
+<li>Open <strong>Project Settings → Astra Framework</strong></li>
 <li>Assign the fallback configuration explicitly</li>
 <li>This message is informational only and won't break functionality</li>
 </ol>
@@ -430,7 +449,7 @@ entityCore.Level.RemoveExtraLevelDownEvent(myLevelDownEvent);
 <p><strong>Cause:</strong> Configuration is cached on first access.</p>
 <p><strong>Solution:</strong></p>
 <pre><code class="lang-csharp">// Force reload
-AstraRpgFrameworkConfigProvider.Reset();
+AstraFrameworkConfigProvider.Reset();
 </code></pre>
 <h3 id="missing-resources-folder">Missing Resources folder</h3>
 <p><strong>Cause:</strong> The <code>Assets/Resources/</code> folder doesn't exist.</p>

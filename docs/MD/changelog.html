@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/main/DocFx/MD/changelog.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.0.0/DocFx/MD/changelog.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 <p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>.</p>
-<h2 id="200---2026-04-19">[2.0.0] - 2026-04-19</h2>
+<h2 id="200---unreleased">[2.0.0] - Unreleased</h2>
 <div class="WARNING">
 <h5>Warning</h5>
 <p>This update includes breaking changes and behavior changes that can affect existing projects. Refer to the <a href="migration-guide.html#migrating-to-v200">Migrating to v2.0.0</a> section of the migration guide before updating.</p>
@@ -98,8 +98,9 @@
 <h4 id="runtime-features">Runtime Features</h4>
 <ul>
 <li>Added the <code>Conditions</code> system, including composite conditions, entity/tag/value-change/stat/attribute/random leaf conditions, and <code>ConditionalGameAction</code>.</li>
+<li>Added <code>ConditionEvaluationAvailability</code> and <code>ConditionTargetAvailability</code> so condition compatibility checks can describe both the payload contract and the entity target slots available in a given evaluation context.</li>
 <li>Added the <code>Game Tags</code> system with <code>GameTag</code>, <code>GameTagSet</code>, <code>ITaggable</code>, and tag-based conditions.</li>
-<li>Added framework-level configuration assets for built-in shared events through <code>AstraRpgFrameworkConfigSO</code>, <code>AstraRpgFrameworkGlobalSettingsSO</code>, and <code>AstraRpgFrameworkConfigProvider</code>.</li>
+<li>Added framework-level configuration assets for built-in shared events through <code>AstraFrameworkConfigSO</code>, <code>AstraFrameworkGlobalSettingsSO</code>, and <code>AstraFrameworkConfigProvider</code>.</li>
 <li>Added reactive trigger infrastructure with <code>IReactiveTrigger</code>, typed <code>GameEventTrigger&lt;TContext&gt;</code> implementations, and <code>EventSource</code> support for shared subscription coalescing.</li>
 <li>Added <code>IHasEntity</code> as the common bridge contract for entity-aware payloads and game actions, plus projection actions for entity-context workflows.</li>
 <li>Added owner-aware execution paths for <code>GameAction</code>s and introduced <code>GameActionBase</code> to support inspector-facing polymorphic action references.</li>
@@ -109,23 +110,109 @@
 <h4 id="editor-features">Editor Features</h4>
 <ul>
 <li>Added dedicated authoring helpers for conditions, including quick setup utilities, managed-reference body drawers for condition fields, and condition tooltips.</li>
+<li>Added deeper condition authoring support through <code>ConditionEditorContext</code> and <code>ConditionTargetDrawer</code>, so payload-aware editors can also filter invalid <code>ConditionTarget</code> values instead of only filtering condition types.</li>
 <li>Added the Game Tag header-pill workflow, including popup search, multi-select add/remove, double-click quick add, intersection handling, overflow display, drag reordering, click-to-ping, and visual customization support.</li>
 <li>Added custom managed-reference drawers for condition-related attribute and stat fields.</li>
 <li>Added multi-object editing support to the <code>EntityCore</code>, <code>EntityStats</code>, <code>EntityAttributes</code>, <code>EntityClass</code>, <code>Class</code>, <code>Scaling Formula</code>, <code>Attribute Scaling Component</code>, and <code>Stat Scaling Component</code> inspectors, including bulk editing for shared values across multiple selected objects.</li>
+<li>Added the <code>Migrate Managed References (SO Rename)</code> tool (<code>Tools → Astra RPG Framework → v2.0.0 Migration -&gt; Migrate Managed References (SO Rename)</code>) to rewrite <code>[SerializeReference]</code> managed-reference type strings that <code>[MovedFrom]</code> alone cannot patch after the ScriptableObject type renames. The tool supports a dry-run mode, per-session reporting to <code>Library/AstraMigrationReport_&lt;timestamp&gt;.txt</code>, and optional scanning of closed scenes.</li>
+<li>Added <code>TypeSelectableClosedGenericValidator</code>, an editor startup check that emits a warning when a <code>[SerializeReference, TypeSelectable]</code> field targets a closed generic type — a pattern that breaks silently when any type inside the generic argument is renamed (Unity bug <a href="https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types">UUM-44729</a>).</li>
 </ul>
 <h3 id="changed">Changed</h3>
 <h4 id="runtime-features-1">Runtime Features</h4>
 <ul>
-<li>Built-in <code>Spawned</code>, <code>Level Up</code>, <code>Level Down</code>, <code>Stat Changed</code>, and <code>Attribute Changed</code> events are dispatched through the active Astra RPG Framework configuration asset.</li>
-<li><code>GameAction</code> workflows now lean on <code>IHasEntity</code> as the primary context for event-driven authoring, with owner propagation preserved across wrapper and projection actions.</li>
-<li><code>EntityCore</code> now implements both <code>IStatReader</code> and <code>IAttributeReader</code>, making the entity itself a convenient read facade for gameplay code.</li>
-<li>Corrected the <code>EntityStats.AddStatToStatModifer(...)</code> typo to <code>AddStatToStatModifier(...)</code>.</li>
-<li>Stat and attribute changed notifications now cover broader effective changes, including dependent recalculations and bulk level transitions. See <a href="limitations.html#addressed-limitations">Addressed Limitations</a> for details.</li>
-<li><code>EntityLevel</code> now exposes more robust global-event integration and extra per-entity event registration helpers.</li>
+<li><p>Built-in <code>Spawned</code>, <code>Level Up</code>, <code>Level Down</code>, <code>Stat Changed</code>, and <code>Attribute Changed</code> events are dispatched through the active Astra RPG Framework configuration asset.</p>
+</li>
+<li><p>The optional experience gain modifier stat binding is now assigned once in <code>AstraFrameworkConfigSO</code> through <strong>Experience Gain Modifier Stat</strong> instead of being configured per entity.</p>
+</li>
+<li><p><code>GameAction</code> workflows now lean on <code>IHasEntity</code> as the primary context for event-driven authoring, with owner propagation preserved across wrapper and projection actions.</p>
+</li>
+<li><p><code>EntityCore</code> now implements both <code>IStatReader</code> and <code>IAttributeReader</code>, making the entity itself a convenient read facade for gameplay code.</p>
+</li>
+<li><p><code>ConditionCompatibility</code> now performs deeper validation of condition trees, including recursive checks on authored <code>ConditionTarget</code> selections inside composite conditions.</p>
+</li>
+<li><p>Corrected the <code>EntityStats.AddStatToStatModifer(...)</code> typo to <code>AddStatToStatModifier(...)</code>.</p>
+</li>
+<li><p>Stat and attribute changed notifications now cover broader effective changes, including dependent recalculations and bulk level transitions. See <a href="limitations.html#addressed-limitations">Addressed Limitations</a> for details.</p>
+</li>
+<li><p><code>EntityCore</code>, <code>EntityLevel</code>, <code>EntityStats</code>, and <code>EntityAttributes</code> implement <code>IEventRegistrar</code>, providing generic <code>Subscribe&lt;TEvent&gt;</code> and <code>Unsubscribe&lt;TEvent&gt;</code> methods for per-entity extra event registration.</p>
+</li>
+<li><p>All core ScriptableObject types have been renamed with an <code>SO</code> suffix to better reflect their <code>ScriptableObject</code> nature. The full rename table and migration instructions are in the <a href="migration-guide.html#scriptableobject-type-renames-so-suffix">Migration Guide</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Old name</th>
+<th>New name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Stat</code></td>
+<td><code>StatSO</code></td>
+</tr>
+<tr>
+<td><code>Attribute</code></td>
+<td><code>AttributeSO</code></td>
+</tr>
+<tr>
+<td><code>Class</code></td>
+<td><code>ClassSO</code></td>
+</tr>
+<tr>
+<td><code>StatSet</code></td>
+<td><code>StatSetSO</code></td>
+</tr>
+<tr>
+<td><code>AttributeSet</code></td>
+<td><code>AttributeSetSO</code></td>
+</tr>
+<tr>
+<td><code>GrowthFormula</code></td>
+<td><code>GrowthFormulaSO</code></td>
+</tr>
+<tr>
+<td><code>ScalingFormula</code></td>
+<td><code>ScalingFormulaSO</code></td>
+</tr>
+<tr>
+<td><code>ScalingComponent</code></td>
+<td><code>ScalingComponentSO</code></td>
+</tr>
+<tr>
+<td><code>AttributesScalingComponent</code></td>
+<td><code>AttributesScalingComponentSO</code></td>
+</tr>
+<tr>
+<td><code>StatsScalingComponent</code></td>
+<td><code>StatsScalingComponentSO</code></td>
+</tr>
+<tr>
+<td><code>IntVar</code></td>
+<td><code>IntVarSO</code></td>
+</tr>
+<tr>
+<td><code>LongVar</code></td>
+<td><code>LongVarSO</code></td>
+</tr>
+<tr>
+<td><code>GameTag</code></td>
+<td><code>GameTagSO</code></td>
+</tr>
+<tr>
+<td><code>BoundedValue</code></td>
+<td><code>BoundedValueSO</code></td>
+</tr>
+</tbody>
+</table>
+<p>All renamed types carry <code>[MovedFrom(autoUpdateAPI = true)]</code>; Unity's API Updater handles C# script references automatically on reimport.</p>
+</li>
+<li><p><code>IDisplaySONameProvider&lt;T&gt;</code> was replaced by the non-generic <code>IDisplaySONameProvider</code> (parameter type changed from <code>T</code> to <code>ScriptableObject</code>). The change was necessary to work around <a href="https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types">Unity bug UUM-44729</a>, where <code>[MovedFrom]</code> does not propagate into generic arguments of serialized type strings. Custom implementations must now cast the <code>ScriptableObject</code> parameter internally. See <a href="managed-reference-migration.html#1-migrating-idisplaysonameprovidert-custom-implementations">Migrating <code>IDisplaySONameProvider&lt;T&gt;</code></a>.</p>
+</li>
 </ul>
 <h4 id="editor-features-1">Editor Features</h4>
 <ul>
 <li>Improved the fixed-base attribute handling in <code>EntityAttributesEditor</code> and <code>EntityStatsEditor</code> for Play Mode usage.</li>
+<li><code>ConditionFieldWithQuickSetup</code> and <code>PayloadFilteredConditionPicker</code> now work from a full <code>ConditionEvaluationAvailability</code>, whether it is inferred from <code>IReactiveTrigger.PayloadType</code> or passed explicitly by a custom editor.</li>
+<li>Payload-aware condition authoring now keeps nested composite conditions under the same availability filter and shows inline errors when a condition type or <code>ConditionTarget</code> is incompatible with the current context.</li>
 </ul>
 <h3 id="removed">Removed</h3>
 <h4 id="runtime-features-2">Runtime Features</h4>

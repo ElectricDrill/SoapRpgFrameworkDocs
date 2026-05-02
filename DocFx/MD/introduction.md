@@ -99,11 +99,9 @@ Game Event Generators are ScriptableObjects that let you define custom game even
 Game Actions are ScriptableObjects that encapsulate reusable pieces of logic that can be executed in response to game events or other triggers. They promote modularity and code reuse by allowing you to define specific actions (like teleport player to base, enable a GO, resurrect an entity, etc.) that can be easily invoked from various parts of your game without duplicating code. They are asynchronous and can be also used as responses to Game Events.
 
 ### <img src="../images/AstraRPG/game-tag.png" alt="game tag" width="30" class="icon-background"/> Game Tags
-<!-- IMAGE MISSING: game-tag.png — intro icon for the Game Tags section -->
 `GameTag`s are lightweight identifiers that let you classify Astra assets and components for gameplay logic and editor organization. They appear as colored pills in tag-aware inspectors, making it easy to scan related assets at a glance and to build tag-based queries or conditions. For the full authoring workflow, see [Game Tags](game-tags.md).
 
-### <img src="../images/AstraRPG/condition.png" alt="condition" width="30" class="icon-background"/> Conditions
-<!-- IMAGE MISSING: condition.png — intro icon for the Conditions section -->
+### Conditions
 `Condition`s are reusable predicates evaluated against runtime context such as the current holder, performer, or event payload. They are authored directly in the Inspector through polymorphic condition fields and can be used to gate game actions and other reactive behaviors without writing bespoke code for every rule. For the complete model and editor workflow, see [Conditions](conditions.md).
 
 ## How is Astra RPG Framework implemented?

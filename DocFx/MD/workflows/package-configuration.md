@@ -1,8 +1,8 @@
 # Package Configuration
 
-The base Astra Framework is designed for **zero setup out of the box**: importing the **Utils** sample is all you need to get a fully working configuration. The sample provides a pre-built `AstraFrameworkConfigSO` asset placed in a `Resources` subfolder (named `Astra Framework Config`), with the three required global events already wired up to the event instances also found in the sample. The editor bootstrapper auto-detects this asset and assigns it to the Global Settings the moment Unity loads — no manual steps required.
+The base Astra RPG Framework is designed for **zero setup out of the box**: importing the **Utils** sample is all you need to get a fully working configuration. The sample provides a pre-built `AstraFrameworkConfigSO` asset placed in a `Resources` subfolder (named `Astra Framework Config`), with the three required global events already wired up to the event instances also found in the sample. The editor bootstrapper auto-detects this asset and assigns it to the Global Settings the moment Unity loads — no manual steps required.
 
-The configuration asset holds **Global Events** — the `GameEvent` ScriptableObjects that broadcast entity, level, stat, and attribute information to the entire game. Three of these events are required for the framework to function correctly; the remaining two are optional.
+The configuration asset holds **Global Events** — the `GameEvent` ScriptableObjects that broadcast entity, level, stat, and attribute information to the entire game — plus an optional shared stat binding for experience gain modifiers. Three of these events are required for the framework to function correctly; the remaining event fields and the stat binding are optional.
 
 ## Zero Setup via Samples
 
@@ -28,8 +28,8 @@ The editor bootstrapper detects the config automatically and assigns it to the G
 
 The framework uses a **two-tier configuration architecture**:
 
-1. **Global Settings** (`AstraFrameworkGlobalSettings`) — A lightweight pointer stored in `Resources` that references your active configuration
-2. **Framework Configuration** (`AstraFrameworkConfigSO`) — The actual configuration containing all global event references
+1. **Global Settings** (`AstraFrameworkGlobalSettingsSO`) — A lightweight pointer stored in `Resources` that references your active configuration
+2. **Framework Configuration** (`AstraFrameworkConfigSO`) — The actual configuration containing all global event references and shared stat bindings
 
 This separation allows you to:
 - Switch between different configuration profiles easily (e.g., for testing)
@@ -70,7 +70,7 @@ You can manage the package configuration through Unity's Project Settings window
 
 ### Manual Configuration (alternative to Project Settings)
 
-You can also manage the configuration by directly editing the `AstraFrameworkGlobalSettings` asset in the `Assets/Resources` folder. This lets you assign a specific `AstraFrameworkConfigSO` without using the Project Settings window.
+You can also manage the configuration by directly editing the `AstraFrameworkGlobalSettingsSO` asset in the `Assets/Resources` folder. This lets you assign a specific `AstraFrameworkConfigSO` without using the Project Settings window.
 
 ### Convention Over Configuration
 
@@ -89,7 +89,7 @@ located in any **`Resources`** folder in your project.
 The configuration provider uses a **three-step loading strategy**:
 
 1. **Explicit Configuration** (Project Settings)
-   - Loads `AstraFrameworkGlobalSettings` from `Resources/AstraFrameworkGlobalSettings`
+   - Loads `AstraFrameworkGlobalSettingsSO` from `Resources/AstraFrameworkGlobalSettings`
    - If it has an `ActiveConfig` assigned, use it
 
 2. **Convention-Based Fallback**
@@ -151,7 +151,7 @@ AstraFrameworkConfigProvider.Reset();
 > [!NOTE]
 > In the `AstraFrameworkConfigSO` asset, you can hover over each field to see a tooltip with a brief description.
 
-The `AstraFrameworkConfigSO` asset contains the global event references used by the core entity components.
+The `AstraFrameworkConfigSO` asset contains the global event references and shared stat bindings used by the core entity components.
 
 The red asterisks (<span style="color:red;">*</span>) indicate fields that are required for the system to function properly. Make sure to assign them before entering Play Mode to avoid missing event dispatches.
 
@@ -217,6 +217,19 @@ entityCore.Level.Unsubscribe<EntityLevelUpGameEvent>(myLevelUpEvent);
 entityCore.Level.Subscribe<EntityLevelDownGameEvent>(myLevelDownEvent);
 entityCore.Level.Unsubscribe<EntityLevelDownGameEvent>(myLevelDownEvent);
 ```
+
+---
+
+#### Experience Gain Modifier Stat
+**Type:** `StatSO`  
+**Required:** No  
+**Read by:** `EntityCore` / `EntityLevel`  
+**Description:** Optional shared `StatSO` binding used when `EntityLevel` applies experience gain modifiers. Assign the stat asset once in the active configuration, and each entity will read its own value for that stat from `EntityStats` when calling `AddExp(...)`.
+
+If this field is empty, or if a given entity does not expose that stat in `EntityStats`, the entity gains experience without an additional modifier.
+
+> [!TIP]
+> This replaces the older per-entity setup. You now choose the stat asset once in `AstraFrameworkConfigSO` instead of assigning the same stat on every entity.
 
 ---
 

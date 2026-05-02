@@ -5,7 +5,7 @@
 
 v2.0.0 renames a set of ScriptableObject types and replaces the generic `IDisplaySONameProvider<T>` with a non-generic equivalent. Unity's `[MovedFrom]` attribute patches most C# script references automatically, but serialized data stored through `[SerializeReference]` uses the full assembly-qualified type string — and `[MovedFrom]` cannot rewrite generic arguments inside that string (Unity bug [UUM-44729](https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types)). This guide covers the two cases that need extra work:
 
-1. [Migrating `IDisplaySONameProvider<T>` custom implementations](#1-migrating-idisplaysonamet-custom-implementations)
+1. [Migrating `IDisplaySONameProvider<T>` custom implementations](#1-migrating-idisplaysonameprovidert-custom-implementations)
 2. [Running the migration tool](#2-running-the-migration-tool)
 
 ## 1. Migrating `IDisplaySONameProvider<T>` custom implementations
@@ -75,7 +75,7 @@ The tool applies two rules:
 
 ### Custom closed generics not covered by the rules
 
-If the tool logs a `[skip]` line for a custom closed-generic type, the type was not covered by the built-in rules. Refactor it to a non-generic form following the recipe in [section 1](#1-migrating-idisplaysonamet-custom-implementations), then re-run the tool.
+If the tool logs a `[skip]` line for a custom closed-generic type, the type was not covered by the built-in rules. Refactor it to a non-generic form following the recipe in [section 1](#1-migrating-idisplaysonameprovidert-custom-implementations), then re-run the tool.
 
 ## Guardrail warning
 
