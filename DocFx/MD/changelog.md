@@ -27,6 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added deeper condition authoring support through `ConditionEditorContext` and `ConditionTargetDrawer`, so payload-aware editors can also filter invalid `ConditionTarget` values instead of only filtering condition types.
 - Added the Game Tag header-pill workflow, including popup search, multi-select add/remove, double-click quick add, intersection handling, overflow display, drag reordering, click-to-ping, and visual customization support.
 - Added custom managed-reference drawers for condition-related attribute and stat fields.
+- Added optional project-scoped **Authoring Defaults** in `Edit > Project Settings > Astra Framework > Authoring Defaults` for `EntityCore`, `GrowthFormulaSO`, `ClassSO`, `EntityStats`, and `EntityAttributes`, together with inspector actions to apply or replace those defaults on existing objects.
 - Added multi-object editing support to the `EntityCore`, `EntityStats`, `EntityAttributes`, `EntityClass`, `Class`, `Scaling Formula`, `Attribute Scaling Component`, and `Stat Scaling Component` inspectors, including bulk editing for shared values across multiple selected objects.
 - Added the `Migrate Managed References (SO Rename)` tool (`Tools → Astra RPG Framework → v2.0.0 Migration -> Migrate Managed References (SO Rename)`) to rewrite `[SerializeReference]` managed-reference type strings that `[MovedFrom]` alone cannot patch after the ScriptableObject type renames. The tool supports a dry-run mode, per-session reporting to `Library/AstraMigrationReport_<timestamp>.txt`, and optional scanning of closed scenes.
 - Added `TypeSelectableClosedGenericValidator`, an editor startup check that emits a warning when a `[SerializeReference, TypeSelectable]` field targets a closed generic type — a pattern that breaks silently when any type inside the generic argument is renamed (Unity bug [UUM-44729](https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types)).
@@ -65,6 +66,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 #### Editor Features
 - Improved the fixed-base attribute handling in `EntityAttributesEditor` and `EntityStatsEditor` for Play Mode usage.
+- Replaced sample-backed script default references with optional authoring defaults, so new objects no longer inherit hidden references from package samples and repeated authoring can be standardized explicitly at the project level.
 - `ConditionFieldWithQuickSetup` and `PayloadFilteredConditionPicker` now work from a full `ConditionEvaluationAvailability`, whether it is inferred from `IReactiveTrigger.PayloadType` or passed explicitly by a custom editor.
 - Payload-aware condition authoring now keeps nested composite conditions under the same availability filter and shows inline errors when a condition type or `ConditionTarget` is incompatible with the current context.
 

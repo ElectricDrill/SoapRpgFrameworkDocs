@@ -1,6 +1,8 @@
 # Package Configuration
 
-The base Astra RPG Framework is designed for **zero setup out of the box**: importing the **Utils** sample is all you need to get a fully working configuration. The sample provides a pre-built `AstraFrameworkConfigSO` asset placed in a `Resources` subfolder (named `Astra Framework Config`), with the three required global events already wired up to the event instances also found in the sample. The editor bootstrapper auto-detects this asset and assigns it to the Global Settings the moment Unity loads — no manual steps required.
+The base Astra RPG Framework is designed for **zero setup out of the box** for runtime configuration: importing the **Utils** sample is all you need to get a fully working setup. The sample provides a pre-built `AstraFrameworkConfigSO` asset placed in a `Resources` subfolder (named `Astra Framework Config`), with the three required global events already wired up to the event instances also found in the sample. The editor bootstrapper auto-detects this asset and assigns it to the Global Settings the moment Unity loads, so no manual steps are required.
+
+Authoring defaults are a separate **editor-only** convenience layer. They are fully optional, they do not affect runtime behavior, and leaving them empty preserves the same manual authoring workflow.
 
 The configuration asset holds **Global Events** — the `GameEvent` ScriptableObjects that broadcast entity, level, stat, and attribute information to the entire game — plus an optional shared stat binding for experience gain modifiers. Three of these events are required for the framework to function correctly; the remaining event fields and the stat binding are optional.
 
@@ -24,9 +26,9 @@ The editor bootstrapper detects the config automatically and assigns it to the G
 
 ---
 
-## Configuration Overview
+## Runtime Configuration Overview
 
-The framework uses a **two-tier configuration architecture**:
+The framework uses a **two-tier runtime configuration architecture**:
 
 1. **Global Settings** (`AstraFrameworkGlobalSettingsSO`) — A lightweight pointer stored in `Resources` that references your active configuration
 2. **Framework Configuration** (`AstraFrameworkConfigSO`) — The actual configuration containing all global event references and shared stat bindings
@@ -35,6 +37,8 @@ This separation allows you to:
 - Switch between different configuration profiles easily (e.g., for testing)
 - Keep configuration data separate from the loading mechanism
 - Support convention-based fallbacks for quick prototyping
+
+For editor-time asset and component pre-filling, see [Authoring Defaults](#authoring-defaults).
 
 ---
 
@@ -102,6 +106,51 @@ The configuration provider uses a **three-step loading strategy**:
 
 > [!TIP]
 > For production projects, always use **explicit configuration** via Project Settings for clarity and control.
+
+---
+
+## Authoring Defaults
+
+Authoring defaults are **project-scoped, editor-only defaults** configured in `Edit > Project Settings > Astra Framework > Authoring Defaults`. They pre-fill selected references when you add framework components or create framework assets. They are never read by gameplay code, and every assignment in this page is optional.
+
+> [!NOTE]
+> Authoring defaults do **not** change the framework's zero-setup philosophy. The framework works without them, and they exist only to make repeated authoring safer, clearer, and more customizable.
+
+### Why authoring defaults replaced script default references
+
+Earlier authoring flows could rely on script-level default references that pointed to assets imported from the package samples. That was convenient, but it could also create silent project drift after a package update: newly created objects could start referencing assets from the newly imported sample version, while older objects still referenced assets from an older sample version.
+
+Authoring defaults move that responsibility into explicit project settings. This makes the choice visible, project-owned, and easy to standardize across a team. If no default is configured, the corresponding field simply stays empty and can still be assigned manually.
+
+### What can be configured
+
+Each authoring-default group has its own enable toggle, so you can automate only the parts of the workflow that are useful for your project:
+
+- **Level Defaults** — applied when `EntityCore` is added; can assign **Default Max Level** and **Default Experience Formula**
+- **Growth Formula Defaults** — applied when `GrowthFormulaSO` assets are created; can assign **Default Max Level**
+- **Class Defaults** — applied when `ClassSO` assets are created; can assign **Default Stat Set**, **Default Attribute Set**, and an optional **Default Max HP Formula**
+- **Entity Stats Defaults** — applied when `EntityStats` is added; can assign **Default Fixed Base Stats Set** when the component uses fixed base stats
+- **Entity Attributes Defaults** — applied when `EntityAttributes` is added; can assign **Default Fixed Base Attribute Set** when the component uses fixed base attributes
+
+For class authoring, the same settings page also exposes the optional automatic growth-formula creation helpers used when new `ClassSO` assets are created.
+
+> [!NOTE]
+> A field left empty stays manual. You can configure only a shared `Max Level`, only a fixed-base set, only class defaults, or nothing at all.
+
+### Inspector actions
+
+The inspectors for `EntityCore`, `GrowthFormulaSO`, `ClassSO`, `EntityStats`, and `EntityAttributes` expose an **Authoring Defaults** section with two actions:
+
+- **Apply Authoring Defaults** — fills only empty or unassigned fields using the current project defaults
+- **Replace With Authoring Defaults** — asks for confirmation and then also overwrites fields that are already configured
+
+This is useful when a project decides to standardize on a shared set of authoring assets after some objects have already been created.
+
+### Recommended usage
+
+If your project always expects the same `Max Level`, experience formula, class sets, or fixed-base sets, assign those project-owned assets in **Authoring Defaults** so newly created objects follow one explicit standard. If you prefer per-object setup, leave the defaults empty and continue authoring manually.
+
+When possible, prefer project-owned assets over assets living inside imported sample folders. The goal of authoring defaults is to keep these references explicit and under project control.
 
 ---
 

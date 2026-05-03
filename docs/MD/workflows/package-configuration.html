@@ -87,7 +87,8 @@
         <article data-uid="">
 <h1 id="package-configuration">Package Configuration</h1>
 
-<p>The base Astra RPG Framework is designed for <strong>zero setup out of the box</strong>: importing the <strong>Utils</strong> sample is all you need to get a fully working configuration. The sample provides a pre-built <code>AstraFrameworkConfigSO</code> asset placed in a <code>Resources</code> subfolder (named <code>Astra Framework Config</code>), with the three required global events already wired up to the event instances also found in the sample. The editor bootstrapper auto-detects this asset and assigns it to the Global Settings the moment Unity loads — no manual steps required.</p>
+<p>The base Astra RPG Framework is designed for <strong>zero setup out of the box</strong> for runtime configuration: importing the <strong>Utils</strong> sample is all you need to get a fully working setup. The sample provides a pre-built <code>AstraFrameworkConfigSO</code> asset placed in a <code>Resources</code> subfolder (named <code>Astra Framework Config</code>), with the three required global events already wired up to the event instances also found in the sample. The editor bootstrapper auto-detects this asset and assigns it to the Global Settings the moment Unity loads, so no manual steps are required.</p>
+<p>Authoring defaults are a separate <strong>editor-only</strong> convenience layer. They are fully optional, they do not affect runtime behavior, and leaving them empty preserves the same manual authoring workflow.</p>
 <p>The configuration asset holds <strong>Global Events</strong> — the <code>GameEvent</code> ScriptableObjects that broadcast entity, level, stat, and attribute information to the entire game — plus an optional shared stat binding for experience gain modifiers. Three of these events are required for the framework to function correctly; the remaining event fields and the stat binding are optional.</p>
 <h2 id="zero-setup-via-samples">Zero Setup via Samples</h2>
 <p>The quickest way to configure the framework is to import the <strong>Utils</strong> sample from the Package Manager:</p>
@@ -107,8 +108,8 @@
 <p>The sample events are generic, shared instances intended for getting started quickly. If your game already has its own event architecture — or if you need to subscribe to entity spawned, level-up, or level-down events from your own systems — you should create a <strong>custom configuration</strong> and assign your own events to it (see <a href="#creating-configuration-assets">Creating Configuration Assets</a> and <a href="#project-settings">Project Settings</a>).</p>
 </div>
 <hr>
-<h2 id="configuration-overview">Configuration Overview</h2>
-<p>The framework uses a <strong>two-tier configuration architecture</strong>:</p>
+<h2 id="runtime-configuration-overview">Runtime Configuration Overview</h2>
+<p>The framework uses a <strong>two-tier runtime configuration architecture</strong>:</p>
 <ol>
 <li><strong>Global Settings</strong> (<code>AstraFrameworkGlobalSettingsSO</code>) — A lightweight pointer stored in <code>Resources</code> that references your active configuration</li>
 <li><strong>Framework Configuration</strong> (<code>AstraFrameworkConfigSO</code>) — The actual configuration containing all global event references and shared stat bindings</li>
@@ -119,6 +120,7 @@
 <li>Keep configuration data separate from the loading mechanism</li>
 <li>Support convention-based fallbacks for quick prototyping</li>
 </ul>
+<p>For editor-time asset and component pre-filling, see <a href="#authoring-defaults">Authoring Defaults</a>.</p>
 <hr>
 <h2 id="global-settings">Global Settings</h2>
 <h3 id="automatic-setup">Automatic Setup</h3>
@@ -186,6 +188,40 @@
 <h5>Tip</h5>
 <p>For production projects, always use <strong>explicit configuration</strong> via Project Settings for clarity and control.</p>
 </div>
+<hr>
+<h2 id="authoring-defaults">Authoring Defaults</h2>
+<p>Authoring defaults are <strong>project-scoped, editor-only defaults</strong> configured in <code>Edit &gt; Project Settings &gt; Astra Framework &gt; Authoring Defaults</code>. They pre-fill selected references when you add framework components or create framework assets. They are never read by gameplay code, and every assignment in this page is optional.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Authoring defaults do <strong>not</strong> change the framework's zero-setup philosophy. The framework works without them, and they exist only to make repeated authoring safer, clearer, and more customizable.</p>
+</div>
+<h3 id="why-authoring-defaults-replaced-script-default-references">Why authoring defaults replaced script default references</h3>
+<p>Earlier authoring flows could rely on script-level default references that pointed to assets imported from the package samples. That was convenient, but it could also create silent project drift after a package update: newly created objects could start referencing assets from the newly imported sample version, while older objects still referenced assets from an older sample version.</p>
+<p>Authoring defaults move that responsibility into explicit project settings. This makes the choice visible, project-owned, and easy to standardize across a team. If no default is configured, the corresponding field simply stays empty and can still be assigned manually.</p>
+<h3 id="what-can-be-configured">What can be configured</h3>
+<p>Each authoring-default group has its own enable toggle, so you can automate only the parts of the workflow that are useful for your project:</p>
+<ul>
+<li><strong>Level Defaults</strong> — applied when <code>EntityCore</code> is added; can assign <strong>Default Max Level</strong> and <strong>Default Experience Formula</strong></li>
+<li><strong>Growth Formula Defaults</strong> — applied when <code>GrowthFormulaSO</code> assets are created; can assign <strong>Default Max Level</strong></li>
+<li><strong>Class Defaults</strong> — applied when <code>ClassSO</code> assets are created; can assign <strong>Default Stat Set</strong>, <strong>Default Attribute Set</strong>, and an optional <strong>Default Max HP Formula</strong></li>
+<li><strong>Entity Stats Defaults</strong> — applied when <code>EntityStats</code> is added; can assign <strong>Default Fixed Base Stats Set</strong> when the component uses fixed base stats</li>
+<li><strong>Entity Attributes Defaults</strong> — applied when <code>EntityAttributes</code> is added; can assign <strong>Default Fixed Base Attribute Set</strong> when the component uses fixed base attributes</li>
+</ul>
+<p>For class authoring, the same settings page also exposes the optional automatic growth-formula creation helpers used when new <code>ClassSO</code> assets are created.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A field left empty stays manual. You can configure only a shared <code>Max Level</code>, only a fixed-base set, only class defaults, or nothing at all.</p>
+</div>
+<h3 id="inspector-actions">Inspector actions</h3>
+<p>The inspectors for <code>EntityCore</code>, <code>GrowthFormulaSO</code>, <code>ClassSO</code>, <code>EntityStats</code>, and <code>EntityAttributes</code> expose an <strong>Authoring Defaults</strong> section with two actions:</p>
+<ul>
+<li><strong>Apply Authoring Defaults</strong> — fills only empty or unassigned fields using the current project defaults</li>
+<li><strong>Replace With Authoring Defaults</strong> — asks for confirmation and then also overwrites fields that are already configured</li>
+</ul>
+<p>This is useful when a project decides to standardize on a shared set of authoring assets after some objects have already been created.</p>
+<h3 id="recommended-usage">Recommended usage</h3>
+<p>If your project always expects the same <code>Max Level</code>, experience formula, class sets, or fixed-base sets, assign those project-owned assets in <strong>Authoring Defaults</strong> so newly created objects follow one explicit standard. If you prefer per-object setup, leave the defaults empty and continue authoring manually.</p>
+<p>When possible, prefer project-owned assets over assets living inside imported sample folders. The goal of authoring defaults is to keep these references explicit and under project control.</p>
 <hr>
 <h2 id="configuration-loading-strategy">Configuration Loading Strategy</h2>
 <p>The configuration is loaded lazily on first access and cached for performance:</p>

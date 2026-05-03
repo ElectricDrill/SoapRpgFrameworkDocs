@@ -157,7 +157,7 @@ int floored = RoundingMode.Floor.ApplyToInt(scaledValue); // 214
 <p><em>🏷️ Version 2.0.0+</em></p>
 <p><code>GameActionBase</code> is the non-generic root used by inspector-facing authoring surfaces that need to reference actions with different concrete context types. Concrete assets still execute through <code>GameAction&lt;TContext&gt;</code>, which now also supports owner-aware execution through <code>ExecuteWithOwnerAsync</code>.</p>
 <p>This matters most for event-driven workflows. <code>GameEventListener</code>s can dispatch owner-aware actions using the listener component as runtime owner, and wrapper actions such as <code>Composite</code>, <code>Delayed</code>, <code>Conditional</code>, and projection actions preserve that owner while forwarding execution. This allows conditions that depend on <code>Holder</code> resolution to behave consistently across nested action chains.</p>
-<p>For the practical inspector workflow, see <a href="workflows.html#game-actions">Workflows</a>. For the condition-side resolution model, see <a href="conditions.html">Conditions</a>.</p>
+<p>For the practical inspector workflow, see <a href="workflows.md#game-actions">Workflows</a>. For the condition-side resolution model, see <a href="conditions.md">Conditions</a>.</p>
 <h2 id="payload-aware-condition-fields-in-custom-editors">Payload-aware condition fields in custom editors</h2>
 <p><em>🏷️ Version 2.0.0+</em></p>
 <p><code>ConditionFieldWithQuickSetup</code> is the intended public entry point when a custom inspector pairs a <code>[SerializeReference]</code> <code>IReactiveTrigger</code> field with a <code>[SerializeReference]</code> <code>Condition</code> field.</p>
@@ -169,7 +169,7 @@ int floored = RoundingMode.Floor.ApplyToInt(scaledValue); // 214
 </ul>
 <div class="NOTE">
 <h5>Note</h5>
-<p>For the metadata contract expected from custom <code>Condition</code> and <code>IReactiveTrigger</code> types, see <a href="conditions.html#extending-the-system-with-custom-conditions-and-triggers">Extending the system with custom conditions and triggers</a>.</p>
+<p>For the metadata contract expected from custom <code>Condition</code> and <code>IReactiveTrigger</code> types, see <a href="conditions.md#extending-the-system-with-custom-conditions-and-triggers">Extending the system with custom conditions and triggers</a>.</p>
 </div>
 <p>This is the standard inspector-side wiring:</p>
 <pre><code class="lang-csharp">using ElectricDrill.AstraRpgFramework.Editor.Conditions;

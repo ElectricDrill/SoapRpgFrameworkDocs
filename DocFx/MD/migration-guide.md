@@ -96,6 +96,27 @@ The `EntityStats` method name `AddStatToStatModifer(...)` was corrected to `AddS
 2. Replace each occurrence with `AddStatToStatModifier`.
 3. Recompile and confirm no stale references remain.
 
+#### Review old default-reference workflows and move them to Authoring Defaults
+
+Previous versions could rely on script-level default references for some authoring flows. In practice, that meant newly created objects could inherit references that came from imported sample assets (for example, a shared `Max Level` used by newly created `GrowthFormulaSO` assets).
+
+This pattern has been replaced by project-scoped **Authoring Defaults** in `Edit > Project Settings > Astra Framework > Authoring Defaults`.
+
+> [!NOTE]
+> This is a workflow migration, not a runtime requirement. Authoring defaults are fully optional. If you prefer manual setup, leave every field empty and continue authoring objects explicitly.
+
+If your project relied on the old automatic pre-filling behavior, it is recommended to move that intent into the new Project Settings page so future assets and components follow one explicit, project-owned standard.
+
+**Suggested migration steps:**
+
+1. Open `Edit > Project Settings > Astra Framework > Authoring Defaults`
+2. Identify the shared assets your team expects new objects to reuse consistently (for example a common `IntVarSO` max level, experience formula, class stat set, class attribute set, or fixed-base sets)
+3. Assign only the defaults your project actually wants to standardize
+4. Prefer project-owned assets over sample assets when choosing these defaults, so future package updates do not introduce silent reference drift between older and newer authored objects
+5. For existing objects that you want to align with the new standard, use **Apply Authoring Defaults** to fill only missing fields or **Replace With Authoring Defaults** to overwrite existing ones deliberately
+
+This keeps the package aligned with its zero-setup philosophy while making repeated authoring more robust, explicit, and customizable.
+
 ### Behavior changes to review
 
 These changes may not produce compile errors, but they can change how existing gameplay logic behaves after the upgrade.

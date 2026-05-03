@@ -225,6 +225,23 @@ For a full description of each field and the loading strategy, see <a href="work
 <li>Replace each occurrence with <code>AddStatToStatModifier</code>.</li>
 <li>Recompile and confirm no stale references remain.</li>
 </ol>
+<h4 id="review-old-default-reference-workflows-and-move-them-to-authoring-defaults">Review old default-reference workflows and move them to Authoring Defaults</h4>
+<p>Previous versions could rely on script-level default references for some authoring flows. In practice, that meant newly created objects could inherit references that came from imported sample assets (for example, a shared <code>Max Level</code> used by newly created <code>GrowthFormulaSO</code> assets).</p>
+<p>This pattern has been replaced by project-scoped <strong>Authoring Defaults</strong> in <code>Edit &gt; Project Settings &gt; Astra Framework &gt; Authoring Defaults</code>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This is a workflow migration, not a runtime requirement. Authoring defaults are fully optional. If you prefer manual setup, leave every field empty and continue authoring objects explicitly.</p>
+</div>
+<p>If your project relied on the old automatic pre-filling behavior, it is recommended to move that intent into the new Project Settings page so future assets and components follow one explicit, project-owned standard.</p>
+<p><strong>Suggested migration steps:</strong></p>
+<ol>
+<li>Open <code>Edit &gt; Project Settings &gt; Astra Framework &gt; Authoring Defaults</code></li>
+<li>Identify the shared assets your team expects new objects to reuse consistently (for example a common <code>IntVarSO</code> max level, experience formula, class stat set, class attribute set, or fixed-base sets)</li>
+<li>Assign only the defaults your project actually wants to standardize</li>
+<li>Prefer project-owned assets over sample assets when choosing these defaults, so future package updates do not introduce silent reference drift between older and newer authored objects</li>
+<li>For existing objects that you want to align with the new standard, use <strong>Apply Authoring Defaults</strong> to fill only missing fields or <strong>Replace With Authoring Defaults</strong> to overwrite existing ones deliberately</li>
+</ol>
+<p>This keeps the package aligned with its zero-setup philosophy while making repeated authoring more robust, explicit, and customizable.</p>
 <h3 id="behavior-changes-to-review">Behavior changes to review</h3>
 <p>These changes may not produce compile errors, but they can change how existing gameplay logic behaves after the upgrade.</p>
 <h4 id="stat-and-attribute-changed-events-now-cover-more-cases">Stat and attribute changed events now cover more cases</h4>

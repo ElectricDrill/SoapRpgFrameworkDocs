@@ -12,40 +12,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "MD/advanced-topics.md",
-      "output": {
-        ".html": {
-          "relative_path": "MD/advanced-topics.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "MD/changelog.md",
       "output": {
         ".html": {
           "relative_path": "MD/changelog.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "MD/conditions.md",
-      "output": {
-        ".html": {
-          "relative_path": "MD/conditions.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "MD/game-tags.md",
-      "output": {
-        ".html": {
-          "relative_path": "MD/game-tags.html"
         }
       },
       "version": ""
@@ -145,10 +115,40 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "MD/workflows.md",
+      "source_relative_path": "MD/workflows/advanced-topics.md",
       "output": {
         ".html": {
-          "relative_path": "MD/workflows.html"
+          "relative_path": "MD/workflows/advanced-topics.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "MD/workflows/conditions.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/workflows/conditions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "MD/workflows/game-actions.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/workflows/game-actions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "MD/workflows/game-tags.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/workflows/game-tags.html"
         }
       },
       "version": ""
@@ -159,6 +159,16 @@
       "output": {
         ".html": {
           "relative_path": "MD/workflows/package-configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "MD/workflows/workflows.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/workflows/workflows.html"
         }
       },
       "version": ""

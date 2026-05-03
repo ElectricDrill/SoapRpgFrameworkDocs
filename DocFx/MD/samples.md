@@ -14,7 +14,7 @@ The samples folder contains 2 sub-folders:
 ## Utils
 The `Utils` folder contains 2 sub-folders:
 - `EventInstances`: containing `Entity Attribute Changed`, `Entity Spawned`, `Entity Stat Changed`, and `On Player Level Up` Game Events. These are instances of the Game Events defined in the package's source code.
-- `Player`: containing `Max Level`, `Player Hp`, `Player Max Hp`, and `Player Level` Int and Long variables. These are useful to use Scriptable Object variables in your game, as showcased in the [Workflows](workflows.md) documentation.
+- `Player`: containing `Max Level`, `Player Hp`, `Player Max Hp`, and `Player Level` Int and Long variables. These are useful to use Scriptable Object variables in your game, as showcased in the [Workflows](workflows/workflows.md) documentation.
 
 ## Examples
 There are several objects in this folder. Let's start by the Sample Scene.

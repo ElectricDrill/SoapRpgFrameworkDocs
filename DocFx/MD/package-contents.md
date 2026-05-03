@@ -8,12 +8,12 @@ For a guided tour of the sample content, see [Samples](samples.md).
 
 | Subsystem | What it contains | Learn more |
 | --- | --- | --- |
-| Entities, stats, attributes, classes, scaling | The core progression model, including `EntityCore`, value containers, class data, growth formulas, and scaling assets. | [Workflows](workflows.md) |
-| Game Events | Predefined event types, listeners, and the generator-based workflow for creating additional typed events. | [Workflows](workflows.md#game-events) |
-| Global framework configuration | The shared config used to dispatch built-in framework events such as spawned, level up/down, stat changed, and attribute changed. | [Workflows](workflows.md#global-framework-events-and-reactive-filtering) |
-| Game Actions | Reusable asynchronous actions, projections, wrappers, and owner-aware event-driven execution flows. | [Workflows](workflows.md#game-actions), [Advanced topics](advanced-topics.md#owner-aware-gameaction-execution) |
-| Game Tags | Tag assets, tag sets, and inspector header pills used to organize Astra assets and drive tag-based logic. | [Game Tags](game-tags.md) |
-| Conditions and reactive filtering | Polymorphic condition trees, conditional actions, and the trigger/filtering model used by reactive systems. | [Conditions](conditions.md) |
+| Entities, stats, attributes, classes, scaling | The core progression model, including `EntityCore`, value containers, class data, growth formulas, and scaling assets. | [Workflows](workflows/workflows.md) |
+| Game Events | Predefined event types, listeners, and the generator-based workflow for creating additional typed events. | [Workflows](workflows/workflows.md#game-events) |
+| Global framework configuration | The shared config used to dispatch built-in framework events such as spawned, level up/down, stat changed, and attribute changed. | [Workflows](workflows/workflows.md#global-framework-events-and-reactive-filtering) |
+| Game Actions | Reusable asynchronous actions, projections, wrappers, and owner-aware event-driven execution flows. | [Game Actions](workflows/game-actions.md), [Advanced topics](workflows/advanced-topics.md#owner-aware-gameaction-execution) |
+| Game Tags | Tag assets, tag sets, and inspector header pills used to organize Astra assets and drive tag-based logic. | [Game Tags](workflows/game-tags.md) |
+| Conditions and reactive filtering | Polymorphic condition trees, conditional actions, and the trigger/filtering model used by reactive systems. | [Conditions](workflows/conditions.md) |
 
 ## Editor tooling included in the package
 
