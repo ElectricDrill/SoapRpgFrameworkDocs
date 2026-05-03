@@ -113,6 +113,8 @@ The configuration provider uses a **three-step loading strategy**:
 
 Authoring defaults are **project-scoped, editor-only defaults** configured in `Edit > Project Settings > Astra Framework > Authoring Defaults`. They pre-fill selected references when you add framework components or create framework assets. They are never read by gameplay code, and every assignment in this page is optional.
 
+The manual **Authoring Defaults** section shown in supported inspectors is controlled separately through the user preference at `Edit > Preferences... > Astra Framework > Authoring Defaults`. This preference affects only whether the extra **Apply** and **Replace** actions are rendered in inspectors. It does **not** change the project-wide defaults configured in Project Settings, and it does **not** disable automatic default assignment when new supported objects are created.
+
 > [!NOTE]
 > Authoring defaults do **not** change the framework's zero-setup philosophy. The framework works without them, and they exist only to make repeated authoring safer, clearer, and more customizable.
 
@@ -139,10 +141,16 @@ For class authoring, the same settings page also exposes the optional automatic 
 
 ### Inspector actions
 
-The inspectors for `EntityCore`, `GrowthFormulaSO`, `ClassSO`, `EntityStats`, and `EntityAttributes` expose an **Authoring Defaults** section with two actions:
+Supported inspectors can expose a manual **Authoring Defaults** section with two actions:
 
 - **Apply Authoring Defaults** — fills only empty or unassigned fields using the current project defaults
 - **Replace With Authoring Defaults** — asks for confirmation and then also overwrites fields that are already configured
+
+This section is available for `EntityCore`, `GrowthFormulaSO`, `ClassSO`, `EntityStats`, and `EntityAttributes`.
+
+If you want to show it, open `Edit > Preferences > Astra Framework > Authoring Defaults` and enable **Show Authoring Defaults inspector actions**.
+
+If you leave this preference disabled, the inspectors simply hide these manual buttons. The automatic authoring-default workflow configured in Project Settings still applies normally when supported components or assets are created.
 
 This is useful when a project decides to standardize on a shared set of authoring assets after some objects have already been created.
 

@@ -191,6 +191,7 @@
 <hr>
 <h2 id="authoring-defaults">Authoring Defaults</h2>
 <p>Authoring defaults are <strong>project-scoped, editor-only defaults</strong> configured in <code>Edit &gt; Project Settings &gt; Astra Framework &gt; Authoring Defaults</code>. They pre-fill selected references when you add framework components or create framework assets. They are never read by gameplay code, and every assignment in this page is optional.</p>
+<p>The manual <strong>Authoring Defaults</strong> section shown in supported inspectors is controlled separately through the user preference at <code>Edit &gt; Preferences... &gt; Astra Framework &gt; Authoring Defaults</code>. This preference affects only whether the extra <strong>Apply</strong> and <strong>Replace</strong> actions are rendered in inspectors. It does <strong>not</strong> change the project-wide defaults configured in Project Settings, and it does <strong>not</strong> disable automatic default assignment when new supported objects are created.</p>
 <div class="NOTE">
 <h5>Note</h5>
 <p>Authoring defaults do <strong>not</strong> change the framework's zero-setup philosophy. The framework works without them, and they exist only to make repeated authoring safer, clearer, and more customizable.</p>
@@ -213,11 +214,14 @@
 <p>A field left empty stays manual. You can configure only a shared <code>Max Level</code>, only a fixed-base set, only class defaults, or nothing at all.</p>
 </div>
 <h3 id="inspector-actions">Inspector actions</h3>
-<p>The inspectors for <code>EntityCore</code>, <code>GrowthFormulaSO</code>, <code>ClassSO</code>, <code>EntityStats</code>, and <code>EntityAttributes</code> expose an <strong>Authoring Defaults</strong> section with two actions:</p>
+<p>Supported inspectors can expose a manual <strong>Authoring Defaults</strong> section with two actions:</p>
 <ul>
 <li><strong>Apply Authoring Defaults</strong> — fills only empty or unassigned fields using the current project defaults</li>
 <li><strong>Replace With Authoring Defaults</strong> — asks for confirmation and then also overwrites fields that are already configured</li>
 </ul>
+<p>This section is available for <code>EntityCore</code>, <code>GrowthFormulaSO</code>, <code>ClassSO</code>, <code>EntityStats</code>, and <code>EntityAttributes</code>.</p>
+<p>If you want to show it, open <code>Edit &gt; Preferences &gt; Astra Framework &gt; Authoring Defaults</code> and enable <strong>Show Authoring Defaults inspector actions</strong>.</p>
+<p>If you leave this preference disabled, the inspectors simply hide these manual buttons. The automatic authoring-default workflow configured in Project Settings still applies normally when supported components or assets are created.</p>
 <p>This is useful when a project decides to standardize on a shared set of authoring assets after some objects have already been created.</p>
 <h3 id="recommended-usage">Recommended usage</h3>
 <p>If your project always expects the same <code>Max Level</code>, experience formula, class sets, or fixed-base sets, assign those project-owned assets in <strong>Authoring Defaults</strong> so newly created objects follow one explicit standard. If you prefer per-object setup, leave the defaults empty and continue authoring manually.</p>

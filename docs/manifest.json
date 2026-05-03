@@ -4068,6 +4068,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/AstraRPG/astra-framework-config.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/AstraRPG/astra-framework-config.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/AstraRPG/attribute-scaling-component.png",
       "output": {
         "resource": {
