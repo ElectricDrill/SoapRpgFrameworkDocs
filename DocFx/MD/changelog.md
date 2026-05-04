@@ -28,7 +28,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added the Game Tag header-pill workflow, including popup search, multi-select add/remove, double-click quick add, intersection handling, overflow display, drag reordering, click-to-ping, and visual customization support.
 - Added custom managed-reference drawers for condition-related attribute and stat fields.
 - Added optional project-scoped **Authoring Defaults** in `Edit > Project Settings > Astra Framework > Authoring Defaults` for `EntityCore`, `GrowthFormulaSO`, `ClassSO`, `EntityStats`, and `EntityAttributes`, together with inspector actions to apply or replace those defaults on existing objects.
-- Added multi-object editing support to the `EntityCore`, `EntityStats`, `EntityAttributes`, `EntityClass`, `Class`, `Scaling Formula`, `Attribute Scaling Component`, and `Stat Scaling Component` inspectors, including bulk editing for shared values across multiple selected objects.
+- Added multi-object editing support to the `EntityCore`, `EntityStats`, `EntityAttributes`, `EntityClass`, `Class`, `Scaling Formula`, `Attribute`, `Stat`, `Attribute Scaling Component`, and `Stat Scaling Component` (both attributes and stats) inspectors, including bulk editing for shared values across multiple selected objects.
 - Added the `Migrate Managed References (SO Rename)` tool (`Tools → Astra RPG Framework → v2.0.0 Migration -> Migrate Managed References (SO Rename)`) to rewrite `[SerializeReference]` managed-reference type strings that `[MovedFrom]` alone cannot patch after the ScriptableObject type renames. The tool supports a dry-run mode, per-session reporting to `Library/AstraMigrationReport_<timestamp>.txt`, and optional scanning of closed scenes.
 - Added `TypeSelectableClosedGenericValidator`, an editor startup check that emits a warning when a `[SerializeReference, TypeSelectable]` field targets a closed generic type — a pattern that breaks silently when any type inside the generic argument is renamed (Unity bug [UUM-44729](https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types)).
 
@@ -74,6 +74,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 #### Runtime Features
 - Removed the deprecated legacy `EntityLeveledUpGameEvent` and `EntityLeveledDownGameEvent` types together with the remaining deprecated legacy hooks in `EntityLevel`. These had already been deprecated in `v1.4.0`; if your project still uses them, complete the migration described in [Migrating to v1.4.0](./migration-guide.md#migrating-to-v140) before upgrading.
 - Removed the deprecated `AttributePointsTracker` compatibility layer from `EntityAttributes`. The transition to `EntityPointsTracker` and `AttributePortfolio` started in `v1.3.0`.
+
+#### Samples
+- Removed the separate `Utils` sample folder. Its helper assets now live under `Examples`, and the samples are documented as reference content rather than project-owned runtime data.
 
 #### Editor Features
 - Removed the deprecated `DerivedTypePicker` editor utility. The replacement path to `TypeSelectionMenu` was introduced in `v1.2.0`.

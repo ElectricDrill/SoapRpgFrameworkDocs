@@ -7,27 +7,33 @@ From the package manager window, select the `In This Project` tab from the menu 
 
 The import will copy the samples of the package into your project's `Assets` folder, under `Assets/AstraRPGFramework`.
 
-The samples folder contains 2 sub-folders:
-- **utils**: contains some utility objects that can be used in your game.
-- **examples**: contains resources that are used in the sample scene to showcase the package's features
+The package currently exposes a single sample entry: **Example scene and instances**. Importing it creates `Assets/AstraRPGFramework/Examples`, which contains both the sample scene itself and all the supporting assets it needs.
 
-## Utils
-The `Utils` folder contains 2 sub-folders:
-- `EventInstances`: containing `Entity Attribute Changed`, `Entity Spawned`, `Entity Stat Changed`, and `On Player Level Up` Game Events. These are instances of the Game Events defined in the package's source code.
-- `Player`: containing `Max Level`, `Player Hp`, `Player Max Hp`, and `Player Level` Int and Long variables. These are useful to use Scriptable Object variables in your game, as showcased in the [Workflows](workflows/workflows.md) documentation.
+> [!IMPORTANT]
+> The assets in `Examples` are intended as reference material and learning aids.
+>
+> For production content, prefer creating and owning your own instances in your project instead of depending on the imported sample assets. This avoids version-mixing issues if you later reimport samples from a newer package release and accidentally combine data authored against different sample revisions.
 
 ## Examples
-There are several objects in this folder. Let's start by the Sample Scene.
-Here we have two relevant game objects: `Heroes` and `HeroesHUD`. These wrappers contain the entity game objects and the GUI elements that are used to display the heroes' stats and attributes respectively.
+The `Examples` folder now includes everything that older package versions split between `Examples` and `Utils`. That means the example scene, its supporting assets, and helper-style sample instances are all imported together in one place.
+
+At the top level you will find folders such as `Art`, `EventInstances`, `Instances`, `Player`, `Prefabs`, `Resources`, and `Scripts`.
+
+- `EventInstances` contains sample Game Event assets used by the example content
+- `Player` contains sample variable assets such as `Max Level` and `PlayerLevel`
+- `Instances` contains the framework `ScriptableObject` instances used to drive the example setup
+
+Let's start with the Sample Scene, which is the main guided example in this import.
+Inside it, the two most relevant root objects are `Heroes` and `HeroesHUD`. These wrappers contain the entity game objects and the GUI elements that display the heroes' stats and attributes respectively.
 There are three heroes in the `Heroes` GO: `Warrior`, `Mage`, and `Rogue`. Each hero has its own game object, with the following components:
 - `EntityCore`
 - `EntityClass`
 - `EntityStats`
 - `EntityAttributes`
 
-The objects in the `HeroesHUD` are not as relevant. Feel free to explore them, but they are not the focus of this documentation as they are just used to display the heroes' stats and attributes in the UI.
+The objects in `HeroesHUD` are less relevant for framework authoring. Feel free to explore them, but they mainly support the sample UI.
 
-Along with the Sample Scene, there are a few sprites and UI scripts (in the `Sprites` and `Scripts` folders respectively), some prefabs in the `Prefabs` folder, a few events in the `Events` folder, and some more relevant content in the `Instances -> Classes` folder. Here, we have all the instances of the frameworks's scriptable objects for the Sample Scene.  
+Outside the Sample Scene, the rest of the `Examples` folder provides the assets that support or explain the setup: art in `Art`, UI scripts in `Scripts`, prefabs in `Prefabs`, sample event assets in `EventInstances`, and the most relevant authoring data in `Instances`. In particular, `Instances -> Classes` contains the framework `ScriptableObject` instances used by the Sample Scene.  
 For each class we have the following:
 - Attributes growth formulas
 - Stats growth formulas
