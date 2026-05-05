@@ -110,6 +110,7 @@ expected remainder are normalized into the range [0, divisor - 1] before compari
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
 [TypeSelectableMenu(&quot;Leaf/ValueChange&quot;)]
+[ConditionPayload(typeof(IHasValueChange&lt;long&gt;))]
 public class LongValueChangeModuloCondition : Condition</code></pre>
   </div>
 
@@ -141,7 +142,7 @@ public class LongValueChangeModuloCondition : Condition</code></pre>
 
   <h3 id="ElectricDrill_AstraRpgFramework_Conditions_LongValueChangeModuloCondition_Evaluate_ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_" data-uid="ElectricDrill.AstraRpgFramework.Conditions.LongValueChangeModuloCondition.Evaluate(ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext)">
   Evaluate(EvaluationContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/Leaf/LongValueChangeModuloCondition.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Conditions/Leaf/LongValueChangeModuloCondition.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Evaluates this condition against the provided context.</p>

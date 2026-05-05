@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class GameTagSO | Astra RPG Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class GameTagSO | Astra RPG Framework ">
+      
+      <meta name="description" content="Lightweight typed tag identifier. Use as a ScriptableObject reference to tag game entities, modifiers, abilities, or any other game data.  Assign a  and an optional  (emoji or short text) to give this tag a distinct visual appearance in the Unity Inspector. Optionally enable  to fill the pill with a two-color gradient.">
+      <link rel="icon" href="../images/astra-rpg-ico.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Cis8/AstraRpgFramework/new/main/apiSpec/new?filename=ElectricDrill_AstraRpgFramework_Tags_GameTagSO.md&amp;value=---%0Auid%3A%20ElectricDrill.AstraRpgFramework.Tags.GameTagSO%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra RPG Framework">
+            Astra RPG Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTagSO">
+
+
+
+  <h1 id="ElectricDrill_AstraRpgFramework_Tags_GameTagSO" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTagSO" class="text-break">
+Class GameTagSO  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Tags/GameTagSO.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ElectricDrill.html">ElectricDrill</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.html">AstraRpgFramework</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.html">Tags</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>com.electricdrill.astra-rpg-framework.Runtime.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Lightweight typed tag identifier. Use as a ScriptableObject reference to tag game entities,
+modifiers, abilities, or any other game data.</p>
+<p>
+Assign a <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.html#ElectricDrill_AstraRpgFramework_Tags_GameTagSO_TagColor">TagColor</a> and an optional <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.html#ElectricDrill_AstraRpgFramework_Tags_GameTagSO_Icon">Icon</a> (emoji or short text)
+to give this tag a distinct visual appearance in the Unity Inspector.
+Optionally enable <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.html#ElectricDrill_AstraRpgFramework_Tags_GameTagSO_UseGradient">UseGradient</a> to fill the pill with a two-color gradient.
+</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CreateAssetMenu(fileName = &quot;New Game Tag&quot;, menuName = &quot;Astra RPG Framework/Game Tag&quot;)]
+public class GameTagSO : ScriptableObject</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><span class="xref">object</span></div>
+      <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/Object.html">Object</a></div>
+      <div><a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></div>
+      <div><span class="xref">GameTagSO</span></div>
+    </dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Tags_GameTagSO_GradientDirection_" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.GradientDirection*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Tags_GameTagSO_GradientDirection" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.GradientDirection">
+  GradientDirection
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Tags/GameTagSO.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Direction of the gradient sweep (used only when <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.html#ElectricDrill_AstraRpgFramework_Tags_GameTagSO_UseGradient">UseGradient</a> is <code>true</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GradientDirection GradientDirection { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GradientDirection.html">GradientDirection</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Tags_GameTagSO_GradientEndColor_" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.GradientEndColor*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Tags_GameTagSO_GradientEndColor" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.GradientEndColor">
+  GradientEndColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Tags/GameTagSO.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The end color of the gradient (used only when <a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.html#ElectricDrill_AstraRpgFramework_Tags_GameTagSO_UseGradient">UseGradient</a> is <code>true</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color GradientEndColor { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/ScriptReference/Color.html">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Tags_GameTagSO_Icon_" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.Icon*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Tags_GameTagSO_Icon" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.Icon">
+  Icon
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Tags/GameTagSO.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Optional emoji or short text displayed alongside the tag name (e.g. &quot;🔥&quot;, &quot;⚔️&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Icon { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Tags_GameTagSO_TagColor_" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.TagColor*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Tags_GameTagSO_TagColor" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.TagColor">
+  TagColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Tags/GameTagSO.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The primary (start) color used when rendering this tag as a pill in the Inspector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color TagColor { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://docs.unity3d.com/ScriptReference/Color.html">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_Tags_GameTagSO_UseGradient_" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.UseGradient*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_Tags_GameTagSO_UseGradient" data-uid="ElectricDrill.AstraRpgFramework.Tags.GameTagSO.UseGradient">
+  UseGradient
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Tags/GameTagSO.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>When <code>true</code> the pill is filled with a two-color gradient instead of a flat color.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UseGradient { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -12,40 +12,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "MD/advanced-topics.md",
-      "output": {
-        ".html": {
-          "relative_path": "MD/advanced-topics.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "MD/changelog.md",
       "output": {
         ".html": {
           "relative_path": "MD/changelog.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "MD/conditions.md",
-      "output": {
-        ".html": {
-          "relative_path": "MD/conditions.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "MD/game-tags.md",
-      "output": {
-        ".html": {
-          "relative_path": "MD/game-tags.html"
         }
       },
       "version": ""
@@ -76,6 +46,16 @@
       "output": {
         ".html": {
           "relative_path": "MD/limitations.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "MD/managed-reference-migration.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/managed-reference-migration.html"
         }
       },
       "version": ""
@@ -135,10 +115,40 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "MD/workflows.md",
+      "source_relative_path": "MD/workflows/advanced-topics.md",
       "output": {
         ".html": {
-          "relative_path": "MD/workflows.html"
+          "relative_path": "MD/workflows/advanced-topics.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "MD/workflows/conditions.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/workflows/conditions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "MD/workflows/game-actions.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/workflows/game-actions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "MD/workflows/game-tags.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/workflows/game-tags.html"
         }
       },
       "version": ""
@@ -149,6 +159,16 @@
       "output": {
         ".html": {
           "relative_path": "MD/workflows/package-configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "MD/workflows/workflows.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/workflows/workflows.html"
         }
       },
       "version": ""
@@ -179,6 +199,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Attributes.AttributeMenuItems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Attributes.AttributeSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Attributes.AttributeSO.html"
         }
       },
       "version": ""
@@ -219,6 +249,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Attributes.AttributeSetMenuItems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Attributes.AttributeSetSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Attributes.AttributeSetSO.html"
         }
       },
       "version": ""
@@ -289,6 +329,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Classes.ClassMenuItems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Classes.ClassSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Classes.ClassSO.html"
         }
       },
       "version": ""
@@ -435,10 +485,60 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Conditions.ConditionCompatibility.UnavailableTarget.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Conditions.ConditionCompatibility.UnavailableTarget.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Conditions.ConditionCompatibility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Conditions.ConditionCompatibility.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Conditions.ConditionEvaluationAvailability.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Conditions.ConditionEvaluationAvailability.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Conditions.ConditionPayloadAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Conditions.ConditionPayloadAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Conditions.ConditionTarget.yml",
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Conditions.ConditionTarget.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Conditions.ConditionTargetAvailability.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Conditions.ConditionTargetAvailability.html"
         }
       },
       "version": ""
@@ -735,6 +835,36 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Config.AstraFrameworkGlobalSettingsSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Config.AstraFrameworkGlobalSettingsSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Config.AstraRpgFrameworkConfigProvider.yml",
       "output": {
         ".html": {
@@ -759,6 +889,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Config.AstraRpgFrameworkGlobalSettingsSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig.html"
         }
       },
       "version": ""
@@ -1209,6 +1349,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Events.GameEventListenerGeneric4-4.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Events.IEventRegistrar.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Events.IEventRegistrar.html"
         }
       },
       "version": ""
@@ -1925,6 +2075,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingComponentSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingComponentSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingComponents.AttributeScalingComponentMenuItems.yml",
       "output": {
         ".html": {
@@ -1945,6 +2105,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingComponents.AttributesScalingComponentSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingComponents.AttributesScalingComponentSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingComponents.StatScalingComponentMenuItems.yml",
       "output": {
         ".html": {
@@ -1959,6 +2129,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingComponents.StatsScalingComponent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingComponents.StatsScalingComponentSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingComponents.StatsScalingComponentSO.html"
         }
       },
       "version": ""
@@ -1999,6 +2179,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaMenuItems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Scaling.ScalingFormulaSO.html"
         }
       },
       "version": ""
@@ -2095,6 +2285,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Stats.StatSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Stats.StatSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Stats.StatSet.yml",
       "output": {
         ".html": {
@@ -2119,6 +2319,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Stats.StatSetMenuItems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Stats.StatSetSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Stats.StatSetSO.html"
         }
       },
       "version": ""
@@ -2159,6 +2369,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Tags.GameTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Tags.GameTagSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Tags.GameTagSO.html"
         }
       },
       "version": ""
@@ -2325,10 +2545,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.BoundedValueSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.BoundedValueSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.Cache-2.yml",
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.Cache-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.ComponentUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.ComponentUtils.html"
         }
       },
       "version": ""
@@ -2359,6 +2599,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.GrowthFormulaMenuItems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.GrowthFormulaSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.GrowthFormulaSO.html"
         }
       },
       "version": ""
@@ -2435,6 +2685,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.IntVarSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.IntVarSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.LongRef.yml",
       "output": {
         ".html": {
@@ -2449,6 +2709,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.LongVar.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.LongVarSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.LongVarSO.html"
         }
       },
       "version": ""
@@ -2585,6 +2855,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.UI.ExcludeParenthesesDisplaySONameProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.UI.ExcludeParenthesesDisplaySONameProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.UI.IDisplayNameProvider-1.yml",
       "output": {
         ".html": {
@@ -2599,6 +2889,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider.html"
         }
       },
       "version": ""
@@ -3768,6 +4068,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/AstraRPG/astra-framework-config.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/AstraRPG/astra-framework-config.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/AstraRPG/attribute-scaling-component.png",
       "output": {
         "resource": {
@@ -3872,6 +4182,16 @@
       "output": {
         "resource": {
           "relative_path": "images/AstraRPG/game-action.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/AstraRPG/game-tag.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/AstraRPG/game-tag.png"
         }
       },
       "version": ""
@@ -4088,6 +4408,26 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/workflows/conditions/conditional-game-action-inspector.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/conditions/conditional-game-action-inspector.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/conditions/conditions-type-picker.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/conditions/conditions-type-picker.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/workflows/entity-attributes-editor.png",
       "output": {
         "resource": {
@@ -4182,6 +4522,46 @@
       "output": {
         "resource": {
           "relative_path": "images/workflows/exp-source-inspector.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/game-tags/game-tag-add-popup.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/game-tags/game-tag-add-popup.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/game-tags/game-tag-header-pills.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/game-tags/game-tag-header-pills.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/game-tags/game-tag-inspector.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/game-tags/game-tag-inspector.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/game-tags/game-tag-multi-object-editing.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/game-tags/game-tag-multi-object-editing.png"
         }
       },
       "version": ""

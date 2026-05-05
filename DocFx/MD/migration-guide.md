@@ -16,13 +16,52 @@ Before updating, make sure your project is backed up or committed to version con
 
 ### 2. Update the package from the Package Manager
 
-Open Unity and navigate to `Window -> Package Management -> Package Manager` (`Window -> Package Manager` for older versions of the editor). Locate Astra RPG Framework in the "In This Project" list and update it to `2.0.0` (or the latest available). Let Unity finish recompiling before starting the migration work below.
+Open Unity and navigate to `Window -> Package Management -> Package Manager` (`Window -> Package Manager` for older versions of the editor). Locate Astra Framework in the "In This Project" list and update it to `2.0.0` (or the latest available). Let Unity finish recompiling before starting the migration work below.
+
+### ScriptableObject type renames (SO suffix)
+
+v2.0.0 adds an `SO` suffix to all core ScriptableObject types to make their `ScriptableObject` nature explicit at a glance. The following types were renamed:
+
+| Old name | New name |
+|---|---|
+| `Stat` | `StatSO` |
+| `Attribute` | `AttributeSO` |
+| `Class` | `ClassSO` |
+| `StatSet` | `StatSetSO` |
+| `AttributeSet` | `AttributeSetSO` |
+| `GrowthFormula` | `GrowthFormulaSO` |
+| `ScalingFormula` | `ScalingFormulaSO` |
+| `ScalingComponent` | `ScalingComponentSO` |
+| `AttributesScalingComponent` | `AttributesScalingComponentSO` |
+| `StatsScalingComponent` | `StatsScalingComponentSO` |
+| `IntVar` | `IntVarSO` |
+| `LongVar` | `LongVarSO` |
+| `GameTag` | `GameTagSO` |
+| `BoundedValue` | `BoundedValueSO` |
+
+All renamed types carry `[MovedFrom(autoUpdateAPI = true)]`. Unity's API Updater rewrites C# script references automatically the first time the project recompiles after the upgrade.
+
+> [!NOTE]
+> If any symbol still appears broken after reimporting, update the reference manually to match the new name in the table above.
+
+#### Do you use `[SerializeReference]` with any of these types as generic arguments?
+
+Unity's `[MovedFrom]` patches direct (non-generic) `[SerializeReference]` managed references automatically. However, due to [Unity bug UUM-44729](https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types), it cannot rewrite renamed types that appear as **generic arguments** inside a serialized type string.
+
+If any of the following apply to your project, you need to run the migration tool and follow the additional steps in [Managed Reference Migration](managed-reference-migration.md):
+
+- You have a `[SerializeReference]` field whose concrete serialized type holds one of the renamed framework types as a generic argument (for example, a custom closed-generic provider like `SomeProvider<Stat>`)
+- You implemented `IDisplaySONameProvider<T>`, which has been replaced by the non-generic `IDisplaySONameProvider` (see [Migrating `IDisplaySONameProvider<T>`](managed-reference-migration.md#1-migrating-idisplaysonameprovidert-custom-implementations))
+
+If neither applies, no further action is needed for this section.
 
 ### Required migration steps
 
-#### Update the framework configuration and shared event assets
+#### Update the framework configuration, shared event assets, and experience modifier stat
 
-The framework now dispatches its core global events — entity spawned, level up, level down, stat changed, and attribute changed — through a central `AstraRpgFrameworkConfigSO` asset. Three of those events (spawned, level up, level down) are **required**; without them the corresponding broadcasts are never fired.
+The framework now dispatches its core global events — entity spawned, level up, level down, stat changed, and attribute changed — through a central `AstraFrameworkConfigSO` asset. Three of those events (spawned, level up, level down) are **required**; without them the corresponding broadcasts are never fired.
+
+The same configuration asset now also owns the optional **Experience Gain Modifier Stat** binding. If your project previously assigned an experience gain modifier stat per entity, move that `StatSO` reference into the framework configuration.
 
 > [!IMPORTANT]
 > **Do not use the sample events for your production project.**  
@@ -30,20 +69,24 @@ The framework now dispatches its core global events — entity spawned, level up
 
 **Steps:**
 
-1. **Create your own `AstraRpgFrameworkConfigSO`** — right-click in the Project window and choose **Create → Astra RPG Framework → Config**, then save it somewhere in your project (e.g., `Assets/Config/`).  
+1. **Create your own `AstraFrameworkConfigSO`** — right-click in the Project window and choose **Create → Astra RPG Framework → Config**, then save it somewhere in your project (e.g., `Assets/Config/`).  
+1. **Create your own `AstraFrameworkConfigSO`** — right-click in the Project window and choose **Create → Astra RPG Framework → Config**, then save it somewhere in your project (e.g., `Assets/Config/`).  
    For a full description of each field and the loading strategy, see [Package Configuration](workflows/package-configuration.md).
 
 2. **Open the newly created asset** and assign your existing event assets to the five fields:
-   - *Global Entity Spawned Event* <span style="color:red;">*</span> — the `EntityCoreGameEvent` your systems already listen to
-   - *Global Entity Level Up Event* <span style="color:red;">*</span> — the `EntityLevelUpGameEvent` your systems already listen to
-   - *Global Entity Level Down Event* <span style="color:red;">*</span> — the `EntityLevelDownGameEvent` your systems already listen to
+   - <span style="color:red;">*</span> *Global Entity Spawned Event* — the `EntityCoreGameEvent` your systems already listen to
+   - <span style="color:red;">*</span> *Global Entity Level Up Event* — the `EntityLevelUpGameEvent` your systems already listen to
+   - <span style="color:red;">*</span> *Global Entity Level Down Event* — the `EntityLevelDownGameEvent` your systems already listen to
    - *Global Stat Changed Event* — the `StatChangedGameEvent` your systems already listen to (optional but recommended)
    - *Global Attribute Changed Event* — the `AttributeChangedGameEvent` your systems already listen to (optional but recommended)
+   - *Experience Gain Modifier Stat* — the `StatSO` you previously assigned per entity, if your project uses experience gain modifiers
 
-3. **Register the config in Project Settings** — open `Edit → Project Settings → Astra RPG Framework` and assign your new config asset as the **Active Config Profile**.
+3. **Move the experience modifier stat from entities to the config** — if your project already used the old per-entity field, assign that same `StatSO` to **Experience Gain Modifier Stat** in the active config. You no longer need to assign it on each entity. Each entity will still use its own runtime value for that stat from `EntityStats`.
+
+4. **Register the config in Project Settings** — open `Edit → Project Settings → Astra Framework` and assign your new config asset as the **Active Config Profile**.
 
 > [!CAUTION]
-> If you skip step 3 and leave Project Settings empty, the framework will attempt the convention-based fallback (a `Resources` asset named `Astra Rpg Framework Config`). If neither is found, global events are never dispatched and any system that relies on them will silently fail at runtime. Always verify the Project Settings page shows **"✓ Using Explicit Configuration"** before entering Play Mode.
+> If you skip step 4 and leave Project Settings empty, the framework will attempt the convention-based fallback (a `Resources` asset named `Astra Framework Config`). If neither is found, global events are never dispatched and any system that relies on them will silently fail at runtime. Always verify the Project Settings page shows **"✓ Using Explicit Configuration"** before entering Play Mode.
 
 #### Rename the fixed typo in `EntityStats`
 
@@ -52,6 +95,27 @@ The `EntityStats` method name `AddStatToStatModifer(...)` was corrected to `AddS
 1. Search your codebase for `AddStatToStatModifer`.
 2. Replace each occurrence with `AddStatToStatModifier`.
 3. Recompile and confirm no stale references remain.
+
+#### Review old default-reference workflows and move them to Authoring Defaults
+
+Previous versions could rely on script-level default references for some authoring flows. In practice, that meant newly created objects could inherit references that came from imported sample assets (for example, a shared `Max Level` used by newly created `GrowthFormulaSO` assets).
+
+This pattern has been replaced by project-scoped **Authoring Defaults** in `Edit > Project Settings > Astra Framework > Authoring Defaults`.
+
+> [!NOTE]
+> This is a workflow migration, not a runtime requirement. Authoring defaults are fully optional. If you prefer manual setup, leave every field empty and continue authoring objects explicitly.
+
+If your project relied on the old automatic pre-filling behavior, it is recommended to move that intent into the new Project Settings page so future assets and components follow one explicit, project-owned standard.
+
+**Suggested migration steps:**
+
+1. Open `Edit > Project Settings > Astra Framework > Authoring Defaults`
+2. Identify the shared assets your team expects new objects to reuse consistently (for example a common `IntVarSO` max level, experience formula, class stat set, class attribute set, or fixed-base sets)
+3. Assign only the defaults your project actually wants to standardize
+4. Prefer project-owned assets over sample assets when choosing these defaults, so future package updates do not introduce silent reference drift between older and newer authored objects
+5. For existing objects that you want to align with the new standard, use **Apply Authoring Defaults** to fill only missing fields or **Replace With Authoring Defaults** to overwrite existing ones deliberately
+
+This keeps the package aligned with its zero-setup philosophy while making repeated authoring more robust, explicit, and customizable.
 
 ### Behavior changes to review
 
@@ -62,16 +126,6 @@ These changes may not produce compile errors, but they can change how existing g
 Stat and attribute changed notifications are now raised for broader effective changes, not only for the most direct mutation paths. This includes dependent recalculations and bulk transitions such as some level-up/level-down flows.
 
 Review any listeners, UI refresh logic, analytics counters, or reactive systems that assume those events only fire for direct edits. If needed, add filtering logic based on the payload contents before executing gameplay responses.
-
-#### Disabled `EntityAttributes` components now resolve their current set differently
-
-`EntityAttributes.GetCurrentAttributeSetAndHandleChanges()` now returns `null` when the component is inactive or disabled.
-
-If you have custom code that queries attribute sets while the component is disabled, add a null check or defer that query until the component is enabled again.
-
-### Recommended cleanup and adoption
-
-These steps are not strictly required to get your project compiling again, but they help align your code and content with the current package direction.
 
 ## Migrating to v1.4.0
 

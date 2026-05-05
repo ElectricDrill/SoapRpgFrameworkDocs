@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_EntityCore" data-uid="ElectricDrill.AstraRpgFramework.EntityCore" class="text-break">
-Class EntityCore  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L20"><i class="bi bi-code-slash"></i></a>
+Class EntityCore  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -105,7 +105,7 @@ Provides easy access to the entity's level, stats, and attributes.</p>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[DisallowMultipleComponent]
-public class EntityCore : MonoBehaviour, IEditorValidatable, IInvalidatable, IStatReader, IValueContainer&lt;Stat&gt;, IAttributeReader, IValueContainer&lt;Attribute&gt;, ITaggable, IHasEntity</code></pre>
+public class EntityCore : MonoBehaviour, IEditorValidatable, IInvalidatable, IStatReader, IValueContainer&lt;StatSO&gt;, IAttributeReader, IValueContainer&lt;AttributeSO&gt;, ITaggable, IHasEntity, IEventRegistrar</code></pre>
   </div>
 
 
@@ -129,16 +129,24 @@ public class EntityCore : MonoBehaviour, IEditorValidatable, IInvalidatable, ISt
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IEditorValidatable.html">IEditorValidatable</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IInvalidatable.html">IInvalidatable</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.IStatReader.html">IStatReader</a></div>
-      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html">IValueContainer</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.Stat.html">Stat</a>&gt;</div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html">IValueContainer</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSO.html">StatSO</a>&gt;</div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.html">IAttributeReader</a></div>
-      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html">IValueContainer</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.Attribute.html">Attribute</a>&gt;</div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html">IValueContainer</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSO.html">AttributeSO</a>&gt;</div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Tags.ITaggable.html">ITaggable</a></div>
       <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IHasEntity.html">IHasEntity</a></div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Events.IEventRegistrar.html">IEventRegistrar</a></div>
     </dd>
   </dl>
 
 
 
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.ComponentUtils.html#ElectricDrill_AstraRpgFramework_Utils_ComponentUtils_GetOrCache__1_UnityEngine_MonoBehaviour___0__">ComponentUtils.GetOrCache&lt;T&gt;(MonoBehaviour, ref T)</a>
+  </div>
+  </dd></dl>
 
 
 
@@ -346,43 +354,11 @@ the primary affected subject (e.g. the event target).</p>
 </h2>
 
 
-  <a id="ElectricDrill_AstraRpgFramework_EntityCore_AddExtraSpawnedEvent_" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.AddExtraSpawnedEvent*"></a>
-
-  <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_AddExtraSpawnedEvent_ElectricDrill_AstraRpgFramework_Events_EntityCoreGameEvent_" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.AddExtraSpawnedEvent(ElectricDrill.AstraRpgFramework.Events.EntityCoreGameEvent)">
-  AddExtraSpawnedEvent(EntityCoreGameEvent)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L97"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Registers an additional per-entity listener for entity spawned events.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddExtraSpawnedEvent(EntityCoreGameEvent evt)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>evt</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Events.EntityCoreGameEvent.html">EntityCoreGameEvent</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="ElectricDrill_AstraRpgFramework_EntityCore_Awake_" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Awake*"></a>
 
   <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_Awake" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Awake">
   Awake()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L146"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -408,7 +384,7 @@ the primary affected subject (e.g. the event target).</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_Invalidate" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Invalidate">
   Invalidate()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L142"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Marks this object as invalid and raises <a class="xref" href="ElectricDrill.AstraRpgFramework.Contexts.IInvalidatable.html#ElectricDrill_AstraRpgFramework_Contexts_IInvalidatable_OnInvalidated">OnInvalidated</a>.</p>
@@ -431,43 +407,11 @@ the primary affected subject (e.g. the event target).</p>
 
 
 
-  <a id="ElectricDrill_AstraRpgFramework_EntityCore_RemoveExtraSpawnedEvent_" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.RemoveExtraSpawnedEvent*"></a>
-
-  <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_RemoveExtraSpawnedEvent_ElectricDrill_AstraRpgFramework_Events_EntityCoreGameEvent_" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.RemoveExtraSpawnedEvent(ElectricDrill.AstraRpgFramework.Events.EntityCoreGameEvent)">
-  RemoveExtraSpawnedEvent(EntityCoreGameEvent)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L99"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Unregisters a listener previously added via <a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html#ElectricDrill_AstraRpgFramework_EntityCore_AddExtraSpawnedEvent_ElectricDrill_AstraRpgFramework_Events_EntityCoreGameEvent_">AddExtraSpawnedEvent(EntityCoreGameEvent)</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void RemoveExtraSpawnedEvent(EntityCoreGameEvent evt)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>evt</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Events.EntityCoreGameEvent.html">EntityCoreGameEvent</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="ElectricDrill_AstraRpgFramework_EntityCore_Start_" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Start*"></a>
 
   <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_Start" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Start">
   Start()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L156"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -489,11 +433,97 @@ the primary affected subject (e.g. the event target).</p>
 
 
 
+  <a id="ElectricDrill_AstraRpgFramework_EntityCore_Subscribe_" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Subscribe*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_Subscribe__1___0_" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Subscribe``1(``0)">
+  Subscribe&lt;TEvent&gt;(TEvent)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Registers <code class="paramref">gameEvent</code> on the channel matching <code class="typeparamref">TEvent</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Subscribe&lt;TEvent&gt;(TEvent gameEvent) where TEvent : ScriptableObject</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameEvent</code> <span class="xref">TEvent</span></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEvent</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><span class="xref">ArgumentException</span></dt>
+    <dd><p>Thrown when no channel is registered for <code class="typeparamref">TEvent</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="ElectricDrill_AstraRpgFramework_EntityCore_Unsubscribe_" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Unsubscribe*"></a>
+
+  <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_Unsubscribe__1___0_" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Unsubscribe``1(``0)">
+  Unsubscribe&lt;TEvent&gt;(TEvent)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes <code class="paramref">gameEvent</code> from the channel matching <code class="typeparamref">TEvent</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Unsubscribe&lt;TEvent&gt;(TEvent gameEvent) where TEvent : ScriptableObject</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gameEvent</code> <span class="xref">TEvent</span></dt>
+    <dd></dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEvent</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><span class="xref">ArgumentException</span></dt>
+    <dd><p>Thrown when no channel is registered for <code class="typeparamref">TEvent</code>.</p>
+</dd>
+  </dl>
+
+
+
   <a id="ElectricDrill_AstraRpgFramework_EntityCore_Update_" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Update*"></a>
 
   <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_Update" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.Update">
   Update()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L183"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -522,7 +552,7 @@ the primary affected subject (e.g. the event target).</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_OnBeforeSpawned" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.OnBeforeSpawned">
   OnBeforeSpawned
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L135"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Raised after all EntityCore initialization is complete (level, stats, attributes) but
@@ -556,7 +586,7 @@ in their <code>Awake()</code> instead of relying on script execution order.</p>
 
   <h3 id="ElectricDrill_AstraRpgFramework_EntityCore_OnInvalidated" data-uid="ElectricDrill.AstraRpgFramework.EntityCore.OnInvalidated">
   OnInvalidated
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L111"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/EntityCore.cs/#L139"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Raised when this object is invalidated.</p>

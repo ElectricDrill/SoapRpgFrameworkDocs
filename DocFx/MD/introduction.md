@@ -56,7 +56,7 @@ A `StatSet` is a class derived from ScriptableObject that defines a collection o
 - the flat modifiers
 - the _StatToStat_ modifiers
 - the percentage modifiers
-We will see what these modifiers are in the section [Understanding Stat Modifier Types](workflows.md#understanding-stat-modifier-types).
+We will see what these modifiers are in the section [Understanding Stat Modifier Types](workflows/workflows.md#understanding-stat-modifier-types).
 
 The base statistics can be _fixed_, or instead derive from a class if the entity has one assigned. If we use the fixed ones, we must also provide a `StatSet`, while if we use those of a class, the class's `StatSet` will be used. If the entity levels up and we want its statistics to grow with levels, we are forced to use a class, as the _fixed_ statistics are immutable.
 
@@ -80,7 +80,7 @@ Optionally, we can add the Mono `EntityAttributes` to our entity if we want to g
 Similarly to `EntityStats`, we can decide whether the base attributes are _fixed_ or if they instead derive from the class associated with `EntityClass`.
 
 ### <img src="../images/AstraRPG/growth-fo.png" alt="growth formula" width="30" class="icon-background"/> Growth Formula
-To express how `Stats`, `Attributes`, Max HP, and the experience required to level up vary at each level, we can use instances of `GrowthFormula`. This is a class that derives from SO and allows us to define a mathematical function, or a system of functions, that describe how a value changes as levels increase. We will see in more detail how to define a `GrowthFormula` in the [Growth Formulas](workflows.md#growth-formulas) section.
+To express how `Stats`, `Attributes`, Max HP, and the experience required to level up vary at each level, we can use instances of `GrowthFormula`. This is a class that derives from SO and allows us to define a mathematical function, or a system of functions, that describe how a value changes as levels increase. We will see in more detail how to define a `GrowthFormula` in the [Growth Formulas](workflows/workflows.md#growth-formulas) section.
 
 ### <img src="../images/AstraRPG/scaling-fo.png" alt="scaling formula" width="30" class="icon-background"/> Scaling Formulas
 Scaling formulas provide a flexible way to define how values such as damage, healing, or other effects are calculated based on one or more attributes or stats. They allow you to combine base values (which can be constant or level-dependent) with contributions from various stats and attributes, each weighted by customizable scaling components.
@@ -99,12 +99,10 @@ Game Event Generators are ScriptableObjects that let you define custom game even
 Game Actions are ScriptableObjects that encapsulate reusable pieces of logic that can be executed in response to game events or other triggers. They promote modularity and code reuse by allowing you to define specific actions (like teleport player to base, enable a GO, resurrect an entity, etc.) that can be easily invoked from various parts of your game without duplicating code. They are asynchronous and can be also used as responses to Game Events.
 
 ### <img src="../images/AstraRPG/game-tag.png" alt="game tag" width="30" class="icon-background"/> Game Tags
-<!-- IMAGE MISSING: game-tag.png — intro icon for the Game Tags section -->
-`GameTag`s are lightweight identifiers that let you classify Astra assets and components for gameplay logic and editor organization. They appear as colored pills in tag-aware inspectors, making it easy to scan related assets at a glance and to build tag-based queries or conditions. For the full authoring workflow, see [Game Tags](game-tags.md).
+`GameTag`s are lightweight identifiers that let you classify Astra assets and components for gameplay logic and editor organization. They appear as colored pills in tag-aware inspectors, making it easy to scan related assets at a glance and to build tag-based queries or conditions. For the full authoring workflow, see [Game Tags](workflows/game-tags.md).
 
-### <img src="../images/AstraRPG/condition.png" alt="condition" width="30" class="icon-background"/> Conditions
-<!-- IMAGE MISSING: condition.png — intro icon for the Conditions section -->
-`Condition`s are reusable predicates evaluated against runtime context such as the current holder, performer, or event payload. They are authored directly in the Inspector through polymorphic condition fields and can be used to gate game actions and other reactive behaviors without writing bespoke code for every rule. For the complete model and editor workflow, see [Conditions](conditions.md).
+### Conditions
+`Condition`s are reusable predicates evaluated against runtime context such as the current holder, performer, or event payload. They are authored directly in the Inspector through polymorphic condition fields and can be used to gate game actions and other reactive behaviors without writing bespoke code for every rule. For the complete model and editor workflow, see [Conditions](workflows/conditions.md).
 
 ## How is Astra RPG Framework implemented?
 The package is developed around a Scriptable Objects architecture inspired by the [GDC talk of Ryan Hipple](https://www.youtube.com/watch?v=raQ3iHhE_Kk&ab_channel=Unity). In a nutshell, the main benefits provided by this architecture are:

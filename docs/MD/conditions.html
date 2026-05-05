@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/main/DocFx/MD/conditions.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.0.0/DocFx/MD/conditions.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -339,12 +339,61 @@
 <li>Configure its fields, such as target entity slot, comparison mode, threshold, or required tag set</li>
 <li>Wrap the root in composites if the rule needs multiple checks</li>
 </ol>
-<p><img src="../images/conditions/conditions-type-picker.png" alt="Condition type picker with grouped families such as Composites and Leaf categories"></p>
-<!-- IMAGE MISSING: conditions-type-picker.png — screenshot of a Condition field showing the grouped type picker with Composites, Leaf/Constant, Leaf/Attr. & Stat, Leaf/Entity, Leaf/Tag, Leaf/ValueChange, and Leaf/Random -->
+<p><img src="../images/workflows/conditions/conditions-type-picker.png" alt="Condition type picker with grouped families such as Composites and Leaf categories"></p>
 <div class="NOTE">
 <h5>Note</h5>
 <p>Conditions are authored inline, so their serialized data lives inside the object that owns the field. You do not create a standalone <code>Condition</code> asset first and reference it later.</p>
 </div>
+<h2 id="extending-the-system-with-custom-conditions-and-triggers">Extending the system with custom conditions and triggers</h2>
+<p>The payload filter shown by reactive inspectors is metadata-driven. If you add your own <code>Condition</code> subclasses or your own <code>IReactiveTrigger</code> implementations, treat that metadata as part of the public contract of the type.</p>
+<h3 id="custom-condition-types">Custom <code>Condition</code> types</h3>
+<p>If a custom condition reads <code>EvaluationContext.EventPayload</code>, annotate it with one or more <code>ConditionPayloadAttribute</code>s:</p>
+<pre><code class="lang-csharp">using System;
+using ElectricDrill.AstraRpgFramework.Conditions;
+using ElectricDrill.AstraRpgFramework.Contexts;
+
+[Serializable]
+[ConditionPayload(typeof(IHasEntity))]
+[ConditionPayload(typeof(IHasPerformer))]
+public sealed class PayloadActorMatchesHolderCondition : Condition
+{
+    public override bool Evaluate(EvaluationContext ctx)
+    {
+        if (!ctx.TryGetPayload&lt;IHasEntity&gt;(out var payload))
+            return false;
+
+        return payload.Entity == ctx.Holder;
+    }
+}
+</code></pre>
+<p>Use these rules:</p>
+<ul>
+<li>Add one attribute per accepted payload contract. Multiple attributes are an <strong>OR</strong> list.</li>
+<li>Prefer the narrowest interface or base type that the condition actually needs, such as <code>IHasEntity</code> or <code>IHasValueChange&lt;long&gt;</code>, instead of overfitting to one concrete payload class.</li>
+<li>Omit the attribute entirely only for payload-agnostic conditions. A condition with no <code>ConditionPayloadAttribute</code> is treated as compatible with any trigger.</li>
+<li>If a condition requires payload data and you forget the attribute, the condition may still appear in filtered pickers because the editor has no metadata proving otherwise.</li>
+</ul>
+<h3 id="custom-ireactivetrigger-types">Custom <code>IReactiveTrigger</code> types</h3>
+<p>Custom triggers must expose the payload contract through <code>IReactiveTrigger.PayloadType</code>:</p>
+<pre><code class="lang-csharp">using System;
+using ElectricDrill.AstraRpgFramework.Triggers;
+
+[Serializable]
+public sealed class CustomStatusTrigger : IReactiveTrigger
+{
+    public Type PayloadType =&gt; typeof(CustomStatusEvent);
+
+    // Subscribe / Unsubscribe / EventSource omitted.
+}
+</code></pre>
+<p>Best practices:</p>
+<ul>
+<li>Return <code>typeof(void)</code> for parameterless triggers.</li>
+<li>Return the type that subscribers can safely assume at runtime. If the trigger is conceptually based on an interface contract, expose that interface instead of an arbitrary concrete implementation.</li>
+<li>Do not use <code>typeof(object)</code> unless the payload is genuinely unconstrained, because it disables meaningful filtering.</li>
+</ul>
+<p>When both sides provide accurate metadata, the framework can filter incompatible condition types in the Inspector and warn about already-authored invalid trees before play mode.</p>
+<p>For custom editor wiring that connects a trigger field to a condition field and enables this filtering automatically, see <a href="advanced-topics.html#payload-aware-condition-fields-in-custom-editors">Payload-aware condition fields in custom editors</a>.</p>
 <h2 id="conditional-game-actions">Conditional game actions</h2>
 <p>The most direct built-in use of the system is <code>ConditionalGameAction&lt;TContext&gt;</code>, which wraps another <code>GameAction&lt;TContext&gt;</code> with an optional guard condition.</p>
 <ul>
@@ -359,8 +408,7 @@
 <li>Wrap the current root in <code>NotCondition</code></li>
 <li>Unwrap the current root when the current shape supports it</li>
 </ul>
-<p><img src="../images/conditions/conditional-game-action-inspector.png" alt="Conditional GameAction inspector showing Action, Condition, and Quick setup controls"></p>
-<!-- IMAGE MISSING: conditional-game-action-inspector.png — screenshot of a Conditional Entity Context Game Action inspector showing the Action field, the Condition field, and the Quick setup button -->
+<p><img src="../images/workflows/conditions/conditional-game-action-inspector.png" alt="Conditional GameAction inspector showing Action, Condition, and Quick setup controls"></p>
 <p>For the broader <code>GameAction</code> workflow, see <a href="workflows.html#game-actions">Game Actions</a>.</p>
 <h2 id="practical-uses">Practical uses</h2>
 <p><code>Condition</code>s are especially useful for:</p>

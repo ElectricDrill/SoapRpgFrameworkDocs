@@ -96,19 +96,27 @@ Classes
 </h3>
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider.html">DefaultAttributeCompactDisplaySONameProvider</a></dt>
-      <dd><p>Attribute display name provider that returns a compact version of the attribute's name.</p>
+      <dd><p>Attribute display name provider that returns a compact (up to 3-character, uppercase)
+version of an <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSO.html">AttributeSO</a>'s name. Non-<a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSO.html">AttributeSO</a> assets
+fall back to &quot;None&quot;.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider-1.html">DefaultDisplaySONameProvider&lt;T&gt;</a></dt>
-      <dd><p>Default implementation of IDisplayNameProvider that returns the asset's name property.</p>
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider.html">DefaultDisplaySONameProvider</a></dt>
+      <dd><p>Default implementation of <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider.html">IDisplaySONameProvider</a> that returns the asset's name.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.UI.ExcludeParenthesesDisplaySONameProvider.html">ExcludeParenthesesDisplaySONameProvider</a></dt>
+      <dd><p>Display provider that strips everything from the first opening parenthesis onward.
+Useful for sample assets whose editor names carry a parenthetical suffix.</p>
 </dd>
     </dl>
     <h3 id="interfaces">
 Interfaces
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider-1.html">IDisplaySONameProvider&lt;T&gt;</a></dt>
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider.html">IDisplaySONameProvider</a></dt>
       <dd><p>Provides display names for ScriptableObject assets.
 This interface allows for flexible presentation strategies, including localization.
 Add [Serializable] to implementations to suppress Unity warnings.</p>

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class DefaultAttributeCompactDisplaySONameProvider | Astra RPG Framework ">
       
-      <meta name="description" content="Attribute display name provider that returns a compact version of the attribute&#39;s name.">
+      <meta name="description" content="Attribute display name provider that returns a compact (up to 3-character, uppercase) version of an &#39;s name. Non- assets fall back to &amp;quot;None&amp;quot;.">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ElectricDrill_AstraRpgFramework_Utils_UI_DefaultAttributeCompactDisplaySONameProvider" data-uid="ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider" class="text-break">
-Class DefaultAttributeCompactDisplaySONameProvider  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/UI/DefaultAttributeCompactDisplaySONameProvider.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Class DefaultAttributeCompactDisplaySONameProvider  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/UI/DefaultAttributeCompactDisplaySONameProvider.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,13 +97,15 @@ Class DefaultAttributeCompactDisplaySONameProvider  <a class="header-action link
   <dl><dt>Assembly</dt><dd>com.electricdrill.astra-rpg-framework.Runtime.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Attribute display name provider that returns a compact version of the attribute's name.</p>
+  <div class="markdown summary"><p>Attribute display name provider that returns a compact (up to 3-character, uppercase)
+version of an <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSO.html">AttributeSO</a>'s name. Non-<a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSO.html">AttributeSO</a> assets
+fall back to &quot;None&quot;.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class DefaultAttributeCompactDisplaySONameProvider : IDisplaySONameProvider&lt;Attribute&gt;</code></pre>
+public class DefaultAttributeCompactDisplaySONameProvider : IDisplaySONameProvider</code></pre>
   </div>
 
 
@@ -120,7 +122,7 @@ public class DefaultAttributeCompactDisplaySONameProvider : IDisplaySONameProvid
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider-1.html">IDisplaySONameProvider</a>&lt;<a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.Attribute.html">Attribute</a>&gt;</div>
+      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider.html">IDisplaySONameProvider</a></div>
     </dd>
   </dl>
 
@@ -137,30 +139,30 @@ public class DefaultAttributeCompactDisplaySONameProvider : IDisplaySONameProvid
 
   <a id="ElectricDrill_AstraRpgFramework_Utils_UI_DefaultAttributeCompactDisplaySONameProvider_GetDisplayName_" data-uid="ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider.GetDisplayName*"></a>
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Utils_UI_DefaultAttributeCompactDisplaySONameProvider_GetDisplayName_ElectricDrill_AstraRpgFramework_Attributes_Attribute_" data-uid="ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider.GetDisplayName(ElectricDrill.AstraRpgFramework.Attributes.Attribute)">
-  GetDisplayName(Attribute)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/UI/DefaultAttributeCompactDisplaySONameProvider.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ElectricDrill_AstraRpgFramework_Utils_UI_DefaultAttributeCompactDisplaySONameProvider_GetDisplayName_UnityEngine_ScriptableObject_" data-uid="ElectricDrill.AstraRpgFramework.Utils.UI.DefaultAttributeCompactDisplaySONameProvider.GetDisplayName(UnityEngine.ScriptableObject)">
+  GetDisplayName(ScriptableObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/UI/DefaultAttributeCompactDisplaySONameProvider.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the display name by returning the first three characters of the attribute's name in uppercase.</p>
+  <div class="markdown level1 summary"><p>Gets the display name for the specified asset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string GetDisplayName(Attribute attribute)</code></pre>
+    <pre><code class="lang-csharp hljs">public string GetDisplayName(ScriptableObject asset)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>attribute</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.Attribute.html">Attribute</a></dt>
-    <dd><p>The attribute to get the compact display name for.</p>
+    <dt><code>asset</code> <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></dt>
+    <dd><p>The asset to get the display name for.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><span class="xref">string</span></dt>
-    <dd><p>The compact display name.</p>
+    <dd><p>The display name for the asset.</p>
 </dd>
   </dl>
 

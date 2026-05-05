@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/main/DocFx/MD/samples.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.0.0/DocFx/MD/samples.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -91,20 +91,22 @@
 <p>After having imported the package in your project, to import the samples into your project, head first to the package manager window. For latest versions of Unity, you can find it under <code>Window -&gt; Package Management -&gt; Package Manager</code>, otherwise, it should be under <code>Window -&gt; Package Manager</code>.</p>
 <p>From the package manager window, select the <code>In This Project</code> tab from the menu on the left, then select <code>AstraRPGFramework</code> from the list of packages. You'll notice that there are four tabs on the right side of the window: <code>Details</code>, <code>Version History</code>, <code>Dependencies</code>, and <code>Samples</code>. Select the <code>Samples</code> tab, then click on the <code>Import</code> button to import the desired samples in the project.</p>
 <p>The import will copy the samples of the package into your project's <code>Assets</code> folder, under <code>Assets/AstraRPGFramework</code>.</p>
-<p>The samples folder contains 2 sub-folders:</p>
-<ul>
-<li><strong>utils</strong>: contains some utility objects that can be used in your game.</li>
-<li><strong>examples</strong>: contains resources that are used in the sample scene to showcase the package's features</li>
-</ul>
-<h2 id="utils">Utils</h2>
-<p>The <code>Utils</code> folder contains 2 sub-folders:</p>
-<ul>
-<li><code>EventInstances</code>: containing <code>Entity Attribute Changed</code>, <code>Entity Spawned</code>, <code>Entity Stat Changed</code>, and <code>On Player Level Up</code> Game Events. These are instances of the Game Events defined in the package's source code.</li>
-<li><code>Player</code>: containing <code>Max Level</code>, <code>Player Hp</code>, <code>Player Max Hp</code>, and <code>Player Level</code> Int and Long variables. These are useful to use Scriptable Object variables in your game, as showcased in the <a href="workflows.html">Workflows</a> documentation.</li>
-</ul>
+<p>The package currently exposes a single sample entry: <strong>Example scene and instances</strong>. Importing it creates <code>Assets/AstraRPGFramework/Examples</code>, which contains both the sample scene itself and all the supporting assets it needs.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The assets in <code>Examples</code> are intended as reference material and learning aids.</p>
+<p>For production content, prefer creating and owning your own instances in your project instead of depending on the imported sample assets. This avoids version-mixing issues if you later reimport samples from a newer package release and accidentally combine data authored against different sample revisions.</p>
+</div>
 <h2 id="examples">Examples</h2>
-<p>There are several objects in this folder. Let's start by the Sample Scene.
-Here we have two relevant game objects: <code>Heroes</code> and <code>HeroesHUD</code>. These wrappers contain the entity game objects and the GUI elements that are used to display the heroes' stats and attributes respectively.
+<p>The <code>Examples</code> folder now includes everything that older package versions split between <code>Examples</code> and <code>Utils</code>. That means the example scene, its supporting assets, and helper-style sample instances are all imported together in one place.</p>
+<p>At the top level you will find folders such as <code>Art</code>, <code>EventInstances</code>, <code>Instances</code>, <code>Player</code>, <code>Prefabs</code>, <code>Resources</code>, and <code>Scripts</code>.</p>
+<ul>
+<li><code>EventInstances</code> contains sample Game Event assets used by the example content</li>
+<li><code>Player</code> contains sample variable assets such as <code>Max Level</code> and <code>PlayerLevel</code></li>
+<li><code>Instances</code> contains the framework <code>ScriptableObject</code> instances used to drive the example setup</li>
+</ul>
+<p>Let's start with the Sample Scene, which is the main guided example in this import.
+Inside it, the two most relevant root objects are <code>Heroes</code> and <code>HeroesHUD</code>. These wrappers contain the entity game objects and the GUI elements that display the heroes' stats and attributes respectively.
 There are three heroes in the <code>Heroes</code> GO: <code>Warrior</code>, <code>Mage</code>, and <code>Rogue</code>. Each hero has its own game object, with the following components:</p>
 <ul>
 <li><code>EntityCore</code></li>
@@ -112,8 +114,8 @@ There are three heroes in the <code>Heroes</code> GO: <code>Warrior</code>, <cod
 <li><code>EntityStats</code></li>
 <li><code>EntityAttributes</code></li>
 </ul>
-<p>The objects in the <code>HeroesHUD</code> are not as relevant. Feel free to explore them, but they are not the focus of this documentation as they are just used to display the heroes' stats and attributes in the UI.</p>
-<p>Along with the Sample Scene, there are a few sprites and UI scripts (in the <code>Sprites</code> and <code>Scripts</code> folders respectively), some prefabs in the <code>Prefabs</code> folder, a few events in the <code>Events</code> folder, and some more relevant content in the <code>Instances -&gt; Classes</code> folder. Here, we have all the instances of the frameworks's scriptable objects for the Sample Scene.<br>
+<p>The objects in <code>HeroesHUD</code> are less relevant for framework authoring. Feel free to explore them, but they mainly support the sample UI.</p>
+<p>Outside the Sample Scene, the rest of the <code>Examples</code> folder provides the assets that support or explain the setup: art in <code>Art</code>, UI scripts in <code>Scripts</code>, prefabs in <code>Prefabs</code>, sample event assets in <code>EventInstances</code>, and the most relevant authoring data in <code>Instances</code>. In particular, <code>Instances -&gt; Classes</code> contains the framework <code>ScriptableObject</code> instances used by the Sample Scene.<br>
 For each class we have the following:</p>
 <ul>
 <li>Attributes growth formulas</li>

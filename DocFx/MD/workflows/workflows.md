@@ -1,11 +1,10 @@
-# Workflows
+# Fundamentals
 <!--
 ======UTILITIES
 - Game Events as SOs
 - Int and Long Vars
 - Int and Long Refs
 - Growth Formulas
-- Game Actions
 
 ======ENTITY
 - Make a GameObject an entity
@@ -92,12 +91,12 @@ intRef.Value = intVar;
 ### Game events
 The package also supports game events with up to 4 context parameters. They are generics, but in Unity, it is not possible to instantiate classes that derive from `ScriptableObject` if they are generics with unspecified type parameters. To use them, we must explicitly declare classes that derive from the generic GameEvent and fix the type parameters with concrete types. To simplify the definition of new event types, with specific types as context parameters, the package provides `GameEventGenerator`. These generators, which derive from SO, allow generating the concrete classes of `GameEvent`.
 We will see these generators in more detail in the [Game Event Generators](#game-event-generators) section.
-Some game events are already defined and made available by the package (see the [Samples](samples.md) page).
+Some game events are already defined and made available by the package (see the [Samples](../samples.md) page).
 
 ### Growth Formulas
 *Relative path:* `Growth Formula`
 
-As already mentioned in [Introduction](introduction.md), `GrowthFormula` allows defining how a certain value varies as levels increase. A `GrowthFormula` can be instantiated through the hierarchy context menu by going to `Astra RPG Framework -> Growth Formula`.
+As already mentioned in [Introduction](../introduction.md), `GrowthFormula` allows defining how a certain value varies as levels increase. A `GrowthFormula` can be instantiated through the hierarchy context menu by going to `Astra RPG Framework -> Growth Formula`.
 The package provides a custom property drawer for `GrowthFormula`.
 
 #### Max level for the values
@@ -118,7 +117,7 @@ The string can be defined by using the [Unity ExpressionEvaluator](https://docs.
 
 #### Example of a `GrowthFormula`
 Let's see an example of how to define a `GrowthFormula` for defining the Physical Attack of a warrior class. First of all, let's create a new `GrowthFormula` instance and name it `Warrior Physical Attack GF`. In the inspector, it should look like this:
-![Warrior Physical Attack](../images/workflows/warrior-physical-attack-editor.png)
+![Warrior Physical Attack](../../images/workflows/warrior-physical-attack-editor.png)
 
 The `Max Level`, a mandatory field, is set with an `IntVar` assigned by default. We can edit that variable to change the maximum level that will be computed for our growth formula.
 
@@ -130,7 +129,7 @@ The `Use constant value at level 1` checkbox lets us decide whether to use a con
 
 The `Add new growth expression` button lets us add a growth expression for a certain range of levels of our choice. If we press it, we will see the following:
 
-![Add level growth formula](../images/workflows/add-level-growth-formula.png)
+![Add level growth formula](../../images/workflows/add-level-growth-formula.png)
 
 The new section includes two fields: `From Level` and `Growth Expression`. 
 
@@ -156,14 +155,14 @@ Finally, for the third growth expression, set `From Level` to `12` and use the f
 
 After adding these growth expressions, the `GrowthFormula` for the `Warrior Physical Attack GF` should look like this:
 
-![Warrior Physical Attack Growth Formula](../images/workflows/warrior-physical-attack-growth-formula.png)  
+![Warrior Physical Attack Growth Formula](../../images/workflows/warrior-physical-attack-growth-formula.png)  
 
 With this setup, the `GrowthFormula` will correctly calculate the Physical Attack values for the warrior class based on the specified rules.
 
 #### Interactive Chart
 If you hold your mouse for a moment onto the chart, a label will show up, showing the exact value of the growth formula at the pointed level:
 
-![Interactive Chart](../images/workflows/interactive-chart.gif)
+![Interactive Chart](../../images/workflows/interactive-chart.gif)
 
 #### Retrieving growth values from code
 To retrieve the values of a `GrowthFormula` from code, you can use the `GetGrowthValue(int level)` method. For example, to get the Physical Attack value at level 5, you can do:
@@ -173,105 +172,14 @@ To retrieve the values of a `GrowthFormula` from code, you can use the `GetGrowt
 int physicalAttackLevel5 = warriorPhysicalAttackGF.GetGrowthValue(5);
 ```
 
-### Game Actions
-*Relative path:* `Game Actions`  
-A `GameAction` (🏷️*v1.4.0+*) is a `ScriptableObject` that encapsulates reusable logic which can be executed by different components or systems in the game. Game actions make it easy to assign behavior to GameObjects via the Inspector, promoting code reuse and separation of concerns.
-
-`GameAction`s accept a generic context parameter via `GameAction<TContext>`. The recommended context type for built-in actions is `IHasEntity`: because most `GameEventListener` payloads in the framework implement this interface, `IHasEntity`-based actions connect directly to any `GameEventListener` response without needing to extract a `Component` reference first. `Component`-based variants remain available for cases where a raw `Component` context is passed, but the `IHasEntity` variants should be the first choice when wiring actions to events.
-
-At authoring time, polymorphic action references are usually exposed through the non-generic `GameActionBase`, which exists so Inspector fields can accept actions with different concrete context types. At runtime, the action still executes through its concrete `GameAction<TContext>` implementation, so context compatibility continues to matter.
-
-The `IHasEntity`-based variants are listed under `Astra RPG Framework/Game Actions/Context: Entity/` in the asset creation menu.
-
-The framework includes several built-in `GameAction` implementations for `IHasEntity` contexts:
-- **Toggle Entity Active GO** (`Context: Entity/Toggle Entity Active GO`): Sets the active state of the entity's `GameObject` to a configured value.
-- **Toggle Entity Renderers** (`Context: Entity/Toggle Entity Renderers`): Enables or disables all renderers on the entity's `GameObject` and its children.
-- **Toggle Entity Colliders** (`Context: Entity/Toggle Entity Colliders`): Enables or disables all colliders on the entity's `GameObject` and its children.
-- **Destroy Entity Game Object** (`Context: Entity/Destroy Entity Game Object`): Destroys the `GameObject` of the entity exposed by the context.
-- **Composite** (`Context: Entity/Composite`): Executes a sequence of `GameAction<IHasEntity>` actions in order, passing the same context to each.
-- **Delayed** (`Context: Entity/Delayed`): Executes a `GameAction<IHasEntity>` after a specified delay (in seconds).
-- **Conditional** (`Context: Entity/Conditional`): Executes a `GameAction<IHasEntity>` only when a configured condition evaluates to true against the entity.
-- **Do Nothing** (`Context: Entity/Do Nothing`): Does nothing. Useful as a placeholder, for testing workflows, or to satisfy required fields that must reference a `GameAction` (for example, default on-death and on-resurrection actions in Astra RPG Health).
-- **Increase Counter** (`Context: Entity/Increase Counter`): Increases the value of a `LongRef` by a specified amount. Negative values decrease the counter. Useful for tracking statistics like enemies defeated, entities spawned, or interactions performed.
-- **→ Component Projection** (`Context: Entity/Projections/→ Component Projection`): Bridges an `IHasEntity` context to an inner `GameAction<Component>`, by passing `context.Entity` as the component. Use this to reuse existing `Component`-based actions on entity event listeners. Note that rich payload data (damage amounts, level deltas, etc.) is discarded — use this only for structural actions that only need to know _which_ entity was involved.
-
-Equivalent `Component`-based variants exist for all of the above (found under `Context: Component/`). Use them when a raw `Component` is the only context available and no `IHasEntity` payload is in scope.
-
-`GameAction` assets are also taggable, so larger projects can organize action libraries with the same pill-based workflow used by other Astra assets. This becomes especially useful once you start pairing actions with tag-based filtering rules. For the complete authoring flow, see [Game Tags](game-tags.md) and [Conditions](conditions.md).
-
-`GameAction`s may target infrastructure/flow control or actual gameplay mechanics. Most of the examples above are infrastructure-oriented. Examples of gameplay-oriented `GameAction`s include:
-- **Grant Experience Game Action**: Grants a specified amount of experience to an entity implementing `IEntityLevel`.
-- **Drop Loot Game Action**: Spawns collectible loot.
-- **Teleport To Base Game Action**: Teleports a character back to a base location.
-
-For invoking `GameAction`s call the `ExecuteAsync` method, passing the required context parameter. For example, let's say we have a reference to a `DelayedEntityContextGameAction` called `delayedAction` that invokes another action after some time, and `entityContext` is an `IHasEntity` payload:
-```csharp
-// entityContext is an IHasEntity payload (e.g. from a GameEventListener response)
-Awaitable delayedActionAwaitable = delayedAction.ExecuteAsync(entityContext, destroyCancellationToken); // Async execution initiated
-DoWorkHere(); // Perform other work while the action is executing
-// Await the completion of the action
-await delayedActionAwaitable;
-Debug.Log("Delayed action completed."); // Will be printed only after the game action completes
-```
-
-Notice the `destroyCancellationToken` parameter. This is an optional `CancellationToken` that can be used to cancel the execution of the action if the GameObject owning the invoker component is destroyed before the action completes. If not provided, the action will run to completion regardless of the owning component's lifecycle.
-
-If your game action should complete independently of the invoker component's lifecycle, consider using the [RunFireAndForget](xref:ElectricDrill.AstraRpgFramework.GameActions.GameAction`1.RunFireAndForget(`0,UnityEngine.MonoBehaviour)) method instead. This method uses the `GameActionRunner` `MonoBehaviour` (adding it to the specified GameObject if missing) to execute the action. For example:
-
-```csharp
-// Assume 'context' is the required context parameter for onDeathGameAction
-// 'persistentGameObject' is a reference to a GameObject that will own the GameActionRunner and execute the action
-onDeathGameAction.RunFireAndForget(context, persistentGameObject);
-```
-
-With this approach, even if the invoker component is destroyed (e.g., because the entity died), the action will still run to completion on the `persistentGameObject`. This is useful for actions such as playing particle effects or sounds that should persist even after the original entity is destroyed.
-
-When a `GameAction` is invoked from a `GameEventListener`, prefer the listener's owner-aware action list over binding `ExecuteAsync` directly through the UnityEvent when your logic depends on `Holder`-aware conditions or owner propagation. The owner-aware path dispatches the selected `GameActionBase` assets with the listener as runtime owner, and wrapper actions such as composite, delayed, conditional, and projection actions preserve that owner as they forward execution. For the full condition model, see [Conditions](conditions.md).
-
-For more details, refer to the API documentation for game actions:
-- [GameAction base constructs](xref:ElectricDrill.AstraRpgFramework.GameActions)
-- [Concrete implementations of GameAction with open generic types](xref:ElectricDrill.AstraRpgFramework.GameActions.Actions)
-- [Concrete implementations of GameAction with IHasEntity context (primary instantiable ScriptableObjects)](xref:ElectricDrill.AstraRpgFramework.GameActions.Actions.WithIHasEntity)
-- [Concrete implementations of GameAction with Component context (legacy/specialized use)](xref:ElectricDrill.AstraRpgFramework.GameActions.Actions.Component)
-
-If you wish to create custom `GameAction`s, review the implementation of existing actions to understand best practices.
-
-
-> [!NOTE]
-> `GameAction`s are a recent addition to the framework. At the time of writing, only a small set of generic actions is provided; more will be added in future releases. In the meantime, users are encouraged to implement custom `GameAction`s to meet their specific needs and to share useful patterns with the developer and the community.
-
-#### Game Actions — under the hood
-
-Is a common use case to have `GameAction`s that perform asynchronous operations, such as playing an animation, or waiting for a fixed delay. To support this use case, all `GameAction`s in the framework are designed to be asynchronous.  
-Obviously, not all actions need to be asynchronous; any synchronous action can be implemented as well.
-
-`GameAction`s are implemented on top of Unity's [Awaitable](https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Awaitable.html). This allows actions to run asynchronously without blocking the main game thread. Executing a `GameAction` returns an `Awaitable` that can be awaited to determine when the action completes.
-
-Awaitables are a modern alternative to coroutines. They are more efficient because they use an internal pooling system to minimize allocation overhead, which improves performance in scenarios with many asynchronous actions.
-
-> [!WARNING]
-> Awaitables have an important limitation: you must not await the same `Awaitable` instance more than once. Due to pooling, awaiting the same instance multiple times can cause undefined behavior, exceptions, or difficult-to-debug deadlocks. To avoid this, do not reuse the `Awaitable` returned by a `GameAction`'s `ExecuteAsync` method across multiple awaits.
-
-For more information on Awaitables, see Unity's documentation: [Awaitable Documentation](https://docs.unity3d.com/6000.3/Documentation/Manual/async-await-support.html).
-
-#### Game Actions with Unity Events/Game Events Listeners
-Unity Events accept Awaitables, so a GameAction can be invoked directly from a UnityEvent response. Because GameEventListeners use UnityEvents for their responses, you can wire a GameAction to a GameEventListener provided the action's context type matches the event's context.
-
-`GameEventListener`s also expose an owner-aware action list that accepts `GameActionBase` references. This is usually the better inspector workflow for event-driven actions because it preserves the listener component as runtime owner, which allows nested actions and `Holder`-based conditions to resolve consistently.
-
-> [!NOTE]
-> UnityEvents do not support asynchronous return values. Invoking a GameAction from a UnityEvent will execute the action fire-and-forget — the event invoker will not await its completion.
->
->If you need to run follow-up logic after the action finishes, prefer one of these patterns:
-> - Use a Composite Game Action that first executes the desired GameAction and then runs the follow-up action as the next step.
-> - Use a custom MonoBehaviour that executes the GameAction and handles the continuation (awaiting the action and performing follow-up). Attach that MonoBehaviour via the UnityEvent or subscribe to the GameEvent in code.
-
 ## Making a `GameObject` an entity
 To make a `GameObject` an entity, we need to add the `MonoBehaviour` `EntityCore` to it. Select your object from the hierarchy and click, in the inspector, on "Add component". Then search for and select `EntityCore`.
 
-![Entity Core Custom Editor](../images/workflows/entity-core-editor.png)  
+![Entity Core Custom Editor](../../images/workflows/entity-core-editor.png)  
 
 From the inspector, we can configure several values. Let's analyze them one by one.
+
+(🏷️*v2.0.0+*) `EntityCore` also supports multi-object editing for shared inspector values across multiple selected entities.
 
 `Level`: defines the entity's level. By changing its value, we can assign a different level to the entity directly from the inspector. This can be useful for testing purposes.
 You'll notice the `Use Constant` checkbox. If checked, you can pass an `IntVar` instead of using a constant.
@@ -285,7 +193,9 @@ You'll notice the `Use Constant` checkbox. If checked, you can pass an `IntVar` 
 
 `Experience Formula`: `GrowthFormula` that describes how the total experience required to reach the next level grows at each level.
 
-Built-in framework events such as `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed` are dispatched through the active Astra RPG Framework configuration. Use `Edit -> Project Settings -> Astra RPG Framework` to choose which configuration asset is active, then open that configuration asset and assign the shared event assets inside it. If no active Project Settings configuration is assigned, the runtime falls back to a `Resources/Astra Rpg Framework Config` asset.
+(🏷️*v2.0.0+*) `Experience Gain Modifier Stat` is no longer configured per entity in the `EntityLevel` inspector. If your project uses experience gain modifiers, open the active `AstraFrameworkConfigSO` from `Edit -> Project Settings -> Astra Framework` and assign the shared `StatSO` to **Experience Gain Modifier Stat**. Each entity will then use its own value for that stat from `EntityStats` when `AddExp(...)` applies modifiers.
+
+Built-in framework events such as `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed`, together with the shared experience gain modifier stat binding, are resolved through the active Astra Framework configuration. Use `Edit -> Project Settings -> Astra Framework` to choose which configuration asset is active, then open that configuration asset and assign the shared fields inside it. If no active Project Settings configuration is assigned, the runtime falls back to a `Resources/Astra Framework Config` asset.
 
 ### EntityLevel code APIs
 It is honorable to mention some code APIs that can be used to interact with the `EntityLevel` component.
@@ -306,7 +216,7 @@ To add an `ExpSource` to an entity, select the entity's `GameObject` in the hier
 
 In the inspector, you can configure the amount of experience this entity provides:
 
-![Exp Source Inspector](../images/workflows/exp-source-inspector.png)
+![Exp Source Inspector](../../images/workflows/exp-source-inspector.png)
 
 **Exp**: The base amount of experience points this entity grants when collected. This value can be modified by collection strategies of Astra RPG Health.
 
@@ -362,7 +272,7 @@ Once created a new attribute you can name it as you wish and you'll be able twea
 For example lets create a `Strength` attribute. Create an `Attributes` folder in your hierarchy, then press `A` and name the newly created attribute `Strength`.  
 In the inspector it should look like:
 
-![Strength Attribute](../images/workflows/strength-attr-editor.png)
+![Strength Attribute](../../images/workflows/strength-attr-editor.png)
 
 By checking `Has Max Value`, we will set a maximum value for the attribute. By default, there is no maximum value.
 
@@ -375,11 +285,11 @@ Repeat the process for also the `Constitution`, `Intelligence`, and `Dexterity` 
 
 Now that we have some attributes let's create an `AttributeSet` named, for example, `Hero Attribute Set`. In the inspector it should look like this:
 
-![Hero Attribute Set](../images/workflows/hero-attribute-set-editor.png)
+![Hero Attribute Set](../../images/workflows/hero-attribute-set-editor.png)
 
 An attribute set without attributes isn't very useful, so let's add the previously created ones, one at a time. To do this, click on the `Add` button. Notice that an entry with `None (Attribute)` appears:
 
-![Hero Attribute Set with one empty entry](../images/workflows/attribute-to-add-to-set-editor.png)  
+![Hero Attribute Set with one empty entry](../../images/workflows/attribute-to-add-to-set-editor.png)  
 
 To assign an attribute to the entry, we can either drag & drop from the hierarchy or click on the small circle button on the right of the newly appeared entry. This mechanism is the same used for public variables or, more generally, for fields annotated with `SerializeField`, so it will be familiar to you.  
 Let's add `Strength` using whichever method you prefer.
@@ -390,10 +300,12 @@ If you want to remove an attribute from the set, you can click on the small `-` 
 ## Add `EntityAttributes` to an entity
 The next step is to assign the attribute set we created to an entity. To do this, let's add the `EntityAttributes` component to our game object. The inspector will look like this:
 
-![Entity Attributes](../images/workflows/entity-attributes-editor.png)
+![Entity Attributes](../../images/workflows/entity-attributes-editor.png)
 
 An entity has base points for attributes, which can be either fixed or derived from a class, a configurable amount of attribute points that can be arbitrarily assigned, and these points are granted at each level-up, along with flat and percentage modifiers for the attributes.
 Except for the modifiers, which can only be assigned via code, all other values can be configured from the inspector.
+
+(🏷️*v2.0.0+*) `EntityAttributes` supports multi-object editing; shared fields can be edited in bulk, and attribute-specific rows are shown only for attributes common to the current selection.
 
 `Attr Points Per Level` defines how many arbitrarily spendable attribute points are provided at each level-up. They are assigned starting from level 2 on.
 
@@ -402,7 +314,7 @@ If you change the level of the entity you'll see that available points change ac
   
 Moreover, there is a checkbox labeled `Use Class Base Attributes`. For now, let's leave it unchecked since we haven't added a class yet. However, in this case, we need to manually assign an attribute set. Therefore, let's set the `Attribute Set` field found under `Fixed Base Attributes` with the `Hero Attribute Set`. By doing this, we now have access to additional fields in the inspector:
 
-![Entity Attributes with fixed base attributes AttributeSet](../images/workflows/entity-attributes-with-attr-set-editor.png)
+![Entity Attributes with fixed base attributes AttributeSet](../../images/workflows/entity-attributes-with-attr-set-editor.png)
 
 We can assign values to the attributes of `Fixed Base Attributes` as we see fit.
 
@@ -566,7 +478,7 @@ As with attributes, you can create stats as you wish and assign them the names y
 Let's create the `Physical Attack` stat together.
 Create a new `Stats` folder, select it and press `S`. Name it `Physical Attack`. In the inspector, it should look like this:
 
-![Physical Attack Stat](../images/workflows/phy-atck-stat-editor.png)
+![Physical Attack Stat](../../images/workflows/phy-atck-stat-editor.png)
 
 As with attributes, you can assign both a maximum and a minimum value to a stat.
 
@@ -580,9 +492,11 @@ Unlike attributes, however, stats include `Attributes Scaling`.
 Let's create a new `Attribute Scaling Component` to use with the strength stat we created earlier.
 Create a new folder named, for example, `Attribute Scalings for Stats`, and inside it, create an attribute scaling component called `Physical Attack Strength Scaling`.
 
+(🏷️*v2.0.0+*) `Attribute Scaling Component` supports multi-object editing; shared set assignment and common attribute rows can be edited in bulk.
+
 Assign the previously created `Hero Attribute Set` to the `Set` field. You will see the attributes of the set appear. Here, you can assign scaling values using `double`. For example, set the scaling of `Strength` to `1.0`. This component defines a 100% scaling on the value of `Strength`.
 
-![Physical Attack Strength Scaling](../images/workflows/physical-attack-strength-scaling.png)
+![Physical Attack Strength Scaling](../../images/workflows/physical-attack-strength-scaling.png)
 
 Now, assign this scaling component to the `Physical Attack` stat to ensure it scales with the `Strength` attribute.
 
@@ -595,7 +509,7 @@ A stat set without stats isn't very useful, so let's add the previously created 
 Let's add `Physical Attack` using whichever method you prefer.  
 Repeat the process of adding a stat to the set for `Magical Power`, `Defense`, and `Critical Chance` as well. The stat set should look like:
 
-![Hero Stat Set](../images/workflows/stat-set.png)
+![Hero Stat Set](../../images/workflows/stat-set.png)
 
 If you want to remove a stat from the set, you can click on the small `-` button on the right of the stat you want to remove.
 
@@ -621,15 +535,17 @@ This modular approach allows us to reuse stat configurations across different en
 ## Add `EntityStats` to an Entity
 The next step is to assign the stat set we created to an entity. To do this, let's add the `EntityStats` component to our game object. The inspector will look like this:
 
-![Entity Stats](../images/workflows/entity-stats.png)
+![Entity Stats](../../images/workflows/entity-stats.png)
 
 An entity has base stats that can be either fixed or derived from a class. Additionally, stats can be modified through flat modifiers, stat-to-stat modifiers, and percentage modifiers.
+
+(🏷️*v2.0.0+*) `EntityStats` supports multi-object editing; shared fields can be edited in bulk, and fixed-base rows are shown only for stats common to the current selection.
 
 `Use Class Base Stats` checkbox determines whether the base stats should come from the entity's class (if one is available) or from fixed values defined in the inspector. For now, let's leave it unchecked since we haven't added a class yet.
 
 With `Use Class Base Stats` unchecked, we need to manually assign a stat set. Set the `Stat Set` field under `Fixed Base Stats` with our `Hero Stat Set`. This will reveal additional fields in the inspector where we can set the base values for each stat:
 
-![Entity Stats](../images/workflows/entity-stats-fixed-base-stats.png)  
+![Entity Stats](../../images/workflows/entity-stats-fixed-base-stats.png)  
 
 `On Stat Changed` event gets raised whenever any stat value changes due to modifiers. You can use this to update UI elements or trigger other game logic.
 
@@ -683,10 +599,10 @@ These modifiers are applied right after the flat modifiers.
 **Code example:**
 ```csharp
 // 25% of armor is added to physical attack
-entityStats.AddStatToStatModifer(physicalAttackStat, armorAttribute, 25);
+entityStats.AddStatToStatModifier(physicalAttackStat, armorAttribute, 25);
 
 // Negative modifier: -10% of armor is subtracted from physical attack
-entityStats.AddStatToStatModifer(physicalAttackStat, armorAttribute, -10);
+entityStats.AddStatToStatModifier(physicalAttackStat, armorAttribute, -10);
 ```
 
 **Calculation example:**
@@ -776,17 +692,25 @@ if (statReader.TryGet(phyAtkStat, out long physicalAttack) &&
 
 Let's create an instance of `Class` called `Warrior`. It should appear like this:
 
-![Class](../images/workflows/class.png)
+![Class](../../images/workflows/class.png)
 
 The only mandatory field is `Stat Set`. If we don't make use of attributes and Max HP, we can leave the `Attribute Set` and `Max HP Growth Formula` fields empty.
 
 In our case, let's assign our `Hero Stat Set` to `Stat Set` and `Hero Attribute Set` to `Attribute Set`. This way, the `Warrior` will have access to all stats and attributes from the assigned `Stat Set` and `Attribute Set`.
 As we fill these two fields, we'll see that the `Stat Growth Formulas` and `Attribute Growth Formulas` sections will automatically populate with the stats and attributes from the assigned `Stat Set` and `Attribute Set`.
+
+(🏷️*v2.0.0+*) You can also select multiple `Class` assets and edit them together. Shared `Stat Set`, `Attribute Set`, and `Max HP Growth Formula` values can be assigned in bulk, while the growth-formula sections only show the stats and attributes that are common to every selected class. If a shared entry currently references different formulas across the selection, Unity shows the field as a mixed value until you assign a common formula.
+
+> [!NOTE]
+> `Auto-Create Missing Growth Formulas` is available only when editing a single `Class` asset.
+>
+> When multi-editing, assign a common `Stat Set` and/or `Attribute Set` first if you want to batch-edit growth formula references across several classes.
+
 Let's proceed to create all the growth formulas for the warrior's stats and attributes.
 Follow the steps outlined in the [Growth Formulas](#growth-formulas) section to create the growth formulas for the warrior's stats and attributes.  
 Once all growth formulas are assigned, the `Warrior` should look like this:
 
-![Warrior Class](../images/workflows/warrior-class.png)
+![Warrior Class](../../images/workflows/warrior-class.png)
 
 `Max HP Growth Formula` allows specifying how the Max HP value grows as levels change. In our example, we'll leave it empty.
 The presence of this field for hit points might be surprising since this module of the framework isn't focused on health management. Indeed, damage and health are managed by the *Astra RPG Health* module, which will be released in the coming months.
@@ -798,16 +722,18 @@ Similarly, the `Hero Stat Set` and `Hero Attribute Set` could be placed in a `He
 
 This is how your hierarchy could look like:
 
-![Hierarchy](../images/workflows/hierarchy.png)
+![Hierarchy](../../images/workflows/hierarchy.png)
 
 Obviously this is just a possible organization of the assets. Feel free to organize it as you prefer.
 
 ## Add `EntityClass` to an entity
 To assign a class to an entity, we need to add the `EntityClass` component to it. The inspector will look like this:
 
-![Entity Class](../images/workflows/entity-class.png) 
+![Entity Class](../../images/workflows/entity-class.png) 
 
 All we have to do now is just assign the `Warrior` class we created earlier to the `Class` field.
+
+(🏷️*v2.0.0+*) `EntityClass` also supports multi-object editing, so you can assign the same `Class` asset to multiple selected entities at once.
 
 ### Switching to class-based attributes and stats
 We can now check the `Use Class Base Attributes` and `Use Class Base Stats` checkboxes. By doing this, the entity will use the base attributes and stats defined by the class. The `Fixed Base Attributes` and `Fixed Base Stats` fields will be disabled, and the values will be automatically retrieved from the class growth formulas.
@@ -838,7 +764,9 @@ We already saw how to create an `Attribute Scaling Component` for stats. On top 
 
 For example, let's create a `Scaling Formula` called `Mighty Blow SF`. It should look like this in the inspector:
 
-![Scaling Formula](../images/workflows/scaling-formula.png)
+![Scaling Formula](../../images/workflows/scaling-formula.png)
+
+(🏷️*v2.0.0+*) `Scaling Formula`, `Attribute Scaling Component`, and `Stat Scaling Component` support multi-object editing for shared values across the current selection.
 
 `Base Value` determines the starting point for the scaling formula. It can either be a fixed constant value or a value that scales with levels (e.g., the level of the Mighty Blow skill). If the latter is chosen, a `Growth Formula` must be provided to define how the base value changes as levels increase.
 
@@ -849,7 +777,7 @@ The scaling formula will be defined as follows:
 
 Since we want a base value that varies as level grows, let's check the `Use a scaling base value` checkbox and create a `Growth Formula` named `Mighty Blow Base Dmg GF`. The `Mighty Blow Base Damage GF` should look like this:
 
-![Mighty Blow Base Damage GF](../images/workflows/mighty-blow-base-damage-gf.png)
+![Mighty Blow Base Damage GF](../../images/workflows/mighty-blow-base-damage-gf.png)
 
 Notice that a new Skill Max Lvl has been created and assigned to `Max Level`. This is necessary as the skill max level is not related to the max level of our hero.
 
@@ -861,15 +789,15 @@ We can now proceed to create the scaling components for the `Physical Attack` st
 
 Let's create a new `Stat Scaling Component` called `Mighty Blow Physical Attack Scaling`. Assign the `Hero Stat Set` to it and set the scaling of the `Physical Attack` stat to `1.5`. The scaling component should look like this:
 
-![Mighty Blow Physical Attack Scaling](../images/workflows/mighty-blow-physical-attack-scaling.png)  
+![Mighty Blow Physical Attack Scaling](../../images/workflows/mighty-blow-physical-attack-scaling.png)  
 
 Next, we will create a similar `Attribute Scaling Component` for the `Constitution` attribute called `Mighty Blow Constitution Scaling`. Assign the `Hero Attribute Set` to it and set the scaling of the `Constitution` to `0.5`. The scaling component should look like this:
 
-![Mighty Blow Constitution Scaling](../images/workflows/mighty-blow-constitution-scaling.png)
+![Mighty Blow Constitution Scaling](../../images/workflows/mighty-blow-constitution-scaling.png)
 
 Finally, let's press on the `+` of `Self Scaling Components` and assign the two scaling components we just created. The `Mighty Blow SF` should look like this:
 
-![Mighty Blow SF with scaling components](../images/workflows/mighty-blow-sf-with-scaling-components.png)
+![Mighty Blow SF with scaling components](../../images/workflows/mighty-blow-sf-with-scaling-components.png)
 
 ### Using scaling formulas in code
 
@@ -930,7 +858,7 @@ Along with the game events, the frameworks provides the `*GameEventListener` cou
 
 Let's suppose we need a game event for notifying, each time the player dies, how many times the player has died so far. In the inspector, create a new `IntGameEvent` called `PlayerDied`. It should look like this:
 
-![Player Died Event](../images/workflows/player-died-event.png)
+![Player Died Event](../../images/workflows/player-died-event.png)
 
 There are no fields to fill in the inspector. The integer to be passed as context parameter will be passed in the code that is responsible for raising the event.  
 The method to raise the event is `Raise(int value)`, which will raise the event and pass along the integer as context parameter. Therefore in a dedicated script you can call it like this:
@@ -952,13 +880,13 @@ public void LogPlayerDeath(int deathCount) {
 
 Now add the `IntGameEventListener` component to the listener game object and, in the inspector, assign the `PlayerDied` event to the `Event` field. Now drag the `Logger` script created before into the `Response`'s object selector. You should be able now to select the `LogPlayerDeath` method from the dropdown menu. The result should look like this:
 
-![Player Died Listener](../images/workflows/player-died-listener.png)
+![Player Died Listener](../../images/workflows/player-died-listener.png)
 
 This is a powerful mechanism that decouples the event producers from the event consumers, allowing for a more modular and maintainable codebase. And most of the setup is inspector-based. You just need to define the raising and the listening methods from code.
 
 ### Global framework events and reactive filtering
 
-The framework dispatches its built-in core events through the active Astra RPG Framework configuration. `EntityCore`, `EntityLevel`, `EntityStats`, and `EntityAttributes` send their shared `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed` notifications through the configuration asset selected in `Edit -> Project Settings -> Astra RPG Framework`. The Project Settings entry selects the active configuration asset; the shared event references themselves are assigned inside that configuration asset. If no Project Settings config is assigned, the runtime falls back to a `Resources/Astra Rpg Framework Config` asset.
+The framework dispatches its built-in core events through the active Astra Framework configuration. `EntityCore`, `EntityLevel`, `EntityStats`, and `EntityAttributes` send their shared `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed` notifications through the configuration asset selected in `Edit -> Project Settings -> Astra Framework`. The Project Settings entry selects the active configuration asset; the shared event references and the optional **Experience Gain Modifier Stat** binding are assigned inside that configuration asset. If no Project Settings config is assigned, the runtime falls back to a `Resources/Astra Framework Config` asset.
 
 This shared-event model is convenient, but it also means listeners and reactive triggers usually subscribe to common event sources rather than to holder-specific event instances. In other words, the holder attached to a reactive subscription is used for ownership and cleanup, not as an automatic payload filter. When a global stat or attribute event is raised, every subscriber on that event source can receive the payload.
 
@@ -977,7 +905,7 @@ Sometimes the pre-defined game events are not enough to cover all the use cases.
 
 Let's create a custom game event generator to manage all the events related to the experience and leveling up of entities. Rename the newly created events generator `EntityLevelingEvents`. In the inspector, it should look like this:
 
-![Entity Leveling Events](../images/workflows/entity-leveling-events.png)
+![Entity Leveling Events](../../images/workflows/entity-leveling-events.png)
 
 With `Menu Base Path` we can change the path of the context menu where the generated events will be available for creation. By default, it is set to `Astra RPG Framework/Events/Generated`, but we can change it to `Astra RPG Framework/Events/Generated/Experience` for the sake of organization.
 

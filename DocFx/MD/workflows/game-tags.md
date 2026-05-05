@@ -2,11 +2,11 @@
 
 *🏷️ Version 2.0.0+*
 
-`GameTag`s let you classify entities, assets, and reusable framework objects with lightweight `ScriptableObject` identifiers. Each tag can also carry visual metadata, so tagged objects are immediately recognizable in the Inspector through colored pill-style labels.
+`GameTagSO` assets let you classify entities, assets, and reusable framework objects with lightweight `ScriptableObject` identifiers. Each tag can also carry visual metadata, so tagged objects are immediately recognizable in the Inspector through colored pill-style labels.
 
-## What a `GameTag` contains
+## What a `GameTagSO` contains
 
-A `GameTag` asset stores:
+A `GameTagSO` asset stores:
 
 - A primary color
 - An optional icon (typically an emoji or short symbol)
@@ -16,12 +16,12 @@ A `GameTag` asset stores:
 Assigned tags are stored through `GameTagSet`, which is the serializable container used by taggable objects. Built-in framework types that expose tags directly through `ITaggable` include:
 
 - `EntityCore`
-- `Stat` and `StatSet`
-- `Attribute` and `AttributeSet`
-- `Class`
-- `GrowthFormula`
-- `ScalingComponent` and `ScalingFormula`
-- `IntVar` and `LongVar`
+- `StatSO` and `StatSetSO`
+- `AttributeSO` and `AttributeSetSO`
+- `ClassSO`
+- `GrowthFormulaSO`
+- `ScalingComponentSO` and `ScalingFormulaSO`
+- `IntVarSO` and `LongVarSO`
 - `GameAction<TContext>` assets
 
 This makes tags useful both for gameplay meaning and for editor organization.
@@ -76,9 +76,7 @@ The custom inspector exposes a **Visual** section where you can configure the ta
 
 The inspector also shows a live preview of the resulting pill.
 
-
-![GameTag inspector with color, icon, gradient, and preview fields](../images/game-tags/game-tag-inspector.png)
-<!-- IMAGE MISSING: game-tag-inspector.png — screenshot of the GameTag inspector showing the Color, Icon, Emojis..., Use Gradient, End Color, Direction, and Preview areas -->
+![GameTag inspector with color, icon, gradient, and preview fields](../../images/workflows/game-tags/game-tag-inspector.png)
 
 ## Where tags appear
 
@@ -100,6 +98,8 @@ When a single taggable object is selected, the header pills are fully interactiv
 - Click the `+` pill to open the tag selection popup
 - Drag pills to reorder them
 
+![Inspector header showing interactive GameTag pills and add button](../../images/workflows/game-tags/game-tag-header-pills.png)
+
 The add popup supports several quality-of-life features:
 
 - Search by tag name
@@ -107,10 +107,7 @@ The add popup supports several quality-of-life features:
 - Multi-selection followed by **Add**
 - Double-click on a tag to add it immediately
 
-![Inspector header showing interactive GameTag pills and add button](../images/workflows/game-tags/game-tag-header-pills.png)
-
-![GameTag add popup with search and multi-selection](../images/workflows/game-tags/game-tag-add-popup.png)
-<!-- IMAGE MISSING: game-tag-add-popup.png — screenshot of the GameTag add popup showing the search field, All/None buttons, selectable pills, and Add/Cancel footer -->
+![GameTag add popup with search and multi-selection](../../images/workflows/game-tags/game-tag-add-popup.png)
 
 > [!TIP]
 > Double-click is the fastest way to add a single tag. If you want to add several tags in one pass, select them in the popup first and then confirm with **Add**.
@@ -128,8 +125,7 @@ When multiple compatible `ITaggable` objects are selected, the header still supp
 
 In multi-object mode, reordering and click-to-ping are intentionally not the primary workflow, because a heterogeneous selection does not have a single stable tag order.
 
-![Multi-object editing with shared tags and overflow indicator](../images/game-tags/game-tag-multi-object-editing.png)
-<!-- IMAGE MISSING: game-tag-multi-object-editing.png — screenshot of a multi-object selection showing shared tags, the grey overflow +N pill, and the bulk editing behavior in the header -->
+![Multi-object editing with shared tags and overflow indicator](../../images/workflows/game-tags/game-tag-multi-object-editing.png)
 
 ## Pill appearance preferences
 

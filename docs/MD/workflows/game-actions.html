@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Game Actions | Astra RPG Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Game Actions | Astra RPG Framework ">
+      
+      
+      <link rel="icon" href="../../images/astra-rpg-ico.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.0.0/DocFx/MD/workflows/game-actions.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo-astra.svg" alt="Astra RPG Framework">
+            Astra RPG Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="game-actions">Game Actions</h1>
+
+<p><em>🏷️ Version 1.4.0+</em></p>
+<p><em>Relative path:</em> <code>Game Actions</code></p>
+<p>A <code>GameAction</code> is a <code>ScriptableObject</code> that encapsulates reusable logic which can be executed by different components or systems in the game. Game actions make it easy to assign behavior to <code>GameObject</code>s through the Inspector, promoting code reuse and separation of concerns.</p>
+<p><code>GameAction</code>s accept a generic context parameter via <code>GameAction&lt;TContext&gt;</code>. The recommended context type for built-in actions is <code>IHasEntity</code>: because most <code>GameEventListener</code> payloads in the framework implement this interface, <code>IHasEntity</code>-based actions connect directly to any <code>GameEventListener</code> response without needing to extract a <code>Component</code> reference first. <code>Component</code>-based variants remain available for cases where a raw <code>Component</code> context is passed, but the <code>IHasEntity</code> variants should be the first choice when wiring actions to events.</p>
+<p>At authoring time, polymorphic action references are usually exposed through the non-generic <code>GameActionBase</code>, which exists so Inspector fields can accept actions with different concrete context types. At runtime, the action still executes through its concrete <code>GameAction&lt;TContext&gt;</code> implementation, so context compatibility continues to matter.</p>
+<h2 id="built-in-action-variants">Built-in action variants</h2>
+<p>The <code>IHasEntity</code>-based variants are listed under <code>Astra RPG Framework/Game Actions/Context: Entity/</code> in the asset creation menu.</p>
+<p>The framework includes several built-in <code>GameAction</code> implementations for <code>IHasEntity</code> contexts:</p>
+<ul>
+<li><strong>Toggle Entity Active GO</strong> (<code>Context: Entity/Toggle Entity Active GO</code>): Sets the active state of the entity's <code>GameObject</code> to a configured value</li>
+<li><strong>Toggle Entity Renderers</strong> (<code>Context: Entity/Toggle Entity Renderers</code>): Enables or disables all renderers on the entity's <code>GameObject</code> and its children</li>
+<li><strong>Toggle Entity Colliders</strong> (<code>Context: Entity/Toggle Entity Colliders</code>): Enables or disables all colliders on the entity's <code>GameObject</code> and its children</li>
+<li><strong>Destroy Entity Game Object</strong> (<code>Context: Entity/Destroy Entity Game Object</code>): Destroys the <code>GameObject</code> of the entity exposed by the context</li>
+<li><strong>Composite</strong> (<code>Context: Entity/Composite</code>): Executes a sequence of <code>GameAction&lt;IHasEntity&gt;</code> actions in order, passing the same context to each</li>
+<li><strong>Delayed</strong> (<code>Context: Entity/Delayed</code>): Executes a <code>GameAction&lt;IHasEntity&gt;</code> after a specified delay (in seconds)</li>
+<li><strong>Conditional</strong> (<code>Context: Entity/Conditional</code>): Executes a <code>GameAction&lt;IHasEntity&gt;</code> only when a configured condition evaluates to true against the entity</li>
+<li><strong>Do Nothing</strong> (<code>Context: Entity/Do Nothing</code>): Does nothing. Useful as a placeholder, for testing workflows, or to satisfy required fields that must reference a <code>GameAction</code> (for example, default on-death and on-resurrection actions in Astra RPG Health)</li>
+<li><strong>Increase Counter</strong> (<code>Context: Entity/Increase Counter</code>): Increases the value of a <code>LongRef</code> by a specified amount. Negative values decrease the counter. Useful for tracking statistics like enemies defeated, entities spawned, or interactions performed</li>
+<li><strong>→ Component Projection</strong> (<code>Context: Entity/Projections/→ Component Projection</code>): Bridges an <code>IHasEntity</code> context to an inner <code>GameAction&lt;Component&gt;</code>, by passing <code>context.Entity</code> as the component. Use this to reuse existing <code>Component</code>-based actions on entity event listeners. Note that rich payload data (damage amounts, level deltas, etc.) is discarded. Use this only for structural actions that only need to know which entity was involved</li>
+</ul>
+<p>Equivalent <code>Component</code>-based variants exist for all of the above (under <code>Context: Component/</code>). Use them when a raw <code>Component</code> is the only context available and no <code>IHasEntity</code> payload is in scope.</p>
+<p><code>GameAction</code> assets are also taggable, so larger projects can organize action libraries with the same pill-based workflow used by other Astra assets. This becomes especially useful once you start pairing actions with tag-based filtering rules. For the complete authoring flow, see <a href="game-tags.html">Game Tags</a> and <a href="conditions.html">Conditions</a>.</p>
+<p><code>GameAction</code>s may target infrastructure and flow control or actual gameplay mechanics. Most of the built-in examples above are infrastructure-oriented. Examples of gameplay-oriented <code>GameAction</code>s include:</p>
+<ul>
+<li><strong>Grant Experience Game Action</strong>: Grants a specified amount of experience to an entity implementing <code>IEntityLevel</code></li>
+<li><strong>Drop Loot Game Action</strong>: Spawns collectible loot</li>
+<li><strong>Teleport To Base Game Action</strong>: Teleports a character back to a base location</li>
+</ul>
+<h2 id="executing-gameactions-from-code">Executing <code>GameAction</code>s from code</h2>
+<p>To invoke a <code>GameAction</code>, call <code>ExecuteAsync</code> and pass the required context parameter. For example, if <code>delayedAction</code> is a <code>DelayedEntityContextGameAction</code> and <code>entityContext</code> is an <code>IHasEntity</code> payload:</p>
+<pre><code class="lang-csharp">// entityContext is an IHasEntity payload (for example from a GameEventListener response)
+Awaitable delayedActionAwaitable = delayedAction.ExecuteAsync(entityContext, destroyCancellationToken);
+DoWorkHere();
+await delayedActionAwaitable;
+Debug.Log(&quot;Delayed action completed.&quot;);
+</code></pre>
+<p>The <code>destroyCancellationToken</code> parameter is optional. Use it when the action should be cancelled if the <code>GameObject</code> owning the invoker component is destroyed before execution completes. If you do not provide it, the action runs to completion regardless of the invoker's lifecycle.</p>
+<p>If a <code>GameAction</code> should complete independently of the invoker component's lifecycle, use <a class="xref" href="../../api/ElectricDrill.AstraRpgFramework.GameActions.GameAction-1.html#ElectricDrill_AstraRpgFramework_GameActions_GameAction_1_RunFireAndForget__0_UnityEngine_MonoBehaviour_">RunFireAndForget</a>. This method uses the <code>GameActionRunner</code> <code>MonoBehaviour</code> (adding it to the specified <code>GameObject</code> if missing) to execute the action. For example:</p>
+<pre><code class="lang-csharp">// Assume 'context' is the required context parameter for onDeathGameAction
+// 'persistentGameObject' owns the GameActionRunner and executes the action
+onDeathGameAction.RunFireAndForget(context, persistentGameObject);
+</code></pre>
+<p>With this approach, even if the invoker component is destroyed (for example because the entity died), the action still runs to completion on the <code>persistentGameObject</code>. This is useful for actions such as particle effects or sounds that should persist after the original entity is gone.</p>
+<h2 id="owner-aware-execution-from-gameeventlisteners">Owner-aware execution from <code>GameEventListener</code>s</h2>
+<p><em>🏷️ Version 2.0.0+</em></p>
+<p>When a <code>GameAction</code> is invoked from a <code>GameEventListener</code>, prefer the listener's owner-aware action list over binding <code>ExecuteAsync</code> directly through the UnityEvent when the logic depends on <code>Holder</code>-aware conditions or owner propagation. The owner-aware path dispatches the selected <code>GameActionBase</code> assets with the listener as runtime owner, and wrapper actions such as composite, delayed, conditional, and projection actions preserve that owner while forwarding execution.</p>
+<p>For the condition-side resolution model, see <a href="conditions.html">Conditions</a>. For the deeper runtime details behind this execution path, see <a href="advanced-topics.html#owner-aware-gameaction-execution">Owner-aware <code>GameAction</code> execution</a>.</p>
+<h2 id="api-references-and-custom-actions">API references and custom actions</h2>
+<p>For more details, refer to the API documentation for game actions:</p>
+<ul>
+<li><a class="xref" href="../../api/ElectricDrill.AstraRpgFramework.GameActions.html">GameAction base constructs</a></li>
+<li><a class="xref" href="../../api/ElectricDrill.AstraRpgFramework.GameActions.Actions.html">Concrete implementations of GameAction with open generic types</a></li>
+<li><a class="xref" href="../../api/ElectricDrill.AstraRpgFramework.GameActions.Actions.WithIHasEntity.html">Concrete implementations of GameAction with <code>IHasEntity</code> context (primary instantiable <code>ScriptableObject</code>s)</a></li>
+<li><a class="xref" href="../../api/ElectricDrill.AstraRpgFramework.GameActions.Actions.Component.html">Concrete implementations of GameAction with <code>Component</code> context (legacy and specialized use)</a></li>
+</ul>
+<p>If you want to create custom <code>GameAction</code>s, review the implementation of the built-in actions to understand the intended patterns.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The built-in library currently focuses on a compact set of generic actions. Project-specific gameplay behaviors are expected to be implemented as custom <code>GameAction</code>s when needed.</p>
+</div>
+<h2 id="gameactions-under-the-hood"><code>GameAction</code>s under the hood</h2>
+<p><code>GameAction</code>s are designed to support asynchronous workflows such as waiting for a delay or coordinating animation-driven logic. Synchronous actions are still valid, but the base execution model is asynchronous.</p>
+<p><code>GameAction</code>s are implemented on top of Unity's <a href="https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Awaitable.html">Awaitable</a>. Executing a <code>GameAction</code> returns an <code>Awaitable</code> that can be awaited to determine when the action completes, without blocking the main game thread.</p>
+<p>Awaitables are a modern alternative to coroutines. They use an internal pooling system to reduce allocation overhead, which is useful in workflows with many asynchronous actions.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Do not await the same <code>Awaitable</code> instance more than once. Because Awaitables are pooled, awaiting the same instance multiple times can cause undefined behavior, exceptions, or deadlocks. Always treat the value returned by <code>ExecuteAsync</code> as single-use.</p>
+</div>
+<p>For more information on Awaitables, see Unity's documentation: <a href="https://docs.unity3d.com/6000.3/Documentation/Manual/async-await-support.html">Awaitable Documentation</a>.</p>
+<h2 id="gameactions-with-unityevents-and-gameeventlisteners"><code>GameAction</code>s with UnityEvents and <code>GameEventListener</code>s</h2>
+<p>UnityEvents can invoke methods that start <code>GameAction</code>s, so a <code>GameAction</code> can be triggered from a UnityEvent response. Because <code>GameEventListener</code>s use UnityEvents for their responses, you can wire a <code>GameAction</code> to a <code>GameEventListener</code> provided the action's context type matches the event payload.</p>
+<p><code>GameEventListener</code>s also expose an owner-aware action list that accepts <code>GameActionBase</code> references. This is usually the better Inspector workflow for event-driven actions because it preserves the listener component as runtime owner, which allows nested actions and <code>Holder</code>-based conditions to resolve consistently.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>UnityEvents do not await asynchronous return values. Invoking a <code>GameAction</code> from a UnityEvent therefore behaves as fire-and-forget from the event's point of view.</p>
+<p>If you need follow-up logic after the action finishes, prefer one of these patterns:</p>
+<ul>
+<li>Use a composite <code>GameAction</code> that first executes the desired action and then runs the follow-up action as the next step</li>
+<li>Use a custom <code>MonoBehaviour</code> that executes the <code>GameAction</code>, awaits its completion, and performs the continuation in code</li>
+</ul>
+</div>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

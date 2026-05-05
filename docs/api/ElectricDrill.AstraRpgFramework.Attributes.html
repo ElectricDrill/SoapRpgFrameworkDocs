@@ -95,18 +95,10 @@
 Classes
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.Attribute.html">Attribute</a></dt>
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSO.html">AttributeSO</a></dt>
       <dd><p>Represents a character attribute that extends BoundedValue functionality.
 An attribute is a measurable characteristic such as strength, dexterity, luck, and so on.
 Can have a min and a max value.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSet.html">AttributeSet</a></dt>
-      <dd><p>A ScriptableObject that defines a collection of attributes for use in character systems.
-Attribute sets are usually used to group attributes that can be shared across different characters or classes.
-For example, any character of any class could have the same attribute set, including attributes like
-strength, dexterity, constitution, intelligence, and luck.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -118,6 +110,14 @@ Provides methods to manipulate and access attribute values during gameplay.</p>
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSetInstanceExtensions.html">AttributeSetInstanceExtensions</a></dt>
       <dd><p>Extension methods for converting SerializableDictionary to AttributeSetInstance.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSetSO.html">AttributeSetSO</a></dt>
+      <dd><p>A ScriptableObject that defines a collection of attributes for use in character systems.
+Attribute sets are usually used to group attributes that can be shared across different characters or classes.
+For example, any character of any class could have the same attribute set, including attributes like
+strength, dexterity, constitution, intelligence, and luck.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -150,7 +150,7 @@ Interfaces
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.html">IAttributeReader</a></dt>
       <dd><p>Read-only interface for querying attribute values from an entity.
-Use <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.html#ElectricDrill_AstraRpgFramework_Attributes_IAttributeReader_TryGet_ElectricDrill_AstraRpgFramework_Attributes_Attribute_System_Int64__">TryGet(Attribute, out long)</a> as the safe access path; <code>Get</code> requires <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html#ElectricDrill_AstraRpgFramework_Utils_IValueContainer_1_Contains__0_">Contains(T)</a> to be checked first.</p>
+Use <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.html#ElectricDrill_AstraRpgFramework_Attributes_IAttributeReader_TryGet_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int64__">TryGet(AttributeSO, out long)</a> as the safe access path; <code>Get</code> requires <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html#ElectricDrill_AstraRpgFramework_Utils_IValueContainer_1_Contains__0_">Contains(T)</a> to be checked first.</p>
 </dd>
     </dl>
     <dl class="jumplist">

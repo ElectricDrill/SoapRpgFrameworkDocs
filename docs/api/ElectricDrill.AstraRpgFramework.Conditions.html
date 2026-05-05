@@ -186,6 +186,29 @@ Unity's <code>[SerializeReference]</code> polymorphic serialization.
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ConditionCompatibility.html">ConditionCompatibility</a></dt>
+      <dd><p>Design-time utility that checks whether a <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.Condition.html">Condition</a> subclass is compatible
+with a given trigger payload type, based on <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ConditionPayloadAttribute.html">ConditionPayloadAttribute</a> metadata.</p>
+<p>
+A condition with <b>no</b><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ConditionPayloadAttribute.html">ConditionPayloadAttribute</a> is payload-agnostic and
+compatible with every trigger. A condition with one or more attributes is compatible when
+the trigger's payload type is assignable to at least one declared accepted type.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ConditionPayloadAttribute.html">ConditionPayloadAttribute</a></dt>
+      <dd><p>Declares which event-payload type a <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.Condition.html">Condition</a> subclass can consume.</p>
+<p>
+Apply one or more instances to a <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.Condition.html">Condition</a> subclass to declare the payload
+types it supports. A condition with <b>no</b> attribute is considered <em>payload-agnostic</em>
+(compatible with any trigger). A condition with one or more attributes is compatible with a
+trigger whose <a class="xref" href="ElectricDrill.AstraRpgFramework.Triggers.IReactiveTrigger.html#ElectricDrill_AstraRpgFramework_Triggers_IReactiveTrigger_PayloadType">PayloadType</a> is assignable to at least
+one of the declared <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ConditionPayloadAttribute.html#ElectricDrill_AstraRpgFramework_Conditions_ConditionPayloadAttribute_AcceptedType">AcceptedType</a> values.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EntityHasTagCondition.html">EntityHasTagCondition</a></dt>
       <dd><p>Condition that checks whether the resolved target entity has the required tags.</p>
 <p>
@@ -382,6 +405,18 @@ at value 0 evaluates to 50 %.
 Structs
 </h3>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ConditionCompatibility.UnavailableTarget.html">ConditionCompatibility.UnavailableTarget</a></dt>
+      <dd><p>Describes one configured <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ConditionTarget.html">ConditionTarget</a> that is unavailable in a
+specific evaluation context.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ConditionEvaluationAvailability.html">ConditionEvaluationAvailability</a></dt>
+      <dd><p>Design-time description of the payload and entity target slots available to a
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.Condition.html">Condition</a>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html">EvaluationContext</a></dt>
       <dd><p>Lightweight value type passed to <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.Condition.html#ElectricDrill_AstraRpgFramework_Conditions_Condition_Evaluate_ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_">Evaluate(EvaluationContext)</a> on every evaluation.
 Struct allocation keeps GC pressure at zero even under high tick frequency.</p>
@@ -404,6 +439,12 @@ Enums
       <dd><p>Specifies which entity slot in an <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html">EvaluationContext</a> a condition should target.
 Payload-derived slots resolve through contracts exposed by <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.EvaluationContext.html#ElectricDrill_AstraRpgFramework_Conditions_EvaluationContext_EventPayload">EventPayload</a>
 and evaluate as <code>null</code> when the payload cannot supply the requested role.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ConditionTargetAvailability.html">ConditionTargetAvailability</a></dt>
+      <dd><p>Describes which <a class="xref" href="ElectricDrill.AstraRpgFramework.Conditions.ConditionTarget.html">ConditionTarget</a> slots are available in a condition
+evaluation context.</p>
 </dd>
     </dl>
     <dl class="jumplist">

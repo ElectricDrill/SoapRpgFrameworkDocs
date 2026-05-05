@@ -95,25 +95,25 @@
 Classes
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraRpgFrameworkConfigProvider.html">AstraRpgFrameworkConfigProvider</a></dt>
-      <dd><p>Static provider for the Astra RPG Framework configuration.
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigProvider.html">AstraFrameworkConfigProvider</a></dt>
+      <dd><p>Static provider for the Astra Framework configuration.
 Uses a three-step fallback strategy:</p>
-<ol><li>Project Settings (via <a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraRpgFrameworkGlobalSettingsSO.html">AstraRpgFrameworkGlobalSettingsSO</a>).</li><li>Conventional Resources location (<code>Resources/Astra Rpg Framework Config</code>).</li><li>Logs an error if no configuration is found.</li></ol>
-Call <a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraRpgFrameworkConfigProvider.html#ElectricDrill_AstraRpgFramework_Config_AstraRpgFrameworkConfigProvider_WarmUp">WarmUp()</a> early (e.g., from a bootstrap) to pre-load the configuration.
-In tests, use the <a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraRpgFrameworkConfigProvider.html#ElectricDrill_AstraRpgFramework_Config_AstraRpgFrameworkConfigProvider_Instance">Instance</a> setter to inject a mock configuration.
+<ol><li>Project Settings (via <a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkGlobalSettingsSO.html">AstraFrameworkGlobalSettingsSO</a>).</li><li>Conventional Resources location (<code>Resources/Astra Framework Config</code>).</li><li>Logs an error if no configuration is found.</li></ol>
+Call <a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigProvider.html#ElectricDrill_AstraRpgFramework_Config_AstraFrameworkConfigProvider_WarmUp">WarmUp()</a> early (e.g., from a bootstrap) to pre-load the configuration.
+In tests, use the <a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigProvider.html#ElectricDrill_AstraRpgFramework_Config_AstraFrameworkConfigProvider_Instance">Instance</a> setter to inject a mock configuration.
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraRpgFrameworkConfigSO.html">AstraRpgFrameworkConfigSO</a></dt>
-      <dd><p>ScriptableObject that stores the global configuration for the Astra RPG Framework.
-Holds references to the global game events used by core entity components.</p>
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.html">AstraFrameworkConfigSO</a></dt>
+      <dd><p>ScriptableObject that stores the global configuration for the Astra Framework.
+Holds references to the global game events and shared stat bindings used by core entity components.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraRpgFrameworkGlobalSettingsSO.html">AstraRpgFrameworkGlobalSettingsSO</a></dt>
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkGlobalSettingsSO.html">AstraFrameworkGlobalSettingsSO</a></dt>
       <dd><p>Internal ScriptableObject that lives in a Resources folder and holds a reference
-to the active <a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraRpgFrameworkConfigSO.html">AstraRpgFrameworkConfigSO</a> profile.
-Used by <a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraRpgFrameworkConfigProvider.html">AstraRpgFrameworkConfigProvider</a> as the first-priority config source,
+to the active <a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigSO.html">AstraFrameworkConfigSO</a> profile.
+Used by <a class="xref" href="ElectricDrill.AstraRpgFramework.Config.AstraFrameworkConfigProvider.html">AstraFrameworkConfigProvider</a> as the first-priority config source,
 and surfaced in Project Settings via the editor settings provider.</p>
 </dd>
     </dl>
@@ -121,10 +121,10 @@ and surfaced in Project Settings via the editor settings provider.</p>
 Interfaces
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Config.IAstraRpgFrameworkConfig.html">IAstraRpgFrameworkConfig</a></dt>
-      <dd><p>Configuration contract for the Astra RPG Framework base system.
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Config.IAstraFrameworkConfig.html">IAstraFrameworkConfig</a></dt>
+      <dd><p>Configuration contract for the Astra Framework base system.
 Provides access to the global game events that are dispatched by the core entity
-components (<a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a>, EntityLevel,
+components (<a class="xref" href="ElectricDrill.AstraRpgFramework.EntityCore.html">EntityCore</a>, <a class="xref" href="ElectricDrill.AstraRpgFramework.Experience.EntityLevel.html">EntityLevel</a>,
 <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.EntityStats.html">EntityStats</a>, <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html">EntityAttributes</a>).</p>
 </dd>
     </dl>

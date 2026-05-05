@@ -98,12 +98,12 @@ Interface IAttributeReader  <a class="header-action link-secondary" title="View 
   </div>
 
   <div class="markdown summary"><p>Read-only interface for querying attribute values from an entity.
-Use <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.html#ElectricDrill_AstraRpgFramework_Attributes_IAttributeReader_TryGet_ElectricDrill_AstraRpgFramework_Attributes_Attribute_System_Int64__">TryGet(Attribute, out long)</a> as the safe access path; <code>Get</code> requires <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html#ElectricDrill_AstraRpgFramework_Utils_IValueContainer_1_Contains__0_">Contains(T)</a> to be checked first.</p>
+Use <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.html#ElectricDrill_AstraRpgFramework_Attributes_IAttributeReader_TryGet_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int64__">TryGet(AttributeSO, out long)</a> as the safe access path; <code>Get</code> requires <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html#ElectricDrill_AstraRpgFramework_Utils_IValueContainer_1_Contains__0_">Contains(T)</a> to be checked first.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IAttributeReader : IValueContainer&lt;Attribute&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IAttributeReader : IValueContainer&lt;AttributeSO&gt;</code></pre>
   </div>
 
 
@@ -116,7 +116,7 @@ Use <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeR
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html#ElectricDrill_AstraRpgFramework_Utils_IValueContainer_1_Contains__0_">IValueContainer&lt;Attribute&gt;.Contains(Attribute)</a>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html#ElectricDrill_AstraRpgFramework_Utils_IValueContainer_1_Contains__0_">IValueContainer&lt;AttributeSO&gt;.Contains(AttributeSO)</a>
     </div>
   </dd></dl>
 
@@ -131,8 +131,8 @@ Use <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeR
 
   <a id="ElectricDrill_AstraRpgFramework_Attributes_IAttributeReader_TryGet_" data-uid="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.TryGet*"></a>
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Attributes_IAttributeReader_TryGet_ElectricDrill_AstraRpgFramework_Attributes_Attribute_System_Int64__" data-uid="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.TryGet(ElectricDrill.AstraRpgFramework.Attributes.Attribute,System.Int64@)">
-  TryGet(Attribute, out long)
+  <h3 id="ElectricDrill_AstraRpgFramework_Attributes_IAttributeReader_TryGet_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int64__" data-uid="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.TryGet(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int64@)">
+  TryGet(AttributeSO, out long)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/IAttributeReader.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -141,12 +141,12 @@ Use <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeR
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool TryGet(Attribute attribute, out long value)</code></pre>
+    <pre><code class="lang-csharp hljs">bool TryGet(AttributeSO attribute, out long value)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>attribute</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.Attribute.html">Attribute</a></dt>
+    <dt><code>attribute</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSO.html">AttributeSO</a></dt>
     <dd><p>The attribute to query.</p>
 </dd>
     <dt><code>value</code> <span class="xref">long</span></dt>
@@ -173,8 +173,8 @@ Use <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeR
 
   <a id="ElectricDrill_AstraRpgFramework_Attributes_IAttributeReader_TryGetBase_" data-uid="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.TryGetBase*"></a>
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Attributes_IAttributeReader_TryGetBase_ElectricDrill_AstraRpgFramework_Attributes_Attribute_System_Int64__" data-uid="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.TryGetBase(ElectricDrill.AstraRpgFramework.Attributes.Attribute,System.Int64@)">
-  TryGetBase(Attribute, out long)
+  <h3 id="ElectricDrill_AstraRpgFramework_Attributes_IAttributeReader_TryGetBase_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int64__" data-uid="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.TryGetBase(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int64@)">
+  TryGetBase(AttributeSO, out long)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/IAttributeReader.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -183,12 +183,12 @@ Use <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeR
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool TryGetBase(Attribute attribute, out long value)</code></pre>
+    <pre><code class="lang-csharp hljs">bool TryGetBase(AttributeSO attribute, out long value)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>attribute</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.Attribute.html">Attribute</a></dt>
+    <dt><code>attribute</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSO.html">AttributeSO</a></dt>
     <dd><p>The attribute to query.</p>
 </dd>
     <dt><code>value</code> <span class="xref">long</span></dt>

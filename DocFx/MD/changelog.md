@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
-## [2.0.0] - 2026-04-19
+## [2.0.0] - Unreleased
 
 > [!WARNING]
 > This update includes breaking changes and behavior changes that can affect existing projects. Refer to the [Migrating to v2.0.0](./migration-guide.md#migrating-to-v200) section of the migration guide before updating.
@@ -13,8 +13,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 #### Runtime Features
 - Added the `Conditions` system, including composite conditions, entity/tag/value-change/stat/attribute/random leaf conditions, and `ConditionalGameAction`.
+- Added `ConditionEvaluationAvailability` and `ConditionTargetAvailability` so condition compatibility checks can describe both the payload contract and the entity target slots available in a given evaluation context.
 - Added the `Game Tags` system with `GameTag`, `GameTagSet`, `ITaggable`, and tag-based conditions.
-- Added framework-level configuration assets for built-in shared events through `AstraRpgFrameworkConfigSO`, `AstraRpgFrameworkGlobalSettingsSO`, and `AstraRpgFrameworkConfigProvider`.
+- Added framework-level configuration assets for built-in shared events through `AstraFrameworkConfigSO`, `AstraFrameworkGlobalSettingsSO`, and `AstraFrameworkConfigProvider`.
 - Added reactive trigger infrastructure with `IReactiveTrigger`, typed `GameEventTrigger<TContext>` implementations, and `EventSource` support for shared subscription coalescing.
 - Added `IHasEntity` as the common bridge contract for entity-aware payloads and game actions, plus projection actions for entity-context workflows.
 - Added owner-aware execution paths for `GameAction`s and introduced `GameActionBase` to support inspector-facing polymorphic action references.
@@ -23,25 +24,59 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 #### Editor Features
 - Added dedicated authoring helpers for conditions, including quick setup utilities, managed-reference body drawers for condition fields, and condition tooltips.
+- Added deeper condition authoring support through `ConditionEditorContext` and `ConditionTargetDrawer`, so payload-aware editors can also filter invalid `ConditionTarget` values instead of only filtering condition types.
 - Added the Game Tag header-pill workflow, including popup search, multi-select add/remove, double-click quick add, intersection handling, overflow display, drag reordering, click-to-ping, and visual customization support.
 - Added custom managed-reference drawers for condition-related attribute and stat fields.
+- Added optional project-scoped **Authoring Defaults** in `Edit > Project Settings > Astra Framework > Authoring Defaults` for `EntityCore`, `GrowthFormulaSO`, `ClassSO`, `EntityStats`, and `EntityAttributes`, together with inspector actions to apply or replace those defaults on existing objects.
+- Added multi-object editing support to the `EntityCore`, `EntityStats`, `EntityAttributes`, `EntityClass`, `Class`, `Scaling Formula`, `Attribute`, `Stat`, `Attribute Scaling Component`, and `Stat Scaling Component` (both attributes and stats) inspectors, including bulk editing for shared values across multiple selected objects.
+- Added the `Migrate Managed References (SO Rename)` tool (`Tools → Astra RPG Framework → v2.0.0 Migration -> Migrate Managed References (SO Rename)`) to rewrite `[SerializeReference]` managed-reference type strings that `[MovedFrom]` alone cannot patch after the ScriptableObject type renames. The tool supports a dry-run mode, per-session reporting to `Library/AstraMigrationReport_<timestamp>.txt`, and optional scanning of closed scenes.
+- Added `TypeSelectableClosedGenericValidator`, an editor startup check that emits a warning when a `[SerializeReference, TypeSelectable]` field targets a closed generic type — a pattern that breaks silently when any type inside the generic argument is renamed (Unity bug [UUM-44729](https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types)).
 
 ### Changed
 #### Runtime Features
 - Built-in `Spawned`, `Level Up`, `Level Down`, `Stat Changed`, and `Attribute Changed` events are dispatched through the active Astra RPG Framework configuration asset.
+- The optional experience gain modifier stat binding is now assigned once in `AstraFrameworkConfigSO` through **Experience Gain Modifier Stat** instead of being configured per entity.
 - `GameAction` workflows now lean on `IHasEntity` as the primary context for event-driven authoring, with owner propagation preserved across wrapper and projection actions.
 - `EntityCore` now implements both `IStatReader` and `IAttributeReader`, making the entity itself a convenient read facade for gameplay code.
+- `ConditionCompatibility` now performs deeper validation of condition trees, including recursive checks on authored `ConditionTarget` selections inside composite conditions.
 - Corrected the `EntityStats.AddStatToStatModifer(...)` typo to `AddStatToStatModifier(...)`.
 - Stat and attribute changed notifications now cover broader effective changes, including dependent recalculations and bulk level transitions. See [Addressed Limitations](./limitations.md#addressed-limitations) for details.
-- `EntityLevel` now exposes more robust global-event integration and extra per-entity event registration helpers.
+- `EntityCore`, `EntityLevel`, `EntityStats`, and `EntityAttributes` implement `IEventRegistrar`, providing generic `Subscribe<TEvent>` and `Unsubscribe<TEvent>` methods for per-entity extra event registration.
+- All core ScriptableObject types have been renamed with an `SO` suffix to better reflect their `ScriptableObject` nature. The full rename table and migration instructions are in the [Migration Guide](./migration-guide.md#scriptableobject-type-renames-so-suffix).
+
+  | Old name | New name |
+  |---|---|
+  | `Stat` | `StatSO` |
+  | `Attribute` | `AttributeSO` |
+  | `Class` | `ClassSO` |
+  | `StatSet` | `StatSetSO` |
+  | `AttributeSet` | `AttributeSetSO` |
+  | `GrowthFormula` | `GrowthFormulaSO` |
+  | `ScalingFormula` | `ScalingFormulaSO` |
+  | `ScalingComponent` | `ScalingComponentSO` |
+  | `AttributesScalingComponent` | `AttributesScalingComponentSO` |
+  | `StatsScalingComponent` | `StatsScalingComponentSO` |
+  | `IntVar` | `IntVarSO` |
+  | `LongVar` | `LongVarSO` |
+  | `GameTag` | `GameTagSO` |
+  | `BoundedValue` | `BoundedValueSO` |
+
+  All renamed types carry `[MovedFrom(autoUpdateAPI = true)]`; Unity's API Updater handles C# script references automatically on reimport.
+- `IDisplaySONameProvider<T>` was replaced by the non-generic `IDisplaySONameProvider` (parameter type changed from `T` to `ScriptableObject`). The change was necessary to work around [Unity bug UUM-44729](https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types), where `[MovedFrom]` does not propagate into generic arguments of serialized type strings. Custom implementations must now cast the `ScriptableObject` parameter internally. See [Migrating `IDisplaySONameProvider<T>`](./managed-reference-migration.md#1-migrating-idisplaysonameprovidert-custom-implementations).
 
 #### Editor Features
 - Improved the fixed-base attribute handling in `EntityAttributesEditor` and `EntityStatsEditor` for Play Mode usage.
+- Replaced sample-backed script default references with optional authoring defaults, so new objects no longer inherit hidden references from package samples and repeated authoring can be standardized explicitly at the project level.
+- `ConditionFieldWithQuickSetup` and `PayloadFilteredConditionPicker` now work from a full `ConditionEvaluationAvailability`, whether it is inferred from `IReactiveTrigger.PayloadType` or passed explicitly by a custom editor.
+- Payload-aware condition authoring now keeps nested composite conditions under the same availability filter and shows inline errors when a condition type or `ConditionTarget` is incompatible with the current context.
 
 ### Removed
 #### Runtime Features
 - Removed the deprecated legacy `EntityLeveledUpGameEvent` and `EntityLeveledDownGameEvent` types together with the remaining deprecated legacy hooks in `EntityLevel`. These had already been deprecated in `v1.4.0`; if your project still uses them, complete the migration described in [Migrating to v1.4.0](./migration-guide.md#migrating-to-v140) before upgrading.
 - Removed the deprecated `AttributePointsTracker` compatibility layer from `EntityAttributes`. The transition to `EntityPointsTracker` and `AttributePortfolio` started in `v1.3.0`.
+
+#### Samples
+- Removed the separate `Utils` sample folder. Its helper assets now live under `Examples`, and the samples are documented as reference content rather than project-owned runtime data.
 
 #### Editor Features
 - Removed the deprecated `DerivedTypePicker` editor utility. The replacement path to `TypeSelectionMenu` was introduced in `v1.2.0`.
@@ -295,4 +330,3 @@ IMPORTANT: Refer to the [migration guide](./migration-guide.md) for updating exi
 - Dynamic application of modifiers to stats and attributes:
   - Flat & Percentage Modifiers for attributes.
   - Flat, Percentage, & Stat-to-Stat Modifiers for statistics.
-

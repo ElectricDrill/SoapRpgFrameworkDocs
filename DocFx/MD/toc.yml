@@ -1,13 +1,19 @@
 - name: Introduction
   href: introduction.md
-- name: Workflows | Main Concepts
-  href: workflows.md
-- name: Workflows | Game Tags
-  href: game-tags.md
-- name: Workflows | Conditions
-  href: conditions.md
-- name: Advanced Topics
-  href: advanced-topics.md
+- name: Workflows
+  items:
+  - name: Package Configuration
+    href: workflows/package-configuration.md
+  - name: Fundamentals
+    href: workflows/workflows.md
+  - name: Game Actions
+    href: workflows/game-actions.md
+  - name: Game Tags
+    href: workflows/game-tags.md
+  - name: Conditions
+    href: workflows/conditions.md
+  - name: Advanced Topics
+    href: workflows/advanced-topics.md
 - name: Limitations
   href: limitations.md
 - name: Requirements
@@ -22,3 +28,5 @@
   href: changelog.md
 - name: Migration Guide
   href: migration-guide.md
+- name: Migration Guide | v2.0.0 Managed References
+  href: managed-reference-migration.md
