@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Game Actions | Astra RPG Framework </title>
+      <title>Game Actions | Astra Framework </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Game Actions | Astra RPG Framework ">
+      <meta name="title" content="Game Actions | Astra Framework ">
       
       
       <link rel="icon" href="../../images/astra-rpg-ico.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.0.0/DocFx/MD/workflows/game-actions.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/remove-rpg-occurrences/DocFx/MD/workflows/game-actions.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -44,8 +44,8 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../../index.html">
-            <img id="logo" class="svg" src="../../images/logo-astra.svg" alt="Astra RPG Framework">
-            Astra RPG Framework
+            <img id="logo" class="svg" src="../../images/logo-astra.svg" alt="Astra Framework">
+            Astra Framework
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -93,7 +93,7 @@
 <p><code>GameAction</code>s accept a generic context parameter via <code>GameAction&lt;TContext&gt;</code>. The recommended context type for built-in actions is <code>IHasEntity</code>: because most <code>GameEventListener</code> payloads in the framework implement this interface, <code>IHasEntity</code>-based actions connect directly to any <code>GameEventListener</code> response without needing to extract a <code>Component</code> reference first. <code>Component</code>-based variants remain available for cases where a raw <code>Component</code> context is passed, but the <code>IHasEntity</code> variants should be the first choice when wiring actions to events.</p>
 <p>At authoring time, polymorphic action references are usually exposed through the non-generic <code>GameActionBase</code>, which exists so Inspector fields can accept actions with different concrete context types. At runtime, the action still executes through its concrete <code>GameAction&lt;TContext&gt;</code> implementation, so context compatibility continues to matter.</p>
 <h2 id="built-in-action-variants">Built-in action variants</h2>
-<p>The <code>IHasEntity</code>-based variants are listed under <code>Astra RPG Framework/Game Actions/Context: Entity/</code> in the asset creation menu.</p>
+<p>The <code>IHasEntity</code>-based variants are listed under <code>Astra Framework/Game Actions/Context: Entity/</code> in the asset creation menu.</p>
 <p>The framework includes several built-in <code>GameAction</code> implementations for <code>IHasEntity</code> contexts:</p>
 <ul>
 <li><strong>Toggle Entity Active GO</strong> (<code>Context: Entity/Toggle Entity Active GO</code>): Sets the active state of the entity's <code>GameObject</code> to a configured value</li>
@@ -103,7 +103,7 @@
 <li><strong>Composite</strong> (<code>Context: Entity/Composite</code>): Executes a sequence of <code>GameAction&lt;IHasEntity&gt;</code> actions in order, passing the same context to each</li>
 <li><strong>Delayed</strong> (<code>Context: Entity/Delayed</code>): Executes a <code>GameAction&lt;IHasEntity&gt;</code> after a specified delay (in seconds)</li>
 <li><strong>Conditional</strong> (<code>Context: Entity/Conditional</code>): Executes a <code>GameAction&lt;IHasEntity&gt;</code> only when a configured condition evaluates to true against the entity</li>
-<li><strong>Do Nothing</strong> (<code>Context: Entity/Do Nothing</code>): Does nothing. Useful as a placeholder, for testing workflows, or to satisfy required fields that must reference a <code>GameAction</code> (for example, default on-death and on-resurrection actions in Astra RPG Health)</li>
+<li><strong>Do Nothing</strong> (<code>Context: Entity/Do Nothing</code>): Does nothing. Useful as a placeholder, for testing workflows, or to satisfy required fields that must reference a <code>GameAction</code> (for example, default on-death and on-resurrection actions in Astra Health)</li>
 <li><strong>Increase Counter</strong> (<code>Context: Entity/Increase Counter</code>): Increases the value of a <code>LongRef</code> by a specified amount. Negative values decrease the counter. Useful for tracking statistics like enemies defeated, entities spawned, or interactions performed</li>
 <li><strong>→ Component Projection</strong> (<code>Context: Entity/Projections/→ Component Projection</code>): Bridges an <code>IHasEntity</code> context to an inner <code>GameAction&lt;Component&gt;</code>, by passing <code>context.Entity</code> as the component. Use this to reuse existing <code>Component</code>-based actions on entity event listeners. Note that rich payload data (damage amounts, level deltas, etc.) is discarded. Use this only for structural actions that only need to know which entity was involved</li>
 </ul>

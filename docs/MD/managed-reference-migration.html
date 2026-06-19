@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Managed Reference Migration (v2.0.0) | Astra RPG Framework </title>
+      <title>Managed Reference Migration (v2.0.0) | Astra Framework </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Managed Reference Migration (v2.0.0) | Astra RPG Framework ">
+      <meta name="title" content="Managed Reference Migration (v2.0.0) | Astra Framework ">
       
       
       <link rel="icon" href="../images/astra-rpg-ico.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.0.0/DocFx/MD/managed-reference-migration.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/remove-rpg-occurrences/DocFx/MD/managed-reference-migration.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -44,8 +44,8 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra RPG Framework">
-            Astra RPG Framework
+            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra Framework">
+            Astra Framework
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -124,7 +124,7 @@ private IDisplaySONameProvider _provider;
 </code></pre>
 <p><code>DefaultDisplaySONameProvider</code> carries <code>[MovedFrom]</code> targeting <code>DefaultDisplaySONameProvider\</code>1`, so the migration tool handles the serialized managed reference for the built-in default. You only need to update the field declarations in your own code.</p>
 <h2 id="2-running-the-migration-tool">2. Running the migration tool</h2>
-<p>The migration tool at <code>Tools → Astra RPG Framework → Migrate Managed References (SO Rename)</code> rewrites managed references in <code>.asset</code>, <code>.prefab</code>, and <code>.unity</code> files that <code>[MovedFrom]</code> alone cannot patch.</p>
+<p>The migration tool at <code>Tools → Astra Framework → Migrate Managed References (SO Rename)</code> rewrites managed references in <code>.asset</code>, <code>.prefab</code>, and <code>.unity</code> files that <code>[MovedFrom]</code> alone cannot patch.</p>
 <div class="IMPORTANT">
 <h5>Important</h5>
 <p>Do not enter Play Mode and do not commit your project until you have run the migration tool and verified the result. Managed references that still point at old type strings appear as missing and may cause <code>NullReferenceException</code>s at runtime.</p>
@@ -134,7 +134,7 @@ private IDisplaySONameProvider _provider;
 <li>Close Play Mode, save all open scenes, and commit (or stash) your current work as a safety net.</li>
 <li>Open your project in Unity.</li>
 <li>Open every scene you want to migrate, <strong>or</strong> enable <strong>Scan closed scenes</strong> inside the tool (step 5) to let it open scenes automatically.</li>
-<li>Go to <code>Tools → Astra RPG Framework -&gt; v2.0.0 Migration -&gt; Migrate Managed References (SO Rename)</code>.</li>
+<li>Go to <code>Tools → Astra Framework -&gt; v2.0.0 Migration -&gt; Migrate Managed References (SO Rename)</code>.</li>
 <li>With <strong>Dry-run</strong> toggled <strong>ON</strong>, press <strong>Scan</strong>. Enable <strong>Scan closed scenes</strong> if needed. Review the <code>[plan]</code> lines — each one lists an asset and the managed reference that will be rewritten.</li>
 <li>If the plan looks correct, turn <strong>Dry-run</strong> OFF and press <strong>Apply</strong>. The tool asks for confirmation that a backup is in place before it proceeds.</li>
 <li>The tool writes a full log to <code>Library/AstraMigrationReport_&lt;timestamp&gt;.txt</code>.</li>

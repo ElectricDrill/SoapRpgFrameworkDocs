@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class EntityContextToComponentProjectionGameAction | Astra RPG Framework </title>
+      <title>Class EntityContextToComponentProjectionGameAction | Astra Framework </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class EntityContextToComponentProjectionGameAction | Astra RPG Framework ">
+      <meta name="title" content="Class EntityContextToComponentProjectionGameAction | Astra Framework ">
       
       <meta name="description" content="Bridges an  context to an inner  typed on , by extracting  and passing it as the context. This lets you reuse any existing Component-based action on events that dispatch an  payload without duplicating the action implementation. Trade-off: the inner action receives only the  component — rich payload data (e.g. damage amounts, level deltas) is discarded. Use this exclusively for structural actions (destroy, toggle renderer, etc.) that only need to know which entity was involved, not what happened to it.">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
@@ -44,8 +44,8 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra RPG Framework">
-            Astra RPG Framework
+            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra Framework">
+            Astra Framework
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -110,7 +110,7 @@ was involved, not <i>what</i> happened to it.
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[CreateAssetMenu(fileName = &quot;New Entity Context To Component Projection Action&quot;, menuName = &quot;Astra RPG Framework/Game Actions/Context: Entity/Projections/→ Component Projection&quot;)]
+    <pre><code class="lang-csharp hljs">[CreateAssetMenu(fileName = &quot;New Entity Context To Component Projection Action&quot;, menuName = &quot;Astra Framework/Game Actions/Context: Entity/Projections/→ Component Projection&quot;)]
 public class EntityContextToComponentProjectionGameAction : GameAction&lt;IHasEntity&gt;, IExecutable&lt;IHasEntity&gt;, ITaggable</code></pre>
   </div>
 

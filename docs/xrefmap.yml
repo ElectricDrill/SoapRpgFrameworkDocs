@@ -3693,6 +3693,23 @@ references:
   fullName.vb: ElectricDrill.AstraRpgFramework.Events.EventChannel(Of TConfig, TEvent, TContext).Add
   nameWithType: EventChannel<TConfig, TEvent, TContext>.Add
   nameWithType.vb: EventChannel(Of TConfig, TEvent, TContext).Add
+- uid: ElectricDrill.AstraRpgFramework.Events.EventChannel`3.HasExtras
+  name: HasExtras
+  href: api/ElectricDrill.AstraRpgFramework.Events.EventChannel-3.html#ElectricDrill_AstraRpgFramework_Events_EventChannel_3_HasExtras
+  commentId: P:ElectricDrill.AstraRpgFramework.Events.EventChannel`3.HasExtras
+  fullName: ElectricDrill.AstraRpgFramework.Events.EventChannel<TConfig, TEvent, TContext>.HasExtras
+  fullName.vb: ElectricDrill.AstraRpgFramework.Events.EventChannel(Of TConfig, TEvent, TContext).HasExtras
+  nameWithType: EventChannel<TConfig, TEvent, TContext>.HasExtras
+  nameWithType.vb: EventChannel(Of TConfig, TEvent, TContext).HasExtras
+- uid: ElectricDrill.AstraRpgFramework.Events.EventChannel`3.HasExtras*
+  name: HasExtras
+  href: api/ElectricDrill.AstraRpgFramework.Events.EventChannel-3.html#ElectricDrill_AstraRpgFramework_Events_EventChannel_3_HasExtras_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Events.EventChannel`3.HasExtras
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Events.EventChannel<TConfig, TEvent, TContext>.HasExtras
+  fullName.vb: ElectricDrill.AstraRpgFramework.Events.EventChannel(Of TConfig, TEvent, TContext).HasExtras
+  nameWithType: EventChannel<TConfig, TEvent, TContext>.HasExtras
+  nameWithType.vb: EventChannel(Of TConfig, TEvent, TContext).HasExtras
 - uid: ElectricDrill.AstraRpgFramework.Events.EventChannel`3.Initialize(System.Func{`0,`1},System.Func{`0})
   name: Initialize(Func<TConfig, TEvent>, Func<TConfig>)
   href: api/ElectricDrill.AstraRpgFramework.Events.EventChannel-3.html#ElectricDrill_AstraRpgFramework_Events_EventChannel_3_Initialize_System_Func__0__1__System_Func__0__

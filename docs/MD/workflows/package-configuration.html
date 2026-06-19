@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Package Configuration | Astra RPG Framework </title>
+      <title>Package Configuration | Astra Framework </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Package Configuration | Astra RPG Framework ">
+      <meta name="title" content="Package Configuration | Astra Framework ">
       
       
       <link rel="icon" href="../../images/astra-rpg-ico.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.0.0/DocFx/MD/workflows/package-configuration.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/remove-rpg-occurrences/DocFx/MD/workflows/package-configuration.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -44,8 +44,8 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../../index.html">
-            <img id="logo" class="svg" src="../../images/logo-astra.svg" alt="Astra RPG Framework">
-            Astra RPG Framework
+            <img id="logo" class="svg" src="../../images/logo-astra.svg" alt="Astra Framework">
+            Astra Framework
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -87,20 +87,20 @@
         <article data-uid="">
 <h1 id="package-configuration">Package Configuration</h1>
 
-<p>The base Astra RPG Framework is designed for <strong>zero setup out of the box</strong> for runtime configuration: importing the <strong>Utils</strong> sample is all you need to get a fully working setup. The sample provides a pre-built <code>AstraFrameworkConfigSO</code> asset placed in a <code>Resources</code> subfolder (named <code>Astra Framework Config</code>), with the three required global events already wired up to the event instances also found in the sample. The editor bootstrapper auto-detects this asset and assigns it to the Global Settings the moment Unity loads, so no manual steps are required.</p>
+<p>The base Astra Framework is designed for <strong>zero setup out of the box</strong> for runtime configuration: importing the <strong>Utils</strong> sample is all you need to get a fully working setup. The sample provides a pre-built <code>AstraFrameworkConfigSO</code> asset placed in a <code>Resources</code> subfolder (named <code>Astra Framework Config</code>), with the three required global events already wired up to the event instances also found in the sample. The editor bootstrapper auto-detects this asset and assigns it to the Global Settings the moment Unity loads, so no manual steps are required.</p>
 <p>Authoring defaults are a separate <strong>editor-only</strong> convenience layer. They are fully optional, they do not affect runtime behavior, and leaving them empty preserves the same manual authoring workflow.</p>
 <p>The configuration asset holds <strong>Global Events</strong> — the <code>GameEvent</code> ScriptableObjects that broadcast entity, level, stat, and attribute information to the entire game — plus an optional shared stat binding for experience gain modifiers. Three of these events are required for the framework to function correctly; the remaining event fields and the stat binding are optional.</p>
 <h2 id="zero-setup-via-samples">Zero Setup via Samples</h2>
 <p>The quickest way to configure the framework is to import the <strong>Utils</strong> sample from the Package Manager:</p>
 <ol>
 <li>Open <strong>Window → Package Manager</strong></li>
-<li>Select <strong>Astra RPG Framework</strong> in your project packages</li>
+<li>Select <strong>Astra Framework</strong> in your project packages</li>
 <li>Expand <strong>Samples</strong> and click <strong>Import</strong> next to <strong>Utils</strong></li>
 </ol>
 <p>After import, your project will contain:</p>
 <ul>
-<li><strong><code>Assets/Samples/Astra RPG Framework/&lt;version&gt;/Utils/Resources/Astra Framework Config.asset</code></strong> — the ready-to-use configuration with all required events already assigned</li>
-<li><strong><code>Assets/Samples/Astra RPG Framework/&lt;version&gt;/Utils/EventInstances/</code></strong> — the individual event <code>ScriptableObject</code> assets referenced by the configuration</li>
+<li><strong><code>Assets/Samples/Astra Framework/&lt;version&gt;/Utils/Resources/Astra Framework Config.asset</code></strong> — the ready-to-use configuration with all required events already assigned</li>
+<li><strong><code>Assets/Samples/Astra Framework/&lt;version&gt;/Utils/EventInstances/</code></strong> — the individual event <code>ScriptableObject</code> assets referenced by the configuration</li>
 </ul>
 <p>The editor bootstrapper detects the config automatically and assigns it to the Global Settings. No Project Settings step is needed.</p>
 <div class="IMPORTANT">
@@ -257,7 +257,7 @@ AstraFrameworkConfigProvider.Reset();
 <h3 id="via-asset-menu">Via Asset Menu</h3>
 <ol>
 <li>Right-click in the <strong>Project Window</strong></li>
-<li>Select <strong>Create → Astra RPG Framework → Config</strong></li>
+<li>Select <strong>Create → Astra Framework → Config</strong></li>
 <li>Name your configuration</li>
 <li>Assign it in Project Settings or in the Global Settings asset</li>
 </ol>

@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface IHasInstigator | Astra RPG Framework </title>
+      <title>Interface IHasInstigator | Astra Framework </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface IHasInstigator | Astra RPG Framework ">
+      <meta name="title" content="Interface IHasInstigator | Astra Framework ">
       
       <meta name="description" content="Contract for contexts that carry a reference to the specific cause of the effect.  This complements  (which identifies the responsible entity) by identifying the specific thing — such as an ability, modifier, passive skill, or game system — that produced the effect.  is nullable: not every effect has a meaningful specific cause beyond its source entity and category ( + DamageSourceSO / HealSourceSO).  Typical usage: // Prevent infinite loops: ignore effects caused by this modifier itself if (ctx.Instigator == this.Definition) return; // React only to effects from a specific source type if (ctx.Instigator is AbilityDefinitionSO ability &amp;amp;&amp;amp; ability.IsUltimate) ApplyStrengthBuff(ctx.Target);">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
@@ -44,8 +44,8 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra RPG Framework">
-            Astra RPG Framework
+            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra Framework">
+            Astra Framework
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>

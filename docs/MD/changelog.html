@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Changelog | Astra RPG Framework </title>
+      <title>Changelog | Astra Framework </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Changelog | Astra RPG Framework ">
+      <meta name="title" content="Changelog | Astra Framework ">
       
       
       <link rel="icon" href="../images/astra-rpg-ico.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.0.0/DocFx/MD/changelog.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/remove-rpg-occurrences/DocFx/MD/changelog.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -44,8 +44,8 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra RPG Framework">
-            Astra RPG Framework
+            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra Framework">
+            Astra Framework
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -115,13 +115,13 @@
 <li>Added custom managed-reference drawers for condition-related attribute and stat fields.</li>
 <li>Added optional project-scoped <strong>Authoring Defaults</strong> in <code>Edit &gt; Project Settings &gt; Astra Framework &gt; Authoring Defaults</code> for <code>EntityCore</code>, <code>GrowthFormulaSO</code>, <code>ClassSO</code>, <code>EntityStats</code>, and <code>EntityAttributes</code>, together with inspector actions to apply or replace those defaults on existing objects.</li>
 <li>Added multi-object editing support to the <code>EntityCore</code>, <code>EntityStats</code>, <code>EntityAttributes</code>, <code>EntityClass</code>, <code>Class</code>, <code>Scaling Formula</code>, <code>Attribute</code>, <code>Stat</code>, <code>Attribute Scaling Component</code>, and <code>Stat Scaling Component</code> (both attributes and stats) inspectors, including bulk editing for shared values across multiple selected objects.</li>
-<li>Added the <code>Migrate Managed References (SO Rename)</code> tool (<code>Tools → Astra RPG Framework → v2.0.0 Migration -&gt; Migrate Managed References (SO Rename)</code>) to rewrite <code>[SerializeReference]</code> managed-reference type strings that <code>[MovedFrom]</code> alone cannot patch after the ScriptableObject type renames. The tool supports a dry-run mode, per-session reporting to <code>Library/AstraMigrationReport_&lt;timestamp&gt;.txt</code>, and optional scanning of closed scenes.</li>
+<li>Added the <code>Migrate Managed References (SO Rename)</code> tool (<code>Tools → Astra Framework → v2.0.0 Migration -&gt; Migrate Managed References (SO Rename)</code>) to rewrite <code>[SerializeReference]</code> managed-reference type strings that <code>[MovedFrom]</code> alone cannot patch after the ScriptableObject type renames. The tool supports a dry-run mode, per-session reporting to <code>Library/AstraMigrationReport_&lt;timestamp&gt;.txt</code>, and optional scanning of closed scenes.</li>
 <li>Added <code>TypeSelectableClosedGenericValidator</code>, an editor startup check that emits a warning when a <code>[SerializeReference, TypeSelectable]</code> field targets a closed generic type — a pattern that breaks silently when any type inside the generic argument is renamed (Unity bug <a href="https://issuetracker.unity3d.com/issues/movedfrom-attribute-is-not-working-for-generic-types">UUM-44729</a>).</li>
 </ul>
 <h3 id="changed">Changed</h3>
 <h4 id="runtime-features-1">Runtime Features</h4>
 <ul>
-<li><p>Built-in <code>Spawned</code>, <code>Level Up</code>, <code>Level Down</code>, <code>Stat Changed</code>, and <code>Attribute Changed</code> events are dispatched through the active Astra RPG Framework configuration asset.</p>
+<li><p>Built-in <code>Spawned</code>, <code>Level Up</code>, <code>Level Down</code>, <code>Stat Changed</code>, and <code>Attribute Changed</code> events are dispatched through the active Astra Framework configuration asset.</p>
 </li>
 <li><p>The optional experience gain modifier stat binding is now assigned once in <code>AstraFrameworkConfigSO</code> through <strong>Experience Gain Modifier Stat</strong> instead of being configured per entity.</p>
 </li>
@@ -333,7 +333,7 @@
 <li><code>ToggleCollidersGameAction</code>: Toggles the enabled state of all <code>Collider</code> components on a GameObject and its children.</li>
 <li><code>ToggleActiveGameObjectGameAction</code>: Toggles the active state of a GameObject.</li>
 <li><code>IncreaseCounterGameAction</code>: Increases a LongVar by a specified amount. Amount can also be negative to decrease the counter.</li>
-<li><code>DoNothingGameAction</code>: A no-op action that does nothing when executed. Reserved mostly for Astra RPG Health for neutral responses to certain events.</li>
+<li><code>DoNothingGameAction</code>: A no-op action that does nothing when executed. Reserved mostly for Astra Health for neutral responses to certain events.</li>
 <li><code>DestroyGameAction</code>: Destroys the target GameObject.</li>
 <li><code>DelayedGameAction</code>: Executes another GameAction after a specified delay.</li>
 <li><code>CompositeGameAction</code>: Executes a list of GameActions in sequence.</li>
@@ -341,21 +341,21 @@
 </li>
 <li>Added the Create Menu entries for all the above GameActions, with <code>EntityEngine.Component</code> as context type parameter.</li>
 <li>Added <code>GameActionRunner</code> MonoBehaviour. Used to execute GameActions in a fire-and-forget manner on a specific owner <code>GameObject</code>. Useful, for example, if the action is expected to complete and the GameObject owning the GameAction may be destroyed at any moment, or if you want to centralize the execution of GameActions on a specific GameObject (such as a manager).</li>
-<li>Added <code>IHasSource</code> interface to establish a contract for objects that have a source EntityCore. Used by Game Event contexts that have a source entity doing something. Currently reserved for future use in Astra RPG Health.</li>
+<li>Added <code>IHasSource</code> interface to establish a contract for objects that have a source EntityCore. Used by Game Event contexts that have a source entity doing something. Currently reserved for future use in Astra Health.</li>
 <li>Added <code>IHasTarget</code> interface to establish a contract for objects that have a target EntityCore. Used by Game Event contexts that have a target entity receiving something. Currently used by the <code>EntityLevelChangedContext</code> for the new Entity Level Up and Entity Level Down Game Events (see changes for details).</li>
 <li><code>IHasValueChange&lt;out T&gt;</code> interface to establish a contract for objects that represent a change in value of type T. Used by Game Event contexts that represent a change in value:
 <ul>
 <li><code>EntityLevelChangedContext</code> (int value change)</li>
 <li><code>AttributeChangeInfo</code> (long value change)</li>
 <li><code>StatChangeInfo</code> (long value change)</li>
-<li><code>IHasVictim</code> interface to establish a contract for objects that have a victim EntityCore. Reseved for future use in Astra RPG Health.</li>
+<li><code>IHasVictim</code> interface to establish a contract for objects that have a victim EntityCore. Reseved for future use in Astra Health.</li>
 </ul>
 </li>
 <li>Added custom icon for <code>ExpSource</code> MonoBehaviour.</li>
 </ul>
 <h4 id="editor-features-7">Editor Features</h4>
 <ul>
-<li>Added a <code>BrokenEventFinder</code> utility to help identify broken responses in Unity Events (and therefore in Game Events). Can be accessed from the menu: <code>Tools/Astra RPG Framework/Find Broken UnityEvents</code>.</li>
+<li>Added a <code>BrokenEventFinder</code> utility to help identify broken responses in Unity Events (and therefore in Game Events). Can be accessed from the menu: <code>Tools/Astra Framework/Find Broken UnityEvents</code>.</li>
 </ul>
 <h4 id="samples-3">Samples</h4>
 <ul>
@@ -364,12 +364,12 @@
 <h3 id="changed-4">Changed</h3>
 <h4 id="runtime-features-8">Runtime Features</h4>
 <ul>
-<li>Simplified <code>ExpSource</code> implementation. Now <code>Harvested</code> property is no longer set to true upon getting <code>Exp</code> property. Now the external code is responsible for setting the <code>Harvested</code> property to true when appropriate. This change allows for more flexible usage of the <code>ExpSource</code> component, as it can now be used in scenarios where the experience points are not immediately harvested upon retrieval. This change was made to better accommodate future features in Astra RPG Health.</li>
+<li>Simplified <code>ExpSource</code> implementation. Now <code>Harvested</code> property is no longer set to true upon getting <code>Exp</code> property. Now the external code is responsible for setting the <code>Harvested</code> property to true when appropriate. This change allows for more flexible usage of the <code>ExpSource</code> component, as it can now be used in scenarios where the experience points are not immediately harvested upon retrieval. This change was made to better accommodate future features in Astra Health.</li>
 </ul>
 <h4 id="samples-4">Samples</h4>
 <ul>
 <li>Updated the input system in the Sample Scene so that no manual action from the user is required when importing the project in Unity v6.2+.</li>
-<li>Renamed <code>SampleScene</code> to <code>Astra RPG Framework Sample Scene</code>.</li>
+<li>Renamed <code>SampleScene</code> to <code>Astra Framework Sample Scene</code>.</li>
 <li>Updated <code>CommonApiCheatSheet</code> to reflect new EntityLevelUp and EntityLevelDown game events (see Deprecated section).</li>
 </ul>
 <h3 id="fixed-4">Fixed</h3>
@@ -400,12 +400,12 @@
 <li><code>AT[N]</code>: Represents the Growth Formula value at a specific level N. For example, <code>AT[10]</code> would return the Growth Formula value at level 10.</li>
 </ul>
 </li>
-<li><code>BoundedValue.Clamp</code> now supports also clamping of double values. For now is used internally by the framework and is reserved for future use is Astra RPG Health.</li>
+<li><code>BoundedValue.Clamp</code> now supports also clamping of double values. For now is used internally by the framework and is reserved for future use is Astra Health.</li>
 </ul>
 <h4 id="editor-features-8">Editor Features</h4>
 <ul>
 <li>Added support for <code>enum</code> formatting in <code>InspectorTypography</code>.</li>
-<li>Added utility to provide compact representation of large numbers in the editor (e.g., 1.5K, 4M). Reserved for future use in Astra RPG Health.</li>
+<li>Added utility to provide compact representation of large numbers in the editor (e.g., 1.5K, 4M). Reserved for future use in Astra Health.</li>
 </ul>
 <h3 id="changed-5">Changed</h3>
 <h4 id="runtime-features-10">Runtime Features</h4>

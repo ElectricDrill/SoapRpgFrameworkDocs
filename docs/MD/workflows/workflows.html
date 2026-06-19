@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Fundamentals | Astra RPG Framework </title>
+      <title>Fundamentals | Astra Framework </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Fundamentals | Astra RPG Framework ">
+      <meta name="title" content="Fundamentals | Astra Framework ">
       
       
       <link rel="icon" href="../../images/astra-rpg-ico.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.0.0/DocFx/MD/workflows/workflows.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/remove-rpg-occurrences/DocFx/MD/workflows/workflows.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -44,8 +44,8 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../../index.html">
-            <img id="logo" class="svg" src="../../images/logo-astra.svg" alt="Astra RPG Framework">
-            Astra RPG Framework
+            <img id="logo" class="svg" src="../../images/logo-astra.svg" alt="Astra Framework">
+            Astra Framework
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -122,7 +122,7 @@
 - AttributesScalingComponent
 -->
 <h2 id="creating-instances-of-the-objects">Creating instances of the objects</h2>
-<p>All the scriptable objects provided by the framework can be created through the Unity Editor by either right-clicking in the hierarchy and selecting <code>Create &gt; Astra RPG</code> or navigating to the <code>Assets</code> menu at the top of the window and choosing <code>Create &gt; Astra RPG</code>.</p>
+<p>All the scriptable objects provided by the framework can be created through the Unity Editor by either right-clicking in the hierarchy and selecting <code>Create &gt; Astra Framework</code> or navigating to the <code>Assets</code> menu at the top of the window and choosing <code>Create &gt; Astra Framework</code>.</p>
 <h2 id="mandatory-re-play-and-read-only-fields">Mandatory, re-play, and read-only fields</h2>
 <p>Fields marked with a red asterisk (<span style="color:red;">*</span>) are mandatory and must be filled out to ensure proper functionality of the framework.</p>
 <p>Fields marked with an orange <strong style="color:orange;">R</strong> are re-play fields. Any changes made to these fields during playtime will require a restart to ensure the changes take effect.</p>
@@ -166,7 +166,7 @@ We will see these generators in more detail in the <a href="#game-event-generato
 Some game events are already defined and made available by the package (see the <a href="../samples.html">Samples</a> page).</p>
 <h3 id="growth-formulas">Growth Formulas</h3>
 <p><em>Relative path:</em> <code>Growth Formula</code></p>
-<p>As already mentioned in <a href="../introduction.html">Introduction</a>, <code>GrowthFormula</code> allows defining how a certain value varies as levels increase. A <code>GrowthFormula</code> can be instantiated through the hierarchy context menu by going to <code>Astra RPG Framework -&gt; Growth Formula</code>.
+<p>As already mentioned in <a href="../introduction.html">Introduction</a>, <code>GrowthFormula</code> allows defining how a certain value varies as levels increase. A <code>GrowthFormula</code> can be instantiated through the hierarchy context menu by going to <code>Astra Framework -&gt; Growth Formula</code>.
 The package provides a custom property drawer for <code>GrowthFormula</code>.</p>
 <h4 id="max-level-for-the-values">Max level for the values</h4>
 <p>In the inspector of a <code>GrowthFormula</code>, we can pass an <code>IntVar</code> to define up to which level to grow the values.</p>
@@ -189,7 +189,7 @@ The string can be defined by using the <a href="https://docs.unity3d.com/6000.0/
 <p>The <code>Max Level</code>, a mandatory field, is set with an <code>IntVar</code> assigned by default. We can edit that variable to change the maximum level that will be computed for our growth formula.</p>
 <div class="WARNING">
 <h5>Warning</h5>
-<p>When modifying the value of a variable referenced in growth formulas, such as Max Level, the growth formulas are not directly updated unless you select them in the inspector. To update all growth formulas simultaneously after changing the maximum level, a command is available in the menu: <code>Tools &gt; Astra RPG Framework &gt; Validate All Growth Formulas</code>.<br>
+<p>When modifying the value of a variable referenced in growth formulas, such as Max Level, the growth formulas are not directly updated unless you select them in the inspector. To update all growth formulas simultaneously after changing the maximum level, a command is available in the menu: <code>Tools &gt; Astra Framework &gt; Validate All Growth Formulas</code>.<br>
 Validation occurs automatically during script compilation, upon entering play mode, and when instantiating a prefab. This is achieved through the <code>OnValidate</code> callback, which ensures that formulas are updated accordingly.</p>
 </div>
 <p>The <code>Use constant value at level 1</code> checkbox lets us decide whether to use a constant value at level 1 or not. If checked, the <code>Constant Value</code> field will be enabled, and we can set a value for it. In this case, we set it to 10.</p>
@@ -249,21 +249,21 @@ Alternatively, it is available also the <code>SetTotalCurrentExp(long totalCurre
 <p>(🏷️<em>v1.2.0+</em>) Similarly, the <code>RemoveExp(long amount)</code> method allows deducting experience from the entity. This method will raise the <code>OnLevelDown</code> event if the entity levels down. If you want to <em>respec</em> an entity, the <code>ResetToLevelOne()</code> method resets the entity's level and experience to level 1. This method will raise the <code>OnLevelDown</code> event if the entity levels down. Clearly, all spent attribute points will be reset as well.</p>
 <p>Finally, there are the <code>CurrentLevelTotalExperience()</code> and the <code>NextLevelTotalExperience()</code> methods. These methods return the total experience required to reach the current level and the next level, respectively. They are useful, for example, for checking how much experience is needed to level up.</p>
 <h2 id="exp-source">Exp Source</h2>
-<p>The <code>ExpSource</code> <code>MonoBehaviour</code> component marks a <code>GameObject</code> as a source of experience points. When such an entity dies, collection systems (such as those provided by Astra RPG Health) can harvest its experience and award it to eligible recipients.</p>
+<p>The <code>ExpSource</code> <code>MonoBehaviour</code> component marks a <code>GameObject</code> as a source of experience points. When such an entity dies, collection systems (such as those provided by Astra Health) can harvest its experience and award it to eligible recipients.</p>
 <p>To add an <code>ExpSource</code> to an entity, select the entity's <code>GameObject</code> in the hierarchy and use &quot;Add Component&quot; from the inspector. Search for and select <code>ExpSource</code>.</p>
 <p>In the inspector, you can configure the amount of experience this entity provides:</p>
 <p><img src="../../images/workflows/exp-source-inspector.png" alt="Exp Source Inspector"></p>
-<p><strong>Exp</strong>: The base amount of experience points this entity grants when collected. This value can be modified by collection strategies of Astra RPG Health.</p>
+<p><strong>Exp</strong>: The base amount of experience points this entity grants when collected. This value can be modified by collection strategies of Astra Health.</p>
 <h3 id="the-harvested-flag">The Harvested Flag</h3>
 <p>Each <code>ExpSource</code> exposes a <code>Harvested</code> property. When <code>Harvested</code> is <code>true</code>, the source is considered already collected and collection strategies will skip it, preventing experience from being granted more than once per entity.</p>
-<p>By default, <code>Harvested</code> is <code>false</code>. Collection strategies that check this flag — such as <code>DirectKillExpStrategySO</code> in Astra RPG Health — set it to <code>true</code> once the experience has been awarded, ensuring each source can only be harvested a single time.</p>
+<p>By default, <code>Harvested</code> is <code>false</code>. Collection strategies that check this flag — such as <code>DirectKillExpStrategySO</code> in Astra Health — set it to <code>true</code> once the experience has been awarded, ensuring each source can only be harvested a single time.</p>
 <div class="NOTE">
 <h5>Note</h5>
 <p>Not all collection strategies enforce the <code>Harvested</code> flag, and neither all collections strategies respect it. Refer to the documentation of the specific strategy you are using to understand its behavior.</p>
 </div>
 <h3 id="resetting-the-harvested-flag">Resetting the Harvested Flag</h3>
 <p>You may encounter scenarios where an entity should become harvestable again — for example, when a defeated enemy is respawned or resurrected. For these cases, the framework provides the <code>ToggleHarvestedExpSourceEntityGameAction</code>.</p>
-<p><em>Relative path:</em> <code>Astra RPG Framework/Game Actions/Context: Entity/Toggle Harvested Exp Source</code></p>
+<p><em>Relative path:</em> <code>Astra Framework/Game Actions/Context: Entity/Toggle Harvested Exp Source</code></p>
 <p>This action reads a <code>Harvested</code> boolean field configured in the inspector and applies it to the <code>IExpSource</code> found on the entity's <code>GameObject</code> (<code>context.Entity</code>). Set <code>Harvested</code> to <code>false</code> to make the source collectable again, or to <code>true</code> to mark it as already harvested and prevent further collection.</p>
 <p>Because the context type is <code>IHasEntity</code>, this action can be wired directly to any <code>GameEventListener</code> whose payload exposes an entity — for example, an <code>EntityResurrectedGameEventListener</code> — without any additional bridging.</p>
 <div class="NOTE">
@@ -277,12 +277,12 @@ Alternatively, it is available also the <code>SetTotalCurrentExp(long totalCurre
     long Exp { get; }
 }
 </code></pre>
-<p>Any <code>MonoBehaviour</code> implementing <code>IExpSource</code> is fully compatible with collection strategies that target this interface, including those provided by Astra RPG Health.</p>
-<h2 id="creating-astra-rpg-framework-assets">Creating Astra RPG Framework assets</h2>
+<p>Any <code>MonoBehaviour</code> implementing <code>IExpSource</code> is fully compatible with collection strategies that target this interface, including those provided by Astra Health.</p>
+<h2 id="creating-astra-framework-assets">Creating Astra Framework assets</h2>
 <p>All the instances of the various assets that derive from <code>ScriptableObject</code>s can be created in the following ways:</p>
 <ul>
-<li>Context menu: <code>Right click on the hierarchy &gt; Create &gt; Astra RPG Framework</code></li>
-<li>Top bar: <code>Assets &gt; Create &gt; Astra RPG Framework</code></li>
+<li>Context menu: <code>Right click on the hierarchy &gt; Create &gt; Astra Framework</code></li>
+<li>Top bar: <code>Assets &gt; Create &gt; Astra Framework</code></li>
 <li>Hotkeys: By pressing the respective keyboard shortcut while a folder or an element of the hierarchy is currently selected</li>
 </ul>
 <div class="NOTE">
@@ -628,7 +628,7 @@ entityStats.AddPercentageModifier(movementSpeed, -15);
 <div class="NOTE">
 <h5>Note</h5>
 <p>The framework does not provide a built-in tool for removing applied modifiers. It is up to you to define your own abstraction for buffs, debuffs, or other temporary effects that add and remove modifiers as needed.
-In the future, the Astra RPG Modifiers extension for this framework will be released, which will include such abstractions thought to integrate seamlessly with the existing systems. Check the status of the extension for more details at <a href="https://electricdrill.github.io/">https://electricdrill.github.io/</a></p>
+In the future, the Astra Modifiers extension for this framework will be released, which will include such abstractions thought to integrate seamlessly with the existing systems. Check the status of the extension for more details at <a href="https://electricdrill.github.io/">https://electricdrill.github.io/</a></p>
 </div>
 <h3 id="retrieving-stat-values-from-code">Retrieving Stat Values from code</h3>
 <p>Concrete components such as <code>EntityStats</code> expose convenience methods like <code>Get</code> and <code>GetBase</code>, but for reusable or defensive code the preferred read-only contract is <code>IStatReader</code>.</p>
@@ -659,7 +659,7 @@ Follow the steps outlined in the <a href="#growth-formulas">Growth Formulas</a> 
 Once all growth formulas are assigned, the <code>Warrior</code> should look like this:</p>
 <p><img src="../../images/workflows/warrior-class.png" alt="Warrior Class"></p>
 <p><code>Max HP Growth Formula</code> allows specifying how the Max HP value grows as levels change. In our example, we'll leave it empty.
-The presence of this field for hit points might be surprising since this module of the framework isn't focused on health management. Indeed, damage and health are managed by the <em>Astra RPG Health</em> module, which will be released in the coming months.
+The presence of this field for hit points might be surprising since this module of the framework isn't focused on health management. Indeed, damage and health are managed by the <em>Astra Health</em> module, which will be released in the coming months.
 However, this field is positioned here since the scaling of base max hp still depends on the class.</p>
 <h3 id="keeping-the-hierarchy-clean">Keeping the hierarchy clean</h3>
 <p>By now you should have a lot of assets in your hierarchy. To keep it clean, you can create a folder named <code>Classes</code> and move the <code>Warrior</code> class inside it. You can do the same for the <code>Attributes</code> and <code>Stats</code> growth formulas inside the <code>Warrior</code> folder. This way, you can keep the hierarchy organized and easily find the assets.<br>
@@ -798,7 +798,7 @@ To avoid potential issues, it is recommended to back up or version control your 
 <h4 id="game-event-generator-setup">Game Event Generator setup</h4>
 <p>Let's create a custom game event generator to manage all the events related to the experience and leveling up of entities. Rename the newly created events generator <code>EntityLevelingEvents</code>. In the inspector, it should look like this:</p>
 <p><img src="../../images/workflows/entity-leveling-events.png" alt="Entity Leveling Events"></p>
-<p>With <code>Menu Base Path</code> we can change the path of the context menu where the generated events will be available for creation. By default, it is set to <code>Astra RPG Framework/Events/Generated</code>, but we can change it to <code>Astra RPG Framework/Events/Generated/Experience</code> for the sake of organization.</p>
+<p>With <code>Menu Base Path</code> we can change the path of the context menu where the generated events will be available for creation. By default, it is set to <code>Astra Framework/Events/Generated</code>, but we can change it to <code>Astra Framework/Events/Generated/Experience</code> for the sake of organization.</p>
 <p>With <code>Base Save Location</code> we can change the path where the source code files for the generated events will be saved. By default it is set to <code>Assets</code>, but for this example let's set it to <code>Assets/Events</code>.</p>
 <h4 id="adding-new-events">Adding new events</h4>
 <p>Now let's create an event that will be raised when an entity grants experience to another entity. To do this, click on the <code>Add new event</code> button and fill in the fields as follows:</p>
@@ -807,8 +807,8 @@ To avoid potential issues, it is recommended to back up or version control your 
 <li><code>Documentation</code>: an entity granted experience to another entity</li>
 <li><code>Parameters</code>: press the <code>+</code> button and add the following three parameters:
 <ul>
-<li><code>Parameter Type</code> to <code>Mono Script</code>, <code>Mono Script</code> type to <code>EntityCore</code> (drag it from the AstraRpgFramework folder located in the Packages folder)</li>
-<li><code>Parameter Type</code> to <code>Mono Script</code>, <code>Mono Script</code> type to <code>EntityCore</code> (drag it from the AstraRpgFramework folder located in the Packages folder)</li>
+<li><code>Parameter Type</code> to <code>Mono Script</code>, <code>Mono Script</code> type to <code>EntityCore</code> (drag it from the AstraFramework folder located in the Packages folder)</li>
+<li><code>Parameter Type</code> to <code>Mono Script</code>, <code>Mono Script</code> type to <code>EntityCore</code> (drag it from the AstraFramework folder located in the Packages folder)</li>
 <li><code>Parameter Type</code> to <code>Native</code>, <code>Native type</code> to <code>long</code></li>
 </ul>
 </li>
@@ -821,7 +821,7 @@ We can now navigate to <code>Assets/Events/GeneratedEvents/EntityLevelingEvents<
 <li><code>GameEvents</code>: contains the source code for all the game events generated by our <code>EntityLevelingEvents</code> game event generator.</li>
 </ul>
 <p>Inside both folders, you'll find a subfolder named <code>3</code>. The Game Event Generators organize the generated events in subfolders based on the number of parameters they have. In this case, we have a game event with three parameters, so it is placed in the <code>3</code> subfolder.</p>
-<p>However, more interesting is the fact that if we now use the context menu and navigate to <code>Astra RPG Framework/Events/Generated/Experience</code>, we can find the <code>EntityGrantedExp</code> event.
+<p>However, more interesting is the fact that if we now use the context menu and navigate to <code>Astra Framework/Events/Generated/Experience</code>, we can find the <code>EntityGrantedExp</code> event.
 From here, you can follow the same steps as for the pre-defined game events to create a listener for this event, and to wire it up to the appropriate game logic.</p>
 <p>If you need to create more experience related events, you can repeat the process of adding new events to the <code>EntityLevelingEvents</code> game event generator.</p>
 <p>After having generated the source code for the game events, you can also click on the <code>Remove Event</code> button under each Game Event to remove it from the generator and delete the generated source code files.

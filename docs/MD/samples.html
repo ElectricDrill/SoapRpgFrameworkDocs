@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Samples | Astra RPG Framework </title>
+      <title>Samples | Astra Framework </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Samples | Astra RPG Framework ">
+      <meta name="title" content="Samples | Astra Framework ">
       
       
       <link rel="icon" href="../images/astra-rpg-ico.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.0.0/DocFx/MD/samples.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/remove-rpg-occurrences/DocFx/MD/samples.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -44,8 +44,8 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra RPG Framework">
-            Astra RPG Framework
+            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra Framework">
+            Astra Framework
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -89,9 +89,9 @@
 
 <h2 id="importing-the-samples">Importing the Samples</h2>
 <p>After having imported the package in your project, to import the samples into your project, head first to the package manager window. For latest versions of Unity, you can find it under <code>Window -&gt; Package Management -&gt; Package Manager</code>, otherwise, it should be under <code>Window -&gt; Package Manager</code>.</p>
-<p>From the package manager window, select the <code>In This Project</code> tab from the menu on the left, then select <code>AstraRPGFramework</code> from the list of packages. You'll notice that there are four tabs on the right side of the window: <code>Details</code>, <code>Version History</code>, <code>Dependencies</code>, and <code>Samples</code>. Select the <code>Samples</code> tab, then click on the <code>Import</code> button to import the desired samples in the project.</p>
-<p>The import will copy the samples of the package into your project's <code>Assets</code> folder, under <code>Assets/AstraRPGFramework</code>.</p>
-<p>The package currently exposes a single sample entry: <strong>Example scene and instances</strong>. Importing it creates <code>Assets/AstraRPGFramework/Examples</code>, which contains both the sample scene itself and all the supporting assets it needs.</p>
+<p>From the package manager window, select the <code>In This Project</code> tab from the menu on the left, then select <code>AstraFramework</code> from the list of packages. You'll notice that there are four tabs on the right side of the window: <code>Details</code>, <code>Version History</code>, <code>Dependencies</code>, and <code>Samples</code>. Select the <code>Samples</code> tab, then click on the <code>Import</code> button to import the desired samples in the project.</p>
+<p>The import will copy the samples of the package into your project's <code>Assets</code> folder, under <code>Assets/AstraFramework</code>.</p>
+<p>The package currently exposes a single sample entry: <strong>Example scene and instances</strong>. Importing it creates <code>Assets/AstraFramework/Examples</code>, which contains both the sample scene itself and all the supporting assets it needs.</p>
 <div class="IMPORTANT">
 <h5>Important</h5>
 <p>The assets in <code>Examples</code> are intended as reference material and learning aids.</p>
@@ -145,7 +145,7 @@ If you increase the Warrior's level to 2, <code>Physical Attack</code> becomes 6
 <p>After exiting play mode, inspect the modified objects. You'll see that the Warrior's level is reset to 1, <code>Physical Attack</code> returns to 28, and the <code>Physical Attack ASC</code> (ASC stands for Attribute Scaling Component) scaling for <code>Strength</code> is back to 1.<br>
 This happens because changes made to <code>ScriptableObjects</code> during play mode are not saved to disk when you exit play mode. This is intentional Unity behavior, not a package bug.<br>
 Persisting such changes would be risky. For example, if a debuff reduces the scaling of <code>Physical Attack</code> from <code>Strength</code> to zero during play mode and this is saved, you would permanently lose the original scaling—even after restarting without the debuff.<br>
-<code>ScriptableObjects</code> in this package are intended to define your game's baseline mechanics. Any modifications during play mode are temporary and not meant to be saved. Fine-tuning these values is crucial in RPGs, and once you achieve the desired balance, you want to ensure those values remain intact.</p>
+<code>ScriptableObjects</code> in this package are intended to define your game's baseline mechanics. Any modifications during play mode are temporary and not meant to be saved. Fine-tuning these values is crucial in games, and once you achieve the desired balance, you want to ensure those values remain intact.</p>
 <p>You can also explore the other heroes and all their components in the scene. Play around with their levels, stats scalings, attributes and their spendable points, and see how they affect the heroes' stats and attributes in real-time.</p>
 
 </article>
