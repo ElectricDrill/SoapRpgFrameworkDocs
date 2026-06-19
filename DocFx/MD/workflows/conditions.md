@@ -276,8 +276,8 @@ For custom editor wiring that connects a trigger field to a condition field and 
 
 The most direct built-in use of the system is `ConditionalGameAction<TContext>`, which wraps another `GameAction<TContext>` with an optional guard condition.
 
-- `Astra RPG Framework/Game Actions/Context: Entity/Conditional`
-- `Astra RPG Framework/Game Actions/Context: Component/Conditional`
+- `Astra Framework/Game Actions/Context: Entity/Conditional`
+- `Astra Framework/Game Actions/Context: Component/Conditional`
 
 If the configured condition evaluates to `false`, the nested action is skipped. If the condition field is left empty, the action behaves as always allowed.
 

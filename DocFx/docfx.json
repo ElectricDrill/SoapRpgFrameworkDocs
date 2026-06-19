@@ -57,8 +57,8 @@
         "modern"
       ],
       "globalMetadata": {
-          "_appName": "Astra RPG Framework",
-          "_appTitle": "Astra RPG Framework",
+          "_appName": "Astra Framework",
+          "_appTitle": "Astra Framework",
           "_appLogoPath": "images/logo-astra.svg",
           "_appFaviconPath": "images/astra-rpg-ico.ico",
           "_enableSearch": true,

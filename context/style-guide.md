@@ -1,4 +1,4 @@
-# Style Guide — Astra RPG Framework Documentation
+# Style Guide — Astra Framework Documentation
 
 > All documentation is written in **English**. Conversations with the user happen in **Italian**.
 > Follow this guide when writing or editing anything under `DocFx/`.
@@ -35,7 +35,7 @@
 |---|---|---|
 | Class, interface, method, generic type, enum, field in code context | `` `inline code` `` | `EntityCore`, `GameAction<TContext>`, `RunFireAndForget` |
 | Inspector field names and user-facing inspector labels | `**Bold**` | **Use constant value at level 1**, **Max Level** |
-| Unity asset creation paths and editor menu paths | `` `inline code` `` | `Astra RPG Framework -> Growth Formula`, `Tools > Astra RPG Framework > Validate All Growth Formulas` |
+| Unity asset creation paths and editor menu paths | `` `inline code` `` | `Astra Framework -> Growth Formula`, `Tools > Astra Framework > Validate All Growth Formulas` |
 | File, folder, asset, and package paths | `` `inline code` `` | `Packages/com.electricdrill.astra-rpg-framework/Runtime/Events` |
 | Version availability tags | `*🏷️ Version X.Y.Z+*` or inline `(🏷️*vX.Y.Z+*)` | `(🏷️*v1.4.0+*)` |
 

@@ -1,4 +1,4 @@
-# Source Reference — Astra RPG Framework Docs
+# Source Reference — Astra Framework Docs
 
 ## Primary paths
 
@@ -45,6 +45,6 @@ This means handwritten docs and generated API docs must stay aligned with the sa
 
 ## Scope reminder
 
-- This repository documents **Astra RPG Framework**
+- This repository documents **Astra Framework**
 - Companion packages in the same ecosystem may be useful for comparison, but they are not the primary source of truth here
 - When a feature belongs to a different package, avoid documenting it here as if it were part of the framework

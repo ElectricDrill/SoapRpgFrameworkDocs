@@ -131,7 +131,7 @@ In multi-object mode, reordering and click-to-ping are intentionally not the pri
 
 The visual pill rendering also has per-user editor preferences under:
 
-`Edit > Preferences > Astra RPG Framework > Game Tag Pills`
+`Edit > Preferences > Astra Framework > Game Tag Pills`
 
 These preferences let each developer customize how tag pills are presented locally in the Unity Editor. Available options include:
 

@@ -1,2 +1,2 @@
-# Astra RPG Framework Docs
-Documentation for the Astra RPG Framework Unity Package
+# Astra Framework Docs
+Documentation for the Astra Framework Unity Package

@@ -3,11 +3,11 @@
 ## Importing the Samples
 After having imported the package in your project, to import the samples into your project, head first to the package manager window. For latest versions of Unity, you can find it under `Window -> Package Management -> Package Manager`, otherwise, it should be under `Window -> Package Manager`.
 
-From the package manager window, select the `In This Project` tab from the menu on the left, then select `AstraRPGFramework` from the list of packages. You'll notice that there are four tabs on the right side of the window: `Details`, `Version History`, `Dependencies`, and `Samples`. Select the `Samples` tab, then click on the `Import` button to import the desired samples in the project.
+From the package manager window, select the `In This Project` tab from the menu on the left, then select `AstraFramework` from the list of packages. You'll notice that there are four tabs on the right side of the window: `Details`, `Version History`, `Dependencies`, and `Samples`. Select the `Samples` tab, then click on the `Import` button to import the desired samples in the project.
 
-The import will copy the samples of the package into your project's `Assets` folder, under `Assets/AstraRPGFramework`.
+The import will copy the samples of the package into your project's `Assets` folder, under `Assets/AstraFramework`.
 
-The package currently exposes a single sample entry: **Example scene and instances**. Importing it creates `Assets/AstraRPGFramework/Examples`, which contains both the sample scene itself and all the supporting assets it needs.
+The package currently exposes a single sample entry: **Example scene and instances**. Importing it creates `Assets/AstraFramework/Examples`, which contains both the sample scene itself and all the supporting assets it needs.
 
 > [!IMPORTANT]
 > The assets in `Examples` are intended as reference material and learning aids.
@@ -67,6 +67,6 @@ If you increase the Warrior's level to 2, `Physical Attack` becomes 61. Assignin
 After exiting play mode, inspect the modified objects. You'll see that the Warrior's level is reset to 1, `Physical Attack` returns to 28, and the `Physical Attack ASC` (ASC stands for Attribute Scaling Component) scaling for `Strength` is back to 1.  
 This happens because changes made to `ScriptableObjects` during play mode are not saved to disk when you exit play mode. This is intentional Unity behavior, not a package bug.  
 Persisting such changes would be risky. For example, if a debuff reduces the scaling of `Physical Attack` from `Strength` to zero during play mode and this is saved, you would permanently lose the original scaling—even after restarting without the debuff.  
-`ScriptableObjects` in this package are intended to define your game's baseline mechanics. Any modifications during play mode are temporary and not meant to be saved. Fine-tuning these values is crucial in RPGs, and once you achieve the desired balance, you want to ensure those values remain intact.
+`ScriptableObjects` in this package are intended to define your game's baseline mechanics. Any modifications during play mode are temporary and not meant to be saved. Fine-tuning these values is crucial in games, and once you achieve the desired balance, you want to ensure those values remain intact.
 
 You can also explore the other heroes and all their components in the scene. Play around with their levels, stats scalings, attributes and their spendable points, and see how they affect the heroes' stats and attributes in real-time.

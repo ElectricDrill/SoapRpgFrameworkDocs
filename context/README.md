@@ -1,6 +1,6 @@
-# Context — Astra RPG Framework Docs
+# Context — Astra Framework Docs
 
-This folder contains the working context for AI assistants operating on the Astra RPG Framework documentation.
+This folder contains the working context for AI assistants operating on the Astra Framework documentation.
 
 In this repository, `context/` is the canonical equivalent of the `.ai-context/` folder used in other Astra documentation repos.
 

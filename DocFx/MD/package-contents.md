@@ -1,6 +1,6 @@
 # Package Contents
 
-The package ships more than the sample scene. Besides examples, it includes the runtime and editor subsystems that Astra RPG Framework uses internally and exposes for your own project workflows.
+The package ships more than the sample scene. Besides examples, it includes the runtime and editor subsystems that Astra Framework uses internally and exposes for your own project workflows.
 
 For a guided tour of the sample content, see [Samples](samples.md).
 
@@ -19,7 +19,7 @@ For a guided tour of the sample content, see [Samples](samples.md).
 
 The package also contains editor-side tooling under `Editor/` that powers several authoring workflows documented elsewhere in this site:
 
-- the Project Settings page for the global Astra RPG Framework configuration
+- the Project Settings page for the global Astra Framework configuration
 - inspector support for `SerializeReference`-based authoring flows
 - the injected header pills used by taggable assets and components
 - helpers used by condition and game-action inspectors

@@ -1,6 +1,6 @@
 # Package Configuration
 
-The base Astra RPG Framework is designed for **zero setup out of the box** for runtime configuration: importing the **Utils** sample is all you need to get a fully working setup. The sample provides a pre-built `AstraFrameworkConfigSO` asset placed in a `Resources` subfolder (named `Astra Framework Config`), with the three required global events already wired up to the event instances also found in the sample. The editor bootstrapper auto-detects this asset and assigns it to the Global Settings the moment Unity loads, so no manual steps are required.
+The base Astra Framework is designed for **zero setup out of the box** for runtime configuration: importing the **Utils** sample is all you need to get a fully working setup. The sample provides a pre-built `AstraFrameworkConfigSO` asset placed in a `Resources` subfolder (named `Astra Framework Config`), with the three required global events already wired up to the event instances also found in the sample. The editor bootstrapper auto-detects this asset and assigns it to the Global Settings the moment Unity loads, so no manual steps are required.
 
 Authoring defaults are a separate **editor-only** convenience layer. They are fully optional, they do not affect runtime behavior, and leaving them empty preserves the same manual authoring workflow.
 
@@ -11,13 +11,13 @@ The configuration asset holds **Global Events** — the `GameEvent` ScriptableOb
 The quickest way to configure the framework is to import the **Utils** sample from the Package Manager:
 
 1. Open **Window → Package Manager**
-2. Select **Astra RPG Framework** in your project packages
+2. Select **Astra Framework** in your project packages
 3. Expand **Samples** and click **Import** next to **Utils**
 
 After import, your project will contain:
 
-- **`Assets/Samples/Astra RPG Framework/<version>/Utils/Resources/Astra Framework Config.asset`** — the ready-to-use configuration with all required events already assigned
-- **`Assets/Samples/Astra RPG Framework/<version>/Utils/EventInstances/`** — the individual event `ScriptableObject` assets referenced by the configuration
+- **`Assets/Samples/Astra Framework/<version>/Utils/Resources/Astra Framework Config.asset`** — the ready-to-use configuration with all required events already assigned
+- **`Assets/Samples/Astra Framework/<version>/Utils/EventInstances/`** — the individual event `ScriptableObject` assets referenced by the configuration
 
 The editor bootstrapper detects the config automatically and assigns it to the Global Settings. No Project Settings step is needed.
 
@@ -197,7 +197,7 @@ AstraFrameworkConfigProvider.Reset();
 ### Via Asset Menu
 
 1. Right-click in the **Project Window**
-2. Select **Create → Astra RPG Framework → Config**
+2. Select **Create → Astra Framework → Config**
 3. Name your configuration
 4. Assign it in Project Settings or in the Global Settings asset
 

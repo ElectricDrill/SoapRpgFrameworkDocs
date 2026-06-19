@@ -1,4 +1,4 @@
-# Copilot Instructions — Astra RPG Framework Docs
+# Copilot Instructions — Astra Framework Docs
 
 ## Bootstrap (read first)
 

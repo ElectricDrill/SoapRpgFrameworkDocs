@@ -45,7 +45,7 @@ private IDisplaySONameProvider _provider;
 
 ## 2. Running the migration tool
 
-The migration tool at `Tools → Astra RPG Framework → Migrate Managed References (SO Rename)` rewrites managed references in `.asset`, `.prefab`, and `.unity` files that `[MovedFrom]` alone cannot patch.
+The migration tool at `Tools → Astra Framework → Migrate Managed References (SO Rename)` rewrites managed references in `.asset`, `.prefab`, and `.unity` files that `[MovedFrom]` alone cannot patch.
 
 > [!IMPORTANT]
 > Do not enter Play Mode and do not commit your project until you have run the migration tool and verified the result. Managed references that still point at old type strings appear as missing and may cause `NullReferenceException`s at runtime.
@@ -55,7 +55,7 @@ The migration tool at `Tools → Astra RPG Framework → Migrate Managed Referen
 1. Close Play Mode, save all open scenes, and commit (or stash) your current work as a safety net.
 2. Open your project in Unity.
 3. Open every scene you want to migrate, **or** enable **Scan closed scenes** inside the tool (step 5) to let it open scenes automatically.
-4. Go to `Tools → Astra RPG Framework -> v2.0.0 Migration -> Migrate Managed References (SO Rename)`.
+4. Go to `Tools → Astra Framework -> v2.0.0 Migration -> Migrate Managed References (SO Rename)`.
 5. With **Dry-run** toggled **ON**, press **Scan**. Enable **Scan closed scenes** if needed. Review the `[plan]` lines — each one lists an asset and the managed reference that will be rewritten.
 6. If the plan looks correct, turn **Dry-run** OFF and press **Apply**. The tool asks for confirmation that a backup is in place before it proceeds.
 7. The tool writes a full log to `Library/AstraMigrationReport_<timestamp>.txt`.

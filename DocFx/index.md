@@ -3,18 +3,18 @@ _layout: landing
 ---
 
 > [!NOTE]
-> Join the Astra RPG Discord server!  
-> There is now a dedicated **Discord server** for Astra RPG Framework and its extensions.
+> Join the Astra Discord server!  
+> There is now a dedicated **Discord server** for Astra Framework and its extensions.
 > Join to **receive notifications** about new extension releases and important updates, to **ask for new features**, **report bugs**, **share ideas**, and **showcase your Astra creations** with other developers.  
 > <span style="font-size:1.18em; font-weight:600;">💬 Join the Discord Server: https://discord.gg/nJVRMkGrZg</span>
 
-## 🛠️ Astra RPG Framework
+## 🛠️ Astra Framework
 
 ### 👉 Introduction
 
-**Say goodbye to endless recompilations. Instantly balance your RPG's stats and formulas with a powerful data-driven system.**
+**Say goodbye to endless recompilations. Instantly balance your game's stats and formulas with a powerful data-driven system.**
 
-Astra RPG Framework provides a complete, data-driven backbone for your RPG, letting you define your game's foundations directly in the editor and iterate on **balance during play mode**.
+Astra Framework provides a complete, data-driven backbone for your game, letting you define your game's foundations directly in the editor and iterate on **balance during play mode**.
 
 Simple, lightweight, and easy to learn. No configuration required: **works out of the box with zero setup**.
 
@@ -43,7 +43,7 @@ Simple, lightweight, and easy to learn. No configuration required: **works out o
 
 #### 🕸️ Attributes
 
-Attributes are the core numerical values that define an entity's capabilities. In most RPGs these include strength, dexterity, intelligence, constitution, etc. You define your own attributes, choosing their names and min/max values as needed.
+Attributes are the core numerical values that define an entity's capabilities. In most games these include strength, dexterity, intelligence, constitution, etc. You define your own attributes, choosing their names and min/max values as needed.
 
 Group attributes into attribute sets—shareable objects reusable across entities.
 
@@ -110,7 +110,7 @@ They are implemented on top of Awaitables to support asynchronous operations and
 
 ### 🛒 Where to Buy
 
-Unity Asset Store: [Astra RPG](https://assetstore.unity.com/packages/tools/game-toolkits/astra-rpg-framework-334926)
+Unity Asset Store: [Astra Framework](https://assetstore.unity.com/packages/tools/game-toolkits/astra-rpg-framework-334926)
 
 ---
 

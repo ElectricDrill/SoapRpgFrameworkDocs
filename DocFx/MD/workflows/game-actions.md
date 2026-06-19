@@ -12,7 +12,7 @@ At authoring time, polymorphic action references are usually exposed through the
 
 ## Built-in action variants
 
-The `IHasEntity`-based variants are listed under `Astra RPG Framework/Game Actions/Context: Entity/` in the asset creation menu.
+The `IHasEntity`-based variants are listed under `Astra Framework/Game Actions/Context: Entity/` in the asset creation menu.
 
 The framework includes several built-in `GameAction` implementations for `IHasEntity` contexts:
 
@@ -23,7 +23,7 @@ The framework includes several built-in `GameAction` implementations for `IHasEn
 - **Composite** (`Context: Entity/Composite`): Executes a sequence of `GameAction<IHasEntity>` actions in order, passing the same context to each
 - **Delayed** (`Context: Entity/Delayed`): Executes a `GameAction<IHasEntity>` after a specified delay (in seconds)
 - **Conditional** (`Context: Entity/Conditional`): Executes a `GameAction<IHasEntity>` only when a configured condition evaluates to true against the entity
-- **Do Nothing** (`Context: Entity/Do Nothing`): Does nothing. Useful as a placeholder, for testing workflows, or to satisfy required fields that must reference a `GameAction` (for example, default on-death and on-resurrection actions in Astra RPG Health)
+- **Do Nothing** (`Context: Entity/Do Nothing`): Does nothing. Useful as a placeholder, for testing workflows, or to satisfy required fields that must reference a `GameAction` (for example, default on-death and on-resurrection actions in Astra Health)
 - **Increase Counter** (`Context: Entity/Increase Counter`): Increases the value of a `LongRef` by a specified amount. Negative values decrease the counter. Useful for tracking statistics like enemies defeated, entities spawned, or interactions performed
 - **→ Component Projection** (`Context: Entity/Projections/→ Component Projection`): Bridges an `IHasEntity` context to an inner `GameAction<Component>`, by passing `context.Entity` as the component. Use this to reuse existing `Component`-based actions on entity event listeners. Note that rich payload data (damage amounts, level deltas, etc.) is discarded. Use this only for structural actions that only need to know which entity was involved
 
