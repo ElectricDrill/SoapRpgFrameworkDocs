@@ -14,6 +14,8 @@
     href: workflows/conditions.md
   - name: Advanced Topics
     href: workflows/advanced-topics.md
+  - name: Editor Windows
+    href: workflows/editor-windows.md
 - name: Limitations
   href: limitations.md
 - name: Requirements
