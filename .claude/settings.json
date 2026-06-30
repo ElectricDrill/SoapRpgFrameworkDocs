@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rtk git *)",
+      "Read(//home/emaci/Documents/AstraPublishing_6_3_2D_URP/Packages/**)",
+      "Bash(rtk grep *)"
+    ]
+  }
+}
