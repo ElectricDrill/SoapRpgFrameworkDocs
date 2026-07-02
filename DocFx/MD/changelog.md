@@ -8,6 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added support for Unity 6.5.
 - The framework was rebranded from "_Astra RPG Framework_" to "_Astra Framework_" to better reflect its expanded scope beyond RPG mechanics. So far, the framework is still using rpg in the namespaces, DLLs, and package technical name, to prevent breaking changes for existing projects. The full rebranding will be completed in a future major release.
 
+## [2.0.1] - 2026-06-21
+
+### Added
+- Added support for Unity v6.5
+
+### Changed
+- Rebranded the framework to "Astra Framework" ("RPG" was dropped)
+
 ## [2.0.0] - 2026-05-05
 
 > [!WARNING]
