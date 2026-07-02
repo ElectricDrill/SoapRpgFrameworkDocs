@@ -4,9 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [2.0.1] - 2026-06-19
-- Added support for Unity 6.5.
-- The framework was rebranded from "_Astra RPG Framework_" to "_Astra Framework_" to better reflect its expanded scope beyond RPG mechanics. So far, the framework is still using rpg in the namespaces, DLLs, and package technical name, to prevent breaking changes for existing projects. The full rebranding will be completed in a future major release.
+## [2.1.0] - 2026-07-13
+
+### Added
+#### Editor Features
+- Added Class Dashboard Window: Allows to inspect all defined classes in a single place. You can visualize all the GrowthFormula used in a certain class in the same graph.
+- Added Growth Curves Comparison Window: Lets you to compare multiple classes (up to 4), easing balancing and tuning. Also allows to compare multiple GrowthFormulas of any kind.
+- Added Game Tag Browser Window: Enables browsing of assets basing of assigned Game Tags. If you used Game Tags along your project, will greatly ease the navigation of your assets.
 
 ## [2.0.1] - 2026-06-21
 
