@@ -1,5 +1,25 @@
 # Migration Guide
 
+## Migrating to v2.2.0
+
+v2.2.0 introduces pluggable fixed base attribute and stat sources (see the `v2.2.0` entry in [Changelog](changelog.md)). This is fully backward-compatible: **no manual migration steps are required**, but it's worth understanding what happens automatically behind the scenes.
+
+### Automatic migration of fixed base values
+
+Internally, `EntityAttributes` and `EntityStats` used to store fixed base values in a raw dictionary field (`_fixedBaseAttributes` / `_fixedBaseStats`). Starting with v2.2.0, that storage is wrapped in the new `FixedAttributeValues` / `FixedStatValues` types, which also back the new asset-based source (`FixedAttributeValuesSO` / `FixedStatValuesSO`) and any custom `IFixedAttributeSource` / `IFixedStatSource` implementation through the same code path.
+
+To preserve existing data, the old field was renamed to `_legacyFixedBaseAttributes` / `_legacyFixedBaseStats` and kept around purely as a migration source. Unity's `[FormerlySerializedAs]` attribute keeps the link to the old field name, so previously serialized values are still found correctly under the new name. The first time each `EntityAttributes` or `EntityStats` component is enabled after updating — in the editor or in a build — it copies any data found in the legacy field into the new one and marks itself as migrated, so the copy only ever runs once per object.
+
+> [!NOTE]
+> The legacy field is copied from, never cleared. If anything looks off after updating, your original values are still there as a recovery path. The legacy field itself will be removed entirely in a future version, once the migration has had time to run across existing projects.
+
+This migration is unconditional (it is not editor-only), because a player build loading a prefab or scene serialized under an older package version needs to migrate the first time it loads too, not just when opened in the editor.
+
+> [!TIP]
+> Both renamed fields are `internal` to the framework, so this migration is invisible to regular package usage. It only matters if your project reaches into these fields directly by name — for example through reflection-based editor tooling or automated scene/prefab setup scripts. If it does, update the field name references to `_fixedAttributeValues` / `_fixedStatValues`.
+
+No changes are required to existing calls to `SetFixed`, to authored `Fixed Base Attributes` / `Fixed Base Stats` inspector rows, or to any other public API — they all continue to work exactly as before, now backed by the new storage.
+
 ## Migrating to v2.0.0
 
 v2.0.0 introduces new major subsystems such as Conditions, Game Tags, reactive triggers, and global framework configuration. Most of these additions are additive, but this release also includes a few breaking API changes and some behavior changes that existing projects should review carefully.

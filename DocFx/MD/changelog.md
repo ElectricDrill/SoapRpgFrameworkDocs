@@ -7,10 +7,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [2.1.0] - 2026-07-13
 
 ### Added
+#### Runtime Features
+- Added `IFixedAttributeSource` and `IFixedStatSource`, minimal point-queried interfaces that supply fixed (non-class-derived) base attribute/stat values to `EntityAttributes`/`EntityStats`, plus the `FixedAttributeValues`/`FixedStatValues` serializable wrapper types that back the framework's own inline and asset-backed sources.
+- Added `FixedAttributeValuesSO`/`FixedStatValuesSO`, standalone assets holding fixed base values that can be shared across multiple entities, together with the `EntityAttributes.FixedAttributeValuesAsset`/`EntityStats.FixedStatValuesAsset` fields and the `Use Fixed Attribute Values Asset`/`Use Fixed Stat Values Asset` toggle.
+- Added `EntityAttributes.SetFixedAttributeSource`/`EntityStats.SetFixedStatSource`, with an `IReadOnlyDictionary` overload, to inject fixed base values from any custom source (save data, procedural generation, live-ops config) at runtime.
+- Added `EntityAttributes.SetFixedAttributeSet`/`EntityStats.SetFixedStatSet` to swap the `AttributeSetSO`/`StatSetSO` used for fixed base values at runtime.
+- Added `Assets > Create > Astra Framework > Fixed Attribute Values` and `Fixed Stat Values` asset creation menu items, with dedicated custom editors for authoring their values.
+- Added the `Use Fixed Attribute Values Asset`/`Use Fixed Stat Values Asset` toggle to the `EntityAttributesEditor`/`EntityStatsEditor` inspectors.
 #### Editor Features
 - Added Class Dashboard Window: Allows to inspect all defined classes in a single place. You can visualize all the GrowthFormula used in a certain class in the same graph.
 - Added Growth Curves Comparison Window: Lets you to compare multiple classes (up to 4), easing balancing and tuning. Also allows to compare multiple GrowthFormulas of any kind.
 - Added Game Tag Browser Window: Enables browsing of assets basing of assigned Game Tags. If you used Game Tags along your project, will greatly ease the navigation of your assets.
+
+### Changed
+#### Runtime Features
+- `EntityAttributes` and `EntityStats` now store fixed base values internally through the new `FixedAttributeValues`/`FixedStatValues` wrapper types instead of a raw dictionary field. Existing serialized data migrates automatically the first time each object loads; see [Migrating to v2.1.0](./migration-guide.md#migrating-to-v210) in the Migration Guide.
 
 ## [2.0.1] - 2026-06-21
 

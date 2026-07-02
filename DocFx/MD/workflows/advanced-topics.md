@@ -75,6 +75,50 @@ if (statReader.TryGetBase(physicalAttackStat, out long basePhysicalAttack))
 
 `Get` and `GetBase` can still be convenient on concrete containers when you already know the asset exists, but `TryGet` and `TryGetBase` are the safer default for reusable code paths. This is especially relevant in v2.0.0 because `StatSetInstance` is no longer an `IStatReader`; code that needs a generic stat reader should depend on `EntityCore`, `EntityStats`, or another explicit `IStatReader` provider instead.
 
+## Pluggable fixed base value sources
+*🏷️ Version 2.2.0+*
+
+Fixed base attributes and stats no longer have to come from the Inspector alone. `EntityAttributes` and `EntityStats` source their fixed base values through `IFixedAttributeSource` and `IFixedStatSource`, two minimal, point-queried contracts:
+
+```csharp
+public interface IFixedAttributeSource : IValueContainer<AttributeSO>
+{
+    long GetBase(AttributeSO attribute);
+}
+
+public interface IFixedStatSource : IValueContainer<StatSO>
+{
+    long GetBase(StatSO stat);
+}
+```
+
+The inline values shown in the Inspector and the asset-backed `FixedAttributeValuesSO` / `FixedStatValuesSO` (see [Fixed base attribute sources](workflows.md#fixed-base-attribute-sources) and [Fixed base stat sources](workflows.md#fixed-base-stat-sources)) both implement these interfaces, but you can also supply your own implementation, backed by save data, procedural generation, live-ops config, or any other source.
+
+### Swapping fixed base values at runtime
+
+`SetFixedAttributeSource` (and its `EntityStats` counterpart, `SetFixedStatSource`) replaces every fixed base value from a source in one call:
+
+```csharp
+entityAttributes.SetFixedAttributeSource(myCustomSource);
+
+// Or from a plain dictionary (e.g. deserialized save data), without implementing the interface:
+entityAttributes.SetFixedAttributeSource(new Dictionary<AttributeSO, long> {
+    { strengthAttribute, 14 },
+    { constitutionAttribute, 12 },
+});
+```
+
+The provided source must cover every attribute (or stat) in the entity's current attribute/stat set; an assertion failure is raised otherwise. Only one `OnAttributeChanged` / `OnStatChanged` event is raised per attribute or stat whose final value actually changed, reusing the same bulk-update machinery as level-up/level-down transitions.
+
+> [!WARNING]
+> `SetFixedAttributeSource` / `SetFixedStatSource` always write into the inline values, never into an assigned `FixedAttributeValuesAsset` / `FixedStatValuesAsset`. An asset can be shared across multiple entities, so a per-entity runtime override should not leak into it. If `Use Fixed Attribute Values Asset` (or the stat equivalent) is enabled, disable it first — otherwise the injected values are ignored until you do.
+
+### Swapping the attribute/stat set at runtime
+
+`SetFixedAttributeSet(AttributeSetSO)` and `SetFixedStatSet(StatSetSO)` replace the schema used for fixed base values at runtime, reconciling existing values for the attributes/stats shared between the old and new set and defaulting new entries to `0`. Neither raises per-attribute/per-stat change events, matching the framework's existing behavior when a set change is detected elsewhere (from the `AttributeSet` getter, or from `OnValidate`).
+
+Call `SetFixedAttributeSet` / `SetFixedStatSet` and `SetFixedAttributeSource` / `SetFixedStatSource` as two separate, sequential calls rather than combining them: swapping the set first ensures the source you inject afterward is validated against the set that is actually active.
+
 ## Rounding double-based calculations
 *🏷️ Version 2.0.0+*
 
