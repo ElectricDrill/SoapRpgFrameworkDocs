@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Editor Windows | Astra RPG Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Editor Windows | Astra RPG Framework ">
+      
+      
+      <link rel="icon" href="../../images/astra-rpg-ico.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.2.0/DocFx/MD/workflows/editor-windows.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo-astra.svg" alt="Astra RPG Framework">
+            Astra RPG Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="editor-windows">Editor Windows</h1>
+
+<p><em>🏷️ Version 2.1.0+</em></p>
+<p>Astra Framework ships three built-in editor windows aimed at balancing and overview work. The Class Dashboard gives you a holistic picture of a class's growth formula coverage at a glance. The Growth Curve Comparison lets you overlay and compare stat and attribute progressions across multiple classes to support balancing decisions. The Game Tag Browser lets you search and navigate project assets by their assigned tags. All three are accessible from the <code>Tools &gt; Astra Framework</code> menu and update automatically when project assets change.</p>
+<table>
+<thead>
+<tr>
+<th>Window</th>
+<th>Menu path</th>
+<th>Primary purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#class-dashboard">Class Dashboard</a></td>
+<td><code>Tools &gt; Astra Framework &gt; Class Dashboard</code></td>
+<td>Holistic overview of a class's growth formula coverage; spot missing or invalid formulas and jump into curve comparison</td>
+</tr>
+<tr>
+<td><a href="#growth-curve-comparison">Growth Curve Comparison</a></td>
+<td><code>Tools &gt; Astra Framework &gt; Growth Curve Comparison</code></td>
+<td>Overlay and compare stat and attribute progressions across up to four classes; balance stat budgets with the Matrix table</td>
+</tr>
+<tr>
+<td><a href="#game-tag-browser">Game Tag Browser</a></td>
+<td><code>Tools &gt; Astra Framework &gt; Game Tag Browser</code></td>
+<td>Find all assets that carry a given combination of <code>GameTagSO</code> tags</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="class-dashboard">Class Dashboard</h2>
+<p>The Class Dashboard is a three-column window designed to give you a complete picture of a class's growth formula coverage in one place. From here you can immediately see which formulas are missing or invalid, assign them inline, and review all curves at once in the right panel. When you need to compare curves across multiple classes, use the <strong>Open Comparison Window</strong> button to bring up the Growth Curve Comparison window.</p>
+<p><img src="../../images/workflows/editor-windows/class-dashboard-overview.png" alt="Class Dashboard — overview showing the three-column layout"></p>
+<!-- IMAGE MISSING: class-dashboard-overview.png — full window screenshot showing class list on the left, formula list in the middle, and graph/table on the right -->
+<h3 id="opening-the-window">Opening the window</h3>
+<ul>
+<li><code>Tools &gt; Astra Framework &gt; Class Dashboard</code> — opens the window without a pre-selected class.</li>
+<li>From a <code>ClassSO</code> inspector — use the <strong>Open in Dashboard</strong> button to open the window with that class already selected.</li>
+</ul>
+<h3 id="class-list-left-panel">Class list (left panel)</h3>
+<p>The left column lists every <code>ClassSO</code> found in the project, sorted alphabetically. A search field at the top filters the list as you type. Selecting a class populates the middle column.</p>
+<h3 id="formula-list-middle-panel">Formula list (middle panel)</h3>
+<p>The middle column shows one row per growth slot in the selected class: <strong>Max HP</strong>, then every stat in the assigned <code>StatSet</code>, then every attribute in the assigned <code>AttributeSet</code>. Slots are grouped by section headers (<strong>Stats</strong>, <strong>Attributes</strong>).</p>
+<p>When a class is selected for the first time in the session, all rows are checked by default, so the right panel immediately shows a full overview of every curve. Use the checkboxes, the <strong>All</strong> master toggle, or the per-section toggles to narrow the selection — or use <a href="#solo--un-solo-1">Solo / un-solo</a> to focus on a single curve without unchecking everything else.</p>
+<p>At the top of the list, an <strong>All</strong> master row contains a toggle that checks or unchecks every slot simultaneously. Each section header (<strong>Stats</strong>, <strong>Attributes</strong>) also carries its own toggle to check or uncheck all slots within that section at once.</p>
+<p>Each individual row contains:</p>
+<ul>
+<li>A <strong>status bar</strong> on the left edge — red when the formula slot is empty, yellow when the assigned formula has validation errors.</li>
+<li>A <strong>checkbox</strong> — check it to include that curve in the right-panel preview.</li>
+<li>A <strong>color field</strong> — visible whenever a formula is assigned (regardless of the checkbox state). Click it to open a native color picker; the chosen color is saved to <code>EditorPrefs</code> and persists across sessions. Right-click the row to reset the color to its default. The color is shared with the Growth Curve Comparison window through the same underlying <code>StatColorPrefs</code> storage.</li>
+<li>The <strong>slot name</strong> — click to solo or un-solo the row (see <a href="#solo--un-solo-1">Solo / un-solo</a>). The name is displayed in bold when the row is the active solo or when it belongs to the Max HP slot. Hovering shows a tooltip with the min, max, and final values of the curve over its full level range.</li>
+<li>A <strong>⚠ warning icon</strong> with a tooltip listing validation errors, shown when the formula exists but has errors.</li>
+<li>An <strong>object field</strong> where you can assign or reassign a <code>GrowthFormulaSO</code> directly.</li>
+</ul>
+<p><img src="../../images/workflows/editor-windows/class-dashboard-formula-health.png" alt="Class Dashboard — formula health indicators showing a red bar for a missing formula and a warning icon for an invalid one"></p>
+<h4 id="solo--un-solo">Solo / un-solo</h4>
+<p>Clicking a slot name in the formula list <strong>solos</strong> that curve: all other checked rows are temporarily hidden in the right-panel preview so you can inspect a single progression in isolation. The name turns bold to indicate the solo state.</p>
+<p>Clicking the same name again <strong>un-solos</strong> it and restores the previous checked state exactly as it was before soloing. Toggling any checkbox, the master toggle, or a section toggle also clears the solo automatically.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Solo is a transient, session-only state. It is not saved when switching classes or closing the window.</p>
+</div>
+<h4 id="formula-health-bar">Formula health bar</h4>
+<p>When one or more slots are missing a formula or have validation errors, a status bar appears at the bottom of the middle panel. It shows the count of missing and invalid formulas and, when there are missing ones, a <strong>Create missing</strong> button. Clicking it opens the same growth-formula auto-creation dialog used by the <code>ClassSO</code> inspector, letting you batch-create and assign a <code>GrowthFormulaSO</code> for every empty slot in one step.</p>
+<h4 id="open-comparison-window">Open Comparison Window</h4>
+<p>The <strong>Open Comparison Window</strong> button at the bottom of the middle panel opens the <a href="#growth-curve-comparison">Growth Curve Comparison</a> window pre-loaded with the currently selected class in <strong>From Class</strong> mode. Use it when you want to compare this class's curves against one or more other classes — the Class Dashboard itself is sufficient for reviewing all curves of a single class at once.</p>
+<h3 id="curve-preview-right-panel">Curve preview (right panel)</h3>
+<p>The right column shows a chart and a value table for every row that has its checkbox ticked. Check multiple rows to overlay their curves and compare values side by side.</p>
+<p>When no rows are checked, the right panel shows a hint. When checked rows have no assigned formula, the chart is empty but the panel stays visible.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The checked state is remembered per class within the current session. Switching to another class and back restores the same selection. A class that has never been visited in the current session always opens with all rows pre-checked.</p>
+</div>
+<hr>
+<h2 id="growth-curve-comparison">Growth Curve Comparison</h2>
+<p>The Growth Curve Comparison window is the primary balancing tool in the framework. It lets you overlay the stat and attribute progression curves of up to four classes simultaneously, inspect numeric values level by level, and compare stat budgets across classes at any target level — all from a single resizable window.</p>
+<h3 id="opening-the-window-1">Opening the window</h3>
+<ul>
+<li><code>Tools &gt; Astra Framework &gt; Growth Curve Comparison</code> — opens the window in <strong>From Class</strong> mode with no class pre-selected.</li>
+<li><strong>Open Comparison Window</strong> button in the <a href="#class-dashboard">Class Dashboard</a> — opens the window in From Class mode with the dashboard's current class pre-loaded.</li>
+<li>From a <code>ClassSO</code> inspector — opens the window (or focuses an existing one) for that class.</li>
+<li>From a <code>GrowthFormulaSO</code> inspector — opens the window in Manual mode, appending the formula if a Manual-mode window is already open.</li>
+</ul>
+<h3 id="layout">Layout</h3>
+<p>The window is split into a left pane (mode selector and chart) and a right panel (legend and table).</p>
+<h3 id="input-modes">Input modes</h3>
+<p>The <strong>Input</strong> dropdown in the toolbar switches between two modes.</p>
+<h4 id="from-class-mode">From Class mode</h4>
+<p>In From Class mode, drop one or more <code>ClassSO</code> assets into the class fields. Up to four classes can be loaded simultaneously.</p>
+<p>Each class is assigned a distinct <strong>line style</strong> to keep curves visually distinguishable even when colors overlap:</p>
+<table>
+<thead>
+<tr>
+<th>Class slot</th>
+<th>Line style</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1st</td>
+<td>Solid <code>───</code></td>
+</tr>
+<tr>
+<td>2nd</td>
+<td>Dashed <code>- -</code></td>
+</tr>
+<tr>
+<td>3rd</td>
+<td>Dotted <code>···</code></td>
+</tr>
+<tr>
+<td>4th</td>
+<td>Dash-dot <code>-·-</code></td>
+</tr>
+</tbody>
+</table>
+<p>When two or more classes are loaded, the legend reorganizes into a <strong>COMMON</strong> section containing curves that are shared by every loaded class (same stat or attribute), followed by per-class sections for slots that are unique to each class.</p>
+<p><img src="../../images/workflows/editor-windows/growth-curve-comparison-multi-class.png" alt="Growth Curve Comparison — multi-class view with a COMMON section and per-class sections in the legend"></p>
+<p>In this image, all classes have all stats and attributes in common.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A stat or attribute is considered common when it is present in every selected class, regardless of the actual formula assigned to it.</p>
+</div>
+<h4 id="manual-mode">Manual mode</h4>
+<p>In Manual mode, load <code>GrowthFormulaSO</code> assets by dragging them onto the drop zone or by selecting them through the picker field to the right of the drop zone. Duplicate formulas are silently ignored. Use <strong>Clear</strong> to remove all loaded formulas.</p>
+<p><img src="../../images/workflows/editor-windows/growth-curve-comparison-manual.png" alt="Growth Curve Comparison — Manual mode with the drop zone and a formula picker"></p>
+<h3 id="toolbar">Toolbar</h3>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Input</strong> dropdown</td>
+<td>Switch between From Class and Manual mode</td>
+</tr>
+<tr>
+<td><strong>Levels</strong> fields (From – To)</td>
+<td>Set the level range shown on the chart and in the table</td>
+</tr>
+<tr>
+<td><strong>Log</strong> toggle</td>
+<td>Switch the Y axis between linear and logarithmic scale, useful for exponential curves</td>
+</tr>
+<tr>
+<td><strong>Export CSV</strong></td>
+<td>Save the values of all visible curves to a <code>.csv</code> file</td>
+</tr>
+</tbody>
+</table>
+<p>The level range is auto-populated from the longest formula in the current set when a new source is loaded.</p>
+<h3 id="legend">Legend</h3>
+<p>The legend panel lists every loaded curve. At the top is a master <strong>All</strong> toggle that shows or hides all curves at once.</p>
+<p>Below the master row, curves are grouped by section (Max HP, Stats, Attributes) when loaded from a class. Each section header has its own toggle to show or hide the entire section.</p>
+<p>Each curve row contains:</p>
+<ul>
+<li><strong>Visibility toggle</strong> — show or hide the curve individually.</li>
+<li><strong>Color swatch</strong> — click to open a color picker. The chosen color is saved to <code>EditorPrefs</code> and persists across sessions and window instances. The same stat or attribute keeps its color across all classes loaded in the window.</li>
+<li><strong>Line-style icon</strong> — visible in the COMMON section to indicate which class each entry belongs to.</li>
+<li><strong>Curve name</strong> — click to solo or un-solo the curve (see below).</li>
+<li><strong>Stats summary</strong> — shows <code>↓ min  ↑ max  → final</code> values over the current level range.</li>
+</ul>
+<p>Right-clicking a row opens a context menu with <strong>Reset Color to Default</strong> (clears the saved color for that slot) and <strong>Reset All Saved Colors</strong>.</p>
+<h4 id="solo--un-solo-1">Solo / un-solo</h4>
+<p>Clicking a curve name in the legend <strong>solos</strong> that curve: all other curves are hidden so you can inspect it in isolation. The name turns bold to indicate the solo state. Clicking it again <strong>restores</strong> the previous visibility state for all curves.</p>
+<p><img src="../../images/workflows/editor-windows/growth-curve-comparison-solo.png" alt="Growth Curve Comparison — solo state with one curve isolated and the others hidden"></p>
+<p>In <strong>From Class mode with multiple classes</strong>, soloing a curve groups it with all curves that represent the same stat or attribute across every loaded class. For example, soloing the <code>Physical Attack</code> row of the first class also keeps the <code>Physical Attack</code> rows of the second and third class visible, so you can compare how the same stat grows differently per class without losing context.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Use solo to focus on a single stat during balancing without manually toggling all other curves off — and un-solo with a second click to return to the full picture immediately.</p>
+</div>
+<h3 id="table-panel">Table panel</h3>
+<p>The collapsible table panel (▼ / ▶) below the legend shows numeric values. Use the <strong>Values / Matrix</strong> dropdown to switch between the two table modes.</p>
+<h4 id="values-table">Values table</h4>
+<p>Values mode shows one column per visible curve and one row per level, from the <strong>From</strong> level to the <strong>To</strong> level. Up to 1 000 levels are shown inline; if the range is larger, a message at the bottom of the table directs you to Export CSV.</p>
+<h4 id="matrix-table">Matrix table</h4>
+<p>Matrix mode shows classes as columns and stats or attributes as rows, at a single pinned level. This is designed for cross-class balance comparisons.</p>
+<p><img src="../../images/workflows/editor-windows/growth-curve-comparison-matrix.png" alt="Growth Curve Comparison — Matrix table comparing three classes at level 20"></p>
+<p>Matrix-specific controls:</p>
+<ul>
+<li><strong>Lv.</strong> field — the level at which class values are compared. Defaults to the <strong>To</strong> level.</li>
+<li><strong>Δ vs 1st</strong> toggle — replaces absolute values with the signed difference relative to the first class. Cells turn green when a class is higher than the first class and red when lower.</li>
+<li><strong>Sections</strong> dropdown — choose which sections (Max HP, Stats, Attributes) are included in the rows and in the <strong>Total</strong> row.</li>
+</ul>
+<p>Without the Δ toggle, cells within each row are colored with a <strong>heat map</strong>: the lowest value in the row is red, the highest is green. This makes it easy to spot at a glance which class has the highest or lowest value for each stat at the chosen level.</p>
+<p>A <strong>Total</strong> row at the bottom sums all visible stat values for each class (respecting the section filter), giving a quick measure of the overall stat budget per class.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Use Matrix mode at key milestone levels (e.g., levels 1, 10, 20, max) to verify that class stat budgets remain balanced at each progression gate.</p>
+</div>
+<hr>
+<h2 id="game-tag-browser">Game Tag Browser</h2>
+<p>The Game Tag Browser lets you find every asset in the project that carries a given combination of <code>GameTagSO</code> tags. It updates automatically whenever assets are created, deleted, or modified.</p>
+<p><img src="../../images/workflows/editor-windows/game-tag-browser-overview.png" alt="Game Tag Browser — overview showing the tag list on the left and the asset list on the right"></p>
+<h3 id="opening-the-window-2">Opening the window</h3>
+<ul>
+<li><code>Tools &gt; Astra Framework &gt; Game Tag Browser</code> — opens the window with no tag pre-selected.</li>
+<li>From a <code>GameTagSO</code> inspector — opens the window with that tag already selected and the matching assets shown immediately.</li>
+</ul>
+<h3 id="selecting-tags-left-panel">Selecting tags (left panel)</h3>
+<p>The left panel lists every <code>GameTagSO</code> found in the project, rendered as pill badges identical to the ones shown in inspectors. A search field at the top filters the list by tag name.</p>
+<ul>
+<li><strong>Click</strong> a tag to select it (highlight in blue) and add it to the filter. Click it again to deselect.</li>
+<li><strong>Shift+click</strong> a tag to range-select all tags between the last clicked tag and the current one.</li>
+<li><strong>Clear</strong> removes all selections.</li>
+</ul>
+<p>The summary line in the right panel updates as you select tags to show exactly which tags the filter is currently using.</p>
+<h3 id="asset-list-right-panel">Asset list (right panel)</h3>
+<p>The right panel shows all assets that match the selected tags, grouped by asset type. Each group is collapsible and displays a count badge.</p>
+<p>The <strong>Match ANY / Match ALL</strong> dropdown in the header controls the filter logic:</p>
+<ul>
+<li><strong>Match ANY</strong> (default) — includes any asset that carries at least one of the selected tags (logical OR).</li>
+<li><strong>Match ALL</strong> — includes only assets that carry every selected tag simultaneously (logical AND).</li>
+</ul>
+<p>The <strong>Filter assets</strong> text field in the header filters the asset list by name within the current tag selection.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The tag filter and the asset-name filter are independent. You can narrow by tags first and then further narrow by asset name, or use either filter alone.</p>
+</div>
+<h3 id="asset-row-actions">Asset row actions</h3>
+<p>Each asset in the list has up to three action buttons:</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Select</strong></td>
+<td>Selects the asset in the Project window and pings it</td>
+</tr>
+<tr>
+<td><strong>Inspect</strong></td>
+<td>Opens the asset in a floating Property Editor</td>
+</tr>
+<tr>
+<td><strong>View Curves</strong></td>
+<td>Opens the <a href="#growth-curve-comparison">Growth Curve Comparison</a> window for the asset — available for <code>GrowthFormulaSO</code> and <code>ClassSO</code> assets</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

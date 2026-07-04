@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class DefaultDisplaySONameProvider | Astra Framework </title>
+      <title>Interface IFixedAttributeSource | Astra RPG Framework </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class DefaultDisplaySONameProvider | Astra Framework ">
+      <meta name="title" content="Interface IFixedAttributeSource | Astra RPG Framework ">
       
-      <meta name="description" content="Default implementation of  that returns the asset&#39;s name.">
+      <meta name="description" content="Supplies fixed (non-class-derived) base attribute values to an  component. Implementations can back this with the inline  wrapper, a dedicated ScriptableObject asset, or any custom data source (save files, procedural generation, live-ops config) via .">
       <link rel="icon" href="../images/astra-rpg-ico.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Cis8/AstraRpgFramework/new/main/apiSpec/new?filename=ElectricDrill_AstraRpgFramework_Utils_UI_DefaultDisplaySONameProvider.md&amp;value=---%0Auid%3A%20ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/Cis8/AstraRpgFramework/new/main/apiSpec/new?filename=ElectricDrill_AstraRpgFramework_Attributes_IFixedAttributeSource.md&amp;value=---%0Auid%3A%20ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -44,8 +44,8 @@
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
           <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra Framework">
-            Astra Framework
+            <img id="logo" class="svg" src="../images/logo-astra.svg" alt="Astra RPG Framework">
+            Astra RPG Framework
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-three-dots"></i>
@@ -84,89 +84,78 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider">
+        <article data-uid="ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource">
 
 
 
-  <h1 id="ElectricDrill_AstraRpgFramework_Utils_UI_DefaultDisplaySONameProvider" data-uid="ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider" class="text-break">
-Class DefaultDisplaySONameProvider  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/UI/DefaultDisplaySONameProvider.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <h1 id="ElectricDrill_AstraRpgFramework_Attributes_IFixedAttributeSource" data-uid="ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource" class="text-break">
+Interface IFixedAttributeSource  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/IFixedAttributeSource.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="ElectricDrill.html">ElectricDrill</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.html">AstraRpgFramework</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.html">Utils</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.UI.html">UI</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ElectricDrill.html">ElectricDrill</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.html">AstraRpgFramework</a>.<a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.html">Attributes</a></dd></dl>
   <dl><dt>Assembly</dt><dd>com.electricdrill.astra-rpg-framework.Runtime.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Default implementation of <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider.html">IDisplaySONameProvider</a> that returns the asset's name.</p>
+  <div class="markdown summary"><p>Supplies fixed (non-class-derived) base attribute values to an <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html">EntityAttributes</a>
+component. Implementations can back this with the inline <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.html">FixedAttributeValues</a>
+wrapper, a dedicated ScriptableObject asset, or any custom data source (save files, procedural
+generation, live-ops config) via <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SetFixedAttributeSource_ElectricDrill_AstraRpgFramework_Attributes_IFixedAttributeSource_">SetFixedAttributeSource(IFixedAttributeSource)</a>.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Serializable]
-[MovedFrom(true, &quot;ElectricDrill.AstraRpgFramework.Utils.UI&quot;, null, &quot;DefaultDisplaySONameProvider`1&quot;)]
-public class DefaultDisplaySONameProvider : IDisplaySONameProvider</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IFixedAttributeSource : IValueContainer&lt;AttributeSO&gt;</code></pre>
   </div>
 
 
 
 
-  <dl class="typelist inheritance">
-    <dt>Inheritance</dt>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
     <dd>
-      <div><span class="xref">object</span></div>
-      <div><span class="xref">DefaultDisplaySONameProvider</span></div>
-    </dd>
-  </dl>
-
-  <dl class="typelist implements">
-    <dt>Implements</dt>
-    <dd>
-      <div><a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.UI.IDisplaySONameProvider.html">IDisplaySONameProvider</a></div>
-    </dd>
-  </dl>
+    <div>
+      <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html#ElectricDrill_AstraRpgFramework_Utils_IValueContainer_1_Contains__0_">IValueContainer&lt;AttributeSO&gt;.Contains(AttributeSO)</a>
+    </div>
+  </dd></dl>
 
 
 
 
-
-
-  <h2 id="ElectricDrill_AstraRpgFramework_Utils_UI_DefaultDisplaySONameProvider_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>This type is intentionally non-generic. The former generic form
-<code>DefaultDisplaySONameProvider&lt;T&gt;</code> has been removed because closed
-generics are unsafe under [SerializeReference] (Unity UUM-44729).
-Use the one-shot migration tool (Tools &gt; Astra Framework &gt;
-Migrate Managed References) to convert existing assets.</p>
-</div>
 
 
   <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="ElectricDrill_AstraRpgFramework_Utils_UI_DefaultDisplaySONameProvider_GetDisplayName_" data-uid="ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider.GetDisplayName*"></a>
+  <a id="ElectricDrill_AstraRpgFramework_Attributes_IFixedAttributeSource_GetBase_" data-uid="ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource.GetBase*"></a>
 
-  <h3 id="ElectricDrill_AstraRpgFramework_Utils_UI_DefaultDisplaySONameProvider_GetDisplayName_UnityEngine_ScriptableObject_" data-uid="ElectricDrill.AstraRpgFramework.Utils.UI.DefaultDisplaySONameProvider.GetDisplayName(UnityEngine.ScriptableObject)">
-  GetDisplayName(ScriptableObject)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Utils/UI/DefaultDisplaySONameProvider.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ElectricDrill_AstraRpgFramework_Attributes_IFixedAttributeSource_GetBase_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_" data-uid="ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource.GetBase(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)">
+  GetBase(AttributeSO)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Cis8/AstraRpgFramework/blob/main/Runtime/Attributes/IFixedAttributeSource.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the display name using the asset's name, or &quot;None&quot; if null.</p>
+  <div class="markdown level1 summary"><p>Gets the fixed base value for <code class="paramref">attribute</code>. Only called for attributes for
+which <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html#ElectricDrill_AstraRpgFramework_Utils_IValueContainer_1_Contains__0_">Contains(T)</a> returns true.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string GetDisplayName(ScriptableObject asset)</code></pre>
+    <pre><code class="lang-csharp hljs">long GetBase(AttributeSO attribute)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>asset</code> <a class="xref" href="https://docs.unity3d.com/ScriptReference/ScriptableObject.html">ScriptableObject</a></dt>
+    <dt><code>attribute</code> <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSO.html">AttributeSO</a></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">string</span></dt>
+    <dt><span class="xref">long</span></dt>
     <dd></dd>
   </dl>
 

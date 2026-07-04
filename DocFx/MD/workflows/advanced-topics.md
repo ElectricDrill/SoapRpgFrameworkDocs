@@ -76,7 +76,7 @@ if (statReader.TryGetBase(physicalAttackStat, out long basePhysicalAttack))
 `Get` and `GetBase` can still be convenient on concrete containers when you already know the asset exists, but `TryGet` and `TryGetBase` are the safer default for reusable code paths. This is especially relevant in v2.0.0 because `StatSetInstance` is no longer an `IStatReader`; code that needs a generic stat reader should depend on `EntityCore`, `EntityStats`, or another explicit `IStatReader` provider instead.
 
 ## Pluggable fixed base value sources
-*🏷️ Version 2.2.0+*
+*🏷️ Version 2.1.0+*
 
 Fixed base attributes and stats no longer have to come from the Inspector alone. `EntityAttributes` and `EntityStats` source their fixed base values through `IFixedAttributeSource` and `IFixedStatSource`, two minimal, point-queried contracts:
 

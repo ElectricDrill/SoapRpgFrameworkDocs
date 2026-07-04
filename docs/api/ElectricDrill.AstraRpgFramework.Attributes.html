@@ -127,6 +127,19 @@ This component calculates attribute values by combining base values, flat modifi
 It requires an <span class="xref">ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.EntityCore</span> component on the same GameObject.</p>
 </dd>
     </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.html">FixedAttributeValues</a></dt>
+      <dd><p>Serializable wrapper around a set of fixed base attribute values. Usable inline in a
+MonoBehaviour field or embedded in a dedicated ScriptableObject.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.html">FixedAttributeValuesSO</a></dt>
+      <dd><p>Standalone asset holding fixed base attribute values, reusable across multiple
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html">EntityAttributes</a> components. Mirrors the inline <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.html">FixedAttributeValues</a>
+wrapper's shape but owns its own <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.AttributeSetSO.html">AttributeSetSO</a> reference so it's self-contained.</p>
+</dd>
+    </dl>
     <h3 id="structs">
 Structs
 </h3>
@@ -151,6 +164,14 @@ Interfaces
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.html">IAttributeReader</a></dt>
       <dd><p>Read-only interface for querying attribute values from an entity.
 Use <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.html#ElectricDrill_AstraRpgFramework_Attributes_IAttributeReader_TryGet_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int64__">TryGet(AttributeSO, out long)</a> as the safe access path; <code>Get</code> requires <a class="xref" href="ElectricDrill.AstraRpgFramework.Utils.IValueContainer-1.html#ElectricDrill_AstraRpgFramework_Utils_IValueContainer_1_Contains__0_">Contains(T)</a> to be checked first.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource.html">IFixedAttributeSource</a></dt>
+      <dd><p>Supplies fixed (non-class-derived) base attribute values to an <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html">EntityAttributes</a>
+component. Implementations can back this with the inline <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.html">FixedAttributeValues</a>
+wrapper, a dedicated ScriptableObject asset, or any custom data source (save files, procedural
+generation, live-ops config) via <a class="xref" href="ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SetFixedAttributeSource_ElectricDrill_AstraRpgFramework_Attributes_IFixedAttributeSource_">SetFixedAttributeSource(IFixedAttributeSource)</a>.</p>
 </dd>
     </dl>
     <dl class="jumplist">

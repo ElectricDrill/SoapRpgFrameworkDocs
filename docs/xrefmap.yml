@@ -660,6 +660,19 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.EntityClass
   nameWithType: EntityAttributes.EntityClass
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.FixedAttributeValuesAsset
+  name: FixedAttributeValuesAsset
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_FixedAttributeValuesAsset
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.FixedAttributeValuesAsset
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.FixedAttributeValuesAsset
+  nameWithType: EntityAttributes.FixedAttributeValuesAsset
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.FixedAttributeValuesAsset*
+  name: FixedAttributeValuesAsset
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_FixedAttributeValuesAsset_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.FixedAttributeValuesAsset
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.FixedAttributeValuesAsset
+  nameWithType: EntityAttributes.FixedAttributeValuesAsset
 - uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.FlatModifiers
   name: FlatModifiers
   href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_FlatModifiers
@@ -815,6 +828,41 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixed
   nameWithType: EntityAttributes.SetFixed
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSet(ElectricDrill.AstraRpgFramework.Attributes.AttributeSetSO)
+  name: SetFixedAttributeSet(AttributeSetSO)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SetFixedAttributeSet_ElectricDrill_AstraRpgFramework_Attributes_AttributeSetSO_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSet(ElectricDrill.AstraRpgFramework.Attributes.AttributeSetSO)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSet(ElectricDrill.AstraRpgFramework.Attributes.AttributeSetSO)
+  nameWithType: EntityAttributes.SetFixedAttributeSet(AttributeSetSO)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSet*
+  name: SetFixedAttributeSet
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SetFixedAttributeSet_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSet
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSet
+  nameWithType: EntityAttributes.SetFixedAttributeSet
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSource(ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource)
+  name: SetFixedAttributeSource(IFixedAttributeSource)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SetFixedAttributeSource_ElectricDrill_AstraRpgFramework_Attributes_IFixedAttributeSource_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSource(ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSource(ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource)
+  nameWithType: EntityAttributes.SetFixedAttributeSource(IFixedAttributeSource)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSource(System.Collections.Generic.IReadOnlyDictionary{ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int64})
+  name: SetFixedAttributeSource(IReadOnlyDictionary<AttributeSO, long>)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SetFixedAttributeSource_System_Collections_Generic_IReadOnlyDictionary_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int64__
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSource(System.Collections.Generic.IReadOnlyDictionary{ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int64})
+  name.vb: SetFixedAttributeSource(IReadOnlyDictionary(Of AttributeSO, Long))
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSource(System.Collections.Generic.IReadOnlyDictionary<ElectricDrill.AstraRpgFramework.Attributes.AttributeSO, long>)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSource(System.Collections.Generic.IReadOnlyDictionary(Of ElectricDrill.AstraRpgFramework.Attributes.AttributeSO, Long))
+  nameWithType: EntityAttributes.SetFixedAttributeSource(IReadOnlyDictionary<AttributeSO, long>)
+  nameWithType.vb: EntityAttributes.SetFixedAttributeSource(IReadOnlyDictionary(Of AttributeSO, Long))
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSource*
+  name: SetFixedAttributeSource
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SetFixedAttributeSource_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSource
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSource
+  nameWithType: EntityAttributes.SetFixedAttributeSource
 - uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SpendOn(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int32)
   name: SpendOn(AttributeSO, int)
   href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SpendOn_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int32_
@@ -921,6 +969,134 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.UseBaseAttributesFromClass
   nameWithType: EntityAttributes.UseBaseAttributesFromClass
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.UseFixedAttributeValuesAsset
+  name: UseFixedAttributeValuesAsset
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_UseFixedAttributeValuesAsset
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.UseFixedAttributeValuesAsset
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.UseFixedAttributeValuesAsset
+  nameWithType: EntityAttributes.UseFixedAttributeValuesAsset
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.UseFixedAttributeValuesAsset*
+  name: UseFixedAttributeValuesAsset
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_UseFixedAttributeValuesAsset_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.UseFixedAttributeValuesAsset
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.UseFixedAttributeValuesAsset
+  nameWithType: EntityAttributes.UseFixedAttributeValuesAsset
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues
+  name: FixedAttributeValues
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues
+  nameWithType: FixedAttributeValues
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.Contains(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  name: Contains(AttributeSO)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.html#ElectricDrill_AstraRpgFramework_Attributes_FixedAttributeValues_Contains_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.Contains(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.Contains(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  nameWithType: FixedAttributeValues.Contains(AttributeSO)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.Contains*
+  name: Contains
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.html#ElectricDrill_AstraRpgFramework_Attributes_FixedAttributeValues_Contains_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.Contains
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.Contains
+  nameWithType: FixedAttributeValues.Contains
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.GetBase(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  name: GetBase(AttributeSO)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.html#ElectricDrill_AstraRpgFramework_Attributes_FixedAttributeValues_GetBase_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.GetBase(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.GetBase(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  nameWithType: FixedAttributeValues.GetBase(AttributeSO)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.GetBase*
+  name: GetBase
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.html#ElectricDrill_AstraRpgFramework_Attributes_FixedAttributeValues_GetBase_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.GetBase
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.GetBase
+  nameWithType: FixedAttributeValues.GetBase
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.Item(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  name: this[AttributeSO]
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.html#ElectricDrill_AstraRpgFramework_Attributes_FixedAttributeValues_Item_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.Item(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  name.vb: this[](AttributeSO)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.this[ElectricDrill.AstraRpgFramework.Attributes.AttributeSO]
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.this[](ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  nameWithType: FixedAttributeValues.this[AttributeSO]
+  nameWithType.vb: FixedAttributeValues.this[](AttributeSO)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.Item*
+  name: this
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.html#ElectricDrill_AstraRpgFramework_Attributes_FixedAttributeValues_Item_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.Item
+  isSpec: "True"
+  name.vb: this[]
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.this
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.this[]
+  nameWithType: FixedAttributeValues.this
+  nameWithType.vb: FixedAttributeValues.this[]
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO
+  name: FixedAttributeValuesSO
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO
+  nameWithType: FixedAttributeValuesSO
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.AttributeSet
+  name: AttributeSet
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.html#ElectricDrill_AstraRpgFramework_Attributes_FixedAttributeValuesSO_AttributeSet
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.AttributeSet
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.AttributeSet
+  nameWithType: FixedAttributeValuesSO.AttributeSet
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.AttributeSet*
+  name: AttributeSet
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.html#ElectricDrill_AstraRpgFramework_Attributes_FixedAttributeValuesSO_AttributeSet_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.AttributeSet
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.AttributeSet
+  nameWithType: FixedAttributeValuesSO.AttributeSet
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.Contains(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  name: Contains(AttributeSO)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.html#ElectricDrill_AstraRpgFramework_Attributes_FixedAttributeValuesSO_Contains_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.Contains(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.Contains(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  nameWithType: FixedAttributeValuesSO.Contains(AttributeSO)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.Contains*
+  name: Contains
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.html#ElectricDrill_AstraRpgFramework_Attributes_FixedAttributeValuesSO_Contains_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.Contains
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.Contains
+  nameWithType: FixedAttributeValuesSO.Contains
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.GetBase(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  name: GetBase(AttributeSO)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.html#ElectricDrill_AstraRpgFramework_Attributes_FixedAttributeValuesSO_GetBase_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.GetBase(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.GetBase(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  nameWithType: FixedAttributeValuesSO.GetBase(AttributeSO)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.GetBase*
+  name: GetBase
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.html#ElectricDrill_AstraRpgFramework_Attributes_FixedAttributeValuesSO_GetBase_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.GetBase
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.GetBase
+  nameWithType: FixedAttributeValuesSO.GetBase
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.Item(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  name: this[AttributeSO]
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.html#ElectricDrill_AstraRpgFramework_Attributes_FixedAttributeValuesSO_Item_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.Item(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  name.vb: this[](AttributeSO)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.this[ElectricDrill.AstraRpgFramework.Attributes.AttributeSO]
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.this[](ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  nameWithType: FixedAttributeValuesSO.this[AttributeSO]
+  nameWithType.vb: FixedAttributeValuesSO.this[](AttributeSO)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.Item*
+  name: this
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.html#ElectricDrill_AstraRpgFramework_Attributes_FixedAttributeValuesSO_Item_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.Item
+  isSpec: "True"
+  name.vb: this[]
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.this
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.this[]
+  nameWithType: FixedAttributeValuesSO.this
+  nameWithType.vb: FixedAttributeValuesSO.this[]
 - uid: ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader
   name: IAttributeReader
   href: api/ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.html
@@ -959,6 +1135,25 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.TryGetBase
   nameWithType: IAttributeReader.TryGetBase
+- uid: ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource
+  name: IFixedAttributeSource
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource
+  nameWithType: IFixedAttributeSource
+- uid: ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource.GetBase(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  name: GetBase(AttributeSO)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource.html#ElectricDrill_AstraRpgFramework_Attributes_IFixedAttributeSource_GetBase_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource.GetBase(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource.GetBase(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  nameWithType: IFixedAttributeSource.GetBase(AttributeSO)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource.GetBase*
+  name: GetBase
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource.html#ElectricDrill_AstraRpgFramework_Attributes_IFixedAttributeSource_GetBase_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource.GetBase
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource.GetBase
+  nameWithType: IFixedAttributeSource.GetBase
 - uid: ElectricDrill.AstraRpgFramework.Attributes.IHasAttributeSet
   name: IHasAttributeSet
   href: api/ElectricDrill.AstraRpgFramework.Attributes.IHasAttributeSet.html
@@ -7552,6 +7747,19 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.EntityCore
   nameWithType: EntityStats.EntityCore
+- uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats.FixedStatValuesAsset
+  name: FixedStatValuesAsset
+  href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_FixedStatValuesAsset
+  commentId: P:ElectricDrill.AstraRpgFramework.Stats.EntityStats.FixedStatValuesAsset
+  fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.FixedStatValuesAsset
+  nameWithType: EntityStats.FixedStatValuesAsset
+- uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats.FixedStatValuesAsset*
+  name: FixedStatValuesAsset
+  href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_FixedStatValuesAsset_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Stats.EntityStats.FixedStatValuesAsset
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.FixedStatValuesAsset
+  nameWithType: EntityStats.FixedStatValuesAsset
 - uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats.Get(ElectricDrill.AstraRpgFramework.Stats.StatSO)
   name: Get(StatSO)
   href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_Get_ElectricDrill_AstraRpgFramework_Stats_StatSO_
@@ -7652,6 +7860,41 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixed
   nameWithType: EntityStats.SetFixed
+- uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSet(ElectricDrill.AstraRpgFramework.Stats.StatSetSO)
+  name: SetFixedStatSet(StatSetSO)
+  href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_SetFixedStatSet_ElectricDrill_AstraRpgFramework_Stats_StatSetSO_
+  commentId: M:ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSet(ElectricDrill.AstraRpgFramework.Stats.StatSetSO)
+  fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSet(ElectricDrill.AstraRpgFramework.Stats.StatSetSO)
+  nameWithType: EntityStats.SetFixedStatSet(StatSetSO)
+- uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSet*
+  name: SetFixedStatSet
+  href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_SetFixedStatSet_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSet
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSet
+  nameWithType: EntityStats.SetFixedStatSet
+- uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSource(ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource)
+  name: SetFixedStatSource(IFixedStatSource)
+  href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_SetFixedStatSource_ElectricDrill_AstraRpgFramework_Stats_IFixedStatSource_
+  commentId: M:ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSource(ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource)
+  fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSource(ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource)
+  nameWithType: EntityStats.SetFixedStatSource(IFixedStatSource)
+- uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSource(System.Collections.Generic.IReadOnlyDictionary{ElectricDrill.AstraRpgFramework.Stats.StatSO,System.Int64})
+  name: SetFixedStatSource(IReadOnlyDictionary<StatSO, long>)
+  href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_SetFixedStatSource_System_Collections_Generic_IReadOnlyDictionary_ElectricDrill_AstraRpgFramework_Stats_StatSO_System_Int64__
+  commentId: M:ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSource(System.Collections.Generic.IReadOnlyDictionary{ElectricDrill.AstraRpgFramework.Stats.StatSO,System.Int64})
+  name.vb: SetFixedStatSource(IReadOnlyDictionary(Of StatSO, Long))
+  fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSource(System.Collections.Generic.IReadOnlyDictionary<ElectricDrill.AstraRpgFramework.Stats.StatSO, long>)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSource(System.Collections.Generic.IReadOnlyDictionary(Of ElectricDrill.AstraRpgFramework.Stats.StatSO, Long))
+  nameWithType: EntityStats.SetFixedStatSource(IReadOnlyDictionary<StatSO, long>)
+  nameWithType.vb: EntityStats.SetFixedStatSource(IReadOnlyDictionary(Of StatSO, Long))
+- uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSource*
+  name: SetFixedStatSource
+  href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_SetFixedStatSource_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSource
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.SetFixedStatSource
+  nameWithType: EntityStats.SetFixedStatSource
 - uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats.StatSet
   name: StatSet
   href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_StatSet
@@ -7742,6 +7985,19 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.UseClassBaseStats
   nameWithType: EntityStats.UseClassBaseStats
+- uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats.UseFixedStatValuesAsset
+  name: UseFixedStatValuesAsset
+  href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_UseFixedStatValuesAsset
+  commentId: P:ElectricDrill.AstraRpgFramework.Stats.EntityStats.UseFixedStatValuesAsset
+  fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.UseFixedStatValuesAsset
+  nameWithType: EntityStats.UseFixedStatValuesAsset
+- uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats.UseFixedStatValuesAsset*
+  name: UseFixedStatValuesAsset
+  href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_UseFixedStatValuesAsset_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Stats.EntityStats.UseFixedStatValuesAsset
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats.UseFixedStatValuesAsset
+  nameWithType: EntityStats.UseFixedStatValuesAsset
 - uid: ElectricDrill.AstraRpgFramework.Stats.EntityStats._entityClass
   name: _entityClass
   href: api/ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats__entityClass
@@ -7760,6 +8016,140 @@ references:
   commentId: F:ElectricDrill.AstraRpgFramework.Stats.EntityStats._percentageModifiers
   fullName: ElectricDrill.AstraRpgFramework.Stats.EntityStats._percentageModifiers
   nameWithType: EntityStats._percentageModifiers
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues
+  name: FixedStatValues
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Stats.FixedStatValues
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues
+  nameWithType: FixedStatValues
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.Contains(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  name: Contains(StatSO)
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.html#ElectricDrill_AstraRpgFramework_Stats_FixedStatValues_Contains_ElectricDrill_AstraRpgFramework_Stats_StatSO_
+  commentId: M:ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.Contains(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.Contains(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  nameWithType: FixedStatValues.Contains(StatSO)
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.Contains*
+  name: Contains
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.html#ElectricDrill_AstraRpgFramework_Stats_FixedStatValues_Contains_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.Contains
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.Contains
+  nameWithType: FixedStatValues.Contains
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.GetBase(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  name: GetBase(StatSO)
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.html#ElectricDrill_AstraRpgFramework_Stats_FixedStatValues_GetBase_ElectricDrill_AstraRpgFramework_Stats_StatSO_
+  commentId: M:ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.GetBase(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.GetBase(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  nameWithType: FixedStatValues.GetBase(StatSO)
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.GetBase*
+  name: GetBase
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.html#ElectricDrill_AstraRpgFramework_Stats_FixedStatValues_GetBase_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.GetBase
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.GetBase
+  nameWithType: FixedStatValues.GetBase
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.Item(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  name: this[StatSO]
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.html#ElectricDrill_AstraRpgFramework_Stats_FixedStatValues_Item_ElectricDrill_AstraRpgFramework_Stats_StatSO_
+  commentId: P:ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.Item(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  name.vb: this[](StatSO)
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.this[ElectricDrill.AstraRpgFramework.Stats.StatSO]
+  fullName.vb: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.this[](ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  nameWithType: FixedStatValues.this[StatSO]
+  nameWithType.vb: FixedStatValues.this[](StatSO)
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.Item*
+  name: this
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.html#ElectricDrill_AstraRpgFramework_Stats_FixedStatValues_Item_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.Item
+  isSpec: "True"
+  name.vb: this[]
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.this
+  fullName.vb: ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.this[]
+  nameWithType: FixedStatValues.this
+  nameWithType.vb: FixedStatValues.this[]
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO
+  name: FixedStatValuesSO
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO
+  nameWithType: FixedStatValuesSO
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.Contains(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  name: Contains(StatSO)
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.html#ElectricDrill_AstraRpgFramework_Stats_FixedStatValuesSO_Contains_ElectricDrill_AstraRpgFramework_Stats_StatSO_
+  commentId: M:ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.Contains(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.Contains(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  nameWithType: FixedStatValuesSO.Contains(StatSO)
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.Contains*
+  name: Contains
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.html#ElectricDrill_AstraRpgFramework_Stats_FixedStatValuesSO_Contains_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.Contains
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.Contains
+  nameWithType: FixedStatValuesSO.Contains
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.GetBase(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  name: GetBase(StatSO)
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.html#ElectricDrill_AstraRpgFramework_Stats_FixedStatValuesSO_GetBase_ElectricDrill_AstraRpgFramework_Stats_StatSO_
+  commentId: M:ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.GetBase(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.GetBase(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  nameWithType: FixedStatValuesSO.GetBase(StatSO)
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.GetBase*
+  name: GetBase
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.html#ElectricDrill_AstraRpgFramework_Stats_FixedStatValuesSO_GetBase_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.GetBase
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.GetBase
+  nameWithType: FixedStatValuesSO.GetBase
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.Item(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  name: this[StatSO]
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.html#ElectricDrill_AstraRpgFramework_Stats_FixedStatValuesSO_Item_ElectricDrill_AstraRpgFramework_Stats_StatSO_
+  commentId: P:ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.Item(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  name.vb: this[](StatSO)
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.this[ElectricDrill.AstraRpgFramework.Stats.StatSO]
+  fullName.vb: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.this[](ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  nameWithType: FixedStatValuesSO.this[StatSO]
+  nameWithType.vb: FixedStatValuesSO.this[](StatSO)
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.Item*
+  name: this
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.html#ElectricDrill_AstraRpgFramework_Stats_FixedStatValuesSO_Item_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.Item
+  isSpec: "True"
+  name.vb: this[]
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.this
+  fullName.vb: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.this[]
+  nameWithType: FixedStatValuesSO.this
+  nameWithType.vb: FixedStatValuesSO.this[]
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.StatSet
+  name: StatSet
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.html#ElectricDrill_AstraRpgFramework_Stats_FixedStatValuesSO_StatSet
+  commentId: P:ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.StatSet
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.StatSet
+  nameWithType: FixedStatValuesSO.StatSet
+- uid: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.StatSet*
+  name: StatSet
+  href: api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.html#ElectricDrill_AstraRpgFramework_Stats_FixedStatValuesSO_StatSet_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.StatSet
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.StatSet
+  nameWithType: FixedStatValuesSO.StatSet
+- uid: ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource
+  name: IFixedStatSource
+  href: api/ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource
+  fullName: ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource
+  nameWithType: IFixedStatSource
+- uid: ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource.GetBase(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  name: GetBase(StatSO)
+  href: api/ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource.html#ElectricDrill_AstraRpgFramework_Stats_IFixedStatSource_GetBase_ElectricDrill_AstraRpgFramework_Stats_StatSO_
+  commentId: M:ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource.GetBase(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  fullName: ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource.GetBase(ElectricDrill.AstraRpgFramework.Stats.StatSO)
+  nameWithType: IFixedStatSource.GetBase(StatSO)
+- uid: ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource.GetBase*
+  name: GetBase
+  href: api/ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource.html#ElectricDrill_AstraRpgFramework_Stats_IFixedStatSource_GetBase_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource.GetBase
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource.GetBase
+  nameWithType: IFixedStatSource.GetBase
 - uid: ElectricDrill.AstraRpgFramework.Stats.IHasStatSet
   name: IHasStatSet
   href: api/ElectricDrill.AstraRpgFramework.Stats.IHasStatSet.html
@@ -10410,6 +10800,44 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Utils.RoundingModeExtensions.ApplyToInt
   nameWithType: RoundingModeExtensions.ApplyToInt
+- uid: ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions
+  name: RoundingModeLongExtensions
+  href: api/ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions
+  fullName: ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions
+  nameWithType: RoundingModeLongExtensions
+- uid: ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.ApplyToLong(ElectricDrill.AstraRpgFramework.Utils.RoundingMode,System.Double)
+  name: ApplyToLong(RoundingMode, double)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.html#ElectricDrill_AstraRpgFramework_Utils_RoundingModeLongExtensions_ApplyToLong_ElectricDrill_AstraRpgFramework_Utils_RoundingMode_System_Double_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.ApplyToLong(ElectricDrill.AstraRpgFramework.Utils.RoundingMode,System.Double)
+  name.vb: ApplyToLong(RoundingMode, Double)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.ApplyToLong(ElectricDrill.AstraRpgFramework.Utils.RoundingMode, double)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.ApplyToLong(ElectricDrill.AstraRpgFramework.Utils.RoundingMode, Double)
+  nameWithType: RoundingModeLongExtensions.ApplyToLong(RoundingMode, double)
+  nameWithType.vb: RoundingModeLongExtensions.ApplyToLong(RoundingMode, Double)
+- uid: ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.ApplyToLong*
+  name: ApplyToLong
+  href: api/ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.html#ElectricDrill_AstraRpgFramework_Utils_RoundingModeLongExtensions_ApplyToLong_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.ApplyToLong
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.ApplyToLong
+  nameWithType: RoundingModeLongExtensions.ApplyToLong
+- uid: ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.ApplyToNonNegativeLong(ElectricDrill.AstraRpgFramework.Utils.RoundingMode,System.Double)
+  name: ApplyToNonNegativeLong(RoundingMode, double)
+  href: api/ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.html#ElectricDrill_AstraRpgFramework_Utils_RoundingModeLongExtensions_ApplyToNonNegativeLong_ElectricDrill_AstraRpgFramework_Utils_RoundingMode_System_Double_
+  commentId: M:ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.ApplyToNonNegativeLong(ElectricDrill.AstraRpgFramework.Utils.RoundingMode,System.Double)
+  name.vb: ApplyToNonNegativeLong(RoundingMode, Double)
+  fullName: ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.ApplyToNonNegativeLong(ElectricDrill.AstraRpgFramework.Utils.RoundingMode, double)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.ApplyToNonNegativeLong(ElectricDrill.AstraRpgFramework.Utils.RoundingMode, Double)
+  nameWithType: RoundingModeLongExtensions.ApplyToNonNegativeLong(RoundingMode, double)
+  nameWithType.vb: RoundingModeLongExtensions.ApplyToNonNegativeLong(RoundingMode, Double)
+- uid: ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.ApplyToNonNegativeLong*
+  name: ApplyToNonNegativeLong
+  href: api/ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.html#ElectricDrill_AstraRpgFramework_Utils_RoundingModeLongExtensions_ApplyToNonNegativeLong_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.ApplyToNonNegativeLong
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.ApplyToNonNegativeLong
+  nameWithType: RoundingModeLongExtensions.ApplyToNonNegativeLong
 - uid: ElectricDrill.AstraRpgFramework.Utils.SerKeyValPair`2
   name: SerKeyValPair<T, U>
   href: api/ElectricDrill.AstraRpgFramework.Utils.SerKeyValPair-2.html

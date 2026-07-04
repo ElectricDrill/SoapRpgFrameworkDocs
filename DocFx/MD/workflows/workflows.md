@@ -319,17 +319,15 @@ Moreover, there is a checkbox labeled `Use Class Base Attributes`. For now, let'
 We can assign values to the attributes of `Fixed Base Attributes` as we see fit.
 
 ### Fixed base attribute sources
-🏷️*Version 2.2.0+*  
+🏷️*Version 2.1.0+*  
 
 Besides the inline values shown above, fixed base attributes can also be sourced from a dedicated, reusable asset. Enable `Use Fixed Attribute Values Asset` to switch:
 
 ![EntityAttributes with Use Fixed Attribute Values Asset enabled](../../images/workflows/entity-attributes-fixed-values-asset-toggle.png)
-<!-- IMAGE MISSING: entity-attributes-fixed-values-asset-toggle.png — screenshot of the EntityAttributes inspector with Use Fixed Attribute Values Asset enabled and the Fixed Attribute Values Asset field -->
 
 With the toggle enabled, assign a `Fixed Attribute Values` asset to the `Fixed Attribute Values Asset` field <span style="color:red;">*</span>. Create one from `Assets > Create > Astra Framework > Fixed Attribute Values`, then assign it the same `AttributeSetSO` used by the entity and fill in its values directly from its own inspector:
 
 ![Fixed Attribute Values asset inspector](../../images/workflows/fixed-attribute-values-asset-editor.png)
-<!-- IMAGE MISSING: fixed-attribute-values-asset-editor.png — screenshot of a FixedAttributeValuesSO asset's inspector -->
 
 This is useful when several entities should share the exact same fixed base attributes (for example, every enemy of a given kind) without duplicating the values on each prefab.
 
@@ -574,17 +572,15 @@ With `Use Class Base Stats` unchecked, we need to manually assign a stat set. Se
 `Use Cache` enables caching of final stat values. This is useful for performance when you have many entities or complex stat calculations.
 
 ### Fixed base stat sources
-🏷️*Version 2.2.0+*  
+🏷️*Version 2.1.0+*  
 
 Besides the inline values shown above, fixed base stats can also be sourced from a dedicated, reusable asset. Enable `Use Fixed Stat Values Asset` to switch:
 
 ![EntityStats with Use Fixed Stat Values Asset enabled](../../images/workflows/entity-stats-fixed-values-asset-toggle.png)
-<!-- IMAGE MISSING: entity-stats-fixed-values-asset-toggle.png — screenshot of the EntityStats inspector with Use Fixed Stat Values Asset enabled and the Fixed Stat Values Asset field -->
 
 With the toggle enabled, assign a `Fixed Stat Values` asset to the `Fixed Stat Values Asset` field <span style="color:red;">*</span>. Create one from `Assets > Create > Astra Framework > Fixed Stat Values`, then assign it the same `StatSetSO` used by the entity and fill in its values directly from its own inspector:
 
 ![Fixed Stat Values asset inspector](../../images/workflows/fixed-stat-values-asset-editor.png)
-<!-- IMAGE MISSING: fixed-stat-values-asset-editor.png — screenshot of a FixedStatValuesSO asset's inspector -->
 
 This is useful when several entities should share the exact same fixed base stats (for example, every enemy of a given kind) without duplicating the values on each prefab.
 

@@ -103,6 +103,19 @@ When stats change because of a modifier of any kind, the assigned <a class="xref
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.html">FixedStatValues</a></dt>
+      <dd><p>Serializable wrapper around a set of fixed base stat values. Usable inline in a MonoBehaviour
+field or embedded in a dedicated ScriptableObject.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.html">FixedStatValuesSO</a></dt>
+      <dd><p>Standalone asset holding fixed base stat values, reusable across multiple
+<a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.EntityStats.html">EntityStats</a> components. Mirrors the inline <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.html">FixedStatValues</a> wrapper's
+shape but owns its own <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSetSO.html">StatSetSO</a> reference so it's self-contained.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.StatSO.html">StatSO</a></dt>
       <dd><p>Represents a stat in the RPG system that extends BoundedValue with attribute scaling capabilities.
 Stats can be scaled based on entity attributes and provide equality comparison based on name.</p>
@@ -146,6 +159,14 @@ condition evaluation.</p>
     <h3 id="interfaces">
 Interfaces
 </h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource.html">IFixedStatSource</a></dt>
+      <dd><p>Supplies fixed (non-class-derived) base stat values to an <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.EntityStats.html">EntityStats</a> component.
+Implementations can back this with the inline <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.html">FixedStatValues</a> wrapper, a dedicated
+ScriptableObject asset, or any custom data source (save files, procedural generation, live-ops
+config) via <a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.EntityStats.html#ElectricDrill_AstraRpgFramework_Stats_EntityStats_SetFixedStatSource_ElectricDrill_AstraRpgFramework_Stats_IFixedStatSource_">SetFixedStatSource(IFixedStatSource)</a>.</p>
+</dd>
+    </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ElectricDrill.AstraRpgFramework.Stats.IHasStatSet.html">IHasStatSet</a></dt>
       <dd><p>Interface for objects that provide a source of stat sets.

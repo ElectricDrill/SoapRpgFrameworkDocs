@@ -135,6 +135,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "MD/workflows/editor-windows.md",
+      "output": {
+        ".html": {
+          "relative_path": "MD/workflows/editor-windows.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "MD/workflows/game-actions.md",
       "output": {
         ".html": {
@@ -285,10 +295,40 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValues.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Attributes.FixedAttributeValuesSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.yml",
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Attributes.IAttributeReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Attributes.IFixedAttributeSource.html"
         }
       },
       "version": ""
@@ -2235,6 +2275,36 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValues.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Stats.FixedStatValuesSO.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Stats.IFixedStatSource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Stats.IHasStatSet.yml",
       "output": {
         ".html": {
@@ -2749,6 +2819,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.RoundingModeExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ElectricDrill.AstraRpgFramework.Utils.RoundingModeLongExtensions.html"
         }
       },
       "version": ""
@@ -4378,6 +4458,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/workflows/Screenshot 2026-07-04 104216.pngfixed-attribute-values-asset-editor.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/Screenshot 2026-07-04 104216.pngfixed-attribute-values-asset-editor.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/workflows/add-level-growth-formula.png",
       "output": {
         "resource": {
@@ -4428,10 +4518,90 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/workflows/editor-windows/class-dashboard-formula-health.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/editor-windows/class-dashboard-formula-health.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/editor-windows/class-dashboard-overview.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/editor-windows/class-dashboard-overview.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/editor-windows/game-tag-browser-overview.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/editor-windows/game-tag-browser-overview.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/editor-windows/growth-curve-comparison-manual.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/editor-windows/growth-curve-comparison-manual.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/editor-windows/growth-curve-comparison-matrix.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/editor-windows/growth-curve-comparison-matrix.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/editor-windows/growth-curve-comparison-multi-class.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/editor-windows/growth-curve-comparison-multi-class.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/editor-windows/growth-curve-comparison-solo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/editor-windows/growth-curve-comparison-solo.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/workflows/entity-attributes-editor.png",
       "output": {
         "resource": {
           "relative_path": "images/workflows/entity-attributes-editor.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/entity-attributes-fixed-values-asset-toggle.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/entity-attributes-fixed-values-asset-toggle.png"
         }
       },
       "version": ""
@@ -4508,6 +4678,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/workflows/entity-stats-fixed-values-asset-toggle.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/entity-stats-fixed-values-asset-toggle.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/workflows/entity-stats.png",
       "output": {
         "resource": {
@@ -4522,6 +4702,26 @@
       "output": {
         "resource": {
           "relative_path": "images/workflows/exp-source-inspector.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/fixed-attribute-values-asset-editor.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/fixed-attribute-values-asset-editor.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/workflows/fixed-stat-values-asset-editor.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/workflows/fixed-stat-values-asset-editor.png"
         }
       },
       "version": ""

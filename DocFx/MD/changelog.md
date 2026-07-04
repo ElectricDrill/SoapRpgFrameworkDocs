@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added `EntityAttributes.SetFixedAttributeSet`/`EntityStats.SetFixedStatSet` to swap the `AttributeSetSO`/`StatSetSO` used for fixed base values at runtime.
 - Added `Assets > Create > Astra Framework > Fixed Attribute Values` and `Fixed Stat Values` asset creation menu items, with dedicated custom editors for authoring their values.
 - Added the `Use Fixed Attribute Values Asset`/`Use Fixed Stat Values Asset` toggle to the `EntityAttributesEditor`/`EntityStatsEditor` inspectors.
+
 #### Editor Features
 - Added Class Dashboard Window: Allows to inspect all defined classes in a single place. You can visualize all the GrowthFormula used in a certain class in the same graph.
 - Added Growth Curves Comparison Window: Lets you to compare multiple classes (up to 4), easing balancing and tuning. Also allows to compare multiple GrowthFormulas of any kind.
