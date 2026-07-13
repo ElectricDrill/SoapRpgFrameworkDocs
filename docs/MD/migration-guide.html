@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/remove-rpg-occurrences/DocFx/MD/migration-guide.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.2.0/DocFx/MD/migration-guide.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -87,6 +87,21 @@
         <article data-uid="">
 <h1 id="migration-guide">Migration Guide</h1>
 
+<h2 id="migrating-to-v210">Migrating to v2.1.0</h2>
+<p>v2.1.0 introduces pluggable fixed base attribute and stat sources (see the <code>v2.1.0</code> entry in <a href="changelog.html">Changelog</a>). This is fully backward-compatible: <strong>no manual migration steps are required</strong>, but it's worth understanding what happens automatically behind the scenes.</p>
+<h3 id="automatic-migration-of-fixed-base-values">Automatic migration of fixed base values</h3>
+<p>Internally, <code>EntityAttributes</code> and <code>EntityStats</code> used to store fixed base values in a raw dictionary field (<code>_fixedBaseAttributes</code> / <code>_fixedBaseStats</code>). Starting with v2.1.0, that storage is wrapped in the new <code>FixedAttributeValues</code> / <code>FixedStatValues</code> types, which also back the new asset-based source (<code>FixedAttributeValuesSO</code> / <code>FixedStatValuesSO</code>) and any custom <code>IFixedAttributeSource</code> / <code>IFixedStatSource</code> implementation through the same code path.</p>
+<p>To preserve existing data, the old field was renamed to <code>_legacyFixedBaseAttributes</code> / <code>_legacyFixedBaseStats</code> and kept around purely as a migration source. Unity's <code>[FormerlySerializedAs]</code> attribute keeps the link to the old field name, so previously serialized values are still found correctly under the new name. The first time each <code>EntityAttributes</code> or <code>EntityStats</code> component is enabled after updating — in the editor or in a build — it copies any data found in the legacy field into the new one and marks itself as migrated, so the copy only ever runs once per object.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The legacy field is copied from, never cleared. If anything looks off after updating, your original values are still there as a recovery path. The legacy field itself will be removed entirely in a future version, once the migration has had time to run across existing projects.</p>
+</div>
+<p>This migration is unconditional (it is not editor-only), because a player build loading a prefab or scene serialized under an older package version needs to migrate the first time it loads too, not just when opened in the editor.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Both renamed fields are <code>internal</code> to the framework, so this migration is invisible to regular package usage. It only matters if your project reaches into these fields directly by name — for example through reflection-based editor tooling or automated scene/prefab setup scripts. If it does, update the field name references to <code>_fixedAttributeValues</code> / <code>_fixedStatValues</code>.</p>
+</div>
+<p>No changes are required to existing calls to <code>SetFixed</code>, to authored <code>Fixed Base Attributes</code> / <code>Fixed Base Stats</code> inspector rows, or to any other public API — they all continue to work exactly as before, now backed by the new storage.</p>
 <h2 id="migrating-to-v200">Migrating to v2.0.0</h2>
 <p>v2.0.0 introduces new major subsystems such as Conditions, Game Tags, reactive triggers, and global framework configuration. Most of these additions are additive, but this release also includes a few breaking API changes and some behavior changes that existing projects should review carefully.</p>
 <div class="CAUTION">

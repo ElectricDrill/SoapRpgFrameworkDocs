@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/remove-rpg-occurrences/DocFx/MD/workflows/advanced-topics.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.2.0/DocFx/MD/workflows/advanced-topics.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -140,6 +140,38 @@ if (attributeReader.TryGet(strengthAttribute, out long strength) &amp;&amp;
 }
 </code></pre>
 <p><code>Get</code> and <code>GetBase</code> can still be convenient on concrete containers when you already know the asset exists, but <code>TryGet</code> and <code>TryGetBase</code> are the safer default for reusable code paths. This is especially relevant in v2.0.0 because <code>StatSetInstance</code> is no longer an <code>IStatReader</code>; code that needs a generic stat reader should depend on <code>EntityCore</code>, <code>EntityStats</code>, or another explicit <code>IStatReader</code> provider instead.</p>
+<h2 id="pluggable-fixed-base-value-sources">Pluggable fixed base value sources</h2>
+<p><em>🏷️ Version 2.1.0+</em></p>
+<p>Fixed base attributes and stats no longer have to come from the Inspector alone. <code>EntityAttributes</code> and <code>EntityStats</code> source their fixed base values through <code>IFixedAttributeSource</code> and <code>IFixedStatSource</code>, two minimal, point-queried contracts:</p>
+<pre><code class="lang-csharp">public interface IFixedAttributeSource : IValueContainer&lt;AttributeSO&gt;
+{
+    long GetBase(AttributeSO attribute);
+}
+
+public interface IFixedStatSource : IValueContainer&lt;StatSO&gt;
+{
+    long GetBase(StatSO stat);
+}
+</code></pre>
+<p>The inline values shown in the Inspector and the asset-backed <code>FixedAttributeValuesSO</code> / <code>FixedStatValuesSO</code> (see <a href="workflows.html#fixed-base-attribute-sources">Fixed base attribute sources</a> and <a href="workflows.html#fixed-base-stat-sources">Fixed base stat sources</a>) both implement these interfaces, but you can also supply your own implementation, backed by save data, procedural generation, live-ops config, or any other source.</p>
+<h3 id="swapping-fixed-base-values-at-runtime">Swapping fixed base values at runtime</h3>
+<p><code>SetFixedAttributeSource</code> (and its <code>EntityStats</code> counterpart, <code>SetFixedStatSource</code>) replaces every fixed base value from a source in one call:</p>
+<pre><code class="lang-csharp">entityAttributes.SetFixedAttributeSource(myCustomSource);
+
+// Or from a plain dictionary (e.g. deserialized save data), without implementing the interface:
+entityAttributes.SetFixedAttributeSource(new Dictionary&lt;AttributeSO, long&gt; {
+    { strengthAttribute, 14 },
+    { constitutionAttribute, 12 },
+});
+</code></pre>
+<p>The provided source must cover every attribute (or stat) in the entity's current attribute/stat set; an assertion failure is raised otherwise. Only one <code>OnAttributeChanged</code> / <code>OnStatChanged</code> event is raised per attribute or stat whose final value actually changed, reusing the same bulk-update machinery as level-up/level-down transitions.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p><code>SetFixedAttributeSource</code> / <code>SetFixedStatSource</code> always write into the inline values, never into an assigned <code>FixedAttributeValuesAsset</code> / <code>FixedStatValuesAsset</code>. An asset can be shared across multiple entities, so a per-entity runtime override should not leak into it. If <code>Use Fixed Attribute Values Asset</code> (or the stat equivalent) is enabled, disable it first — otherwise the injected values are ignored until you do.</p>
+</div>
+<h3 id="swapping-the-attributestat-set-at-runtime">Swapping the attribute/stat set at runtime</h3>
+<p><code>SetFixedAttributeSet(AttributeSetSO)</code> and <code>SetFixedStatSet(StatSetSO)</code> replace the schema used for fixed base values at runtime, reconciling existing values for the attributes/stats shared between the old and new set and defaulting new entries to <code>0</code>. Neither raises per-attribute/per-stat change events, matching the framework's existing behavior when a set change is detected elsewhere (from the <code>AttributeSet</code> getter, or from <code>OnValidate</code>).</p>
+<p>Call <code>SetFixedAttributeSet</code> / <code>SetFixedStatSet</code> and <code>SetFixedAttributeSource</code> / <code>SetFixedStatSource</code> as two separate, sequential calls rather than combining them: swapping the set first ensures the source you inject afterward is validated against the set that is actually active.</p>
 <h2 id="rounding-double-based-calculations">Rounding double-based calculations</h2>
 <p><em>🏷️ Version 2.0.0+</em></p>
 <p>The framework now exposes <code>RoundingMode</code> to make integer conversion intent explicit when a calculation produces a <code>double</code>. The built-in modes are:</p>

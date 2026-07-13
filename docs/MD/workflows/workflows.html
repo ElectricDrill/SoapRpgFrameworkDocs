@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/remove-rpg-occurrences/DocFx/MD/workflows/workflows.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ElectricDrill/AstraRpgFrameworkDocs/blob/v2.2.0/DocFx/MD/workflows/workflows.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -321,6 +321,19 @@ If you change the level of the entity you'll see that available points change ac
 <p>Moreover, there is a checkbox labeled <code>Use Class Base Attributes</code>. For now, let's leave it unchecked since we haven't added a class yet. However, in this case, we need to manually assign an attribute set. Therefore, let's set the <code>Attribute Set</code> field found under <code>Fixed Base Attributes</code> with the <code>Hero Attribute Set</code>. By doing this, we now have access to additional fields in the inspector:</p>
 <p><img src="../../images/workflows/entity-attributes-with-attr-set-editor.png" alt="Entity Attributes with fixed base attributes AttributeSet"></p>
 <p>We can assign values to the attributes of <code>Fixed Base Attributes</code> as we see fit.</p>
+<h3 id="fixed-base-attribute-sources">Fixed base attribute sources</h3>
+<p>🏷️<em>Version 2.1.0+</em></p>
+<p>Besides the inline values shown above, fixed base attributes can also be sourced from a dedicated, reusable asset. Enable <code>Use Fixed Attribute Values Asset</code> to switch:</p>
+<p><img src="../../images/workflows/entity-attributes-fixed-values-asset-toggle.png" alt="EntityAttributes with Use Fixed Attribute Values Asset enabled"></p>
+<p>With the toggle enabled, assign a <code>Fixed Attribute Values</code> asset to the <code>Fixed Attribute Values Asset</code> field <span style="color:red;">*</span>. Create one from <code>Assets &gt; Create &gt; Astra Framework &gt; Fixed Attribute Values</code>, then assign it the same <code>AttributeSetSO</code> used by the entity and fill in its values directly from its own inspector:</p>
+<p><img src="../../images/workflows/fixed-attribute-values-asset-editor.png" alt="Fixed Attribute Values asset inspector"></p>
+<p>This is useful when several entities should share the exact same fixed base attributes (for example, every enemy of a given kind) without duplicating the values on each prefab.</p>
+<p>Reassigning the asset's <code>Attribute Set</code> reconciles its values automatically: values for attributes present in both sets are preserved, new attributes default to <code>0</code>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><code>Use Fixed Attribute Values Asset</code> only applies while <code>Use Class Base Attributes</code> is disabled. The inline values are preserved even while the asset is in use, so switching the toggle back off restores them.</p>
+</div>
+<p>For swapping fixed base sources or the attribute set itself from code, see <a href="advanced-topics.html#pluggable-fixed-base-value-sources">Pluggable fixed base value sources</a> in Advanced topics.</p>
 <h3 id="understanding-attribute-modifier-types">Understanding Attribute Modifier Types</h3>
 <p>The framework provides two distinct types of attribute modifiers that work together with spent attribute points to determine final attribute values. Understanding how each type works is essential for creating predictable character progression and balanced gameplay mechanics.</p>
 <div class="NOTE">
@@ -512,6 +525,19 @@ We can create three stat sets:</p>
 <p><img src="../../images/workflows/entity-stats-fixed-base-stats.png" alt="Entity Stats"></p>
 <p><code>On Stat Changed</code> event gets raised whenever any stat value changes due to modifiers. You can use this to update UI elements or trigger other game logic.</p>
 <p><code>Use Cache</code> enables caching of final stat values. This is useful for performance when you have many entities or complex stat calculations.</p>
+<h3 id="fixed-base-stat-sources">Fixed base stat sources</h3>
+<p>🏷️<em>Version 2.1.0+</em></p>
+<p>Besides the inline values shown above, fixed base stats can also be sourced from a dedicated, reusable asset. Enable <code>Use Fixed Stat Values Asset</code> to switch:</p>
+<p><img src="../../images/workflows/entity-stats-fixed-values-asset-toggle.png" alt="EntityStats with Use Fixed Stat Values Asset enabled"></p>
+<p>With the toggle enabled, assign a <code>Fixed Stat Values</code> asset to the <code>Fixed Stat Values Asset</code> field <span style="color:red;">*</span>. Create one from <code>Assets &gt; Create &gt; Astra Framework &gt; Fixed Stat Values</code>, then assign it the same <code>StatSetSO</code> used by the entity and fill in its values directly from its own inspector:</p>
+<p><img src="../../images/workflows/fixed-stat-values-asset-editor.png" alt="Fixed Stat Values asset inspector"></p>
+<p>This is useful when several entities should share the exact same fixed base stats (for example, every enemy of a given kind) without duplicating the values on each prefab.</p>
+<p>Reassigning the asset's <code>Stat Set</code> reconciles its values automatically: values for stats present in both sets are preserved, new stats default to <code>0</code>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><code>Use Fixed Stat Values Asset</code> only applies while <code>Use Class Base Stats</code> is disabled. The inline values are preserved even while the asset is in use, so switching the toggle back off restores them.</p>
+</div>
+<p>For swapping fixed base sources or the stat set itself from code, see <a href="advanced-topics.html#pluggable-fixed-base-value-sources">Pluggable fixed base value sources</a> in Advanced topics.</p>
 <h3 id="understanding-stat-modifier-types">Understanding Stat Modifier Types</h3>
 <p>The framework provides three distinct types of stat modifiers, each serving different purposes and applied in a specific order during final value calculation. Understanding how each type works is crucial for creating balanced and predictable stat systems.</p>
 <div class="NOTE">
