@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [2.2.0] - Unreleased
+
+### Added
+#### Runtime Features
+- Added bonus attribute points: `EntityAttributes.GrantBonusAttributePoints`, `RevokeBonusAttributePoints`, and `SetBonusAttributePoints` manage a spendable point pool separate from level-derived points (e.g. granted by items or completed quests). Unlike level points, bonus points survive level-down and re-spec. `BonusAttributePoints` and `LevelAttributePoints` expose the two pools individually, alongside the existing `AvailableAttributePoints` and `TotalAttributePoints`.
+- Added permanent per-attribute bonuses: `EntityAttributes.AddPermanentBonus`, `RemovePermanentBonus`, `SetPermanentBonus`, and `SetPermanentBonuses` apply a fixed bonus to an attribute that isn't drawn from any point pool (e.g. a consumed item or book permanently raising an attribute). Permanent bonuses are applied alongside spent points, before percentage modifiers, and are read back with `GetPermanentBonus`/`GetAllPermanentBonuses`. `ClearPermanentBonus` and `ClearAllPermanentBonuses` remove them explicitly.
+- Added `AttributePointsChangeInfo` and `EntityAttributes.OnAttributePointsChangedCallback`, raised whenever the attribute-points budget (available and/or total) changes from spending, refunding, granting/revoking bonus points, or level changes.
+
+#### Editor Features
+- The `EntityAttributesEditor` inspector's `Attribute Points Tracker` now breaks the points summary down into `Level` and `Bonus`, and exposes an editable `Bonus Points` field (prompts for confirmation before a lowering that would force a refund of invested points).
+- Added a `Permanent Bonuses` box to the `EntityAttributesEditor` inspector, listing every attribute in the current selection with an editable bonus value and a `Clear All` button.
+
+### Changed
+#### Runtime Features
+- `EntityAttributes.RefundAllSpentPoints` now also refunds points invested from the bonus pool, not just level-derived points, since invested points are fungible and not tagged by the pool they were drawn from. Permanent per-attribute bonuses are never touched by `RefundAllSpentPoints`, level-down, or re-spec; only the explicit `ClearPermanentBonus`/`ClearAllPermanentBonuses` APIs remove them.
+
+
 ## [2.1.1] - 2026-07-29
 - Improved support for Unity 6.4+ editors
 

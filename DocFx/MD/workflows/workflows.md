@@ -302,15 +302,17 @@ The next step is to assign the attribute set we created to an entity. To do this
 
 ![Entity Attributes](../../images/workflows/entity-attributes-editor.png)
 
-An entity has base points for attributes, which can be either fixed or derived from a class, a configurable amount of attribute points that can be arbitrarily assigned, and these points are granted at each level-up, along with flat and percentage modifiers for the attributes.
-Except for the modifiers, which can only be assigned via code, all other values can be configured from the inspector.
+An entity has base points for attributes, which can be either fixed or derived from a class, a configurable amount of attribute points that can be arbitrarily assigned, permanent per-attribute bonuses, and flat and percentage modifiers for the attributes. Attribute points are granted at each level-up, and can also be granted independently of leveling through bonus points (see [Bonus attribute points](#bonus-attribute-points)).
+Except for the flat and percentage modifiers, which can only be assigned via code, all other values can be configured from the inspector.
 
 (🏷️*v2.0.0+*) `EntityAttributes` supports multi-object editing; shared fields can be edited in bulk, and attribute-specific rows are shown only for attributes common to the current selection.
 
 `Attr Points Per Level` defines how many arbitrarily spendable attribute points are provided at each level-up. They are assigned starting from level 2 on.
 
-`Attribute Points Tracker` allows monitoring and assigning spendable points. `Available Points` defines how many unspent points are still available.  
-If you change the level of the entity you'll see that available points change accordingly. And as you spend them, `Available Points` will decrease.
+`Attribute Points Tracker` allows monitoring and assigning spendable points. `Available` shows how many unspent points are still available against the total budget, broken down into `Level` (granted by leveling up) and `Bonus` (granted independently of leveling — see [Bonus attribute points](#bonus-attribute-points)).  
+If you change the level of the entity you'll see the `Level` portion (and therefore `Available`) change accordingly. And as you spend points on an attribute, `Available` will decrease.
+
+(🏷️*v2.2.0+*) The `Bonus Points` field, right below the summary, lets you edit the bonus pool directly from the inspector. Lowering it below what is currently spent forces a refund of invested points, so a confirmation dialog is shown first.
   
 Moreover, there is a checkbox labeled `Use Class Base Attributes`. For now, let's leave it unchecked since we haven't added a class yet. However, in this case, we need to manually assign an attribute set. Therefore, let's set the `Attribute Set` field found under `Fixed Base Attributes` with the `Hero Attribute Set`. By doing this, we now have access to additional fields in the inspector:
 
@@ -340,7 +342,7 @@ For swapping fixed base sources or the attribute set itself from code, see [Plug
 
 ### Understanding Attribute Modifier Types
 
-The framework provides two distinct types of attribute modifiers that work together with spent attribute points to determine final attribute values. Understanding how each type works is essential for creating predictable character progression and balanced gameplay mechanics.
+The framework provides three distinct types of attribute modifiers that work together with spent attribute points to determine final attribute values. Understanding how each type works is essential for creating predictable character progression and balanced gameplay mechanics.
 
 > [!NOTE]
 > General considerations for attribute modifiers
@@ -395,6 +397,24 @@ entityAttributes.AddFlatModifier(dexterityAttribute, -2);
 - Flat modifier: +4
 - Result after flat modifiers: 12 + 3 + 4 = 19
 
+#### Permanent Bonuses
+🏷️*Version 2.2.0+*
+
+Permanent bonuses add a fixed amount to an attribute, similar to flat modifiers, but they aren't drawn from any point pool and are meant to be granted once and stay for good, rather than being toggled on and off like a temporary flat modifier. They are applied alongside spent points, before percentage modifiers.
+
+**Use cases:**
+- A consumable item that permanently raises an attribute (e.g. a tome granting +2 Intelligence for good)
+- A one-time quest reward that permanently boosts an attribute
+- A permanent curse or affliction lowering an attribute
+
+**Code example:**
+```csharp
+// Reading a tome permanently grants +2 Intelligence
+entityAttributes.AddPermanentBonus(intelligenceAttribute, 2);
+```
+
+See [Permanent attribute bonuses](#permanent-attribute-bonuses) for the full API, including removal and inspector support.
+
 #### Percentage Modifiers
 
 Percentage modifiers apply a multiplicative increase or decrease to the current attribute value. They are the most powerful type of modifier and are applied last in the calculation chain, after all other values have been calculated.
@@ -422,7 +442,7 @@ entityAttributes.AddPercentageModifier(intelligenceAttribute, -10)
 
 **Important notes:**
 - Multiple percentage modifiers are additive before being applied (e.g., +20% and +10% = +30% total)
-- The percentage is calculated based on the value after base, spent points, and flat modifiers
+- The percentage is calculated based on the value after base, spent points, permanent bonuses, and flat modifiers
 - Percentage modifiers can be negative to create penalties
 
 #### Complete Calculation Example
@@ -432,16 +452,18 @@ Let's see a complete example showing the full attribute calculation process:
 **Initial setup:**
 - Base Intelligence: 14
 - Points spent on Intelligence: 4
+- Permanent bonus: +2 (from a previously read tome)
 - Equipment flat bonus: +2 (from a circlet)
 - Trait percentage bonus: +25% (from "Scholar" trait)
 
 **Step-by-step calculation:**
 1. Start with base: 14
 2. Add spent points: 14 + 4 = 18
-3. Apply flat modifiers: 18 + 2 = 20
-4. Apply percentage modifiers: 20 + (20 × 0.25) = 20 + 5 = 25
+3. Add permanent bonus: 18 + 2 = 20
+4. Apply flat modifiers: 20 + 2 = 22
+5. Apply percentage modifiers: 22 + (22 × 0.25) = 22 + 5.5 = 27.5 (rounded to 28 for integer attributes)
 
-**Final Intelligence value: 25**
+**Final Intelligence value: 28**
 
 #### Comparison with Stat Modifiers
 
@@ -449,7 +471,8 @@ Unlike stats, attributes have a simpler modifier system:
 
 **Attributes have:**
 - Base values
-- Spent attribute points (player-controlled)
+- Spent attribute points (player-controlled, from leveling and from [bonus grants](#bonus-attribute-points))
+- Permanent per-attribute bonuses
 - Flat modifiers
 - Percentage modifiers
 
@@ -489,6 +512,73 @@ This will spend 2 points on the `Strength` attribute, increasing its value by 2.
 > Debug.LogError messages are shown only in development builds. If you run a production build, you won't see them.
 > This is useful to avoid cluttering the console with error messages that are not relevant in production.
 
+### Bonus attribute points
+🏷️*Version 2.2.0+*
+
+Besides the points granted by leveling up, an entity can also receive bonus attribute points: extra spendable points granted independently of leveling, for example by finding an item or completing a quest. Unlike level points, bonus points survive level-down and re-spec.
+
+```csharp
+// Grant 3 bonus attribute points, e.g. after completing a quest
+entityAttributes.GrantBonusAttributePoints(3);
+
+// Revoke previously granted bonus points, e.g. if the quest reward is undone
+entityAttributes.RevokeBonusAttributePoints(3);
+
+// Set the bonus pool to an absolute value, e.g. when restoring save data
+entityAttributes.SetBonusAttributePoints(5);
+```
+
+`BonusAttributePoints` and `LevelAttributePoints` expose the two pools individually, while `AvailableAttributePoints` and `TotalAttributePoints` keep reporting the combined budget:
+
+```csharp
+int bonus = entityAttributes.BonusAttributePoints;
+int fromLevels = entityAttributes.LevelAttributePoints;
+int available = entityAttributes.AvailableAttributePoints; // unspent, from either pool
+```
+
+> [!IMPORTANT]
+> Points spent on an attribute aren't tagged with the pool (level or bonus) they were drawn from. This means:
+> - `RefundAllSpentPoints`, `RefundFrom`, and `RefundPointsForAttribute` refund invested points regardless of whether they came from level or bonus points.
+> - Lowering the bonus pool below what is currently spent (via `RevokeBonusAttributePoints` or `SetBonusAttributePoints`) forces a refund of invested points, following the same point removal strategy used for level-down.
+
+### Permanent attribute bonuses
+🏷️*Version 2.2.0+*
+
+A permanent attribute bonus is a fixed amount added to a single attribute that isn't drawn from any point pool. Unlike attribute points, it doesn't need to be granted before it can be spent, it's simply applied — a typical use case is a consumable item or a quest reward that permanently raises an attribute, such as an Archmage's tome that grants +2 `Intelligence` for the rest of the game.
+
+```csharp
+// Reading the Archmage's tome permanently grants +2 Intelligence
+entityAttributes.AddPermanentBonus(intelligenceAttribute, 2);
+
+// Amounts can be negative too, e.g. a permanent curse
+entityAttributes.AddPermanentBonus(strengthAttribute, -1);
+
+// Reads
+long intBonus = entityAttributes.GetPermanentBonus(intelligenceAttribute);
+IReadOnlyDictionary<AttributeSO, long> allBonuses = entityAttributes.GetAllPermanentBonuses();
+```
+
+`RemovePermanentBonus` subtracts from the existing bonus, while `SetPermanentBonus` (and the bulk `SetPermanentBonuses`, useful when restoring save data) assigns an absolute value instead:
+
+```csharp
+// Remove 1 point of the earlier Intelligence bonus (e.g. the tome's effect partially fades)
+entityAttributes.RemovePermanentBonus(intelligenceAttribute, 1);
+
+// Restore permanent bonuses from save data in a single bulk update
+entityAttributes.SetPermanentBonuses(savedPermanentBonuses);
+```
+
+To clear permanent bonuses entirely, use `ClearPermanentBonus` for a single attribute or `ClearAllPermanentBonuses` for every attribute:
+
+```csharp
+entityAttributes.ClearPermanentBonus(intelligenceAttribute);
+entityAttributes.ClearAllPermanentBonuses();
+```
+
+(🏷️*v2.2.0+*) The inspector exposes the same values through a `Permanent Bonuses` box below the `Attribute Points Tracker`, with one editable field per attribute and a `Clear All` button.
+
+> [!CAUTION]
+> Permanent bonuses are never touched by level-down, re-spec, or `RefundAllSpentPoints` — only the explicit `ClearPermanentBonus`/`ClearAllPermanentBonuses` APIs remove them. Since they were never drawn from a point budget, clearing them never increases `AvailableAttributePoints` or `BonusAttributePoints` either. To let a player re-spend points they already invested, use `RefundAllSpentPoints` instead.
 
 ## Create stats
 *Keyboard shortcut:* `Ctrl + Alt + S`  
