@@ -167,6 +167,148 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributeMenuItems.CreateAttribute
   nameWithType: AttributeMenuItems.CreateAttribute
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo
+  name: AttributePointsChangeInfo
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html
+  commentId: T:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo
+  nameWithType: AttributePointsChangeInfo
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.#ctor(ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes,System.Int32,System.Int32,System.Int32,System.Int32)
+  name: AttributePointsChangeInfo(EntityAttributes, int, int, int, int)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo__ctor_ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.#ctor(ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes,System.Int32,System.Int32,System.Int32,System.Int32)
+  name.vb: New(EntityAttributes, Integer, Integer, Integer, Integer)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.AttributePointsChangeInfo(ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes, int, int, int, int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.New(ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes, Integer, Integer, Integer, Integer)
+  nameWithType: AttributePointsChangeInfo.AttributePointsChangeInfo(EntityAttributes, int, int, int, int)
+  nameWithType.vb: AttributePointsChangeInfo.New(EntityAttributes, Integer, Integer, Integer, Integer)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.#ctor*
+  name: AttributePointsChangeInfo
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo__ctor_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.AttributePointsChangeInfo
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.New
+  nameWithType: AttributePointsChangeInfo.AttributePointsChangeInfo
+  nameWithType.vb: AttributePointsChangeInfo.New
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.Entity
+  name: Entity
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_Entity
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.Entity
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.Entity
+  nameWithType: AttributePointsChangeInfo.Entity
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.Entity*
+  name: Entity
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_Entity_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.Entity
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.Entity
+  nameWithType: AttributePointsChangeInfo.Entity
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.EntityAttributes
+  name: EntityAttributes
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_EntityAttributes
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.EntityAttributes
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.EntityAttributes
+  nameWithType: AttributePointsChangeInfo.EntityAttributes
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.EntityAttributes*
+  name: EntityAttributes
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_EntityAttributes_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.EntityAttributes
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.EntityAttributes
+  nameWithType: AttributePointsChangeInfo.EntityAttributes
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewAvailable
+  name: NewAvailable
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_NewAvailable
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewAvailable
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewAvailable
+  nameWithType: AttributePointsChangeInfo.NewAvailable
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewAvailable*
+  name: NewAvailable
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_NewAvailable_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewAvailable
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewAvailable
+  nameWithType: AttributePointsChangeInfo.NewAvailable
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewSpent
+  name: NewSpent
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_NewSpent
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewSpent
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewSpent
+  nameWithType: AttributePointsChangeInfo.NewSpent
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewSpent*
+  name: NewSpent
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_NewSpent_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewSpent
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewSpent
+  nameWithType: AttributePointsChangeInfo.NewSpent
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewTotal
+  name: NewTotal
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_NewTotal
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewTotal
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewTotal
+  nameWithType: AttributePointsChangeInfo.NewTotal
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewTotal*
+  name: NewTotal
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_NewTotal_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewTotal
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.NewTotal
+  nameWithType: AttributePointsChangeInfo.NewTotal
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousAvailable
+  name: PreviousAvailable
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_PreviousAvailable
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousAvailable
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousAvailable
+  nameWithType: AttributePointsChangeInfo.PreviousAvailable
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousAvailable*
+  name: PreviousAvailable
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_PreviousAvailable_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousAvailable
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousAvailable
+  nameWithType: AttributePointsChangeInfo.PreviousAvailable
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousSpent
+  name: PreviousSpent
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_PreviousSpent
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousSpent
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousSpent
+  nameWithType: AttributePointsChangeInfo.PreviousSpent
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousSpent*
+  name: PreviousSpent
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_PreviousSpent_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousSpent
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousSpent
+  nameWithType: AttributePointsChangeInfo.PreviousSpent
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousTotal
+  name: PreviousTotal
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_PreviousTotal
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousTotal
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousTotal
+  nameWithType: AttributePointsChangeInfo.PreviousTotal
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousTotal*
+  name: PreviousTotal
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_PreviousTotal_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousTotal
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.PreviousTotal
+  nameWithType: AttributePointsChangeInfo.PreviousTotal
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.Target
+  name: Target
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_Target
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.Target
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.Target
+  nameWithType: AttributePointsChangeInfo.Target
+- uid: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.Target*
+  name: Target
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.html#ElectricDrill_AstraRpgFramework_Attributes_AttributePointsChangeInfo_Target_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.Target
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.AttributePointsChangeInfo.Target
+  nameWithType: AttributePointsChangeInfo.Target
 - uid: ElectricDrill.AstraRpgFramework.Attributes.AttributeSO
   name: AttributeSO
   href: api/ElectricDrill.AstraRpgFramework.Attributes.AttributeSO.html
@@ -560,6 +702,22 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.AddPercentageModifier
   nameWithType: EntityAttributes.AddPercentageModifier
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.AddPermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int64)
+  name: AddPermanentBonus(AttributeSO, long)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_AddPermanentBonus_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int64_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.AddPermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int64)
+  name.vb: AddPermanentBonus(AttributeSO, Long)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.AddPermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO, long)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.AddPermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO, Long)
+  nameWithType: EntityAttributes.AddPermanentBonus(AttributeSO, long)
+  nameWithType.vb: EntityAttributes.AddPermanentBonus(AttributeSO, Long)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.AddPermanentBonus*
+  name: AddPermanentBonus
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_AddPermanentBonus_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.AddPermanentBonus
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.AddPermanentBonus
+  nameWithType: EntityAttributes.AddPermanentBonus
 - uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.AttributeSet
   name: AttributeSet
   href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_AttributeSet
@@ -599,6 +757,19 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.BeginBulk
   nameWithType: EntityAttributes.BeginBulk
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.BonusAttributePoints
+  name: BonusAttributePoints
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_BonusAttributePoints
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.BonusAttributePoints
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.BonusAttributePoints
+  nameWithType: EntityAttributes.BonusAttributePoints
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.BonusAttributePoints*
+  name: BonusAttributePoints
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_BonusAttributePoints_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.BonusAttributePoints
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.BonusAttributePoints
+  nameWithType: EntityAttributes.BonusAttributePoints
 - uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.BulkUpdateScope
   name: EntityAttributes.BulkUpdateScope
   href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.BulkUpdateScope.html
@@ -618,6 +789,32 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.BulkUpdateScope.Dispose
   nameWithType: EntityAttributes.BulkUpdateScope.Dispose
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.ClearAllPermanentBonuses
+  name: ClearAllPermanentBonuses()
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_ClearAllPermanentBonuses
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.ClearAllPermanentBonuses
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.ClearAllPermanentBonuses()
+  nameWithType: EntityAttributes.ClearAllPermanentBonuses()
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.ClearAllPermanentBonuses*
+  name: ClearAllPermanentBonuses
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_ClearAllPermanentBonuses_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.ClearAllPermanentBonuses
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.ClearAllPermanentBonuses
+  nameWithType: EntityAttributes.ClearAllPermanentBonuses
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.ClearPermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  name: ClearPermanentBonus(AttributeSO)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_ClearPermanentBonus_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.ClearPermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.ClearPermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  nameWithType: EntityAttributes.ClearPermanentBonus(AttributeSO)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.ClearPermanentBonus*
+  name: ClearPermanentBonus
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_ClearPermanentBonus_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.ClearPermanentBonus
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.ClearPermanentBonus
+  nameWithType: EntityAttributes.ClearPermanentBonus
 - uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.ComputeFinalAt(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int32)
   name: ComputeFinalAt(AttributeSO, int)
   href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_ComputeFinalAt_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int32_
@@ -699,6 +896,19 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.Get
   nameWithType: EntityAttributes.Get
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetAllPermanentBonuses
+  name: GetAllPermanentBonuses()
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_GetAllPermanentBonuses
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetAllPermanentBonuses
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetAllPermanentBonuses()
+  nameWithType: EntityAttributes.GetAllPermanentBonuses()
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetAllPermanentBonuses*
+  name: GetAllPermanentBonuses
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_GetAllPermanentBonuses_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetAllPermanentBonuses
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetAllPermanentBonuses
+  nameWithType: EntityAttributes.GetAllPermanentBonuses
 - uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetAllSpentPoints
   name: GetAllSpentPoints()
   href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_GetAllSpentPoints
@@ -725,6 +935,19 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetBase
   nameWithType: EntityAttributes.GetBase
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetPermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  name: GetPermanentBonus(AttributeSO)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_GetPermanentBonus_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetPermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetPermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
+  nameWithType: EntityAttributes.GetPermanentBonus(AttributeSO)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetPermanentBonus*
+  name: GetPermanentBonus
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_GetPermanentBonus_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetPermanentBonus
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetPermanentBonus
+  nameWithType: EntityAttributes.GetPermanentBonus
 - uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetSpentOn(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO)
   name: GetSpentOn(AttributeSO)
   href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_GetSpentOn_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_
@@ -738,6 +961,35 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GetSpentOn
   nameWithType: EntityAttributes.GetSpentOn
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GrantBonusAttributePoints(System.Int32)
+  name: GrantBonusAttributePoints(int)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_GrantBonusAttributePoints_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GrantBonusAttributePoints(System.Int32)
+  name.vb: GrantBonusAttributePoints(Integer)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GrantBonusAttributePoints(int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GrantBonusAttributePoints(Integer)
+  nameWithType: EntityAttributes.GrantBonusAttributePoints(int)
+  nameWithType.vb: EntityAttributes.GrantBonusAttributePoints(Integer)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GrantBonusAttributePoints*
+  name: GrantBonusAttributePoints
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_GrantBonusAttributePoints_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GrantBonusAttributePoints
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.GrantBonusAttributePoints
+  nameWithType: EntityAttributes.GrantBonusAttributePoints
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.LevelAttributePoints
+  name: LevelAttributePoints
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_LevelAttributePoints
+  commentId: P:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.LevelAttributePoints
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.LevelAttributePoints
+  nameWithType: EntityAttributes.LevelAttributePoints
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.LevelAttributePoints*
+  name: LevelAttributePoints
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_LevelAttributePoints_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.LevelAttributePoints
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.LevelAttributePoints
+  nameWithType: EntityAttributes.LevelAttributePoints
 - uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.OnAttributeChanged
   name: OnAttributeChanged
   href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_OnAttributeChanged
@@ -757,6 +1009,12 @@ references:
   commentId: E:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.OnAttributeChangedCallback
   fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.OnAttributeChangedCallback
   nameWithType: EntityAttributes.OnAttributeChangedCallback
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.OnAttributePointsChangedCallback
+  name: OnAttributePointsChangedCallback
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_OnAttributePointsChangedCallback
+  commentId: E:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.OnAttributePointsChangedCallback
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.OnAttributePointsChangedCallback
+  nameWithType: EntityAttributes.OnAttributePointsChangedCallback
 - uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.PercentageModifiers
   name: PercentageModifiers
   href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_PercentageModifiers
@@ -812,6 +1070,54 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RefundPointsForAttribute
   nameWithType: EntityAttributes.RefundPointsForAttribute
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RemovePermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int64)
+  name: RemovePermanentBonus(AttributeSO, long)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_RemovePermanentBonus_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int64_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RemovePermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int64)
+  name.vb: RemovePermanentBonus(AttributeSO, Long)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RemovePermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO, long)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RemovePermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO, Long)
+  nameWithType: EntityAttributes.RemovePermanentBonus(AttributeSO, long)
+  nameWithType.vb: EntityAttributes.RemovePermanentBonus(AttributeSO, Long)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RemovePermanentBonus*
+  name: RemovePermanentBonus
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_RemovePermanentBonus_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RemovePermanentBonus
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RemovePermanentBonus
+  nameWithType: EntityAttributes.RemovePermanentBonus
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RevokeBonusAttributePoints(System.Int32)
+  name: RevokeBonusAttributePoints(int)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_RevokeBonusAttributePoints_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RevokeBonusAttributePoints(System.Int32)
+  name.vb: RevokeBonusAttributePoints(Integer)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RevokeBonusAttributePoints(int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RevokeBonusAttributePoints(Integer)
+  nameWithType: EntityAttributes.RevokeBonusAttributePoints(int)
+  nameWithType.vb: EntityAttributes.RevokeBonusAttributePoints(Integer)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RevokeBonusAttributePoints*
+  name: RevokeBonusAttributePoints
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_RevokeBonusAttributePoints_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RevokeBonusAttributePoints
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.RevokeBonusAttributePoints
+  nameWithType: EntityAttributes.RevokeBonusAttributePoints
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetBonusAttributePoints(System.Int32)
+  name: SetBonusAttributePoints(int)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SetBonusAttributePoints_System_Int32_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetBonusAttributePoints(System.Int32)
+  name.vb: SetBonusAttributePoints(Integer)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetBonusAttributePoints(int)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetBonusAttributePoints(Integer)
+  nameWithType: EntityAttributes.SetBonusAttributePoints(int)
+  nameWithType.vb: EntityAttributes.SetBonusAttributePoints(Integer)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetBonusAttributePoints*
+  name: SetBonusAttributePoints
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SetBonusAttributePoints_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetBonusAttributePoints
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetBonusAttributePoints
+  nameWithType: EntityAttributes.SetBonusAttributePoints
 - uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixed(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int64)
   name: SetFixed(AttributeSO, long)
   href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SetFixed_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int64_
@@ -863,6 +1169,38 @@ references:
   isSpec: "True"
   fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetFixedAttributeSource
   nameWithType: EntityAttributes.SetFixedAttributeSource
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetPermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int64)
+  name: SetPermanentBonus(AttributeSO, long)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SetPermanentBonus_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int64_
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetPermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int64)
+  name.vb: SetPermanentBonus(AttributeSO, Long)
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetPermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO, long)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetPermanentBonus(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO, Long)
+  nameWithType: EntityAttributes.SetPermanentBonus(AttributeSO, long)
+  nameWithType.vb: EntityAttributes.SetPermanentBonus(AttributeSO, Long)
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetPermanentBonus*
+  name: SetPermanentBonus
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SetPermanentBonus_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetPermanentBonus
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetPermanentBonus
+  nameWithType: EntityAttributes.SetPermanentBonus
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetPermanentBonuses(System.Collections.Generic.IReadOnlyDictionary{ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int64})
+  name: SetPermanentBonuses(IReadOnlyDictionary<AttributeSO, long>)
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SetPermanentBonuses_System_Collections_Generic_IReadOnlyDictionary_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int64__
+  commentId: M:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetPermanentBonuses(System.Collections.Generic.IReadOnlyDictionary{ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int64})
+  name.vb: SetPermanentBonuses(IReadOnlyDictionary(Of AttributeSO, Long))
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetPermanentBonuses(System.Collections.Generic.IReadOnlyDictionary<ElectricDrill.AstraRpgFramework.Attributes.AttributeSO, long>)
+  fullName.vb: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetPermanentBonuses(System.Collections.Generic.IReadOnlyDictionary(Of ElectricDrill.AstraRpgFramework.Attributes.AttributeSO, Long))
+  nameWithType: EntityAttributes.SetPermanentBonuses(IReadOnlyDictionary<AttributeSO, long>)
+  nameWithType.vb: EntityAttributes.SetPermanentBonuses(IReadOnlyDictionary(Of AttributeSO, Long))
+- uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetPermanentBonuses*
+  name: SetPermanentBonuses
+  href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SetPermanentBonuses_
+  commentId: Overload:ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetPermanentBonuses
+  isSpec: "True"
+  fullName: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SetPermanentBonuses
+  nameWithType: EntityAttributes.SetPermanentBonuses
 - uid: ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.SpendOn(ElectricDrill.AstraRpgFramework.Attributes.AttributeSO,System.Int32)
   name: SpendOn(AttributeSO, int)
   href: api/ElectricDrill.AstraRpgFramework.Attributes.EntityAttributes.html#ElectricDrill_AstraRpgFramework_Attributes_EntityAttributes_SpendOn_ElectricDrill_AstraRpgFramework_Attributes_AttributeSO_System_Int32_

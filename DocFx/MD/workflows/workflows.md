@@ -303,7 +303,7 @@ The next step is to assign the attribute set we created to an entity. To do this
 ![Entity Attributes](../../images/workflows/entity-attributes-editor.png)
 
 An entity has base points for attributes, which can be either fixed or derived from a class, a configurable amount of attribute points that can be arbitrarily assigned, permanent per-attribute bonuses, and flat and percentage modifiers for the attributes. Attribute points are granted at each level-up, and can also be granted independently of leveling through bonus points (see [Bonus attribute points](#bonus-attribute-points)).
-Except for the flat and percentage modifiers, which can only be assigned via code, all other values can be configured from the inspector.
+Except for permanent attribute bonuses and the flat and percentage modifiers, which can only be assigned via code, all other values can be configured from the inspector.
 
 (🏷️*v2.0.0+*) `EntityAttributes` supports multi-object editing; shared fields can be edited in bulk, and attribute-specific rows are shown only for attributes common to the current selection.
 
@@ -506,7 +506,7 @@ If the entity's `Attr Points Per Level` is greater than zero and the level is gr
 // strengthAttribute is a reference to the Strength Attribute
 entityAttributes.SpendOn(strengthAttribute, 2);
 ```
-This will spend 2 points on the `Strength` attribute, increasing its value by 2. If there are not enough available points, a Debug.LogError will be raised.
+This will spend 2 points on the `Strength` attribute, increasing its value by 2. If there are not enough available points, a `Debug.LogError will` be raised.
 
 > [!NOTE]
 > Debug.LogError messages are shown only in development builds. If you run a production build, you won't see them.
@@ -536,7 +536,7 @@ int fromLevels = entityAttributes.LevelAttributePoints;
 int available = entityAttributes.AvailableAttributePoints; // unspent, from either pool
 ```
 
-> [!IMPORTANT]
+> [!NOTE]
 > Points spent on an attribute aren't tagged with the pool (level or bonus) they were drawn from. This means:
 > - `RefundAllSpentPoints`, `RefundFrom`, and `RefundPointsForAttribute` refund invested points regardless of whether they came from level or bonus points.
 > - Lowering the bonus pool below what is currently spent (via `RevokeBonusAttributePoints` or `SetBonusAttributePoints`) forces a refund of invested points, following the same point removal strategy used for level-down.
