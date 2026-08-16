@@ -209,6 +209,51 @@ Alternatively, it is available also the `SetTotalCurrentExp(long totalCurrentExp
 
 Finally, there are the `CurrentLevelTotalExperience()` and the `NextLevelTotalExperience()` methods. These methods return the total experience required to reach the current level and the next level, respectively. They are useful, for example, for checking how much experience is needed to level up.
 
+## Entity Ownership
+🏷️*v2.2.0+*
+
+Astra's entity model is intentionally flat: each entity is a single `EntityCore`, and satellite components find each other through `GetComponent`. Most games never need more than that, but composition still comes up naturally. Let's say you're building a spaceship as an entity (`EntityCore` + `EntityStats` for armor and speed), with a `Primary Weapon` child `GameObject` that is *also* a full entity, carrying its own `EntityStats` for bullet damage and fire rate.
+
+In that setup, the weapon is the one firing, so anything that identifies "who performed this action" (such as `Performer` in [Conditions](conditions.md#the-condition-model), or the performer resolved by systems like Astra Health's lifesteal) naturally resolves to the weapon, not the ship. Without a way to relate the two entities, a lifesteal effect configured on the ship would never trigger, because the entity dealing the damage is the weapon, not the ship carrying it.
+
+`Owner` is an explicit, opt-in edge on `EntityCore` that expresses exactly this relationship, so systems built on top of the framework can look past the weapon and credit the ship instead.
+
+### Configuring ownership
+
+![EntityCore inspector Ownership section](../../images/workflows/entity-core-ownership.png)
+<!-- IMAGE MISSING: entity-core-ownership.png — screenshot of the EntityCore inspector's Ownership section, showing the Owner field and Owner Resolution dropdown -->
+
+The `EntityCore` inspector exposes an **Ownership** section with two fields:
+
+- **Owner**: the `EntityCore` this entity is owned by. Left empty, the entity has no owner, and every ownership-aware API behaves exactly as it did before v2.2.0.
+- **Owner Resolution**: how **Owner** should be assigned. `Explicit` (the default) leaves **Owner** exactly as set in the inspector or from code. `NearestAncestor` resolves **Owner** automatically in `Awake`, from the closest `EntityCore` found by walking up the transform hierarchy, but only if **Owner** is not already set.
+
+For the spaceship example, setting the weapon's **Owner Resolution** to `NearestAncestor` is enough: as long as the `Primary Weapon` `GameObject` is nested under the ship, the weapon picks up the ship as its owner automatically, without any explicit inspector wiring.
+
+> [!NOTE]
+> `Owner` is also settable at runtime, which matters for pooled objects such as deployable turrets that need to be assigned an owner on spawn rather than at authoring time.
+
+### Reading ownership from code
+
+```csharp
+public EntityCore Owner { get; set; }
+public EntityCore Root { get; }
+public bool IsOwnedBy(EntityCore other);
+public event Action<EntityCore, EntityCore> OnOwnerChanged; // (previous, current)
+```
+
+- `Root` walks the ownership chain upward and returns the top-most entity, or the entity itself if it has no owner. In the spaceship example, `weapon.Root` returns the ship.
+- `IsOwnedBy` walks the same chain to check whether an entity is (transitively) owned by another.
+- `OnOwnerChanged` fires whenever `Owner` changes, passing both the previous and the current owner.
+
+> [!NOTE]
+> The `Owner` setter refuses assignments that would create a cycle (owning yourself, directly or through the chain), logging an error and leaving `Owner` unchanged instead. `Root` and `IsOwnedBy` also stop after 16 levels as an additional safeguard, so a corrupted chain cannot cause an infinite walk.
+
+> [!IMPORTANT]
+> `EntityCore` does not automatically clear `Owner` when the owner entity is invalidated or destroyed. In Astra Health, invalidation also happens on death, not only on destruction. So, auto-clearing would silently break ownership across a resurrection. If you pool and respawn owned entities, reassign `Owner` explicitly on spawn, the same way you already reinitialize other pooled state.
+
+See [Resolving ownership in custom systems](advanced-topics.md#resolving-ownership-in-custom-systems) for how to consume this edge from your own gameplay code, and [How `ConditionTarget` resolves entities](conditions.md#how-conditiontarget-resolves-entities) for the ownership-aware condition targets.
+
 ## Exp Source
 The `ExpSource` `MonoBehaviour` component marks a `GameObject` as a source of experience points. When such an entity dies, collection systems (such as those provided by Astra Health) can harvest its experience and award it to eligible recipients.
 

@@ -34,6 +34,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added `EntityAttributes.SetFixedAttributeSet`/`EntityStats.SetFixedStatSet` to swap the `AttributeSetSO`/`StatSetSO` used for fixed base values at runtime.
 - Added `Assets > Create > Astra Framework > Fixed Attribute Values` and `Fixed Stat Values` asset creation menu items, with dedicated custom editors for authoring their values.
 - Added the `Use Fixed Attribute Values Asset`/`Use Fixed Stat Values Asset` toggle to the `EntityAttributesEditor`/`EntityStatsEditor` inspectors.
+- Added `EntityCore.Owner`, `EntityCore.Root`, `EntityCore.IsOwnedBy`, and the `OnOwnerChanged` event, an opt-in ownership edge between entities that lets one entity be recognized as owned by another (for example, a weapon entity owned by the ship entity carrying it).
+- Added `OwnerResolution` (`Explicit`/`NearestAncestor`) so `EntityCore.Owner` can be assigned explicitly or resolved automatically from the nearest `EntityCore` up the transform hierarchy.
+- Added `EntityAttribution` and `EntityOwnership.Resolve`, letting custom systems resolve "the responsible entity" for an entity as itself (`Direct`), its `Owner`, or its `Root`.
+- Added the `HolderOwner`, `PerformerOwner`, and `PayloadPerformerOwner` `ConditionTarget` values, and the `IsOwnedByCondition` condition, so condition trees can reason about entity ownership.
+
+#### Editor Features
+- Added an **Ownership** section to the `EntityCoreEditor` inspector, exposing the **Owner** and **Owner Resolution** fields, plus a read-only **Root** display and a cycle warning in Play Mode.
 
 #### Editor Features
 - Added Class Dashboard Window: Allows to inspect all defined classes in a single place. You can visualize all the GrowthFormula used in a certain class in the same graph.
