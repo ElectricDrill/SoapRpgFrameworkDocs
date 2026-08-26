@@ -63,6 +63,9 @@ Entity-based and tag-based conditions select an entity slot through `ConditionTa
 
 This is why some conditions appear to "just work" with certain event payloads and not with others: the payload must actually expose the requested role.
 
+> [!WARNING]
+> `HolderOwner`, `PerformerOwner`, and `PayloadPerformerOwner` build on [Entity Ownership](workflows.md#entity-ownership), which is currently experimental and may change at any time. Be careful when adopting these slots for production-critical condition trees.
+
 > [!NOTE]
 > `HolderOwner`, `PerformerOwner`, and `PayloadPerformerOwner` resolve a single [`Owner`](workflows.md#entity-ownership) hop, not the full ownership chain. For the spaceship example from [Entity Ownership](workflows.md#entity-ownership), `PerformerOwner` resolves to the ship when the weapon is `Performer` and its `Owner` is set directly. If the weapon is owned by an intermediate entity instead of the ship itself, resolve `Root` in your own code (see [Resolving ownership in custom systems](advanced-topics.md#resolving-ownership-in-custom-systems)) and expose it through a custom `ConditionTarget` or payload field.
 
@@ -139,6 +142,9 @@ Some practical reading tips:
 - `HolderLevelCondition` is simpler than `EntityLevelCondition`, but also less flexible because it cannot look at payload roles
 - `IsPerformerCondition` is mainly useful in self-applied or self-triggered workflows
 - `IsOwnedByCondition` walks the full [ownership chain](workflows.md#entity-ownership), unlike the `*Owner` `ConditionTarget` slots, which resolve only a direct `Owner`
+
+> [!WARNING]
+> `IsOwnedByCondition` builds on [Entity Ownership](workflows.md#entity-ownership), which is currently experimental and may change at any time. Be careful when adopting it for production-critical condition trees.
 
 > [!NOTE]
 > `PayloadEntity` is often the most useful slot when working with built-in event payloads, because types such as `StatChangeInfo`, `AttributeChangeInfo`, and `EntityLevelChangedContext` already implement `IHasEntity`.

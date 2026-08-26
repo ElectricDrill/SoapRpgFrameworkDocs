@@ -212,18 +212,32 @@ Finally, there are the `CurrentLevelTotalExperience()` and the `NextLevelTotalEx
 ## Entity Ownership
 🏷️*v2.2.0+*
 
+> [!WARNING]
+> Entity ownership is currently experimental and may change at any time.
+>
+> Be careful when adopting it for production-critical features. Future package updates may require refactoring how ownership is authored or resolved, or adjusting integration code that depends on the current `Owner`/`Root`/`IsOwnedBy` behavior.
+>
+> Because of this, the **Ownership** section is hidden from the `EntityCore` inspector by default — see [Showing the Ownership section in the inspector](#showing-the-ownership-section-in-the-inspector) below to opt in.
+
 Astra's entity model is intentionally flat: each entity is a single `EntityCore`, and satellite components find each other through `GetComponent`. Most games never need more than that, but composition still comes up naturally. Let's say you're building a spaceship as an entity (`EntityCore` + `EntityStats` for armor and speed), with a `Primary Weapon` child `GameObject` that is *also* a full entity, carrying its own `EntityStats` for bullet damage and fire rate.
 
 In that setup, the weapon is the one firing, so anything that identifies "who performed this action" (such as `Performer` in [Conditions](conditions.md#the-condition-model), or the performer resolved by systems like Astra Health's lifesteal) naturally resolves to the weapon, not the ship. Without a way to relate the two entities, a lifesteal effect configured on the ship would never trigger, because the entity dealing the damage is the weapon, not the ship carrying it.
 
 `Owner` is an explicit, opt-in edge on `EntityCore` that expresses exactly this relationship, so systems built on top of the framework can look past the weapon and credit the ship instead.
 
+### Showing the Ownership section in the inspector
+
+Because the feature is experimental, the **Ownership (Experimental)** section is hidden from the `EntityCore` inspector by default. To reveal it, open `Edit > Preferences > Astra Framework > Ownership` and enable **Show Ownership section (Experimental)**.
+
+> [!NOTE]
+> This preference only controls whether the section is rendered in the `EntityCore` inspector. `Owner`, `Root`, `IsOwnedBy`, and `EntityOwnership.Resolve` keep working from code regardless of this setting — it does not gate the ownership-aware `ConditionTarget` values or `IsOwnedByCondition` either, which stay available in condition pickers.
+
 ### Configuring ownership
 
 ![EntityCore inspector Ownership section](../../images/workflows/entity-core-ownership.png)
-<!-- IMAGE MISSING: entity-core-ownership.png — screenshot of the EntityCore inspector's Ownership section, showing the Owner field and Owner Resolution dropdown -->
+<!-- IMAGE MISSING: entity-core-ownership.png — screenshot of the EntityCore inspector's Ownership section (with the preference above enabled), showing the Owner field and Owner Resolution dropdown -->
 
-The `EntityCore` inspector exposes an **Ownership** section with two fields:
+With the preference enabled, the `EntityCore` inspector exposes an **Ownership (Experimental)** section with two fields:
 
 - **Owner**: the `EntityCore` this entity is owned by. Left empty, the entity has no owner, and every ownership-aware API behaves exactly as it did before v2.2.0.
 - **Owner Resolution**: how **Owner** should be assigned. `Explicit` (the default) leaves **Owner** exactly as set in the inspector or from code. `NearestAncestor` resolves **Owner** automatically in `Awake`, from the closest `EntityCore` found by walking up the transform hierarchy, but only if **Owner** is not already set.

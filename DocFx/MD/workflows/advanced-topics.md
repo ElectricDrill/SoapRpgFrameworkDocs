@@ -78,6 +78,9 @@ if (statReader.TryGetBase(physicalAttackStat, out long basePhysicalAttack))
 ## Resolving ownership in custom systems
 *🏷️ Version 2.2.0+*
 
+> [!WARNING]
+> This builds on [Entity Ownership](workflows.md#entity-ownership), which is currently experimental and may change at any time. Treat `EntityAttribution` and `EntityOwnership.Resolve` as provisional until the underlying ownership edge stabilizes.
+
 `Owner` (see [Entity Ownership](workflows.md#entity-ownership)) tells you which entity ultimately owns another, but different systems often need to resolve "the responsible entity" differently. Take the spaceship example from that section: a lifesteal system built on top of the framework needs to know that the *ship* should be healed when its weapon lands a killing blow, even though the weapon is the one recorded as `Performer`.
 
 `EntityAttribution` and `EntityOwnership.Resolve` exist for exactly this kind of decision:
